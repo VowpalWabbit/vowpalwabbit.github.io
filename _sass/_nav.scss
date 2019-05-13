@@ -1,0 +1,44 @@
+.nav {
+  overflow: hidden;
+}
+
+.nav_item {
+  text-align: center;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.nav_icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .nav_item {
+    display: none;
+  }
+
+  .nav_icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav.responsive {
+    display: block;
+  }
+
+  .nav.responsive .nav_icon {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .nav.responsive .nav_item {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}

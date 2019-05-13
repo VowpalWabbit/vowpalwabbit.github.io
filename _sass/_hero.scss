@@ -1,0 +1,9 @@
+.hero_buttons {
+  @include primary-link;
+}
+
+.hero_container {
+  background-color: lightgray;
+  padding: 3rem 2rem 5rem;
+  color: white;
+}
