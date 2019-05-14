@@ -1,0 +1,8 @@
+{% assign current = page.url | downcase | remove: ".html" | split: '/' %}
+
+<div class="navbar navbar-expand-lg">
+  <a href="{{ site.url }}{{ site.baseurl }}">
+    <img src="../assets/images/logo.png" alt="logo" class="logo">
+  </a>
+  {% include nav.html %}
+</div>

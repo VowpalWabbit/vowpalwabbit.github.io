@@ -1,0 +1,35 @@
+---
+---
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "variables";
+@import "nav";
+@import "header";
+@import "footer";
+@import "hero";
+@import "breakdown";
+@import "start";
+@import "case_studies";
+@import "demo";
+@import "community";
+@import "resources";
+@import "origin_story";
+
+h1 {
+  font-size: 2rem;
+  padding: 0.5rem 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.content {
+  padding: 0;
+}
+
+.description {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+}

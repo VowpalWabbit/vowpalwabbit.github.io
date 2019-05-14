@@ -1,0 +1,40 @@
+.community_container {
+  color: white;
+  background: gray;
+  padding: 4rem 2rem;
+
+  .community {
+    border: 1px solid lightgray;
+    background: white;
+    color: gray;
+    padding: 3rem 2rem;
+  }
+
+  .community_title {
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    color: black;
+    font-weight: 400;
+  }
+  .icon {
+    width: 9rem;
+    height: 9rem;
+    margin: 0 auto;
+    background: lightgray;
+  }
+
+  .join_community_link {
+    a {
+      color: black;
+    }
+    font-weight: 500;
+  }
+}
+
+.view_community_link {
+  padding: 2rem 0;
+  font-weight: 500;
+  a {
+    color: white;
+  }
+}

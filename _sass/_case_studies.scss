@@ -1,0 +1,25 @@
+.case_studies_container {
+  padding: 4rem 2rem;
+
+  .description {
+    color: gray;
+  }
+
+  .view_all_link {
+    @include primary-link;
+    padding: 1rem 0;
+    a {
+      color: black;
+      border: 2px solid black;
+    }
+  }
+
+  .case {
+    width: 20rem;
+    height: 17rem;
+    background: lightgray;
+    color: white;
+    font-weight: 500;
+    padding: 8rem;
+  }
+}

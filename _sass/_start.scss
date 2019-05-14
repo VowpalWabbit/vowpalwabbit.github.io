@@ -1,0 +1,15 @@
+.start_container {
+  background-color: gray;
+  height: 40rem;
+
+  .start_section {
+    height: 30rem;
+    width: 70%;
+    background-color: white;
+    margin: auto;
+    top: 5rem;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+  }
+}
