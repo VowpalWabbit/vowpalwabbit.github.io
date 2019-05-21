@@ -8,36 +8,27 @@
   }
 }
 
-.animated_image {
-  background-color: lightgray;
-  height: 19rem;
-  color: black;
-  font-weight: 500;
-  font-size: 1.5rem;
-  padding: 7rem 10rem;
-}
-
-.feature {
+.feature_bg {
   background-color: lightgray;
   border-radius: 50%;
-  width: 19rem;
   height: 19rem;
   line-height: 2rem;
   text-align: center;
   font-size: 1.2rem;
   font-weight: 500;
+  margin: 1.5rem;
 }
 
-.feature_text {
-  display: inline-block;
+.feature_content {
   position: relative;
-  top: 6rem;
+  top: 4rem;
 }
 
-.breakdown_learn_more {
+.feature_name {
+  padding: 2rem;
+}
+
+.breakdown_buttons {
   @include primary-link;
   padding: 0;
-  margin: 0 auto;
-  display: block;
-  width: 9rem;
 }

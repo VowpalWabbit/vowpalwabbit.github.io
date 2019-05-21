@@ -1,27 +1,26 @@
 .resources_container {
   background: lightgray;
   padding: 4rem 2rem;
-  color: white;
 
-  .nav_container {
-    width: 100%;
-    border-bottom: 1px solid white;
-    margin: 2rem 0;
+  .header {
+    color: white;
   }
 
-  .nav {
-    width: 40%;
-    margin: 0 auto;
-    font-size: 1.2rem;
-    a {
-      color: white;
-    }
-  }
-
-  p {
+  .resource {
     background: white;
-    color: gray;
-    height: 14rem;
-    padding: 6rem;
+    padding: 2rem;
+  }
+
+  .icon img{
+    margin: 0 auto;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 1rem;
   }
 }
