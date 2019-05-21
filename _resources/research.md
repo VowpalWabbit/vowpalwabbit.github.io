@@ -1,5 +1,5 @@
 ---
 title: Research
-icon: ../assets/images/resources/research.svg
+icon: assets/images/resources/research.svg
 link: ''
 ---

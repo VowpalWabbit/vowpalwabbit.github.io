@@ -1,5 +1,5 @@
 ---
 title: Documentation
-icon: ../assets/images/resources/documentation.svg
+icon: assets/images/resources/documentation.svg
 link: ''
 ---
