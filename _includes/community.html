@@ -1,3 +1,5 @@
+{% assign communities = site.communities | sort: 'order' %}
+
 <div class="container community_container">
   <div class="row justify-content-center text-center">
     <div class="col col-lg-6">
@@ -14,54 +16,26 @@
       </div>
     </div>
   </div>
+
   <div class="row justify-content-center text-center">
-    <div class="col-lg-3 col-sm community">
-      <div class="icon">
-      </div>
-      <h3 class="community_title">
-        Github
-      </h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-      </p>
+    {% for community in communities %}
+      <div class="col-lg-3 col-sm community">
+        <div class="icon">
+          <img src={{community.logo}}>
+        </div>
+        <h3 class="community_title">
+          {{ community.title }}
+        </h3>
+        <p>
+          {{ community.description }}
+        </p>
 
-      <div class="join_community_link">
-        <a href="#">
-          Join Community >
-        </a>
+        <div class="join_community_link">
+          <a href={{community.link}} target="_blank">
+            Join Community >
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="col-lg-3 col-sm community">
-      <div class="icon">
-      </div>
-
-      <h3 class="community_title">
-        Gitter
-      </h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-      </p>
-      <div class="join_community_link">
-        <a href="#">
-          Join Community >
-        </a>
-      </div>
-    </div>
-    <div class="col-lg-3 col-sm community">
-      <div class="icon">
-      </div>
-
-      <h3 class="community_title">
-        Stack Overflow
-      </h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-      </p>
-      <div class="join_community_link">
-        <a href="#">
-          Join Community >
-        </a>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>

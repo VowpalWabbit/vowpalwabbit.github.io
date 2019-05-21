@@ -1,5 +1,11 @@
 .origin_story_container {
   border: 1px solid lightgray;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 20px;
+
+  .content {
+    background: lightgray;
+    border-radius: 20px;
+    padding: 4rem 6rem;
+  }
 }
