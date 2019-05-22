@@ -46,6 +46,10 @@ collections:
     output: true
   demos:
     output: true
+  documentations:
+    output: true
+  data_sets:
+    output: true
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

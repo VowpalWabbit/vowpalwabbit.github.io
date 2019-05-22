@@ -1,23 +1,6 @@
 ---
 ---
 
-@import "variables";
-@import "nav";
-@import "header";
-@import "footer";
-@import "hero";
-@import "breakdown";
-@import "start";
-@import "case_studies";
-@import "technical_details";
-@import "community";
-@import "resources";
-@import "origin_story";
-@import "guides";
-@import "how_it_works";
-@import "learn";
-@import "demo";
-
 h1 {
   font-size: 2rem;
   padding: 0.5rem 0;
@@ -36,3 +19,20 @@ h2 {
   font-size: 1.1rem;
   padding: 0.5rem 0;
 }
+
+@import "variables";
+@import "nav";
+@import "header";
+@import "footer";
+@import "hero";
+@import "breakdown";
+@import "start";
+@import "case_studies";
+@import "technical_details";
+@import "community";
+@import "resources";
+@import "origin_story";
+@import "guides";
+@import "how_it_works";
+@import "learn";
+@import "demo";
