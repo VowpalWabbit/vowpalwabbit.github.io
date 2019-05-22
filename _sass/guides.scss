@@ -1,0 +1,20 @@
+.guides_container {
+  padding: 4rem;
+  background: linear-gradient(180deg, lightgray 50%, white 50%);
+
+  .guide {
+    padding: 3rem 2rem;
+    background: white;
+
+    &:first-of-type {
+      border-radius: 20px 0 0 20px;
+      box-shadow: 0 0 25px 0 rgba(109,109,109,0.5);
+    }
+
+    &:last-of-type {
+      border-left: 1px solid lightgray;
+      border-radius: 0 20px 20px 0;
+      box-shadow: 5px 0 25px -5px rgba(109,109,109,0.5);
+    }
+  }
+}

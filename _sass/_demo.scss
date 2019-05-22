@@ -1,9 +1,10 @@
 .demo_container {
-  background-color: lightgray;
-  padding: 0;
+  border-radius: 34px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 15px 0 rgba(167,167,167,0.5);
+  padding: 3rem;
 
   .nav {
-    background-color: gray;
     width: 100%;
     justify-content: space-between;
     text-align: center;
@@ -12,27 +13,9 @@
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0 auto;
-
-    a {
-      color: white;
-    }
   }
 
-  .demo_intro {
-    padding: 4rem;
-  }
-
-  .learn_more_link {
-    @include primary-link;
-    padding: 0;
-
-    a {
-      border: 2px solid black;
-      color: black;
-    }
-  }
-
-  .image img{
-    width: 100%
+  .demo_link {
+    font-weight: 500;
   }
 }

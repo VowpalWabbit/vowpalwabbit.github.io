@@ -1,0 +1,38 @@
+.technical_details_container {
+  background-color: lightgray;
+  padding: 0;
+
+  .nav {
+    background-color: gray;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1rem 15rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 auto;
+
+    a {
+      color: white;
+    }
+  }
+
+  .technical_details_intro {
+    padding: 4rem;
+  }
+
+  .learn_more_link {
+    @include primary-link;
+    padding: 0;
+
+    a {
+      border: 2px solid black;
+      color: black;
+    }
+  }
+
+  .image img{
+    width: 100%
+  }
+}

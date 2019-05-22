@@ -1,37 +1,50 @@
 <div class="container demo_container">
-  <div class="nav">
-    <a href="#">
-      Contextual Bandits
-    </a>
-    <a href="#">
-      Search
-    </a>
-    <a href="#">
-      Multiclass Classifications
-    </a>
-  </div>
-
-  {% assign demos = site.demos | sort: 'order' %}
-  {% for demo in demos %}
-    <div class="row demo_intro">
-      <div class="col-sm">
+  <div class="row">
+    <div class="col-sm">
+      <div class="text-center">
         <h2>
-          {{ demo.title }}
+          Select Your Use Case
         </h2>
-        <p class="description">
-          {{ demo.description }}
+        <p>
+          Learn how VW works, based on the specific issue that you need to solve for your product.
         </p>
-        <div class="learn_more_link">
-          <a href={{demo.learn_more_links}}>
-            Learn More
-          </a>
-        </div>
       </div>
-      <div class="col-sm">
-        <div class="image">
-          <img src={{demo.image}}>
-        </div>
+
+      <div class="nav">
+        <a href="#">
+          Reductions
+        </a>
+        <a href="#">
+          Optimization
+        </a>
+        <a href="#">
+          Performance Enhancement
+        </a>
       </div>
+
+      {% assign demos = site.demos %}
+      {% for demo in demos %}
+        <div class="row">
+          <div class="col-sm">
+            <h2>
+              {{ demo.title }}
+            </h2>
+            <p class="description">
+              {{ demo.description }}
+            </p>
+            <div class="demo_link">
+              <a href={{demo.demo_link}}>
+                {{demo.demo_link_text}} >
+              </a>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="image">
+              <img src={{demo.image}}>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
     </div>
-  {% endfor %}
+  </div>
 </div>
