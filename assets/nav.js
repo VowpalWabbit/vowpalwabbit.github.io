@@ -12,6 +12,11 @@ $(document).ready(function() {
     const $this = $(this);
     showModule($this);
   });
+
+  $(".demo_container").on("click", ".nav button", function() {
+    const $this = $(this);
+    showModule($this);
+  });
 });
 
 function showModule($nav_button) {
