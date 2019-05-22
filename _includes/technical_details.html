@@ -1,37 +1,39 @@
 <div class="container technical_details_container">
   <div class="nav">
-    <a href="#">
+    <button class="active" data-module_id="contextual_bandits">
       Contextual Bandits
-    </a>
-    <a href="#">
+    </button>
+    <button data-module_id="search">
       Search
-    </a>
-    <a href="#">
+    </button>
+    <button data-module_id="extreme_multiclass">
       Multiclass Classifications
-    </a>
+    </button>
   </div>
 
-  {% assign technical_details = site.technical_details | sort: 'order' %}
-  {% for item in technical_details %}
-    <div class="row technical_details_intro">
-      <div class="col-sm">
-        <h2>
-          {{ item.title }}
-        </h2>
-        <p class="description">
-          {{ item.description }}
-        </p>
-        <div class="learn_more_link">
-          <a href={{item.learn_more_links}}>
-            Learn More
-          </a>
+  <div class="technical_details">
+    {% assign technical_details = site.technical_details | sort: 'order' %}
+    {% for item in technical_details %}
+      <div class="row {% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
+        <div class="col-sm">
+          <h2>
+            {{ item.title }}
+          </h2>
+          <p class="description">
+            {{ item.description }}
+          </p>
+          <div class="learn_more_link">
+            <a href={{item.learn_more_links}}>
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="image">
+            <img src={{item.image}}>
+          </div>
         </div>
       </div>
-      <div class="col-sm">
-        <div class="image">
-          <img src={{item.image}}>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>

@@ -11,40 +11,42 @@
       </div>
 
       <div class="nav">
-        <a href="#">
+        <button class="active" data-module_id="reductions">
           Reductions
-        </a>
-        <a href="#">
+        </button>
+        <button data-module_id="optimization">
           Optimization
-        </a>
-        <a href="#">
+        </button>
+        <button data-module_id="performance_enhancement">
           Performance Enhancement
-        </a>
+        </button>
       </div>
 
-      {% assign demos = site.demos %}
-      {% for demo in demos %}
-        <div class="row">
-          <div class="col-sm">
-            <h2>
-              {{ demo.title }}
-            </h2>
-            <p class="description">
-              {{ demo.description }}
-            </p>
-            <div class="demo_link">
-              <a href={{demo.demo_link}}>
-                {{demo.demo_link_text}} >
-              </a>
+      <div class="demos">
+        {% assign demos = site.demos | sort: 'order' %}
+        {% for demo in demos %}
+          <div class="row {% if demo.order != 1 %}hidden{% endif %}" data-module_id={{demo.module_id}}>
+            <div class="col-sm col-lg-6">
+              <h2>
+                {{ demo.title }}
+              </h2>
+              <p class="description">
+                {{ demo.description }}
+              </p>
+              <div class="demo_link">
+                <a href={{demo.demo_link}}>
+                  {{demo.demo_link_text}} >
+                </a>
+              </div>
+            </div>
+            <div class="col-sm col-lg-6">
+              <div class="image">
+                <img src={{demo.image}}>
+              </div>
             </div>
           </div>
-          <div class="col-sm">
-            <div class="image">
-              <img src={{demo.image}}>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 .demo_container {
   border-radius: 34px;
-  background-color: #FFFFFF;
+  background-color: white;
   box-shadow: 0 0 15px 0 rgba(167,167,167,0.5);
   padding: 3rem;
 
@@ -13,9 +13,42 @@
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0 auto;
+    border-bottom: 1px solid lightgray;
+
+    button {
+      background: transparent;
+      border: 0;
+      position: relative;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        border-bottom: 3px solid gray;
+      }
+    }
+  }
+
+  .demos {
+    padding: 4rem 0;
+
+    .hidden {
+      display: none;
+    }
   }
 
   .demo_link {
     font-weight: 500;
+
+    a {
+      color: black;
+    }
+  }
+
+  .image img {
+    width: 100%
   }
 }
