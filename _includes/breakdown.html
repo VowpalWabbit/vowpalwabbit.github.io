@@ -1,3 +1,11 @@
+{% assign online_learning = site.breakdowns
+    | where_exp:"breakdown", "breakdown.breakdown_id == 'online_learning'"
+    | first
+%}
+{% assign input_format = site.breakdowns
+    | where_exp:"breakdown", "breakdown.breakdown_id == 'input_format'"
+    | first
+%}
 <div class="container breakdown_container">
   <div class="row justify-content-center text-center">
     <div class="col col-lg-6">
@@ -13,10 +21,10 @@
     <div class="col-sm feature_bg">
       <div class="d-flex flex-column feature_content">
         <span class="feature_icon">
-          <img src="../assets/images/breakdown/online_learning_icon.svg"/>
+          <img src={{online_learning.icon}}/>
         </span>
         <span class="feature_name">
-          Online learning
+          {{online_learning.title}}
         </span>
       </div>
     </div>
@@ -30,10 +38,10 @@
     <div class="col-sm feature_bg">
       <div class="d-flex flex-column feature_content">
         <span class="feature_icon">
-          <img src="../assets/images/breakdown/Input_Format_Icon.svg"/>
+          <img src={{input_format.icon}}/>
         </span>
         <span class="feature_name">
-          Input format
+          {{input_format.title}}
         </span>
       </div>
     </div>
