@@ -3,7 +3,7 @@
   padding: 0;
 
   .nav {
-    background-color: gray;
+    background: linear-gradient(180deg, gray 80%, lightgray 20%);
     width: 100%;
     justify-content: space-between;
     text-align: center;
@@ -13,12 +13,36 @@
     font-weight: 500;
     margin: 0 auto;
 
-    a {
+    button {
+      background: transparent;
       color: white;
+      border: 0;
+      position: relative;
+      margin-bottom: 0.8rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        border-bottom: 3px solid white;
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 40%;
+          top: 45px;
+          width: 0;
+          height: 0;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-top: 15px solid gray;
+        }
+      }
     }
   }
 
-  .technical_details_intro {
+  .technical_details {
     padding: 4rem;
   }
 
