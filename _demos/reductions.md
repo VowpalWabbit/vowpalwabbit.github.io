@@ -1,9 +1,9 @@
 ---
-title: Reductions
+title: Surface relevant content per individual user with Contextual Bandits
 order: 1
-module_id: reductions
-description: Here is the description for Reductions
-image: assets/images/demo/reductions.png
-demo_link_text: 'Contextual Bandits Demo'
+module_id: content_relevancy
+description: Here is the description for Content Relevancy
+image: assets/images/demo/content_relevancy.png
+demo_link_text: 'Begin Tutorial'
 demo_link: ''
 ---

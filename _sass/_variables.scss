@@ -12,3 +12,30 @@ $body-bg: lightgray;
     color: white;
   }
 }
+
+@mixin resource-section {
+  .header {
+    color: white;
+    padding-bottom: 2rem;
+  }
+
+  .resource {
+    background: white;
+    padding: 2rem;
+    margin: 0.5rem 0.25rem;
+    border-radius: 20px;
+  }
+
+  .icon img{
+    margin: 0 auto;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1rem 0 0;
+  }
+}

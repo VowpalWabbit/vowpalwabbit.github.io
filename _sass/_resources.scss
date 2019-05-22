@@ -2,27 +2,21 @@
   background: lightgray;
   padding: 4rem 2rem;
 
-  .header {
+  @include resource-section;
+}
+
+.resources_details_container {
+  @include resource-section;
+
+  background: lightgray;
+  padding: 4rem 2rem;
+
+  .sub_header {
     color: white;
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
   }
 
-  .resource {
-    background: white;
-    padding: 2rem;
-    margin: 0.5rem 0.25rem;
-  }
-
-  .icon img{
-    margin: 0 auto;
-    display: block;
-    width: 5rem;
-    height: 5rem;
-  }
-
-  .title {
-    font-size: 1.2rem;
-    text-align: center;
-    margin: 1rem 0 0;
+  .resource_link {
+    color: white;
   }
 }

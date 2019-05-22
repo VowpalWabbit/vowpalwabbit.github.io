@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<div class="resources_details_container content">
+  <div class="header">
+    <h1>
+      Resources
+    </h1>
+    <p class="description">
+      Here is the description for Resources page.
+    </p>
+  </div>
+
+  {% assign documentations = site.documentations | sort: 'order' %}
+  {% assign data_sets = site.data_sets | sort: 'order' %}
+
+  <div>
+    <div class="sub_header">
+      <h2>
+        Documentation
+      </h2>
+      <a class="resource_link" href="#">
+        View All Documentation >
+      </a>
+    </div>
+    <div class="row">
+      {% for doc in documentations %}
+        <div class="col-lg-3 col-sm">
+          <div class="resource">
+            <div class="icon">
+              <img src={{doc.icon}}>
+            </div>
+            <p class="title">
+              {{doc.title}}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div>
+    <div class="sub_header">
+      <h2>
+        Data sets
+      </h2>
+      <a class="resource_link" href="#">
+        View All Data sets >
+      </a>
+    </div>
+    <div class="row">
+      {% for data_set in data_sets %}
+        <div class="col-lg-3 col-sm">
+          <div class="resource">
+            <div class="icon">
+              <img src={{data_set.icon}}>
+            </div>
+            <p class="title">
+              {{data_set.title}}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div>
+    <div class="sub_header">
+      <h2>
+        Research
+      </h2>
+      <a class="resource_link" href="#">
+        View All Research >
+      </a>
+    </div>
+    <div class="row">
+      {% for doc in documentations %}
+        <div class="col-lg-3 col-sm">
+          <div class="resource">
+            <div class="icon">
+              <img src={{doc.icon}}>
+            </div>
+            <p class="title">
+              {{doc.title}}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
