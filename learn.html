@@ -4,9 +4,19 @@ layout: default
 <div class="content">
   {% include hero.html %}
   {% include guide.html %}
-  {% include walkthrough.html %}
   {% include how_it_works.html %}
-  {% include demo.html %}
+
+  <div class="container text-center technical_details_section">
+    <h2>
+      Technicals under the hood
+    </h2>
+    <p class="description">
+      Learn how VW works, based on the specific issue that you need to solve for
+      your product.
+    </p>
+  </div>
+
+  {% include technical_details.html %}
   {% include case_studies.html %}
   {% include resources.html %}
 </div>

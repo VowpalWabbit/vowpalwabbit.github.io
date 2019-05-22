@@ -1,4 +1,4 @@
-<div class="container demo_container">
+<div class="container technical_details_container">
   <div class="nav">
     <a href="#">
       Contextual Bandits
@@ -11,25 +11,25 @@
     </a>
   </div>
 
-  {% assign demos = site.demos | sort: 'order' %}
-  {% for demo in demos %}
-    <div class="row demo_intro">
+  {% assign technical_details = site.technical_details | sort: 'order' %}
+  {% for item in technical_details %}
+    <div class="row technical_details_intro">
       <div class="col-sm">
         <h2>
-          {{ demo.title }}
+          {{ item.title }}
         </h2>
         <p class="description">
-          {{ demo.description }}
+          {{ item.description }}
         </p>
         <div class="learn_more_link">
-          <a href={{demo.learn_more_links}}>
+          <a href={{item.learn_more_links}}>
             Learn More
           </a>
         </div>
       </div>
       <div class="col-sm">
         <div class="image">
-          <img src={{demo.image}}>
+          <img src={{item.image}}>
         </div>
       </div>
     </div>

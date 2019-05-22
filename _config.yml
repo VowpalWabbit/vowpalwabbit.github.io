@@ -36,11 +36,13 @@ sass:
 collections:
   communities:
     output: true
-  demos:
+  technical_details:
     output: true
   resources:
     output: true
   breakdowns:
+    output: true
+  guides:
     output: true
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
