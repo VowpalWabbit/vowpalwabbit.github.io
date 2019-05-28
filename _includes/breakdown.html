@@ -1,11 +1,3 @@
-{% assign online_learning = site.breakdowns
-    | where_exp:"breakdown", "breakdown.breakdown_id == 'online_learning'"
-    | first
-%}
-{% assign input_format = site.breakdowns
-    | where_exp:"breakdown", "breakdown.breakdown_id == 'input_format'"
-    | first
-%}
 <div class="container breakdown_container">
   <div class="row justify-content-center text-center">
     <div class="col col-lg-6">
