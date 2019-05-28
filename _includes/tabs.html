@@ -1,8 +1,6 @@
-{% assign technical_details = site.technical_details | sort: 'order' %}
-
-<div class="container technical_details_container">
-  <div class="nav">
-    {% for item in technical_details %}
+<div class="tabs_container">
+  <div class="row nav">
+    {% for item in include.items %}
       <button
         class="{% if item.order == 1 %}active{% endif %}"
         data-module_id={{item.module_id}}
@@ -12,8 +10,8 @@
     {% endfor %}
   </div>
 
-  <div class="technical_details">
-    {% for item in technical_details %}
+  <div class="row tab_content">
+    {% for item in include.items %}
       <div class="row {% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
         <div class="col-sm">
           <h2>
