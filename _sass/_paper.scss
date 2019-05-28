@@ -1,7 +1,9 @@
 .paper_card {
   background: white;
   border-radius: 20px;
-  padding: 3rem;
+  padding: 2rem;
+  margin: 2rem 0.5rem;
+  color: black;
 
   .title {
     padding: 1rem 0;
@@ -18,10 +20,6 @@
   .tags {
     font-size: 0.9rem;
     padding:2rem 0;
-
-    .label {
-      font-weight: 500;
-    }
 
     .tag {
       background: lightgray;
