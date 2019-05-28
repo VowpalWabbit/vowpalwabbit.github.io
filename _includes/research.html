@@ -13,33 +13,8 @@
         All papers >
       </a>
     </div>
-    <div class="col-lg-6 reserach_spotlight">
-      <h4 class="text-center">
-        Research Spotlight
-      </h4>
-      <h3 class="paper_title">
-        {{papers.first.title}}
-      </h3>
-      <p class="authors">
-        {{papers.first.authors}}
-      </p>
-      <div class="tags">
-        <span class="label">
-          TAGS:
-        </span>
-        <span>
-          {% for tag in papers.first.tags %}
-            <span class="tag">
-              {{tag}}
-            </span>
-          {% endfor %}
-        </span>
-      </div>
-      <div class="read_paper_link">
-        <a href={{papers.first.link}}>
-          Read the paper
-        </a>
-      </div>
+    <div class="col-lg-6">
+      {% include paper.html paper=papers.first %}
     </div>
   </div>
 </div>

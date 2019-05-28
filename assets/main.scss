@@ -42,8 +42,8 @@ h4 {
 @import "how_it_works";
 @import "learn";
 @import "demo";
-@import "research";
 @import "tabs";
+@import "paper";
 
 .solve_problems_container, .technical_details_container{
   background: $bg-black;
@@ -57,5 +57,20 @@ h4 {
   .learn_more_link {
     @include primary-link;
     padding: 1rem 0;
+  }
+}
+
+.research_container {
+  background: gray;
+  padding: 3rem;
+
+  .research_highlight_description {
+    padding: 1rem;
+    color: white;
+
+    a {
+      color: white;
+      font-weight: 500;
+    }
   }
 }
