@@ -1,13 +1,18 @@
 .community_container {
-  color: white;
   background: $bg-gray-30;
-  padding: 4rem 2rem;
+  padding: 6rem 4rem;
+
+  .community_content {
+    background: white;
+    padding: 4rem 2rem;
+  }
 
   .community {
     border: 1px solid lightgray;
-    background: white;
     color: gray;
-    padding: 3rem 2rem;
+    padding: 2rem;
+    margin: 0.5rem;
+    width: 100%;
   }
 
   .community_title {
@@ -16,24 +21,27 @@
     color: black;
     font-weight: 400;
   }
-  .icon img{
-    width: 9rem;
-    height: 9rem;
-    margin: 0 auto;
+
+  .icon {
+    img {
+      width: 9rem;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    &.small img{
+      width: 4rem;
+    }
   }
 
   .join_community_link {
+    @include primary-link;
+    padding: 0;
+
     a {
       color: black;
+      font-weight: 500;
+      border: 2px solid black;
     }
-    font-weight: 500;
-  }
-}
-
-.view_community_link {
-  padding: 2rem 0;
-  font-weight: 500;
-  a {
-    color: white;
   }
 }
