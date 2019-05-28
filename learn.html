@@ -15,7 +15,26 @@ layout: default
     </div>
   </div>
 
-  {% include guide.html %}
+  <div class="container guides_container">
+    <div class="row">
+      <div class="col col-lg-6">
+        <h1>
+          Getting started lorem ipsum dolor consect
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <div class="start_tutorial_link">
+          <a href="#">
+            Get started tutorial
+          </a>
+        </div>
+      </div>
+      <div class="col col-lg-6">
+      </div>
+    </div>
+  </div>
+
   {% include demo.html %}
   {% include how_it_works.html %}
 
@@ -29,7 +48,7 @@ layout: default
     </p>
   </div>
 
-  {% include technical_details.html %}
+  {% include tabs.html items=site.technical_details %}
   {% include case_studies.html %}
   {% include resources.html %}
 </div>

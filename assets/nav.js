@@ -8,12 +8,7 @@ function myFunction() {
 }
 
 $(document).ready(function() {
-  $(".technical_details_container").on("click", ".nav button", function() {
-    const $this = $(this);
-    showModule($this);
-  });
-
-  $(".demo_container").on("click", ".nav button", function() {
+  $(".tabs_container").on("click", ".nav button", function() {
     const $this = $(this);
     showModule($this);
   });

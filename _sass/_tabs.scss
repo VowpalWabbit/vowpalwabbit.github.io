@@ -1,5 +1,4 @@
-.technical_details_container {
-  background-color: lightgray;
+.tabs_container {
   padding: 0;
 
   .nav {
@@ -42,12 +41,13 @@
     }
   }
 
-  .technical_details {
-    padding: 4rem;
+  .content {
+    background: lightgray;
+    padding: 2rem;
+  }
 
-    .hidden {
-      display: none;
-    }
+  .hidden {
+    display: none;
   }
 
   .learn_more_link {
