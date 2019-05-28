@@ -3,8 +3,9 @@
   padding: 3rem 2rem;
   color: white;
 
-  .row {
-    padding-bottom: 5rem;
+  .learn_more_link {
+    @include primary-link;
+    padding: 1rem 0;
   }
 }
 
@@ -26,9 +27,4 @@
 
 .feature_name {
   padding: 2rem;
-}
-
-.breakdown_buttons {
-  @include primary-link;
-  padding: 0;
 }

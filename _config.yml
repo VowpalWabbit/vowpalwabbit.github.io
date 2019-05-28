@@ -40,8 +40,6 @@ collections:
     output: true
   resources:
     output: true
-  breakdowns:
-    output: true
   guides:
     output: true
   demos:
@@ -49,6 +47,8 @@ collections:
   documentations:
     output: true
   data_sets:
+    output: true
+  papers:
     output: true
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

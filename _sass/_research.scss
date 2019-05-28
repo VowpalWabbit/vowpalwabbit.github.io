@@ -1,0 +1,56 @@
+.research_container {
+  background: darkgray;
+  padding: 3rem;
+
+  .research_highlight_description {
+    padding: 1rem;
+    color: white;
+  }
+
+  .reserach_spotlight {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+  }
+
+  .paper_title {
+    padding: 1rem 0;
+  }
+
+  .authors {
+    color: #333333;
+    font-size: 0.9rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 0;
+  }
+
+  .tags {
+    font-size: 0.9rem;
+    padding:2rem 0;
+
+    .label {
+      font-weight: 500;
+    }
+
+    .tag {
+      background: lightgray;
+      padding: 0.2rem 0.5rem;
+      margin: 0.25rem;
+      display: inline-block;
+    }
+  }
+
+  .read_paper_link {
+    @include primary-link;
+    padding: 0;
+    width: 10rem;
+    margin: 0 auto;
+
+    a {
+      color: black;
+      border: 2px solid black;
+      padding: 0.5rem 1rem;
+    }
+  }
+}

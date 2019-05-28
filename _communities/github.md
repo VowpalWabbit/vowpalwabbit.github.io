@@ -1,4 +1,5 @@
 ---
+community_id: github
 title: Github
 description: Here is the description for github
 logo: assets/images/community/github.png

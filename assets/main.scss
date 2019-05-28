@@ -11,6 +11,14 @@ h2 {
   padding: 0.5rem 0;
 }
 
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
 .content {
   padding: 0;
 }
@@ -36,3 +44,4 @@ h2 {
 @import "how_it_works";
 @import "learn";
 @import "demo";
+@import "research";

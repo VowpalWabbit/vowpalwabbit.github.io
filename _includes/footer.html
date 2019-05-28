@@ -1,32 +1,52 @@
 <div class="container footer_container">
   <div class="row">
-    <div class="col-sm">
-      <p class="title">
-        Logo
-      </p>
-      <p class="title">Sponsors</p>
+    <div class="col-sm col-lg-6 d-flex flex-column justify-content-between">
+      <img class="logo" src="assets/images/logo.png" />
       <div>
-        image for Sponsors
+        <p class="title">Sponsors</p>
+        Microsoft Research
       </div>
     </div>
-    <div class="col-sm">
+    <div class="col-sm col-lg-2">
       <p class="title">Vowpal Wabbit</p>
       <div class="d-flex flex-column">
         <a href="{{ site.baseurl }}/">Home</a>
         <a href="{{ site.baseurl }}/about">About</a>
         <a href="{{ site.baseurl }}/learn">Learn</a>
         <a href="{{ site.baseurl }}/resources">Resources</a>
-        <a href="#">Community</a>
+        <a href="#">Documentation</a>
       </div>
     </div>
-    <div class="col-sm">
+    {% assign github = site.communities
+        | where_exp:"community", "community.community_id == 'github'"
+        | first
+    %}
+    {% assign gitter = site.communities
+        | where_exp:"community", "community.community_id == 'gitter'"
+        | first
+    %}
+    {% assign stackoverflow = site.communities
+        | where_exp:"community", "community.community_id == 'stackoverflow'"
+        | first
+    %}
+    <div class="col-sm col-lg-2">
       <p class="title">Resources</p>
       <div class="d-flex flex-column">
+        <a href="#">Documentation</a>
+        <a href={{github.link}} target="_blank">GitHub Library</a>
+        <a href="#">Research</a>
         <a href="#">Title</a>
         <a href="#">Title</a>
-        <a href="#">Title</a>
-        <a href="#">Title</a>
-        <a href="#">Title</a>
+      </div>
+    </div>
+    <div class="col-sm col-lg-2">
+      <p class="title">Stay Connected</p>
+      <div class="d-flex flex-column">
+        <a href="#">Blog</a>
+        <a href={{github.link}} target="_blank">GitHub</a>
+        <a href={{stackoverflow.link}} target="_blank">Stack Overflow</a>
+        <a href={{gitter.link}} target="_blank">Gitter</a>
+        <a href="#">Contact Us</a>
       </div>
     </div>
   </div>
