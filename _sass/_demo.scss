@@ -1,14 +1,26 @@
 .demo_container {
-  border-radius: 34px;
-  background-color: white;
-  box-shadow: 0 0 15px 0 rgba(167,167,167,0.5);
   padding: 3rem;
+  background: linear-gradient(180deg, #4A4A4A 50%, lightgray 50%);
+
+  .use_cases_container {
+    padding: 3rem 5rem;
+    background: white;
+    box-shadow: 0 0 15px 0 rgba(167,167,167,0.5);
+    border-radius: 34px;
+
+    .description {
+      width: 40rem;
+      margin: 0 auto;
+      padding-bottom: 2rem;
+    }
+  }
+
 
   .nav {
     width: 100%;
     justify-content: space-between;
     text-align: center;
-    padding: 1rem 15rem;
+    padding: 1rem 8rem;
     text-decoration: none;
     margin: 0 auto;
     border-bottom: 1px solid lightgray;

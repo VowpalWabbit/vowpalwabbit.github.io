@@ -1,51 +1,53 @@
 <div class="container demo_container">
-  <div class="row">
-    <div class="col-sm">
-      <div class="text-center">
-        <h2>
-          Common Use Cases
-        </h2>
-        <p>
-          Learn about the most common uses cases that VW is applied to today, and how to apply this to your own product, experiment, or research.
-        </p>
-      </div>
+  <div class="use_cases_container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="text-center">
+          <h2>
+            Common Use Cases
+          </h2>
+          <p class="description">
+            Learn about the most common uses cases that VW is applied to today, and how to apply this to your own product, experiment, or research.
+          </p>
+        </div>
 
-      <div class="nav">
-        <button class="active" data-module_id="content_relevancy">
-          Content Relevancy
-        </button>
-        <button data-module_id="rw_classification">
-          RW Classification
-        </button>
-        <button data-module_id="search_in_new_ways">
-          Search in new ways
-        </button>
-      </div>
+        <div class="nav">
+          <button class="active" data-module_id="content_relevancy">
+            Content Relevancy
+          </button>
+          <button data-module_id="rw_classification">
+            RW Classification
+          </button>
+          <button data-module_id="search_in_new_ways">
+            Search in new ways
+          </button>
+        </div>
 
-      <div class="demos">
-        {% assign demos = site.demos | sort: 'order' %}
-        {% for demo in demos %}
-          <div class="row {% if demo.order != 1 %}hidden{% endif %}" data-module_id={{demo.module_id}}>
-            <div class="col-sm col-lg-6">
-              <h2>
-                {{ demo.title }}
-              </h2>
-              <p class="description">
-                {{ demo.description }}
-              </p>
-              <div class="demo_link">
-                <a href={{demo.demo_link}}>
-                  {{demo.demo_link_text}} >
-                </a>
+        <div class="demos">
+          {% assign demos = site.demos | sort: 'order' %}
+          {% for demo in demos %}
+            <div class="row {% if demo.order != 1 %}hidden{% endif %}" data-module_id={{demo.module_id}}>
+              <div class="col-sm col-lg-6">
+                <h2>
+                  {{ demo.title }}
+                </h2>
+                <p class="description">
+                  {{ demo.description }}
+                </p>
+                <div class="demo_link">
+                  <a href={{demo.demo_link}}>
+                    {{demo.demo_link_text}} >
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm col-lg-6">
+                <div class="image">
+                  <img src={{demo.image}}>
+                </div>
               </div>
             </div>
-            <div class="col-sm col-lg-6">
-              <div class="image">
-                <img src={{demo.image}}>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>

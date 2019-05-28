@@ -40,8 +40,6 @@ collections:
     output: true
   resources:
     output: true
-  guides:
-    output: true
   demos:
     output: true
   documentations:
