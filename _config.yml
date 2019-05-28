@@ -36,7 +36,7 @@ sass:
 collections:
   communities:
     output: true
-  technical_details:
+  solve_problems:
     output: true
   resources:
     output: true

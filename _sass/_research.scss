@@ -1,10 +1,15 @@
 .research_container {
-  background: darkgray;
+  background: gray;
   padding: 3rem;
 
   .research_highlight_description {
     padding: 1rem;
     color: white;
+
+    a {
+      color: white;
+      font-weight: 500;
+    }
   }
 
   .reserach_spotlight {

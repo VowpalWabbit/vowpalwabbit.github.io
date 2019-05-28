@@ -1,5 +1,5 @@
-<div class="container tabs_container">
-  <div class="nav">
+<div class="tabs_container">
+  <div class="row nav">
     {% for item in include.items %}
       <button
         class="{% if item.order == 1 %}active{% endif %}"
@@ -10,7 +10,7 @@
     {% endfor %}
   </div>
 
-  <div class="content">
+  <div class="row tab_content">
     {% for item in include.items %}
       <div class="row {% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
         <div class="col-sm">

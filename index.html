@@ -3,8 +3,30 @@ layout: default
 ---
 <div class="content">
   {% include hero.html %}
-  {% include breakdown.html %}
-  {% include tabs.html items=site.technical_details %}
+
+  <div class="container solve_problems_container">
+    <div class="solve_problems_description">
+      <div class="row justify-content-center text-center">
+        <div class="col col-lg-6">
+          <h2>
+            Solving Problem Framing Lorem
+          </h2>
+          <div class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="learn_more_link">
+          <a href="#">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+    {% include tabs.html items=site.solve_problems %}
+  </div>
+
   {% include start.html %}
   {% include case_studies.html %}
   {% include community.html %}

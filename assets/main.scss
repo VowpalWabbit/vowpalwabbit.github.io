@@ -33,7 +33,6 @@ h4 {
 @import "header";
 @import "footer";
 @import "hero";
-@import "breakdown";
 @import "start";
 @import "case_studies";
 @import "community";
@@ -45,3 +44,17 @@ h4 {
 @import "demo";
 @import "research";
 @import "tabs";
+
+.solve_problems_container {
+  background: $bg-black;
+  padding: 3rem 0 0;
+
+  .solve_problems_description {
+    color: white;
+  }
+
+  .learn_more_link {
+    @include primary-link;
+    padding: 1rem 0;
+  }
+}

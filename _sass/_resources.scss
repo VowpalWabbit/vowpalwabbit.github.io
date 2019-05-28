@@ -1,5 +1,5 @@
 .resources_container {
-  background: lightgray;
+  background: $bg-gray-10;
   padding: 4rem 2rem;
 
   @include resource-section;
