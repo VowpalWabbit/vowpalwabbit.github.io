@@ -1,4 +1,5 @@
 ---
+community_id: stackoverflow
 title: Stackoverflow
 description: Here is the description for github
 logo: assets/images/community/stackoverflow.png

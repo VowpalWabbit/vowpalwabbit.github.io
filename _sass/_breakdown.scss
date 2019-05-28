@@ -3,8 +3,9 @@
   padding: 3rem 2rem;
   color: white;
 
-  .row {
-    padding-bottom: 5rem;
+  .learn_more_link {
+    @include primary-link;
+    padding: 1rem 0;
   }
 }
 
