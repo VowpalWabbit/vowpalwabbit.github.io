@@ -12,6 +12,11 @@ $(document).ready(function() {
     const $this = $(this);
     showModule($this);
   });
+
+  $(".use_cases_container").on("click", ".nav button", function() {
+    const $this = $(this);
+    showModule($this);
+  });
 });
 
 function showModule($nav_button) {

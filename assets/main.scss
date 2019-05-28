@@ -45,12 +45,13 @@ h4 {
 @import "research";
 @import "tabs";
 
-.solve_problems_container {
+.solve_problems_container, .technical_details_container{
   background: $bg-black;
   padding: 3rem 0 0;
 
-  .solve_problems_description {
+  .header {
     color: white;
+    padding-bottom: 2rem;
   }
 
   .learn_more_link {

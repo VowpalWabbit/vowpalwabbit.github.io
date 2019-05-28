@@ -38,17 +38,22 @@ layout: default
   {% include demo.html %}
   {% include how_it_works.html %}
 
-  <div class="container text-center solve_problems_section">
-    <h2>
-      Technicals under the hood
-    </h2>
-    <p class="description">
-      Learn how VW works, based on the specific issue that you need to solve for
-      your product.
-    </p>
+  <div class="container technical_details_container">
+    <div class="header">
+      <div class="row justify-content-center text-center">
+        <div class="col col-lg-6">
+          <h2>
+            Technicals under the hood
+          </h2>
+          <div>
+            Learn how VW works, based on the specific issue that you need to solve for your product.
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include tabs.html items=site.technical_details %}
   </div>
 
-  {% include tabs.html items=site.solve_problems %}
   {% include case_studies.html %}
   {% include resources.html %}
 </div>
