@@ -13,6 +13,7 @@ layout: default
   </div>
 
   {% assign documentations = site.documentations | sort: 'order' %}
+  {% assign demos = site.demos | sort: 'order' %}
   {% assign data_sets = site.data_sets | sort: 'order' %}
 
   <div>
@@ -33,6 +34,32 @@ layout: default
             </div>
             <p class="title">
               {{doc.title}}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div>
+    <div class="sub_header">
+      <h2>
+        Demos and tutorials
+      </h2>
+      <a class="resource_link" href="#">
+        View All Demos and Tutorials >
+      </a>
+    </div>
+
+    <div class="row">
+      {% for demo in demos %}
+        <div class="col-lg-3 col-sm">
+          <div class="resource">
+            <div class="icon">
+              <img src={{demo.image}}>
+            </div>
+            <p class="title">
+              {{demo.title | truncate: 20}}
             </p>
           </div>
         </div>
@@ -89,4 +116,6 @@ layout: default
       {% endfor %}
     </div>
   </div>
+
+  {% include start.html %}
 </div>
