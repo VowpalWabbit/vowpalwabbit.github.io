@@ -10,4 +10,21 @@
     background: $bg-gray-30;
     color: white;
   }
+
+  .mission {
+    background: $bg-gray-10;
+    color: white;
+
+    .mission_item {
+      padding: 2rem;
+    }
+  }
+
+  .values_container {
+    padding: 4rem 2rem;
+  }
+
+  .values {
+    padding: 2rem;
+  }
 }
