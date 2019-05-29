@@ -1,10 +1,144 @@
 ---
 layout: default
 ---
-<div class="content">
-  {% include hero.html %}
-  {% include origin_story.html %}
-  {% include mission.html %}
-  {% include values.html %}
-  {% include publications.html %}
+<div class="content about_container">
+  <div class="hero">
+    <div class="row justify-content-center text-center">
+      <div class="col col-lg-10">
+        <h1>
+          Real problems and uniquely framed solutions in a real world environment.
+        </h1>
+        <p>
+          Vowpal Wabbit is an open, fast, and efficient online learning system that empowers you to explore, test, and research solutions for a real world impact. Through online learning and community collaboration, you can apply real data sets for meaningful results.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="row justify-content-center text-center">
+      <div class="col col-lg-10">
+        <h1>
+          Vowpal Wabbit is an open, fast, and efficient online learning system that empowers our community to explore, test, and research solutions for a real world impact.
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="mission">
+    <div class="row">
+      <div class="col col-lg-4">
+        <div class="mission_item">
+          <h1>
+            We value every contribution the same way
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet imperdiet felis. Vestibulum lorem justo, placerat ut placerat ut, pharetra eget lorem. Sed eu nisl vitae lacus molestie eleifend at accumsan ligula.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col col-lg-4 align-self-center">
+        <div class="mission_item">
+          <h1>
+            Redefine existing problems with novel solutions
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet imperdiet felis. Vestibulum lorem justo, placerat ut placerat ut, pharetra eget lorem. Sed eu nisl vitae lacus molestie eleifend at accumsan ligula.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col col-lg-4">
+          <div class="mission_item">
+            <h1>
+              A system that just works in a real world context
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet imperdiet felis. Vestibulum lorem justo, placerat ut placerat ut, pharetra eget lorem. Sed eu nisl vitae lacus molestie eleifend at accumsan ligula.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% assign values=site.core_values | sort: 'order' %}
+  <div class="values_container">
+    <div class="row justify-content-center text-center">
+      <div class="col-sm col-lg-6">
+        <h1>
+          Our core values
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis.
+        </p>
+      </div>
+    </div>
+    <div class="row values">
+      {% for value in values %}
+        <div class="col-sm col-lg-6">
+          <h2>
+            {{value.title}}
+          </h2>
+          <p>
+            {{value.description}}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="team">
+    <div class="row justify-content-center text-center">
+      <div class="col-sm col-lg-6">
+        <h1>
+          People behind the scenes
+        </h1>
+        <p>
+          Vowpal Wabbit’s core team is a mutlidisicpinary effort located in New York City.  Get to know us, ask us questions, or drop us a line just to say hi—we’d love to hear from you!
+        </p>
+        <div class="contact_us_link">
+          <a href="#">
+            Contact us
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      {% for i in (1..8) %}
+        <div class="col col-lg-3">
+          <div class="member">
+            <div class="image">
+            </div>
+            <p class="name">
+              Name
+            </p>
+            <p class="description">
+              Description goes here
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="contributors">
+    <div class="row justify-content-center text-center">
+      <div class="col-sm col-lg-6">
+        <h1>
+          Contributors on GitHub
+        </h1>
+        <p>
+          As an open technology hosted on GitHub, contributors to Vowpal Wabbit code and research sit all over the world.
+        </p>
+
+        <div class="contributor_link">
+          <a href="https://github.com/VowpalWabbit/vowpal_wabbit/graphs/contributors" target="_blank">
+            See who's contributing
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
