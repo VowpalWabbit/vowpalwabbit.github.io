@@ -7,16 +7,19 @@
 
 .resources_details_container {
   @include resource-section;
-
-  background: lightgray;
+  background: $bg-gray-10;
   padding: 4rem 2rem;
 
   .sub_header {
     color: white;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 0;
   }
 
   .resource_link {
     color: white;
+  }
+
+  .start_container {
+    background: $bg-gray-10;
   }
 }
