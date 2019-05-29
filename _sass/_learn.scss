@@ -4,10 +4,21 @@
     background: #A5A5A5;
     padding: 5rem 0;
   }
-}
 
-.solve_problems_section {
-  background: gray;
-  color: white;
-  padding: 2rem 0;
+  .papers_container {
+    background: $bg-gray-30;
+    padding: 4rem 0;
+    color: white;
+
+    .description {
+      font-size: 0.9rem;
+      padding: 0.8rem 0;
+    }
+
+    a {
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
 }

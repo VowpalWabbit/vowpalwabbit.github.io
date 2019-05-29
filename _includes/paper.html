@@ -1,0 +1,24 @@
+{% assign paper = include.paper %}
+
+<div class="paper_card">
+  <h3 class="title">
+    {{paper.title}}
+  </h3>
+  <p class="authors">
+    {{paper.authors}}
+  </p>
+  <div class="tags">
+    <span>
+      {% for tag in paper.tags %}
+        <span class="tag">
+          {{tag}}
+        </span>
+      {% endfor %}
+    </span>
+  </div>
+  <div class="read_paper_link">
+    <a href={{paper.link}}>
+      Read the paper
+    </a>
+  </div>
+</div>

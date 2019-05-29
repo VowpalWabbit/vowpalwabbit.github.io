@@ -1,24 +1,11 @@
-.research_container {
-  background: gray;
-  padding: 3rem;
+.paper_card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0.5rem;
+  color: black;
 
-  .research_highlight_description {
-    padding: 1rem;
-    color: white;
-
-    a {
-      color: white;
-      font-weight: 500;
-    }
-  }
-
-  .reserach_spotlight {
-    background: white;
-    border-radius: 20px;
-    padding: 3rem;
-  }
-
-  .paper_title {
+  .title {
     padding: 1rem 0;
   }
 
@@ -33,10 +20,6 @@
   .tags {
     font-size: 0.9rem;
     padding:2rem 0;
-
-    .label {
-      font-weight: 500;
-    }
 
     .tag {
       background: lightgray;

@@ -1,17 +1,19 @@
+{% assign items = include.items | sort: 'order' %}
+
 <div class="tabs_container">
-  <div class="row nav">
-    {% for item in include.items %}
+  <div class="row justify-content-center nav">
+    {% for item in items %}
       <button
-        class="{% if item.order == 1 %}active{% endif %}"
+        class="col col-lg-2 {% if item.order == 1 %}active{% endif %}"
         data-module_id={{item.module_id}}
       >
-        {{item.title}}
+        {{item.tab}}
       </button>
     {% endfor %}
   </div>
 
   <div class="row tab_content">
-    {% for item in include.items %}
+    {% for item in items %}
       <div class="row {% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
         <div class="col-sm">
           <h2>
@@ -20,9 +22,9 @@
           <p class="description">
             {{ item.description }}
           </p>
-          <div class="learn_more_link">
-            <a href={{item.learn_more_links}}>
-              Learn More
+          <div class="link">
+            <a href={{item.link}}>
+              {{item.link_text}}
             </a>
           </div>
         </div>
