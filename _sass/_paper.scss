@@ -28,17 +28,4 @@
       display: inline-block;
     }
   }
-
-  .read_paper_link {
-    @include primary-link;
-    padding: 0;
-    width: 10rem;
-    margin: 0 auto;
-
-    a {
-      color: black;
-      border: 2px solid black;
-      padding: 0.5rem 1rem;
-    }
-  }
 }
