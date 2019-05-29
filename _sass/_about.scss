@@ -27,4 +27,39 @@
   .values {
     padding: 2rem;
   }
+
+  .team {
+    background: $bg-gray-10;
+    padding: 4rem 2rem;
+    color: white;
+
+    .contact_us_link {
+      @include primary-link;
+      padding: 0;
+    }
+
+    .image {
+      background: lightgray;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+    }
+
+    .member {
+      margin: 0 auto;
+      width: 10rem;
+      padding: 1rem 0;
+    }
+  }
+
+  .contributors {
+    background: #828282;
+    color: white;
+    padding: 4rem 2rem;
+
+    .contributor_link {
+      @include primary-link;
+      padding: 0;
+    }
+  }
 }
