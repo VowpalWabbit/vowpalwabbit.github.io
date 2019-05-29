@@ -50,6 +50,8 @@ collections:
     output: true
   technical_details:
     output: true
+  case_studies:
+    output: true
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

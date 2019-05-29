@@ -1,25 +1,20 @@
 .case_studies_container {
   padding: 4rem 2rem;
+  background: #ECECEC;
 
   .description {
     color: gray;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
   }
 
-  .view_all_link {
-    @include primary-link;
-    padding: 1rem 0;
-    a {
-      color: black;
-      border: 2px solid black;
-    }
-  }
-
-  .case {
-    width: 20rem;
-    height: 17rem;
-    background: lightgray;
+  .case_card {
+    background: #A2A2A2;
+    padding: 2rem;
     color: white;
-    font-weight: 500;
-    padding: 1rem;
+
+    .header {
+      padding-bottom: 2rem;
+    }
   }
 }

@@ -1,34 +1,30 @@
+{% assign cases = site.case_studies | sort: 'order' %}
 <div class="container case_studies_container">
   <div class="row justify-content-center text-center">
     <div class="col col-lg-6">
       <h2>
-        Case Studies
+        Real World Case Studies
       </h2>
       <div class="description">
         VowpalWabbit started its life as a research project, but since then it has evolved into a powerful product ready framework. Many companies have successfully integrated VW into their technology stack including Yahoo, eHarmony, Microsoft and Nanigans.
       </div>
-      <div class="view_all_link">
-        <a href="#">
-          View All
-        </a>
-      </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm">
-      <div class="case">
-        Title Goes Here
+    {% for case in cases %}
+    <div class="col col-lg-4">
+      <div class="case_card">
+        <div>
+          PLACEHOLDER FOR COMPANY ICON
+        </div>
+        <h3 class="header">
+          {{case.title}}
+        </h3>
+        <p>
+          {{case.description}}
+        </p>
       </div>
     </div>
-    <div class="col-sm">
-      <div class="case">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Cursus eget nunc scelerisque viverra mauris in. Habitant morbi tristique senectus et netus et malesuada fames.
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="case">
-        Title goes here
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
