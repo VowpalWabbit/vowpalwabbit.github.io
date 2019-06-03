@@ -1,7 +1,7 @@
 ---
 community_id: stackoverflow
 title: Stackoverflow
-description: Here is the description for github
+description: Get answers to your questions.
 logo: assets/images/community/stackoverflow.png
 link: https://stackoverflow.com/questions/tagged/vowpalwabbit
 ---
