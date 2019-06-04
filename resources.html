@@ -14,6 +14,7 @@ layout: default
 
   {% assign documentations = site.documentations | sort: 'order' %}
   {% assign guides = site.guides | sort: 'order' %}
+  {% assign papers = site.papers | sort: 'order' %}
 
   <div>
     <div class="sub_header">
@@ -76,7 +77,7 @@ layout: default
       </a>
     </div>
     <div class="row">
-      {% for doc in documentations %}
+      {% for doc in papers %}
         <div class="col-lg-3 col-sm">
           <div class="resource">
             <div class="icon">
