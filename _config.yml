@@ -44,8 +44,6 @@ collections:
     output: true
   documentations:
     output: true
-  data_sets:
-    output: true
   papers:
     output: true
   technical_details:
