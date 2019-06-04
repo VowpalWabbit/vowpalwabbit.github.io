@@ -8,12 +8,12 @@ layout: default
       Resources
     </h1>
     <p class="description">
-      Here is the description for Resources page.
+      All things VW, research, documentation and in-depth guides.
     </p>
   </div>
 
   {% assign documentations = site.documentations | sort: 'order' %}
-  {% assign demos = site.demos | sort: 'order' %}
+  {% assign guide = site.guides | sort: 'order' %}
   {% assign data_sets = site.data_sets | sort: 'order' %}
 
   <div>
@@ -44,47 +44,22 @@ layout: default
   <div>
     <div class="sub_header">
       <h2>
-        Demos and tutorials
+        Guides and Tutorials
       </h2>
       <a class="resource_link" href="#">
-        View All Demos and Tutorials >
+        View All Guides and Tutorials >
       </a>
     </div>
 
     <div class="row">
-      {% for demo in demos %}
+      {% for guide in guides %}
         <div class="col-lg-3 col-sm">
           <div class="resource">
             <div class="icon">
-              <img src={{demo.image}}>
+              <img src={{guide.image}}>
             </div>
             <p class="title">
-              {{demo.title | truncate: 20}}
-            </p>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-
-  <div>
-    <div class="sub_header">
-      <h2>
-        Data sets
-      </h2>
-      <a class="resource_link" href="#">
-        View All Data sets >
-      </a>
-    </div>
-    <div class="row">
-      {% for data_set in data_sets %}
-        <div class="col-lg-3 col-sm">
-          <div class="resource">
-            <div class="icon">
-              <img src={{data_set.icon}}>
-            </div>
-            <p class="title">
-              {{data_set.title}}
+              {{guide.title | truncate: 20}}
             </p>
           </div>
         </div>
@@ -116,6 +91,4 @@ layout: default
       {% endfor %}
     </div>
   </div>
-
-  {% include start.html %}
 </div>
