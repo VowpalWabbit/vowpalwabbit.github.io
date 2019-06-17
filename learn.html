@@ -6,10 +6,10 @@ layout: default
     <div class="row justify-content-center text-center">
       <div class="col col-lg-6">
         <h1>
-          It’s not as hard as you think.
+          Get started in less than 10 minutes.
         </h1>
         <p>
-          Briefly explain why here ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Install Vowpall Wabbit and go throught the first tutorial to understand the basics of using it.
         </p>
       </div>
     </div>
@@ -19,14 +19,14 @@ layout: default
     <div class="row">
       <div class="col-sm col-lg-6">
         <h1>
-          Getting started lorem ipsum dolor consect
+          Getting started with VW.
         </h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          This tutorial will run you through a simple regression problem that we all are familiar with. It will teach you about how to interact with VW, structure input and understand its output.
         </p>
         <div class="start_tutorial_link">
           <a href="#">
-            Get started tutorial
+            Get started
           </a>
         </div>
       </div>
@@ -35,55 +35,6 @@ layout: default
     </div>
   </div>
 
-  {% include demo.html %}
-  {% include how_it_works.html %}
+  {% include guide.html %}
 
-  <div class="container technical_details_container">
-    <div class="header">
-      <div class="row justify-content-center text-center">
-        <div class="col-sm col-lg-6">
-          <h2>
-            Technicals under the hood
-          </h2>
-          <div>
-            Learn how VW works, based on the specific issue that you need to solve for your product.
-          </div>
-        </div>
-      </div>
-    </div>
-    {% include tabs.html items=site.technical_details %}
-  </div>
-
-  {% assign papers = site.papers | sort: 'order' %}
-  <div class="papers_container">
-    <div class="row justify-content-center text-center">
-      <div class="col col-lg-8">
-        <h2>
-          Research for new and existing applications of VW
-        </h2>
-        <div class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisiut aliquip ex ea commodo consequat.
-        </div>
-        <div class="links">
-          <a href="#">
-            Explore Research >
-          </a>
-          <a href="#">
-            Reproduce a paper's result >
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="row text-center">
-      {% for paper in papers %}
-        <div class="col col-lg-4">
-          {% include paper.html paper=paper %}
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-
-  {% include case_studies.html %}
-  {% include resources.html %}
 </div>

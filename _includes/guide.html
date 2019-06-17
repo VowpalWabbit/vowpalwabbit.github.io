@@ -1,0 +1,55 @@
+<div class="container guide_container">
+  <div class="use_cases_container">
+    <div class="row justify-content-center text-center">
+      <div class="col-sm col-lg-8">
+        <h2>
+          Common use cases
+        </h2>
+        <p>
+          Learn about the most common uses cases that VW is applied to today, and how to apply this to your own product, experiment, or research.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="nav">
+          <button class="active" data-module_id="content_relevancy">
+            Content Relevancy
+          </button>
+          <button data-module_id="rw_classification">
+            RW Classification
+          </button>
+          <button data-module_id="search_in_new_ways">
+            Search in new ways
+          </button>
+        </div>
+
+        <div class="guides">
+          {% assign guides = site.guides | sort: 'order' %}
+          {% for guide in guides %}
+            <div class="row {% if guide.order != 1 %}hidden{% endif %}" data-module_id={{guide.module_id}}>
+              <div class="col-sm col-lg-6">
+                <h2>
+                  {{ guide.title }}
+                </h2>
+                <p class="description">
+                  {{ guide.description }}
+                </p>
+                <div class="guide_link">
+                  <a href={{guide.guide_link}}>
+                    {{guide.guide_link_text}} >
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm col-lg-6">
+                <div class="image">
+                  <img src={{guide.image}}>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -40,11 +40,9 @@ collections:
     output: true
   resources:
     output: true
-  demos:
+  guides:
     output: true
   documentations:
-    output: true
-  data_sets:
     output: true
   papers:
     output: true

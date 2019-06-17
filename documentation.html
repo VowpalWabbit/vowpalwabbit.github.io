@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div class="resources_details_container content">
+  <div class="header">
+    <h1>
+      Documentation
+    </h1>
+    <p class="description">
+      API docs and in-depth articles about VW.
+    </p>
+  </div>
+
+  {% assign documentations = site.documentations | sort: 'order' %}
+
+  <div>
+    <div class="sub_header">
+      <h2>
+        Documentation
+      </h2>
+      <a class="resource_link" href="#">
+        Python API Docs >
+      </a>
+      <a class="resource_link" href="#">
+        Java API Docs >
+      </a>
+      <a class="resource_link" href="#">
+        C# API Docs >
+      </a>
+    </div>
+    {% for doc in documentations %}
+    <div class="col-lg-3 col-sm">
+        <div class="resource">
+        <div class="icon">
+            <img src={{doc.icon}}>
+        </div>
+        <p class="title">
+            {{doc.title}}
+        </p>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
