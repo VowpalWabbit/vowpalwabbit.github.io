@@ -1,7 +1,8 @@
 ---
 order: 3
-title: Paper title goes here
-authors: Firstname M. Lastname, Firstname M. Lastname, Firstname Lastname, Firstname Lastname, Firstname Lastname
-tags: contextual&nbsp;bandits Python&nbsp;basic
-link: ''
+title: A Reliable Effective Terascale Linear Learning System
+authors: Alekh Agarwal, Olivier Chapelle, Miroslav Dudik, John Langford
+publication: 2011
+tags: 
+link: 'https://arxiv.org/abs/1110.4198'
 ---
