@@ -1,11 +1,6 @@
 .community_container {
-  background: $bg-gray-30;
+  background: $bg-gray-10;
   padding: 6rem 4rem;
-
-  .community_content {
-    background: white;
-    padding: 4rem 2rem;
-  }
 
   .community {
     border: 1px solid lightgray;
@@ -24,8 +19,8 @@
 
   .icon {
     img {
-      width: 9rem;
-      height: auto;
+      width: 60px;
+      height: 60px;
       margin: 0 auto;
     }
 
