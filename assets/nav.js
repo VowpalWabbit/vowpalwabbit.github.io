@@ -17,6 +17,11 @@ $(document).ready(function() {
     const $this = $(this);
     showModule($this);
   });
+
+  $(".tabs_container").on("click", ".sub_nav button", function() {
+    const $this = $(this);
+    showModule($this);
+  });
 });
 
 function showModule($nav_button) {

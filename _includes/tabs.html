@@ -12,27 +12,17 @@
     {% endfor %}
   </div>
 
-  <div class="row tab_content">
+  <div class="tab_content">
     {% for item in items %}
       <div class="row {% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
-        <div class="col-sm">
-          <h2>
-            {{ item.title }}
-          </h2>
-          <p class="description">
-            {{ item.description }}
-          </p>
-          <div class="link">
-            <a href={{item.link}}>
-              {{item.link_text}}
-            </a>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="image">
-            <img src={{item.image}}>
-          </div>
-        </div>
+        {% if item.sub_module_tabs %}
+          {% include
+            tab_content_with_sub_module.html
+            items=site.reinforcement
+          %}
+        {% else %}
+          {% include tab_content.html item=item %}
+        {% endif %}
       </div>
     {% endfor %}
   </div>

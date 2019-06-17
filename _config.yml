@@ -38,6 +38,8 @@ collections:
     output: true
   solve_problems:
     output: true
+  reinforcement:
+    output: true
   resources:
     output: true
   guides:

@@ -41,6 +41,22 @@
     }
   }
 
+  .sub_nav {
+    button {
+      width: 30rem;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      text-align: left;
+      margin: 0.5rem 0;
+    }
+
+    .active {
+      font-weight: 500;
+      border-bottom: 2px solid black;
+    }
+  }
+
   .tab_content {
     background: white;
     padding: 2rem;
