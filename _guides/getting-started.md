@@ -1,21 +1,26 @@
 ---
-title: Getting Started with Vowpal Wabbit
+title: Get started with Vowpal Wabbit
+order: -1
+module_id: getting-started
+description: This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output.
+image:
+guide_link_text: 'Get started'
+guide_link: ''
+show_on_learn: false
+layout: default
 ---
 
-_For more tutorials [Go here](/tutorials)_
-
 ## A Step by Step Introduction
-
-The first step is downloading a version of VW, see [[Getting Started]]. This tutorial runs through using VW in command line mode.
 
 ### A first data-set
 
 Now, let's create a data-set.  Suppose we want to predict whether a house will require a new roof in the next 10 years. We can create a training-set file, `house_dataset` with the following contents:
-```
-    0 | price:.23 sqft:.25 age:.05 2006
-    1 2 'second_house | price:.18 sqft:.15 age:.35 1976
-    0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
-```
+
+{% highlight bash %}
+0 | price:.23 sqft:.25 age:.05 2006
+1 2 'second_house | price:.18 sqft:.15 age:.35 1976
+0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
+{% endhighlight %}
 
 There is quite a bit going on here.  The first number in each line is a label. A `0` label corresponds to no roof-replacement, while a `1` label corresponds to a roof-replacement.  The bar `|` separates label related data (what we want to predict) from features (what we always know).   The features in the 1st line are `price`, `sqft`, `age`, and `2006`.  Each feature may have an optional `:<numeric_value>` following it or, if the value is missing, an implied value of `1`.  By default, vowpal-wabbit hashes feature names into in-memory indexes unless the feature names themselves are positive integers.  In this case, the first 3 features use an index derived from a hash function while the last feature uses index 2006 directly.  Also the 1st 3 features have explicit values (`.23`, `.25`, and `.05` respectively) while the last, `2006` has a implicit default value of 1.
 
@@ -25,9 +30,9 @@ The 3rd example is straightforward, except there is an additional number: `0.5` 
 
 Next, we learn:
 
-```
+{% highlight bash %}
 # vw house_dataset
-```
+{% endhighlight %}
 
 ### VW's diagnostic information
 
@@ -76,7 +81,7 @@ power_t = 0.5
 
 This specifies the power on the learning rate decay.  You can adjust this `--power_t p` where _p_ is in the range [0,1].  0 means the learning rate does not decay, which can be helpful when state tracking, while 1 is very aggressive, but plausibly optimal for IID data-sets.  0.5 is a minimax optimal choice. A different way of stating this is: stationary data-sets where the fundamental relation between the input features and target label are not changing over time, should benefit from a high (close to 1.0) `--power_t` while learning against changing conditions, like learning against an adversary who continuously changes the rules-of-the-game, would benefit from low (close to 0) `--power_t` so the learner can react quickly to these changing conditions. For many problems, 0.5, which is the default, seems to work best.
 
-Next, there is a bunch of header information.  VW is going to print out some live diagnostic information. 
+Next, there is a bunch of header information.  VW is going to print out some live diagnostic information.
 
 ```
     average  since         example        example  current  current  current
@@ -91,7 +96,7 @@ The first column, `average loss` computes the <a href="http://hunch.net/~jl/proj
 
 `example counter` tells you which example is printed out.  In this case, it's example 2.
 
-`example weight` tells you the sum of the importance weights of examples seen so far.  In this case it's 3, because the second example has an importance weight of 2.  
+`example weight` tells you the sum of the importance weights of examples seen so far.  In this case it's 3, because the second example has an importance weight of 2.
 
 `current label` tells you the label of the second example.
 

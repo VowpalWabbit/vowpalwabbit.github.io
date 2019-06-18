@@ -6,26 +6,25 @@
           Common use cases
         </h2>
         <p>
-          Learn about the most common uses cases that VW is applied to today, and how to apply this to your own product, experiment, or research.
+          Learn about some of the common uses cases that VW is applied to today, and how to apply this to your own product, experiment, or research.
         </p>
       </div>
     </div>
     <div class="row">
+      {% assign guides = site.guides | where: "show_on_learn",true | sort: 'order' %}
       <div class="col-sm">
         <div class="nav">
-          <button class="active" data-module_id="content_relevancy">
-            Content Relevancy
-          </button>
-          <button data-module_id="rw_classification">
-            RW Classification
-          </button>
-          <button data-module_id="search_in_new_ways">
-            Search in new ways
-          </button>
+          {% for guide in guides %}
+            <button
+              {% if forloop.index == 1 %}class="active"{% endif %}
+              data-module_id="{{guide.module_id}}">
+            {{guide.short_title}}
+            </button>
+          {% endfor %}
         </div>
 
         <div class="guides">
-          {% assign guides = site.guides | sort: 'order' %}
+
           {% for guide in guides %}
             <div class="row {% if guide.order != 1 %}hidden{% endif %}" data-module_id={{guide.module_id}}>
               <div class="col-sm col-lg-6">
@@ -36,14 +35,14 @@
                   {{ guide.description }}
                 </p>
                 <div class="guide_link">
-                  <a href={{guide.guide_link}}>
+                  <a href={{ guide.url | relative_url }}>
                     {{guide.guide_link_text}} >
                   </a>
                 </div>
               </div>
               <div class="col-sm col-lg-6">
                 <div class="image">
-                  <img src={{guide.image}}>
+                  <img src={{guide.image | relative_url}}>
                 </div>
               </div>
             </div>

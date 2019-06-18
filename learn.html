@@ -6,10 +6,10 @@ layout: default
     <div class="row justify-content-center text-center">
       <div class="col col-lg-6">
         <h1>
-          Get started in less than 10 minutes.
+          Get started in less than 10 minutes
         </h1>
         <p>
-          Install Vowpall Wabbit and go throught the first tutorial to understand the basics of using it.
+          Install Vowpall Wabbit and go through the getting started guide to understand the basics.
         </p>
       </div>
     </div>
@@ -18,15 +18,16 @@ layout: default
   <div class="container guides_container">
     <div class="row">
       <div class="col-sm col-lg-6">
+        {% assign getting_started = site.guides | where: "module_id","getting-started" | first %}
         <h1>
-          Getting started with VW.
+          {{ getting_started.title }}
         </h1>
         <p>
-          This tutorial will run you through a simple regression problem that we all are familiar with. It will teach you about how to interact with VW, structure input and understand its output.
+          {{getting_started.description}}
         </p>
         <div class="start_tutorial_link">
-          <a href="tutorials/getting-started">
-            Get started
+          <a href="{{ getting_started.url | relative_url }}">
+            {{getting_started.guide_link_text}}
           </a>
         </div>
       </div>

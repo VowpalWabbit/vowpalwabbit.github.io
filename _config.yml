@@ -42,7 +42,7 @@ collections:
     output: true
   guides:
     output: true
-  documentations:
+  documentation:
     output: true
   papers:
     output: true
