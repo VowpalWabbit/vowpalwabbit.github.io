@@ -8,12 +8,22 @@ function myFunction() {
 }
 
 $(document).ready(function() {
+  $(document).scroll(function () {
+    var $nav = $(".nav_bar_container");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+
   $(".tabs_container").on("click", ".nav button", function() {
     const $this = $(this);
     showModule($this);
   });
 
   $(".use_cases_container").on("click", ".nav button", function() {
+    const $this = $(this);
+    showModule($this);
+  });
+
+  $(".tabs_container").on("click", ".sub_nav button", function() {
     const $this = $(this);
     showModule($this);
   });

@@ -2,30 +2,22 @@
 ---
 
 h1 {
-  font-size: 2rem;
-  padding: 0.5rem 0;
+  font-size: 4.5rem;
+  padding-bottom: 2.5rem;
 }
 
 h2 {
-  font-size: 1.5rem;
-  padding: 0.5rem 0;
+  font-size: 3.2rem;
+  padding-bottom: 2.5rem;
 }
 
 h3 {
-  font-size: 1.2rem;
-}
-
-h4 {
-  font-size: 1rem;
+  font-size: 2.5rem;
 }
 
 .content {
-  padding: 0;
-}
-
-.description {
+  font-family: 'Work Sans', sans-serif;
   font-size: 1.1rem;
-  padding: 0.5rem 0;
 }
 
 @import "variables";
@@ -45,32 +37,97 @@ h4 {
 @import "paper";
 @import "about";
 
-.solve_problems_container, .technical_details_container{
-  background: $bg-black;
+.problem_framing_intro_container, .technical_details_container{
+  background: $blue-30;
   padding: 3rem 0 0;
-
-  .header {
-    color: white;
-    padding-bottom: 2rem;
-  }
+  color: white;
 
   .learn_more_link {
-    @include primary-link;
-    padding: 1rem 0;
+    padding: 2rem 0;
+    a {
+      color: white;
+    }
+  }
+}
+
+.problem_framing_container {
+  background: linear-gradient(180deg, $blue-30 11%, white 11%);
+  height: 38rem;
+
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1.3rem 0;
+    text-decoration: none;
+    margin: 0 auto;
+
+    button {
+      background: transparent;
+      color: white;
+      border: 0;
+      position: relative;
+      margin-bottom: 0.8rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        font-weight: 600;
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 40%;
+          top: 45px;
+          width: 0;
+          height: 0;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-top: 15px solid $blue-30;
+        }
+      }
+    }
+  }
+
+  .sub_nav {
+    button {
+      width: 30rem;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      text-align: left;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .active {
+      font-weight: 500;
+      border-bottom: 2px solid black;
+    }
   }
 }
 
 .research_container {
-  background: gray;
-  padding: 3rem;
+  background: $blue-30;
+  padding: 5rem 0 9rem;
+  color: white;
 
-  .research_highlight_description {
-    padding: 1rem;
+  a {
+    color: $teal-10;
+    font-weight: 600;
+  }
+
+  .title {
     color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.5rem 0 1rem;
+  }
 
-    a {
-      color: white;
-      font-weight: 500;
-    }
+  .research_link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
   }
 }

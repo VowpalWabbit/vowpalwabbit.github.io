@@ -36,7 +36,9 @@ sass:
 collections:
   communities:
     output: true
-  solve_problems:
+  problem_framing:
+    output: true
+  reinforcement:
     output: true
   resources:
     output: true

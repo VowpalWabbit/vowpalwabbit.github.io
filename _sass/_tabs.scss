@@ -1,50 +1,6 @@
 .tabs_container {
-  padding: 0;
-
-  .nav {
-    background: linear-gradient(180deg, $bg-black 80%, white 20%);
-    width: 100%;
-    justify-content: space-between;
-    text-align: center;
-    padding: 1.3rem 0;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin: 0 auto;
-
-    button {
-      background: transparent;
-      color: white;
-      border: 0;
-      position: relative;
-      margin-bottom: 0.8rem;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &.active {
-        border-bottom: 3px solid white;
-
-        &:after {
-          content: '';
-          position: absolute;
-          left: 40%;
-          top: 45px;
-          width: 0;
-          height: 0;
-          border-left: 15px solid transparent;
-          border-right: 15px solid transparent;
-          border-top: 15px solid $bg-black;
-        }
-      }
-    }
-  }
-
   .tab_content {
-    background: white;
-    padding: 2rem;
-    margin: 0;
+    padding: 3rem 0;
   }
 
   .hidden {

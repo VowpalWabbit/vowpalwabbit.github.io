@@ -3,7 +3,19 @@
 }
 
 .hero_container {
-  background: $bg-gray-10;
-  padding: 3rem 2rem 5rem;
+  padding: 15rem 0;
   color: white;
+  background: url("../assets/images/hero/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 1080px;
+
+  .content {
+    padding: 0 1.5rem;
+  }
+
+  .rabbit {
+    margin: 7rem 0 0 3rem;
+  }
 }

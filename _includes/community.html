@@ -1,87 +1,40 @@
-{% assign github = site.communities
-    | where_exp:"community", "community.community_id == 'github'"
-    | first
-%}
-{% assign gitter = site.communities
-    | where_exp:"community", "community.community_id == 'gitter'"
-    | first
-%}
-{% assign stackoverflow = site.communities
-    | where_exp:"community", "community.community_id == 'stackoverflow'"
-    | first
-%}
-<div class="container community_container">
-  <div class="community_content">
+{% assign communities = site.communities | sort: 'order' %}
+<div class="container-fluid community_container">
+  <div class="container">
     <div class="row justify-content-center text-center">
       <div class="col col-lg-8">
         <h2>
           Join the community
         </h2>
         <div class="description">
-          Vowpal Wabbit thrives on its community. There are lots of ways to get involved. Chat with the development team or other community members on Gitter. Get involved by contributing code, or documentation, on GitHub. Or, ask a question on StackOverflow.
+          Vowpal Wabbit thrives on its community. Get involved by contributing code or documentation on GitHub. Ask a question on StackOverflow or chat with the development team and community on Gitter.
         </div>
       </div>
     </div>
     <div class="row justify-content-center text-center">
-
-      <div class="col-sm col-lg-4 community">
-        <div class="icon">
-          <img src={{github.logo}}>
-        </div>
-        <h3 class="community_title">
-          {{ github.title }}
-        </h3>
-        <p>
-          {{ github.description }}
-        </p>
-
-        <div class="join_community_link">
-          <a href={{github.link}} target="_blank">
-            Contribute to GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="col-sm col-lg-4">
-        <div class="row justify-content-center">
+      {% for community in communities %}
+        <div class="col-sm col-lg-4">
           <div class="community">
-            <div class="icon small">
-              <img src={{stackoverflow.logo}}>
+            <div class="icon">
+              {% include {{community.logo}} %}
             </div>
             <h3 class="community_title">
-              {{ stackoverflow.title }}
+              {{ community.title }}
             </h3>
             <p>
-              {{ stackoverflow.description }}
+              {{ community.description }}
             </p>
 
             <div class="join_community_link">
-              <a href={{stackoverflow.link}} target="_blank">
-                Ask your questions
+              <a href={{community.link}} target="_blank">
+                {{community.link_text}}
               </a>
             </div>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="community">
-            <div class="icon small">
-              <img src={{gitter.logo}}>
-            </div>
-            <h3 class="community_title">
-              {{ gitter.title }}
-            </h3>
-            <p>
-              {{ gitter.description }}
-            </p>
-
-            <div class="join_community_link">
-              <a href={{gitter.link}} target="_blank">
-                Join the conversation
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
+</div>
+<div class="container-fluid community_footer">
 </div>
