@@ -2,9 +2,25 @@
   width: 190px;
 }
 
+.nav_bar_container {
+  border-bottom: 1px solid white;
+  position: fixed;
+  z-index: 1;
+
+  &.scrolled {
+    background: white;
+
+    a {
+      color: black;
+    }
+  }
+}
+
 .navbar {
+  height: 10rem;
   justify-content: space-between;
   padding: 1.5rem;
-  background: $bg-gray-10;
-  border-bottom: 1px solid white;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }

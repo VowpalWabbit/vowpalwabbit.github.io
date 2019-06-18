@@ -1,57 +1,59 @@
 {% assign current = page.url | downcase | remove: ".html" | split: '/' %}
 
-<div class="navbar navbar-expand-lg">
-  <a href="{{ site.url }}{{ site.baseurl }}">
-    <img src="{{'/assets/images/logo.png' | relative_url }}" alt="logo" class="logo">
-  </a>
-
-  <div class="nav">
-    <a
-      href="{{ site.baseurl }}/"
-      class="nav_item {% if page.url == '/' %}active{% endif %}"
-    >
-      Home
+<div class="container-fluid nav_bar_container">
+  <div class="container navbar navbar-expand-lg">
+    <a href="{{ site.url }}{{ site.baseurl }}">
+      <img src="{{'/assets/images/logo.png' | relative_url }}" alt="logo" class="logo">
     </a>
 
-    <a
-      href="{{ 'learn' | relative_url }}"
-      class="nav_item {% if current[1] == 'learn' %}active{% endif %}"
-    >
-      Learn
-    </a>
+    <div class="nav">
+      <a
+        href="{{ site.baseurl }}/"
+        class="nav_item {% if page.url == '/' %}active{% endif %}"
+      >
+        Home
+      </a>
 
-    <a
-      href="{{ site.baseurl }}/resources"
-      class="nav_item {% if current[1] == 'resources' %}active{% endif %}"
-    >
-      Resources
-    </a>
+      <a
+        href="{{ 'learn' | relative_url }}"
+        class="nav_item {% if current[1] == 'learn' %}active{% endif %}"
+      >
+        Learn
+      </a>
 
-    <a
-      href="{{ site.baseurl }}/about"
-      class="nav_item {% if current[1] == 'about' %}active{% endif %}"
-    >
-      About
-    </a>
+      <a
+        href="{{ 'resources' | relative_url }}"
+        class="nav_item {% if current[1] == 'resources' %}active{% endif %}"
+      >
+        Resources
+      </a>
 
-    <a
-      href="{{ site.baseurl }}/documentation"
-      class="nav_item {% if current[1] == 'documentation' %}active{% endif %}"
-    >
-      Documentation
-    </a>
+      <a
+        href="{{ 'about' | relative_url }}"
+        class="nav_item {% if current[1] == 'about' %}active{% endif %}"
+      >
+        About
+      </a>
 
-    <a
-      href="https://github.com/VowpalWabbit/vowpal_wabbit"
-      target="_blank"
-      class="nav_item github_link"
-    >
-      <img src="{{ 'assets/images/community/github.png' | relative_url }}" />
-      GitHub
-    </a>
+      <a
+        href="{{ 'documentation' | relative_url }}"
+        class="nav_item {% if current[1] == 'documentation' %}active{% endif %}"
+      >
+        Documentation
+      </a>
 
-    <a href="javascript:void(0);" class="nav_icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
+      <a
+        href="https://github.com/VowpalWabbit/vowpal_wabbit"
+        target="_blank"
+        class="nav_item github_link"
+      >
+        <img src="assets/images/community/github.png" />
+        GitHub
+      </a>
+
+      <a href="javascript:void(0);" class="nav_icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
   </div>
 </div>
