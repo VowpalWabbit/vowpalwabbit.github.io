@@ -1,5 +1,5 @@
 .start_container {
-  background: $bg-gray-30;
+  background: url("../assets/images/start/bg.png");
   height: 40rem;
 
   .start_section {
@@ -11,12 +11,5 @@
     display: block;
     position: relative;
     border-radius: 20px;
-  }
-
-  .placeholder {
-    position: relative;
-    top: 15rem;
-    font-size: 1.2rem;
-    font-weight: bold;
   }
 }
