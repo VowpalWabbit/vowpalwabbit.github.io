@@ -23,13 +23,14 @@
   }
 
   .icon {
-    img {
+    svg {
+      width: 60px;
       height: 60px;
       margin: 0 auto;
-    }
 
-    &.small img{
-      width: 4rem;
+      path {
+        fill: $blue-20;
+      }
     }
   }
 
