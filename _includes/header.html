@@ -2,7 +2,7 @@
 
 <div class="navbar navbar-expand-lg">
   <a href="{{ site.url }}{{ site.baseurl }}">
-    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/logo.png" alt="logo" class="logo">
+    <img src="{{'/assets/images/logo.png' | relative_url }}" alt="logo" class="logo">
   </a>
 
   <div class="nav">
@@ -14,7 +14,7 @@
     </a>
 
     <a
-      href="{{ site.baseurl }}/learn"
+      href="{{ 'learn' | relative_url }}"
       class="nav_item {% if current[1] == 'learn' %}active{% endif %}"
     >
       Learn
@@ -46,7 +46,7 @@
       target="_blank"
       class="nav_item github_link"
     >
-      <img src="assets/images/community/github.png" />
+      <img src="{{ 'assets/images/community/github.png' | relative_url }}" />
       GitHub
     </a>
 

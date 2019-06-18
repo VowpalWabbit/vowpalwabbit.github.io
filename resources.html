@@ -12,7 +12,7 @@ layout: default
     </p>
   </div>
 
-  {% assign documentations = site.documentations | sort: 'order' %}
+  {% assign documentation = site.documentation | sort: 'order' %}
   {% assign guides = site.guides | sort: 'order' %}
   {% assign papers = site.papers | sort: 'order' %}
 
@@ -26,7 +26,7 @@ layout: default
       </a>
     </div>
     <div class="row">
-      {% for doc in documentations %}
+      {% for doc in documentation %}
         <div class="col-lg-3 col-sm">
           <div class="resource">
             <div class="icon">
@@ -46,7 +46,7 @@ layout: default
       <h2>
         Guides and Tutorials
       </h2>
-      <a class="resource_link" href="tutorials/">
+      <a class="resource_link" href="{{ 'guides' | relative_url}}">
         View All Guides and Tutorials >
       </a>
     </div>
@@ -56,11 +56,11 @@ layout: default
         <div class="col-lg-3 col-sm">
           <div class="resource">
             <div class="icon">
-              <img src={{guide.image}}>
+              <img src={{ guide.image | relative_url }}>
             </div>
-            <p class="title">
+            <a href="{{ guide.url | relative_url }}"><p class="title">
               {{guide.title | truncate: 20}}
-            </p>
+            </p></a>
           </div>
         </div>
       {% endfor %}

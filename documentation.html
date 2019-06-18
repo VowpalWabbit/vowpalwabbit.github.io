@@ -12,7 +12,7 @@ layout: default
     </p>
   </div>
 
-  {% assign documentations = site.documentations | sort: 'order' %}
+  {% assign documentation = site.documentation | sort: 'order' %}
 
   <div>
     <div class="sub_header">
@@ -29,7 +29,7 @@ layout: default
         C# API Docs >
       </a>
     </div>
-    {% for doc in documentations %}
+    {% for doc in documentation %}
     <div class="col-lg-3 col-sm">
         <div class="resource">
         <div class="icon">
