@@ -3,7 +3,7 @@ community_id: github
 title: GitHub
 order: 1
 description: Browse the code and file issues.
-logo: assets/images/community/github.png
+logo: assets/images/community/github.svg
 link: https://github.com/VowpalWabbit/vowpal_wabbit
 link_text: Contribute to GitHub
 ---

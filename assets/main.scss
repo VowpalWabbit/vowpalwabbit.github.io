@@ -3,12 +3,12 @@
 
 h1 {
   font-size: 4.5rem;
-  padding: 2.5rem 0;
+  padding-bottom: 2.5rem;
 }
 
 h2 {
-  font-size: 3.3rem;
-  padding: 2.5rem 0;
+  font-size: 3.2rem;
+  padding-bottom: 2.5rem;
 }
 
 h3 {
@@ -110,15 +110,24 @@ h3 {
 }
 
 .research_container {
-  background: gray;
+  background: $blue-30;
+  padding: 5rem 0 9rem;
+  color: white;
 
-  .research_highlight_description {
-    padding: 1rem;
+  a {
+    color: $teal-10;
+    font-weight: 600;
+  }
+
+  .title {
     color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.5rem 0 1rem;
+  }
 
-    a {
-      color: white;
-      font-weight: 500;
-    }
+  .research_link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
   }
 }

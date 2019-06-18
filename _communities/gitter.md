@@ -3,7 +3,7 @@ community_id: gitter
 title: Gitter
 order: 3
 description: Chat with the team
-logo: assets/images/community/gitter.png
+logo: assets/images/community/gitter.svg
 link: https://gitter.im/VowpalWabbit
 link_text: Join the conversation
 ---

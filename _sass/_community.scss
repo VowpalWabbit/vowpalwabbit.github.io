@@ -1,25 +1,29 @@
 .community_container {
-  background: $bg-gray-10;
-  padding: 6rem 4rem;
+  background: url("../assets/images/community/bg.png");
+  color: white;
+  padding: 6rem 0;
+
+  .description {
+    padding-bottom: 4rem;
+  }
 
   .community {
-    border: 1px solid lightgray;
-    color: gray;
+    height: 22rem;
+    margin: 0.5rem 1rem;
     padding: 2rem;
-    margin: 0.5rem;
-    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 11px 0 rgba(168, 168, 168, 0.5);
+    color: $primary-text;
   }
 
   .community_title {
     font-size: 1.5rem;
     padding-top: 2rem;
-    color: black;
     font-weight: 400;
   }
 
   .icon {
     img {
-      width: 60px;
       height: 60px;
       margin: 0 auto;
     }
@@ -32,11 +36,19 @@
   .join_community_link {
     @include primary-link;
     padding: 0;
+    position: absolute;
+    bottom: 2rem;
+    left: 21%;
 
     a {
-      color: black;
-      font-weight: 500;
+      font-weight: 600;
+      color: $blue-20;
+      text-align: center;
       border: 2px solid black;
     }
   }
+}
+
+.community_footer {
+  background: url("../assets/images/community/footer.png");
 }
