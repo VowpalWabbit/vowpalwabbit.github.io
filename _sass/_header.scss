@@ -1,7 +1,3 @@
-.logo {
-  width: 190px;
-}
-
 .nav_bar_container {
   border-bottom: 1px solid white;
   position: fixed;
@@ -9,9 +5,27 @@
 
   &.scrolled {
     background: white;
+    border-bottom: 1px solid $gray-10;
 
     a {
-      color: black;
+      color: $gray-10;
+
+      &.active {
+        color: $blue-20;
+        border-bottom: 2px solid $blue-20;
+      }
+    }
+
+    svg path {
+      fill: $gray-10;
+    }
+
+    .logo svg path {
+      fill: $gray-20;
+    }
+
+    .github_link {
+      border-left: 1px solid $gray-10;
     }
   }
 }
