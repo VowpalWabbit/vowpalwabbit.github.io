@@ -1,5 +1,8 @@
 ---
 ---
+html, body {
+  overflow-x: hidden;
+}
 
 h1 {
   font-size: 4.5rem;
@@ -126,8 +129,13 @@ h3 {
     padding: 0.5rem 0 1rem;
   }
 
-  .research_link {
-    font-size: 0.9rem;
-    padding: 0.5rem 0;
+  .research_links {
+    padding: 0 5rem;
+
+    a {
+      font-size: 0.9rem;
+      padding: 0.5rem 0;
+      display: block;
+    }
   }
 }
