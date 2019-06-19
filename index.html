@@ -1,10 +1,11 @@
 ---
 layout: default
+body_class: home
 ---
 <div class="content">
   {% include hero.html %}
 
-  <div class="container-fluid problem_framing_intro_container">
+  <div class="problem_framing_intro_container">
     <div class="container">
       <div class="row justify-content-center text-center">
         <div class="col col-lg-10">
@@ -33,7 +34,7 @@ layout: default
   </div>
 
 
-  <div class="container-fluid problem_framing_container">
+  <div class="problem_framing_container">
     <div class="container">
       {% include tabs.html items=site.problem_framing %}
     </div>
@@ -41,12 +42,12 @@ layout: default
 
   {% include start.html %}
 
-  <div class="container-fluid research_container">
+  <div class="research_container">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <h2>
-            Ongoing research that explores and informs the potential of Vowpal Wabbit
+            Ongoing research explores and informs the potential of Vowpal Wabbit
           </h2>
           <p>
             VW is also a vehicle for advanced research. The
@@ -56,32 +57,13 @@ layout: default
             containing hashing, caching, and true online learning was released in 2007. Since then, many different algorithms and results have influenced its design.
           </p>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 research_links">
           <div class="title">
             more about research
           </div>
-          <div class="research_link">
-            <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki#research">
-              More about research >
-            </a>
-          </div>
-          <!--
-          <div class="research_link">
-            <a href="#">
-              Contributing research >
-            </a>
-          </div>
-          <div class="research_link">
-            <a href="#">
-              Replicating  paper results >
-            </a>
-          </div>
-          <div class="research_link">
-            <a href="#">
-              All papers on GitHub >
-            </a>
-          </div>
-          -->
+          <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki#research">
+            More about research >
+          </a>
         </div>
       </div>
     </div>

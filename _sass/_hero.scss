@@ -1,21 +1,17 @@
-.hero_buttons {
-  @include primary-link;
-}
-
 .hero_container {
+  background: url("../assets/images/hero/bg.png");
   padding: 15rem 0;
   color: white;
-  background: url("../assets/images/hero/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 1080px;
 
-  .content {
-    padding: 0 1.5rem;
+  .hero_buttons {
+    @include primary-link;
   }
 
   .rabbit {
-    margin: 7rem 0 0 3rem;
+    top: 9rem;
+    left: 8rem;
   }
 }
