@@ -3,7 +3,9 @@
 <div class="container-fluid nav_bar_container">
   <div class="container navbar navbar-expand-lg">
     <a href="{{ site.url }}{{ site.baseurl }}">
-      <img src="{{'/assets/images/logo.png' | relative_url }}" alt="logo" class="logo">
+      <div class="logo">
+        {% include svg/logo.svg %}
+      </div>
     </a>
 
     <div class="nav">
