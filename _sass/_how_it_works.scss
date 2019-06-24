@@ -1,12 +1,44 @@
 .how_it_works_container {
   padding: 4rem;
-  background: lightgray;
+  background: $blue-20;
+  color: white;
 
   .how_it_works_img {
-    padding: 1rem;
+    padding: 1.5rem;
 
     img {
       width: 100%;
+    }
+  }
+
+  .technical_details_card {
+    padding: 2rem 0;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 1rem 0;
+    }
+
+    img {
+      width: 55%;
+      padding: 1rem 0;
+    }
+  }
+
+  .summary_container {
+    padding: 2rem 0;
+
+    .summary_img {
+      padding: 1rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .summary {
+      padding: 1rem 2rem;
     }
   }
 }
