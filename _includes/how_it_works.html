@@ -13,5 +13,38 @@
         <img src="assets/images/how_it_works/how_it_works.svg">
       </div>
     </div>
+
+    {% assign technical_details = site.technical_details | sort: 'order' %}
+    <div class="row justify-content-center text-center">
+      {% for item in technical_details %}
+        <div class="col-sm col-lg-3">
+          <div class="technical_details_card">
+            <img src={{item.image}} />
+
+            <h3 class="title">
+              {{ item.title }}
+            </h3>
+            <p>
+              {{ item.description }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="row summary_container">
+      <div class="col-lg-6 summary_img">
+        <img src="assets/images/how_it_works/summary.svg">
+      </div>
+
+      <div class="col-lg-6 summary">
+        <h2>
+          Lorem Ipsum
+        </h2>
+        <p>
+          Description to explain online learning vs. offline learning  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
