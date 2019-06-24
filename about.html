@@ -1,26 +1,50 @@
 ---
 layout: default
+body_class: about
 ---
 <div class="content about_container">
-  <div class="hero">
-    <div class="row justify-content-center text-center">
-      <div class="col col-lg-10">
-        <h1>
-          Real problems and uniquely framed solutions in a real world environment.
-        </h1>
-        <p>
-          Vowpal Wabbit is an open, fast, and efficient online learning system that empowers you to explore, test, and research solutions for a real world impact. Through online learning and community collaboration, you can apply real data sets for meaningful results.
-        </p>
+  <div class="hero_container">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col col-lg-10">
+          <h2>
+            Real problems and uniquely framed solutions in a real world environment.
+          </h2>
+          <p>
+            Vowpal Wabbit is an open, fast, and efficient online learning system that empowers you to explore, test, and research solutions for a real world impact. Through online learning and community collaboration, you can apply real data sets for meaningful results.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="features">
-    <div class="row justify-content-center text-center">
-      <div class="col col-lg-10">
-        <h1>
-          Vowpal Wabbit is an open, fast, and efficient online learning system that empowers our community to explore, test, and research solutions for a real world impact.
-        </h1>
+  {% assign values=site.core_values | sort: 'order' %}
+  <div class="values_container">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-sm col-lg-8">
+          <h2>
+            Our core values
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis.
+          </p>
+        </div>
+      </div>
+      <div class="row values">
+        {% for value in values %}
+          <div class="col-sm col-lg-3">
+            <div class="value text-center">
+              <img src={{value.icon}} />
+              <h3 class="title">
+                {{value.title}}
+              </h3>
+              <p>
+                {{value.description}}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -63,46 +87,23 @@ layout: default
       </div>
     </div>
   </div>
-  {% assign values=site.core_values | sort: 'order' %}
-  <div class="values_container">
-    <div class="row justify-content-center text-center">
-      <div class="col-sm col-lg-6">
-        <h1>
-          Our core values
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis.
-        </p>
-      </div>
-    </div>
-    <div class="row values">
-      {% for value in values %}
-        <div class="col-sm col-lg-6">
-          <h2>
-            {{value.title}}
-          </h2>
-          <p>
-            {{value.description}}
-          </p>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
 
   <div class="contributors">
-    <div class="row justify-content-center text-center">
-      <div class="col-sm col-lg-6">
-        <h1>
-          Contributors on GitHub
-        </h1>
-        <p>
-          As an open technology hosted on GitHub, contributors to Vowpal Wabbit code and research sit all over the world.
-        </p>
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-sm col-lg-8">
+          <h2>
+            Contributors on GitHub
+          </h2>
+          <p>
+            As an open technology hosted on GitHub, contributors to Vowpal Wabbit code and research sit all over the world.
+          </p>
 
-        <div class="contributor_link">
-          <a href="https://github.com/VowpalWabbit/vowpal_wabbit/graphs/contributors" target="_blank">
-            See who's contributing
-          </a>
+          <div class="contributor_link">
+            <a href="https://github.com/VowpalWabbit/vowpal_wabbit/graphs/contributors" target="_blank">
+              See who's contributing
+            </a>
+          </div>
         </div>
       </div>
     </div>

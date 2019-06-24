@@ -1,14 +1,20 @@
 .about_container {
-  .hero {
-    padding: 15rem 2rem;
-    background: $bg-gray-10;
+  .hero_container {
+    background: $blue-10;
+    padding: 15rem 0;
     color: white;
-  }
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 
-  .features {
-    padding: 4rem 2rem;
-    background: $bg-gray-30;
-    color: white;
+    .hero_buttons {
+      @include primary-link;
+    }
+
+    .rabbit {
+      top: 9rem;
+      left: 8rem;
+    }
   }
 
   .mission {
@@ -22,44 +28,32 @@
 
   .values_container {
     padding: 4rem 2rem;
-  }
 
-  .values {
-    padding: 2rem;
-  }
-
-  .team {
-    background: $bg-gray-10;
-    padding: 4rem 2rem;
-    color: white;
-
-    .contact_us_link {
-      @include primary-link;
-      padding: 0;
+    .values {
+      padding: 3rem 0 0;
     }
 
-    .image {
-      background: lightgray;
-      width: 10rem;
-      height: 10rem;
-      border-radius: 50%;
-    }
+    .value {
+      padding: 0.5rem;
 
-    .member {
-      margin: 0 auto;
-      width: 10rem;
-      padding: 1rem 0;
+      .title {
+        font-size: 1.8rem;
+        padding: 1rem 0;
+      }
+
+      img {
+        width: 56px;
+      }
     }
   }
 
   .contributors {
-    background: #828282;
+    background: $blue-30;
     color: white;
     padding: 4rem 2rem;
 
     .contributor_link {
       @include primary-link;
-      padding: 0;
     }
   }
 }
