@@ -28,27 +28,28 @@ body_class: learn
     </div>
   </div>
 
-  <div class="container guides_container">
-    <div class="row">
-      <div class="col-sm col-lg-6">
-        {% assign getting_started = site.guides | where: "module_id","getting-started" | first %}
-        <h1>
-          {{ getting_started.title }}
-        </h1>
-        <p>
-          {{getting_started.description}}
-        </p>
-        <div class="start_tutorial_link">
-          <a href="{{ getting_started.url | relative_url }}">
-            {{getting_started.guide_link_text}}
-          </a>
+  <div class="guides_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm col-lg-6">
+          {% assign getting_started = site.guides | where: "module_id","getting-started" | first %}
+          <h2>
+            {{ getting_started.title }}
+          </h2>
+          <p>
+            {{getting_started.description}}
+          </p>
+          <div class="start_tutorial_link">
+            <a href="{{ getting_started.url | relative_url }}">
+              {{getting_started.guide_link_text}}
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="col col-lg-6">
+        <div class="col col-lg-6">
+        </div>
       </div>
     </div>
   </div>
 
   {% include guide.html %}
-
 </div>
