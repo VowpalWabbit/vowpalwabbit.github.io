@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 1;
 
-  &.scrolled {
+  &.scrolled, .learn & {
     background: white;
     border-bottom: 1px solid $gray-10;
 
