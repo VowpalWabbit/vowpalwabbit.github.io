@@ -17,15 +17,6 @@
     }
   }
 
-  .mission {
-    background: $bg-gray-10;
-    color: white;
-
-    .mission_item {
-      padding: 2rem;
-    }
-  }
-
   .values_container {
     padding: 4rem 2rem;
 
@@ -43,6 +34,24 @@
 
       img {
         width: 56px;
+      }
+    }
+  }
+
+  .contributions_container {
+    background: $blue-30;
+    color: white;
+    padding: 4rem 0;
+
+    .description {
+      padding: 2rem 0;
+    }
+
+    .contributions_img {
+      padding: 2rem 1rem;
+
+      img {
+        width: 90%;
       }
     }
   }
