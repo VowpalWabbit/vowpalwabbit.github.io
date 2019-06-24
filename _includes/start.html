@@ -1,21 +1,120 @@
 <div class="start_container">
-  <div class="container text-center start_section">
-    First step is to get VW by either:
+  <div class="container start_section">
+    <h2 class="text-center">
+      Get started
+    </h2>
+    <div class="row settings_container">
+      <div class="col-lg-4">
+        <div class="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. labore et dolore magna aliqua.
 
-    <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies" >Building from source</a> <br/>
+          <div>
+            <a
+              href="https://github.com/VowpalWabbit/vowpal_wabbit/releases"
+              target="_blank"
+            >
+              Previous versions >
+            </a>
+          </div>
+        </div>
+      </div>
 
-    Or, installing with a package manager.
-    <div>
-        apt-get
-        sudo apt-get install vowpal-wabbit (Current version 8.6.1)
+      <div class="col-lg-8 settings">
+        <div class="row">
+          <div class="col-lg-2">
+            Build
+          </div>
+          <div class="col-lg-10">
+            <div class="row build">
+              <div class="col">
+                <button class="option">
+                  Stable
+                </button>
+              </div>
+              <div class="col">
+                <button class="option">
+                  Nightly
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-2">
+            OS Type
+          </div>
+          <div class="col-lg-10">
+            <div class="row os">
+              <div class="col">
+                <button class="option">
+                  Linux
+                </button>
+              </div>
+              <div class="col">
+                <button class="option">
+                  Mac
+                </button>
+              </div>
+              <div class="col">
+                <button class="option">
+                  Windows
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-2">
+            Language
+          </div>
+          <div class="col-lg-10">
+            <div class="row language">
+              <div class="col">
+                <button class="option">
+                  Python 3
+                </button>
+              </div>
+              <div class="col">
+                <button class="option">
+                  C++
+                </button>
+              </div>
+              <div class="col">
+                <button class="option">
+                  Java
+                </button>
+              </div>
+              <div class="col">
+                <button class="option">
+                  C#
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-        Homebrew
-        brew install vowpal-wabbit (Current version 8.6.1)
-    </div>
-    <div>
-        <a href="https://pypi.org/project/vowpalwabbit/">Pypi</a>
-        pip install vowpalwabbit (Currently version 8.5)
+    <div class="command_container">
+      <div>
+        <span class="next_steps">
+          Next steps:
+        </span>
+        Run this command and begin the tutorial.
+      </div>
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="command"></div>
+        </div>
+        <div class="col-lg-3">
+          <a href="{{ 'guides' | relative_url}}" class="tutorial_link">
+            Begin tutorial
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<script src="{{ site.baseurl }}/assets/start.js"></script>

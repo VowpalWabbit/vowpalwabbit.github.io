@@ -1,15 +1,70 @@
 .start_container {
   background: linear-gradient(180deg, rgba(0,191,214,1) 0%, rgba(12,210,194,1) 100%);
-  height: 40rem;
+  padding: 5rem 0.5rem;
 
   .start_section {
-    height: 30rem;
     width: 70%;
     background-color: white;
     margin: auto;
-    top: 5rem;
-    display: block;
-    position: relative;
     border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .settings_container {
+    padding-bottom: 2rem;
+    margin: 0 1rem;
+    border-bottom: 1px solid $gray-10;
+
+    .option {
+      width: 100%;
+      text-align: center;
+      margin: 0 0 1rem;
+      padding: 0.25rem;
+      border-radius: 6.72px;
+      background-color: white;
+      box-shadow: 0 1px 8px 0 $gray-10;
+      border: 0;
+      color: $gray-20;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .selected .option {
+      background: $teal-20;
+      color: white;
+    }
+
+    .description {
+      padding-right: 2rem;
+    }
+  }
+
+  .command_container {
+    padding: 2rem;
+
+    .next_steps {
+      font-weight: 600;
+    }
+
+    .command {
+      background: $blue-30;
+      color: white;
+      padding: 0.7rem 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .tutorial_link {
+      display: inline-block;
+      width: 100%;
+      font-weight: 600;
+      border: 3px solid black;
+      border-radius: 11px;
+      padding: 0.5rem 0.3rem;
+      text-align: center;
+      margin: 1rem 0;
+      color: black;
+    }
   }
 }
