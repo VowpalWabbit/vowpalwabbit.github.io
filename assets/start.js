@@ -21,12 +21,13 @@ function selectDefaultSettings() {
 }
 
 function selectOption(type, default_value) {
-  $col = $(".settings_container .row").find("." + type).find('.col');
-  $col.each((_, element) => {
+  const $options = $(".settings_container .row").find("." + type).find('.option');
+
+  $options.each((_, element) => {
     $option = $(element);
 
     if ($option.text().trim().toLowerCase().includes(default_value)) {
-      $option.addClass('selected');
+      $option.parent().addClass('selected');
     }
   });
 }
