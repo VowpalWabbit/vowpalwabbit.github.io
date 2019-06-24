@@ -1,8 +1,24 @@
 .learn_container {
   .learn_hero {
-    color: white;
-    background: #A5A5A5;
-    padding: 15rem 0;
+    color: $blue-20;
+    background: white;
+    padding: 15rem 0 8rem;
+  }
+
+  .description {
+    color: $gray-10;
+    font-size: 1.5rem;
+  }
+
+  .hero_buttons {
+    @include primary-link;
+
+    a {
+      font-weight: 600;
+      color: $blue-20;
+      border: 3px solid $blue-20;
+      border-radius: 11px;
+    }
   }
 
   .papers_container {
