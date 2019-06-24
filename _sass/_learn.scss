@@ -45,20 +45,53 @@
     }
   }
 
-  .papers_container {
-    background: $bg-gray-30;
-    padding: 4rem 2rem;
+  .research_container {
+    background: $blue-30;
+    padding: 5rem 0 9rem;
     color: white;
 
-    .description {
-      font-size: 0.9rem;
-      padding: 0.8rem 0;
+    a {
+      color: $teal-10;
+      font-weight: 600;
     }
 
-    a {
+    .title {
       color: white;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.5rem 0 1rem;
+    }
+
+    .robot {
+      padding: 2rem 0 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .paper_list {
+      padding-left: 5rem;
+    }
+
+    .paper {
+      padding: 1rem 0;
+
+      .authors {
+        opacity: 0.8;
+      }
+
+      a {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+
+    .all_papers_link a {
       font-size: 0.9rem;
-      font-weight: 500;
+      padding: 0.5rem 0;
+      display: block;
     }
   }
 }
