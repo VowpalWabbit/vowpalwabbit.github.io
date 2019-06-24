@@ -56,4 +56,47 @@ body_class: learn
 
   {% include guide.html %}
   {% include how_it_works.html %}
+
+  <div class="research_container">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="row">
+            {% include research_intro.html %}
+          </div>
+          <div class="row">
+            <div class="robot">
+              <img src="assets/images/research/robot.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 paper_list">
+          <div class="title">
+            Latest Papers
+          </div>
+
+          {% assign papers = site.papers | sort: "order" %}
+
+          {% for paper in papers %}
+            <div class="paper">
+              <a href={{paper.link}} target="_blank">
+                {{paper.title}}
+              </a>
+              <div class="authors">
+                {{paper.authors}}
+              </div>
+            </div>
+          {% endfor %}
+
+          <a
+            href="https://www.microsoft.com/en-us/research/project/real-world-reinforcement-learning/#!publications"
+            target="_blank"
+            class="all_papers_link"
+          >
+            All papers >
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
