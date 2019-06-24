@@ -1,4 +1,4 @@
-<div class="guide_container">
+<div class="content guide_container">
   <div class="container">
     <div class="use_cases_container">
       <div class="row justify-content-center text-center">
@@ -25,24 +25,23 @@
           </div>
 
           <div class="guides">
-
             {% for guide in guides %}
               <div class="row {% if guide.order != 1 %}hidden{% endif %}" data-module_id={{guide.module_id}}>
                 <div class="col-sm col-lg-6">
-                  <h2>
+                  <h3>
                     {{ guide.title }}
-                  </h2>
-                  <p class="description">
+                  </h3>
+                  <p>
                     {{ guide.description }}
                   </p>
-                  <div class="guide_link">
+                  <div class="start_guide_link">
                     <a href={{ guide.url | relative_url }}>
                       {{guide.guide_link_text}} >
                     </a>
                   </div>
                 </div>
                 <div class="col-sm col-lg-6">
-                  <div class="image">
+                  <div class="guide_image">
                     <img src={{guide.image | relative_url}}>
                   </div>
                 </div>

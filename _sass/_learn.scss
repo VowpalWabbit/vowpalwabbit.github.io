@@ -10,6 +10,14 @@
     font-size: 1.5rem;
   }
 
+  .rocket {
+    padding: 1rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
   .hero_buttons {
     @include primary-link;
 
@@ -23,6 +31,18 @@
 
   .guides_container {
     background: $blue-10;
+    padding: 4rem;
+    color: white;
+
+    .start_tutorial_link {
+      @include primary-link;
+      padding: 1rem 0;
+
+      a {
+        color: white;
+        border: 2px solid white;
+      }
+    }
   }
 
   .papers_container {
