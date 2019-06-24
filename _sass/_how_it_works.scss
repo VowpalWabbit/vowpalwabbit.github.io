@@ -1,9 +1,10 @@
 .how_it_works_container {
   padding: 4rem;
-  background: lightgray;
+  background: $blue-20;
+  color: white;
 
   .how_it_works_img {
-    padding: 1rem;
+    padding: 1.5rem;
 
     img {
       width: 100%;
