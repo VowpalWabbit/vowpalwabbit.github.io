@@ -1,41 +1,58 @@
 ---
 layout: default
+body_class: learn
 ---
 <div class="content learn_container">
   <div class="learn_hero">
-    <div class="row justify-content-center text-center">
-      <div class="col col-lg-6">
-        <h1>
-          Get started in less than 10 minutes
-        </h1>
-        <p>
-          Install Vowpall Wabbit and go through the getting started guide to understand the basics.
-        </p>
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col col-lg-10">
+          <h1>
+            Get started in less than 10 minutes
+          </h1>
+          <p class="description">
+            Install Vowpall Wabbit and go through the getting started guide to understand the basics.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center text-center">
+        <div class="hero_buttons">
+            <a href="{{ 'documentation' | relative_url }}">
+              Documentation
+            </a>
+            <a href="#">
+              Download VW
+            </a>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="container guides_container">
-    <div class="row">
-      <div class="col-sm col-lg-6">
-        {% assign getting_started = site.guides | where: "module_id","getting-started" | first %}
-        <h1>
-          {{ getting_started.title }}
-        </h1>
-        <p>
-          {{getting_started.description}}
-        </p>
-        <div class="start_tutorial_link">
-          <a href="{{ getting_started.url | relative_url }}">
-            {{getting_started.guide_link_text}}
-          </a>
+  <div class="guides_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm col-lg-6">
+          {% assign getting_started = site.guides | where: "module_id","getting-started" | first %}
+          <h2>
+            {{ getting_started.title }}
+          </h2>
+          <p>
+            {{getting_started.description}}
+          </p>
+          <div class="start_tutorial_link">
+            <a href="{{ getting_started.url | relative_url }}">
+              {{getting_started.guide_link_text}}
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="col col-lg-6">
+        <div class="col col-lg-6">
+          <div class="rocket">
+            <img src="assets/images/get_started/rocket.svg">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   {% include guide.html %}
-
 </div>

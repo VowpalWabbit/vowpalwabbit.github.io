@@ -1,8 +1,48 @@
 .learn_container {
   .learn_hero {
+    color: $blue-20;
+    background: white;
+    padding: 15rem 0 8rem;
+  }
+
+  .description {
+    color: $gray-10;
+    font-size: 1.5rem;
+  }
+
+  .rocket {
+    padding: 1rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .hero_buttons {
+    @include primary-link;
+
+    a {
+      font-weight: 600;
+      color: $blue-20;
+      border: 3px solid $blue-20;
+      border-radius: 11px;
+    }
+  }
+
+  .guides_container {
+    background: $blue-10;
+    padding: 4rem;
     color: white;
-    background: #A5A5A5;
-    padding: 15rem 0;
+
+    .start_tutorial_link {
+      @include primary-link;
+      padding: 1rem 0;
+
+      a {
+        color: white;
+        border: 2px solid white;
+      }
+    }
   }
 
   .papers_container {
