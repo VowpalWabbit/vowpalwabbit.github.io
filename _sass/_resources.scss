@@ -1,10 +1,3 @@
-.resources_container {
-  background: $bg-gray-10;
-  padding: 4rem 2rem;
-
-  @include resource-section;
-}
-
 .resources_details_container {
   @include resource-section;
   background: $bg-gray-10;
