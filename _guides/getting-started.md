@@ -8,6 +8,7 @@ guide_link_text: 'Get started'
 guide_link: ''
 show_on_learn: false
 layout: default
+resource_icon: /svg/resources/guide.svg
 ---
 
 ## A Step by Step Introduction

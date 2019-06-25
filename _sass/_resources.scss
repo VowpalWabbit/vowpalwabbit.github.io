@@ -1,25 +1,26 @@
 .resources_container {
-  background: $bg-gray-10;
-  padding: 4rem 2rem;
+  @include resource-card;
 
-  @include resource-section;
-}
-
-.resources_details_container {
-  @include resource-section;
-  background: $bg-gray-10;
-  padding: 15rem 2rem;
-
-  .sub_header {
+  .hero {
+    background: $blue-20;
+    padding: 15rem 0 8rem;
     color: white;
+  }
+
+  .header {
     padding: 1.5rem 0;
   }
 
   .resource_link {
-    color: white;
+    color: black;
+    font-weight: 600;
   }
 
-  .start_container {
-    background: $bg-gray-10;
+  .resource_section {
+    padding: 3rem 0;
+
+    &:last-child {
+      padding-bottom: 8rem;
+    }
   }
 }

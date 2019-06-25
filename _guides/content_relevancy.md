@@ -8,4 +8,5 @@ image: assets/images/guide/content_relevancy.svg
 guide_link_text: 'Start guide'
 show_on_learn: true
 layout: default
+resource_icon: /svg/resources/guide.svg
 ---
