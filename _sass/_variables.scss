@@ -32,13 +32,14 @@ $gray-30: #4A4A4A;
 
 @mixin resource-card {
   .resource {
-    padding: 2rem;
+    padding: 2rem 1rem;
     margin: 0.5rem 0.25rem;
     border-radius: 34px;
     box-shadow: 0 0 15px 0 rgba(167,167,167,0.3);
+    height: 15rem;
   }
 
-  .icon img{
+  .icon img {
     margin: 0 auto;
     display: block;
     width: 5rem;
@@ -46,7 +47,6 @@ $gray-30: #4A4A4A;
   }
 
   .title {
-    font-size: 1.2rem;
     text-align: center;
     margin: 1rem 0 0;
   }
