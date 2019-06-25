@@ -54,29 +54,34 @@ body-class: resources
     </div>
   </div>
 
-  <div>
-    <div class="header">
-      <h2>
-        Guides and Tutorials
-      </h2>
-      <a class="resource_link" href="{{ 'guides' | relative_url}}">
-        View All Guides and Tutorials >
-      </a>
-    </div>
-
-    <div class="row">
-      {% for guide in guides %}
-        <div class="col-lg-3 col-sm">
-          <div class="resource">
-            <div class="icon">
-              <img src={{ guide.image | relative_url }}>
-            </div>
-            <a href="{{ guide.url | relative_url }}"><p class="title">
-              {{guide.title | truncate: 20}}
-            </p></a>
+  <div class="resource_section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="header">
+            <h3>
+              Guides and Tutorials
+            </h3>
+            <a class="resource_link" href="{{ 'guides' | relative_url}}">
+              View All Guides and Tutorials >
+            </a>
           </div>
         </div>
-      {% endfor %}
+      </div>
+      <div class="row">
+        {% for guide in guides %}
+          <div class="col-lg-3 col-sm">
+            <div class="resource">
+              <div class="icon">
+                <img src={{ guide.image | relative_url }}>
+              </div>
+              <a href="{{ guide.url | relative_url }}"><p class="title">
+                {{guide.title | truncate: 20}}
+              </p></a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
