@@ -4,7 +4,6 @@
   z-index: 1;
 
   &.scrolled, .learn & {
-    background: white;
     border-bottom: 1px solid $gray-10;
 
     a {
@@ -28,13 +27,36 @@
       border-left: 1px solid $gray-10;
     }
   }
-}
 
-.navbar {
-  height: 7rem;
-  justify-content: space-between;
-  padding: 1.5rem;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
+  .learn & {
+    background: white;
+  }
+
+  .navbar {
+    height: 5rem;
+    justify-content: space-between;
+  }
+
+  .nav_item {
+    text-align: center;
+    padding: 0.5rem 0;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.active {
+      border-bottom: 2px solid white;
+      font-weight: 600;
+    }
+  }
+
+  .github_link {
+    padding-left: 2rem;
+    border-left: 1px solid white;
+  }
 }
