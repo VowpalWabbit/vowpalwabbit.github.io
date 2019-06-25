@@ -56,6 +56,41 @@
     }
   }
 
+  .redefine_problems_container {
+    background: radial-gradient(circle, #22BCBC 0%, #52BCEB 34.83%, #4E71D8 100%);
+    padding: 4rem 0 0;
+    color: white;
+
+    .redefine_problems_rabbit {
+      padding-top: 5rem;
+      position: relative;
+      top: 1rem;
+    }
+
+    .footer {
+      background: url("../assets/images/about/redefine_problems_footer.svg");
+      height: 8rem;
+    }
+  }
+
+  .real_world_problems_container {
+    background: linear-gradient(180deg, #2A3B93 0%, #546DC5 100%);
+    padding: 6rem 0;
+    color: white;
+
+    .description {
+      padding: 1rem;
+    }
+
+    .real_world_problems_img {
+      padding: 1rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
   .contributors {
     background: $blue-30;
     color: white;
