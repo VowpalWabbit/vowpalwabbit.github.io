@@ -2,9 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm col-lg-6 d-flex flex-column justify-content-between">
-        <div class="logo">
-          {% include svg/logo.svg %}
-        </div>
+        {% include svg/logo.svg %}
         <div>
           <p class="title">Sponsors</p>
           Microsoft Research
@@ -33,7 +31,12 @@
       <div class="col-sm col-lg-2">
         <p class="title">Resources</p>
         <div class="d-flex flex-column">
-          <a href="#">Documentation</a>
+          <a
+            href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki"
+            target="_blank"
+          >
+            Documentation
+          </a>
           <a href="#">API reference</a>
           <a href="#">Tutorials</a>
           <a href="#">Research</a>
@@ -42,7 +45,6 @@
       <div class="col-sm col-lg-2">
         <p class="title">Stay Connected</p>
         <div class="d-flex flex-column">
-          <a href="#">Blog</a>
           <a href={{github.link}} target="_blank">GitHub</a>
           <a href={{stackoverflow.link}} target="_blank">Stack Overflow</a>
           <a href={{gitter.link}} target="_blank">Gitter</a>
