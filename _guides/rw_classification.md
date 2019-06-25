@@ -8,4 +8,5 @@ image: assets/images/guide/rw_classification.png
 guide_link_text: 'RW Classification guide'
 show_on_learn: true
 layout: default
+resource_icon: /svg/resources/guide.svg
 ---

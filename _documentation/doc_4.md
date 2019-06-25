@@ -1,6 +1,6 @@
 ---
 title: Doc 4
 order: 4
-icon: assets/images/resources/documentation.svg
+resource_icon: /svg/resources/documentation.svg
 link: ''
 ---

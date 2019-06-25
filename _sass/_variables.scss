@@ -39,15 +39,22 @@ $gray-30: #4A4A4A;
     height: 15rem;
   }
 
-  .icon img {
+  .icon svg {
     margin: 0 auto;
     display: block;
     width: 5rem;
-    height: 5rem;
+
+    path {
+      fill: $blue-30;
+    }
   }
 
   .title {
     text-align: center;
     margin: 1rem 0 0;
+
+    a {
+      color: black;
+    }
   }
 }

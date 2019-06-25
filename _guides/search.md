@@ -9,4 +9,5 @@ guide_link_text: 'Search in new ways guide'
 guide_link: ''
 show_on_learn: true
 layout: default
+resource_icon: /svg/resources/guide.svg
 ---

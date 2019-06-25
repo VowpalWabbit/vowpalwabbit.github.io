@@ -42,7 +42,7 @@ body-class: resources
           <div class="col-lg-3 col-sm">
             <div class="resource">
               <div class="icon">
-                <img src={{doc.icon}}>
+                {% include {{doc.resource_icon}} %}
               </div>
               <p class="title">
                 {{doc.title}}
@@ -73,13 +73,13 @@ body-class: resources
           <div class="col-lg-3 col-sm">
             <div class="resource">
               <div class="icon">
-                <img src={{ guide.image | relative_url }}>
+                {% include {{guide.resource_icon}} %}
               </div>
-              <a href="{{ guide.url | relative_url }}">
-                <p class="title">
+              <p class="title">
+                <a href="{{ guide.url | relative_url }}">
                   {{guide.title}}
-                </p>
-              </a>
+                </a>
+              </p>
             </div>
           </div>
         {% endfor %}
@@ -110,10 +110,12 @@ body-class: resources
           <div class="col-lg-3 col-sm">
             <div class="resource">
               <div class="icon">
-                <img src={{paper.icon}}>
+                {% include {{paper.resource_icon}} %}
               </div>
               <p class="title">
-                {{paper.title}}
+                <a href="{{paper.link}}" target="_blank">
+                  {{paper.title}}
+                </a>
               </p>
             </div>
           </div>
