@@ -1,5 +1,7 @@
 ---
 ---
+@import "variables";
+
 html, body {
   overflow-x: hidden;
 }
@@ -18,7 +20,12 @@ h3 {
   font-size: 2.25rem;
 }
 
-@import "variables";
+.content {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.1rem;
+  color: $primary-text;
+}
+
 @import "nav";
 @import "header";
 @import "footer";
@@ -33,12 +40,6 @@ h3 {
 @import "tabs";
 @import "paper";
 @import "about";
-
-.content {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.1rem;
-  color: $primary-text;
-}
 
 .problem_framing_intro_container {
   background: $blue-30;

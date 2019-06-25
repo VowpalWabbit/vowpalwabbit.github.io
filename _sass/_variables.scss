@@ -30,17 +30,12 @@ $gray-30: #4A4A4A;
   }
 }
 
-@mixin resource-section {
-  .header {
-    color: white;
-    padding-bottom: 2rem;
-  }
-
+@mixin resource-card {
   .resource {
-    background: white;
     padding: 2rem;
     margin: 0.5rem 0.25rem;
-    border-radius: 20px;
+    border-radius: 34px;
+    box-shadow: 0 0 15px 0 rgba(167,167,167,0.3);
   }
 
   .icon img{

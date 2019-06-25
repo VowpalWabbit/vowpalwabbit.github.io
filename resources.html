@@ -3,47 +3,59 @@ layout: default
 body-class: resources
 ---
 
-<div class="resources_details_container content">
-  <div class="header">
-    <h1>
-      Resources
-    </h1>
-    <p class="description">
-      All things VW, research, documentation and in-depth guides.
-    </p>
+<div class="content resources_container">
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>
+            Resources
+          </h1>
+          <p>
+            All things VW, research, documentation and in-depth guides.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
   {% assign documentation = site.documentation | sort: 'order' %}
   {% assign guides = site.guides | sort: 'order' %}
   {% assign papers = site.papers | sort: 'order' %}
 
-  <div>
-    <div class="sub_header">
-      <h2>
-        Documentation
-      </h2>
-      <a class="resource_link" href="documentation">
-        View All Documentation >
-      </a>
-    </div>
-    <div class="row">
-      {% for doc in documentation %}
-        <div class="col-lg-3 col-sm">
-          <div class="resource">
-            <div class="icon">
-              <img src={{doc.icon}}>
-            </div>
-            <p class="title">
-              {{doc.title}}
-            </p>
+  <div class="resource_section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="header">
+            <h3>
+              Documentation
+            </h3>
+            <a class="resource_link" href="documentation">
+              View All Documentation >
+            </a>
           </div>
         </div>
-      {% endfor %}
+      </div>
+      <div class="row">
+        {% for doc in documentation %}
+          <div class="col-lg-3 col-sm">
+            <div class="resource">
+              <div class="icon">
+                <img src={{doc.icon}}>
+              </div>
+              <p class="title">
+                {{doc.title}}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
   <div>
-    <div class="sub_header">
+    <div class="header">
       <h2>
         Guides and Tutorials
       </h2>
@@ -69,7 +81,7 @@ body-class: resources
   </div>
 
   <div>
-    <div class="sub_header">
+    <div class="header">
       <h2>
         Research
       </h2>
