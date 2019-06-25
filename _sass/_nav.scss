@@ -1,33 +1,3 @@
-.nav {
-  overflow: hidden;
-
-  a {
-    color: white;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .active {
-    border-bottom: 2px solid white;
-    font-weight: 500;
-  }
-}
-
-.nav_item {
-  text-align: center;
-  padding-bottom: 0.3rem;
-  margin: 0.5rem 1rem;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-
-.github_link {
-  padding-left: 1rem;
-  border-left: 1px solid white;
-}
-
 .nav_icon {
   display: none;
 }
