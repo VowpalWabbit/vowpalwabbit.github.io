@@ -54,6 +54,8 @@ collections:
     output: true
   core_values:
     output: true
+  users:
+    output: true
 
 defaults:
   -
