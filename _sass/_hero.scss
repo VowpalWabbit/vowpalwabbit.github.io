@@ -6,10 +6,6 @@
   background-size: auto 100%;
   background-position: center center;
 
-  h1 {
-    font-size: 80px;
-  }
-
   .hero_buttons {
     @include primary-link;
   }
