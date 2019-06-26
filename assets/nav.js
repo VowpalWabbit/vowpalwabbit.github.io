@@ -14,14 +14,18 @@ $(document).ready(function() {
     const scroll_top = $(this).scrollTop();
     const nav_height = $nav.height();
 
-    const opacity = nav_height - scroll_top >= 0
-      ? 1 - (nav_height - scroll_top) / nav_height
-      : 1;
-
     $nav.toggleClass('scrolled', scroll_top > 0);
-    const $scrolled_nav = $('.scrolled');
-    const bg_color = 'rgba(255, 255, 255,' + opacity + ')';
-    $scrolled_nav.css('background-color', bg_color);
+
+    if (scroll_top === 0) {
+      $nav.css('background-color', 'transparent');
+    } else if (nav_height - scroll_top >= 0) {
+      const opacity = scroll_top / nav_height;
+      const bg_color = 'rgba(255, 255, 255,' + opacity + ')';
+      $nav.css('background-color', bg_color);
+    } else {
+      $nav.css('background-color', 'white');
+    }
+
   });
 
   $(".tabs_container").on("click", ".nav button", function() {

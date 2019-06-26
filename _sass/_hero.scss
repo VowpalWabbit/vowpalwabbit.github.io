@@ -1,6 +1,6 @@
 .hero_container {
   background: url("../assets/images/hero/bg.svg");
-  padding: 15rem 0;
+  padding: 15rem 1rem;
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,6 +11,11 @@
   }
 
   .rabbit {
-    top: 9rem;
+    top: 20rem;
+  }
+
+  img {
+    width: 100%;
+    height: 70%;
   }
 }
