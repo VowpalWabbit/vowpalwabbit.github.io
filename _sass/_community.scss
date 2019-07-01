@@ -39,13 +39,16 @@
     padding: 0;
     position: absolute;
     bottom: 2rem;
-    left: 21%;
+    left: 0;
+    right: 0;
+    margin: auto;
 
     a {
       font-weight: 600;
       color: $blue-20;
       text-align: center;
       border: 2px solid $blue-20;
+      margin: 0;
     }
   }
 }
