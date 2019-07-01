@@ -8,6 +8,18 @@
 
   .hero_buttons {
     @include primary-link;
+
+    a {
+      background: white;
+      color: $blue-20;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
   .rabbit {
