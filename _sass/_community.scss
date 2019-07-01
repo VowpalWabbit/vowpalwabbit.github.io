@@ -54,7 +54,9 @@
 }
 
 .community_footer {
-  background: url("../assets/images/community/footer.svg");
-  height: 38rem;
-  margin-top: 10rem;
+  background-image: url("../assets/images/community/footer.svg");
+  min-height: 30rem;
+  background-repeat: repeat;
+  background-size: auto 100%;
+  background-position: center center;
 }
