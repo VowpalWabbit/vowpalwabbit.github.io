@@ -7,7 +7,7 @@
     border-bottom: 1px solid $gray-10;
 
     a {
-      color: $gray-10;
+      color: $primary-text;
 
       &.active {
         color: $blue-20;
@@ -16,11 +16,11 @@
     }
 
     svg path {
-      fill: $gray-10;
+      fill: $primary-text;
     }
 
     .logo svg path {
-      fill: $gray-30;
+      fill: $primary-text;
     }
 
     .github_link {
