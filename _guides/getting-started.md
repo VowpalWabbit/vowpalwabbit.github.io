@@ -3,25 +3,25 @@ title: Get started with Vowpal Wabbit
 order: -1
 module_id: getting-started
 description: This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output.
-image:
 guide_link_text: 'Get started'
 guide_link: ''
 show_on_learn: false
-layout: default
+layout: tutorial
+body_class: tutorial
 resource_icon: /svg/resources/guide.svg
 ---
 
-## A Step by Step Introduction
+# A Step by Step Introduction
 
-### A first data-set
+## A first data-set
 
 Now, let's create a data-set.  Suppose we want to predict whether a house will require a new roof in the next 10 years. We can create a training-set file, `house_dataset` with the following contents:
 
-{% highlight bash %}
+```
 0 | price:.23 sqft:.25 age:.05 2006
 1 2 'second_house | price:.18 sqft:.15 age:.35 1976
 0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
-{% endhighlight %}
+```
 
 There is quite a bit going on here.  The first number in each line is a label. A `0` label corresponds to no roof-replacement, while a `1` label corresponds to a roof-replacement.  The bar `|` separates label related data (what we want to predict) from features (what we always know).   The features in the 1st line are `price`, `sqft`, `age`, and `2006`.  Each feature may have an optional `:<numeric_value>` following it or, if the value is missing, an implied value of `1`.  By default, vowpal-wabbit hashes feature names into in-memory indexes unless the feature names themselves are positive integers.  In this case, the first 3 features use an index derived from a hash function while the last feature uses index 2006 directly.  Also the 1st 3 features have explicit values (`.23`, `.25`, and `.05` respectively) while the last, `2006` has a implicit default value of 1.
 
@@ -31,11 +31,11 @@ The 3rd example is straightforward, except there is an additional number: `0.5` 
 
 Next, we learn:
 
-{% highlight bash %}
+```
 # vw house_dataset
-{% endhighlight %}
+```
 
-### VW's diagnostic information
+## VW's diagnostic information
 
 There is a burble of diagnostic information which you can turn off with `--quiet`.  However, it's worthwhile to first understand it.
 
@@ -85,10 +85,10 @@ This specifies the power on the learning rate decay.  You can adjust this `--pow
 Next, there is a bunch of header information.  VW is going to print out some live diagnostic information.
 
 ```
-    average  since         example        example  current  current  current
-    loss     last          counter         weight    label  predict features
-    0.000000 0.000000            1            1.0   0.0000   0.0000        5
-    0.666667 1.000000            2            3.0   1.0000   0.0000        5
+average  since         example        example  current  current  current
+loss     last          counter         weight    label  predict features
+0.000000 0.000000            1            1.0   0.0000   0.0000        5
+0.666667 1.000000            2            3.0   1.0000   0.0000        5
 ```
 
 The first column, `average loss` computes the <a href="http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf">progressive validation</a> loss.  The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
@@ -119,19 +119,19 @@ If we want to overfit like mad, we can simply use:
 The progress section of the output is:
 
 ```
-    average  since         example        example  current  current  current
-    loss     last          counter         weight    label  predict features
-    0.000000 0.000000            1            1.0   0.0000   0.0000        5
-    0.666667 1.000000            2            3.0   1.0000   0.0000        5
-    0.589385 0.531424            5            7.0   1.0000   0.2508        5
-    0.378923 0.194769           11           15.0   1.0000   0.8308        5
-    0.184476 0.002182           23           31.0   1.0000   0.9975        5
-    0.090774 0.000000           47           63.0   1.0000   1.0000        5
+average  since         example        example  current  current  current
+loss     last          counter         weight    label  predict features
+0.000000 0.000000            1            1.0   0.0000   0.0000        5
+0.666667 1.000000            2            3.0   1.0000   0.0000        5
+0.589385 0.531424            5            7.0   1.0000   0.2508        5
+0.378923 0.194769           11           15.0   1.0000   0.8308        5
+0.184476 0.002182           23           31.0   1.0000   0.9975        5
+0.090774 0.000000           47           63.0   1.0000   1.0000        5
 ```
 
 You'll notice that by example 47 (25 passes over 3 examples result in 75 examples), the `since last` column has dropped to 0, implying that by looking at the same (3 lines of) data 25 times we have reached a perfect predictor. This is unsurprising with 3 examples having 5 features each.  The reason we have to add `--holdout_off` (new option in version 7.3, added August 2013) is that when running multiple-passes, vw automatically switches to 'over-fit avoidance' mode by holding-out 10% of the examples (the period "one in 10" can be changed using `--holdout_period period`) and evaluating performance on the held-out data instead of using the online-training progressive loss.
 
-### Saving your model (a.k.a. regressor) into a file
+## Saving your model (a.k.a. regressor) into a file
 
 By default vw learns the weights of the features and keeps them in a memory vector. If you want to save the final regressor weights into a file, add **-f _filename_**:
 
@@ -139,7 +139,7 @@ By default vw learns the weights of the features and keeps them in a memory vect
 # vw house_dataset -l 10 -c --passes 25 --holdout_off -f house.model
 ```
 
-### Getting predictions
+## Getting predictions
 
 We want to make predictions of course:
 
@@ -149,9 +149,9 @@ We want to make predictions of course:
 
 The output is:
 ```
-    0.000000
-    0.000000 second_house
-    1.000000 third_house
+0.000000
+0.000000 second_house
+1.000000 third_house
 ```
 
 The 1st output line `0.000000` is for the 1st example which has an empty tag.
@@ -172,14 +172,14 @@ You may load a initial model to memory by adding `-i house.model`.  You may also
 
 Which would output:
 ```
-    0.000000
-    1.000000 second_house
-    0.000000 third_house
+0.000000
+1.000000 second_house
+0.000000 third_house
 ```
 
 Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data, whereas in the 2nd example we first loaded an over-fitted (25 pass) model and used our data-set `house_dataset` with `-t` (testing only mode).  In real prediction settings, one should use a different data-set for testing vs training.
 
-### Auditing
+## Auditing
 
 When developing a new ML application, it's very helpful to debug.  VW can help a great deal with this using the `--audit` option.
 
@@ -207,6 +207,6 @@ Examining further, you'll notice that the feature `2006` uses the index 2006.  T
 
 The advantage of using unique integer-based feature-names is that they are guaranteed not to collide after hashing.  The advantage of free-text (non integer) feature names is readability and self-documentation. Since only `:`, `|`, and _spaces_ are special to the vw parser, you can give features extremely readable names like:  `height>2  value_in_range[1..5]  color=red`  and so on.  Feature-names may even start with a digit, e.g.: `1st-guess:0.5    2nd-guess:3`  etc.
 
-### What's next?
+## What's next?
 
 The above only scratches the surface of VW.  You can learn with other loss functions, with other optimizers, with other representations, with clusters of 1000s of machines, and even do ridiculously fast active learning. The [Tutorials](../tutorials) section covers a lot those subjects

@@ -9,13 +9,13 @@ html, body {
 }
 
 h1 {
-  font-size: 4.5rem;
-  padding-bottom: 2.5rem;
+  font-size: 4rem;
+  padding-bottom: 1.5rem;
 }
 
 h2 {
   font-size: 3.2rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
 }
 
 h3 {
@@ -41,6 +41,7 @@ h3 {
 @import "tabs";
 @import "paper";
 @import "about";
+@import "tutorial";
 
 .problem_framing_intro_container {
   background: $blue-30;
