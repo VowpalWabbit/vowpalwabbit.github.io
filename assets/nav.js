@@ -59,21 +59,24 @@ $(document).ready(function() {
       return module === module_id
     });
 
-    if (class_names.includes('previous')) {
-      index = ((index - 1) + modules.length) % modules.length;
-    } else {
-      index = (index + 1) % modules.length;
-    }
+    index = class_names.includes('previous')
+      ? ((index - 1) + modules.length) % modules.length
+      : index = (index + 1) % modules.length;
 
     $(".tabs_container .arrow").attr("data-current-module", modules[index]);
+
     const $module = $("div[data-module_id=" + modules[index] +"]");
     $module.siblings().hide();
     $module.show();
+
+    let $nav_item = $(".tabs_container .active");
+    $nav_item.removeClass('active');
+    $(".nav_item[data-module_id=" + modules[index] +"]").addClass('active');
   });
 });
 
 function showModule($nav_button) {
-  $nav_button.siblings().removeClass('active');
+  $nav_button.siblings('.nav_item').removeClass('active');
   $nav_button.addClass('active');
 
   const module_id = $nav_button.data("module_id");
