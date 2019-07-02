@@ -1,6 +1,6 @@
 .tabs_container {
   .tab_content {
-    padding: 3rem 0;
+    padding: 3rem 1rem;
   }
 
   .hidden {
@@ -11,16 +11,23 @@
     @include primary-link;
 
     a {
-      background: $blue-20;
+      border: 2px solid $blue-20;
+      color: $blue-20;
       font-weight: 600;
 
-      &:hover {
+      &:hover, &:focus {
         text-decoration: none;
+        background: $blue-20;
+        color: white;
       }
     }
   }
 
-  .image img{
-    width: 100%
+  .image {
+    padding: 2rem 1rem;
+
+    img{
+      width: 100%
+    }
   }
 }

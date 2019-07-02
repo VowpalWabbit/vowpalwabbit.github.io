@@ -120,7 +120,6 @@ h3 {
           }
         }
       }
-
     }
   }
 
@@ -131,12 +130,19 @@ h3 {
       padding: 0;
       text-align: left;
       margin: 0.5rem 0;
-      font-size: 1rem;
+      font-size: 0.9rem;
+      color: $gray-20;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
+
     .active {
-      font-weight: 500;
-      border-bottom: 2px solid black;
+      color: $blue-20;
+      font-weight: 600;
+      border-bottom: 2px solid $blue-20;
     }
   }
 }
