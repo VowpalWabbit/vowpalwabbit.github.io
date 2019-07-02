@@ -9,6 +9,13 @@ function myFunction() {
 
 $(document).ready(function() {
   const $nav = $(".nav_bar_container");
+  const modules = [
+    'reinforcement',
+    'versatility',
+    'online',
+    'speed',
+    'input_format'
+  ]
 
   $(document).scroll(function () {
     const scroll_top = $(this).scrollTop();
@@ -28,27 +35,35 @@ $(document).ready(function() {
 
   });
 
-  $(".tabs_container").on("click", ".nav button", function() {
-    const $this = $(this);
-    showModule($this);
-  });
+  $(".tabs_container .nav, .tabs_container .sub_nav, .use_cases_container .nav")
+    .on("click", " .nav_item", function() {
+      $(this).siblings().removeClass('active');
+      const module_id = $(this).data('module_id');
+      showModule(module_id);
+    });
 
-  $(".use_cases_container").on("click", ".nav button", function() {
+  $(".tabs_container").on("click", "button.arrow", function() {
     const $this = $(this);
-    showModule($this);
-  });
+    const class_names = $this.attr("class");
+    let index = modules.findIndex((module) => {
+      return module === $this.attr('data-current-module')
+    });
 
-  $(".tabs_container").on("click", ".sub_nav button", function() {
-    const $this = $(this);
-    showModule($this);
+    index = class_names.includes('previous')
+      ? ((index - 1) + modules.length) % modules.length
+      : (index + 1) % modules.length;
+
+    $(".tabs_container .arrow").attr("data-current-module", modules[index]);
+
+    $this.siblings('.nav_item').removeClass('active');
+    $(".nav_item[data-module_id=" + modules[index] +"]").addClass('active');
+
+    showModule(modules[index]);
   });
 });
 
-function showModule($nav_button) {
-  $nav_button.siblings().removeClass('active');
-  $nav_button.addClass('active');
-
-  const module_id = $nav_button.data("module_id");
+function showModule(module_id) {
+  $(".nav_item[data-module_id='" + module_id +"']").addClass('active');
   const $module = $("div[data-module_id=" + module_id +"]");
   $module.siblings().hide();
   $module.show();

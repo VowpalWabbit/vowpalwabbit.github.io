@@ -16,9 +16,10 @@
         <div class="nav">
           {% for guide in guides %}
             <button
-              {% if forloop.index == 1 %}class="active"{% endif %}
-              data-module_id="{{guide.module_id}}">
-            {{guide.short_title}}
+              class="nav_item {% if guide.order == 1 %}active{% endif %}"
+              data-module_id="{{guide.module_id}}"
+            >
+              {{guide.short_title}}
             </button>
           {% endfor %}
         </div>
