@@ -9,11 +9,14 @@
 
   .link {
     @include primary-link;
-    padding: 0;
 
     a {
-      border: 2px solid black;
-      color: black;
+      background: $blue-20;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
