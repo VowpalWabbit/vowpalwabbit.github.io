@@ -3,7 +3,7 @@
 <div class="col-sm col-lg-2 sub_nav">
   {% for item in items %}
     <button
-      class="{% if item.order == 1 %}active{% endif %}"
+      class="nav_item {% if item.order == 1 %}active{% endif %}"
       data-module_id={{item.module_id}}
     >
       {{item.tab}}
