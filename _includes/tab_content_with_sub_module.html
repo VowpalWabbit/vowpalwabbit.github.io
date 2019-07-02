@@ -1,44 +1,42 @@
 {% assign items = include.items | sort: 'order'%}
 
-<div class="row">
-  <div class="col-sm col-lg-2 sub_nav">
-    {% for item in items %}
-      <button
-        class="col {% if item.order == 1 %}active{% endif %}"
-        data-module_id={{item.module_id}}
-      >
-        {{item.tab}}
-      </button>
-    {% endfor %}
-  </div>
+<div class="col-sm col-lg-2 sub_nav">
+  {% for item in items %}
+    <button
+      class="{% if item.order == 1 %}active{% endif %}"
+      data-module_id={{item.module_id}}
+    >
+      {{item.tab}}
+    </button>
+  {% endfor %}
+</div>
 
-  <div class="col">
-    {% for item in items %}
-      <div
-        class="{% if item.order != 1 %}hidden{% endif %}"
-        data-module_id={{item.module_id}}
-      >
-        <div class="row">
-          <div class="col-sm col-lg-6">
-            <h3>
-              {{ item.title }}
-            </h3>
-            <p class="description">
-              {{ item.description }}
-            </p>
-            <div class="link">
-              <a href={{item.link}} target="_blank">
-                {{item.link_text}}
-              </a>
-            </div>
+<div class="col">
+  {% for item in items %}
+    <div
+      class="{% if item.order != 1 %}hidden{% endif %}"
+      data-module_id={{item.module_id}}
+    >
+      <div class="row">
+        <div class="col-sm col-lg-6">
+          <h3>
+            {{ item.title }}
+          </h3>
+          <p class="description">
+            {{ item.description }}
+          </p>
+          <div class="link">
+            <a href={{item.link}} target="_blank">
+              {{item.link_text}}
+            </a>
           </div>
-          <div class="col-sm col-lg-6">
-            <div class="image">
-              <img src={{item.image}}>
-            </div>
+        </div>
+        <div class="col-sm col-lg-6">
+          <div class="image">
+            <img src={{item.image}}>
           </div>
         </div>
       </div>
-    {% endfor %}
-  </div>
+    </div>
+  {% endfor %}
 </div>

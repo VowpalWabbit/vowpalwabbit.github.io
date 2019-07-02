@@ -1,7 +1,10 @@
 {% assign items = include.items | sort: 'order' %}
 
-<div class="tabs_container">
+<div class="container tabs_container">
   <div class="row justify-content-center nav">
+    <button class="col arrow">
+      <
+    </button>
     {% for item in items %}
       <button
         class="col col-lg-2 {% if item.order == 1 %}active{% endif %}"
@@ -10,6 +13,9 @@
         {{item.tab}}
       </button>
     {% endfor %}
+    <button class="col arrow">
+      >
+    </button>
   </div>
 
   <div class="tab_content">

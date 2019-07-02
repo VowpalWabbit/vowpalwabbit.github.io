@@ -58,7 +58,7 @@ h3 {
 
 .problem_framing_container {
   background: linear-gradient(180deg, $blue-30 11%, white 11%);
-  height: 38rem;
+  min-height: 38rem;
 
   .nav {
     width: 100%;
@@ -94,12 +94,38 @@ h3 {
           border-top: 15px solid $blue-30;
         }
       }
+
+      &.arrow {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .nav {
+      button {
+        display: none;
+
+        &.arrow {
+          display: block;
+          color: white;
+        }
+
+        &.active {
+          display: block;
+          pointer-events: none;
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+
     }
   }
 
   .sub_nav {
     button {
-      width: 30rem;
       background: transparent;
       border: 0;
       padding: 0;
