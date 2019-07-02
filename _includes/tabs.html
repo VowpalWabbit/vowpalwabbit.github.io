@@ -2,18 +2,24 @@
 
 <div class="container tabs_container">
   <div class="row justify-content-center nav">
-    <button class="col arrow">
+    <button
+      class="col arrow previous"
+      data-current-module={{items.first.module_id}}
+    >
       <
     </button>
     {% for item in items %}
       <button
-        class="col col-lg-2 {% if item.order == 1 %}active{% endif %}"
+        class="col col-lg-2 {% if item.order == 1 %}active{% endif %} nav_item"
         data-module_id={{item.module_id}}
       >
         {{item.tab}}
       </button>
     {% endfor %}
-    <button class="col arrow">
+    <button
+      class="col arrow next"
+      data-current-module={{items.first.module_id}}
+    >
       >
     </button>
   </div>

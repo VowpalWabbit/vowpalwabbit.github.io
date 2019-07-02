@@ -25,11 +25,14 @@
           <p class="description">
             {{ item.description }}
           </p>
-          <div class="link">
-            <a href={{item.link}} target="_blank">
-              {{item.link_text}}
-            </a>
-          </div>
+
+          {% if item.link %}
+            <div class="link">
+              <a href={{item.link}} target="_blank">
+                {{item.link_text}}
+              </a>
+            </div>
+          {% endif %}
         </div>
         <div class="col-sm col-lg-6 order-lg-last order-first">
           <div class="image">
