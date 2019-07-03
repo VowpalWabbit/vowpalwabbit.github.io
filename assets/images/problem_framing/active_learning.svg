@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="570px" height="411px" viewBox="0 0 570 411" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="570px" height="287px" viewBox="0 0 570 287" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 53 (72520) - https://sketchapp.com -->
-    <title>9F8E63B8-9A8D-4DB2-9FFE-EF8D0CB308E9</title>
+    <title>5D989178-DAAE-43F8-AFC8-8937F8B370B9</title>
     <desc>Created with sketchtool.</desc>
     <defs>
         <linearGradient x1="36.9234236%" y1="69.4039021%" x2="53.0718357%" y2="-57.7660044%" id="linearGradient-1">
@@ -36,18 +36,14 @@
     </defs>
     <g id="HD_Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="VW_Active_learning" transform="translate(-1067.000000, -81.000000)">
-            <g id="Why_VW_Contextual_Bandits_Module">
-                <g id="Active_learning_img" transform="translate(1067.000000, 81.000000)">
+            <g id="Why_VW_Contextual_Bandits_Module" transform="translate(0.000000, -43.000000)">
+                <g id="Active_Learning_img" transform="translate(1067.000000, 124.000000)">
                     <g id="Input_Icon">
                         <g id="Group-43">
-                            <g id="Input_Icon">
+                            <g id="Input_Icon" fill="#00BFD6">
                                 <g id="Contextual_Bandit_PC">
                                     <g>
-                                        <path d="M543.281333,0 C558.035381,0 570,7.71114684 570,17.2200689 L570,287 L0,287 L0,17.2200689 C0,7.71114684 11.9646189,0 26.7240102,0 L543.281333,0" id="Fill-153" fill="#00BFD6"></path>
-                                        <polygon id="Fill-154" fill="#142F42" points="195 411 375 411 375 349 195 349"></polygon>
-                                        <path d="M543.281333,349 L26.7240102,349 C11.9646189,349 0,337.101654 0,322.429331 L0,287 L570,287 L570,322.429331 C570,337.101654 558.035381,349 543.281333,349" id="Fill-155" fill="#235677"></path>
-                                        <polygon id="Fill-156" fill="#235677" points="124 411 446 411 446 393 124 393"></polygon>
-                                        <path d="M295,318.00264 C295,324.084713 290.520883,329 284.995199,329 C279.474316,329 275,324.084713 275,318.00264 C275,311.931126 279.474316,307 284.995199,307 C290.520883,307 295,311.931126 295,318.00264" id="Fill-157" fill="#FFFFFE"></path>
+                                        <rect id="Rectangle" x="0" y="0" width="570" height="287" rx="20"></rect>
                                     </g>
                                 </g>
                             </g>
@@ -107,6 +103,9 @@
                             <path d="M14,52 C4.66666667,52.6060606 4.21106619e-16,53.7575758 0,55.4545455 C0,57.1515152 4.66666667,58 14,58 L14,52 Z" id="Path-4" fill="#FFFFFF"></path>
                         </g>
                         <polygon id="Triangle" fill="#FFFFFF" transform="translate(76.500000, 47.500000) rotate(-90.000000) translate(-76.500000, -47.500000) " points="76.5 39 83 56 70 56"></polygon>
+                    </g>
+                    <g id="Group-3" transform="translate(248.000000, 217.000000)" fill="#2A3B93">
+                        <path d="M9.5,19 C4.25329488,19 0,14.7467051 0,9.5 C0,4.25329488 4.25329488,0 9.5,0 C14.7467051,0 19,4.25329488 19,9.5 C19,14.7467051 14.7467051,19 9.5,19 Z M40.5,19 C35.2532949,19 31,14.7467051 31,9.5 C31,4.25329488 35.2532949,0 40.5,0 C45.7467051,0 50,4.25329488 50,9.5 C50,14.7467051 45.7467051,19 40.5,19 Z M69.5,19 C64.2532949,19 60,14.7467051 60,9.5 C60,4.25329488 64.2532949,0 69.5,0 C74.7467051,0 79,4.25329488 79,9.5 C79,14.7467051 74.7467051,19 69.5,19 Z" id="Combined-Shape"></path>
                     </g>
                 </g>
             </g>
