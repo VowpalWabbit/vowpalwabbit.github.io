@@ -1,11 +1,16 @@
 .footer_container {
   background: $blue-20;
-  padding: 4rem 2rem;
+  padding: 2rem;
   color: white;
+
+  .logo {
+    padding-bottom: 2rem;
+  }
 
   .title {
     font-weight: 600;
     font-size: 1rem;
+    padding-bottom: 0.3rem;
   }
 
   a {

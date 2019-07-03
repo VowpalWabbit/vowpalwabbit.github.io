@@ -5,8 +5,8 @@ $maxScreen: 50rem;
 $minFont: 0.8rem;
 $maxFont: 1.2rem;
 
-$h1: 3.3rem;
-$h2: 2.5rem;
+$h1: 2.7rem;
+$h2: 2rem;
 $h3: 1.5rem;
 
 @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
