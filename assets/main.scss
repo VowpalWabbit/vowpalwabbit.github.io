@@ -8,12 +8,6 @@ html, body {
   font-family: 'Work Sans', sans-serif;
 }
 
-// @media screen and (max-width: 600px) {
-//   html, body {
-//     font-size: 12px;
-//   }
-// }
-
 h1 {
   font-size: 4rem;
   padding-bottom: 1.5rem;
@@ -33,7 +27,6 @@ h3 {
   color: $primary-text;
 }
 
-@import "nav";
 @import "header";
 @import "footer";
 @import "hero";
