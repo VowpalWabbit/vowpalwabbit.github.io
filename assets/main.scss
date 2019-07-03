@@ -8,6 +8,12 @@ html, body {
   font-family: 'Work Sans', sans-serif;
 }
 
+// @media screen and (max-width: 600px) {
+//   html, body {
+//     font-size: 12px;
+//   }
+// }
+
 h1 {
   font-size: 4rem;
   padding-bottom: 1.5rem;
@@ -23,7 +29,7 @@ h3 {
 }
 
 .content {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: $primary-text;
 }
 
@@ -42,6 +48,7 @@ h3 {
 @import "paper";
 @import "about";
 @import "tutorial";
+@import "typography";
 
 .problem_framing_intro_container {
   background: $blue-30;
@@ -57,7 +64,7 @@ h3 {
 }
 
 .problem_framing_container {
-  background: linear-gradient(180deg, $blue-30 11%, white 11%);
+  background: linear-gradient(180deg, $blue-30 10%, white 10%);
   min-height: 38rem;
 
   .nav {
@@ -102,6 +109,9 @@ h3 {
   }
 
   @media screen and (max-width: 600px) {
+    background: linear-gradient(180deg, $blue-30 8%, white 8%);
+    min-height: 60rem;
+
     .nav {
       button {
         display: none;
@@ -130,14 +140,13 @@ h3 {
       padding: 0;
       text-align: left;
       margin: 0.5rem 0;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: $gray-20;
 
       &:hover {
         cursor: pointer;
       }
     }
-
 
     .active {
       color: $blue-20;
@@ -165,7 +174,7 @@ h3 {
   }
 
   .research_links {
-    padding: 0 5rem;
+    padding: 0 1rem;
 
     a {
       font-size: 0.9rem;
