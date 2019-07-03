@@ -1,7 +1,7 @@
 .community_container {
   background: linear-gradient(180deg, rgba(48,114,157,1) 0%, rgba(0,191,214,1) 63%, rgba(12,210,194,1) 100%);
   color: white;
-  padding: 6rem 0 0;
+  padding: 5rem 1rem 0;
 
   .description {
     padding-bottom: 4rem;
@@ -9,8 +9,8 @@
 
   .community {
     height: 20rem;
-    margin: 0.5rem 1rem;
-    padding: 2rem;
+    margin: 0.5rem;
+    padding: 2rem 1rem;
     background-color: white;
     box-shadow: 0 2px 11px 0 rgba(168, 168, 168, 0.5);
     color: $primary-text;

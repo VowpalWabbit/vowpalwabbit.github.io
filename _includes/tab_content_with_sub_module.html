@@ -1,6 +1,6 @@
 {% assign items = include.items | sort: 'order'%}
 
-<div class="col-sm col-lg-2 sub_nav">
+<div class="col-sm-12 col-lg-2 sub_nav">
   {% for item in items %}
     <button
       class="nav_item {% if item.order == 1 %}active{% endif %}"
@@ -17,29 +17,7 @@
       class="{% if item.order != 1 %}hidden{% endif %}"
       data-module_id={{item.module_id}}
     >
-      <div class="row">
-        <div class="col-sm col-lg-6">
-          <h3>
-            {{ item.title }}
-          </h3>
-          <p class="description">
-            {{ item.description }}
-          </p>
-
-          {% if item.link %}
-            <div class="link">
-              <a href={{item.link}} target="_blank">
-                {{item.link_text}}
-              </a>
-            </div>
-          {% endif %}
-        </div>
-        <div class="col-sm col-lg-6 order-lg-last order-first">
-          <div class="image">
-            <img src={{item.image}}>
-          </div>
-        </div>
-      </div>
+      {% include tab_content.html item=item %}
     </div>
   {% endfor %}
 </div>
