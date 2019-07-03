@@ -1,6 +1,6 @@
 {% assign items = include.items | sort: 'order'%}
 
-<div class="col-sm col-lg-2 sub_nav">
+<div class="col-sm-12 col-lg-2 sub_nav">
   {% for item in items %}
     <button
       class="nav_item {% if item.order == 1 %}active{% endif %}"

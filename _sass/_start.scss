@@ -13,6 +13,10 @@
     margin: 0 1rem;
     border-bottom: 1px solid $gray-10;
 
+    .settings {
+      padding: 0.5rem 0;
+    }
+
     .title {
       padding: 0.25rem;
     }
@@ -39,12 +43,12 @@
     }
 
     .description {
-      padding-right: 2rem;
+      padding: 0.5rem 0;
     }
   }
 
   .command_container {
-    padding: 2rem;
+    padding: 2rem 1rem;
 
     .next_steps {
       font-weight: 600;
