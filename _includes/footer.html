@@ -1,14 +1,14 @@
 <div class="container-fluid footer_container">
   <div class="container">
     <div class="row">
-      <div class="col-sm col-lg-6 d-flex flex-column justify-content-between">
+      <div class="col-12 col-xl-6 d-flex justify-content-between flex-column flex-md-row flex-xl-column order-last order-xl-first">
         {% include svg/logo.svg %}
         <div>
           <p class="title">Sponsors</p>
           Microsoft Research
         </div>
       </div>
-      <div class="col-sm col-lg-2">
+      <div class="col-md">
         <p class="title">Vowpal Wabbit</p>
         <div class="d-flex flex-column">
           <a href="{{ site.baseurl }}/">Home</a>
@@ -28,7 +28,7 @@
           | where_exp:"community", "community.community_id == 'stackoverflow'"
           | first
       %}
-      <div class="col-sm col-lg-2">
+      <div class="col-md">
         <p class="title">Resources</p>
         <div class="d-flex flex-column">
           <a
@@ -42,7 +42,7 @@
           <a href="#">Research</a>
         </div>
       </div>
-      <div class="col-sm col-lg-2">
+      <div class="col-md">
         <p class="title">Stay Connected</p>
         <div class="d-flex flex-column">
           <a href={{github.link}} target="_blank">GitHub</a>
