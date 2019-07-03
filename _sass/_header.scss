@@ -23,9 +23,9 @@
       fill: $primary-text;
     }
 
-    .github_link {
-      border-left: 1px solid $gray-10;
-    }
+    // .github_link {
+    //   border-left: 1px solid $gray-10;
+    // }
   }
 
   .learn & {
@@ -55,8 +55,8 @@
     }
   }
 
-  .github_link {
-    padding-left: 2rem;
-    border-left: 1px solid white;
-  }
+  // .github_link {
+  //   padding-left: 2rem;
+  //   border-left: 1px solid white;
+  // }
 }
