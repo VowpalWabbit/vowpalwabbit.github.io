@@ -1,55 +1,14 @@
 <div class="container-fluid footer_container">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-xl-6 d-flex justify-content-between flex-column flex-md-row flex-xl-column order-last order-xl-first">
-        {% include svg/logo.svg %}
-        <div>
-          <p class="title">Sponsors</p>
-          Microsoft Research
+      <div class="col-9">
+        <div class="logo">
+          {% include svg/logo.svg %}
         </div>
       </div>
-      <div class="col-md">
-        <p class="title">Vowpal Wabbit</p>
-        <div class="d-flex flex-column">
-          <a href="{{ site.baseurl }}/">Home</a>
-          <a href="{{ site.baseurl }}/about">About</a>
-          <a href="{{ site.baseurl }}/learn">Learn</a>
-        </div>
-      </div>
-      {% assign github = site.communities
-          | where_exp:"community", "community.community_id == 'github'"
-          | first
-      %}
-      {% assign gitter = site.communities
-          | where_exp:"community", "community.community_id == 'gitter'"
-          | first
-      %}
-      {% assign stackoverflow = site.communities
-          | where_exp:"community", "community.community_id == 'stackoverflow'"
-          | first
-      %}
-      <div class="col-md">
-        <p class="title">Resources</p>
-        <div class="d-flex flex-column">
-          <a
-            href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki"
-            target="_blank"
-          >
-            Documentation
-          </a>
-          <a href="#">API reference</a>
-          <a href="#">Tutorials</a>
-          <a href="#">Research</a>
-        </div>
-      </div>
-      <div class="col-md">
-        <p class="title">Stay Connected</p>
-        <div class="d-flex flex-column">
-          <a href={{github.link}} target="_blank">GitHub</a>
-          <a href={{stackoverflow.link}} target="_blank">Stack Overflow</a>
-          <a href={{gitter.link}} target="_blank">Gitter</a>
-          <a href="#">Contact Us</a>
-        </div>
+      <div class="col">
+        <div class="title">Sponsors</div>
+        Microsoft Research
       </div>
     </div>
   </div>
