@@ -31,7 +31,7 @@ The 3rd example is straightforward, except there is an additional number: `0.5` 
 
 Next, we learn:
 
-```
+```powershell
 # vw house_dataset
 ```
 
