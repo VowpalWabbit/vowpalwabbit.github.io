@@ -11,9 +11,11 @@
     @include primary-link;
 
     a {
+      width: 100%;
       border: 2px solid $blue-20;
       color: $blue-20;
       font-weight: 600;
+      text-align: center;
 
       &:hover, &:focus {
         text-decoration: none;
