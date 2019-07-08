@@ -9,13 +9,30 @@
       {{ item.description }}
     </p>
 
-    {% if item.link %}
-      <div class="link">
-        <a href={{item.link}} target="_blank">
-          {{item.link_text}}
-        </a>
-      </div>
-    {% endif %}
+    <div class="row">
+      {% if item.show_guide %}
+        {%
+          assign guide = site.guides | where: "module_id",item.module_id | first
+        %}
+        <div class="col-6">
+          <div class="link">
+            <a href="{{ guide.url | relative_url}}">
+              {{guide.guide_link_text}}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if item.link %}
+        <div class="col-6">
+          <div class="link">
+            <a href={{item.link}} target="_blank">
+              {{item.link_text}}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+    </div>
   </div>
 
   <div class="col-lg-6 col-12 order-lg-last order-first">

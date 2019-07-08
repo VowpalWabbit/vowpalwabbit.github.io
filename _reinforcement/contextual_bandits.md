@@ -7,4 +7,5 @@ description: The Contextual Bandit learning algorithms in VW consist of two broa
 image: assets/images/problem_framing/cb.svg
 link: 'https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms'
 link_text: 'Learn More'
+show_guide: true
 ---
