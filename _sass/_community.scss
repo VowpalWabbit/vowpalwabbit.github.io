@@ -50,6 +50,12 @@
       text-align: center;
       border: 2px solid $blue-20;
       margin: 0;
+
+      &:hover {
+        text-decoration: none;
+        background: $blue-20;
+        color: white;
+      }
     }
   }
 }

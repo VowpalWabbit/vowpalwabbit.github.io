@@ -71,6 +71,15 @@
       text-align: center;
       margin: 1rem 0;
       color: black;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:hover, &:focus {
+        background: black;
+        color: white;
+      }
     }
   }
 }
