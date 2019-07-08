@@ -5,7 +5,7 @@
   .start_section {
     background-color: white;
     border-radius: 20px;
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 
   .settings_container {
@@ -48,7 +48,7 @@
   }
 
   .command_container {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 0;
 
     .next_steps {
       font-weight: 600;
@@ -71,6 +71,18 @@
       text-align: center;
       margin: 1rem 0;
       color: black;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .start_container {
+    padding: 1rem;
+
+    .settings_container {
+      .option {
+        padding: 0.5rem;
+      }
     }
   }
 }
