@@ -12,7 +12,7 @@ resource_icon: /svg/resources/guide.svg
 
 # Contextual Bandits in VW
 
-We are very excited you are here! It's okay if you have never heard of Contextual Bandits before. The goal of this tutorial is to have you walk away with an understanding of contextual bandits, when it's applicable, how to run CB algorithms in Vowpal Wabbit (VW) and hopefully make you feel empowered and excited to use it on your own. This tutorial will focus on Python but VW is also supported in C++ and C#.
+We are very excited you are here! It's okay if you have never heard of Contextual Bandits (CB) before. The goal of this tutorial is to have you walk away with an understanding of contextual bandits, when it's applicable, how to run CB algorithms in Vowpal Wabbit (VW) and hopefully make you feel empowered and excited to use it on your own. This tutorial will focus on Python but VW is also supported in C++ and C#.
 
 ## What is a Contextual Bandit?
 
@@ -25,7 +25,7 @@ We want our application _APP_ to take actions such that we get the highest possi
 
 This scenario is very similar to a traditional [Multi Armed Bandit (MAB)](https://en.wikipedia.org/wiki/Multi-armed_bandit). The term "multi-armed bandit" comes from a hypothetical experiment where a gambler must choose between multiple actions (i.e. slot machines, the "one-armed bandits"), each with an unknown payout. The goal is to maximize the payout by optimally choosing the best actions when odds and payouts are unknown.
 
-In MAB, the gambler has no information at all to make a decision. However, our application _APP_ differs from MAB because we have some information available to the _APP_ which is the "context". Contextual Bandits (CB) uses additional information i.e. context available to make better decisions while choosing actions. Hence, the name "contextual" bandits.
+In MAB, the gambler has no information at all to make a decision. However, our application _APP_ differs from MAB because we have some information available to the _APP_ which is the "context". Contextual Bandits uses additional information i.e. context available to make better decisions while choosing actions. Hence, the name "contextual" bandits.
 
 In the contextual bandit problem, a learner (the gambler in the hypothetical experiment) repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only.
 
@@ -139,7 +139,7 @@ In this case, on the first two actions, we take each of the 4 actions with proba
 
 - `./vw -d train.dat --cb_explore 4 --epsilon 0.2`
 
-In this case, the prediction of the current learned policy is taken with probability 1-_epsilon_ (i.e. 80% of the time) and with the remaining (i.e. 20%) epsilon probability an action is chosen uniformly at random.
+In this case, the prediction of the current learned policy is taken with probability 1- _epsilon_ (i.e. 80% of the time) and with the remaining (i.e. 20%) epsilon probability an action is chosen uniformly at random.
 
 - `./vw -d train.dat --cb_explore 4 --bag 5`
 
@@ -207,8 +207,7 @@ apt-get install libboost-program-options-dev zlib1g-dev libboost-python-dev -y
 pip install vowpalwabbit
 ```
 
-### Let's do a baby run
-Generate sample training data that could originate from previous random trial, e.g. AB test, for the CB to explore. The data here is equivalent to the [wiki example](https://github.com/JohnLangford/vowpal_wabbit/wiki/Contextual-Bandit-Example).
+Generate sample training data that could originate from previous random trial, e.g. AB test, for the CB to explore. The data here is equivalent to the wiki [example](https://github.com/JohnLangford/vowpal_wabbit/wiki/Contextual-Bandit-Example).
 ```python
 train_data = [{'action': 1, 'cost': 2, 'probability': 0.4, 'feature1': 'a', 'feature2': 'c', 'feature3': ''},
               {'action': 3, 'cost': 0, 'probability': 0.2, 'feature1': 'b', 'feature2': 'd', 'feature3': ''},
@@ -244,7 +243,7 @@ train_df.head()
 test_df.head()
 ```
 
-### Let's try --cb in Python
+### Let's try ---cb in Python
 
 First, create the Python model - this stores the model parameters in the Python vw object. Here we use arguments for a Contextual Bandit with four possible actions.
 ```python
@@ -300,7 +299,7 @@ print(vw.predict('| a b'))
 ## Other useful resources
 
 - There are lots of example notebooks you can find [here](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples)
-- You can also check out the various command line options of VW [here] (https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments)
+- You can also check out the various command line options of VW [here](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments)
 - Installation and Troubleshooting info [here](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python)
 
 
