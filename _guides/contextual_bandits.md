@@ -12,14 +12,14 @@ resource_icon: /svg/resources/guide.svg
 
 # Contextual Bandits in VW
 
-We are very excited you are here! It's okay if you have never heard of Contextual Bandits (CB) before. The goal of this tutorial is to have you walk away with an understanding of contextual bandits, when it's applicable, how to run CB algorithms in Vowpal Wabbit (VW) and hopefully make you feel empowered and excited to use it on your own. This tutorial will focus on Python but VW is also supported in C++ and C#.
+We are very excited you are here! It's okay if you have never heard of Contextual Bandits (CB) before. The goal of this tutorial is to have you walk away with an understanding of contextual bandits, when CB can be used, how to run CB algorithms in Vowpal Wabbit (VW), and hopefully make you feel empowered and excited to use it on your own. This tutorial will focus on Python but VW is also supported in C++ and C#.
 
 ## What is a Contextual Bandit?
 
-Consider an application _APP_ that interacts with its environment, such as a news website with users or a cloud controller with machines. Each interaction follows the same broadly applicable protocol:
+Consider an application that interacts with its environment, such as a news website with users or a cloud controller with machines. Let's call this application _APP_. This application repeatedly goes through the following:
 1. A context x arrives and is observed by _APP_.
 2. _APP_ chooses an action _a_ from a set of actions _A_ i.e. a ∈ A to take (A may depend on x).
-3. A reward r for a is observed by _APP_.
+3. A reward r for the chosen a is observed by _APP_.
 
 We want our application _APP_ to take actions such that we get the highest possible reward. In machine learning parlance, we want a _model_ that will tell us which action to take.
 
@@ -44,7 +44,7 @@ In Contextual Bandits, the contexts and actions are usually represented as featu
   - Reward: user engagement - click or no click
 
 2. Cloud Controller
-  - Decision to optimize: waittime before reboot of unresponsive machine
+  - Decision to optimize: wait time before reboot of unresponsive machine
   - Context: machine hardware spec - sku, os etc., failure history, location, load
   - Actions: minutes - {1,2,....N}
   - Reward: - total downtime
@@ -92,12 +92,12 @@ For more details, please refer to the github link listed in the "CB algorithms" 
 
 ## Input Format
 
-Let's recall - A CB problem has has four main components:
+Let's recall - A CB problem has four main components:
 
 - **Context (x)** : the additional information which helps in choosing action
 - **Action (a)** : the action chosen from a set of possible actions _A_
 - **Probability (p)** : probability of choosing 'a' from _A_
-- **Cost/Reward (r)** : reward recieved for action '_a_'
+- **Cost/Reward (r)** : reward received for action '_a_'
 
 
 We will look at the input format for different cb types that VW offers
@@ -124,7 +124,7 @@ Sample log (train.dat) with five examples:
 
 Usage: `./vw -d train.dat --cb 4`
 
-Note: The usage mentioned in this section is for using vw commandline. However, in the example tutorial below, we will also see how to use it in Python.
+Note: The usage mentioned in this section is for using vw command line. However, in the example tutorial below, we will also see how to use it in Python.
 
 ### 2. `--cb_explore`
 
@@ -143,7 +143,7 @@ In this case, the prediction of the current learned policy is taken with probabi
 
 - `./vw -d train.dat --cb_explore 4 --bag 5`
 
-In this case, we will use an ensemble approach. We will take an argument _m_ for --bag and train _m_ different policies i.e. 5 in the above example.The policies differe because they are being trained on different subsets of data, with each example going to a subset of the _m_ policies.
+In this case, we will use an ensemble approach. We will take an argument _m_ for --bag and train _m_ different policies i.e. 5 in the above example.The policies differ because they are being trained on different subsets of data, with each example going to a subset of the _m_ policies.
 
 - `./vw -d train.dat --cb_explore 4 --cover 3`
 
@@ -173,7 +173,7 @@ shared | s_1 s_2
 0:1.0:0.5 | a:1 b:1 c:1
 | a:0.5 b:2 c:1
 ```
-In the first example above, we have 2 actions, one line for each. The first line represents the first action and it has two action depedent features _a_ and _b_. The second line represents the second action and it has three action dependent features _a_, _b_ and _c_. The second action was the chosen action for the example and it follows the format
+In the first example above, we have 2 actions, one line for each. The first line represents the first action and it has two action dependent features _a_ and _b_. The second line represents the second action and it has three action dependent features _a_, _b_ and _c_. The second action was the chosen action for the example and it follows the format
 ```
 action:cost:probability | features
 0:0.1:0.75 |
