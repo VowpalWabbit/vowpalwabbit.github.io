@@ -40,6 +40,10 @@ collections:
     output: true
   reinforcement:
     output: true
+  efficiency:
+    output: true
+  flexibility:
+    output: true
   resources:
     output: true
   guides:

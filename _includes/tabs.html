@@ -27,11 +27,9 @@
   <div class="tab_content">
     {% for item in items %}
       <div class="row {% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
-        {% if item.sub_module_tabs %}
-          {% include
-            tab_content_with_sub_module.html
-            items=site.reinforcement
-          %}
+        {% if item.has_sub_module %}
+          {% assign sub_module_items = site.[item.module_id] %}
+          {% include tab_content_with_sub_module.html %}
         {% else %}
           {% include tab_content.html item=item %}
         {% endif %}
