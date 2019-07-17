@@ -45,31 +45,18 @@ function getDefaultOS() {
 
 function showCommand() {
   command_list = {
-    "stable,linux,python3": "pip install vowpalwabbit",
-    "stable,linux,c++": "apt-get install vowpalwabbit",
-    "stable,linux,java": "Build from source",
-    "stable,linux,c#": "Build from source",
-    "stable,mac,python3": "pip install vowpalwabbit",
-    "stable,mac,c++": "brew install vowpal-wabbit",
-    "stable,mac,java": "Build from source",
-    "stable,mac,c#": "Build from source",
-    "stable,windows,python3": "pip install vowpalwabbit",
-    "stable,windows,c++": "Build from source",
-    "stable,windows,java": "Build from source",
-    "stable,windows,c#": "Install-Package VowpalWabbit",
-
-    "nightly,linux,python3": "Build from source",
-    "nightly,linux,c++": "Build from source",
-    "nightly,linux,java": "Build from source",
-    "nightly,linux,c#": "Build from source",
-    "nightly,mac,python3": "pip install vowpalwabbit",
-    "nightly,mac,c++": "Build from source",
-    "stable,mac,java": "Build from source",
-    "nightly,mac,c#": "Build from source",
-    "nightly,windows,python3": "pip install vowpalwabbit",
-    "nightly,windows,c++": "Build from source",
-    "nightly,windows,java": "Build from source",
-    "nightly,windows,c#": "https://www.nuget.org/packages/VowpalWabbit/",
+    "linux,python3": "pip install vowpalwabbit",
+    "linux,c++": "apt-get install vowpalwabbit",
+    "linux,java": "Build from source",
+    "linux,c#": "Build from source",
+    "mac,python3": "pip install vowpalwabbit",
+    "mac,c++": "brew install vowpal-wabbit",
+    "mac,java": "Build from source",
+    "mac,c#": "Build from source",
+    "windows,python3": "pip install vowpalwabbit",
+    "windows,c++": "Build from source",
+    "windows,java": "Build from source",
+    "windows,c#": "Install-Package VowpalWabbit",
   }
 
   selected_options = [];
