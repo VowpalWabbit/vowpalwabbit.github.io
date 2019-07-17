@@ -28,7 +28,7 @@
     {% for item in items %}
       <div class="row {% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
         {% if item.has_sub_module %}
-          {% assign sub_module_items = site.[item.module_id] %}
+          {% assign sub_module_items = site.[item.module_id] | sort: 'order' %}
           {% include tab_content_with_sub_module.html %}
         {% else %}
           {% include tab_content.html item=item %}

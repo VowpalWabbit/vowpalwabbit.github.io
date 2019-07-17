@@ -103,11 +103,13 @@ html, body {
 
   .sub_nav {
     button {
+      display: block;
       background: transparent;
       border: 0;
       padding: 0;
       text-align: left;
-      margin: 0.5rem 0;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
       font-size: 0.8rem;
       color: $gray-20;
 

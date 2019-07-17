@@ -56,6 +56,6 @@ $(document).ready(function() {
 function showModule(module_id) {
   $(".nav_item[data-module_id='" + module_id +"']").addClass('active');
   const $module = $("div[data-module_id=" + module_id +"]");
-  $module.siblings().hide();
-  $module.show();
+  $module.siblings().addClass('hidden');
+  $module.removeClass('hidden');
 }
