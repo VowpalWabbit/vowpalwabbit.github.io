@@ -3,7 +3,7 @@ title: Get started with Contextual Bandits
 order: -1
 module_id: contextual_bandits
 description: This tutorial will run you through using VW for a Contextual Bandit problem.
-guide_link_text: 'Get started'
+guide_link_text: 'Begin tutorial'
 show_on_learn: false
 layout: tutorial
 body_class: tutorial
