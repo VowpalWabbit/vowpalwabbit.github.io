@@ -31,7 +31,7 @@ In the contextual bandit problem, a learner (the gambler in the hypothetical exp
 
 We will use the term "policy" many times in this tutorial. For those new to RL, let's try to understand the distinction between _model_ and _policy_:
 
-In essence “policy” for RL is roughly equivalent to “model”.  The word “model”, as used in machine learning essentially means “learned function”.  When someone says “policy”, it is more specific than “model”, because it indicates this is a model that acts in the world.
+In essence "policy" for RL is roughly equivalent to "model".  The word "model", as used in machine learning essentially means "learned function".  When someone says "policy", it is more specific than "model", because it indicates this is a model that acts in the world.
 
 In Contextual Bandits, the contexts and actions are usually represented as feature vectors. _APP_ chooses actions by applying a policy _π_ that takes a context as input and returns an action. The goal is to find a policy that maximizes average reward over a sequence of interactions.
 
@@ -53,7 +53,7 @@ In Contextual Bandits, the contexts and actions are usually represented as featu
 
 The focal point of contextual bandit learning research is efficient exploration algorithms. For more details, please refer to [this](https://arxiv.org/pdf/1802.04064.pdf).
 
-Vowpal Wabbit (VW) offers various CB algorithms. For more details, please refer to [this](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms).
+VW offers various CB algorithms. For more details, please refer to [this](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms).
 
 Having said that, we have tried to summarize as much as we can in this tutorial with the intention that you will learn a quite a bit about CB in general and working with CB algorithms in VW by going through this tutorial.
 
@@ -63,7 +63,7 @@ In this notebook, we will go over different CB functionalities offered by VW, we
 
 ### Specifying CB approach
 
-Multiple policy evaluation approaches can be used when optimizing a policy. VW offers 4 approaches that you can specify using --cb_type:
+Multiple policy evaluation approaches can be used when optimizing a policy. VW offers 4 approaches that you can specify using \--cb_type:
 
 - Inverse Propensity Score `--cb_type ips`
 - Doubly Robust `--cb_type dr`
@@ -155,9 +155,9 @@ In this case, similar to bagging _m_ different policies are trained but unlike b
 
 The example format for this one is a little bit different from the other two cases because the action set changes over time or we have rich information for each action. Hence, it is best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.
 
-- Let's look at it in more detail to understand it better -
+Let's look at it in more detail to understand it better -
 - Each example now spans multiple lines, with one line per action.
-- For each action, we have the label information (action,cost,probability), if known, as before.
+- For each action, we have the label information (action, cost, probability), if known, as before.
 - The action field _a_ is ignored now since actions are identified by line numbers, and typically set to 0.
 - The semantics of cost and probability are same as before.
 - Each example is also allowed to specify the label information on precisely one action.
@@ -217,7 +217,7 @@ train_data = [{'action': 1, 'cost': 2, 'probability': 0.4, 'feature1': 'a', 'fea
 
 train_df = pd.DataFrame(train_data)
 
-## Add index to data frame
+# Add index to data frame
 train_df['index'] = range(1, len(train_df) + 1)
 train_df = train_df.set_index("index")
 ```
@@ -231,7 +231,7 @@ test_data = [{'feature1': 'b', 'feature2': 'c', 'feature3': ''},
 
 test_df = pd.DataFrame(test_data)
 
-## Add index to data frame
+# Add index to data frame
 test_df['index'] = range(1, len(test_df) + 1)
 test_df = test_df.set_index("index")
 ```
@@ -243,7 +243,7 @@ train_df.head()
 test_df.head()
 ```
 
-### Let's try ---cb in Python
+### Let's try \--cb in Python
 
 First, create the Python model - this stores the model parameters in the Python vw object. Here we use arguments for a Contextual Bandit with four possible actions.
 ```python
@@ -256,7 +256,6 @@ Note: You can pass `--quiet` if you want vw to stop talking while it's working.
 
 Next, for each train example we call learn on our vw model.
 ```python
-i==1
 for i in train_df.index:
   action = train_df.loc[i, "action"]
   cost = train_df.loc[i, "cost"]
@@ -274,13 +273,12 @@ for i in train_df.index:
 
 Use the model that was just trained on the train set to perform predictions on the test set. We construct the example as before but don't include the label and pass it into predict instead of learn.
 ```python
-j==1
 for j in test_df.index:
   feature1 = test_df.loc[j, "feature1"]
   feature2 = test_df.loc[j, "feature2"]
   feature3 = test_df.loc[j, "feature3"]
 
-  test_example = "| "+str(feature1)+" "+str(feature2)+" "+str(feature3)
+  test_example = "| " + str(feature1) + " " + str(feature2) + " " + str(feature3)
 
   choice = vw.predict(test_example)
   print(j, choice)
