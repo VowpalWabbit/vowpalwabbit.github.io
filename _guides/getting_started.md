@@ -106,7 +106,7 @@ loss     last          counter         weight    label  predict features
 0.666667 1.000000            2            3.0   1.0000   0.0000        5
 ```
 
-- `average loss` computes the <a href="http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf">progressive validation</a> loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
+- `average loss` computes the <a href="http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf" target="_blank">progressive validation</a> loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
 - `since last` is the progressive validation loss since the last printout.
 - `example counter` tells you which example is printed out. In this case, it's example 2.
 - `example weight` tells you the sum of the importance weights of examples seen so far. In this case it's 3, because the second example has an importance weight of 2.
@@ -132,7 +132,7 @@ At the end, some more straightforward totals are printed. The only mysterious on
 If we want to overfit like mad, we can simply use:
 
 ```sh
-VW house_dataset -l 10 -c --passes 25 --holdout_off
+vw house_dataset -l 10 -c --passes 25 --holdout_off
 ```
 
 The progress section of the output is:
@@ -234,5 +234,5 @@ The advantage of using unique integer-based feature-names is that they are guara
 The above only scratches the surface of VW. You can learn with other loss functions, with other optimizers, with other representations, with clusters of 1000s of machines, and even do ridiculously fast active learning.
 
 - Learn about using VW to do reinforcement learning in the [Contextual Bandit tutorial]( {{ "guides/contextual_bandits.html" | relative_url}} )
-- Explore more content in the [tutorials section of the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials)
-- Browse [examples on the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples)
+- Explore more content in the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials" target="_blank">tutorials section of the GitHub wiki</a>
+- Browse <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples" target="_blank">examples on the GitHub wiki</a>
