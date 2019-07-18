@@ -46,15 +46,15 @@ function getDefaultOS() {
 function showCommand() {
   command_list = {
     "linux,python3": "pip install vowpalwabbit",
-    "linux,c++": "apt-get install vowpalwabbit",
+    "linux,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#ubuntu' target='_blank'>source</a>",
     "linux,java": "Build from source",
-    "linux,c#": "Build from source",
+    "linux,c#": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#ubuntu' target='_blank'>source</a>",
     "mac,python3": "pip install vowpalwabbit",
-    "mac,c++": "brew install vowpal-wabbit",
+    "mac,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#macos' target='_blank'>source</a>",
     "mac,java": "Build from source",
-    "mac,c#": "Build from source",
+    "mac,c#": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#macos' target='_blank'>source</a>",
     "windows,python3": "pip install vowpalwabbit",
-    "windows,c++": "Build from source",
+    "windows,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#windows' target='_blank'>source</a>",
     "windows,java": "Build from source",
     "windows,c#": "Install-Package VowpalWabbit",
   }
@@ -69,5 +69,5 @@ function showCommand() {
 
   command = command_list[selected_options.join(',')];
   $command_box = $('.command_container .command');
-  $command_box.text(command);
+  $command_box.html(command);
 }

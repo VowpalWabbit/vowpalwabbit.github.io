@@ -73,21 +73,12 @@
         </div>
       </div>
       <div class="command_container">
-        <div>
-          <span class="next_steps">
-            Next steps:
-          </span>
-          Run this command and begin the tutorial.
+        <div class="next_steps">
+          Next step:
         </div>
-        <div class="row justify-content-center">
+        <div class="row">
           <div class="col-12 col-lg-9 col-xl-10">
             <div class="command"></div>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            {% assign getting_started = site.guides | where: "module_id","getting_started" | first %}
-            <a href="{{ getting_started.url | relative_url}}" class="tutorial_link">
-              Begin tutorial
-            </a>
           </div>
         </div>
       </div>
