@@ -2,10 +2,9 @@ $(document).ready(function() {
   const $nav = $(".nav_bar_container");
   const modules = [
     'reinforcement',
-    'versatility',
     'online',
-    'speed',
-    'input_format'
+    'efficiency',
+    'flexibility'
   ]
 
   $(document).scroll(function () {
