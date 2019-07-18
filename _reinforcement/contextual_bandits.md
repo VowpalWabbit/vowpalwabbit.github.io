@@ -1,11 +1,10 @@
 ---
-tab: Contextual bandits
-title: Contextual bandits
+tab: Contextual Bandits
+title: Contextual Bandits
 order: 1
 module_id: contextual_bandits
-description: The Contextual Bandit learning algorithms in VW consist of two broad classes. The first class consists of settings where the maximum number of actions is known ahead of time, and the semantics of these actions stay fixed across examples. A more advanced setting allows potentially changing semantics per example. In this latter setting, the actions are specified via features, different features associated with each action. We refer to this setting as the ADF setting for action dependent features.
-image: assets/images/problem_framing/cb.svg
-link: 'https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms'
+description: Contextual Bandits are a framing of reinforcement learning, where one observes the environment, then makes a decision that optimizes for an observed reward. Unlike full reinforcement learning, it assumes decisions are independent. Most production real world RL systems are Contextual Bandit solvers.
+link:  /guides/contextual_bandits.html
 link_text: 'Learn More'
 show_guide: true
 ---

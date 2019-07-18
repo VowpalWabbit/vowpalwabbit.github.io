@@ -1,8 +1,7 @@
 ---
 tab: Online
 title: Online
-order: 3
+order: 2
 module_id: online
-description: The default learning algorithm is a variant of online gradient descent. The main difference from vanilla online gradient descent is fast and correct handling of large importance weights.
-image: assets/images/problem_framing/online.svg
+description: Most learning algorithms require all data before they start learning. Vowpal Wabbit(VW) additionally allows learning from a data source which continuously grows. This allows VW to be used in situations when a problem changes over time or in situations where interactive learning is required.
 ---

@@ -1,14 +1,9 @@
-$bg-gray-10: #A5A5A5;
-$bg-gray-20: #4A4A4A;
-$bg-gray-30: #505050;
-$bg-black: #262626;
-
 // background
 $blue-10: #415EBF;
 $blue-20: #2A3B93;
 $blue-30: #000C4C;
 $blue-40: #235677;
-$teal-20: #00BFD6;
+$blue-50: #0B4A71;
 
 // text
 $teal-10: #7BFFF4;
@@ -16,7 +11,6 @@ $primary-text: #333333;
 $gray-10: #939393;
 $gray-20: #666666;
 $gray-30: #4A4A4A;
-
 
 @mixin primary-link {
   a {

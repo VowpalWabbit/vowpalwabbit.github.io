@@ -1,7 +1,5 @@
-{% assign items = include.items | sort: 'order'%}
-
-<div class="col-sm-12 col-lg-2 sub_nav">
-  {% for item in items %}
+<div class="col-sm-12 col-lg-3 sub_nav">
+  {% for item in sub_module_items %}
     <button
       class="nav_item {% if item.order == 1 %}active{% endif %}"
       data-module_id={{item.module_id}}
@@ -11,8 +9,8 @@
   {% endfor %}
 </div>
 
-<div class="col col-lg-10">
-  {% for item in items %}
+<div class="col col-lg-9">
+  {% for item in sub_module_items %}
     <div
       class="{% if item.order != 1 %}hidden{% endif %}"
       data-module_id={{item.module_id}}
