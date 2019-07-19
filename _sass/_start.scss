@@ -54,7 +54,7 @@
       font-weight: 600;
     }
 
-    .command {
+    .command_box {
       background: $blue-30;
       color: white;
       padding: 0.7rem 1rem;
@@ -62,6 +62,17 @@
 
       a {
         color: $teal-10;
+      }
+    }
+
+    .copy {
+      background: transparent;
+      border: 0;
+      color: white;
+
+      &:hover {
+        color: $teal-10;
+        cursor: pointer;
       }
     }
 
