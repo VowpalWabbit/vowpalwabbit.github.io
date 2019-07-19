@@ -11,7 +11,7 @@
   .settings_container {
     padding-bottom: 2rem;
     margin: 0 1rem;
-    border-bottom: 1px solid $gray-10;
+    border-bottom: 1px solid $dark-border;
 
     .settings {
       padding: 0.5rem 0;
@@ -28,7 +28,7 @@
       padding: 0.25rem;
       border-radius: 6.72px;
       background-color: white;
-      box-shadow: 0 1px 8px 0 $gray-10;
+      box-shadow: 0 1px 8px 0 $dark-border;
       border: 0;
       color: $primary-text;
 
@@ -59,6 +59,10 @@
       color: white;
       padding: 0.7rem 1rem;
       margin: 1rem 0;
+
+      a {
+        color: $teal-10;
+      }
     }
 
     .tutorial_link {

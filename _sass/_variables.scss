@@ -8,9 +8,12 @@ $blue-50: #0B4A71;
 // text
 $teal-10: #7BFFF4;
 $primary-text: #333333;
-$gray-10: #939393;
-$gray-20: #666666;
-$gray-30: #4A4A4A;
+$secondary-text: #666666;
+
+// border:
+$light-border: #D8D8D8;
+$dark-border: #939393;
+
 
 @mixin primary-link {
   a {
