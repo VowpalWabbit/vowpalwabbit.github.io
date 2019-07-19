@@ -3,5 +3,5 @@ tab: Active learning
 title: Active learning
 order: 3
 module_id: active_learning
-description: In active learning, a learner is given access to unlabeled data and is allowed to adaptively choose which ones to label. The main drive for this approach is when the cost of labelling data is significantly bigger than acquiring the unlabeled data.
+description: In active learning, a learner chooses which examples to label given what it knows and unlabeled examples to choose from. Active learning is used to minimize the cost of labelling datasets.
 ---
