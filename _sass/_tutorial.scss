@@ -10,5 +10,19 @@
     background-color: #F8F9FF;
     border: 1px solid $light-border;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .copy {
+    background: transparent;
+    border: 0;
+    color: $blue-20;
+    align-self: flex-start;
+
+    &:hover {
+      color: $blue-10;
+      cursor: pointer;
+    }
   }
 }

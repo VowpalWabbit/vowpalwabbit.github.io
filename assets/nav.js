@@ -25,6 +25,12 @@ $(document).ready(function() {
 
   });
 
+  $(".language-sh pre.highlight").append(
+    '<button class="copy">' +
+      '<i class="fa fa-clone" aria-hidden="true"></i>' +
+    '</button>'
+  );
+
   $(".tabs_container .nav, .tabs_container .sub_nav, .use_cases_container .nav")
     .on("click", " .nav_item", function() {
       $(this).siblings().removeClass('active');
