@@ -182,7 +182,7 @@ Alternatively, and more commonly, we would first learn and save the model into a
 
 You may load a initial model to memory by adding `-i house.model`. You may also want to specify `-t` which stands for "test-only" (do no learning):
 
-```
+```sh
 vw -i house.model -t house_dataset -p /dev/stdout --quiet
 ```
 
