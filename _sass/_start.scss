@@ -11,7 +11,7 @@
   .settings_container {
     padding-bottom: 2rem;
     margin: 0 1rem;
-    border-bottom: 1px solid $gray-10;
+    border-bottom: 1px solid $dark-border;
 
     .settings {
       padding: 0.5rem 0;
@@ -28,7 +28,7 @@
       padding: 0.25rem;
       border-radius: 6.72px;
       background-color: white;
-      box-shadow: 0 1px 8px 0 $gray-10;
+      box-shadow: 0 1px 8px 0 $dark-border;
       border: 0;
       color: $primary-text;
 
@@ -54,11 +54,26 @@
       font-weight: 600;
     }
 
-    .command {
+    .command_box {
       background: $blue-30;
       color: white;
       padding: 0.7rem 1rem;
       margin: 1rem 0;
+
+      a {
+        color: $teal-10;
+      }
+    }
+
+    .copy {
+      background: transparent;
+      border: 0;
+      color: white;
+
+      &:hover {
+        color: $teal-10;
+        cursor: pointer;
+      }
     }
 
     .tutorial_link {

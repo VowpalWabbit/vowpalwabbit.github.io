@@ -8,18 +8,24 @@ $blue-50: #0B4A71;
 // text
 $teal-10: #7BFFF4;
 $primary-text: #333333;
-$gray-10: #939393;
-$gray-20: #666666;
-$gray-30: #4A4A4A;
+$secondary-text: #666666;
+
+// border:
+$light-border: #D8D8D8;
+$dark-border: #939393;
+
 
 @mixin primary-link {
   a {
     border: 2px solid white;
     border-radius: 10px;
-    padding: 0.6rem 1rem;
-    margin: 0.5rem 0;
-    display: inline-block;
     color: white;
+    display: inline-block;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    padding: 0.6rem 0;
+    text-align: center;
+    width: 12rem;
   }
 }
 

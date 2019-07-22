@@ -8,19 +8,25 @@
   }
 
   .community {
-    max-width:20rem;
-    height: 19rem;
+    width: 17.5rem;
+    height: 17rem;
     margin: 0.5rem auto;
     padding: 2rem 1rem;
     background-color: white;
     box-shadow: 0 2px 11px 0 rgba(168, 168, 168, 0.5);
     color: $primary-text;
+    border-radius: 32px;
+    box-shadow: 0 2px 11px 0 rgba(168,168,168,0.5);
   }
 
   .community_title {
-    font-size: 1.5rem;
-    padding-top: 2rem;
+    font-size: 1.3rem;
+    padding: 1rem 0 0;
     font-weight: 400;
+  }
+
+  .community_description {
+    font-size: 0.9rem;
   }
 
   .icon {
@@ -39,7 +45,7 @@
     @include primary-link;
     padding: 0;
     position: absolute;
-    bottom: 2rem;
+    bottom: 2.5rem;
     left: 0;
     right: 0;
     margin: auto;

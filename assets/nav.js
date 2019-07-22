@@ -50,6 +50,22 @@ $(document).ready(function() {
 
     showModule(modules[index]);
   });
+
+  $(document).on("click", ".language-sh .copy", function() {
+    if (document.selection) {
+      const range = document.body.createTextRange();
+      range.moveToElementText($(this).prev()[0]);
+      range.select().createTextRange();
+      document.execCommand("copy");
+    } else if (window.getSelection) {
+      const range = document.createRange();
+      range.selectNode($(this).prev()[0]);
+      const selection = window.getSelection();
+      selection.removeAllRanges()
+      selection.addRange(range);
+      document.execCommand("copy");
+    }
+  });
 });
 
 function showModule(module_id) {

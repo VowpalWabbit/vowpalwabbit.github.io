@@ -4,7 +4,7 @@
   z-index: 1;
 
   &.scrolled, .learn &, .tutorial & {
-    border-bottom: 1px solid $gray-10;
+    border-bottom: 1px solid $light-border;
 
     a {
       color: $primary-text;

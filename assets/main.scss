@@ -9,7 +9,7 @@ html, body {
 }
 
 .content {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: $primary-text;
 }
 
@@ -111,7 +111,7 @@ html, body {
       padding-bottom: 0.3rem;
       margin-bottom: 1.5rem;
       font-size: 0.8rem;
-      color: $gray-20;
+      color: $secondary-text;
 
       &:hover {
         cursor: pointer;
