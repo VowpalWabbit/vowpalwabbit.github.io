@@ -29,6 +29,7 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-scholar
 
 sass:
   style: compact
@@ -60,6 +61,11 @@ collections:
     output: true
   users:
     output: true
+  bibliography:
+    output: true
+
+scholar:
+  bibliography_template:  bibtemplate
 
 defaults:
   -
