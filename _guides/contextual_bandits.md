@@ -12,7 +12,7 @@ resource_icon: /svg/resources/guide.svg
 
 # Contextual Bandits in VW
 
-We are very excited you are here! It's okay if you have never heard of Contextual Bandits (CB) before. The goal of this tutorial is to have you walk away with an understanding of Contextual Bandits, when CB can be used, how to run CB algorithms in Vowpal Wabbit (VW), and hopefully make you feel empowered and excited to use it on your own. This tutorial will focus on Python but VW is also supported in C++ and C#.
+The goal of this tutorial is to have you walk away with an understanding of Contextual Bandits, when CB can be used, how to run CB algorithms in Vowpal Wabbit (VW), and hopefully make you feel empowered and excited to use it on your own. This tutorial focuses on Python but VW is also supported in C++ and C#.
 
 ## What is a Contextual Bandit?
 
@@ -21,7 +21,7 @@ Consider an application that interacts with its environment, such as a news webs
 2. _APP_ chooses an action _a_ from a set of actions _A_ i.e. a ∈ A to take (A may depend on x)
 3. A reward r for the chosen a is observed by _APP_
 
-We want our application _APP_ to take actions such that we get the highest possible reward. In machine learning parlance, we want a _model_ that will tell us which action to take.
+We want our application _APP_ to take actions such that we get the highest possible reward. In machine learning parlance, we want a _model_ that tells us which action to take.
 
 This scenario is very similar to a traditional <a href="https://en.wikipedia.org/wiki/Multi-armed_bandit" target="_blank">Multi Armed Bandit (MAB)</a>. The term "multi-armed bandit" comes from a hypothetical experiment where a gambler must choose between multiple actions (i.e. slot machines, the "one-armed bandits"), each with an unknown payout. The goal is to maximize the payout by optimally choosing the best actions when odds and payouts are unknown.
 
@@ -29,7 +29,7 @@ In MAB, the gambler has no information at all to make a decision. However, our a
 
 In the contextual bandit problem, a learner (the gambler in the hypothetical experiment) repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only.
 
-We will use the term "policy" many times in this tutorial. For those new to RL, let's try to understand the distinction between _model_ and _policy_. In essence "policy" for RL is roughly equivalent to "model".  The word "model", as used in machine learning essentially means "learned function". When someone says "policy", it is more specific than "model", because it indicates this is a model that acts in the world.
+We use the term "policy" many times in this tutorial. For those new to RL, let's try to understand the distinction between _model_ and _policy_. In essence "policy" for RL is roughly equivalent to "model".  The word "model", as used in machine learning essentially means "learned function". When someone says "policy", it is more specific than "model", because it indicates this is a model that acts in the world.
 
 In Contextual Bandits, the contexts and actions are usually represented as feature vectors. _APP_ chooses actions by applying a policy _π_ that takes a context as input and returns an action. The goal is to find a policy that maximizes average reward over a sequence of interactions.
 
@@ -53,11 +53,11 @@ The focal point of Contextual Bandit learning research is efficient exploration 
 
 VW offers various CB algorithms. For more details, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Github wiki</a>.
 
-Having said that, we have tried to summarize as much as we can in this tutorial with the intention that you will learn a quite a bit about CB in general and working with CB algorithms in VW.
+Having said that, we have tried to summarize as much as we can in this tutorial with the intention that you learn a quite a bit about CB in general and working with CB algorithms in VW.
 
 ## VW CB functionalities
 
-In this section we will go over different CB functionalities offered by VW, understand how to format data and understand the results.
+In this section we go over different CB functionalities offered by VW, understand how to format data and understand the results.
 
 ### Specifying CB approach
 
@@ -83,7 +83,7 @@ VW offers 5 exploration algorithms
 - Explore-first `--first`
 - Epsilon-greedy `--epsilon`
 - Bagging Explorer `--bag`
-- Online Cover `--cover` (not supported for `--cb_explore_adf`)
+- Online Cover `--cover` 
 - Softmax Explorer `--softmax` (only supported for `--cb_explore_adf`)
 
 For more details, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Github wiki</a>.
@@ -97,7 +97,7 @@ Let's recall - A CB problem has four main components:
 - **Probability (p)**: probability of choosing _a_ from _A_
 - **Cost/Reward (r)**: reward received for action _a_
 
-We will look at the input format for different CB types that VW offers
+We next look at the input format for different CB types that VW offers
 
 ### 1. `--cb`
 
@@ -120,11 +120,11 @@ Sample data file (train.dat) with five examples:
 
 Usage: `./vw -d train.dat --cb 4`
 
-**Note:** The usage mentioned in this section is for using VW command line. However, in the example tutorial below, we will also see how to use it in Python.
+**Note:** The usage mentioned in this section is for using VW command line. However, in the example tutorial below, we also see how to use it in Python.
 
 ### 2. `--cb_explore`
 
-`--cb_explore <number_of_actions>`: e.g. `--cb_explore 4` specifies our examples will explore a total of 4 actions. Since this is exploring through the action space, you will also have to specify which algorithm you want to use for exploration.
+`--cb_explore <number_of_actions>`: e.g. `--cb_explore 4` specifies our examples explore a total of 4 actions. Since this is exploring through the action space, you also have to specify which algorithm you want to use for exploration.
 
 The example format is same as in the case of `--cb`
 
@@ -134,13 +134,13 @@ Usage:
 - `./vw -d train.dat --cb_explore 4 --epsilon 0.2`
   - In this case, the prediction of the current learned policy is taken with probability 1 - _epsilon_ (i.e. 80% of the time) and with the remaining (i.e. 20%) epsilon probability an action is chosen uniformly at random.
 - `./vw -d train.dat --cb_explore 4 --bag 5`
-  - In this case, we will use an ensemble approach. We will take an argument _m_ for `--bag` and train _m_ different policies, i.e. 5 in the above example. The policies differ because they are being trained on different subsets of data, with each example going to a subset of the _m_ policies.
+  - In this case, we use an ensemble approach. We take an argument _m_ for `--bag` and train _m_ different policies, i.e. 5 in the above example. The policies differ because they are being trained on different subsets of data, with each example going to a subset of the _m_ policies.
 - `./vw -d train.dat --cb_explore 4 --cover 3`
   - In this case, similar to bagging _m_ different policies are trained but unlike bagging the training of these policies is explicitly optimized to result in a diverse set of predictions, choosing all the actions which are not already learned to be bad in a given context. This is a _theoretically optimal_ exploration algorithm. If you are curious to learn more, you can read more about it in this <a href="http://arxiv.org/abs/1402.0555" target="_blank">paper</a>.
 
 ### 3. `--cb_explore_adf`
 
-`--cb_explore_adf` e.g. `--cb_explore_adf` Since this exploring through the action space, you will also have to specify which algorithm you want to use for exploration.
+`--cb_explore_adf` e.g. `--cb_explore_adf` Since this exploring through the action space, you also have to specify which algorithm you want to use for exploration.
 
 The example format for this one is a little bit different from the other two cases because the action set changes over time or we have rich information for each action. Hence, it is best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.
 
