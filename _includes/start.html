@@ -59,28 +59,54 @@
                 </div>
                 <div class="col-lg-3 col-sm col-12">
                   <button class="option">
-                    Java
+                    C#
                   </button>
                 </div>
                 <div class="col-lg-3 col-sm col-12">
-                  <button class="option">
-                    C#
+                  <button class="option disabled" disabled>
+                    * Java
                   </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="command_container">
-        <div class="next_steps">
-          Next step:
-        </div>
-        <div class="row command_box">
-          <div class="col">
-            <div class="command">
+
+          <div class="row justify-content-end">
+            <div class="col-10 note">
+              * Configuration option coming soon
             </div>
           </div>
+        </div>
+        <div class="col-12 command_container">
+          <div class="run_command">
+            Run command:
+          </div>
+          <div class="row command_box">
+            <div class="col">
+              <div class="command">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="next_step_container">
+        <h2 class="text-center">
+          Next steps
+        </h2>
+
+        <div class="row justify-content-center text-center">
+          <div class="col-12">
+            Run through a simple linear regression problem and learn how VW works.
+          </div>
+        </div>
+          {% assign getting_started = site.guides | where: "module_id","getting_started" | first %}
+        <div class="row justify-content-center text-center">
+          <a href="{{ getting_started.url | relative_url}}"
+            class="tutorial_link"
+          >
+            Begin tutorial
+          </a>
         </div>
       </div>
     </div>

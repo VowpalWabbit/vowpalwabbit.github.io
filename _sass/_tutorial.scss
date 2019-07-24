@@ -1,5 +1,23 @@
 .tutorial_container {
-  padding: 10rem 1rem 1rem;
+  padding: 7rem 1rem 1rem;
+
+  .tutorial_nav {
+    padding-bottom: 2rem;
+
+    .home {
+      color: $primary-text;
+    }
+
+    .title {
+      &:before {
+        content: '>';
+        font-weight: normal;
+      }
+
+      color: $primary-text;
+      font-weight: 600;
+    }
+  }
 
   h1 {
     color: $blue-20;
