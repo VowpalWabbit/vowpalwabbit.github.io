@@ -1,6 +1,10 @@
 .hero_container {
-  background: $blue-50;
+  background: url("../assets/images/home/hero/bg.svg");
+  background-repeat: repeat;
+  background-size: auto 100%;
+  background-position: center center;
   padding: 12rem 1rem 10rem;
+  margin: -1px;
   color: white;
 
   .hero_buttons {

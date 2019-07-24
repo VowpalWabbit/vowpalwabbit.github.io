@@ -3,6 +3,14 @@
   position: fixed;
   z-index: 1;
 
+  .logo {
+    max-width: 60%;
+
+    svg {
+      width: 100%;
+    }
+  }
+
   &.scrolled, .learn &, .tutorial & {
     border-bottom: 1px solid $light-border;
 

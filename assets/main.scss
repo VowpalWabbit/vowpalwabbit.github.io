@@ -124,6 +124,14 @@ html, body {
       border-bottom: 2px solid $blue-20;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .sub_nav {
+      button {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 .research_container {
