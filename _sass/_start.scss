@@ -9,12 +9,17 @@
   }
 
   .settings_container {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     margin: 0 1rem;
     border-bottom: 1px solid $dark-border;
 
     .settings {
-      padding: 0.5rem 0;
+      padding-top: 0.5rem;
+    }
+
+    .note {
+      color: $note;
+      font-size: 0.8rem;
     }
 
     .title {
@@ -35,6 +40,11 @@
       &:hover {
         cursor: pointer;
       }
+
+      &.disabled {
+        color: $note;
+        pointer-events: none;
+      }
     }
 
     .selected .option {
@@ -47,10 +57,34 @@
     }
   }
 
-  .command_container {
-    padding: 2rem 1rem 0;
+  .next_step_container {
+    padding: 1rem 1rem 0;
 
-    .next_steps {
+    .tutorial_link {
+      display: inline-block;
+      font-weight: 600;
+      border: 3px solid black;
+      border-radius: 11px;
+      padding: 0.5rem;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: black;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:hover, &:focus {
+        background: black;
+        color: white;
+      }
+    }
+  }
+
+  .command_container {
+    padding-top: 1rem;
+
+    .run_command {
       font-weight: 600;
     }
 
@@ -74,27 +108,6 @@
       &:hover {
         color: $teal-10;
         cursor: pointer;
-      }
-    }
-
-    .tutorial_link {
-      display: inline-block;
-      width: 100%;
-      font-weight: 600;
-      border: 3px solid black;
-      border-radius: 11px;
-      padding: 0.5rem 0.3rem;
-      text-align: center;
-      margin: 1rem 0;
-      color: black;
-
-      &:hover {
-        text-decoration: none;
-      }
-
-      &:hover, &:focus {
-        background: black;
-        color: white;
       }
     }
   }

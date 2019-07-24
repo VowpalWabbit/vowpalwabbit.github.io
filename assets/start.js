@@ -11,10 +11,8 @@ $(document).ready(function() {
 
 function selectDefaultSettings() {
   default_os = getDefaultOS() || 'linux';
-  default_build = 'stable';
   default_language = 'python';
 
-  selectOption('build', default_build);
   selectOption('os', default_os);
   selectOption('language', default_language);
   showCommand();
