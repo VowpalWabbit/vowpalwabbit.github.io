@@ -17,9 +17,9 @@ The goal of this tutorial is to have you walk away with an understanding of Cont
 ## What is a Contextual Bandit?
 
 Consider an application that interacts with its environment, such as a news website with users or a cloud controller with machines. Let's call this application _APP_. This application repeatedly goes through the following:
-1. A context x arrives and is observed by _APP_
+1. Some context x arrives and is observed by _APP_
 2. _APP_ chooses an action _a_ from a set of actions _A_ i.e. a ∈ A to take (A may depend on x)
-3. A reward r for the chosen a is observed by _APP_
+3. Some reward r for the chosen a is observed by _APP_
 
 We want our application _APP_ to take actions such that we get the highest possible reward. In machine learning parlance, we want a _model_ that tells us which action to take.
 
