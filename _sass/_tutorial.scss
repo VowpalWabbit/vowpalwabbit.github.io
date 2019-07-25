@@ -43,4 +43,12 @@
       cursor: pointer;
     }
   }
+
+  .edit {
+    color: $secondary-text;
+
+    &:hover {
+      color: $primary-text;
+    }
+  }
 }

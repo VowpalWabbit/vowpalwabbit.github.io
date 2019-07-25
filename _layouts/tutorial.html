@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{ site.baseurl }}/assets/nav.js"></script>
-
     <title>{{ page.title }}</title>
   </head>
   <body class={{page.body_class}}>
@@ -24,6 +23,9 @@
           {{ page.title }}
         </span>
       </div>
+      <a href="{{ site.github.repository_url }}/blob/master/{{ page.relative_path }}" class="edit" title="Edit this page">
+        <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+      </a>
       {{ content }}
     </div>
     {% include footer.html %}
