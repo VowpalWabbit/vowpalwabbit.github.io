@@ -1,10 +1,14 @@
 .footer_container {
   background: $blue-20;
-  padding: 2rem 2rem 0;
+  padding: 1rem 0;
   color: white;
 
-  .logo {
-    padding-bottom: 2rem;
+  .logo svg{
+    width: 10rem;
+  }
+
+  .microsoft_logo {
+    width: 5rem;
   }
 
   .title {
