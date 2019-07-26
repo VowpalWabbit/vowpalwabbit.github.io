@@ -3,21 +3,14 @@
   padding: 1rem 0;
   color: white;
 
-  .logo svg{
-    width: 10rem;
-  }
-
   .microsoft_logo {
-    width: 5rem;
+    width: 6rem;
+    display: inline-block;
+    padding-left: 0.5rem;
   }
 
   .title {
     font-weight: 600;
     font-size: 1rem;
-  }
-
-  a {
-    color: lightgray;
-    padding: 0.5rem 0;
   }
 }
