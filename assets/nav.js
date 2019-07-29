@@ -5,7 +5,7 @@ $(document).ready(function() {
     'online',
     'efficiency',
     'flexibility'
-  ]
+  ];
 
   $(document).scroll(function () {
     const scroll_top = $(this).scrollTop();
@@ -30,6 +30,17 @@ $(document).ready(function() {
       '<i class="fa fa-clone" aria-hidden="true"></i>' +
     '</button>'
   );
+
+  $('[data-ref]').each((index, citation_element) => {
+    const $citation_element = $(citation_element);
+    const citation_id = $citation_element.data("ref");
+    console.log(citation_id);
+    $citation_element.append(
+      '<a href="#'+ citation_id +'">' +
+        '<sup>[' + (index + 1) + ']</sup>' +
+      '</a>'
+    );
+  });
 
   $(".hero_container").on("click", ".get_started_button", function() {
     scrollTo('get_started');
