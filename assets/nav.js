@@ -31,6 +31,10 @@ $(document).ready(function() {
     '</button>'
   );
 
+  $(".hero_container").on("click", ".get_started_button", function() {
+    scrollTo('get_started');
+  });
+
   $(".tabs_container .nav, .tabs_container .sub_nav, .use_cases_container .nav")
     .on("click", " .nav_item", function() {
       $(this).siblings().removeClass('active');
@@ -79,4 +83,10 @@ function showModule(module_id) {
   const $module = $("div[data-module_id=" + module_id +"]");
   $module.siblings().addClass('hidden');
   $module.removeClass('hidden');
+}
+
+function scrollTo(id){
+  $('html,body').animate({
+    scrollTop: $("#"+id).offset().top
+  },'slow');
 }

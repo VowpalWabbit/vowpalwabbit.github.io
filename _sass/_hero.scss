@@ -10,6 +10,23 @@
   .hero_buttons {
     @include primary-link;
 
+    .get_started_button {
+      border: 2px solid white;
+      border-radius: 10px;
+      background: white;
+      color: $blue-20;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+      padding: 0.6rem 0;
+      text-align: center;
+      width: 12rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
     a {
       background: white;
       color: $blue-20;
