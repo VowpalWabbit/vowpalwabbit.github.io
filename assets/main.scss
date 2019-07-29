@@ -171,3 +171,45 @@ html, body {
     padding-top: 3rem;
   }
 }
+
+.four_oh_four {
+  .four_oh_four_container {
+    background: $blue-10;
+    padding: 6rem 1rem 1rem;
+    height: calc(100vh - 3.5rem);
+  }
+
+  .four_oh_four_icon {
+    width: 75%;
+    max-height: 12rem;
+  }
+
+  .header {
+    color: $teal-5;
+    font-size: 7rem;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .return_home_link {
+    @include primary-link;
+    padding: 1rem 0;
+
+    a {
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+      width: 100%;
+
+      &:hover {
+        text-decoration: none;
+        background: white;
+        color: $blue-20;
+      }
+    }
+  }
+}
