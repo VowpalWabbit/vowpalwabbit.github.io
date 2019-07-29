@@ -27,6 +27,10 @@ $dark-border: #939393;
     padding: 0.6rem 0;
     text-align: center;
     width: 12rem;
+
+    &:hover {
+      transition: 0.3s;
+    }
   }
 }
 
