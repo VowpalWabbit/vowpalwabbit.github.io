@@ -213,3 +213,75 @@ html, body {
     }
   }
 }
+
+.bibliography_tooltip {
+  padding: 0.3rem 0.5rem;
+  line-height: 24px;
+  width: 560px;
+  border-radius: 11px;
+  background-color: white;
+  box-shadow: 0 10px 20px 5px rgba(0,0,0,0.1);
+  font-size: 0.8rem;
+  z-index: 1;
+
+  a {
+    font-weight: 600;
+    color: $blue-20;
+  }
+
+  [x-arrow] {
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid white;
+  }
+
+  &[x-placement="right"] {
+    margin-bottom: 5px;
+  }
+
+  &[x-placement="bottom"] {
+    margin-top: 5px;
+  }
+
+  &[x-placement="left"] {
+    margin-right: 5px;
+  }
+
+  &[x-placement="right"] {
+    margin-left: 5px;
+  }
+
+/**
+ * The arrow element lives *inside* the popper
+ * so we need to offset it by its size to position
+ * it outside the popper element.
+ */
+  &[x-placement="bottom"] [x-arrow] {
+    top: -12px;
+    transform: rotate(180deg);
+  }
+
+  &[x-placement="left"] [x-arrow] {
+    right: -20px;
+    transform: rotate(270deg);
+  }
+
+  &[x-placement="top"] [x-arrow] {
+    bottom: -12px;
+  }
+
+  &[x-placement="right"] [x-arrow] {
+    left: -20px;
+    transform: rotate(90deg);
+  }
+}
+
+.hidden_absolute {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

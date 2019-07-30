@@ -7,6 +7,8 @@ $(document).ready(function() {
     'flexibility'
   ];
 
+  let popper;
+
   $(document).scroll(function () {
     const scroll_top = $(this).scrollTop();
     const nav_height = $nav.height();
@@ -31,15 +33,52 @@ $(document).ready(function() {
     '</button>'
   );
 
-  $('[data-ref]').each((index, citation_element) => {
-    const $citation_element = $(citation_element);
-    const citation_id = $citation_element.data("ref");
-    console.log(citation_id);
-    $citation_element.append(
+  $('[data-ref]').each((index, superscript) => {
+    const $superscript = $(superscript);
+    const citation_id = $superscript.data("ref");
+
+    $superscript.append(
       '<a href="#'+ citation_id +'">' +
         '<sup>[' + (index + 1) + ']</sup>' +
       '</a>'
     );
+
+    const citation_content = $("#" + $.escapeSelector(citation_id)).html();
+
+    $superscript.append(
+      '<div class="bibliography_tooltip hidden" role="tooltip">' +
+        citation_content +
+        '<div x-arrow></div>' +
+      '</div>'
+    );
+  });
+
+  $('sup').on('click mouseenter', function (e) {
+    e.stopPropagation();
+    const $this = $(this);
+    const $tooltip = $this.parent().next(".bibliography_tooltip");
+    popper = new Popper($this, $tooltip, {
+      placement: 'top',
+      modifiers: {
+        flip: {
+          behavior: ['right', 'left', 'top','bottom']
+        },
+        offset: {
+          enabled: true,
+          offset: '300, 10'
+        },
+        trigger: 'hover'
+      },
+    });
+    $(this).parent().next(".bibliography_tooltip").removeClass("hidden");
+  });
+
+  $('span[data-ref]').on("mouseleave", function() {
+    $(".bibliography_tooltip").addClass("hidden");
+  });
+
+  $(document).on("click", function() {
+    $(".bibliography_tooltip").addClass("hidden");
   });
 
   $(".hero_container").on("click", ".get_started_button", function() {
