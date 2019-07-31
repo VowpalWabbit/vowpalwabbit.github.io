@@ -13,6 +13,7 @@ html, body {
   color: $primary-text;
 }
 
+@import "typography";
 @import "header";
 @import "footer";
 @import "hero";
@@ -27,7 +28,25 @@ html, body {
 @import "paper";
 @import "about";
 @import "tutorial";
-@import "typography";
+@import "publications";
+
+.vw_breadcrumb {
+  padding-bottom: 0.5rem;
+
+  .home {
+    color: $primary-text;
+  }
+
+  .title {
+    &:before {
+      content: '>';
+      font-weight: normal;
+    }
+
+    color: $primary-text;
+    font-weight: 600;
+  }
+}
 
 .problem_framing_intro_container {
   background: $blue-30;
@@ -345,42 +364,14 @@ sup {
   }
 
   ol.bibliography {
-    list-style: none;
-    counter-reset: citation-counter;
+    @include citation;
+
     column-count: 2;
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-gap: 3rem;
     -moz-column-gap: 3rem;
     -webkit-column-gap: 3rem;
-
-    li {
-      counter-increment: citation-counter;
-      display: inline-block;
-      position: relative;
-
-      a {
-        color: $blue-20;
-      }
-
-      &:before {
-        content: counter(citation-counter);
-        font-size: 1.5rem;
-        position: absolute;
-        left: -1.5rem;
-        top: 1rem;
-        line-height: 32px;
-      }
-
-      span {
-        padding: 1rem;
-        display: block;
-
-        &:target {
-          background-color: $blue-5;
-        }
-      }
-    }
   }
 }
 

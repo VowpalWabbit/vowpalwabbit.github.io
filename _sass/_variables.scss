@@ -65,3 +65,36 @@ $blue-5: #F2F4FF;
     }
   }
 }
+
+@mixin citation {
+  list-style: none;
+  counter-reset: citation-counter;
+
+  li {
+    counter-increment: citation-counter;
+    display: inline-block;
+    position: relative;
+
+    a {
+      color: $blue-20;
+    }
+
+    &:before {
+      content: counter(citation-counter);
+      font-size: 1.5rem;
+      position: absolute;
+      left: -1.5rem;
+      top: 1rem;
+      line-height: 32px;
+    }
+
+    span {
+      padding: 1rem;
+      display: block;
+
+      &:target {
+        background-color: $blue-5;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.publications_container {
+  padding: 7rem 1rem;
+
+  h1 {
+    color: $blue-20;
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  .bibliography {
+    @include citation;
+  }
+}
