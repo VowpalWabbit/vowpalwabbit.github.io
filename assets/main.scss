@@ -214,8 +214,26 @@ html, body {
   }
 }
 
+sup {
+  &:before {
+    content: '(';
+  }
+
+  &:after {
+    content: ')';
+  }
+
+  a {
+    color: $primary-text;
+
+    &:hover {
+      color: $primary-text;
+    }
+  }
+}
+
 .bibliography_tooltip {
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem 0.8rem;
   line-height: 24px;
   width: 560px;
   border-radius: 11px;
@@ -225,7 +243,6 @@ html, body {
   z-index: 1;
 
   a {
-    font-weight: 600;
     color: $blue-20;
   }
 
@@ -274,6 +291,43 @@ html, body {
   &[x-placement="right"] [x-arrow] {
     left: -20px;
     transform: rotate(90deg);
+  }
+
+  // ol {
+  //   list-style: none;
+  //   counter-reset: citation-counter;
+  // }
+  //
+  // ol li {
+  //   counter-increment: citation-counter;
+  //   padding: 0.5rem 0;
+  // }
+  //
+  // ol li::before {
+  //   content: counter(citation-counter);
+  //   font-size: 1.5rem;
+  //   position: absolute;
+  //   left: 20px;
+  //   line-height: 32px;
+  // }
+
+  .citation {
+    padding: 0.3rem 0;
+
+    // overwrite bootstrap
+    .col-1, .col {
+      padding: 0;
+    }
+
+    .col-1 {
+      max-width: 50px;
+      text-align: center;
+    }
+
+    .superscript {
+      font-size: 1.5rem;
+      padding-top: 0.2rem;
+    }
   }
 }
 

@@ -7,8 +7,6 @@ $(document).ready(function() {
     'flexibility'
   ];
 
-  let popper;
-
   $(document).scroll(function () {
     const scroll_top = $(this).scrollTop();
     const nav_height = $nav.height();
@@ -33,31 +31,64 @@ $(document).ready(function() {
     '</button>'
   );
 
-  $('[data-ref]').each((index, superscript) => {
-    const $superscript = $(superscript);
-    const citation_id = $superscript.data("ref");
+  let citation_index_so_far = 0;
+  $('[data-ref]').each((_, term) => {
+    const $term = $(term);
+    const citations = $term.data("ref").split(" ").map((citation_id) => {
+      return {
+        superscript: ++citation_index_so_far,
+        citation_id
+      }
+    });
 
-    $superscript.append(
-      '<a href="#'+ citation_id +'">' +
-        '<sup>[' + (index + 1) + ']</sup>' +
-      '</a>'
-    );
+    const superscript_link = citations.map((citation) => {
+      return (
+        '<a href=#"'+ citation.citation_id +'">' +
+          citation.superscript +
+        '</a>'
+      )
+    }).join(', ');
 
-    const citation_content = $("#" + $.escapeSelector(citation_id)).html();
+    $term.append('<sup>' + superscript_link + '</sup>');
 
-    $superscript.append(
+    let citation_list;
+    if (citations.length === 1) {
+      citation_list =
+        '<div class="row">' +
+          '<div class="col">' +
+            $("#" + $.escapeSelector(citations[0].citation_id)).html() +
+          '</div>' +
+        '</div>';
+    } else {
+      citation_list = citations.map((citation) => {
+        return (
+          '<div class="row citation">' +
+            '<div class="col-1 superscript">' +
+              '<a href="#'+ citation.citation_id +'">' +
+                citation.superscript +
+              '</a>' +
+            '</div>' +
+            '<div class="col">' +
+              $("#" + $.escapeSelector(citation.citation_id)).html() +
+            '</div>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    $term.append(
       '<div class="bibliography_tooltip hidden" role="tooltip">' +
-        citation_content +
+        citation_list +
         '<div x-arrow></div>' +
       '</div>'
     );
   });
 
-  $('sup').on('click mouseenter', function (e) {
+  $('sup').on('mouseenter', function (e) {
     e.stopPropagation();
     const $this = $(this);
-    const $tooltip = $this.parent().next(".bibliography_tooltip");
-    popper = new Popper($this, $tooltip, {
+    const $tooltip = $this.next(".bibliography_tooltip");
+    new Popper($this, $tooltip, {
       placement: 'top',
       modifiers: {
         flip: {
@@ -135,7 +166,7 @@ function showModule(module_id) {
   $module.removeClass('hidden');
 }
 
-function scrollTo(id){
+function scrollTo(id) {
   $('html,body').animate({
     scrollTop: $("#"+id).offset().top
   },'slow');
