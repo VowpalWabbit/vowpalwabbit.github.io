@@ -31,12 +31,22 @@ $(document).ready(function() {
     '</button>'
   );
 
+  let citation_index_map = {};
   let citation_index_so_far = 0;
   $('[data-ref]').each((_, term) => {
     const $term = $(term);
+
     const citations = $term.data("ref").split(" ").map((citation_id) => {
+      let superscript;
+      if (Object.keys(citation_index_map).includes(citation_id)) {
+        superscript = citation_index_map[citation_id];
+      } else {
+        citation_index_so_far += 1;
+        superscript = citation_index_so_far;
+        citation_index_map[citation_id] = citation_index_so_far;
+      }
       return {
-        superscript: ++citation_index_so_far,
+        superscript,
         citation_id
       }
     });
@@ -96,17 +106,17 @@ $(document).ready(function() {
         },
         offset: {
           enabled: true,
-          offset: '300, 10'
+          offset: '250, 10'
         },
         trigger: 'hover'
       },
     });
-    $(this).parent().next(".bibliography_tooltip").removeClass("hidden");
+    $(this).next(".bibliography_tooltip").removeClass("hidden");
   });
 
-  $('span[data-ref]').on("mouseleave", function() {
-    $(".bibliography_tooltip").addClass("hidden");
-  });
+  // $('span[data-ref]').on("mouseleave", function() {
+  //   $(".bibliography_tooltip").addClass("hidden");
+  // });
 
   $(document).on("click", function() {
     $(".bibliography_tooltip").addClass("hidden");
