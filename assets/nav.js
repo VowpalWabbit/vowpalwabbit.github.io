@@ -53,7 +53,7 @@ $(document).ready(function() {
 
     const superscript_link = citations.map((citation) => {
       return (
-        '<a href=#"'+ citation.citation_id +'">' +
+        '<a href=#'+ citation.citation_id +'>' +
           citation.superscript +
         '</a>'
       )
@@ -114,9 +114,9 @@ $(document).ready(function() {
     $(this).next(".bibliography_tooltip").removeClass("hidden");
   });
 
-  // $('span[data-ref]').on("mouseleave", function() {
-  //   $(".bibliography_tooltip").addClass("hidden");
-  // });
+  $('span[data-ref]').on("mouseleave", function() {
+    $(".bibliography_tooltip").addClass("hidden");
+  });
 
   $(document).on("click", function() {
     $(".bibliography_tooltip").addClass("hidden");
