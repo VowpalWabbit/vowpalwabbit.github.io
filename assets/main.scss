@@ -249,6 +249,16 @@ sup {
       color: $primary-text;
     }
   }
+
+  button {
+    color: red;
+    background: transparent;
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
 }
 
 .bibliography_tooltip {

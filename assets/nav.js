@@ -59,7 +59,25 @@ $(document).ready(function() {
       )
     }).join(', ');
 
-    $term.append('<sup>' + superscript_link + '</sup>');
+    $term.append(
+      '<sup class="superscript_links">' +
+        superscript_link +
+      '</sup>'
+    );
+
+    const superscript_buttons = citations.map((citation) => {
+      return (
+        '<button class="superscript_button">' +
+          citation.superscript +
+        '</button>'
+      )
+    }).join(', ');
+
+    $term.append(
+      '<sup class="superscript_buttons">' +
+        superscript_buttons +
+      '</sup>'
+    );
 
     let citation_list;
     if (citations.length === 1) {
