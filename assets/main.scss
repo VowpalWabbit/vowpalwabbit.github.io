@@ -30,6 +30,24 @@ html, body {
 @import "tutorial";
 @import "publications";
 
+.overlay_on {
+  overflow-y: hidden;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 3;
+  cursor: pointer;
+}
+
 .vw_breadcrumb {
   padding-bottom: 0.5rem;
 
@@ -258,7 +276,23 @@ sup {
 }
 
 @media screen and (max-width: 600px) {
+    .superscript_links {
+      display: none;
+    }
 
+    .superscript_buttons {
+      display: inline-block;
+    }
+}
+
+@media screen and (min-width: 600px) {
+  .superscript_buttons {
+    display: none;
+  }
+
+  .superscript_links {
+    display: inline-block;
+  }
 }
 
 .bibliography_tooltip {
@@ -338,6 +372,19 @@ sup {
     .superscript {
       font-size: 1.5rem;
       padding-top: 0.2rem;
+    }
+  }
+
+  &.mobile {
+    position: absolute;
+    z-index: 1000;
+    width: 95%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
+    [x-arrow] {
+      display: none;
     }
   }
 }

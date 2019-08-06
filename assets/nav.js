@@ -78,6 +78,17 @@ $(document).ready(function() {
         superscript_buttons +
       '</sup>'
     );
+  });
+
+  $('.superscript_links').on('mouseenter', function (e) {
+    e.stopPropagation();
+    const $this = $(this);
+    const citations = [].slice.call($this.children("a").map((_, citation_link) => {
+      return {
+        citation_id: $(citation_link).attr("href").substring(1),
+        superscript: $(citation_link).text()
+      }
+    }));
 
     let citation_list;
     if (citations.length === 1) {
@@ -104,18 +115,17 @@ $(document).ready(function() {
       }).join('');
     }
 
-    $term.append(
-      '<div class="bibliography_tooltip hidden" role="tooltip">' +
-        citation_list +
+    $("body").append(
+      '<div class="bibliography_tooltip" role="tooltip">' +
+        '<div class="container">' +
+          citation_list +
+        '</div>' +
         '<div x-arrow></div>' +
       '</div>'
     );
-  });
 
-  $('sup').on('mouseenter', function (e) {
-    e.stopPropagation();
-    const $this = $(this);
-    const $tooltip = $this.next(".bibliography_tooltip");
+    const $tooltip = $(".bibliography_tooltip");
+
     new Popper($this, $tooltip, {
       placement: 'top',
       modifiers: {
@@ -124,20 +134,38 @@ $(document).ready(function() {
         },
         offset: {
           enabled: true,
-          offset: '250, 10'
+          offset: '250, 20'
         },
         trigger: 'hover'
       },
     });
-    $(this).next(".bibliography_tooltip").removeClass("hidden");
+
+    $tooltip.mouseenter(() => {
+      $tooltip.show();
+    }).mouseleave(() => {
+      $tooltip.fadeOut(150, () => {
+        $tooltip.remove();
+      });
+    });
+  });
+
+  $('.superscript_buttons').on('click', function (e) {
+    e.stopPropagation();
+    const $this = $(this);
+    const $tooltip = $this.siblings(".bibliography_tooltip");
+    $overlay = $(".overlay");
+    $overlay.show();
+    $("html").addClass("overlay_on");
+    $tooltip.addClass("mobile");
+    $tooltip.removeClass("hidden");
   });
 
   $('span[data-ref]').on("mouseleave", function() {
-    $(".bibliography_tooltip").addClass("hidden");
-  });
-
-  $(document).on("click", function() {
-    $(".bibliography_tooltip").addClass("hidden");
+    setTimeout(function() {
+      if (!$(".bibliography_tooltip:hover").length) {
+        $(".bibliography_tooltip").remove();
+      }
+    }, 300);
   });
 
   $(".hero_container").on("click", ".get_started_button", function() {
