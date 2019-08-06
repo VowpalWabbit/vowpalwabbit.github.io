@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="11px" viewBox="0 0 12 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 56.2 (101010) - https://sketch.com -->
+    <title>7D4A51DD-580E-4825-8F1D-4AD711533297</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Component_Interaction" transform="translate(-405.000000, -1499.000000)" stroke="#666666" stroke-width="2">
+            <g id="mobile" transform="translate(89.000000, 1218.000000)">
+                <g id="popup_mobile_single" transform="translate(30.000000, 262.000000)">
+                    <g id="icon_close_small" transform="translate(287.000000, 20.000000)">
+                        <g id="Line">
+                            <path d="M5.21978022,-0.934065934 L4.78021978,10.9340659" transform="translate(5.000000, 5.000000) rotate(-315.000000) translate(-5.000000, -5.000000) "></path>
+                            <path d="M4.78021978,-0.934065934 L5.21978022,10.9340659" transform="translate(5.000000, 5.000000) rotate(-225.000000) translate(-5.000000, -5.000000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -275,26 +275,6 @@ sup {
   }
 }
 
-@media screen and (max-width: 600px) {
-    .superscript_links {
-      display: none;
-    }
-
-    .superscript_buttons {
-      display: inline-block;
-    }
-}
-
-@media screen and (min-width: 600px) {
-  .superscript_buttons {
-    display: none;
-  }
-
-  .superscript_links {
-    display: inline-block;
-  }
-}
-
 .bibliography_tooltip {
   padding: 0.5rem 0.8rem;
   line-height: 24px;
@@ -304,6 +284,25 @@ sup {
   box-shadow: 0 10px 20px 5px rgba(0,0,0,0.1);
   font-size: 0.8rem;
   z-index: 1;
+
+  .close_button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: url("images/icons/icon_close_small.svg") no-repeat top left;
+    border: 0;
+    height: 12px;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    .close_button {
+      display: none;
+    }
+  }
 
   a {
     color: $blue-20;
@@ -376,12 +375,8 @@ sup {
   }
 
   &.mobile {
-    position: absolute;
     z-index: 1000;
     width: 95%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
 
     [x-arrow] {
       display: none;
@@ -429,6 +424,12 @@ sup {
     column-gap: 3rem;
     -moz-column-gap: 3rem;
     -webkit-column-gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bibliography_container {
+    display: none;
   }
 }
 

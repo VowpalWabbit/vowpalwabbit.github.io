@@ -64,69 +64,15 @@ $(document).ready(function() {
         superscript_link +
       '</sup>'
     );
-
-    const superscript_buttons = citations.map((citation) => {
-      return (
-        '<button class="superscript_button">' +
-          citation.superscript +
-        '</button>'
-      )
-    }).join(', ');
-
-    $term.append(
-      '<sup class="superscript_buttons">' +
-        superscript_buttons +
-      '</sup>'
-    );
   });
 
   $('.superscript_links').on('mouseenter', function (e) {
     e.stopPropagation();
     const $this = $(this);
-    const citations = [].slice.call($this.children("a").map((_, citation_link) => {
-      return {
-        citation_id: $(citation_link).attr("href").substring(1),
-        superscript: $(citation_link).text()
-      }
-    }));
-
-    let citation_list;
-    if (citations.length === 1) {
-      citation_list =
-        '<div class="row">' +
-          '<div class="col">' +
-            $("#" + $.escapeSelector(citations[0].citation_id)).html() +
-          '</div>' +
-        '</div>';
-    } else {
-      citation_list = citations.map((citation) => {
-        return (
-          '<div class="row citation">' +
-            '<div class="col-1 superscript">' +
-              '<a href="#'+ citation.citation_id +'">' +
-                citation.superscript +
-              '</a>' +
-            '</div>' +
-            '<div class="col">' +
-              $("#" + $.escapeSelector(citation.citation_id)).html() +
-            '</div>' +
-          '</div>'
-        );
-      }).join('');
-    }
-
-    $("body").append(
-      '<div class="bibliography_tooltip" role="tooltip">' +
-        '<div class="container">' +
-          citation_list +
-        '</div>' +
-        '<div x-arrow></div>' +
-      '</div>'
-    );
+    generateTooltip($this);
 
     const $tooltip = $(".bibliography_tooltip");
-
-    new Popper($this, $tooltip, {
+    popper_config = {
       placement: 'top',
       modifiers: {
         flip: {
@@ -137,8 +83,44 @@ $(document).ready(function() {
           offset: '250, 20'
         },
         trigger: 'hover'
-      },
-    });
+      }
+    };
+
+    if ($(window).width() <= 768) {
+      $('span[data-ref]').off("mouseleave");
+
+      popper_config = {
+        modifiers: {
+          trigger: 'click',
+          computeStyle: {
+            enabled: true,
+            fn(data) {
+              data.styles = {
+                ...data.styles,
+                position: 'fixed',
+                left: `${(window.innerWidth - data.popper.width) / 2}px`,
+                right: `${(window.innerWidth - data.popper.width) / 2}px`,
+                margin: '0 auto',
+                top: '50%',
+                transform: 'translateY(-50%)'
+              };
+              return data;
+            }
+          }
+        }
+      };
+
+      $(".overlay").show();
+      $("html").addClass("overlay_on");
+      $(".bibliography_tooltip").addClass("mobile");
+    } else {
+      $(".overlay").hide();
+      $("html").removeClass("overlay_on");
+      $(".bibliography_tooltip").removeClass("mobile");
+      $('span[data-ref]').on("mouseleave");
+    }
+
+    new Popper($this, $tooltip, popper_config);
 
     $tooltip.mouseenter(() => {
       $tooltip.show();
@@ -149,23 +131,22 @@ $(document).ready(function() {
     });
   });
 
-  $('.superscript_buttons').on('click', function (e) {
-    e.stopPropagation();
-    const $this = $(this);
-    const $tooltip = $this.siblings(".bibliography_tooltip");
-    $overlay = $(".overlay");
-    $overlay.show();
-    $("html").addClass("overlay_on");
-    $tooltip.addClass("mobile");
-    $tooltip.removeClass("hidden");
-  });
-
   $('span[data-ref]').on("mouseleave", function() {
     setTimeout(function() {
       if (!$(".bibliography_tooltip:hover").length) {
         $(".bibliography_tooltip").remove();
       }
     }, 300);
+  });
+
+  $(".overlay").on("click", () => {
+    $(".overlay").hide();
+    $(".bibliography_tooltip").remove();
+  });
+
+  $(document).on("click", ".close_button", function(){
+    $(".overlay").hide();
+    $(".bibliography_tooltip").remove();
   });
 
   $(".hero_container").on("click", ".get_started_button", function() {
@@ -226,4 +207,48 @@ function scrollTo(id) {
   $('html,body').animate({
     scrollTop: $("#"+id).offset().top
   },'slow');
+}
+
+function generateTooltip($this) {
+  const citations = [].slice.call($this.children("a").map((_, citation_link) => {
+    return {
+      citation_id: $(citation_link).attr("href").substring(1),
+      superscript: $(citation_link).text()
+    }
+  }));
+
+  let citation_list;
+  if (citations.length === 1) {
+    citation_list =
+      '<div class="row">' +
+        '<div class="col">' +
+          $("#" + $.escapeSelector(citations[0].citation_id)).html() +
+        '</div>' +
+      '</div>';
+  } else {
+    citation_list = citations.map((citation) => {
+      return (
+        '<div class="row citation">' +
+          '<div class="col-1 superscript">' +
+            '<a href="#'+ citation.citation_id +'">' +
+              citation.superscript +
+            '</a>' +
+          '</div>' +
+          '<div class="col">' +
+            $("#" + $.escapeSelector(citation.citation_id)).html() +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  $("body").append(
+    '<div class="bibliography_tooltip" role="tooltip">' +
+      '<div class="container">' +
+        '<button type="button" class="close_button"/>' +
+        citation_list +
+      '</div>' +
+      '<div x-arrow></div>' +
+    '</div>'
+  );
 }
