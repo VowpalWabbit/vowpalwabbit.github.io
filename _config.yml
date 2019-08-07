@@ -66,7 +66,11 @@ collections:
 
 scholar:
   bibliography_template:  bibtemplate
-
+  details_layout: bib_download.html
+  details_link: Get .bib
+  bibtex_options:
+    parse_names: false
+    strip: false
 defaults:
   -
     scope:

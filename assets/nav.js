@@ -141,11 +141,13 @@ $(document).ready(function() {
 
   $(".overlay").on("click", () => {
     $(".overlay").hide();
+    $("html").removeClass("overlay_on");
     $(".bibliography_tooltip").remove();
   });
 
   $(document).on("click", ".close_button", function(){
     $(".overlay").hide();
+    $("html").removeClass("overlay_on");
     $(".bibliography_tooltip").remove();
   });
 
@@ -193,6 +195,13 @@ $(document).ready(function() {
       selection.addRange(range);
       document.execCommand("copy");
     }
+  });
+
+  $(".download_container").on("click", ".download_bib_button", (e) => {
+    const $this = $(e.target);
+    const bib_key = $this.data("bib_key");
+    const content = $this.prev(".bibliography").find("pre").text();
+    download(bib_key, content);
   });
 });
 
@@ -251,4 +260,17 @@ function generateTooltip($this) {
       '<div x-arrow></div>' +
     '</div>'
   );
+}
+
+function download(bib_key, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', bib_key + '.bib');
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
 }

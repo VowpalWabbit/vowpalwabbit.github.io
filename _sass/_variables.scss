@@ -88,13 +88,26 @@ $blue-5: #F2F4FF;
       line-height: 32px;
     }
 
-    span {
-      padding: 1rem;
+    & > span {
+      padding: 1rem 1rem 0.2rem 1rem;
       display: block;
 
       &:target {
         background-color: $blue-5;
       }
     }
+
+    .export_bib {
+      padding: 0 1rem;
+
+      a {
+        vertical-align: middle;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
   }
+
 }
