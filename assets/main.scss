@@ -13,6 +13,7 @@ html, body {
   color: $primary-text;
 }
 
+@import "typography";
 @import "header";
 @import "footer";
 @import "hero";
@@ -27,7 +28,44 @@ html, body {
 @import "paper";
 @import "about";
 @import "tutorial";
-@import "typography";
+@import "publications";
+@import "download";
+
+.overlay_on {
+  overflow-y: hidden;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 3;
+  cursor: pointer;
+}
+
+.vw_breadcrumb {
+  padding-bottom: 0.5rem;
+
+  .home {
+    color: $primary-text;
+  }
+
+  .title {
+    &:before {
+      content: '>';
+      font-weight: normal;
+    }
+
+    color: $primary-text;
+    font-weight: 600;
+  }
+}
 
 .problem_framing_intro_container {
   background: $blue-30;
@@ -212,4 +250,195 @@ html, body {
       }
     }
   }
+}
+
+sup {
+  &:before {
+    content: '(';
+  }
+
+  &:after {
+    content: ')';
+  }
+
+  a {
+    color: $primary-text;
+
+    &:hover {
+      color: $primary-text;
+    }
+  }
+
+  button {
+    color: red;
+    background: transparent;
+    border: 0;
+  }
+}
+
+.bibliography_tooltip {
+  padding: 0.5rem 0.8rem;
+  line-height: 24px;
+  width: 560px;
+  border-radius: 11px;
+  background-color: white;
+  box-shadow: 0 10px 20px 5px rgba(0,0,0,0.1);
+  font-size: 0.8rem;
+  z-index: 1;
+
+  .close_button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: url("images/icons/icon_close_small.svg") no-repeat top left;
+    border: 0;
+    height: 12px;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    .close_button {
+      display: none;
+    }
+  }
+
+  a {
+    color: $blue-20;
+  }
+
+  [x-arrow] {
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid white;
+  }
+
+  &[x-placement="right"] {
+    margin-bottom: 5px;
+  }
+
+  &[x-placement="bottom"] {
+    margin-top: 5px;
+  }
+
+  &[x-placement="left"] {
+    margin-right: 5px;
+  }
+
+  &[x-placement="right"] {
+    margin-left: 5px;
+  }
+
+/**
+ * The arrow element lives *inside* the popper
+ * so we need to offset it by its size to position
+ * it outside the popper element.
+ */
+  &[x-placement="bottom"] [x-arrow] {
+    top: -12px;
+    transform: rotate(180deg);
+  }
+
+  &[x-placement="left"] [x-arrow] {
+    right: -20px;
+    transform: rotate(270deg);
+  }
+
+  &[x-placement="top"] [x-arrow] {
+    bottom: -12px;
+  }
+
+  &[x-placement="right"] [x-arrow] {
+    left: -20px;
+    transform: rotate(90deg);
+  }
+
+  .citation {
+    padding: 0.3rem 0;
+
+    // overwrite bootstrap
+    .col-1, .col {
+      padding: 0;
+    }
+
+    .col-1 {
+      max-width: 50px;
+      text-align: center;
+    }
+
+    .superscript {
+      font-size: 1.5rem;
+      padding-top: 0.2rem;
+    }
+  }
+
+  &.mobile {
+    z-index: 1000;
+    width: 95%;
+
+    [x-arrow] {
+      display: none;
+    }
+  }
+}
+
+.bibliography_container {
+  padding: 3rem 1rem 1.5rem;
+
+  .header {
+    width: 18rem;
+    height: 32px;
+    margin-bottom: 0.8rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $secondary-text;
+    padding: 0;
+    margin: 0;
+  }
+
+  .all_publications_link {
+    border-left: 1px solid $light-border;
+    padding-left: 1rem;
+
+    a {
+      color: $primary-text;
+    }
+
+    &:after {
+      content: '>';
+      color: $secondary-text;
+    }
+  }
+
+  ol.bibliography {
+    @include citation;
+
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-gap: 3rem;
+    -moz-column-gap: 3rem;
+    -webkit-column-gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bibliography_container {
+    display: none;
+  }
+}
+
+.hidden_absolute {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

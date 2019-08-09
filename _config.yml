@@ -29,6 +29,7 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-scholar
 
 sass:
   style: compact
@@ -39,6 +40,8 @@ collections:
   problem_framing:
     output: true
   reinforcement:
+    output: true
+  supervised:
     output: true
   efficiency:
     output: true
@@ -60,7 +63,16 @@ collections:
     output: true
   users:
     output: true
+  bibliography:
+    output: true
 
+scholar:
+  bibliography_template:  bibtemplate
+  details_layout: bib_download.html
+  details_link: Get .bib
+  bibtex_options:
+    parse_names: false
+    strip: false
 defaults:
   -
     scope:

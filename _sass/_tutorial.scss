@@ -1,33 +1,13 @@
 .tutorial_container {
   padding: 7rem 1rem 1rem;
 
-  .tutorial_breadcrumb {
-    padding-bottom: 0.5rem;
-
-    .home {
-      color: $primary-text;
-    }
-
-    .title {
-      &:before {
-        content: '>';
-        font-weight: normal;
-      }
-
-      color: $primary-text;
-      font-weight: 600;
-    }
-  }
-
   h1 {
     color: $blue-20;
   }
 
   pre.highlight {
     padding: 1.5rem 1rem;
-    background-color: #F8F9FF;
-    border: 1px solid $light-border;
-    border-radius: 10px;
+    background-color: $blue-5;
     display: flex;
     justify-content: space-between;
   }

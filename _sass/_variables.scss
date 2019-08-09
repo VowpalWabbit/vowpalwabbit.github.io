@@ -16,6 +16,8 @@ $note: #4C4C4C;
 $light-border: #D8D8D8;
 $dark-border: #939393;
 
+// publications/tutorial background
+$blue-5: #F2F4FF;
 
 @mixin primary-link {
   a {
@@ -62,4 +64,50 @@ $dark-border: #939393;
       color: black;
     }
   }
+}
+
+@mixin citation {
+  list-style: none;
+  counter-reset: citation-counter;
+
+  li {
+    counter-increment: citation-counter;
+    display: inline-block;
+    position: relative;
+
+    a {
+      color: $blue-20;
+    }
+
+    &:before {
+      content: counter(citation-counter);
+      font-size: 1.5rem;
+      position: absolute;
+      left: -1.5rem;
+      top: 1rem;
+      line-height: 32px;
+    }
+
+    & > span {
+      padding: 1rem 1rem 0.2rem 1rem;
+      display: block;
+
+      &:target {
+        background-color: $blue-5;
+      }
+    }
+
+    .export_bib {
+      padding: 0 1rem;
+
+      a {
+        vertical-align: middle;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
 }
