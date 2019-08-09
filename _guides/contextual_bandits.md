@@ -33,7 +33,7 @@ We use the term "policy" many times in this tutorial. For those new to RL, let's
 
 In Contextual Bandits, the contexts and actions are usually represented as feature vectors. _APP_ chooses actions by applying a policy _π_ that takes a context as input and returns an action. The goal is to find a policy that maximizes average reward over a sequence of interactions.
 
-## Real world examples of contextual bandit
+## <span data-ref="DBLP:journals/corr/AgarwalBCHLLLMO16">Real world examples of contextual bandit</span>
 
 1. News website
   - Decision to optimize: which article to display to user
@@ -63,10 +63,10 @@ In this section we go over different CB functionalities offered by VW, understan
 
 Multiple policy evaluation approaches can be used when optimizing a policy. VW offers 4 approaches that you can specify using `--cb_type`:
 
-- Inverse Propensity Score `--cb_type ips`
-- Doubly Robust `--cb_type dr`
+- <span data-ref="doi:10.1080/01621459.1952.10483446">Inverse Propensity Score</span> `--cb_type ips`
+- <span data-ref="DBLP:conf/icml/JiangL16 DBLP:conf/icml/DudikLL11">Doubly Robust</span> `--cb_type dr`
 - Direct Method `--cb_type dm`
-- Multi Task Regression/Importance Weighted Regression `--cb_type mtr`
+- <span data-ref="bietti2018a Karampatziakis:2011:OIW:3020548.3020594">Multi Task Regression/Importance Weighted Regression</span> `--cb_type mtr`
 
 For more details, please refer to the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.
 
@@ -82,9 +82,9 @@ VW offers 5 exploration algorithms
 
 - Explore-first `--first`
 - Epsilon-greedy `--epsilon`
-- Bagging Explorer `--bag`
-- Online Cover `--cover` 
-- Softmax Explorer `--softmax` (only supported for `--cb_explore_adf`)
+- <span data-ref="DBLP:journals/corr/abs-1202-1334 DBLP:journals/corr/EcklesK14">Bagging Explorer</span> `--bag`
+- <span data-ref="DBLP:journals/corr/AgarwalHKLLS14">Online Cover</span> `--cover`
+- <span data-ref="DBLP:journals/corr/abs-1811-04383">Softmax Explorer</span> `--softmax` (only supported for `--cb_explore_adf`)
 
 For more details, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Github wiki</a>.
 
