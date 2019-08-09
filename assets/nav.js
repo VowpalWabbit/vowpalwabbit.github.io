@@ -2,6 +2,7 @@ $(document).ready(function() {
   const $nav = $(".nav_bar_container");
   const modules = [
     'reinforcement',
+    'supervised',
     'online',
     'efficiency',
     'flexibility'

@@ -41,6 +41,8 @@ collections:
     output: true
   reinforcement:
     output: true
+  supervised:
+    output: true
   efficiency:
     output: true
   flexibility:
