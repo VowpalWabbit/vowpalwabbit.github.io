@@ -69,6 +69,7 @@ $(document).ready(function() {
 
   $('.superscript_links').on('mouseenter', function (e) {
     e.stopPropagation();
+    $(".bibliography_tooltip").remove();
     const $this = $(this);
     generateTooltip($this);
 
