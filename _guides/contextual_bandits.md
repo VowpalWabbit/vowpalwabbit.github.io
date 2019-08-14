@@ -33,7 +33,7 @@ We use the term "policy" many times in this tutorial. For those new to RL, let's
 
 In Contextual Bandits, the contexts and actions are usually represented as feature vectors. _APP_ chooses actions by applying a policy _π_ that takes a context as input and returns an action. The goal is to find a policy that maximizes average reward over a sequence of interactions.
 
-## <span data-ref="DBLP:journals/corr/AgarwalBCHLLLMO16">Real world examples of contextual bandit</span>
+## <span data-ref="DBLP:journals/corr/AgarwalBCHLLLMO16 DBLP:journals/corr/abs-1003-0146">Real world examples of contextual bandit</span>
 
 1. News website
   - Decision to optimize: which article to display to user
@@ -82,7 +82,7 @@ VW offers 5 exploration algorithms
 
 - Explore-first `--first`
 - Epsilon-greedy `--epsilon`
-- <span data-ref="DBLP:journals/corr/abs-1202-1334 DBLP:journals/corr/EcklesK14">Bagging Explorer</span> `--bag`
+- <span data-ref="DBLP:journals/corr/OsbandR15 DBLP:journals/corr/EcklesK14">Bagging Explorer</span> `--bag`
 - <span data-ref="DBLP:journals/corr/AgarwalHKLLS14">Online Cover</span> `--cover`
 - <span data-ref="DBLP:journals/corr/abs-1811-04383">Softmax Explorer</span> `--softmax` (only supported for `--cb_explore_adf`)
 

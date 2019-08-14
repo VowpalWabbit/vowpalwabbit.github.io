@@ -35,7 +35,7 @@ body_class: about
         {% for value in values %}
           <div class="col-sm col-lg-3">
             <div class="value text-center">
-              <img src={{value.icon}} />
+              <img alt="image for value" src={{value.icon}} />
               <h3 class="title">
                 {{value.title}}
               </h3>
@@ -64,7 +64,7 @@ body_class: about
         </div>
         <div class="col col-lg-6">
           <div class="contributions_img">
-            <img src="assets/images/about/contributions.svg" />
+            <img alt="image for contributions" src="assets/images/about/contributions.svg" />
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@ body_class: about
       <div class="row justify-content-center">
         <div class="col-sm col-lg-8">
           <div class="redefine_problems_rabbit">
-            <img src="assets/images/about/redefine_problems_rabbit.svg" />
+            <img alt="image for redefine problems" src="assets/images/about/redefine_problems_rabbit.svg" />
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ body_class: about
       <div class="row">
         <div class="col col-lg-6">
           <div class="real_world_problems_img">
-            <img src="assets/images/about/real_world_problems.svg" />
+            <img alt="image for real world problems" src="assets/images/about/real_world_problems.svg" />
           </div>
         </div>
         <div class="col col-lg-6">
@@ -135,7 +135,7 @@ body_class: about
         {% for user in users %}
           <div class="col">
             <div class="user">
-              <img src={{user.image}} />
+              <img alt="image for user" src={{user.image}} />
               <h3>
                 {{ user.title }}
               </h3>
