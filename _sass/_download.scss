@@ -1,0 +1,36 @@
+.download_container {
+  padding: 7rem 1rem;
+
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .bibliography {
+    background-color: $blue-5;
+    font-family: 'Source Sans Pro', sans-serif;
+    list-style-type: none;
+    padding: 2rem;
+
+    pre {
+      white-space: pre-wrap;
+    }
+  }
+
+  a.details {
+    display: none;
+  }
+
+  .download_bib_button {
+    cursor: pointer;
+    border: 0;
+    color: white;
+    border-radius: 28px;
+    background-color: $blue-20;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+    padding: 0.5rem 2rem;
+    display: block;
+    margin: 0 auto;
+  }
+}

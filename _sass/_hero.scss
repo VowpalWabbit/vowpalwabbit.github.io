@@ -1,0 +1,52 @@
+.hero_container {
+  background: url("../assets/images/home/hero/bg.svg");
+  background-repeat: repeat;
+  background-size: auto 100%;
+  background-position: center center;
+  padding: 12rem 1rem 10rem;
+  margin: -1px;
+  color: white;
+
+  .hero_buttons {
+    @include primary-link;
+
+    .get_started_button {
+      border: 2px solid white;
+      border-radius: 10px;
+      background: white;
+      color: $blue-20;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+      padding: 0.6rem 0;
+      text-align: center;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    a {
+      background: white;
+      color: $blue-20;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .rabbit {
+    padding: 2rem;
+
+    img {
+      display: block;
+      width: 55%;
+      margin: 0 auto;
+    }
+  }
+}

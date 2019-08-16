@@ -1,0 +1,26 @@
+.resources_container {
+  @include resource-card;
+
+  .hero {
+    background: $blue-20;
+    padding: 15rem 0 8rem;
+    color: white;
+  }
+
+  .header {
+    padding: 1.5rem 0;
+  }
+
+  .resource_link {
+    color: black;
+    font-weight: 600;
+  }
+
+  .resource_section {
+    padding: 2rem 0;
+
+    &:last-child {
+      padding-bottom: 6rem;
+    }
+  }
+}

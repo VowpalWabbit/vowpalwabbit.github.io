@@ -1,0 +1,40 @@
+{% assign communities = site.communities | sort: 'order' %}
+<div class="community_container">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col col-lg-8">
+        <h2>
+          Join the community
+        </h2>
+        <div class="description">
+          Vowpal Wabbit is a long-standing (since 2007!) open source project jointly developed by a broad community. Get involved by contributing code or documentation on GitHub. Ask a question on StackOverflow or chat with the development team and community on Gitter.
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center text-center">
+      {% for community in communities %}
+        <div class="col-12 col-xl-4">
+          <div class="community">
+            <div class="icon">
+              {% include {{community.logo}} %}
+            </div>
+            <h3 class="community_title">
+              {{ community.title }}
+            </h3>
+            <p class="community_description">
+              {{ community.description }}
+            </p>
+
+            <div class="join_community_link">
+              <a href={{community.link}} target="_blank">
+                {{community.link_text}}
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="community_footer">
+  </div>
+</div>

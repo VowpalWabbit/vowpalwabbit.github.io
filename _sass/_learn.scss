@@ -1,0 +1,97 @@
+.learn_container {
+  .learn_hero {
+    color: $blue-20;
+    background: white;
+    padding: 15rem 0 8rem;
+  }
+
+  .description {
+    color: $secondary-text;
+    font-size: 1.5rem;
+  }
+
+  .rocket {
+    padding: 1rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .hero_buttons {
+    @include primary-link;
+
+    a {
+      font-weight: 600;
+      color: $blue-20;
+      border: 3px solid $blue-20;
+      border-radius: 11px;
+    }
+  }
+
+  .guides_container {
+    background: $blue-10;
+    padding: 4rem;
+    color: white;
+
+    .start_tutorial_link {
+      @include primary-link;
+      padding: 1rem 0;
+
+      a {
+        color: white;
+        border: 2px solid white;
+      }
+    }
+  }
+
+  .research_container {
+    background: $blue-30;
+    padding: 5rem 0 9rem;
+    color: white;
+
+    a {
+      color: $teal-10;
+      font-weight: 600;
+    }
+
+    .title {
+      color: white;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.5rem 0 1rem;
+    }
+
+    .robot {
+      padding: 2rem 0 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .paper_list {
+      padding-left: 5rem;
+    }
+
+    .paper {
+      padding: 1rem 0;
+
+      .authors {
+        opacity: 0.8;
+      }
+
+      a {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+
+    .all_papers_link a {
+      font-size: 0.9rem;
+      padding: 0.5rem 0;
+      display: block;
+    }
+  }
+}

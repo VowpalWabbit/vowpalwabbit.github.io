@@ -1,0 +1,63 @@
+.guide_container {
+  padding: 3rem;
+  background: linear-gradient(180deg, $blue-10 20%, $blue-20 20%);
+
+  .use_cases_container {
+    padding: 3rem 5rem;
+    background: white;
+    box-shadow: 0 0 15px 0 rgba(167,167,167,0.5);
+    border-radius: 34px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1rem 8rem;
+    text-decoration: none;
+    margin: 0 auto;
+    border-bottom: 1px solid lightgray;
+
+    button {
+      background: transparent;
+      border: 0;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        border-bottom: 3px solid $blue-20;
+      }
+    }
+  }
+
+  .guides {
+    padding: 4rem 0 0;
+
+    .hidden {
+      display: none;
+    }
+  }
+
+  .start_guide_link {
+    font-weight: 600;
+    padding-top: 2rem;
+
+    a {
+      color: $blue-20;
+    }
+  }
+
+  .guide_image {
+    padding: 2rem 1rem;
+
+    img {
+      width: 100%;
+    }
+  }
+}

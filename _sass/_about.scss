@@ -1,0 +1,107 @@
+.about_container {
+  .hero_container {
+    background: $blue-10;
+    padding: 15rem 0;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    .hero_buttons {
+      @include primary-link;
+    }
+
+    .rabbit {
+      top: 9rem;
+      left: 8rem;
+    }
+  }
+
+  .values_container {
+    padding: 4rem 2rem;
+
+    .values {
+      padding: 3rem 0 0;
+    }
+
+    .value {
+      padding: 0.5rem;
+
+      .title {
+        font-size: 1.8rem;
+        padding: 1rem 0;
+      }
+
+      img {
+        width: 56px;
+      }
+    }
+  }
+
+  .contributions_container {
+    background: $blue-30;
+    color: white;
+    padding: 4rem 0;
+
+    .description {
+      padding: 2rem 0;
+    }
+
+    .contributions_img {
+      padding: 2rem 1rem;
+
+      img {
+        width: 90%;
+      }
+    }
+  }
+
+  .redefine_problems_container {
+    background: radial-gradient(circle, #22BCBC 0%, #52BCEB 34.83%, #4E71D8 100%);
+    padding: 4rem 0 0;
+    color: white;
+
+    .redefine_problems_rabbit {
+      padding-top: 5rem;
+      position: relative;
+      top: 1rem;
+    }
+
+    .footer {
+      background: url("../assets/images/about/redefine_problems_footer.svg");
+      height: 8rem;
+    }
+  }
+
+  .real_world_problems_container {
+    background: linear-gradient(180deg, #2A3B93 0%, #546DC5 100%);
+    padding: 6rem 0;
+    color: white;
+
+    .description {
+      padding: 1rem;
+    }
+
+    .real_world_problems_img {
+      padding: 1rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .vw_users_container {
+    padding: 4rem 0;
+  }
+
+  .contributors {
+    background: $blue-30;
+    color: white;
+    padding: 4rem 2rem;
+
+    .contributor_link {
+      @include primary-link;
+    }
+  }
+}

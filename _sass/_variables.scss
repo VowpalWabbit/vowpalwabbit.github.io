@@ -1,0 +1,113 @@
+// background
+$blue-10: #415EBF;
+$blue-20: #2A3B93;
+$blue-30: #000C4C;
+$blue-40: #235677;
+$blue-50: #0B4A71;
+
+// text
+$teal-5: #CDFFFB;
+$teal-10: #7BFFF4;
+$primary-text: #333333;
+$secondary-text: #666666;
+$note: #4C4C4C;
+
+// border:
+$light-border: #D8D8D8;
+$dark-border: #939393;
+
+// publications/tutorial background
+$blue-5: #F2F4FF;
+
+@mixin primary-link {
+  a {
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    padding: 0.6rem 0;
+    text-align: center;
+    width: 12rem;
+
+    &:hover {
+      transition: 0.3s;
+    }
+  }
+}
+
+@mixin resource-card {
+  .resource {
+    padding: 1.5rem 1rem;
+    margin: 0.5rem 0.25rem;
+    border-radius: 34px;
+    box-shadow: 0 0 15px 0 rgba(167,167,167,0.3);
+    height: 13rem;
+  }
+
+  .icon svg {
+    margin: 0 auto;
+    display: block;
+    width: 5rem;
+
+    path {
+      fill: $blue-30;
+    }
+  }
+
+  .title {
+    text-align: center;
+    margin: 1rem 0 0;
+
+    a {
+      color: black;
+    }
+  }
+}
+
+@mixin citation {
+  list-style: none;
+  counter-reset: citation-counter;
+
+  li {
+    counter-increment: citation-counter;
+    display: inline-block;
+    position: relative;
+
+    a {
+      color: $blue-20;
+    }
+
+    &:before {
+      content: counter(citation-counter);
+      font-size: 1.5rem;
+      position: absolute;
+      left: -1.5rem;
+      top: 1rem;
+      line-height: 32px;
+    }
+
+    & > span {
+      padding: 1rem 1rem 0.2rem 1rem;
+      display: block;
+
+      &:target {
+        background-color: $blue-5;
+      }
+    }
+
+    .export_bib {
+      padding: 0 1rem;
+
+      a {
+        vertical-align: middle;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+}

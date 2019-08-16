@@ -1,0 +1,33 @@
+---
+layout: default
+body_class: four_oh_four
+---
+
+<div class="d-flex align-items-center content four_oh_four_container">
+  <div class="container">
+    <div class="row text-center text-lg-left">
+      <div class="col-12 col-lg-6">
+        <img
+          alt="404 alert image"
+          class="four_oh_four_icon"
+          src="{{'/assets/images/four_oh_four_icon.svg' | prepend: site.baseurl}}"
+        />
+      </div>
+      <div class="col-12 col-lg-6">
+        <h1 class="header">404</h1>
+        <p class="description">
+          Sorry, we’re not able to find what you’re looking for.
+        </p>
+        <div class="row justify-content-center justify-content-lg-start">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="return_home_link">
+              <a href="{{ site.url }}{{ site.baseurl }}">
+                Return home
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

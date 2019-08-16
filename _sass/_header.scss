@@ -1,0 +1,90 @@
+.nav_bar_container {
+  border-bottom: 1px solid white;
+  position: fixed;
+  z-index: 2;
+
+  .logo {
+    max-width: 60%;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  &.scrolled, .learn &, .tutorial &, .publications &, .download & {
+    border-bottom: 1px solid $light-border;
+
+    a {
+      color: $primary-text;
+
+      &.active {
+        color: $blue-20;
+        border-bottom: 2px solid $blue-20;
+      }
+    }
+
+    svg path {
+      fill: $primary-text;
+    }
+
+    .logo svg path {
+      fill: $primary-text;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &.scrolled .nav_item:last-child {
+      border-left: 1px solid $dark-border;
+    }
+  }
+
+  .learn & {
+    background: white;
+  }
+
+  .navbar {
+    height: 4rem;
+    justify-content: space-between;
+  }
+
+  .nav_item {
+    text-align: center;
+    padding: 0 1rem;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.active {
+      border-bottom: 2px solid white;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .logo svg {
+      height: 2.3rem;
+    }
+
+    .nav_item {
+      padding: 0 0.5rem;
+
+      svg {
+        height: 1.8rem;
+      }
+
+      &:last-child {
+        padding-right: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .nav_item_text {
+      display: none;
+    }
+  }
+}

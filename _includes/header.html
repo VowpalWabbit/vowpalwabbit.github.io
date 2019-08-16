@@ -1,0 +1,33 @@
+{% assign current = page.url | downcase | remove: ".html" | split: '/' %}
+
+<div class="container-fluid nav_bar_container">
+  <div class="container navbar navbar-expand-lg">
+    <div class="logo">
+      <a href="{{ site.url }}{{ site.baseurl }}">
+        {% include svg/logo.svg %}
+      </a>
+    </div>
+
+    <div class="nav">
+      <a
+        href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki"
+        target="_blank"
+        class="nav_item"
+      >
+        {% include svg/doc.svg %}
+
+        <span class="nav_item_text">Documentation</span>
+      </a>
+
+      <a
+        href="https://github.com/VowpalWabbit/vowpal_wabbit"
+        target="_blank"
+        class="nav_item"
+      >
+        {% include svg/github.svg %}
+
+        <span class="nav_item_text">GitHub</span>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+.tutorial_container {
+  padding: 7rem 1rem 1rem;
+
+  h1 {
+    color: $blue-20;
+  }
+
+  pre.highlight {
+    padding: 1.5rem 1rem;
+    background-color: $blue-5;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .copy {
+    background: transparent;
+    border: 0;
+    color: $blue-20;
+    align-self: flex-start;
+
+    &:hover {
+      color: $blue-10;
+      cursor: pointer;
+    }
+  }
+
+  .edit {
+    color: $secondary-text;
+
+    &:hover {
+      color: $primary-text;
+    }
+  }
+}
