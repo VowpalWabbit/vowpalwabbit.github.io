@@ -2,6 +2,21 @@ $(document).ready(function() {
   selectDefaultSettings();
 
   $(".settings_container .row .row").on("click", ".option", function() {
+    if (getOptionText($(this)) === 'linux' ||
+      getOptionText($(this)) === 'mac') {
+      $(".settings .language button:contains('C#')").attr("disabled", true);
+    } else if (getOptionText($(this)) === 'windows') {
+      $(".settings .language button:contains('C#')").attr("disabled", false);
+    } else if (getOptionText($(this)) === 'c#') {
+      $(".settings .os button:contains('Linux')").attr("disabled", true);
+      $(".settings .os button:contains('Mac')").attr("disabled", true);
+    }
+    else if (getOptionText($(this)) === 'python3' ||
+      getOptionText($(this)) === 'c++') {
+      $(".settings .os button:contains('Linux')").attr("disabled", false);
+      $(".settings .os button:contains('Mac')").attr("disabled", false);
+    }
+
     const $selected_btn = $(this).parent();
     $selected_btn.siblings().removeClass('selected');
     $selected_btn.addClass('selected');
@@ -63,7 +78,7 @@ function showCommand() {
 
   selected_options = [];
   $(".settings_container .settings .row").each((_, row) => {
-    selected_option = $(row).children(".selected").text().replace(/\s/g, '').toLowerCase();
+    selected_option = getOptionText($(row).children(".selected"));
     if(selected_option) {
       selected_options.push(selected_option);
     }
@@ -86,4 +101,8 @@ function showCommand() {
   }
 
   $command_box.find('.command').html(command);
+}
+
+function getOptionText($button) {
+  return $button.text().replace(/\s/g, '').toLowerCase();
 }

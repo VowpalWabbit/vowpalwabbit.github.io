@@ -41,9 +41,16 @@
         cursor: pointer;
       }
 
-      &.disabled {
+      &:disabled {
         color: $note;
         pointer-events: none;
+
+        span {
+          &:before {
+            content: '*';
+            color: $note;
+          }
+        }
       }
     }
 
