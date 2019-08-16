@@ -10,8 +10,7 @@ $(document).ready(function() {
     } else if (getOptionText($(this)) === 'c#') {
       $(".settings .os button:contains('Linux')").attr("disabled", true);
       $(".settings .os button:contains('Mac')").attr("disabled", true);
-    }
-    else if (getOptionText($(this)) === 'python3' ||
+    } else if (getOptionText($(this)) === 'python3' ||
       getOptionText($(this)) === 'c++') {
       $(".settings .os button:contains('Linux')").attr("disabled", false);
       $(".settings .os button:contains('Mac')").attr("disabled", false);
