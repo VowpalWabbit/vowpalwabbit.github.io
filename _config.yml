@@ -31,6 +31,9 @@ plugins:
   - jekyll-feed
   - jekyll-scholar
 
+github:
+  repository_url: https://github.com/VowpalWabbit/vowpalwabbit.github.io
+
 sass:
   style: compact
 
