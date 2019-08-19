@@ -7,5 +7,7 @@ steps:
   inputs:
     versionSpec: '>= 2.4'
     addToPath: true
-- script: gem install jekyll html-proofer
-- script: jekyll build && htmlproofer ./_site
+- script: gem install bundler
+- script: bundle install 
+- script: jekyll build
+- script: htmlproofer ./_site
