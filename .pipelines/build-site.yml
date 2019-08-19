@@ -3,10 +3,18 @@ pool:
   vmImage: 'ubuntu-16.04'
 
 pr:
-- source
+  branches:
+    include:
+    - source
+    exclude:
+    - master
 
 trigger:
-- source
+  branches:
+    include:
+    - source
+    exclude:
+    - master
 
 steps:
 - task: UseRubyVersion@0
