@@ -2,6 +2,12 @@
 pool:
   vmImage: 'ubuntu-16.04'
 
+pr:
+- source
+
+trigger:
+- source
+
 steps:
 - task: UseRubyVersion@0
   inputs:
