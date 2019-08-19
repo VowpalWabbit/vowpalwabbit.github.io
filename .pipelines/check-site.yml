@@ -3,17 +3,15 @@ pool:
   vmImage: 'ubuntu-16.04'
 
 pr:
-- source
+- master
 
 trigger:
-- source
+- master
 
 steps:
 - task: UseRubyVersion@0
   inputs:
     versionSpec: '>= 2.4'
     addToPath: true
-- script: gem install bundler
-- script: bundle install 
-- script: jekyll build
-- script: htmlproofer ./_site
+- script: gem install html-proofer
+- script: htmlproofer .
