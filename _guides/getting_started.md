@@ -12,7 +12,7 @@ resource_icon: /svg/resources/guide.svg
 
 # Getting Started with Linear Regression and Vowpal Wabbit
 
-This guide describes how to perform Linear Regression with Vowpal Wabbit (VW). It features an overview of a simple regression problem using a VW workflow tutorial with examples. You will find information about interacting with VW, including structuring input, understanding output, and learn important VW diagnostics. 
+This tutorial describes how to perform Linear Regression with Vowpal Wabbit (VW). It features an overview of a simple regression problem using a VW workflow tutorial with examples. You will find information about interacting with VW, including structuring input and learning how to interpret important VW output.
 
 ## Getting started with Vowpal Wabbit
 
@@ -20,7 +20,7 @@ To install VW—and for more information on building VW from source or using a p
 
 >**Note:** This tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms. See [Getting started](https://cheng-tan.github.io/vowpalwabbit.github.io/) module on the homepage for more information.
 
-## Create linear regression dataset in Vowpal Wabbit
+## Create a linear regression dataset in Vowpal Wabbit
 
 Before you begin making predictions for regression problems, you first need to create a dataset. For example, say you want to predict whether a house requires a new roof in the next 10 years.
 
@@ -87,9 +87,9 @@ best constant's loss = 0.250000
 total feature number = 15
 ```
 
-## Vowpal Wabbit diagnostics
+## Vowpal Wabbit output
 
-This section provides information on the various types of diagnostic information VW presents.
+This section provides information on the various types of output VW presents.
 
 **Use** `--quiet`  command to turn off diagnostic information in Vowpal Wabbit.
 
@@ -101,7 +101,9 @@ The following output shows the number of bits from the hash function:
 Num weight bits = 18
 ```
 
-This diagnostic shows that the number of bits used from the hash function is 18 (more than enough for this example). Use `-b bits` to adjust the number of bits to use.
+This diagnostic shows that the number of bits used from the hash function is 18 (more than enough for this example). 
+
+**Use** `-b bits` to adjust the number of bits to use.
 
 ### Learning rate
 
@@ -190,7 +192,7 @@ num sources = 1
 
 There is only one input file in this example. You can specify multiple files in VW.
 
-## Vowpal Wabbit diagnostic header
+## Vowpal Wabbit intermediate learner result
 
 Next, VW shows you some diagnostic information in the header.
 
@@ -213,7 +215,7 @@ The `current features` diagnostic is excellent for debugging. Note that we have 
 
 **Use** `--noconstant` to disable the default constant feature. 
 
-## Vowpal Wabbit debugging diagnostics 
+## Vowpal Wabbit final learner result 
 
 Now, VW prints a new line with an exponential backoff. This information is useful for debugging problems before the learning algorithm finishes with a dataset:
 
