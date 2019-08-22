@@ -12,7 +12,7 @@ resource_icon: /svg/resources/guide.svg
 
 # Contextual Bandits and Vowpal Wabbit
 
-This guide describes how to approach a contextual bandit problem with Vowpal Wabbit (VW). It features a Python tutorial and an overview of the contextual bandit problem using VW—including when and how to work with with different CB approaches, how to format VW test data, and understand the results. 
+This guide describes how to approach a contextual bandit problem with Vowpal Wabbit (VW). It features a Python tutorial and an overview of the contextual bandit problem using VW—including when and how to work with with different CB approaches, how to format test data, and understand the results. 
 
 ## Getting started with Vowpal Wabbit
 
@@ -22,9 +22,9 @@ To install VW—and for more information on building VW from source or using a p
 
 ## The contextual bandit problem
 
-The contextual bandit problem is an extension of the multi-armed bandit (MAB) problem. The MAB problem comes from a hypothetical experiment where a gambler must choose between multiple slot machine (“one-armed bandits”) actions, each with an unknown payout. The goal is to maximize the payout by optimally choosing the best actions when odds and payouts are unknown. 
+The contextual bandit problem is an extension of the multi-armed bandit (MAB) problem. The MAB problem comes from an experiment where a gambler must choose between multiple slot machine (“one-armed bandits”) actions, each with an unknown payout. The goal is to maximize the payout by optimally choosing the best actions when odds and payouts are unknown. In MAB, the gambler has no information at all to make a decision. 
 
-In MAB, the gambler has no information at all to make a decision. In the CB problem, a learner (the gambler in the hypothetical experiment) repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms use additional side information (or context) from each arm to aid decision-making decisions when choosing actions in dynamic environments—where options change rapidly, and the set of available actions is limited.
+In the CB problem, a learner (the gambler in the experiment) repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms use additional side information (or context) from each arm to aid decision-making decisions when choosing actions in dynamic environments—where options change rapidly, and the set of available actions is limited.
 
 ## Working with CB in Vowpal Wabbit
 
@@ -37,8 +37,6 @@ _APP_ performs the following functions:
 * Some context _x_ arrives and is observed by _APP_.
 * _APP_ chooses an action _a_ from a set of actions _A, i.e., a ∈A_ (_A_ may depend on _x_).
 * Some reward _r_ for the chosen a is observed by _APP_.
-
-Contextual bandits use incoming data to help optimize a website to make better algorithmic decisions in real-time for the user.
 
 For example:
 
@@ -218,8 +216,6 @@ In the case of the softmax explorer, which uses the policy not only to predict a
 - `./vw -d train.dat --cb_explore_adf --softmax --lambda 10`
 
 Here lambda is a parameter, which leads to uniform exploration for lambda = 0, and stops exploring as lambda approaches infinity. In general, this provides an excellent knob for controlled exploration based on the uncertainty in the learned policy.
-
-## Create Contextual Bandit test data
 
 ## Create Contextual Bandit test data
 
