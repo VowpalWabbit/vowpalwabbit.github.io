@@ -20,9 +20,9 @@ To install VW—and for more information on building VW from source or using a p
 
 >**Note:** This tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms. See [Getting started](https://cheng-tan.github.io/vowpalwabbit.github.io/) module on the homepage for more information.
 
-## Create linear regression data-set in Vowpal Wabbit
+## Create linear regression dataset in Vowpal Wabbit
 
-Before you begin making predictions for regression problems, you first need to create a data-set. For example, say you want to predict whether a house requires a new roof in the next 10 years.
+Before you begin making predictions for regression problems, you first need to create a dataset. For example, say you want to predict whether a house requires a new roof in the next 10 years.
 
 **Create** a training-set file in VW, `house_dataset` that includes the following:
 
@@ -113,7 +113,7 @@ learning rate = 0.5
 
 The default learning rate is `0.5` with current default update (`--normalized --invariant --adaptive`). 
 
-If the data is noisy, you need a larger data-set or multiple passes to predict well. For massive data-sets, the learning rate decays towards `0` by default. 
+If the data is noisy, you need a larger dataset or multiple passes to predict well. For massive datasets, the learning rate decays towards `0` by default. 
 
 **Use** `-l rate` to adjust the learning rate up or down.
 
@@ -148,7 +148,7 @@ Stationary datasets, where the fundamental relation between the input features a
 **Use** `--power_t p` to adjust learning rate decay—where _p_ is in the range [0,1]. 
 
 `0` means the learning rate does not decay, which can be helpful when state tracking.
-`1` is aggressive, but plausible if a data-set represents a collection of random variables is [independent and identically distributed (IID)](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables).
+`1` is aggressive, but plausible if a dataset represents a collection of random variables is [independent and identically distributed (IID)](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables).
 
 ### Cache files
 
@@ -164,7 +164,7 @@ The default cache file name is the dataset file name with `.cache` appended. For
 
 **Use** `--cache_file housing.cache` to override the default cache file name. 
 
-The first time you use `-c` you create a cache file. If the cache already exists and it is newer than the data-set, that is the default cache. If you want to experiment with the same dataset over and over, it is highly recommended to pass `-c` every time you train. 
+The first time you use `-c` you create a cache file. If the cache already exists and it is newer than the dataset, that is the default cache. If you want to experiment with the same dataset over and over, it is highly recommended to pass `-c` every time you train. 
 
 **Use** `-c` for multiple passes `--passes`, so VW caches the data in a faster format (passes > 1 should be much faster).  
 
@@ -201,7 +201,7 @@ loss     last          counter         weight    label  predict features
 0.666667 1.000000            2            3.0   1.0000   0.0000        5
 ```
 
--**`average loss`** computes the <a href="http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf" target="_blank">progressive validation</a> loss. Progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
+-**`average loss`** computes the <a href="http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf" target="_blank">progressive validation</a> loss. Progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any dataset.
 -**`since last`** is the progressive validation loss since the last printout.
 -**`example counter`** indicates which example is printed out. In this case,  example `2`.
 -**`example weight`** is the sum of the importance weights of examples seen so far. In this case, it's `3.0`, because the second example has an importance weight of `2`.
@@ -215,7 +215,7 @@ The `current features` diagnostic is excellent for debugging. Note that we have 
 
 ## Vowpal Wabbit debugging diagnostics 
 
-Now, VW prints a new line with an exponential backoff. This information is useful for debugging problems before the learning algorithm finishes with a data-set:
+Now, VW prints a new line with an exponential backoff. This information is useful for debugging problems before the learning algorithm finishes with a dataset:
 
 ```
 finished run
@@ -309,7 +309,7 @@ The output for this command is:
 
 The results are different this time because the first prediction made one pass over the data. In the second example, you loaded the over-fitted model (25 passes) and used the `house_dataset` with `-t` (or _testing only_ mode). 
 
->**Note:** Always use a different data-set for testing vs. training for real prediction settings.
+>**Note:** Always use a different dataset for testing vs. training for real prediction settings.
 
 ## Auditing with Vowpal Wabbit
 
