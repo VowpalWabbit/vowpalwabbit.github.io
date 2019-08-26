@@ -1,23 +1,27 @@
-// background
+// blue
+$blue-5: #F2F4FF; // publications/tutorial background
 $blue-10: #415EBF;
 $blue-20: #2A3B93;
 $blue-30: #000C4C;
 $blue-40: #235677;
-$blue-50: #0B4A71;
 
-// text
+// neutral
+$gray-10: #EBEBEB;
+$gray-50: #939393;
+$gray-90: #333333;
+
+// teal
 $teal-5: #CDFFFB;
 $teal-10: #7BFFF4;
-$primary-text: #333333;
+
+// text
+$primary-text: $gray-90;
 $secondary-text: #666666;
 $note: #4C4C4C;
 
 // border:
 $light-border: #D8D8D8;
-$dark-border: #939393;
-
-// publications/tutorial background
-$blue-5: #F2F4FF;
+$dark-border: $gray-50;
 
 @mixin primary-link {
   a {
