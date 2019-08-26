@@ -18,16 +18,11 @@ layout: null
   <body class='download'>
     {% include header.html %}
     <div class="container content download_container">
-      <div class="vw_breadcrumb">
-        <a class="home" href="{{ site.url }}{{ site.baseurl }}">
-          Home
-        </a>
-        <span class="title">
-          Download
-        </span>
-      </div>
       <h1>
-        BibTeX record {{page.key}}
+        <span class="header">
+          BibTeX record
+        </span>
+        {{page.key}}
       </h1>
       <div class="row justify-content-center">
         <div class="col-12">
@@ -39,6 +34,5 @@ layout: null
         </div>
       </div>
     </div>
-    {% include footer.html %}
   </body>
 </html>

@@ -2,9 +2,14 @@
   padding: 7rem 1rem;
 
   h1 {
-    text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 1rem;
+
+    .header {
+      color: $gray-80;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
   }
 
   .bibliography {
