@@ -198,30 +198,12 @@ html, body {
 }
 
 .research_container {
-  background: $blue-30;
-  padding: 5rem 0;
-  color: white;
+  background: $gray-10;
+  padding: 5rem 1rem;
 
   a {
-    color: $teal-10;
+    color: $blue-20;
     font-weight: 600;
-  }
-
-  .title {
-    color: white;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 0.5rem 0 0.2rem;
-  }
-
-  .research_links {
-    padding: 0 1rem;
-
-    a {
-      font-size: 0.9rem;
-      padding: 0.5rem 0;
-      display: block;
-    }
   }
 
   .file_icon {
