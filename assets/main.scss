@@ -16,7 +16,6 @@ html, body {
 @import "typography";
 @import "header";
 @import "footer";
-@import "hero";
 @import "start";
 @import "case_studies";
 @import "community";
@@ -64,6 +63,32 @@ html, body {
 
     color: $primary-text;
     font-weight: 600;
+  }
+}
+
+.hero_container {
+  background: $blue-20;
+  padding: 12rem 1rem 10rem;
+  color: white;
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .hero_buttons {
+    @include primary-link;
+
+    a {
+      background: white;
+      color: $blue-20;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
 
