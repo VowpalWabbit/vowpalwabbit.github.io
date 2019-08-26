@@ -1,68 +1,88 @@
 .start_container {
-  background: linear-gradient(180deg, rgba(0,191,214,1) 0%, rgba(12,210,194,1) 100%);
   padding: 5rem 1rem;
+  counter-reset: install-step-counter;
 
-  .start_section {
-    background-color: white;
-    border-radius: 20px;
-    padding: 2rem 1rem;
+  a {
+    color: $blue-20;
+  }
+
+  .description {
+    padding: 0.5rem 0;
+  }
+
+  .installation_step {
+    padding-bottom: 2rem;
+  }
+
+  .step_title {
+    padding-bottom: 0.8rem;
+
+    counter-increment: install-step-counter;
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      content: counter(install-step-counter);
+      font-size: 2rem;
+      position: absolute;
+      left: -2rem;
+      line-height: 32px;
+    }
   }
 
   .settings_container {
-    padding-bottom: 1rem;
-    margin: 0 1rem;
-    border-bottom: 1px solid $dark-border;
-
-    .settings {
-      padding-top: 0.5rem;
+    .note {
+      color: $secondary-text;
+      font-size: 0.8rem;
+      padding-top: 0.8rem;
+      display: flex;
+      justify-content: flex-end;
     }
 
-    .note {
-      color: $note;
-      font-size: 0.8rem;
+    .row {
+      border-bottom: 1px solid $gray-10;
+
+      &:first-of-type {
+        border-top: 1px solid $gray-10;
+      }
     }
 
     .title {
-      padding: 0.25rem 0.25rem 0.5rem;
+      padding: 1rem 0;
+      font-weight: 600;
     }
 
     .option {
       width: 100%;
+      background: transparent;
       text-align: center;
-      margin: 0 0 1rem;
-      padding: 0.25rem;
-      border-radius: 6.72px;
-      background-color: white;
-      box-shadow: 0 1px 8px 0 $dark-border;
+      padding: 1rem 0;
       border: 0;
       color: $primary-text;
 
       &:hover {
         cursor: pointer;
+        background: $gray-10;
       }
 
       &:disabled {
-        color: $note;
+        color: $secondary-text;
         pointer-events: none;
 
         span {
           &:before {
             content: '*';
-            color: $note;
+            color: $secondary-text;
           }
         }
       }
-    }
 
-    .selected .option {
-      background: $blue-40;
-      color: white;
-    }
-
-    .description {
-      padding: 0.5rem 0;
+      &.selected {
+        background: $yellow-10;
+      }
     }
   }
+
 
   .next_step_container {
     padding: 1rem 1rem 0;
@@ -89,46 +109,27 @@
     }
   }
 
-  .command_container {
-    padding-top: 1rem;
 
-    .run_command {
-      font-weight: 600;
-    }
-
-    .command_box {
-      background: $blue-30;
-      color: white;
-      padding: 0.7rem 1rem;
-      margin: 1rem 0;
-
-      a {
-        color: $teal-10;
-      }
-    }
-
-    .copy {
-      background: transparent;
-      border: 0;
-      color: white;
-      align-self: flex-start;
-
-      &:hover {
-        color: $teal-10;
-        cursor: pointer;
-      }
-    }
+  .command_box {
+    display: flex;
+    background: $blue-5;
+    padding: 0.7rem 1rem;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .start_container {
-    padding: 1rem;
+  .command {
+    flex: 1 1 auto;
+    min-height: 1.5rem;
+  }
 
-    .settings_container {
-      .option {
-        padding: 0.5rem;
-      }
+  .copy {
+    background: transparent;
+    border: 0;
+    color: $gray-50;
+    align-self: flex-start;
+
+    &:hover {
+      color: $gray-90;
+      cursor: pointer;
     }
   }
 }
