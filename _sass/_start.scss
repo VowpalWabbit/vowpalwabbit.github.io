@@ -83,42 +83,16 @@
     }
   }
 
-
-  .next_step_container {
-    padding: 1rem 1rem 0;
-
-    .tutorial_link {
-      display: inline-block;
-      font-weight: 600;
-      border: 3px solid black;
-      border-radius: 11px;
-      padding: 0.5rem;
-      text-align: center;
-      margin-top: 1.5rem;
-      color: black;
-
-      &:hover {
-        text-decoration: none;
-        transition: 0.3s;
-      }
-
-      &:hover, &:focus {
-        background: black;
-        color: white;
-      }
-    }
-  }
-
-
   .command_box {
     display: flex;
     background: $blue-5;
     padding: 0.7rem 1rem;
+    @include secondary-link;
   }
 
   .command {
     flex: 1 1 auto;
-    min-height: 1.5rem;
+    min-height: 1.8rem;
   }
 
   .copy {

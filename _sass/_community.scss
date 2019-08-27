@@ -51,14 +51,10 @@
     margin: auto;
 
     a {
-      font-weight: 600;
-      color: $blue-20;
-      text-align: center;
       border: 2px solid $blue-20;
-      margin: 0;
+      width: 12rem;
 
       &:hover {
-        text-decoration: none;
         background: $blue-20;
         color: white;
       }
