@@ -15,6 +15,13 @@
       </a>
 
       <a
+        href="{{ 'publications' | relative_url }}"
+        class='{% if current[1] == "publications" %}active{% endif %}'
+      >
+        Research
+      </a>
+
+      <a
         href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki"
         target="_blank"
       >
