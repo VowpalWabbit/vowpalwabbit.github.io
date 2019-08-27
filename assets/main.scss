@@ -77,18 +77,6 @@ html, body {
 
   .hero_buttons {
     @include primary-link;
-
-    a {
-      background: white;
-      color: $blue-20;
-      font-weight: 600;
-      width: 100%;
-      text-align: center;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
   }
 }
 
@@ -139,7 +127,6 @@ html, body {
     .active {
       color: $blue-20;
       font-weight: 600;
-      border-bottom: 2px solid $blue-20;
     }
   }
 
@@ -153,13 +140,9 @@ html, body {
 }
 
 .research_container {
+  @include secondary-link;
   background: $gray-10;
   padding: 5rem 1rem;
-
-  a {
-    color: $blue-20;
-    font-weight: 600;
-  }
 
   .file_icon {
     width: 100%;

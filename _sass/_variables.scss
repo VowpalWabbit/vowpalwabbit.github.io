@@ -23,17 +23,20 @@ $dark-border: $gray-50;
 
 @mixin primary-link {
   a {
+    background: white;
     border: 3px solid white;
     border-radius: 28px;
-    color: white;
+    color: $blue-20;
     display: inline-block;
+    font-weight: 600;
     font-size: 0.9rem;
     margin: 0.5rem 0;
     padding: 0.6rem 0;
     text-align: center;
-    width: 12rem;
+    width: 100%;
 
     &:hover {
+      text-decoration: none;
       transition: 0.3s;
     }
   }
@@ -43,9 +46,12 @@ $dark-border: $gray-50;
   a {
     color: $blue-20;
     font-weight: 600;
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 2px solid $blue-20;
 
-    &:after {
-      content: '>';
+    &:hover {
+      text-decoration: none;
     }
   }
 }
