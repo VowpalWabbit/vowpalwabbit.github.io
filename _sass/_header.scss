@@ -1,90 +1,58 @@
-.nav_bar_container {
-  border-bottom: 1px solid white;
-  position: fixed;
-  z-index: 2;
+.navbar_container {
+  background: rgba(42, 59, 147, 0.95);
+  height: 3.3rem;
+  top: -240px;
+  transition: top 0.5s ease;
 
-  .logo {
-    max-width: 60%;
-
-    svg {
-      width: 100%;
-    }
-  }
-
-  &.scrolled, .learn &, .tutorial &, .publications &, .download & {
-    border-bottom: 1px solid $light-border;
+  &.light {
+    background: white;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
 
     a {
       color: $primary-text;
-
-      &.active {
-        color: $blue-20;
-        border-bottom: 2px solid $blue-20;
-      }
     }
 
     svg path {
       fill: $primary-text;
     }
 
-    .logo svg path {
-      fill: $primary-text;
+    .github_link {
+      border-left: 1px solid $gray-10;
     }
   }
 
-  @media screen and (max-width: 768px) {
-    &.scrolled .nav_item:last-child {
-      border-left: 1px solid $dark-border;
-    }
+  &.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
-  .learn & {
-    background: white;
-  }
-
-  .navbar {
-    height: 4rem;
-    justify-content: space-between;
-  }
-
-  .nav_item {
-    text-align: center;
-    padding: 0 1rem;
-    margin: 0.5rem 0;
-    text-decoration: none;
-    font-size: 1rem;
+  a {
+    display: inline-block;
     color: white;
+  }
 
-    &:hover {
-      text-decoration: none;
-    }
+  .logo {
+    width: 10rem;
 
-    &.active {
-      border-bottom: 2px solid white;
-      font-weight: 600;
+    svg {
+      width: 100%;
     }
   }
 
-  @media screen and (max-width: 768px) {
-    .logo svg {
-      height: 2.3rem;
+  .nav {
+    a {
+      margin: 0 0.8rem;
     }
+  }
 
-    .nav_item {
-      padding: 0 0.5rem;
+  .github_link {
+    padding-left: 1.8rem;
+    margin-left: 1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
 
-      svg {
-        height: 1.8rem;
-      }
-
-      &:last-child {
-        padding-right: 0;
-        border-left: 1px solid rgba(255, 255, 255, 0.8);
-      }
-    }
-
-    .nav_item_text {
-      display: none;
+    svg {
+      margin-right: 0.5rem;
     }
   }
 }
