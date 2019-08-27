@@ -36,6 +36,7 @@ $dark-border: $gray-50;
     width: 100%;
 
     &:hover {
+      background: $blue-5;
       text-decoration: none;
       transition: 0.3s;
     }
