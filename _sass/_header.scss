@@ -1,8 +1,73 @@
 .navbar_container {
   background: rgba(42, 59, 147, 0.95);
-  height: 3.3rem;
+  font-size: 1.125rem;
+  line-height: 1.33;
   top: -240px;
   transition: top 0.5s ease;
+
+  .navbar {
+    height: 4rem;
+  }
+
+  a {
+    display: inline-block;
+    color: $gray-10;
+
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+
+    &.active {
+      color: white;
+      padding-bottom: 4px;
+      border-bottom: 1px solid;
+      pointer-events: none;
+    }
+  }
+
+  .logo {
+    svg path{
+      fill: white;
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin: 0 0.8rem;
+    }
+  }
+
+  .github_link {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    padding-left: 1.8rem;
+
+    svg {
+      margin-right: 0.5rem;
+
+      path {
+        fill: $gray-10;
+      }
+    }
+
+    &:hover {
+      svg path {
+        fill: white;
+      }
+    }
+  }
+
+  &.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
 
   &.light {
     background: white;
@@ -10,49 +75,28 @@
 
     a {
       color: $primary-text;
+
+      &:hover {
+        color: $blue-20;
+      }
     }
 
     svg path {
       fill: $primary-text;
     }
 
+    #logo_vw_color path {
+      fill: $blue-20;
+    }
+
     .github_link {
       border-left: 1px solid $gray-10;
-    }
-  }
 
-  &.sticky {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-
-  a {
-    display: inline-block;
-    color: white;
-  }
-
-  .logo {
-    width: 10rem;
-
-    svg {
-      width: 100%;
-    }
-  }
-
-  .nav {
-    a {
-      margin: 0 0.8rem;
-    }
-  }
-
-  .github_link {
-    padding-left: 1.8rem;
-    margin-left: 1rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-
-    svg {
-      margin-right: 0.5rem;
+      &:hover {
+        svg path {
+          fill: $blue-20;
+        }
+      }
     }
   }
 }
