@@ -1,13 +1,13 @@
 $baseline: 1rem;
 
-$minScreen: 20rem;
-$maxScreen: 50rem;
+$minScreen: 300px;
+$maxScreen: 1140px;
 $minFont: 0.8rem;
 $maxFont: 1.2rem;
 
 $h1: 3.3rem;
-$h2: 2rem;
-$h3: 1.5rem;
+$h2: 2.5rem;
+$h3: 1.8rem;
 
 @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
   & {
@@ -39,15 +39,18 @@ html {
 
 h1 {
   font-size: $h1;
-  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  font-weight: 300;
 }
 
 h2 {
   font-size: $h2;
-  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  font-weight: 300;
 }
 
 h3 {
   font-size: $h3;
-  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  font-weight: 300;
 }
