@@ -1,24 +1,4 @@
 $(document).ready(function() {
-  const $nav = $(".nav_bar_container");
-
-  $(document).scroll(function () {
-    const scroll_top = $(this).scrollTop();
-    const nav_height = $nav.height();
-
-    $nav.toggleClass('scrolled', scroll_top > 0);
-
-    if (scroll_top === 0) {
-      $nav.css('background-color', 'transparent');
-    } else if (nav_height - scroll_top >= 0) {
-      const opacity = scroll_top / nav_height;
-      const bg_color = 'rgba(255, 255, 255,' + opacity + ')';
-      $nav.css('background-color', bg_color);
-    } else {
-      $nav.css('background-color', 'white');
-    }
-
-  });
-
   $(".language-sh pre.highlight").append(
     '<button class="copy">' +
       '<i class="fa fa-clone" aria-hidden="true"></i>' +
