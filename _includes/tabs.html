@@ -1,32 +1,34 @@
 {% assign items = include.items | sort: 'order' %}
 
-<div class="container tabs_container">
-  <div class="row justify-content-center nav">
-    <button
-      class="col arrow previous"
-      data-current-module={{items.first.module_id}}
-    >
-      <
-    </button>
-    {% for item in items %}
+<div class="tabs_container">
+  <div class="row justify-content-start">
+    <div class="nav">
       <button
-        class="col col-lg-2 {% if item.order == 1 %}active{% endif %} nav_item"
-        data-module_id={{item.module_id}}
+        class="col arrow previous"
+        data-current-module={{items.first.module_id}}
       >
-        {{item.tab}}
+        <
       </button>
-    {% endfor %}
-    <button
-      class="col arrow next"
-      data-current-module={{items.first.module_id}}
-    >
+      {% for item in items %}
+        <button
+          class="col col-lg-2 {% if item.order == 1 %}active{% endif %}"
+          data-module_id={{item.module_id}}
+        >
+          {{item.tab}}
+        </button>
+      {% endfor %}
+      <button
+        class="col arrow next"
+        data-current-module={{items.first.module_id}}
       >
-    </button>
+        >
+      </button>
+    </div>
   </div>
 
-  <div class="tab_content">
+  <div class="row tab_content">
     {% for item in items %}
-      <div class="row {% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
+      <div class="{% if item.order != 1 %}hidden{% endif %} row" data-module_id={{item.module_id}}>
         {% if item.has_sub_module %}
           {% assign sub_module_items = site.[item.module_id] | sort: 'order' %}
           {% include tab_content_with_sub_module.html %}

@@ -1,39 +1,33 @@
 {% assign item = include.item %}
 
-<div class="row">
-  <div class="col-12">
-    <h3>
-      {{ item.title }}
-    </h3>
-    <p class="description">
-      {{ item.description }}
-    </p>
-  </div>
+<div class="col-12">
+  <h3>
+    {{ item.title }}
+  </h3>
+  <p class="description">
+    {{ item.description }}
+  </p>
 </div>
 
 {% if item.show_guide %}
   {%
     assign guide = site.guides | where: "module_id",item.module_id | first
   %}
-  <div class="row">
-    <div class="col-6 col-md-4">
-      <div class="link">
-        <a href="{{ guide.url | relative_url}}">
-          {{guide.guide_link_text}}
-        </a>
-      </div>
+  <div class="col-6 col-md-4">
+    <div class="link">
+      <a href="{{ guide.url | relative_url}}">
+        {{guide.guide_link_text}}
+      </a>
     </div>
   </div>
 {% endif %}
 
 {% if item.link %}
-  <div class="row">
-    <div class="col-6 col-md-4">
-      <div class="link">
-        <a href={{item.link}} target="_blank">
-          {{item.link_text}}
-        </a>
-      </div>
+  <div class="col-6 col-md-4">
+    <div class="link">
+      <a href={{item.link}} target="_blank">
+        {{item.link_text}}
+      </a>
     </div>
   </div>
 {% endif %}

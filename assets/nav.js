@@ -158,8 +158,9 @@ $(document).ready(function() {
   });
 
   $(".tabs_container .nav, .tabs_container .sub_nav, .use_cases_container .nav")
-    .on("click", " .nav_item", function() {
+    .on("click", " button", function() {
       $(this).siblings().removeClass('active');
+      $(this).addClass('active');
       const module_id = $(this).data('module_id');
       showModule(module_id);
     });
