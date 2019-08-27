@@ -39,6 +39,17 @@ $dark-border: $gray-50;
   }
 }
 
+@mixin secondary-link {
+  a {
+    color: $blue-20;
+    font-weight: 600;
+
+    &:after {
+      content: '>';
+    }
+  }
+}
+
 @mixin resource-card {
   .resource {
     padding: 1.5rem 1rem;

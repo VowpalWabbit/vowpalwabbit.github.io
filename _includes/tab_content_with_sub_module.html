@@ -1,4 +1,4 @@
-<div class="col-sm-12 col-lg-3 sub_nav">
+<div class="col-sm-12 col-lg-2 sub_nav">
   {% for item in sub_module_items %}
     <button
       class="nav_item {% if item.order == 1 %}active{% endif %}"
@@ -9,7 +9,7 @@
   {% endfor %}
 </div>
 
-<div class="col col-lg-9">
+<div class="col col-lg-6">
   {% for item in sub_module_items %}
     <div
       class="{% if item.order != 1 %}hidden{% endif %}"
