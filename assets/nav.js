@@ -1,12 +1,5 @@
 $(document).ready(function() {
   const $nav = $(".nav_bar_container");
-  const modules = [
-    'reinforcement',
-    'supervised',
-    'online',
-    'efficiency',
-    'flexibility'
-  ];
 
   $(document).scroll(function () {
     const scroll_top = $(this).scrollTop();
@@ -157,33 +150,6 @@ $(document).ready(function() {
     scrollTo('get_started');
   });
 
-  $(".tabs_container .nav, .tabs_container .sub_nav, .use_cases_container .nav")
-    .on("click", " button", function() {
-      $(this).siblings().removeClass('active');
-      $(this).addClass('active');
-      const module_id = $(this).data('module_id');
-      showModule(module_id);
-    });
-
-  $(".tabs_container").on("click", "button.arrow", function() {
-    const $this = $(this);
-    const class_names = $this.attr("class");
-    let index = modules.findIndex((module) => {
-      return module === $this.attr('data-current-module')
-    });
-
-    index = class_names.includes('previous')
-      ? ((index - 1) + modules.length) % modules.length
-      : (index + 1) % modules.length;
-
-    $(".tabs_container .arrow").attr("data-current-module", modules[index]);
-
-    $this.siblings('.nav_item').removeClass('active');
-    $(".nav_item[data-module_id=" + modules[index] +"]").addClass('active');
-
-    showModule(modules[index]);
-  });
-
   $(document).on("click", ".language-sh .copy", function() {
     if (document.selection) {
       const range = document.body.createTextRange();
@@ -207,13 +173,6 @@ $(document).ready(function() {
     download(bib_key, content);
   });
 });
-
-function showModule(module_id) {
-  $(".nav_item[data-module_id='" + module_id +"']").addClass('active');
-  const $module = $("div[data-module_id=" + module_id +"]");
-  $module.siblings().addClass('hidden');
-  $module.removeClass('hidden');
-}
 
 function scrollTo(id) {
   $('html,body').animate({
