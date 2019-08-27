@@ -3,12 +3,6 @@
 <div class="tabs_container">
   <div class="row justify-content-start">
     <div class="nav">
-      <button
-        class="col arrow previous"
-        data-current-module={{items.first.module_id}}
-      >
-        <
-      </button>
       {% for item in items %}
         <button
           class="col col-lg-2 {% if item.order == 1 %}active{% endif %}"
@@ -17,12 +11,6 @@
           {{item.tab}}
         </button>
       {% endfor %}
-      <button
-        class="col arrow next"
-        data-current-module={{items.first.module_id}}
-      >
-        >
-      </button>
     </div>
   </div>
 
@@ -39,3 +27,5 @@
     {% endfor %}
   </div>
 </div>
+
+<script src="{{ site.baseurl }}/assets/js/tabs.js"></script>

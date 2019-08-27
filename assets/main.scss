@@ -116,28 +116,6 @@ html, body {
         background-color: white;
         color: $primary-text;
       }
-
-      &.arrow {
-        display: none;
-      }
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .nav {
-      button {
-        display: none;
-
-        &.arrow {
-          display: block;
-          color: white;
-        }
-
-        &.active {
-          display: block;
-          pointer-events: none;
-        }
-      }
     }
   }
 
