@@ -122,15 +122,15 @@ $breakpoint-sm: 600px;
 
     &:before {
       content: counter(citation-counter);
-      font-size: 1.5rem;
+      font-size: 2.25rem;
       position: absolute;
-      left: -1.5rem;
+      left: -2.4rem;
       top: 1rem;
-      line-height: 32px;
+      line-height: 35px;
     }
 
     & > span {
-      padding: 1rem 1rem 0.2rem 1rem;
+      padding: 1rem;
       display: block;
 
       &:target {
