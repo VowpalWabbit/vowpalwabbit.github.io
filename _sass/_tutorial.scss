@@ -1,12 +1,28 @@
 .tutorial_container {
+  @include inline-link;
   padding: 3rem 1rem;
 
   h1 {
-    color: $blue-20;
+    padding-bottom: 1rem;
+  }
+
+  h2 {
+    padding: 1rem 0 0.8rem;
+  }
+
+  sup {
+    a {
+      border: none;
+
+      &:hover {
+        border: none;
+      }
+    }
   }
 
   pre.highlight {
     padding: 1.5rem 1rem;
+    margin: 1rem 0;
     background-color: $blue-5;
     display: flex;
     justify-content: space-between;
