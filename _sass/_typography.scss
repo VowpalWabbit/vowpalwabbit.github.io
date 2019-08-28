@@ -1,13 +1,11 @@
-$baseline: 1rem;
-
-$minScreen: 300px;
+$minScreen: 576px;
 $maxScreen: 1140px;
 $minFont: 0.8rem;
-$maxFont: 1.2rem;
+$maxFont: 1rem;
 
-$h1: 3.3rem;
-$h2: 2.5rem;
-$h3: 1.8rem;
+$h1: 4rem;
+$h2: 3rem;
+$h3: 2.25rem;
 
 @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
   & {
@@ -36,13 +34,21 @@ $h3: 1.8rem;
 html, body {
   font-family: 'Work Sans', sans-serif;
   @include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont);
-}
-
-.content, code {
-  font-size: 0.95rem;
   color: $primary-text;
   line-height: 1.33;
 }
+
+.content {
+  font-size: 1.125rem;
+  color: $primary-text;
+  line-height: 1.33;
+}
+
+code {
+  font-size: inherit;
+  color: $primary-text;
+}
+
 
 h1 {
   font-size: $h1;
