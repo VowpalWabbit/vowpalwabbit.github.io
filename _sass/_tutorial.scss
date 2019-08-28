@@ -20,26 +20,6 @@
     }
   }
 
-  pre.highlight {
-    padding: 1.5rem 1rem;
-    margin: 1rem 0;
-    background-color: $blue-5;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .copy {
-    background: transparent;
-    border: 0;
-    color: $blue-20;
-    align-self: flex-start;
-
-    &:hover {
-      color: $blue-10;
-      cursor: pointer;
-    }
-  }
-
   .edit {
     color: $secondary-text;
 

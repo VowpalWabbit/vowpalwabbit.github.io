@@ -1,10 +1,7 @@
 .start_container {
+  @include inline-link;
   padding: 5rem 1rem;
   counter-reset: install-step-counter;
-
-  a {
-    color: $blue-20;
-  }
 
   .description {
     padding: 0.5rem 0;
@@ -16,7 +13,6 @@
 
   .step_title {
     padding-bottom: 0.8rem;
-
     counter-increment: install-step-counter;
     display: inline-block;
     position: relative;
@@ -80,30 +76,6 @@
       &.selected {
         background: $yellow-10;
       }
-    }
-  }
-
-  .command_box {
-    display: flex;
-    background: $blue-5;
-    padding: 0.7rem 1rem;
-    @include secondary-link;
-  }
-
-  .command {
-    flex: 1 1 auto;
-    min-height: 1.8rem;
-  }
-
-  .copy {
-    background: transparent;
-    border: 0;
-    color: $gray-50;
-    align-self: flex-start;
-
-    &:hover {
-      color: $gray-90;
-      cursor: pointer;
     }
   }
 }

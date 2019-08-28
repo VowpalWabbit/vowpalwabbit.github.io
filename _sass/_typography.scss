@@ -33,8 +33,15 @@ $h3: 1.8rem;
   @return $value / ($value * 0 + 1);
 }
 
-html {
+html, body {
+  font-family: 'Work Sans', sans-serif;
   @include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont);
+}
+
+.content, code {
+  font-size: 0.95rem;
+  color: $primary-text;
+  line-height: 1.33;
 }
 
 h1 {
