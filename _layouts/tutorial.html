@@ -22,28 +22,7 @@
       </a>
       {{ content }}
     </div>
-    <div class="bibliography_container">
-      <div class="container">
-        <div class="row header">
-          <div class="col-5">
-            <h3>
-              CITATIONS
-            </h3>
-          </div>
-          <div class="col all_publications_link">
-            <a href='{{ "/publications.html" | relative_url }}'>
-              All publications
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            {% bibliography %}
-          </div>
-        </div>
-      </div>
-      <script src="{{ site.baseurl }}/assets/js/citation.js"></script>
-    </div>
+    {% include bibliography.html %}
     {% include footer.html %}
 
     <div class="overlay">

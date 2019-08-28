@@ -57,11 +57,6 @@ sup {
     margin-left: 5px;
   }
 
-  /**
-   * The arrow element lives *inside* the popper
-   * so we need to offset it by its size to position
-   * it outside the popper element.
-  */
   &[x-placement="bottom"] [x-arrow] {
     top: -12px;
     transform: rotate(180deg);
@@ -123,12 +118,13 @@ sup {
 }
 
 .bibliography_container {
-  padding: 3rem 1rem 1.5rem;
+  padding: 3rem 1rem;
 
   .header {
-    width: 18rem;
-    height: 32px;
+    height: 28px;
     margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
   }
 
   h3 {
@@ -142,6 +138,7 @@ sup {
   .all_publications_link {
     border-left: 1px solid $light-border;
     padding-left: 1rem;
+    margin-left: 1rem;
 
     a {
       color: $primary-text;
@@ -155,6 +152,7 @@ sup {
 
   ol.bibliography {
     @include citation;
+    font-size: 1.125rem;
 
     column-count: 2;
     -moz-column-count: 2;
