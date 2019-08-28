@@ -62,6 +62,7 @@ $dark-border: $gray-50;
   a {
     color: $blue-20;
     display: inline-block;
+    padding-bottom: 2px;
     border-bottom: 1px solid $blue-20;
 
     &:hover {

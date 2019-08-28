@@ -100,7 +100,7 @@ const getStartedModule = (function() {
     });
 
     const command = command_list[selected_options.join(',')];
-    const $command_box = $('.command_box');
+    const $command_box = $('.start_container .installation_step .command_box');
 
     if (!command.toLowerCase().includes("<a ")) {
       if ($command_box.has('.copy').length === 0) {
@@ -113,10 +113,10 @@ const getStartedModule = (function() {
       }
     } else {
       $command_box.removeClass("language-sh");
-      $('.command_box .copy').remove();
+      $command_box.find('.copy').remove();
     }
 
-    $command_box.find('.command').html(command);
+    $command_box.find('code').html(command);
   }
 
   function getOptionText($button) {
