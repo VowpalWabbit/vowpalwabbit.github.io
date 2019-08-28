@@ -49,10 +49,25 @@ $dark-border: $gray-50;
     font-weight: 600;
     display: inline-block;
     padding-bottom: 4px;
-    border-bottom: 2px solid $blue-20;
+    border-bottom: 2px solid transparent;
 
     &:hover {
       text-decoration: none;
+      border-bottom: 2px solid $blue-20;
+    }
+  }
+}
+
+@mixin inline-link {
+  a {
+    color: $blue-20;
+    display: inline-block;
+    border-bottom: 1px solid $blue-20;
+
+    &:hover {
+      text-decoration: none;
+      color: $blue-10;
+      border-bottom: 1px solid $blue-10;
     }
   }
 }
