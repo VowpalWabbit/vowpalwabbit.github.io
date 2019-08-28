@@ -19,9 +19,9 @@
 
     &:before {
       content: counter(install-step-counter);
-      font-size: 2rem;
+      font-size: 2.25rem;
       position: absolute;
-      left: -2rem;
+      left: -2.5rem;
       line-height: 32px;
     }
   }
@@ -29,7 +29,8 @@
   .settings_container {
     .note {
       color: $secondary-text;
-      font-size: 0.8rem;
+      font-size: 15px;
+      line-height: 20px;
       padding-top: 0.8rem;
       display: flex;
       justify-content: flex-end;
