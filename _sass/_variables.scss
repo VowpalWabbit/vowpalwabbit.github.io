@@ -21,6 +21,12 @@ $secondary-text: $gray-50;
 $light-border: #D8D8D8;
 $dark-border: $gray-50;
 
+// screen size:
+$breakpoint-xl: 1440px;
+$breakpoint-lg: 1024px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 600px;
+
 @mixin primary-link {
   a {
     background: white;
