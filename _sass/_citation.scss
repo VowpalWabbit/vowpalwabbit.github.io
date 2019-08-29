@@ -6,6 +6,16 @@ sup {
   &:after {
     content: ')';
   }
+
+  .cite_sup {
+    &:after {
+      content: ',';
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+  }
 }
 
 .citation_tooltip {

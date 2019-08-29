@@ -4,8 +4,8 @@ const citationModule = (function() {
   const breakpoint_lg = 1024;
 
   function init() {
-    addSuperscript();
     cacheDom();
+    updateSupFormat();
 
     if ($(window).width() <= breakpoint_lg) {
       bindMobileEvents();
@@ -18,10 +18,15 @@ const citationModule = (function() {
     init
   }
 
+  function updateSupFormat() {
+    DOM.$sup.children('.cite_sup').each((_, cite_sup) => {
+      $(cite_sup).text($(cite_sup).text().slice(1, -1))
+    })
+  }
+
   function cacheDom() {
     DOM.$html = $('html');
-    DOM.$term = $("span[data-ref]");
-    DOM.$sup = DOM.$term.find('sup');
+    DOM.$sup = $('sup');
     DOM.$go_back_button = $(".bibliography .go_back_button");
   }
 
@@ -40,46 +45,6 @@ const citationModule = (function() {
 
     $('body').on("click", ".overlay, .citation_tooltip .close_button", () => {
       disableOverlay();
-    });
-  }
-
-  function addSuperscript() {
-    let citation_index_map = {};
-    let citation_index_so_far = 0;
-
-    $('span[data-ref]').each((_, term) => {
-      const $term = $(term);
-
-      const citations = $term.data("ref").split(" ").map((citation_id) => {
-        let superscript;
-        if (Object.keys(citation_index_map).includes(citation_id)) {
-          superscript = citation_index_map[citation_id];
-        } else {
-          citation_index_so_far += 1;
-          superscript = citation_index_so_far;
-          citation_index_map[citation_id] = citation_index_so_far;
-        }
-
-        return {
-          superscript,
-          citation_id
-        }
-      });
-
-      const superscript_link = citations.map((citation) => {
-        const { citation_id, superscript } = citation;
-        return (
-          '<a id=ref_'+ citation_id +' href=#'+ citation_id +'>' +
-            superscript +
-          '</a>'
-        )
-      }).join(', ');
-
-      $term.append(
-        '<sup>' +
-          superscript_link +
-        '</sup>'
-      );
     });
   }
 

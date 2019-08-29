@@ -70,6 +70,8 @@ collections:
     output: true
 
 scholar:
+  style: ieee
+  cite_class: cite_sup
   bibliography_template:  bibtemplate
   details_layout: bib_download.html
   details_link: Get .bib

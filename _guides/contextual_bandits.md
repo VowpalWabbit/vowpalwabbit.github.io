@@ -33,7 +33,7 @@ We use the term "policy" many times in this tutorial. For those new to RL, let's
 
 In Contextual Bandits, the contexts and actions are usually represented as feature vectors. _APP_ chooses actions by applying a policy _π_ that takes a context as input and returns an action. The goal is to find a policy that maximizes average reward over a sequence of interactions.
 
-## <span data-ref="DBLP:journals/corr/AgarwalBCHLLLMO16 DBLP:journals/corr/abs-1003-0146">Real world examples of contextual bandit</span>
+## Real world examples of contextual bandit <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup>
 
 1. News website
   - Decision to optimize: which article to display to user
@@ -63,10 +63,10 @@ In this section we go over different CB functionalities offered by VW, understan
 
 Multiple policy evaluation approaches can be used when optimizing a policy. VW offers 4 approaches that you can specify using `--cb_type`:
 
-- <span data-ref="doi:10.1080/01621459.1952.10483446">Inverse Propensity Score</span> `--cb_type ips`
-- <span data-ref="DBLP:conf/icml/JiangL16 DBLP:conf/icml/DudikLL11">Doubly Robust</span> `--cb_type dr`
+- Inverse Propensity Score <sup>{% cite doi:10.1080/01621459.1952.10483446 %}</sup> `--cb_type ips`
+- Doubly Robust <sup>{% cite DBLP:conf/icml/JiangL16 %} {% cite DBLP:conf/icml/DudikLL11 %}</sup> `--cb_type dr`
 - Direct Method `--cb_type dm`
-- <span data-ref="bietti2018a Karampatziakis:2011:OIW:3020548.3020594">Multi Task Regression/Importance Weighted Regression</span> `--cb_type mtr`
+- Multi Task Regression/Importance Weighted Regression <sup>{% cite bietti2018a %} {% cite Karampatziakis:2011:OIW:3020548.3020594 %}</sup> `--cb_type mtr`
 
 For more details, please refer to the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.
 
@@ -82,9 +82,9 @@ VW offers 5 exploration algorithms
 
 - Explore-first `--first`
 - Epsilon-greedy `--epsilon`
-- <span data-ref="DBLP:journals/corr/OsbandR15 DBLP:journals/corr/EcklesK14">Bagging Explorer</span> `--bag`
-- <span data-ref="DBLP:journals/corr/AgarwalHKLLS14">Online Cover</span> `--cover`
-- <span data-ref="DBLP:journals/corr/abs-1811-04383">Softmax Explorer</span> `--softmax` (only supported for `--cb_explore_adf`)
+- Bagging Explorer <sup>{% cite DBLP:journals/corr/OsbandR15 %} {%cite DBLP:journals/corr/EcklesK14 %}</sup> `--bag`
+- Online Cover <sup>{% cite DBLP:journals/corr/AgarwalHKLLS14 %}</sup> `--cover`
+- Softmax Explorer <sup>{% cite DBLP:journals/corr/abs-1811-04383 %}</sup> `--softmax` (only supported for `--cb_explore_adf`)
 
 For more details, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Github wiki</a>.
 
