@@ -34,9 +34,9 @@ $(document).ready(function() {
 });
 
 function scrollTo(id) {
-  $('html,body').animate({
-    scrollTop: $("#"+id).offset().top
-  },'slow');
+  $('html, body').animate({
+    scrollTop: $("#" + id).offset().top
+  }, 'slow');
 }
 
 function download(bib_key, text) {

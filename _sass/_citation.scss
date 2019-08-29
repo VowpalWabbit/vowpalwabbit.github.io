@@ -119,6 +119,32 @@ sup {
 
 .bibliography_container {
   padding: 3rem 1rem;
+  position: relative;
+
+  .go_back_button {
+    // display: none;
+    border: 3px solid white;
+    border-radius: 28px;
+    background-color: white;
+    box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+    color: $blue-20;
+    font-weight: 600;
+    font-size: 18px;
+    height: 56px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding: 0.8rem;
+    position: absolute;
+    text-align: center;
+    top: 2rem;
+    width: 160px;
+    z-index: 1;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
   .header {
     height: 28px;
