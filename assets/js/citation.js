@@ -22,15 +22,21 @@ const citationModule = (function() {
     DOM.$html = $('html');
     DOM.$term = $("span[data-ref]");
     DOM.$sup = DOM.$term.find('sup');
+    DOM.$go_back_button = $(".bibliography .go_back_button");
   }
 
   function bindDesktopEvents() {
     DOM.$sup.on('mouseenter', handleSupMouseEnter);
     DOM.$sup.on('mouseleave', handleSupMouseLeave);
+    DOM.$sup.on('click', 'a', handleSupDesktopOnClick);
+    DOM.$go_back_button.on('click', (e) => {
+      e.preventDefault();
+      scrollTo($(this).attr('href'));
+    });
   }
 
   function bindMobileEvents() {
-    DOM.$sup.on('click', handleSupOnClick);
+    DOM.$sup.on('click', handleSupMobileOnClick);
 
     $('body').on("click", ".overlay, .citation_tooltip .close_button", () => {
       disableOverlay();
@@ -61,9 +67,10 @@ const citationModule = (function() {
       });
 
       const superscript_link = citations.map((citation) => {
+        const { citation_id, superscript } = citation;
         return (
-          '<a href=#'+ citation.citation_id +'>' +
-            citation.superscript +
+          '<a id=ref_'+ citation_id +' href=#'+ citation_id +'>' +
+            superscript +
           '</a>'
         )
       }).join(', ');
@@ -114,7 +121,12 @@ const citationModule = (function() {
     }, 300);
   }
 
-  function handleSupOnClick(e) {
+  function handleSupDesktopOnClick() {
+    const link = '#' + $(this).attr('id');
+    $(".go_back_button").attr('href', link);
+  }
+
+  function handleSupMobileOnClick(e) {
     e.preventDefault();
 
     const $sup = $(this);
