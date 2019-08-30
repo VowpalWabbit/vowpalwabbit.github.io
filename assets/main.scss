@@ -4,6 +4,7 @@
 @import "typography";
 @import "header";
 @import "footer";
+@import "vw_breadcrumb";
 @import "start";
 @import "command_box";
 @import "citation";
@@ -36,24 +37,6 @@
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 3;
   cursor: pointer;
-}
-
-.vw_breadcrumb {
-  padding-bottom: 0.5rem;
-
-  .home {
-    color: $primary-text;
-  }
-
-  .title {
-    &:before {
-      content: '>';
-      font-weight: normal;
-    }
-
-    color: $primary-text;
-    font-weight: 600;
-  }
 }
 
 .hero_container {

@@ -1,0 +1,13 @@
+.vw_breadcrumb {
+  @include secondary-link;
+
+  .title {
+    &:before {
+      content: '>';
+      font-weight: normal;
+    }
+
+    color: $primary-text;
+    font-weight: 600;
+  }
+}

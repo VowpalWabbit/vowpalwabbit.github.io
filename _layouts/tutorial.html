@@ -1,25 +1,20 @@
 <!doctype html>
 <html lang="en">
   {% include head.html %}
+
   <body class={{page.body_class}}>
     {% include header.html header_class="light" %}
-    <div class="container content tutorial_container">
-      <div class="vw_breadcrumb">
-        <a class="home" href="{{ site.url }}{{ site.baseurl }}">
-          Home
-        </a>
-        <span class="title">
-          {{ page.title }}
-        </span>
-      </div>
-      <a
-        href="{{ site.github.repository_url }}/blob/source/{{ page.relative_path }}"
-        class="edit"
-        title="Edit this page"
-        target="_blank"
-      >
-        <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+    <div class="container breadcrumb_container">
+      {% include vw_breadcrumb.html %}
+      <a href="{{ site.github.repository_url }}/blob/source/{{ page.relative_path }}" class="edit">
+        {% include svg/icons/icon_edit.svg %}
+
+        <div class="text">
+          Edit on GitHub
+        </div>
       </a>
+    </div>
+    <div class="container content tutorial_container">
       {{ content }}
     </div>
     {% include bibliography.html %}
