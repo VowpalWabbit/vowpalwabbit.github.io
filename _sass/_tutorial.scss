@@ -1,6 +1,47 @@
+.breadcrumb_container {
+  padding: 2.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit {
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  transition: width 0.5s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .text {
+    width: auto;
+    max-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: max-width 0.3s linear;
+    color: $blue-20;
+    text-decoration: none;
+  }
+
+  &:hover {
+    width: 10.5rem;
+    text-decoration: none;
+    background: $blue-5;
+
+    .text {
+      max-width: 10rem;
+      padding-left: 0.3rem;
+    }
+  }
+}
+
 .tutorial_container {
   @include inline-link;
-  padding: 3rem 1rem;
+  padding: 0 1rem;
 
   h1 {
     padding-bottom: 1rem;
@@ -17,14 +58,6 @@
       &:hover {
         border: none;
       }
-    }
-  }
-
-  .edit {
-    color: $secondary-text;
-
-    &:hover {
-      color: $primary-text;
     }
   }
 }
