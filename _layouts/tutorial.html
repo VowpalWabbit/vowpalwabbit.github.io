@@ -8,19 +8,27 @@
       {% include vw_breadcrumb.html %}
       <a href="{{ site.github.repository_url }}/blob/source/{{ page.relative_path }}" target="_blank" class="edit">
         {% include svg/icons/icon_edit.svg %}
-
         <div class="text">
           Edit on GitHub
         </div>
       </a>
     </div>
+
     <div class="container content tutorial_container">
-      {{ content }}
+      <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-9">
+          {{ content }}
+        </div>
+      </div>
     </div>
+
     {% include bibliography.html %}
     {% include footer.html %}
-
     <div class="overlay">
     </div>
+
+    <script src="{{ site.baseurl }}/assets/js/tutorial.js"></script>
   </body>
 </html>
