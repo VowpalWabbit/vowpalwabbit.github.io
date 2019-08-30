@@ -1,13 +1,19 @@
 .vw_breadcrumb {
-  @include secondary-link;
+  a {
+    font-weight: 600;
+    color: $primary-text;
+
+    &:hover {
+      text-decoration: none;
+      color: $blue-20;
+    }
+  }
 
   .title {
     &:before {
       content: '>';
-      font-weight: normal;
     }
 
     color: $primary-text;
-    font-weight: 600;
   }
 }
