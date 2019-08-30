@@ -128,7 +128,7 @@ sup {
 }
 
 .bibliography_container {
-  padding: 3rem 1rem;
+  padding: 5rem 1rem;
   position: relative;
 
   .go_back_button {
@@ -187,7 +187,7 @@ sup {
   }
 
   ol.bibliography {
-    @include citation;
+    @include ordered-list;
     font-size: 1.125rem;
 
     column-count: 2;
@@ -196,6 +196,18 @@ sup {
     column-gap: 3rem;
     -moz-column-gap: 3rem;
     -webkit-column-gap: 3rem;
+
+    .export_bib {
+      padding: 0 1rem;
+
+      a {
+        vertical-align: middle;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   .details {

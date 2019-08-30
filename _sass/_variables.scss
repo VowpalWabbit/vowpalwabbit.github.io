@@ -108,12 +108,12 @@ $breakpoint-sm: 600px;
   }
 }
 
-@mixin citation {
+@mixin ordered-list {
   list-style: none;
-  counter-reset: citation-counter;
+  counter-reset: ol-list-counter;
 
   li {
-    counter-increment: citation-counter;
+    counter-increment: ol-list-counter;
     display: inline-block;
     position: relative;
 
@@ -122,7 +122,7 @@ $breakpoint-sm: 600px;
     }
 
     &:before {
-      content: counter(citation-counter);
+      content: counter(ol-list-counter);
       font-size: 2.25rem;
       position: absolute;
       left: -2.4rem;
@@ -136,18 +136,6 @@ $breakpoint-sm: 600px;
 
       &:target {
         background-color: $blue-5;
-      }
-    }
-
-    .export_bib {
-      padding: 0 1rem;
-
-      a {
-        vertical-align: middle;
-
-        &:hover {
-          text-decoration: none;
-        }
       }
     }
   }

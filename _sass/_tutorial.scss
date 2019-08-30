@@ -80,4 +80,38 @@
       }
     }
   }
+
+  .tutorial_nav {
+    @include ordered-list;
+    position: sticky;
+    top: 5rem;
+
+    li {
+      display: block;
+
+      span {
+        padding: 1rem 0;
+      }
+
+      a {
+        border: 0;
+        padding: 0;
+        color: $gray-30;
+      }
+
+      &:before {
+        color: $gray-30;
+      }
+
+      &.active {
+        a {
+          color: $blue-20;
+        }
+
+        &:before {
+          color: $blue-20;
+        }
+      }
+    }
+  }
 }
