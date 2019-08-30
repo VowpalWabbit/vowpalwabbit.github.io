@@ -4,7 +4,12 @@ const tutorialModule = (function() {
 
   function init() {
     cacheDom();
-    insertLinkToHeader();
+    addTutorialNav();
+    addLinkToHeader();
+    highlightSectionLink();
+    $(document).scroll(function () {
+      highlightSectionLink();
+    });
   }
 
   return {
@@ -12,10 +17,29 @@ const tutorialModule = (function() {
   }
 
   function cacheDom() {
+    DOM.$tutorial_nav = $(".tutorial_container .tutorial_nav");
     DOM.$h2s = $(".tutorial_container h2");
   }
 
-  function insertLinkToHeader() {
+  function addTutorialNav() {
+    const tutorial_nav = Array.from(DOM.$h2s.map(function(_, h2) {
+      const $h2 = $(h2);
+      const id = $(h2).attr('id');
+
+      return (
+        "<li>" +
+          "<span>" +
+            "<a href=#" + id + ">" +
+              $h2.contents().get(0).nodeValue +
+            "</a>" +
+          "</span>" +
+        "</li>");
+    })).join('');
+
+    DOM.$tutorial_nav.append(tutorial_nav);
+  }
+
+  function addLinkToHeader() {
     DOM.$h2s.each(function(_, h2) {
       const $h2 = $(h2);
       const id = $h2.attr('id');
@@ -23,6 +47,22 @@ const tutorialModule = (function() {
 
       if (id) {
         return $h2.append($("<a />").attr("href", "#" + id).html(icon));
+      }
+    });
+  }
+
+  function highlightSectionLink() {
+    const current_position = $(window).scrollTop();
+    const nav_height = DOM.$tutorial_nav.outerHeight() + 1;
+
+    DOM.$tutorial_nav.find('a').each(function() {
+      const $section_link = $(this);
+      const $section = $($section_link.attr('href'));
+
+      if ($section.position().top - nav_height <= current_position &&
+        $section_link.offset().top + $section.height() > current_position) {
+        DOM.$tutorial_nav.children('li').removeClass('active');
+        $section_link.closest('li').addClass('active');
       }
     });
   }

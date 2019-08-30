@@ -16,15 +16,15 @@ const headerModule = (function() {
   }
 
   function initScroll() {
-    let prev_scroll_top = 0;
+    let prev_position = 0;
     $(document).scroll(function () {
-      const scroll_top = $(this).scrollTop();
-      if (scroll_top < prev_scroll_top) {
+      const current_position = $(this).scrollTop();
+      if (current_position < prev_position) {
         DOM.$navbar.addClass("sticky");
       } else {
         DOM.$navbar.removeClass("sticky");
       }
-      prev_scroll_top = scroll_top;
+      prev_position = current_position;
     });
   }
 }());

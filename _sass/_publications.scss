@@ -6,6 +6,6 @@
   }
 
   .bibliography {
-    @include citation;
+    @include ordered-list;
   }
 }
