@@ -79,6 +79,29 @@ $breakpoint-sm: 600px;
   }
 }
 
+@mixin primary-button {
+  button {
+    background: $blue-20;
+    border: 0;
+    border-radius: 28px;
+    box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.33;
+    margin: 2rem auto;
+    padding: 0.8rem 3rem;
+    text-align: center;
+
+    &:hover {
+      background: $blue-10;
+      transition: 0.3s;
+    }
+  }
+}
+
 @mixin resource-card {
   .resource {
     padding: 1.5rem 1rem;
