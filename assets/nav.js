@@ -6,7 +6,7 @@ $(document).ready(function() {
   );
 
   $(".hero_container").on("click", ".get_started_button", function() {
-    scrollTo('get_started');
+    scrollTo('install_vw');
   });
 
   $(document).on("click", ".language-sh .copy", function() {
