@@ -6,4 +6,5 @@ description: Get answers to your questions
 logo: svg/stackoverflow.svg
 link: https://stackoverflow.com/questions/tagged/vowpalwabbit
 link_text: Ask your questions
+class: stackoverflow
 ---

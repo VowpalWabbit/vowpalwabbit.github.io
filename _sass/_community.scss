@@ -1,72 +1,123 @@
 .community_container {
   background: $blue-20;
   color: white;
-  padding: 5rem 0 0;
+  padding: 5rem 1rem;
 
   .description {
     padding-bottom: 4rem;
   }
 
   .community {
-    width: 17.5rem;
-    height: 17rem;
-    margin: 0.5rem auto;
-    padding: 2rem 1rem;
+    margin: 0.5rem -5px;
     background-color: white;
-    box-shadow: 0 2px 11px 0 rgba(168, 168, 168, 0.5);
     color: $primary-text;
-    border-radius: 32px;
-    box-shadow: 0 2px 11px 0 rgba(168,168,168,0.5);
-  }
 
-  .community_title {
-    font-size: 1.3rem;
-    padding: 1rem 0 0;
-    font-weight: 400;
-  }
+    .card_header {
+      padding: 0 1.5rem;
+      height: 200px;
+      background-color: $blue-5;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
 
-  .community_description {
-    font-size: 0.9rem;
-  }
+      .community_title {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 0;
 
-  .icon {
-    svg {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto;
+        .icon {
+          padding-right: 0.5rem;
 
-      path {
-        fill: $blue-20;
+          svg {
+            path {
+              fill: $gray-50;
+            }
+          }
+        }
+
+        h3 {
+          font-size: 1.125rem;
+          font-weight: 600;
+          line-height: 1.33;
+          margin: 0;
+          padding: 0;
+          text-transform: uppercase;
+        }
+      }
+
+      .community_description {
+        font-size: 2.25rem;
+        font-weight: 300;
+        letter-spacing: -0.5px;
+        line-height: 1.16;
       }
     }
   }
 
-  .join_community_link {
+  .card_content {
+    padding: 1.5rem 1.5rem 0;
+    height: 15rem;
+  }
+
+  .loader_wrapper {
+    height: 15rem;
+    background-color: red;
+  }
+
+  .github {
+    .card_content {
+      .card_row {
+        padding: 1.2rem 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.125rem;
+        line-height: 1.33;
+        border-bottom: 1px solid $gray-10;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      .card_label {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          padding-right: 1rem;
+          font-size: 1.5rem;
+          color: $gray-50;
+        }
+      }
+    }
+  }
+
+  .stackoverflow {
+    .card_content {
+      padding-top: 2.7rem;
+
+      .title {
+        font-weight: 600;
+      }
+
+      .question {
+        max-height: 7.5rem;
+      }
+
+      .time {
+        color: $gray-50;
+        padding: 0.8rem 0;
+      }
+    }
+  }
+
+  .card_footer {
     @include primary-link;
-    padding: 0;
-    position: absolute;
-    bottom: 2.5rem;
-    left: 0;
-    right: 0;
-    margin: auto;
+    padding-bottom: 1rem;
 
     a {
-      border: 2px solid $blue-20;
-      width: 12rem;
-
-      &:hover {
-        background: $blue-20;
-        color: white;
-      }
+      width: 15rem;
+      box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin: 1rem auto;
     }
   }
-}
-
-.community_footer {
-  margin-top: 3rem;
-  background-image: url("../assets/images/community/footer.svg");
-  min-height: 30rem;
-  background-repeat: repeat;
-  background-size: auto 100%;
-  background-position: center center;
 }
