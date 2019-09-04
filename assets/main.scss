@@ -115,15 +115,11 @@
   @include inline-link;
   background: $gray-10;
   padding: 5rem 1rem;
-
-  .file_icon {
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .research_container .file_icon {
-    padding-top: 3rem;
+  .research_container .chart_icon {
+    padding-bottom: 3rem;
   }
 }
 
