@@ -85,7 +85,7 @@
     button {
       background: transparent;
       border: 0;
-      color: $secondary-text;
+      color: $sub-nav;
       display: block;
       font-size: 15px;
       line-height: 20px;
@@ -98,8 +98,7 @@
     }
 
     .active {
-      color: $blue-20;
-      font-weight: 600;
+      color: $sub-nav-active;
     }
   }
 

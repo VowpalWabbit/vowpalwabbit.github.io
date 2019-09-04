@@ -63,13 +63,13 @@
       }
 
       &:disabled {
-        color: $secondary-text;
+        color: $button-disabled;
         pointer-events: none;
 
         span {
           &:before {
             content: '*';
-            color: $secondary-text;
+            color: $button-disabled;
           }
         }
       }
