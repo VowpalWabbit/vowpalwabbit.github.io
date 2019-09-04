@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
-    <title>Gitter_Logo</title>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>icon_gitter_30x30</title>
     <desc>Created with Sketch.</desc>
-    <g id="HD_Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="VW_HD_Desktop_Home" transform="translate(-1280.000000, -3650.000000)" fill="#2A3B93">
-            <g id="Join_Our_Community" transform="translate(0.000000, 3347.000000)">
-                <g id="Community_Modules" transform="translate(465.000000, 270.000000)">
-                    <g id="Gitter" transform="translate(682.000000, 0.000000)">
-                        <g id="Gitter_Logo" transform="translate(133.000000, 33.000000)">
-                            <path d="M0,60 L0,0 L60,0 L60,60 L0,60 Z M31.7583332,45.4545455 L34.6689151,45.4545455 L34.6689151,19.8045266 L31.7583332,19.8045266 L31.7583332,45.4545455 Z M25.9373597,45.4545455 L28.8477274,45.4545455 L28.8477274,19.8045266 L25.9373597,19.8045266 L25.9373597,45.4545455 Z M37.6956928,34.3452438 L40.6060606,34.3452438 L40.6060606,19.8045266 L37.6956928,19.8045266 L37.6956928,34.3452438 Z M20,34.3452438 L22.9105819,34.3452438 L22.9105819,15.1515152 L20,15.1515152 L20,34.3452438 Z" id="Combined-Shape"></path>
-                        </g>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-959.000000, -2954.000000)" fill="#666666">
+            <g id="community" transform="translate(129.000000, 2704.000000)">
+                <g id="Gitter" transform="translate(801.000000, 225.000000)">
+                    <g id="icon_gitter_30x30" transform="translate(29.000000, 25.000000)">
+                        <path d="M30,0 L30,30 L0,30 L0,0 L30,0 Z M17.3344576,9.90226329 L15.8791666,9.90226329 L15.8791666,22.7272727 L17.3344576,22.7272727 L17.3344576,9.90226329 Z M14.4238637,9.90226329 L12.9686798,9.90226329 L12.9686798,22.7272727 L14.4238637,22.7272727 L14.4238637,9.90226329 Z M20.3030303,9.90226329 L18.8478464,9.90226329 L18.8478464,17.1726219 L20.3030303,17.1726219 L20.3030303,9.90226329 Z M11.455291,7.57575758 L10,7.57575758 L10,17.1726219 L11.455291,17.1726219 L11.455291,7.57575758 Z" id="Combined-Shape"></path>
                     </g>
                 </g>
             </g>
