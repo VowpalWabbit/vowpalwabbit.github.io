@@ -11,29 +11,42 @@
 
     <div class="nav">
       <a
+        href="{{ 'start' | relative_url }}"
+        class='{% if current[1] == "start" %}active{% endif %}'
+      >
+        Get started
+      </a>
+      <a
+        href="{{ 'tutorials' | relative_url }}"
+        class='{% if current[1] == "tutorials" %}active{% endif %}'
+      >
+        Tutorials
+      </a>
+      <a
         href="{{ 'publications' | relative_url }}"
         class='{% if current[1] == "publications" %}active{% endif %}'
       >
         Research
       </a>
+      <div class="external_links">
+        <a
+          href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki"
+          target="_blank"
+        >
+          Wiki
+        </a>
 
-      <a
-        href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki"
-        target="_blank"
-      >
-        Documentation
-      </a>
-
-      <a
-        href="https://github.com/VowpalWabbit/vowpal_wabbit"
-        target="_blank"
-        class="github_link"
-      >
-        {% include svg/github.svg %}
-        <div>
-          GitHub
-        </div>
-      </a>
+        <a
+          href="https://github.com/VowpalWabbit/vowpal_wabbit"
+          target="_blank"
+          class="github_link"
+        >
+          {% include svg/github.svg %}
+          <div>
+            GitHub
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
