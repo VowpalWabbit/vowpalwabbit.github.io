@@ -1,6 +1,6 @@
 ---
 layout: default
-body-class: start
+body_class: start
 ---
 
 <div class="content start_container">
@@ -19,7 +19,22 @@ body-class: start
     </div>
   </div>
 
-  {% include install_vw.html %}
+  <div class="install_vw_container" id="install_vw">
+    <div class="container">
+      <div class="row justify-content-between">
+        {% include install_vw.html %}
+
+        <div class="col-12 col-xl-3">
+          <p class="title">
+            Installation requirements
+          </p>
+          <div class="description text-center text-xl-left">
+            Vowpal Wabbit can be built from source easily and there are binary packages available for select platforms.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   {% assign guides = site.guides | sort: 'order' %}
   {% assign gitter = site.communities | where: "community_id", "gitter" | first %}

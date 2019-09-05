@@ -48,7 +48,21 @@ body_class: home
     </div>
   </div>
 
-  {% include install_vw.html %}
+  <div class="install_vw_container" id="install_vw">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-xl-4">
+          <h2>
+            Get started
+          </h2>
+          <div class="description text-center text-xl-left">
+            Vowpal Wabbit can be built from source easily and there are binary packages available for select platforms.
+          </div>
+        </div>
+        {% include install_vw.html %}
+      </div>
+    </div>
+  </div>
 
   <div class="research_container">
     <div class="container">

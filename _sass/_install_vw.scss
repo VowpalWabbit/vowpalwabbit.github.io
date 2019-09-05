@@ -1,11 +1,5 @@
-.install_vw_container {
-  @include inline-link;
-  padding: 5rem 1rem;
+.install_vw_config {
   counter-reset: install-step-counter;
-
-  .description {
-    padding: 0.5rem 0;
-  }
 
   .installation_step {
     padding-bottom: 2rem;

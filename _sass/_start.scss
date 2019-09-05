@@ -3,6 +3,19 @@
     @include secondary-hero;
   }
 
+  .install_vw_container {
+    @include inline-link;
+    padding: 5rem 1rem;
+
+    .title {
+      font-weight: 600;
+    }
+
+    .description {
+      padding: 0.5rem 0;
+    }
+  }
+
   .tutorials_container {
     background-color: $gray-10;
     padding: 5rem 1rem;
