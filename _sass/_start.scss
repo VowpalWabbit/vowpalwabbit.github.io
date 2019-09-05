@@ -1,4 +1,4 @@
-.start_container {
+.start .start_container {
   .hero {
     @include secondary-hero;
   }
@@ -55,6 +55,7 @@
 
         a {
           background: $blue-20;
+          border: 3px solid $blue-20;
           box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
           color: white;
           display: block;
@@ -63,6 +64,7 @@
 
           &:hover {
             background: $blue-10;
+            border: 3px solid $blue-10;
           }
         }
       }
