@@ -1,23 +1,28 @@
 ---
-layout: null
+layout: default
 title: Publications
+body_class: publications
 ---
 
-<!doctype html>
-<html lang="en">
-  {% include head.html %}
-  <body class='publications'>
-    {% include header.html header_class="light" %}
-    <div class="container content publications_container">
-      <h1>
-        Publications
-      </h1>
-      <div class="row">
-        <div class="col-12 col-md-10">
-          {% bibliography -s apa %}
-        </div>
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>
+          Research
+        </h1>
       </div>
     </div>
-    {% include footer.html %}
-  </body>
-</html>
+  </div>
+</div>
+
+<div class="container content publications_container">
+  <h2>
+    Publication List
+  </h2>
+  <div class="row">
+    <div class="col-12 col-md-10">
+      {% bibliography -s apa %}
+    </div>
+  </div>
+</div>
