@@ -220,6 +220,12 @@ ol.bibliography {
   }
 }
 
+.publications {
+  .hero {
+    @include secondary-hero;
+  }
+}
+
 .publications_container {
   padding: 3rem 1rem;
 
@@ -244,6 +250,7 @@ ol.bibliography {
     }
   }
 }
+
 @media screen and (max-width: $breakpoint-lg) {
   .bibliography_container {
     display: none;
