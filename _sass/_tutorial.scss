@@ -1,47 +1,19 @@
-.breadcrumb_container {
-  padding: 2.5rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.tutorial {
+  .hero {
+    @include secondary-hero;
 
-.edit {
-  border-radius: 15px;
-  background-color: white;
-  box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
-  height: 30px;
-  width: 30px;
-  text-align: center;
-  transition: width 0.5s;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .text {
-    width: auto;
-    max-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: max-width 0.3s linear;
-    color: $blue-20;
-    text-decoration: none;
-  }
-
-  &:hover {
-    width: 10.5rem;
-    text-decoration: none;
-
-    .text {
-      max-width: 10rem;
-      padding-left: 0.3rem;
+    a {
+      color: white;
+      font-size: 1.125rem;
+      line-height: 1.33;
     }
   }
 }
 
 .tutorial_container {
   @include inline-link;
-  padding: 0 1rem 5rem;
+  position: relative;
+  padding: 5rem 1rem;
 
   h1 {
     padding-bottom: 1rem;
@@ -76,6 +48,49 @@
 
       &:hover {
         border: none;
+      }
+    }
+  }
+
+  .edit {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+
+  .edit a {
+    border: 0;
+    padding: 0;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    transition: width 0.5s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text {
+      width: auto;
+      max-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: max-width 0.3s linear;
+      color: $blue-20;
+      text-decoration: none;
+    }
+
+    &:hover {
+      width: 10.5rem;
+      text-decoration: none;
+      border: 0;
+
+      .text {
+        max-width: 10rem;
+        padding-left: 0.3rem;
       }
     }
   }

@@ -2,19 +2,33 @@
 <html lang="en">
   {% include head.html %}
 
-  <body class={{page.body_class}}>
-    {% include header.html header_class="light" %}
-    <div class="container breadcrumb_container">
-      {% include vw_breadcrumb.html %}
-      <a href="{{ site.github.repository_url }}/blob/source/{{ page.relative_path }}" target="_blank" class="edit">
-        {% include svg/icons/icon_edit.svg %}
-        <div class="text">
-          Edit on GitHub
+  <body class="tutorial">
+    {% include header.html %}
+
+    <div class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1>
+              Tutorials
+            </h1>
+            <a href="{{ 'tutorials' | relative_url }}">
+              < Back to all tutorials
+            </a>
+          </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <div class="container content tutorial_container">
+      <div class="edit">
+        <a href="{{ site.github.repository_url }}/blob/source/{{ page.relative_path }}" target="_blank">
+          {% include svg/icons/icon_edit.svg %}
+          <div class="text">
+            Edit on GitHub
+          </div>
+        </a>
+      </div>
       <div class="row">
         <div class="col-lg-3">
           <ol class="tutorial_nav">
