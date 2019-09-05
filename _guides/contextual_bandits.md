@@ -6,6 +6,7 @@ description: This tutorial will run you through using VW for a Contextual Bandit
 guide_link_text: 'Begin tutorial'
 level: advanced
 layout: tutorial
+tags: contextual&nbsp;bandits
 ---
 
 # Contextual Bandits in VW

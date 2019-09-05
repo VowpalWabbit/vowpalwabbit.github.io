@@ -1,0 +1,90 @@
+---
+layout: default
+body-class: tutorials
+---
+
+<div class="content tutorials_container">
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>
+            Tutorials
+          </h1>
+          <p>
+            Learn, explore, and experiment using our tutorials below.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% assign guides = site.guides | sort: 'order' %}
+  {% assign communities = site.communities | sort: 'order' %}
+
+  <div class="tutorials_list">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          {% for guide in guides %}
+            <div class="row">
+              <div class="col-12">
+                <div class="tutorial_card">
+                  <div class="header">
+                    <div class="label">
+                      LEVEL
+                    </div>
+                    <div class="level">
+                      {{guide.level}}
+                    </div>
+                  </div>
+                  <h3>
+                    {{guide.title}}
+                  </h3>
+                  <div class="tags">
+                    <span>
+                      {% for tag in guide.tags %}
+                        <span class="tag">
+                          {{tag}}
+                        </span>
+                      {% endfor %}
+                    </span>
+                  </div>
+                  <div class="description col-lg-8">
+                    {{guide.description}}
+                  </div>
+                  <div class="footer row justify-content-end">
+                    <div class="col-lg-4">
+                      <a target="_blank" href="{{ guide.url | relative_url }}">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="col-lg-3 help_section">
+          <h3>
+            Need help? Reach out to the community.
+          </h3>
+          <p class="description">
+            See the latest code, ask QA, or chat with a team of experts and community to get answers to your questions.
+          </p>
+
+          <div class="links">
+            {% for community in communities %}
+              <a href="{{community.link}}" target="_blank">
+                {{community.link_text}}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
