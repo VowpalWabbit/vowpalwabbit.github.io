@@ -1,0 +1,13 @@
+<div class="edit">
+  {% assign page_link = page.relative_path %}
+  {% unless page_link %}
+    {% assign page_link = "index.html" %}
+  {% endunless %}
+
+  <a href="{{ site.github.repository_url }}/blob/source/{{ page_link }}" target="_blank">
+    {% include svg/icons/icon_edit.svg %}
+    <div class="text">
+      Edit on GitHub
+    </div>
+  </a>
+</div>

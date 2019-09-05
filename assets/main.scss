@@ -13,6 +13,7 @@
 @import "download";
 @import "start";
 @import "tutorials";
+@import "edit_button";
 
 
 @import "case_studies";
@@ -53,6 +54,27 @@
   background: $blue-20;
   padding: 7rem 1rem 8.5rem;
   color: white;
+
+  .hero_content {
+    position: relative;
+
+    .edit {
+      top: -3rem;
+      right: 2rem;
+
+      svg path {
+        fill: $gray-10;
+      }
+
+      a {
+        background-color: rgba(255, 255, 255, 0.05);
+
+        .text {
+          color: $gray-10;
+        }
+      }
+    }
+  }
 
   .description {
     font-size: 1.5rem;
