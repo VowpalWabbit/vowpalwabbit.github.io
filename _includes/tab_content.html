@@ -13,7 +13,7 @@
   {%
     assign guide = site.guides | where: "module_id", item.module_id | first
   %}
-  <div class="col-6 col-md-4">
+  <div class="col-6 col-md-5">
     <div class="link">
       <a href="{{ guide.url | relative_url}}">
         {{guide.guide_link_text}}

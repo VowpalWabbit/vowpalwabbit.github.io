@@ -8,10 +8,10 @@ body_class: home
       <div class="row justify-content-center text-center">
         <div class="col-lg-8 col-sm-12">
           <h1>
-            For Online Learning
+            Your go-to tool for online machine learning
           </h1>
           <p class="description">
-            Vowpal Wabbit (VW) is the mature open-source online machine learning library for solutions to a wide variety of problems. VW pushes the frontier of machine learning with techniques for online, active, and interactive learning as well as contextual bandits, extreme multiclass, hashing and learning2search.
+            Vowpal Wabbit (VW) is a mature open-source online machine learning library for solutions to a variety of real world problems.
           </p>
           <div class="hero_buttons">
             <div class="row justify-content-center">
@@ -38,10 +38,14 @@ body_class: home
   <div class="problem_framing_container">
     <div class="container">
       <div class="row justify-content-center text-center">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-8">
           <h2>
-            Unique research tricks and capabilities
+            Pushing the frontier with research tricks and capabilities
           </h2>
+
+          <p class="description">
+            Vowpal Wabbit pushes the frontier of machine learning with techniques for online, active, and interactive learning as well as contextual bandits, extreme multiclass, hashing and learning2search. Learn more about these techniques below.
+          </p>
         </div>
       </div>
       {% include tabs.html items=site.problem_framing %}
@@ -53,10 +57,18 @@ body_class: home
       <div class="row">
         <div class="col-12 col-xl-4">
           <h2>
-            Get started
+            Ready to try Vowpal Wabbit? Let’s get started
           </h2>
           <div class="description text-center text-xl-left">
-            Vowpal Wabbit can be built from source easily and there are binary packages available for select platforms.
+            Vowpal Wabbit can be built from source easily. Binary packages are available for select platform configurations.
+          </div>
+          <div class="links">
+            <a href="#">
+              See installation requirements
+            </a>
+            <a href="{{ 'tutorials' | relative_url }}">
+              Explore all tutorials
+            </a>
           </div>
         </div>
         {% include install_vw.html %}
@@ -72,10 +84,20 @@ body_class: home
         </div>
 
         <div class="col">
-          {% include research_intro.html %}
+          <h2>
+            A vehicle for machine learning research
+          </h2>
+          <p class="description">
+            Vowpal Wabbit is a vehicle for machine learning research with designed informed by research and many algorithms coming out of research.  Researchers implementing their algorithm in VW have quickly deployability and wide use.
+          </p>
           <div>
-            For more detail on research, visit the Vowpal Wabbit
-            <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki#research" target="_blank">Bibliography</a>.
+            For more detail on research, visit our
+            <a
+              href="{{ 'publications' | relative_url }}"
+              target="_blank"
+            >
+              publications list
+            </a>.
           </div>
         </div>
       </div>

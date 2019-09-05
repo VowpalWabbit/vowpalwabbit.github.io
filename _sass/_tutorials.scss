@@ -1,4 +1,4 @@
-.tutorials_container {
+.tutorials .tutorials_container {
   .hero {
     @include secondary-hero;
   }
@@ -58,6 +58,7 @@
         padding: 0.3rem 0.7rem;
         margin: 0.25rem;
         display: inline-block;
+        text-transform: capitalize;
 
         &:first-child {
           margin-left: 0;
