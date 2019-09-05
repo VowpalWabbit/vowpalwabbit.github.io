@@ -53,9 +53,15 @@ body_class: tutorials
                   <div class="description col-lg-8">
                     {{guide.description}}
                   </div>
+
+                  {% assign guide_link = guide.link %}
+                  {% unless guide_link %}
+                    {% assign guide_link = guide.url | relative_url %}
+                  {% endunless %}
+
                   <div class="footer row justify-content-end">
                     <div class="col-lg-4">
-                      <a target="_blank" href="{{ guide.url | relative_url }}">
+                      <a target="_blank" href="{{ guide_link }}">
                         Start
                       </a>
                     </div>
@@ -82,9 +88,6 @@ body_class: tutorials
           </div>
         </div>
       </div>
-
-
-
     </div>
   </div>
 </div>
