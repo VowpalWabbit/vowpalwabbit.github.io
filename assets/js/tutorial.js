@@ -18,19 +18,19 @@ const tutorialModule = (function() {
 
   function cacheDom() {
     DOM.$tutorial_nav = $(".tutorial_container .tutorial_nav");
-    DOM.$h2s = $(".tutorial_container h2");
+    DOM.$h3s = $(".tutorial_container h3");
   }
 
   function addTutorialNav() {
-    const tutorial_nav = Array.from(DOM.$h2s.map(function(_, h2) {
-      const $h2 = $(h2);
-      const id = $(h2).attr('id');
+    const tutorial_nav = Array.from(DOM.$h3s.map(function(_, h3) {
+      const $h3 = $(h3);
+      const id = $(h3).attr('id');
 
       return (
         "<li>" +
           "<span>" +
             "<a href=#" + id + ">" +
-              $h2.contents().get(0).nodeValue +
+              $h3.contents().get(0).nodeValue +
             "</a>" +
           "</span>" +
         "</li>");
@@ -40,13 +40,13 @@ const tutorialModule = (function() {
   }
 
   function addLinkToHeader() {
-    DOM.$h2s.each(function(_, h2) {
-      const $h2 = $(h2);
-      const id = $h2.attr('id');
+    DOM.$h3s.each(function(_, h3) {
+      const $h3 = $(h3);
+      const id = $h3.attr('id');
       const icon = '<i class="fa fa-link"></i>';
 
       if (id) {
-        return $h2.append($("<a />").attr("href", "#" + id).html(icon));
+        return $h3.append($("<a />").attr("href", "#" + id).html(icon));
       }
     });
   }

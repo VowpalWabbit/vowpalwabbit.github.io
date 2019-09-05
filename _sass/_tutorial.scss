@@ -15,12 +15,13 @@
   position: relative;
   padding: 5rem 1rem;
 
-  h1 {
+  h2 {
     padding-bottom: 1rem;
   }
 
-  h2 {
+  h3 {
     padding: 1rem 0 0.8rem;
+    position: relative;
 
     &:hover {
       & > a {
@@ -34,6 +35,11 @@
       font-weight: 400;
       font-size: 1.5rem;
       padding: 0 1rem;
+      position: absolute;
+      height: 1.5rem;
+      top: 0;
+      bottom:0;
+      margin: auto;
       vertical-align: middle;
 
       &:hover {
@@ -55,6 +61,7 @@
   .edit {
     position: absolute;
     right: 0;
+    top: 2rem;
     z-index: 1;
   }
 
