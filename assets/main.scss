@@ -70,6 +70,7 @@
   padding: 3rem 0 6rem;
 
   .description {
+    @include inline-link;
     padding: 1rem 0 2rem;
   }
 
