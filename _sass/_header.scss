@@ -16,6 +16,7 @@
   a {
     display: inline-block;
     color: $gray-10;
+    padding-bottom: 4px;
 
     &:hover {
       text-decoration: none;
@@ -24,7 +25,6 @@
 
     &.active {
       color: white;
-      padding-bottom: 4px;
       border-bottom: 1px solid;
       pointer-events: none;
     }
