@@ -1,0 +1,58 @@
+.start_container {
+  .hero {
+    @include secondary-hero;
+  }
+}
+
+.tutorials_container {
+  background-color: $gray-10;
+  padding: 5rem 1rem;
+
+  .intro {
+    @include inline-link;
+    padding: 1rem 0 2rem;
+  }
+
+  .tutorial_card {
+    background-color: white;
+    padding: 0 1.5rem;
+
+    .header {
+      padding: 1.5rem 0;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .title {
+      padding-bottom: 1.5rem;
+
+      h3 {
+        font-weight: 300;
+        font-size: 2.25rem;
+        line-height: 1.2;
+      }
+    }
+
+    .description {
+      height: 10rem;
+    }
+
+    .footer {
+      @include primary-link;
+      padding-bottom: 1rem;
+
+      a {
+        background: $blue-20;
+        box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+        color: white;
+        display: block;
+        width: 15rem;
+        margin: 1rem auto;
+
+        &:hover {
+          background: $blue-10;
+        }
+      }
+    }
+  }
+}

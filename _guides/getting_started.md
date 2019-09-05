@@ -1,13 +1,10 @@
 ---
 title: Get started with Vowpal Wabbit
-order: -1
+order: 1
 module_id: getting_started
 description: This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output.
-guide_link_text: 'Get started'
-show_on_learn: false
+level: beginner
 layout: tutorial
-body_class: tutorial
-resource_icon: /svg/resources/guide.svg
 ---
 
 # A Step by Step Introduction to Linear Regression

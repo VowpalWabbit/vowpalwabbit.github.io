@@ -11,7 +11,7 @@
 
 {% if item.show_guide %}
   {%
-    assign guide = site.guides | where: "module_id",item.module_id | first
+    assign guide = site.guides | where: "module_id", item.module_id | first
   %}
   <div class="col-6 col-md-4">
     <div class="link">
