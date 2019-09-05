@@ -75,7 +75,7 @@
         </div>
 
         <div class="installation_step">
-          {% assign getting_started = site.guides | where: "module_id","getting_started" | first %}
+          {% assign getting_started = site.guides | where: "module_id", "getting_started" | first %}
           <div class="step_title">
             Run through a
               <a href="{{ getting_started.url | relative_url}}">

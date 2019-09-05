@@ -106,6 +106,16 @@ $breakpoint-sm: 600px;
   }
 }
 
+@mixin secondary-hero {
+  background: $blue-20;
+  color: white;
+  padding: 3rem 1rem;
+
+  h1 {
+    padding-bottom: 1rem;
+  }
+}
+
 @mixin resource-card {
   .resource {
     padding: 1.5rem 1rem;

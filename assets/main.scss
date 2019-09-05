@@ -4,21 +4,23 @@
 @import "typography";
 @import "header";
 @import "footer";
-@import "vw_breadcrumb";
 @import "install_vw";
 @import "command_box";
 @import "citation";
-@import "case_studies";
 @import "community";
+@import "tabs";
+@import "tutorial";
+@import "download";
+@import "start";
+
+@import "case_studies";
 @import "resources";
 @import "how_it_works";
 @import "learn";
+@import "vw_breadcrumb";
 @import "guide";
-@import "tabs";
 @import "paper";
 @import "about";
-@import "tutorial";
-@import "download";
 
 .overlay_on {
   overflow-y: hidden;
