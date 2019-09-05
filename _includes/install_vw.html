@@ -1,90 +1,75 @@
-<div class="install_vw_container" id="install_vw">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-xl-4">
-        <h2>
-          Get started
-        </h2>
-        <div class="description text-center text-xl-left">
-          Vowpal Wabbit can be built from source easily and there are binary packages available for select platforms.
+<div class="col-12 col-xl-8 install_vw_config">
+  <div class="installation_step">
+    <div class="step_title">
+      Select your configuration
+    </div>
+    <div class="container settings_container">
+      <div class="row os">
+        <div class="col-lg-2 title">
+          OS Type
         </div>
+        <button class="col-lg col-sm col-12 option">
+          <span>
+            Linux
+          </span>
+        </button>
+        <button class="col-lg col-sm col-12 option">
+          <span>
+            Mac
+          </span>
+        </button>
+        <button class="col-lg col-sm col-12 option">
+          Windows
+        </button>
       </div>
 
-      <div class="col-12 col-xl-8">
-        <div class="installation_step">
-          <div class="step_title">
-            Select your configuration
-          </div>
-          <div class="container settings_container">
-            <div class="row os">
-              <div class="col-lg-2 title">
-                OS Type
-              </div>
-              <button class="col-lg col-sm col-12 option">
-                <span>
-                  Linux
-                </span>
-              </button>
-              <button class="col-lg col-sm col-12 option">
-                <span>
-                  Mac
-                </span>
-              </button>
-              <button class="col-lg col-sm col-12 option">
-                Windows
-              </button>
-            </div>
-
-            <div class="row language">
-              <div class="col-lg-2 title">
-                Language
-              </div>
-              <button class="col-lg col-sm col-12 option">
-                Python 3
-              </button>
-              <button class="col-lg col-sm col-12 option">
-                C++
-              </button>
-              <button class="col-lg col-sm col-12 option">
-                <span>
-                  C#
-                </span>
-              </button>
-              <button class="col-lg col-sm col-12 option" disabled>
-                <span>
-                  Java
-                </span>
-              </button>
-            </div>
-
-            <div class="note">
-              * Configuration coming soon
-            </div>
-          </div>
+      <div class="row language">
+        <div class="col-lg-2 title">
+          Language
         </div>
-
-        <div class="installation_step">
-          <div class="step_title">
-            Run this command
-          </div>
-
-          <div class="command_box">
-            <code>
-            </code>
-          </div>
-        </div>
-
-        <div class="installation_step">
-          {% assign getting_started = site.guides | where: "module_id", "getting_started" | first %}
-          <div class="step_title">
-            Run through a
-              <a href="{{ getting_started.url | relative_url}}">
-                simple linear regression tutorial
-              </a>
-            and learn how VW works.
-          </div>
-        </div>
+        <button class="col-lg col-sm col-12 option">
+          Python 3
+        </button>
+        <button class="col-lg col-sm col-12 option">
+          C++
+        </button>
+        <button class="col-lg col-sm col-12 option">
+          <span>
+            C#
+          </span>
+        </button>
+        <button class="col-lg col-sm col-12 option" disabled>
+          <span>
+            Java
+          </span>
+        </button>
       </div>
+
+      <div class="note">
+        * Configuration coming soon
+      </div>
+    </div>
+  </div>
+
+  <div class="installation_step">
+    <div class="step_title">
+      Run this command
+    </div>
+
+    <div class="command_box">
+      <code>
+      </code>
+    </div>
+  </div>
+
+  <div class="installation_step">
+    {% assign getting_started = site.guides | where: "module_id", "getting_started" | first %}
+    <div class="step_title">
+      Run through a
+        <a href="{{ getting_started.url | relative_url}}">
+          simple linear regression tutorial
+        </a>
+      and learn how VW works.
     </div>
   </div>
 </div>

@@ -100,7 +100,7 @@ const getStartedModule = (function() {
     });
 
     const command = command_list[selected_options.join(',')];
-    const $command_box = $('.install_vw_container .installation_step .command_box');
+    const $command_box = $('.install_vw_config .installation_step .command_box');
 
     if (!command.toLowerCase().includes("<a ")) {
       if ($command_box.has('.copy').length === 0) {
