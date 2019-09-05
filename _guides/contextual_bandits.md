@@ -1,6 +1,6 @@
 ---
 title: Contextual Bandits in VW
-order: 3
+order: 2
 module_id: contextual_bandits
 description: This tutorial will run you through using VW for a Contextual Bandit problem.
 guide_link_text: Try the CB tutorial
