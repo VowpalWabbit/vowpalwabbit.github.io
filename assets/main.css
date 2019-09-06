@@ -396,10 +396,9 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .research_container .description { padding: 1.5rem 0 1rem; }
 
 @media screen and (max-width: 768px) { .research_container .chart_icon { padding-bottom: 3rem; } }
-.four_oh_four .four_oh_four_container { background: #415EBF; padding: 6rem 1rem 1rem; height: calc(100vh - 3.5rem); }
+.four_oh_four .four_oh_four_container { background: #415EBF; padding: 6rem 1rem 1rem; height: calc(100vh - 7.5rem); color: white; }
 .four_oh_four .four_oh_four_icon { width: 75%; max-height: 12rem; }
 .four_oh_four .header { font-size: 7rem; font-weight: bold; }
-.four_oh_four .description { font-size: 1rem; color: white; }
 .four_oh_four .return_home_link { padding: 1rem 0; }
 .four_oh_four .return_home_link a { background: white; border: 3px solid white; border-radius: 28px; color: #2A3B93; display: inline-block; font-weight: 600; margin: 0.5rem 0; padding: 0.8rem 0; text-align: center; width: 100%; }
 .four_oh_four .return_home_link a:hover { background: #F2F4FF; text-decoration: none; transition: 0.3s; border: 3px solid #F2F4FF; }
