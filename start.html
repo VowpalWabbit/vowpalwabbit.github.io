@@ -57,7 +57,7 @@ body_class: start
         </div>
       </div>
       <div class="row">
-        {% for guide in guides %}
+        {% for guide in guides limit:3 %}
           <div class="col-lg-4 col-sm">
             <div class="tutorial_card">
               <div class="header">
