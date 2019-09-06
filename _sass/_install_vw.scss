@@ -1,0 +1,77 @@
+.install_vw_config {
+  padding-left: 4rem;
+  counter-reset: install-step-counter;
+
+  .installation_step {
+    padding-bottom: 2rem;
+  }
+
+  .step_title {
+    padding-bottom: 0.8rem;
+    counter-increment: install-step-counter;
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      content: counter(install-step-counter);
+      font-size: 2.25rem;
+      position: absolute;
+      left: -2.5rem;
+      line-height: 32px;
+    }
+  }
+
+  .settings_container {
+    .note {
+      color: $secondary-text;
+      font-size: 15px;
+      line-height: 20px;
+      padding-top: 0.8rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .row {
+      border-bottom: 1px solid $gray-10;
+
+      &:first-of-type {
+        border-top: 1px solid $gray-10;
+      }
+    }
+
+    .title {
+      padding: 1rem 0;
+      font-weight: 600;
+    }
+
+    .option {
+      width: 100%;
+      background: transparent;
+      text-align: center;
+      padding: 1rem 0;
+      border: 0;
+      color: $primary-text;
+
+      &:hover {
+        cursor: pointer;
+        background: $gray-10;
+      }
+
+      &:disabled {
+        color: $button-disabled;
+        pointer-events: none;
+
+        span {
+          &:before {
+            content: '*';
+            color: $button-disabled;
+          }
+        }
+      }
+
+      &.selected {
+        background: $yellow-10;
+      }
+    }
+  }
+}

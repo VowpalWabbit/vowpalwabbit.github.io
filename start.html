@@ -1,0 +1,91 @@
+---
+layout: default
+body_class: start
+---
+
+<div class="content start_container">
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>
+            Get started
+          </h1>
+          <p>
+            Get started quickly with our quick install and tutorials
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="install_vw_container" id="install_vw">
+    <div class="container">
+      <div class="row justify-content-between">
+        {% include install_vw.html %}
+
+        <div class="col-12 col-xl-3">
+          <div class="description text-center text-xl-left">
+            Vowpal Wabbit can be built from source easily. Binary packages are available for select platforms.
+          </div>
+
+          <div class="links">
+            <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Installing" target="_blank">
+              More details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% assign guides = site.guides | sort: 'order' %}
+  {% assign gitter = site.communities | where: "community_id", "gitter" | first %}
+
+  <div class="tutorials_container">
+    <div class="container">
+      <h2>
+        Tutorials
+      </h2>
+      <div class="row intro">
+        <div class="col-12 col-lg-6">
+          Learn, explore, and experiment using our tutorials below. Have questions? Chat with the team on
+          <a href={{gitter.link}} target="_blank">
+            Gitter
+          </a>
+          .
+        </div>
+      </div>
+      <div class="row">
+        {% for guide in guides limit:3 %}
+          <div class="col-lg-4 col-sm">
+            <div class="tutorial_card">
+              <div class="header">
+                {{guide.level}}
+              </div>
+              <div class="title">
+                <h3>
+                  {{guide.title}}
+                </h3>
+              </div>
+              <div class="description">
+                {{guide.description}}
+              </div>
+
+              {% assign guide_link = guide.link %}
+              {% unless guide_link %}
+                {% assign guide_link = guide.url | relative_url %}
+              {% endunless %}
+
+              <div class="footer">
+                <a target="_blank" href="{{ guide_link }}">
+                  Start
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

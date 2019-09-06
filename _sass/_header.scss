@@ -1,25 +1,92 @@
-.nav_bar_container {
-  border-bottom: 1px solid white;
-  position: fixed;
-  z-index: 2;
+.navbar_container {
+  background: rgba(42, 59, 147, 0.95);
+  font-size: 1.125rem;
+  line-height: 1.33;
+  top: -240px;
+  transition: top 0.5s ease;
+  font-size: 1.125rem;
+  line-height: 1.33;
+  top: -240px;
+  transition: top 0.5s ease;
 
-  .logo {
-    max-width: 60%;
+  .navbar {
+    height: 4rem;
+  }
 
-    svg {
-      width: 100%;
+  a {
+    display: inline-block;
+    color: $gray-10;
+    padding-bottom: 4px;
+
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+
+    &.active {
+      color: white;
+      border-bottom: 1px solid;
+      pointer-events: none;
     }
   }
 
-  &.scrolled, .learn &, .tutorial &, .publications &, .download & {
-    border-bottom: 1px solid $light-border;
+  .logo {
+    svg path{
+      fill: white;
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin: 0 1rem;
+    }
+  }
+
+  .external_links {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    margin-left: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .github_link {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 0.5rem;
+
+      path {
+        fill: $gray-10;
+      }
+    }
+
+    &:hover {
+      svg path {
+        fill: white;
+      }
+    }
+  }
+
+  &.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  &.light {
+    background: white;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
 
     a {
       color: $primary-text;
 
-      &.active {
+      &:hover {
         color: $blue-20;
-        border-bottom: 2px solid $blue-20;
       }
     }
 
@@ -27,64 +94,20 @@
       fill: $primary-text;
     }
 
-    .logo svg path {
-      fill: $primary-text;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    &.scrolled .nav_item:last-child {
-      border-left: 1px solid $dark-border;
-    }
-  }
-
-  .learn & {
-    background: white;
-  }
-
-  .navbar {
-    height: 4rem;
-    justify-content: space-between;
-  }
-
-  .nav_item {
-    text-align: center;
-    padding: 0 1rem;
-    margin: 0.5rem 0;
-    text-decoration: none;
-    font-size: 1rem;
-    color: white;
-
-    &:hover {
-      text-decoration: none;
+    #logo_vw_color path {
+      fill: $blue-20;
     }
 
-    &.active {
-      border-bottom: 2px solid white;
-      font-weight: 600;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .logo svg {
-      height: 2.3rem;
+    .external_links {
+      border-left: 1px solid rgba(51, 51, 51, 0.3);
     }
 
-    .nav_item {
-      padding: 0 0.5rem;
-
-      svg {
-        height: 1.8rem;
+    .github_link {
+      &:hover {
+        svg path {
+          fill: $blue-20;
+        }
       }
-
-      &:last-child {
-        padding-right: 0;
-        border-left: 1px solid rgba(255, 255, 255, 0.8);
-      }
-    }
-
-    .nav_item_text {
-      display: none;
     }
   }
 }

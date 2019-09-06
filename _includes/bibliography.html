@@ -1,0 +1,16 @@
+<div class="container bibliography_container">
+  <div class="header">
+    <h3>
+      CITATIONS
+    </h3>
+    <div class="all_publications_link">
+      <a href="{{ 'publications.html' | relative_url }}">
+        All publications
+      </a>
+    </div>
+  </div>
+
+  {% bibliography -s apa --cited_in_order %}
+</div>
+
+<script src="{{ site.baseurl }}/assets/js/citation.js"></script>

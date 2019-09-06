@@ -1,39 +1,118 @@
-// background
+// blue
+$blue-5: #F2F4FF; // publications/tutorial background
 $blue-10: #415EBF;
 $blue-20: #2A3B93;
 $blue-30: #000C4C;
 $blue-40: #235677;
-$blue-50: #0B4A71;
+
+// neutral
+$gray-10: #EBEBEB;
+$gray-30: #999999;
+$gray-50: #666666;
+$gray-90: #333333;
+
+// accent
+$yellow-10: #FFF4DB;
 
 // text
-$teal-5: #CDFFFB;
-$teal-10: #7BFFF4;
-$primary-text: #333333;
-$secondary-text: #666666;
-$note: #4C4C4C;
+$primary-text: $gray-90;
+$secondary-text: $gray-50;
+$sub-nav: $gray-30;
+$sub-nav-active: $gray-90;
+$button-disabled: $gray-30;
 
 // border:
 $light-border: #D8D8D8;
-$dark-border: #939393;
+$dark-border: $gray-50;
 
-// publications/tutorial background
-$blue-5: #F2F4FF;
+// screen size:
+$breakpoint-xl: 1440px;
+$breakpoint-lg: 1024px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 600px;
 
 @mixin primary-link {
   a {
-    border: 2px solid white;
-    border-radius: 10px;
-    color: white;
+    background: white;
+    border: 3px solid white;
+    border-radius: 28px;
+    color: $blue-20;
     display: inline-block;
-    font-size: 0.9rem;
+    font-weight: 600;
     margin: 0.5rem 0;
-    padding: 0.6rem 0;
+    padding: 0.8rem 0;
     text-align: center;
-    width: 12rem;
+    width: 100%;
 
     &:hover {
+      background: $blue-5;
+      text-decoration: none;
+      transition: 0.3s;
+      border: 3px solid $blue-5;
+    }
+  }
+}
+
+@mixin secondary-link {
+  a {
+    color: $blue-20;
+    font-weight: 600;
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: 2px solid $blue-20;
+    }
+  }
+}
+
+@mixin inline-link {
+  a {
+    color: $blue-20;
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 1px solid $blue-20;
+
+    &:hover {
+      text-decoration: none;
+      color: $blue-10;
+      border-bottom: 1px solid $blue-10;
+    }
+  }
+}
+
+@mixin primary-button {
+  button {
+    background: $blue-20;
+    border: 0;
+    border-radius: 28px;
+    box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.33;
+    margin: 2rem auto;
+    padding: 0.8rem 3rem;
+    text-align: center;
+
+    &:hover {
+      background: $blue-10;
       transition: 0.3s;
     }
+  }
+}
+
+@mixin secondary-hero {
+  background: $blue-20;
+  color: white;
+  padding: 3rem 1rem;
+
+  h1 {
+    padding-bottom: 1rem;
   }
 }
 
@@ -66,12 +145,12 @@ $blue-5: #F2F4FF;
   }
 }
 
-@mixin citation {
+@mixin ordered-list {
   list-style: none;
-  counter-reset: citation-counter;
+  counter-reset: ol-list-counter;
 
   li {
-    counter-increment: citation-counter;
+    counter-increment: ol-list-counter;
     display: inline-block;
     position: relative;
 
@@ -80,34 +159,21 @@ $blue-5: #F2F4FF;
     }
 
     &:before {
-      content: counter(citation-counter);
-      font-size: 1.5rem;
+      content: counter(ol-list-counter);
+      font-size: 2.25rem;
       position: absolute;
-      left: -1.5rem;
+      left: -2.4rem;
       top: 1rem;
-      line-height: 32px;
+      line-height: 35px;
     }
 
     & > span {
-      padding: 1rem 1rem 0.2rem 1rem;
+      padding: 1rem;
       display: block;
 
       &:target {
         background-color: $blue-5;
       }
     }
-
-    .export_bib {
-      padding: 0 1rem;
-
-      a {
-        vertical-align: middle;
-
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
   }
-
 }

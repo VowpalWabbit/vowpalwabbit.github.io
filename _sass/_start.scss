@@ -1,133 +1,73 @@
-.start_container {
-  background: linear-gradient(180deg, rgba(0,191,214,1) 0%, rgba(12,210,194,1) 100%);
-  padding: 5rem 1rem;
-
-  .start_section {
-    background-color: white;
-    border-radius: 20px;
-    padding: 2rem 1rem;
+.start .start_container {
+  .hero {
+    @include secondary-hero;
   }
 
-  .settings_container {
-    padding-bottom: 1rem;
-    margin: 0 1rem;
-    border-bottom: 1px solid $dark-border;
-
-    .settings {
-      padding-top: 0.5rem;
-    }
-
-    .note {
-      color: $note;
-      font-size: 0.8rem;
-    }
-
-    .title {
-      padding: 0.25rem 0.25rem 0.5rem;
-    }
-
-    .option {
-      width: 100%;
-      text-align: center;
-      margin: 0 0 1rem;
-      padding: 0.25rem;
-      border-radius: 6.72px;
-      background-color: white;
-      box-shadow: 0 1px 8px 0 $dark-border;
-      border: 0;
-      color: $primary-text;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &:disabled {
-        color: $note;
-        pointer-events: none;
-
-        span {
-          &:before {
-            content: '*';
-            color: $note;
-          }
-        }
-      }
-    }
-
-    .selected .option {
-      background: $blue-40;
-      color: white;
-    }
+  .install_vw_container {
+    @include inline-link;
+    padding: 5rem 1rem;
 
     .description {
       padding: 0.5rem 0;
     }
-  }
 
-  .next_step_container {
-    padding: 1rem 1rem 0;
-
-    .tutorial_link {
-      display: inline-block;
-      font-weight: 600;
-      border: 3px solid black;
-      border-radius: 11px;
-      padding: 0.5rem;
-      text-align: center;
-      margin-top: 1.5rem;
-      color: black;
-
-      &:hover {
-        text-decoration: none;
-        transition: 0.3s;
-      }
-
-      &:hover, &:focus {
-        background: black;
-        color: white;
-      }
+    .links {
+      @include secondary-link;
+      padding-top: 0.8rem;
     }
   }
 
-  .command_container {
-    padding-top: 1rem;
+  .tutorials_container {
+    background-color: $gray-10;
+    padding: 5rem 1rem;
 
-    .run_command {
-      font-weight: 600;
+    .intro {
+      @include inline-link;
+      padding: 1rem 0 2rem;
     }
 
-    .command_box {
-      background: $blue-30;
-      color: white;
-      padding: 0.7rem 1rem;
-      margin: 1rem 0;
+    .tutorial_card {
+      background-color: white;
+      padding: 0 1.5rem;
 
-      a {
-        color: $teal-10;
+      .header {
+        padding: 1.5rem 0;
+        text-transform: uppercase;
+        font-weight: 600;
       }
-    }
 
-    .copy {
-      background: transparent;
-      border: 0;
-      color: white;
-      align-self: flex-start;
+      .title {
+        padding-bottom: 1.5rem;
 
-      &:hover {
-        color: $teal-10;
-        cursor: pointer;
+        h3 {
+          font-weight: 300;
+          font-size: 2.25rem;
+          line-height: 1.2;
+        }
       }
-    }
-  }
-}
 
-@media screen and (max-width: 600px) {
-  .start_container {
-    padding: 1rem;
+      .description {
+        height: 10rem;
+      }
 
-    .settings_container {
-      .option {
-        padding: 0.5rem;
+      .footer {
+        @include primary-link;
+        padding-bottom: 1rem;
+
+        a {
+          background: $blue-20;
+          border: 3px solid $blue-20;
+          box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+          color: white;
+          display: block;
+          width: 15rem;
+          margin: 1rem auto;
+
+          &:hover {
+            background: $blue-10;
+            border: 3px solid $blue-10;
+          }
+        }
       }
     }
   }

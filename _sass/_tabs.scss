@@ -1,6 +1,9 @@
 .tabs_container {
+  padding-top: 1rem;
+
   .tab_content {
-    padding: 1.5rem 1rem 3rem;
+    padding: 2rem;
+    background: white;
   }
 
   .hidden {
@@ -8,28 +11,6 @@
   }
 
   .link {
-    @include primary-link;
-
-    a {
-      width: 100%;
-      border: 2px solid $blue-20;
-      color: $blue-20;
-      font-weight: 600;
-      text-align: center;
-
-      &:hover, &:focus {
-        text-decoration: none;
-        background: $blue-20;
-        color: white;
-      }
-    }
-  }
-
-  .image {
-    padding: 2rem 1rem;
-
-    img{
-      width: 100%
-    }
+    @include secondary-link;
   }
 }

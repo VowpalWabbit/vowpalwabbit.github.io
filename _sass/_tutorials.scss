@@ -1,0 +1,89 @@
+.tutorials .tutorials_container {
+  .hero {
+    @include secondary-hero;
+  }
+
+  .tutorials_list {
+    background: $gray-10;
+    padding: 5rem 1rem;
+  }
+
+  .tutorial_card {
+    background: white;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+
+    .header {
+      display: flex;
+      padding: 1.5rem 0;
+
+      .label {
+        font-weight: 600;
+        padding-right: 0.8rem;
+      }
+
+      .level {
+        text-transform: capitalize;
+      }
+    }
+
+    .description {
+      padding: 1.5rem 0 0.8rem;
+    }
+
+    .footer {
+      @include primary-link;
+      padding-bottom: 1rem;
+
+      a {
+        background: $blue-20;
+        border: 3px solid $blue-20;
+        box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+        color: white;
+        display: block;
+        width: 15rem;
+
+        &:hover {
+          background: $blue-10;
+          border: 3px solid $blue-10;
+        }
+      }
+    }
+
+    .tags {
+      font-size: 15px;
+      line-height: 20px;
+
+      .tag {
+        background: $blue-5;
+        padding: 0.3rem 0.7rem;
+        margin: 0.25rem;
+        display: inline-block;
+        text-transform: capitalize;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .help_section {
+    @include secondary-link;
+
+    a {
+      margin-bottom: 0.8rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.33;
+      padding-bottom: 1rem;
+    }
+
+    .description {
+      padding-bottom: 1rem;
+    }
+  }
+}
