@@ -174,7 +174,7 @@ const communityModule = (function() {
         "</div>"
       );
     }).join('');
-    console.log(avatars);
+
     const gitter_content = '<p class="title">' +
       'People' +
     '</p>' +
