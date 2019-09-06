@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="17px" height="24px" viewBox="0 0 17 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
-    <title>icon_gitter_30x30</title>
+    <title>logo_gitter</title>
     <desc>Created with Sketch.</desc>
     <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Home" transform="translate(-959.000000, -2954.000000)" fill="#666666">
-            <g id="community" transform="translate(129.000000, 2704.000000)">
+        <g id="Home" transform="translate(-966.000000, -2986.000000)" fill="#666666">
+            <g id="community" transform="translate(129.000000, 2734.000000)">
                 <g id="Gitter" transform="translate(801.000000, 225.000000)">
-                    <g id="icon_gitter_30x30" transform="translate(29.000000, 25.000000)">
-                        <path d="M30,0 L30,30 L0,30 L0,0 L30,0 Z M17.3344576,9.90226329 L15.8791666,9.90226329 L15.8791666,22.7272727 L17.3344576,22.7272727 L17.3344576,9.90226329 Z M14.4238637,9.90226329 L12.9686798,9.90226329 L12.9686798,22.7272727 L14.4238637,22.7272727 L14.4238637,9.90226329 Z M20.3030303,9.90226329 L18.8478464,9.90226329 L18.8478464,17.1726219 L20.3030303,17.1726219 L20.3030303,9.90226329 Z M11.455291,7.57575758 L10,7.57575758 L10,17.1726219 L11.455291,17.1726219 L11.455291,7.57575758 Z" id="Combined-Shape"></path>
+                    <g id="logo_gitter" transform="translate(36.000000, 27.000000)">
+                        <g id="Rectangle">
+                            <rect x="0" y="0" width="2" height="14"></rect>
+                            <rect x="15" y="5" width="2" height="10"></rect>
+                            <rect x="5" y="5" width="2" height="19"></rect>
+                            <rect x="10" y="5" width="2" height="19"></rect>
+                        </g>
                     </g>
                 </g>
             </g>

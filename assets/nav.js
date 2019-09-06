@@ -5,10 +5,6 @@ $(document).ready(function() {
     '</button>'
   );
 
-  $(".hero_container").on("click", ".get_started_button", function() {
-    scrollTo('install_vw');
-  });
-
   $(document).on("click", ".language-sh .copy", function() {
     if (document.selection) {
       const range = document.body.createTextRange();

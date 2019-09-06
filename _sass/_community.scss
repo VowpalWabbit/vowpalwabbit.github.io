@@ -155,6 +155,33 @@
     }
   }
 
+  .gitter {
+    .card_content {
+      padding-top: 2.7rem;
+
+      .title {
+        font-weight: 600;
+      }
+
+      .avatars {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .avatar img {
+        height: 51px;
+        width: 51px;
+        border-radius: 5px;
+        box-shadow: 0 3px 6px 0 rgba(0,0,0,0.15);
+      }
+
+      .note {
+        color: $gray-50;
+        padding: 2rem 0;
+      }
+    }
+  }
+
   .card_footer {
     @include primary-link;
     padding-bottom: 1rem;

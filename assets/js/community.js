@@ -28,8 +28,6 @@ const communityModule = (function() {
       const $card = $(card);
       const title = $card.find(".community_title .text").text().trim().toLowerCase();
 
-      let card_content;
-
       switch (title) {
         case 'github':
           getGithubContent();
@@ -38,6 +36,7 @@ const communityModule = (function() {
           getStackOverflowContent();
           break;
         case 'gitter':
+          getGitterContent();
           break;
         default:
           break;
@@ -165,6 +164,29 @@ const communityModule = (function() {
       .catch((err) => {
         console.error(err);
       });
+  }
+
+  function getGitterContent() {
+    const avatars = Array.from(Array(5).keys()).map((i)=> {
+      return (
+        "<div class='avatar'>" +
+          "<img src='/assets/images/community/user"+ i +".png' alt='gitter avatar'/>" +
+        "</div>"
+      );
+    }).join('');
+    console.log(avatars);
+    const gitter_content = '<p class="title">' +
+      'People' +
+    '</p>' +
+    '<div class="avatars">' +
+      avatars +
+    '</div>' +
+    '<div class="note">' +
+      '+ More members'
+    '</div>';
+
+    DOM.$gitter.find('.loader_wrapper').hide();
+    DOM.$gitter.append(gitter_content);
   }
 }());
 communityModule.init();
