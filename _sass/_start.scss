@@ -7,12 +7,13 @@
     @include inline-link;
     padding: 5rem 1rem;
 
-    .title {
-      font-weight: 600;
-    }
-
     .description {
       padding: 0.5rem 0;
+    }
+
+    .links {
+      @include secondary-link;
+      padding-top: 0.8rem;
     }
   }
 
