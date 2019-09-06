@@ -1,16 +1,18 @@
 ---
 title: Simulating a news personalization scenario using Contextual Bandits
-order: -1
+order: 4
 module_id: cb_simulator
 description: This tutorial will guide you through how to structure a simulator to model a real world scenario using contextual bandit algorithms.
 guide_link_text: 'Begin tutorial'
-show_on_learn: false
+level: advanced
 layout: tutorial
 body_class: tutorial
-resource_icon: /svg/resources/guide.svg
+tags: contextual&nbsp;bandits
 ---
 
-In the [Contextual Bandit(CB) introduction tutorial](https://vowpalwabbit.github.io/guides/contextual_bandits.html), we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (ctr).
+## Simulating a news personalization scenario using Contextual Bandits
+
+In the [Contextual Bandit(CB) introduction tutorial](contextual_bandits.html), we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (ctr).
 
 Let's recall that in a CB setting, a data point has four components,
 
@@ -41,7 +43,7 @@ import random
 import matplotlib.pyplot as plt
 ```
 
-## Simulate reward
+### Simulate reward
 
 In the real world, we will have to learn Tom and Anna's preferences for articles as we observe their interactions. Since this is a simulation, we will have to define Tom and Anna's preference profile. The reward that we provide to the learner will follow this preference profile. Our hope is to see if the learner can take better and better decisions as we see more samples which in turn means we are maximizing the reward.
 
@@ -75,7 +77,7 @@ def get_cost(context,action):
             return USER_DISLIKED_ARTICLE
 ```
 
-## Understanding VW format
+### Understanding VW format
 
 There are some things we need to do to get our input into a format VW understands. This function handles converting from our context as a dictionary, list of articles and the cost if there is one into the text format VW understands.
 
@@ -113,7 +115,7 @@ shared |User user=Tom time_of_day=morning
 |Action article=food
 ```
 
-## Getting a decision
+### Getting a decision
 
 When we call VW we get a _pmf_, [probability mass function](https://en.wikipedia.org/wiki/Probability_mass_function), as the output. Since we are incorporating exploration into our strategy, VW will give us a list of probabilities over the set of actions. This means that the probability at a given index in the list corresponds to the likelihood of picking that specific action. In order to arrive at a decision/action, we will have to sample from this list.
 
@@ -149,7 +151,7 @@ def get_action(vw, context, actions):
     return actions[chosen_action_index], prob
 ```
 
-## Simulation set up
+### Simulation set up
 
 Now that we have done all of the setup work and know how to interface with VW, let's simulate the world of Tom and Anna. The scenario is they go to a website and are shown an article. Remember that the reward function allows us to define the worlds reaction to what VW recommends.
 
@@ -222,7 +224,7 @@ def plot_ctr(num_iterations, ctr):
     plt.ylim([0,1])
 ```
 
-## Scenario 1
+### Scenario 1
 
 We will use the first reward function `get_cost` and assume that Tom and Anna do not change their preferences over time and see what happens to user engagement as we learn. We will also see what happens when there is no learning. We will use the "no learning" case as our baseline to compare to.
 
@@ -272,19 +274,21 @@ plot_ctr(num_iterations, ctr)
 
 ![png](cb_simulation_assets/output_26_0.png)
 
-## Scenario 2
+### Scenario 2
 
 In the real world people's preferences change over time. So now in the simulation we are going to incorporate two different cost functions, and swap over to the second one halfway through. Below is a a table of the new reward function we are going to use, `get_cost_1`:
 
-### Tom
+#### Tom
+
 | | `get_cost` | `get_cost_new1` |
-|---|---|---|
+|:---|:---:|:---:|
 | **Morning** | Politics | Politics |
 | **Afternoon** | Music | Sports |
 
-### Anna
+#### Anna
+
 | | `get_cost` | `get_cost_new1`  |
-|---|---|---|
+|:---|:---:|:---:|
 | **Morning** | Sports | Sports |
 | **Afternoon** | Politics | Sports |
 
@@ -390,18 +394,20 @@ plot_ctr(total_iterations, ctr)
 
 ![png](cb_simulation_assets/output_35_0.png)
 
-## Scenario 3
+### Scenario 3
 In this scenario we are going to start rewarding actions that have never seen a reward previously when we change the cost function.
 
-### Tom
+#### Tom
+
 | | `get_cost` | `get_cost_new2` |
-|---|---|---|
+|:---|:---:|:---:|
 | **Morning** | Politics |  Politics|
 | **Afternoon** | Music |   Food |
 
-### Anna
+#### Anna
+
 | | `get_cost` | `get_cost_new2` |
-|---|---|---|
+|:---|:---:|:---:|
 | **Morning** | Sports | Food|
 | **Afternoon** | Politics |  Food |
 
@@ -465,8 +471,8 @@ plot_ctr(total_iterations, ctr)
 
 ![png](cb_simulation_assets/output_41_0.png)
 
-## Summary
+### Summary
 
 This tutorial aimed at showcasing a real world scenario where contextual bandit algorithms can be used. We were able to take a context and set of actions and learn what actions worked best for a given context. We saw that the learner was able to respond rapidly to changes in the world.  We showed that allowing the learner to interact with the world resulted in higher rewards than the no learning baseline.
 
-This tutorial worked with simplistic features. VW supports high dimensional sparse features, [different exploration algorithms and policy evaluation approaches](https://cheng-tan.github.io/vowpalwabbit.github.io/guides/contextual_bandits.html#cb-algorithms).
+This tutorial worked with simplistic features. VW supports high dimensional sparse features, [different exploration algorithms and policy evaluation approaches](contextual_bandits.html#cb-algorithms).

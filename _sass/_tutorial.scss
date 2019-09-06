@@ -58,6 +58,21 @@
     }
   }
 
+  table {
+    border: 1px solid $gray-10;
+    margin: 1rem 0 2rem;
+
+    th {
+      border: 1px solid $gray-10;
+      padding: 0.9rem 1.3rem;
+    }
+
+    td {
+      border: 1px solid $gray-10;
+      padding: 0.9rem 1.3rem;
+    }
+  }
+
   .tutorial_nav {
     @include ordered-list;
     position: sticky;
