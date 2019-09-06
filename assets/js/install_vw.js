@@ -27,11 +27,11 @@ const getStartedModule = (function() {
     } else if (getOptionText($(this)) === 'windows') {
       $(".language button:contains('C#')").attr("disabled", false);
     } else if (getOptionText($(this)) === 'c#') {
-      $(".os button:contains('Linux')").attr("disabled", true);
+      $(".os button:contains('Ubuntu')").attr("disabled", true);
       $(".os button:contains('Mac')").attr("disabled", true);
     } else if (getOptionText($(this)) === 'python3' ||
       getOptionText($(this)) === 'c++') {
-      $(".os button:contains('Linux')").attr("disabled", false);
+      $(".os button:contains('Ubuntu')").attr("disabled", false);
       $(".os button:contains('Mac')").attr("disabled", false);
     }
 
@@ -88,7 +88,7 @@ const getStartedModule = (function() {
       "windows,python3": "pip install vowpalwabbit",
       "windows,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#windows' target='_blank'>source</a>",
       "windows,java": "Build from source",
-      "windows,c#": "<a href='https://www.nuget.org/packages/VowpalWabbit/' target='_blank'>https://www.nuget.org/packages/VowpalWabbit/</a>",
+      "windows,c#": "Install-Package VowpalWabbit -Version 8.7.0",
     }
 
     let selected_options = [];
@@ -120,7 +120,7 @@ const getStartedModule = (function() {
   }
 
   function getOptionText($button) {
-    return $button.text().replace(/\s/g, '').toLowerCase();
+    return $button.attr("value");
   }
 }());
 
