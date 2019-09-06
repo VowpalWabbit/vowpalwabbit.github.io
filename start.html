@@ -13,14 +13,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/nav.js"></script>
 
-  <title>A Contextual Bandit Bake-off</title>
+  <title></title>
 </head>
 
-  <body class='download'>
+  <body class=start>
     
 
 
-<div class="navbar_container light">
+<div class="navbar_container ">
   <div class="container navbar">
     <div class="logo">
       <a href="">
@@ -47,7 +47,7 @@
     <div class="nav">
       <a
         href="/start.html"
-        class=''
+        class='active'
       >
         Get started
       </a>
@@ -100,31 +100,229 @@
 
 <script src="/assets/js/header.js"></script>
 
-    <div class="container content download_container">
-      <h1>
-        <span class="header">
-          BibTeX record
-        </span>
-        bietti2018a
-      </h1>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <ol class="bibliography"><li><pre>@miscellaneous{bietti2018a,
-  author = {Bietti, Alberto and Agarwal, Alekh and Langford, John},
-  title = {A Contextual Bandit Bake-off},
-  howpublished = {arXiv:1802.04064v3 [stat.ML]},
-  year = {2018},
-  month = dec,
-  url = {https://www.microsoft.com/en-us/research/publication/a-contextual-bandit-bake-off-2/}
-}
-</pre>
-<a class="details" href="/bibliography/bietti2018a.html">Get .bib</a></li></ol>
-
-          <button class="download_bib_button" data-bib_key=bietti2018a>
-            Download
-          </button>
+    <div class="content start_container">
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>
+            Get started
+          </h1>
+          <p>
+            Get started quickly with our quick install and tutorials
+          </p>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="install_vw_container" id="install_vw">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-12 col-xl-8 install_vw_config">
+  <div class="installation_step">
+    <div class="step_title">
+      Select your configuration
+    </div>
+    <div class="container settings_container">
+      <div class="row os">
+        <div class="col-lg-2 title">
+          OS
+        </div>
+        <button class="col-lg col-sm col-12 option" value="linux">
+          <span>
+            Ubuntu
+          </span>
+        </button>
+        <button class="col-lg col-sm col-12 option" value="mac">
+          <span>
+            MacOS
+          </span>
+        </button>
+        <button class="col-lg col-sm col-12 option" value="windows">
+          Windows
+        </button>
+      </div>
+
+      <div class="row language">
+        <div class="col-lg-2 title">
+          Language
+        </div>
+        <button class="col-lg col-sm col-12 option" value="python3">
+          Python 3
+        </button>
+        <button class="col-lg col-sm col-12 option" value="c++">
+          C++
+        </button>
+        <button class="col-lg col-sm col-12 option" value="c#">
+          <span>
+            C#
+          </span>
+        </button>
+        <button class="col-lg col-sm col-12 option" disabled value="java">
+          <span>
+            Java
+          </span>
+        </button>
+      </div>
+
+      <div class="note">
+        * Configuration coming soon
+      </div>
+    </div>
+  </div>
+
+  <div class="installation_step">
+    <div class="step_title">
+      Run this command
+    </div>
+
+    <div class="command_box">
+      <code>
+      </code>
+    </div>
+  </div>
+
+  <div class="installation_step">
+    
+    <div class="step_title">
+      Need a quick introduction? Get started with our
+      <a href="/guides/getting_started.html">
+        simple introduction tutorial
+      </a>
+      to learn how VW works.
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/install_vw.js"></script>
+
+
+        <div class="col-12 col-xl-3">
+          <div class="description text-center text-xl-left">
+            Vowpal Wabbit can be built from source easily. Binary packages are available for select platforms.
+          </div>
+
+          <div class="links">
+            <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Installing" target="_blank">
+              More details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+
+  <div class="tutorials_container">
+    <div class="container">
+      <h2>
+        Tutorials
+      </h2>
+      <div class="row intro">
+        <div class="col-12 col-lg-6">
+          Learn, explore, and experiment using our tutorials below. Have questions? Chat with the team on
+          <a href=https://gitter.im/VowpalWabbit/community?source=orgpage target="_blank">
+            Gitter
+          </a>
+          .
+        </div>
+      </div>
+      <div class="row">
+        
+          <div class="col-lg-4 col-sm">
+            <div class="tutorial_card">
+              <div class="header">
+                beginner
+              </div>
+              <div class="title">
+                <h3>
+                  Get started with Vowpal Wabbit
+                </h3>
+              </div>
+              <div class="description">
+                This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output.
+              </div>
+
+              
+              
+
+              <div class="footer">
+                <a target="_blank" href="/guides/getting_started.html">
+                  Start
+                </a>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-lg-4 col-sm">
+            <div class="tutorial_card">
+              <div class="header">
+                advanced
+              </div>
+              <div class="title">
+                <h3>
+                  Contextual Bandits in VW
+                </h3>
+              </div>
+              <div class="description">
+                This tutorial will run you through using VW for a Contextual Bandit problem.
+              </div>
+
+              
+              
+
+              <div class="footer">
+                <a target="_blank" href="/guides/contextual_bandits.html">
+                  Start
+                </a>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-lg-4 col-sm">
+            <div class="tutorial_card">
+              <div class="header">
+                advanced
+              </div>
+              <div class="title">
+                <h3>
+                  Learning to search tutorials
+                </h3>
+              </div>
+              <div class="description">
+                Learning to search is a method for solving complex joint prediction problems based on learning to search through a problem-defined search space.
+              </div>
+
+              
+              
+
+              <div class="footer">
+                <a target="_blank" href="http://hunch.net/~l2s/">
+                  Start
+                </a>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container-fluid footer_container">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col">
+        Sponsored by Microsoft
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="overlay">
     </div>
   </body>
 </html>
