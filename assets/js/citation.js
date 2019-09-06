@@ -27,17 +27,12 @@ const citationModule = (function() {
   function cacheDom() {
     DOM.$html = $('html');
     DOM.$sup = $('sup');
-    DOM.$go_back_button = $(".bibliography .go_back_button");
   }
 
   function bindDesktopEvents() {
     DOM.$sup.on('mouseenter', handleSupMouseEnter);
     DOM.$sup.on('mouseleave', handleSupMouseLeave);
     DOM.$sup.on('click', 'a', handleSupDesktopOnClick);
-    DOM.$go_back_button.on('click', (e) => {
-      e.preventDefault();
-      scrollTo($(this).attr('href'));
-    });
   }
 
   function bindMobileEvents() {
@@ -88,7 +83,6 @@ const citationModule = (function() {
 
   function handleSupDesktopOnClick() {
     const link = '#' + $(this).attr('id');
-    $(".go_back_button").attr('href', link);
   }
 
   function handleSupMobileOnClick(e) {
