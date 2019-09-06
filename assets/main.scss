@@ -187,7 +187,8 @@
   .four_oh_four_container {
     background: $blue-10;
     padding: 6rem 1rem 1rem;
-    height: calc(100vh - 3.5rem);
+    height: calc(100vh - 7.5rem);
+    color: white;
   }
 
   .four_oh_four_icon {
@@ -198,11 +199,6 @@
   .header {
     font-size: 7rem;
     font-weight: bold;
-  }
-
-  .description {
-    font-size: 1rem;
-    color: white;
   }
 
   .return_home_link {
