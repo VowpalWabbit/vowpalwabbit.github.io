@@ -10,7 +10,7 @@ tags: linear&nbsp;regression getting&nbsp;started
 
 # Getting Started with Linear Regression and Vowpal Wabbit
 
-This tutorial describes how to perform Linear Regression with Vowpal Wabbit (VW). It features an overview of a simple regression problem using a VW workflow tutorial with examples. You will find information about interacting with VW, including structuring input and learning how to interpret important VW output.
+This tutorial describes how to perform Linear Regression with Vowpal Wabbit (VW). It features an overview of a simple regression problem using a VW workflow tutorial with examples. You will find information about interacting with VW-including how to structure and input information and how to interpret the output.
 
 ## Getting started with Vowpal Wabbit
 
