@@ -1,0 +1,266 @@
+sup {
+  &:before {
+    content: '(';
+  }
+
+  &:after {
+    content: ')';
+  }
+
+  .cite_sup {
+    &:after {
+      content: ',';
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+  }
+}
+
+.citation_tooltip {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.125rem;
+  padding: 0 1rem;
+  width: 560px;
+  z-index: 1;
+
+  a {
+    color: $blue-20;
+  }
+
+  .close_button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: url("images/icons/icon_close_small.svg") no-repeat top left;
+    border: 0;
+    height: 12px;
+    background-size: contain;
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+  }
+
+  [x-arrow] {
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid white;
+  }
+
+  &[x-placement="right"] {
+    margin-bottom: 5px;
+  }
+
+  &[x-placement="bottom"] {
+    margin-top: 5px;
+  }
+
+  &[x-placement="left"] {
+    margin-right: 5px;
+  }
+
+  &[x-placement="right"] {
+    margin-left: 5px;
+  }
+
+  &[x-placement="bottom"] [x-arrow] {
+    top: -12px;
+    transform: rotate(180deg);
+  }
+
+  &[x-placement="left"] [x-arrow] {
+    right: -20px;
+    transform: rotate(270deg);
+  }
+
+  &[x-placement="top"] [x-arrow] {
+    bottom: -12px;
+  }
+
+  &[x-placement="right"] [x-arrow] {
+    left: -20px;
+    transform: rotate(90deg);
+  }
+
+  .citation {
+    padding: 1rem 0;
+
+    // overwrite bootstrap
+    .col-1, .col {
+      padding: 0;
+    }
+
+    .col-1 {
+      max-width: 55px;
+      text-align: center;
+    }
+
+    .superscript {
+      font-size: 2.25rem;
+      padding-right: 1rem;
+      margin-top: -0.4rem;
+    }
+
+    &:only-of-type {
+      .superscript {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-lg) {
+    z-index: 1000;
+    width: 90%;
+    max-width: 560px;
+
+    .close_button {
+      display: block;
+    }
+
+    [x-arrow] {
+      display: none;
+    }
+  }
+}
+
+.bibliography_container {
+  padding: 5rem 1rem;
+  position: relative;
+
+  .go_back_button {
+    display: none;
+    border: 3px solid white;
+    border-radius: 28px;
+    background-color: white;
+    box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+    color: $blue-20;
+    font-weight: 600;
+    font-size: 18px;
+    height: 56px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding: 0.8rem;
+    position: absolute;
+    text-align: center;
+    top: 2rem;
+    width: 160px;
+    z-index: 1;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .header {
+    height: 28px;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $secondary-text;
+    padding: 0;
+    margin: 0;
+  }
+
+  .all_publications_link {
+    border-left: 1px solid $light-border;
+    padding-left: 1rem;
+    margin-left: 1rem;
+
+    a {
+      color: $primary-text;
+    }
+
+    &:after {
+      content: '>';
+      color: $secondary-text;
+    }
+  }
+
+  ol.bibliography {
+    @include ordered-list;
+    font-size: 1.125rem;
+
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-gap: 3rem;
+    -moz-column-gap: 3rem;
+    -webkit-column-gap: 3rem;
+  }
+}
+
+ol.bibliography {
+  .details {
+    margin-left: 1rem;
+
+    &:before {
+      display: inline-block;
+      content: '';
+      background-image: url("../assets/images/icons/icon_export_small.svg");
+      background-size: 16px 16px;
+      height: 16px;
+      width: 16px;
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $blue-10;
+    }
+  }
+}
+
+.publications {
+  .hero {
+    @include secondary-hero;
+  }
+}
+
+.publications_container {
+  padding: 3rem 1rem;
+
+  h1 {
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  .bibliography {
+    @include ordered-list;
+
+    li {
+      display: flex;
+      align-items: baseline;
+
+      span {
+        flex: 1 1 0;
+      }
+
+      .details {
+        width: 6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-lg) {
+  .bibliography_container {
+    display: none;
+  }
+
+  .publications_container {
+    .bibliography {
+      li {
+        display: block;
+      }
+    }
+  }
+}

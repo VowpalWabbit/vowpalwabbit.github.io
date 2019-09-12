@@ -1,13 +1,12 @@
-$baseline: 1rem;
-
-$minScreen: 20rem;
-$maxScreen: 50rem;
+$minScreen: 576px;
+$maxScreen: 1140px;
 $minFont: 0.8rem;
-$maxFont: 1.2rem;
+$maxFont: 1rem;
 
-$h1: 2.7rem;
-$h2: 2rem;
-$h3: 1.5rem;
+$h1: 4rem;
+$h2: 3rem;
+$h3: 2.25rem;
+$h4: 1.5rem;
 
 @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
   & {
@@ -33,21 +32,49 @@ $h3: 1.5rem;
   @return $value / ($value * 0 + 1);
 }
 
-html {
+html, body {
+  font-family: 'Work Sans', sans-serif;
   @include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont);
+  color: $primary-text;
+  line-height: 1.33;
+}
+
+.content {
+  font-size: 1.125rem;
+  color: $primary-text;
+  line-height: 1.33;
+
+  i.fas, i.fa {
+    font-family: "FontAwesome";
+    font-style: normal;
+  }
+}
+
+code {
+  font-size: inherit;
+  color: $primary-text;
 }
 
 h1 {
   font-size: $h1;
-  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  font-weight: 300;
 }
 
 h2 {
   font-size: $h2;
-  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  font-weight: 300;
 }
 
 h3 {
   font-size: $h3;
-  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: $h4;
+  line-height: 1.25;
+  font-weight: 400;
 }

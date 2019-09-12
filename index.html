@@ -3,38 +3,106 @@ layout: default
 body_class: home
 ---
 <div class="content">
-  {% include hero.html %}
-
-  <div class="problem_framing_intro_container">
-    <div class="container">
+  <div class="hero_container">
+    <div class="container hero_content">
       <div class="row justify-content-center text-center">
-        <div class="col-12 col-lg-6">
-          <h2>
-            Unique research tricks and capabilities
-          </h2>
+        {% include edit_button.html %}
+        <div class="col-lg-8 col-sm-12">
+          <h1>
+            Your go-to online machine learning library
+          </h1>
+          <p class="description">
+            Vowpal Wabbit is a fast and flexible learning system that empowers you to test and explore real data and find meaningful outcomes to real problems.
+          </p>
+          <div class="hero_buttons">
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm col-lg-4">
+                <a href="{{ 'start.html' | relative_url }}">
+                  Get started
+                </a>
+              </div>
+              <div class="col-12 col-sm col-lg-4">
+                <a
+                  href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki"
+                  target="_blank"
+                >
+                  Wiki on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="problem_framing_container">
-    {% include tabs.html items=site.problem_framing %}
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-8">
+          <h2>
+            Expand the boundaries of <br> online machine learning
+          </h2>
+
+          <p class="description">
+            Vowpal Wabbit is sponsored by
+            <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-new-york/" target="_blank">
+              Microsoft Research
+            </a>
+            and influenced by a growing ecosystem of community contributions, academic research, and proven algorithms. It provides fast, efficient, and flexible online machine learning techniques for reinforcement learning, supervised learning, and more.
+          </p>
+        </div>
+      </div>
+      {% include tabs.html items=site.problem_framing %}
+    </div>
   </div>
 
-  {% include start.html %}
+  <div class="install_vw_container" id="install_vw">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-xl-4">
+          <h2>
+            Install Vowpal Wabbit
+          </h2>
+          <div class="description text-center text-xl-left">
+            For more information on installation requirements, building Vowpal Wabbit from source, or using a package manager read the
+            <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Installing" target="_blank">
+              installation wiki.
+            </a>
+            Additional binary packages are available for select platforms.
+          </div>
+          <div class="links">
+            <a href="{{ 'tutorials.html' | relative_url }}">
+              Explore all tutorials
+            </a>
+          </div>
+        </div>
+        {% include install_vw.html %}
+      </div>
+    </div>
+  </div>
 
   <div class="research_container">
     <div class="container">
       <div class="row justify-content-center justify-content-lg-between text-center text-lg-left">
-        <div class="col-lg-8">
-          {% include research_intro.html %}
-          <div>
-            For more detail on research, visit the Vowpal Wabbit
-            <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki#research" target="_blank">Bibliography</a>.
-          </div>
+        <div class="col-12 col-xl-6">
+          <img alt="chart" class="chart_icon" src="assets/images/research/chart.svg" />
         </div>
-        <div class="col-6 col-lg-3">
-          <img alt="file icon" class="file_icon" src="assets/images/research/file.svg" />
+
+        <div class="col">
+          <h2>
+            A vehicle for machine learning research
+          </h2>
+          <p class="description">
+            Vowpal Wabbit’s design and capabilities are informed and influenced by advanced research and proven algorithms. Researchers who wish to implement their algorithm in Vowpal Wabbit have access to quick deployment and extensive use.
+          </p>
+          <div>
+            Visit our
+            <a href="{{ 'publications.html' | relative_url }}">
+              publications list
+            </a>
+            for more details on the research driving Vowpal Wabbit.
+          </div>
         </div>
       </div>
     </div>
