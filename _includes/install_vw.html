@@ -1,0 +1,77 @@
+<div class="col-12 col-xl-8 install_vw_config">
+  <div class="installation_step">
+    <div class="step_title">
+      Select a configuration
+    </div>
+    <div class="container settings_container">
+      <div class="row os">
+        <div class="col-lg-2 title">
+          OS
+        </div>
+        <button class="col-lg col-sm col-12 option" value="linux">
+          <span>
+            Ubuntu
+          </span>
+        </button>
+        <button class="col-lg col-sm col-12 option" value="mac">
+          <span>
+            MacOS
+          </span>
+        </button>
+        <button class="col-lg col-sm col-12 option" value="windows">
+          Windows
+        </button>
+      </div>
+
+      <div class="row language">
+        <div class="col-lg-2 title">
+          Language
+        </div>
+        <button class="col-lg col-sm col-12 option" value="python3">
+          Python 3
+        </button>
+        <button class="col-lg col-sm col-12 option" value="c++">
+          C++
+        </button>
+        <button class="col-lg col-sm col-12 option" value="c#">
+          <span>
+            C#
+          </span>
+        </button>
+        <button class="col-lg col-sm col-12 option" disabled value="java">
+          <span>
+            Java
+          </span>
+        </button>
+      </div>
+
+      <div class="note">
+        * Configuration coming soon
+      </div>
+    </div>
+  </div>
+
+  <div class="installation_step">
+    <div class="step_title">
+      Run this command
+    </div>
+
+    <div class="command_box">
+      <code>
+      </code>
+    </div>
+  </div>
+
+  <div class="installation_step">
+    {% assign getting_started = site.guides | where: "module_id", "getting_started" | first %}
+    <div class="step_title">
+      Ready to use Vowpal Wabbit? Follow this
+      <a href="{{ getting_started.url | relative_url}}">
+        getting started tutorial
+      </a>.
+      You will learn how to perform Linear Regression with VW—including how to interact with VW by structuring input and learning how to interpret VW output.
+    </div>
+  </div>
+</div>
+
+<script src="{{ site.baseurl }}/assets/js/install_vw.js"></script>

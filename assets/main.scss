@@ -1,35 +1,36 @@
 ---
 ---
 @import "variables";
-
-html, body {
-  font-size: 16px;
-  overflow-x: hidden;
-  font-family: 'Work Sans', sans-serif;
-}
-
-.content {
-  font-size: 0.95rem;
-  color: $primary-text;
-}
-
 @import "typography";
 @import "header";
 @import "footer";
-@import "hero";
-@import "start";
-@import "case_studies";
+@import "install_vw";
+@import "command_box";
+@import "citation";
 @import "community";
+@import "tabs";
+@import "tutorial";
+@import "download";
+@import "start";
+@import "tutorials";
+@import "edit_button";
+
+
+@import "case_studies";
 @import "resources";
 @import "how_it_works";
 @import "learn";
 @import "guide";
-@import "tabs";
 @import "paper";
 @import "about";
-@import "tutorial";
-@import "publications";
-@import "download";
+
+// overwrite bootstrap
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1180px;
+  }
+}
+// end overwrite bootstrap
 
 .overlay_on {
   overflow-y: hidden;
@@ -44,112 +45,95 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 3;
   cursor: pointer;
 }
 
-.vw_breadcrumb {
-  padding-bottom: 0.5rem;
-
-  .home {
-    color: $primary-text;
-  }
-
-  .title {
-    &:before {
-      content: '>';
-      font-weight: normal;
-    }
-
-    color: $primary-text;
-    font-weight: 600;
-  }
-}
-
-.problem_framing_intro_container {
-  background: $blue-30;
-  padding: 3rem 0 0;
+.hero_container {
+  background: $blue-20;
+  padding: 7rem 1rem 8.5rem;
   color: white;
+
+  .hero_content {
+    position: relative;
+
+    .edit {
+      top: -3rem;
+      right: 2rem;
+
+      svg path {
+        fill: $gray-10;
+      }
+
+      a {
+        background-color: rgba(255, 255, 255, 0.05);
+
+        .text {
+          color: $gray-10;
+        }
+      }
+    }
+  }
+
+  .description {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    padding: 1.85rem 0 1.5rem;
+    letter-spacing: -0.5px;
+  }
+
+  .hero_buttons {
+    @include primary-link;
+  }
 }
 
 .problem_framing_container {
-  background: linear-gradient(180deg, $blue-30 3.7rem, white 3.7rem);
+  background: $gray-10;
+  padding: 3rem 0 6rem;
+
+  .description {
+    @include inline-link;
+    padding: 1rem 0;
+  }
+
+  .link {
+    padding-bottom: 1rem;
+  }
 
   .nav {
     width: 100%;
-    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.3);
+    justify-content: flex-start;
     text-align: center;
-    padding: 1.3rem 0;
-    text-decoration: none;
-    margin: 0 auto;
 
     button {
+      color: $secondary-text;
       background: transparent;
-      color: white;
       border: 0;
-      position: relative;
-      margin-bottom: 0.8rem;
+      padding: 1rem 0;
 
       &:hover {
         cursor: pointer;
       }
 
       &.active {
-        font-weight: 600;
-
-        &:after {
-          content: '';
-          position: absolute;
-          left: 40%;
-          top: 45px;
-          width: 0;
-          height: 0;
-          border-left: 15px solid transparent;
-          border-right: 15px solid transparent;
-          border-top: 15px solid $blue-30;
-        }
-      }
-
-      &.arrow {
-        display: none;
-      }
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .nav {
-      button {
-        display: none;
-
-        &.arrow {
-          display: block;
-          color: white;
-        }
-
-        &.active {
-          display: block;
-          pointer-events: none;
-
-          &:after {
-            display: none;
-          }
-        }
+        background-color: white;
+        color: $primary-text;
       }
     }
   }
 
   .sub_nav {
     button {
-      display: block;
       background: transparent;
       border: 0;
-      padding: 0;
-      text-align: left;
-      padding-bottom: 0.3rem;
+      color: $sub-nav;
+      display: block;
+      font-size: 15px;
+      line-height: 20px;
       margin-bottom: 1.5rem;
-      font-size: 0.8rem;
-      color: $secondary-text;
+      text-align: left;
 
       &:hover {
         cursor: pointer;
@@ -157,9 +141,7 @@ html, body {
     }
 
     .active {
-      color: $blue-20;
-      font-weight: 600;
-      border-bottom: 2px solid $blue-20;
+      color: $sub-nav-active;
     }
   }
 
@@ -172,41 +154,37 @@ html, body {
   }
 }
 
-.research_container {
-  background: $blue-30;
-  padding: 5rem 0;
-  color: white;
+.home .install_vw_container {
+  @include inline-link;
+  padding: 5rem 1rem;
 
-  a {
-    color: $teal-10;
-    font-weight: 600;
+  .description {
+    padding: 0.5rem 0;
   }
 
-  .title {
-    color: white;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 0.5rem 0 0.2rem;
-  }
-
-  .research_links {
-    padding: 0 1rem;
+  .links {
+    @include secondary-link;
+    padding-top: 1rem;
 
     a {
-      font-size: 0.9rem;
-      padding: 0.5rem 0;
-      display: block;
+      margin-bottom: 0.8rem;
     }
   }
+}
 
-  .file_icon {
-    width: 100%;
+.research_container {
+  @include inline-link;
+  background: $gray-10;
+  padding: 5rem 1rem;
+
+  .description {
+    padding: 1rem 0 0.8rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .research_container .file_icon {
-    padding-top: 3rem;
+  .research_container .chart_icon {
+    padding-bottom: 3rem;
   }
 }
 
@@ -214,7 +192,8 @@ html, body {
   .four_oh_four_container {
     background: $blue-10;
     padding: 6rem 1rem 1rem;
-    height: calc(100vh - 3.5rem);
+    height: calc(100vh - 7.5rem);
+    color: white;
   }
 
   .four_oh_four_icon {
@@ -223,14 +202,8 @@ html, body {
   }
 
   .header {
-    color: $teal-5;
     font-size: 7rem;
     font-weight: bold;
-  }
-
-  .description {
-    font-size: 1rem;
-    color: white;
   }
 
   .return_home_link {
@@ -249,192 +222,6 @@ html, body {
         color: $blue-20;
       }
     }
-  }
-}
-
-sup {
-  &:before {
-    content: '(';
-  }
-
-  &:after {
-    content: ')';
-  }
-
-  a {
-    color: $primary-text;
-
-    &:hover {
-      color: $primary-text;
-    }
-  }
-
-  button {
-    color: red;
-    background: transparent;
-    border: 0;
-  }
-}
-
-.bibliography_tooltip {
-  padding: 0.5rem 0.8rem;
-  line-height: 24px;
-  width: 560px;
-  border-radius: 11px;
-  background-color: white;
-  box-shadow: 0 10px 20px 5px rgba(0,0,0,0.1);
-  font-size: 0.8rem;
-  z-index: 1;
-
-  .close_button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: url("images/icons/icon_close_small.svg") no-repeat top left;
-    border: 0;
-    height: 12px;
-    background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    z-index: 1;
-  }
-
-  @media screen and (min-width: 768px) {
-    .close_button {
-      display: none;
-    }
-  }
-
-  a {
-    color: $blue-20;
-  }
-
-  [x-arrow] {
-    position: absolute;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid white;
-  }
-
-  &[x-placement="right"] {
-    margin-bottom: 5px;
-  }
-
-  &[x-placement="bottom"] {
-    margin-top: 5px;
-  }
-
-  &[x-placement="left"] {
-    margin-right: 5px;
-  }
-
-  &[x-placement="right"] {
-    margin-left: 5px;
-  }
-
-/**
- * The arrow element lives *inside* the popper
- * so we need to offset it by its size to position
- * it outside the popper element.
- */
-  &[x-placement="bottom"] [x-arrow] {
-    top: -12px;
-    transform: rotate(180deg);
-  }
-
-  &[x-placement="left"] [x-arrow] {
-    right: -20px;
-    transform: rotate(270deg);
-  }
-
-  &[x-placement="top"] [x-arrow] {
-    bottom: -12px;
-  }
-
-  &[x-placement="right"] [x-arrow] {
-    left: -20px;
-    transform: rotate(90deg);
-  }
-
-  .citation {
-    padding: 0.3rem 0;
-
-    // overwrite bootstrap
-    .col-1, .col {
-      padding: 0;
-    }
-
-    .col-1 {
-      max-width: 50px;
-      text-align: center;
-    }
-
-    .superscript {
-      font-size: 1.5rem;
-      padding-top: 0.2rem;
-    }
-  }
-
-  &.mobile {
-    z-index: 1000;
-    width: 95%;
-
-    [x-arrow] {
-      display: none;
-    }
-  }
-}
-
-.bibliography_container {
-  padding: 3rem 1rem 1.5rem;
-
-  .header {
-    width: 18rem;
-    height: 32px;
-    margin-bottom: 0.8rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: $secondary-text;
-    padding: 0;
-    margin: 0;
-  }
-
-  .all_publications_link {
-    border-left: 1px solid $light-border;
-    padding-left: 1rem;
-
-    a {
-      color: $primary-text;
-    }
-
-    &:after {
-      content: '>';
-      color: $secondary-text;
-    }
-  }
-
-  ol.bibliography {
-    @include citation;
-
-    column-count: 2;
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-gap: 3rem;
-    -moz-column-gap: 3rem;
-    -webkit-column-gap: 3rem;
-  }
-
-  .details {
-    margin-left: 1rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .bibliography_container {
-    display: none;
   }
 }
 

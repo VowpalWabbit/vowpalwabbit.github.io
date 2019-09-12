@@ -1,18 +1,18 @@
 ---
-title: Get started with Contextual Bandits
-order: -1
+title: Contextual Bandits in VW
+order: 2
 module_id: contextual_bandits
 description: This tutorial will run you through using VW for a Contextual Bandit problem.
-guide_link_text: 'Begin tutorial'
-show_on_learn: false
+guide_link_text: Read the Contextual Bandit tutorial
+level: advanced
 layout: tutorial
-body_class: tutorial
-resource_icon: /svg/resources/guide.svg
+tags: contextual&nbsp;bandits
 ---
 
 # Contextual Bandits and Vowpal Wabbit
 
 This tutorial includes an overview of contextual bandits (CB) and describes how to approach a contextual bandit problem using Vowpal Wabbit (VW). No prior knowledge of CB is required. You will learn how to use VW in a CB setting with the Python tutorial—including when and how to work with with different CB approaches, how to format test data, and understand the results. 
+
 
 ## Getting started with Vowpal Wabbit
 
@@ -56,13 +56,16 @@ You want  _APP_ to take actions that provide the highest possible reward. In mac
 
 ### Policy vs. model
 
-We use the term _policy_ many times in this tutorial. In Reinforcement Learning (RL), the policy is roughly equivalent to _model_.
-
-In machine learning, the model means _learned function_. When someone says policy, it is more specific than model because it indicates this is a model that acts in the world.
+We use the term _policy_ many times in this tutorial. In Reinforcement Learning (RL), the policy is roughly equivalent to _model_. In machine learning, the model means _learned function_. When someone says policy, it is more specific than model because it indicates this is a model that acts in the world.
 
 Contexts and actions are typically represented as feature vectors in CB algorithms. For example, _APP_ chooses actions by applying a policy **π** that takes a context as input and returns an action. The goal is to find a policy that maximizes the average reward over a sequence of interactions.
 
 ### Specifying the CB approach
+
+- Inverse Propensity Score <sup>{% cite doi:10.1080/01621459.1952.10483446 %}</sup> `--cb_type ips`
+- Doubly Robust <sup>{% cite DBLP:conf/icml/JiangL16 %} {% cite DBLP:conf/icml/DudikLL11 %}</sup> `--cb_type dr`
+- Direct Method `--cb_type dm`
+- Multi Task Regression/Importance Weighted Regression <sup>{% cite bietti2018a %} {% cite Karampatziakis:2011:OIW:3020548.3020594 %}</sup> `--cb_type mtr`
 
 There are multiple policy evaluation approaches available to optimize a policy. VW offers four approaches to specify CB approach using `--cb_type`:
 
@@ -73,7 +76,7 @@ There are multiple policy evaluation approaches available to optimize a policy. 
 
 >**Note:** The focal point of CB learning research is efficient exploration algorithms. For more details, see the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.
 
-### Specifying exploration algorithms
+#### Specifying exploration algorithms
 
 VW offers five exploration algorithms:
 
@@ -147,8 +150,6 @@ The following examples use the input format for the `--cb` command example above
 In this case, the prediction of the current learned policy takes with probability 1 - _epsilon_ 80% of the time, and with the remaining 20% epsilon probability, an action is chosen uniformly at random.
 
 `./vw -d train.dat --cb_explore 4 --bag 5`
-
-In this case, you use an ensemble approach. Take an argument _m_ for `--bag` and train _m_ different policies (for example `5` in the above example). The policies differ because they train on different subsets of data, with each example going to a subset of the _m_ policies.
 
 `./vw -d train.dat --cb_explore 4 --cover 3`
 

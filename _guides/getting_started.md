@@ -1,18 +1,16 @@
 ---
 title: Get started with Vowpal Wabbit
-order: -1
+order: 1
 module_id: getting_started
 description: This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output.
-guide_link_text: 'Get started'
-show_on_learn: false
+level: beginner
 layout: tutorial
-body_class: tutorial
-resource_icon: /svg/resources/guide.svg
+tags: linear&nbsp;regression getting&nbsp;started
 ---
 
-# A Step by Step Introduction to Linear Regression
+## A Step by Step Introduction to Linear Regression
 
-## A first data-set
+### A first data-set
 
 Now, let's create a data-set. Suppose we want to predict whether a house will require a new roof in the next 10 years. We can create a training-set file, `house_dataset` with the following contents:
 
@@ -57,7 +55,7 @@ best constant = 0.500000
 best constant's loss = 0.250000
 total feature number = 15
 ```
-## VW's diagnostic information
+### VW's diagnostic information
 
 There is a burble of diagnostic information which you can turn off with `--quiet`. However, it's worthwhile to first understand it, so let's work through it bit by bit.
 
@@ -149,7 +147,7 @@ loss     last          counter         weight    label  predict features
 
 You'll notice that by example 47 (25 passes over 3 examples result in 75 examples), the `since last` column has dropped to 0, implying that by looking at the same (3 lines of) data 25 times we have reached a perfect predictor. This is unsurprising with 3 examples having 5 features each. The reason we have to add `--holdout_off` is that when running multiple-passes, VW automatically switches to 'over-fit avoidance' mode by holding-out 10% of the examples (the period "one in 10" can be changed using `--holdout_period period`) and evaluating performance on the held-out data instead of using the online-training progressive loss.
 
-## Saving your model (a.k.a. regressor) into a file
+### Saving your model (a.k.a. regressor) into a file
 
 By default VW learns the weights of the features and keeps them in an in memory vector. If you want to save the final regressor weights into a file, add `-f filename`:
 
@@ -157,7 +155,7 @@ By default VW learns the weights of the features and keeps them in an in memory 
 vw house_dataset -l 10 -c --passes 25 --holdout_off -f house.model
 ```
 
-## Getting predictions
+### Getting predictions
 
 We want to make predictions of course, this can be done by supplying the `-p filename` option. Stdout can be used as below:
 
@@ -195,7 +193,7 @@ Which would output:
 
 Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data, whereas in the 2nd example we first loaded an over-fitted (25 pass) model and used our data-set `house_dataset` with `-t` (testing only mode). In real prediction settings, one should use a different data-set for testing vs training.
 
-## Auditing
+### Auditing
 
 When developing a new ML application, it's very helpful to debug. VW can help with this using the `--audit` option, which outputs extra informations about predictions and features.
 
@@ -229,7 +227,7 @@ Examining further, you'll notice that the feature `2006` uses the index 2006. Th
 
 The advantage of using unique integer-based feature-names is that they are guaranteed not to collide after hashing. The advantage of free-text (non integer) feature names is readability and self-documentation. Since only `:`, `|`, and _spaces_ are special to the VW parser, you can give features extremely readable names like: `height>2 value_in_range[1..5] color=red` and so on. Feature names may even start with a digit, e.g.: `1st-guess:0.5 2nd-guess:3` etc.
 
-## What's next?
+### What's next?
 
 The above only scratches the surface of VW. You can learn with other loss functions, with other optimizers, with other representations, with clusters of 1000s of machines, and even do ridiculously fast active learning.
 
