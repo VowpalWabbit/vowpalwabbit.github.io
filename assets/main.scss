@@ -190,37 +190,46 @@
 
 .four_oh_four {
   .four_oh_four_container {
-    background: $blue-10;
-    padding: 6rem 1rem 1rem;
+    padding: 1rem;
     height: calc(100vh - 7.5rem);
-    color: white;
   }
 
   .four_oh_four_icon {
-    width: 75%;
-    max-height: 12rem;
+    height: 100%;
   }
 
   .header {
-    font-size: 7rem;
-    font-weight: bold;
+    font-size: 16rem;
+    color: $blue-20;
+    font-weight: 300;
+  }
+
+  .description {
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+
+  .report_issue_link {
+    @include primary-link;
+
+    a {
+      background-color: $blue-20;
+      border: 3px solid $blue-20;
+      color: white;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background: $blue-10;
+        border:3px solid $blue-10;
+      }
+    }
   }
 
   .return_home_link {
     @include primary-link;
-    padding: 1rem 0;
 
     a {
-      font-weight: 600;
-      text-align: center;
-      margin: 0;
-      width: 100%;
-
-      &:hover {
-        text-decoration: none;
-        background: white;
-        color: $blue-20;
-      }
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     }
   }
 }

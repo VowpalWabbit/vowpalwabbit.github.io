@@ -1,24 +1,28 @@
 ---
 layout: default
 body_class: four_oh_four
+header_class: light
 ---
 
 <div class="d-flex align-items-center content four_oh_four_container">
   <div class="container">
     <div class="row text-center text-lg-left">
-      <div class="col-12 col-lg-6">
-        <img
-          alt="404 alert image"
-          class="four_oh_four_icon"
-          src="{{'/assets/images/four_oh_four_icon.svg' | prepend: site.baseurl}}"
-        />
-      </div>
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-lg-7">
         <h1 class="header">404</h1>
-        <p class="description">
+        <h3 class="description">
           Sorry, we’re not able to find what you’re looking for.
-        </p>
+        </h3>
         <div class="row justify-content-center justify-content-lg-start">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="report_issue_link">
+              <a
+                href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/issues/new"
+                target="_blank"
+              >
+                Report an issue
+              </a>
+            </div>
+          </div>
           <div class="col-12 col-md-6 col-lg-4">
             <div class="return_home_link">
               <a href="{{ site.url }}{{ site.baseurl }}/index.html">
@@ -27,6 +31,14 @@ body_class: four_oh_four
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="col-12 col-lg-5">
+        <img
+          alt="404 alert image"
+          class="four_oh_four_icon"
+          src="{{'/assets/images/four_oh_four_icon.svg' | prepend: site.baseurl}}"
+        />
       </div>
     </div>
   </div>
