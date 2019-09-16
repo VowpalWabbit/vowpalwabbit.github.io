@@ -2,7 +2,7 @@
 <html lang="en">
   {% include head.html %}
   <body class={{page.body_class}}>
-    {% include header.html %}
+    {% include header.html header_class=page.header_class %}
     {{ content }}
     {% include footer.html %}
     <div class="overlay">
