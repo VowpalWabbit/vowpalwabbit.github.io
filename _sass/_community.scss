@@ -9,13 +9,13 @@
 
   .community {
     margin: 0.5rem auto;
-    width: 23.8rem;
+    max-width: 23.8rem;
     background-color: white;
     color: $primary-text;
 
     .card_header {
       padding: 0 1.5rem;
-      height: 200px;
+      height: 12.5rem;
       background-color: $blue-5;
       box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
 
