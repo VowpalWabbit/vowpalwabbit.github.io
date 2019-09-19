@@ -3,6 +3,6 @@ tab: Extreme classification
 title: Extreme classification
 order: 2
 module_id: extreme_classification
-description: Extreme multi-class learning (or multi-label learning) addresses a classifier that can tag each data point with the most relevant label or a subset of labels from a vast label set. It has applications in document tagging and ranking and recommendation systems. 
+description: In the extreme multi-class (or multi-label) learning setting, there is a vast number of classes to choose. Classification algorithms that run in logarithmic time have applications in document tagging, ranking, and recommendation systems. 
 
 ---
