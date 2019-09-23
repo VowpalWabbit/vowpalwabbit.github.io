@@ -22,9 +22,7 @@ To install VW—and for more information on building VW from source or using a p
 
 ## The contextual bandit problem
 
-The contextual bandit problem is an extension of the multi-armed bandit (MAB) problem. The MAB problem comes from an experiment where a gambler must choose between multiple slot machine (“one-armed bandits”) actions, each with an unknown payout. The goal is to maximize the payout by optimally choosing the best actions when odds and payouts are unknown. In MAB, the gambler has no information at all to make a decision. 
-
-In the CB problem, a learner (the gambler in the experiment) repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms use additional side information (or context) from each arm to aid decision-making decisions when choosing actions in dynamic environments—where options change rapidly, and the set of available actions is limited.
+In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup> use additional side information (or context) to aid real world decision-making. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited. 
 
 ## Working with CB in Vowpal Wabbit
 
