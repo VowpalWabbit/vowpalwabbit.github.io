@@ -12,7 +12,7 @@ resource_icon: /svg/resources/guide.svg
 
 # Contextual Bandits and Vowpal Wabbit
 
-This guide describes how to approach a contextual bandit problem with Vowpal Wabbit (VW). It features a Python tutorial and an overview of the contextual bandit problem using VW—including when and how to work with with different CB approaches, how to format VW test data, and understand the results. 
+This guide describes how to approach a contextual bandit problem with Vowpal Wabbit (VW). It features a Python tutorial and an overview of the contextual bandit problem using VW—including when and how to work with different CB approaches, how to format VW test data, and understand the results. 
 
 ## Getting started with Vowpal Wabbit
 
