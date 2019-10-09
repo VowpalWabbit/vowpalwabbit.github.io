@@ -162,6 +162,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 
 .tabs_container { padding-top: 1rem; }
 .tabs_container .tab_content { padding: 2rem; background: white; }
+.tabs_container .tab_content img { display: block; margin: 0 auto; }
 .tabs_container .hidden { display: none; }
 .tabs_container .link a { color: #2A3B93; font-weight: 600; display: inline-block; padding-bottom: 4px; border-bottom: 2px solid transparent; }
 .tabs_container .link a:hover { text-decoration: none; border-bottom: 2px solid #2A3B93; }
@@ -372,6 +373,8 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .problem_framing_container .description { padding: 1rem 0; }
 .problem_framing_container .description a { color: #2A3B93; display: inline-block; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .problem_framing_container .description a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
+.problem_framing_container .description .cite_sup { border-bottom: 0; }
+.problem_framing_container .description .cite_sup:hover { border-bottom: 0; }
 .problem_framing_container .link { padding-bottom: 1rem; }
 .problem_framing_container .nav { width: 100%; background: rgba(255, 255, 255, 0.3); justify-content: flex-start; text-align: center; }
 .problem_framing_container .nav button { color: #666666; background: transparent; border: 0; padding: 1rem 0; }
