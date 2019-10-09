@@ -244,64 +244,72 @@
   
 </div>
 
-<div class="col col-lg-6">
+<div class="col col-lg-10">
   
     <div
-      class=""
+      class="row "
       data-module_id=contextual_bandits
     >
       
 
-<div class="col-12">
+<div class="col">
   <h3>
     Optimize rewards with Contextual Bandits
   </h3>
-  <p class="description">
-    Contextual Bandits are a form of reinforcement learning (RL). The vast majority of production real-world RL systems use contextual bandits techniques. <br><br> For an overview of a contextual bandit problem, including how to use Vowpal Wabbit in a CB setting with Python, read the contextual bandit tutorial.
-  </p>
-</div>
 
+  <div class="description">
+    <p>Contextual Bandits are a form of reinforcement learning (RL). The vast majority of production real-world RL systems use contextual bandits techniques. <br /><br /> For an overview of a contextual bandit problem, including how to use Vowpal Wabbit in a CB setting with Python, read the contextual bandit tutorial.</p>
+
+  </div>
 
   
-  <div class="col">
+    
     <div class="link">
       <a href="/guides/contextual_bandits.html">
         Read the Contextual Bandit tutorial
       </a>
     </div>
-  </div>
+  
 
+  
+</div>
 
-
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/cb.svg />
+</div>
 
     </div>
   
     <div
-      class="hidden"
+      class="row hidden"
       data-module_id=learning2search
     >
       
 
-<div class="col-12">
+<div class="col">
   <h3>
     Learning2Search
   </h3>
-  <p class="description">
-    Learning to Search(L2S) builds a policy for sequential decision problems that optimizes global value with training time advice. L2S is a form of guided reinforcement learning, which enjoys global guarantees on performance. Typical applications are in natural language processing but the technique is much more widely applicable.
-  </p>
-</div>
 
+  <div class="description">
+    <p>Learning2Search (L2S) is a form of guided reinforcement learning, which enjoys global guarantees on performance. For more on L2S and how to use Vowpal Wabbit in an L2S setting, read the learning2search tutorial.</p>
 
+  </div>
 
+  
 
-  <div class="col">
+  
     <div class="link">
       <a href=http://hunch.net/~l2s target="_blank">
         Read the Learning2search tutorial
       </a>
     </div>
-  </div>
+  
+</div>
 
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/cb.svg />
+</div>
 
     </div>
   
@@ -331,47 +339,59 @@
   
 </div>
 
-<div class="col col-lg-6">
+<div class="col col-lg-10">
   
     <div
-      class=""
+      class="row "
       data-module_id=active_learning
     >
       
 
-<div class="col-12">
+<div class="col">
   <h3>
     Active learning
   </h3>
-  <p class="description">
-    In active learning, a learner chooses which examples to label given what it knows and unlabeled examples to choose from. Active learning is used to minimize the cost of labelling datasets.
-  </p>
+
+  <div class="description">
+    <p>Active learning enables a learner to choose which examples to label given what it knows and a source of unlabeled examples. Active learning is used to minimize the cost of labeling datasets.</p>
+
+  </div>
+
+  
+
+  
 </div>
 
-
-
-
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/online.svg />
+</div>
 
     </div>
   
     <div
-      class="hidden"
+      class="row hidden"
       data-module_id=extreme_classification
     >
       
 
-<div class="col-12">
+<div class="col">
   <h3>
     Extreme classification
   </h3>
-  <p class="description">
-    In the extreme multi-class (or multi-label) learning setting, there is a vast number of classes to choose. Classification algorithms that run in logarithmic time have applications in document tagging, ranking, and recommendation systems.
-  </p>
+
+  <div class="description">
+    <p>In the extreme multi-class (or multi-label) learning setting, there is a vast number of classes to choose. Classification algorithms that run in logarithmic time have applications in document tagging, ranking, and recommendation systems.</p>
+
+  </div>
+
+  
+
+  
 </div>
 
-
-
-
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/online.svg />
+</div>
 
     </div>
   
@@ -384,18 +404,24 @@
         
           
 
-<div class="col-12">
+<div class="col">
   <h3>
     Online
   </h3>
-  <p class="description">
-    Most learning algorithms require all data before they start learning. Vowpal Wabbit enables efficient learning from a continuously growing data source for situations where a problem changes or interactive learning is needed.
-  </p>
+
+  <div class="description">
+    <p>Most learning algorithms require all data before they start learning. Vowpal Wabbit enables efficient learning from a continuously growing data source for situations where a problem changes or interactive learning is needed.</p>
+
+  </div>
+
+  
+
+  
 </div>
 
-
-
-
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/online.svg />
+</div>
 
         
       </div>
@@ -421,47 +447,71 @@
   
 </div>
 
-<div class="col col-lg-6">
+<div class="col col-lg-10">
   
     <div
-      class=""
+      class="row "
       data-module_id=speed
     >
       
 
-<div class="col-12">
+<div class="col">
   <h3>
     Speed
   </h3>
-  <p class="description">
-    VW handles learning problems with any number of sparse features. Vowpal Wabbit was the first published tera-scale learner.
-  </p>
+
+  <div class="description">
+    <p>Vowpal Wabbit handles learning problems with any number of sparse features. It is the first published tera-scale learner<sup><a class="cite_sup" href="#DBLP:journals/corr/abs-1110-4198">[1]</a></sup>.</p>
+
+<div class="hidden">
+  <ol class="bibliography"><li><span id="DBLP:journals/corr/abs-1110-4198">Agarwal, A., Chapelle, O., Dudı́k Miroslav, &amp; Langford, J. (2011). A Reliable Effective Terascale Linear Learning System. <i>CoRR</i>, <i>abs/1110.4198</i>. Retrieved from http://arxiv.org/abs/1110.4198</span>
+<a class="details" href="/bibliography/DBLP_journals/corr/abs-1110-4198.html">Get .bib</a></li></ol>
 </div>
 
+  </div>
 
+  
 
+  
+</div>
 
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/speed.svg />
+</div>
 
     </div>
   
     <div
-      class="hidden"
+      class="row hidden"
       data-module_id=scalability
     >
       
 
-<div class="col-12">
+<div class="col">
   <h3>
     Scalability
   </h3>
-  <p class="description">
-    VW achieves scalability using distributed out-of-core learning. Together with the hashing techniques that VW pioneered, this means the memory footprint of VW is bounded independent of the training set.
-  </p>
+
+  <div class="description">
+    <p>Vowpal Wabbit pioneered hashing techniques <sup><a class="cite_sup" href="#Shi:2009:HKS:1577069.1755873">[1]</a> <a class="cite_sup" href="#DBLP:journals/corr/abs-0902-2206">[2]</a></sup> and used distributed out-of-core learning to achieve scalability and keep its memory footprint bounded independent of the training dataset.</p>
+
+<div class="hidden">
+  <ol class="bibliography"><li><span id="Shi:2009:HKS:1577069.1755873">Shi, Q., Petterson, J., Dror, G., Langford, J., Smola, A., &amp; Vishwanathan, S. V. N. (2009). Hash Kernels for Structured Data. <i>J. Mach. Learn. Res.</i>, <i>10</i>, 2615–2637. Retrieved from http://dl.acm.org/citation.cfm?id=1577069.1755873</span>
+<a class="details" href="/bibliography/Shi_2009_HKS_1577069.1755873.html">Get .bib</a></li>
+<li><span id="DBLP:journals/corr/abs-0902-2206">Weinberger, K. Q., Dasgupta, A., Attenberg, J., Langford, J., &amp; Smola, A. J. (2009). Feature Hashing for Large Scale Multitask Learning. <i>CoRR</i>, <i>abs/0902.2206</i>. Retrieved from http://arxiv.org/abs/0902.2206</span>
+<a class="details" href="/bibliography/DBLP_journals/corr/abs-0902-2206.html">Get .bib</a></li></ol>
 </div>
 
+  </div>
 
+  
 
+  
+</div>
 
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/speed.svg />
+</div>
 
     </div>
   
@@ -498,68 +548,86 @@
   
 </div>
 
-<div class="col col-lg-6">
+<div class="col col-lg-10">
   
     <div
-      class=""
+      class="row "
       data-module_id=input_format
     >
       
 
-<div class="col-12">
+<div class="col">
   <h3>
     Input format
   </h3>
-  <p class="description">
-    Vowpal Wabbit’s input format is more flexible than many toolkits. This flexibility allows examples with features consisting of free form text and multiple feature sources to be explicitly represented within an example and used later.
-  </p>
+
+  <div class="description">
+    <p>Vowpal Wabbit’s input format is more flexible than many toolkits. This flexibility allows examples with features consisting of free form text and multiple feature sources to be explicitly represented within an example and used later.</p>
+
+  </div>
+
+  
+
+  
 </div>
 
-
-
-
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/input_format.svg />
+</div>
 
     </div>
   
     <div
-      class="hidden"
+      class="row hidden"
       data-module_id=example_manipulation
     >
       
 
-<div class="col-12">
+<div class="col">
   <h3>
     Example manipulation
   </h3>
-  <p class="description">
-    VW includes example manipulators for efficiency and ease of deployment. Different feature sources can be suppressed or combined to maximize performance.
-  </p>
+
+  <div class="description">
+    <p>Vowpal Wabbit includes example manipulators for efficiency and ease of deployment so you can suppress or combine different feature sources to maximize performance.</p>
+
+  </div>
+
+  
+
+  
 </div>
 
-
-
-
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/input_format.svg />
+</div>
 
     </div>
   
     <div
-      class="hidden"
+      class="row hidden"
       data-module_id=reductions
     >
       
 
-<div class="col-12">
+<div class="col">
   <h3>
     Reductions
   </h3>
-  <p class="description">
-    When solving real world problems the most important step is framing the problem effectively. VW enables this by supporting solutions to a wide range of problems through reductions to common learning algorithms. This enables you to focus on framing the problem to achieve the best solution.
-  </p>
+
+  <div class="description">
+    <p>Vowpal Wabbit supports solutions to a range of real problems through reductions to standard learning algorithms. This versatility empowers you to frame learning problems effectively to achieve the best solution.</p>
+
+  </div>
+
+  
+
+  
 </div>
 
-
-
-
+<div class="col">
+  <img alt="image for feature" src=assets/images/features/input_format.svg />
+</div>
 
     </div>
   
@@ -695,7 +763,7 @@
           <div>
             For more details on the research driving Vowpal Wabbit
             <a href="/publications.html">
-              visit the Vowpal Wabbit publications list. 
+              visit the Vowpal Wabbit publications list.
             </a>
           </div>
         </div>
@@ -887,6 +955,8 @@
     </div>
   </div>
 </div>
+
+<script src="/assets/js/citation.js"></script>
 
     <div class="overlay">
     </div>
