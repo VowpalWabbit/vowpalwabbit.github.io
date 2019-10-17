@@ -11,7 +11,7 @@ tags: contextual&nbsp;bandits
 
 # Contextual Bandits and Vowpal Wabbit
 
-This tutorial includes an overview of contextual bandits (CB) and describes how to approach a contextual bandit problem using Vowpal Wabbit (VW). No prior knowledge of CB is required. You will learn how to use VW in a CB setting with the Python tutorial—including when and how to work with with different CB approaches, how to format test data, and understand the results. 
+This tutorial includes an overview of contextual bandits (CB) and describes how to approach a contextual bandit problem using Vowpal Wabbit (VW). No prior knowledge of CB is required. You will learn how to use VW in a CB setting with the Python tutorial—including when and how to work with with different CB approaches, how to format data, and understand the results. 
 
 
 ## Getting started with Vowpal Wabbit
@@ -216,7 +216,7 @@ In the case of the softmax explorer, which uses the policy not only to predict a
 
 Here lambda is a parameter, which leads to uniform exploration for lambda = 0, and stops exploring as lambda approaches infinity. In general, this provides an excellent knob for controlled exploration based on the uncertainty in the learned policy.
 
-## Create Contextual Bandit test data
+## Create contextual bandit data
 
 Begin by loading the required Python packages:
 
@@ -252,7 +252,7 @@ train_df = train_df.set_index("index")
 
 >**Note:** The data here is equivalent to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example" target="_blank">VW wiki example</a>.
 
-Next, create test data, for example features describing new users, for the CB to exploit to make decisions:
+Next, create data (for example features describing new users) for the CB to exploit to make decisions:
 
 ```python
 test_data = [{'feature1': 'b', 'feature2': 'c', 'feature3': ''},
