@@ -15,9 +15,9 @@ This tutorial includes an overview of the contextual bandits approach to reinfor
 
 ## Getting started with Vowpal Wabbit
 
-To install VW—and for more information on building VW from source or using a package manager—see [Getting started](getting_started.html) guide. 
+To install Vowpal Wabbit—and for more information on building from source or using a package manager—see [Getting started](getting_started.html) guide. 
 
->**Note:** The CB tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms. See [Getting started](getting_started.html) module on the homepage for more information.
+>**Note:** The contextual bandits tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms. See [Getting started](getting_started.html) module on the homepage for more information.
 
 ## The contextual bandit problem
 
@@ -25,7 +25,7 @@ In the contextual bandit problem, a learner repeatedly observes a context, choos
 
 ## Working with contextual bandits in Vowpal Wabbit
 
-To introduce a VW approach to the contextual bandit problem and explore capabilities, this guide uses a hypothetical application called _APP_. 
+To introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this approach to reinforcement learning, this guide uses a hypothetical application called _APP_. 
 
 _APP_ interacts with the context of a user's behavior (search history, visited pages, or geolocation) in a dynamic environment–such as a news website or a cloud controller. _APP_ differs from MAB because we have some information available to the _APP_, which is the context.
 
@@ -53,24 +53,24 @@ You want  _APP_ to take actions that provide the highest possible reward. In mac
 
 ### Policy vs. model
 
-We use the term _policy_ many times in this tutorial. In Reinforcement Learning (RL), the policy is roughly equivalent to _model_. In machine learning, the model means _learned function_. When someone says policy, it is more specific than model because it indicates this is a model that acts in the world.
+We use the term _policy_ many times in this tutorial. In reinforcement learning, the policy is roughly equivalent to _model_. In machine learning, the model means _learned function_. When someone says policy, it is more specific than model because it indicates this is a model that acts in the world.
 
-Contexts and actions are typically represented as feature vectors in CB algorithms. For example, _APP_ chooses actions by applying a policy **π** that takes a context as input and returns an action. The goal is to find a policy that maximizes the average reward over a sequence of interactions.
+Contexts and actions are typically represented as feature vectors in contextual bandit algorithms. For example, _APP_ chooses actions by applying a policy **π** that takes a context as input and returns an action. The goal is to find a policy that maximizes the average reward over a sequence of interactions.
 
 ### Specifying the CB approach
 
-There are multiple policy evaluation approaches available to optimize a policy. VW offers four approaches to specify CB approach using `--cb_type`:
+There are multiple policy evaluation approaches available to optimize a policy. Vowpal Wabbit offers four approaches to specify a contextual bandit approach using `--cb_type`:
 
-- **Inverse Propensity Score<sup>{% cite doi:10.1080/01621459.1952.10483446 %}</sup>:** `--cb_type ips`
-- **Doubly Robust<sup>{% cite DBLP:conf/icml/JiangL16 %} {% cite DBLP:conf/icml/DudikLL11 %}</sup>:** `--cb_type dr`
+- **Inverse Propensity Score <sup>{% cite doi:10.1080/01621459.1952.10483446 %}</sup> :** `--cb_type ips`
+- **Doubly Robust <sup>{% cite DBLP:conf/icml/JiangL16 %} {% cite DBLP:conf/icml/DudikLL11 %}</sup> :** `--cb_type dr`
 - **Direct Method:** `--cb_type dm`
-- **Multi Task Regression/Importance Weighted Regression<sup>{% cite bietti2018a %} {% cite Karampatziakis:2011:OIW:3020548.3020594 %}</sup>:** `--cb_type mtr`
+- **Multi Task Regression/Importance Weighted Regression <sup>{% cite bietti2018a %} {% cite Karampatziakis:2011:OIW:3020548.3020594 %}</sup> :** `--cb_type mtr`
 
->**Note:** The focal point of CB learning research is efficient exploration algorithms. For more details, see the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.
+>**Note:** The focal point of contextual bandit learning research is efficient exploration algorithms. For more details, see the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.
 
 ### Specifying exploration algorithms
 
-VW offers five exploration algorithms:
+Vowpal Wabbit offers five exploration algorithms:
 
 - **Explore-First** `--first`
 - **Epsilon-Greedy** `--epsilon`
@@ -78,28 +78,28 @@ VW offers five exploration algorithms:
 - **Online Cover** `--cover`
 - **Softmax Explorer** `--softmax` (only supported for `--cb_explore_adf`)
 
->**Note:** For more details on CB algorithms in VW, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Vowpal Wabbit Github Wiki</a>.
+>**Note:** For more details on contextual bandits algorithms and Vowpal Wabbit, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Vowpal Wabbit Github Wiki</a>.
 
 ## Contextual bandit algorithms and input formats
 
-There are four main components to a Contextual Bandit problem:
+There are four main components to a contextual bandit problem:
 
 - **Context (x)**: the additional information which helps in choosing action.
 - **Action (a)**: the action chosen from a set of possible actions _A_.
 - **Probability (p)**: the probability of choosing _a_ from _A_.
 - **Cost/Reward (r)**: the reward received for action _a_.
 
-Vowpal Wabbit provides three CB algorithms:
+Vowpal Wabbit provides three contextual bandits algorithms:
 
-* **`--cb`:** The CB module which allows you to optimize predictor based on already collected CB data, CB without exploration.
-* **`--cb_explore`:** The CB learning algorithm for when the maximum number of actions is known ahead of time and semantics of actions stays the same across examples.
-*  **`--cb_explore_adf`:** The CB learning algorithm for when the set of actions changes over time or you have rich information for each action VW offers different input formats for CB.
+* **`--cb`:** The contextual bandit module which allows you to optimize predictor based on already collected data, or contextual bandits without exploration.
+* **`--cb_explore`:** The contextual bandit learning algorithm for when the maximum number of actions is known ahead of time and semantics of actions stays the same across examples.
+*  **`--cb_explore_adf`:** The contextual bandit learning algorithm for when the set of actions changes over time or you have rich information for each action. Vowpal Wabbit offers different input formats for contextual bandits.
 
 ### Input format for `--cb`
 
 `--cb <number_of_actions>`
 
-The `--cb 4` command specifies that we want to use CB module and our data has a total of four actions.
+The `--cb 4` command specifies that we want to use the contextual bandit module and our data has a total of four actions.
 
 Each example is represented as a separate line in your data file and must follow the following format:
 
@@ -119,7 +119,7 @@ Sample data file **train.dat** with five examples:
 
 Use the command `./vw -d train.dat --cb 4`
 
->**Note:** This usage is for the VW command line. See below for a Python tutorial.
+>**Note:** This usage is for the Vowpal Wabbit command line. See below for a Python tutorial.
 
 ### Input format for `--cb_explore`
 
@@ -228,7 +228,7 @@ apt-get install libboost-program-options-dev zlib1g-dev libboost-python-dev -y
 pip install vowpalwabbit
 ```
 
-Now, generate some sample training data that could originate from previous random trial (for example A/B test) for the CB to explore:
+Now, generate some sample training data that could originate from previous random trial (for example A/B test) for the contextual bandit to explore:
 
 ```python
 train_data = [{'action': 1, 'cost': 2, 'probability': 0.4, 'feature1': 'a', 'feature2': 'c', 'feature3': ''},
@@ -246,7 +246,7 @@ train_df = train_df.set_index("index")
 
 >**Note:** The data here is equivalent to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example" target="_blank">VW wiki example</a>.
 
-Next, create data for the CB to exploit to make decisions (for example features describing new users):
+Next, create data for the contextual bandit to exploit to make decisions (for example features describing new users):
 
 ```python
 test_data = [{'feature1': 'b', 'feature2': 'c', 'feature3': ''},
@@ -269,11 +269,11 @@ train_df.head()
 test_df.head()
 ```
 
-##  Contextual Bandits Python tutorial
+##  Contextual bandits Python tutorial
 
 First, create the Python model store the model parameters in the Python `vw` object.
 
-Use the following command for a Contextual Bandit with four possible actions:
+Use the following command for a contextual bandit with four possible actions:
 
 ```python
 from vowpalwabbit import pyvw
@@ -283,7 +283,7 @@ vw = pyvw.vw("--cb 4")
 
 >**Note:** Use `--quiet` command to turn off diagnostic information in Vowpal Wabbit.
 
-Now, call learn for each trained example on your VW model.
+Now, call learn for each trained example on your Vowpal Wabbit model.
 
 ```python
 for i in train_df.index:
@@ -315,9 +315,9 @@ for j in test_df.index:
   print(j, choice)
 ```
 
->**Note:** The CB assigns every instance to the third action as it should per the cost structure of the train data. You can save and load the model you train from a file.
+>**Note:** The contextual bandit assigns every instance to the third action as it should per the cost structure of the train data. You can save and load the model you train from a file.
 
-Finally, experiment with the cost structure to see that the CB updates its predictions accordingly.
+Finally, experiment with the cost structure to see that the contextual bandit updates its predictions accordingly.
 
 ```python
 vw.save('cb.model')
@@ -327,11 +327,11 @@ vw = pyvw.vw("--cb 4 -i cb.model")
 print(vw.predict('| a b'))
 ```
 
-The `-i` argument means input regressor, telling VW to load a model from that file instead of starting from scratch.
+The `-i` argument means input regressor, telling Vowpal Wabbit to load a model from that file instead of starting from scratch.
 
 ## More to explore
 
-- Review the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples" target="_blank">example Python notebooks</a>
-- Explore the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials" target="_blank">tutorials section of the GitHub wiki</a>
-- Browse <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples" target="_blank">examples on the GitHub wiki</a>
-- Learn various <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments" target="_blank">VW commands</a>
+- Review the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples" target="_blank">example Python notebooks</a>.
+- Explore the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials" target="_blank">tutorials section of the GitHub wiki</a>.
+- Browse <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples" target="_blank">examples on the GitHub wiki</a>.
+- Learn various <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments" target="_blank">VW commands</a>.
