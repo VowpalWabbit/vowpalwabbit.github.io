@@ -17,7 +17,7 @@ This tutorial includes an overview of the contextual bandits approach to reinfor
 
 To install VW—and for more information on building VW from source or using a package manager—see [Getting started](getting_started.html) guide. 
 
->**Note:** The CB tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms. See [Getting started](https://cheng-tan.github.io/vowpalwabbit.github.io/) module on the homepage for more information.
+>**Note:** The CB tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms. See [Getting started](getting_started.html) module on the homepage for more information.
 
 ## The contextual bandit problem
 
