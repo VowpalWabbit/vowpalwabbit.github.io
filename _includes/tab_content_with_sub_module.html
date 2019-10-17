@@ -9,10 +9,10 @@
   {% endfor %}
 </div>
 
-<div class="col col-lg-6">
+<div class="col col-lg-10">
   {% for item in sub_module_items %}
     <div
-      class="{% if item.order != 1 %}hidden{% endif %}"
+      class="row {% if item.order != 1 %}hidden{% endif %}"
       data-module_id={{item.module_id}}
     >
       {% include tab_content.html item=item %}
