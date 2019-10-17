@@ -234,7 +234,7 @@ apt-get install libboost-program-options-dev zlib1g-dev libboost-python-dev -y
 pip install vowpalwabbit
 ```
 
-Now, generate some sample training data that could originate from previous random trial, e.g. AB test, for the CB to explore:
+Now, generate some sample training data that could originate from previous random trial (for example A/B test) for the CB to explore:
 
 ```python
 train_data = [{'action': 1, 'cost': 2, 'probability': 0.4, 'feature1': 'a', 'feature2': 'c', 'feature3': ''},
@@ -252,7 +252,7 @@ train_df = train_df.set_index("index")
 
 >**Note:** The data here is equivalent to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example" target="_blank">VW wiki example</a>.
 
-Next, create data (for example features describing new users) for the CB to exploit to make decisions:
+Next, create data for the CB to exploit to make decisions (for example features describing new users):
 
 ```python
 test_data = [{'feature1': 'b', 'feature2': 'c', 'feature3': ''},
