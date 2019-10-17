@@ -1,5 +1,5 @@
 ---
-title: Contextual Bandits in VW
+title: Contextual Bandits and Vowpal Wabbit
 order: 2
 module_id: contextual_bandits
 description: This tutorial will run you through using VW for a Contextual Bandit problem.
@@ -9,10 +9,9 @@ layout: tutorial
 tags: contextual&nbsp;bandits
 ---
 
-# Contextual Bandits and Vowpal Wabbit
+## Contextual bandits and Vowpal Wabbit
 
-This tutorial includes an overview of contextual bandits (CB) and describes how to approach a contextual bandit problem using Vowpal Wabbit (VW). No prior knowledge of CB is required. You will learn how to use VW in a CB setting with the Python tutorial—including when and how to work with with different CB approaches, how to format data, and understand the results. 
-
+This tutorial includes an overview of the contextual bandits approach to reinforcement learning and describes how to approach a contextual bandit problem using Vowpal Wabbit. You will learn how to use Vowpal Wabbit in a contextual bandit setting with the Python tutorial—including when and how to work with different contextual bandits approaches, how to format data, and understand the results. No prior knowledge of contextual bandits or Vowpal Wabbit is required.
 
 ## Getting started with Vowpal Wabbit
 
@@ -24,7 +23,7 @@ To install VW—and for more information on building VW from source or using a p
 
 In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup> use additional side information (or context) to aid real world decision-making. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited. 
 
-## Working with CB in Vowpal Wabbit
+## Working with contextual bandits in Vowpal Wabbit
 
 To introduce a VW approach to the contextual bandit problem and explore capabilities, this guide uses a hypothetical application called _APP_. 
 
@@ -74,7 +73,7 @@ There are multiple policy evaluation approaches available to optimize a policy. 
 
 >**Note:** The focal point of CB learning research is efficient exploration algorithms. For more details, see the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.
 
-#### Specifying exploration algorithms
+### Specifying exploration algorithms
 
 VW offers five exploration algorithms:
 
@@ -86,7 +85,7 @@ VW offers five exploration algorithms:
 
 >**Note:** For more details on CB algorithms in VW, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Vowpal Wabbit Github Wiki</a>.
 
-## Contextual Bandit algorithms and input formats
+## Contextual bandit algorithms and input formats
 
 There are four main components to a Contextual Bandit problem:
 
@@ -275,7 +274,7 @@ train_df.head()
 test_df.head()
 ```
 
-###  Contextual Bandits Python tutorial
+##  Contextual Bandits Python tutorial
 
 First, create the Python model store the model parameters in the Python `vw` object.
 
