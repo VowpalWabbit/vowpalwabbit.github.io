@@ -59,17 +59,12 @@ Contexts and actions are typically represented as feature vectors in CB algorith
 
 ### Specifying the CB approach
 
-- Inverse Propensity Score <sup>{% cite doi:10.1080/01621459.1952.10483446 %}</sup> `--cb_type ips`
-- Doubly Robust <sup>{% cite DBLP:conf/icml/JiangL16 %} {% cite DBLP:conf/icml/DudikLL11 %}</sup> `--cb_type dr`
-- Direct Method `--cb_type dm`
-- Multi Task Regression/Importance Weighted Regression <sup>{% cite bietti2018a %} {% cite Karampatziakis:2011:OIW:3020548.3020594 %}</sup> `--cb_type mtr`
-
 There are multiple policy evaluation approaches available to optimize a policy. VW offers four approaches to specify CB approach using `--cb_type`:
 
-- **Inverse Propensity Score:** `--cb_type ips`
-- **Doubly Robust:** `--cb_type dr`
+- **Inverse Propensity Score<sup>{% cite doi:10.1080/01621459.1952.10483446 %}</sup>:** `--cb_type ips`
+- **Doubly Robust<sup>{% cite DBLP:conf/icml/JiangL16 %} {% cite DBLP:conf/icml/DudikLL11 %}</sup>:** `--cb_type dr`
 - **Direct Method:** `--cb_type dm`
-- **Multi Task Regression/Importance Weighted Regression:** `--cb_type mtr`
+- **Multi Task Regression/Importance Weighted Regression<sup>{% cite bietti2018a %} {% cite Karampatziakis:2011:OIW:3020548.3020594 %}</sup>:** `--cb_type mtr`
 
 >**Note:** The focal point of CB learning research is efficient exploration algorithms. For more details, see the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.
 
