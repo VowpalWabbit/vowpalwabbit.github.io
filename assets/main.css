@@ -55,7 +55,7 @@ h4 { font-size: 1.5rem; line-height: 1.25; font-weight: 400; }
 .install_vw_config .settings_container .option.selected { background: #FFF4DB; }
 
 .command_box, pre.highlight { min-height: 3.7rem; padding: 1rem; background-color: #F2F4FF; display: flex; justify-content: space-between; }
-.command_box a, pre.highlight a { color: #2A3B93; display: inline-block; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
+.command_box a, pre.highlight a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .command_box a:hover, pre.highlight a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
 .command_box .copy, pre.highlight .copy { background: transparent; border: 0; color: #2A3B93; align-self: flex-start; }
 .command_box .copy:hover, pre.highlight .copy:hover { color: #415EBF; cursor: pointer; }
@@ -172,13 +172,14 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tutorial .hero a { color: white; font-size: 1.125rem; line-height: 1.33; }
 
 .tutorial_container { position: relative; padding: 5rem 1rem; }
-.tutorial_container a { color: #2A3B93; display: inline-block; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
+.tutorial_container a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .tutorial_container a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
-.tutorial_container h2 { padding-bottom: 1rem; }
-.tutorial_container h3 { padding: 1rem 0 0.8rem; position: relative; }
-.tutorial_container h3:hover > a { display: inline-block; }
-.tutorial_container h3 > a { border: 0; display: none; font-weight: 400; font-size: 1.5rem; padding: 0 1rem; position: absolute; height: 1.5rem; top: 0; bottom: 0; margin: auto; vertical-align: middle; }
-.tutorial_container h3 > a:hover { border: 0; }
+.tutorial_container h1 { font-size: 3rem; line-height: 1.1; font-weight: 300; padding-bottom: 1rem; }
+.tutorial_container h2 { font-size: 2.25rem; line-height: 1.1; font-weight: 300; padding: 1rem 0 0.8rem; position: relative; }
+.tutorial_container h2:hover > a { display: inline-block; }
+.tutorial_container h2 > a { border: 0; display: none; font-weight: 400; font-size: 1.5rem; padding: 0 1rem; position: absolute; height: 1.5rem; top: 0; bottom: 0; margin: auto; vertical-align: middle; }
+.tutorial_container h2 > a:hover { border: 0; }
+.tutorial_container h3 { font-size: 1.5rem; line-height: 1.25; font-weight: 400; }
 .tutorial_container sup a { border: none; }
 .tutorial_container sup a:hover { border: none; }
 .tutorial_container table { border: 1px solid #EBEBEB; margin: 1rem 0 2rem; }
@@ -209,7 +210,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .start .start_container .hero { background: #2A3B93; color: white; padding: 3rem 1rem; }
 .start .start_container .hero h1 { padding-bottom: 1rem; }
 .start .start_container .install_vw_container { padding: 5rem 1rem; }
-.start .start_container .install_vw_container a { color: #2A3B93; display: inline-block; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
+.start .start_container .install_vw_container a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .start .start_container .install_vw_container a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
 .start .start_container .install_vw_container .description { padding: 0.5rem 0; }
 .start .start_container .install_vw_container .links { padding-top: 0.8rem; }
@@ -217,7 +218,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .start .start_container .install_vw_container .links a:hover { text-decoration: none; border-bottom: 2px solid #2A3B93; }
 .start .start_container .tutorials_container { background-color: #EBEBEB; padding: 5rem 1rem; }
 .start .start_container .tutorials_container .intro { padding: 1rem 0 2rem; }
-.start .start_container .tutorials_container .intro a { color: #2A3B93; display: inline-block; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
+.start .start_container .tutorials_container .intro a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .start .start_container .tutorials_container .intro a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
 .start .start_container .tutorials_container .tutorial_card { background-color: white; padding: 0 1.5rem; }
 .start .start_container .tutorials_container .tutorial_card .header { padding: 1.5rem 0; text-transform: uppercase; font-weight: 600; }
@@ -371,7 +372,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 
 .problem_framing_container { background: #EBEBEB; padding: 3rem 0 6rem; }
 .problem_framing_container .description { padding: 1rem 0; }
-.problem_framing_container .description a { color: #2A3B93; display: inline-block; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
+.problem_framing_container .description a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .problem_framing_container .description a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
 .problem_framing_container .description .cite_sup { border-bottom: 0; }
 .problem_framing_container .description .cite_sup:hover { border-bottom: 0; }
@@ -386,7 +387,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 @media screen and (max-width: 768px) { .problem_framing_container .sub_nav button { display: inline-block; } }
 
 .home .install_vw_container { padding: 5rem 1rem; }
-.home .install_vw_container a { color: #2A3B93; display: inline-block; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
+.home .install_vw_container a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .home .install_vw_container a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
 .home .install_vw_container .description { padding: 0.5rem 0; }
 .home .install_vw_container .links { padding-top: 1rem; }
@@ -395,7 +396,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .home .install_vw_container .links a { margin-bottom: 0.8rem; }
 
 .research_container { background: #EBEBEB; padding: 5rem 1rem; }
-.research_container a { color: #2A3B93; display: inline-block; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
+.research_container a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .research_container a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
 .research_container .description { padding: 1rem 0 0.8rem; }
 

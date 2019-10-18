@@ -14,6 +14,7 @@
   <script src="/assets/nav.js"></script>
 
   <title>Simulating a news personalization scenario using Contextual Bandits</title>
+  <meta name="description" content="This tutorial will guide you through how to structure a simulator to model a real world scenario using contextual bandit algorithms." >
 </head>
 
 
@@ -150,7 +151,7 @@
           </ol>
         </div>
         <div class="col-lg-9">
-          <h2 id="simulating-a-news-personalization-scenario-using-contextual-bandits">Simulating a news personalization scenario using Contextual Bandits</h2>
+          <h1 id="simulating-a-news-personalization-scenario-using-contextual-bandits">Simulating a news personalization scenario using Contextual Bandits</h1>
 
 <p>In the <a href="contextual_bandits.html">Contextual Bandit(CB) introduction tutorial</a>, we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (ctr).</p>
 
@@ -185,7 +186,7 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </code></pre></div></div>
 
-<h3 id="simulate-reward">Simulate reward</h3>
+<h2 id="simulate-reward">Simulate reward</h2>
 
 <p>In the real world, we will have to learn Tom and Anna’s preferences for articles as we observe their interactions. Since this is a simulation, we will have to define Tom and Anna’s preference profile. The reward that we provide to the learner will follow this preference profile. Our hope is to see if the learner can take better and better decisions as we see more samples which in turn means we are maximizing the reward.</p>
 
@@ -217,7 +218,7 @@
             <span class="k">return</span> <span class="n">USER_DISLIKED_ARTICLE</span>
 </code></pre></div></div>
 
-<h3 id="understanding-vw-format">Understanding VW format</h3>
+<h2 id="understanding-vw-format">Understanding VW format</h2>
 
 <p>There are some things we need to do to get our input into a format VW understands. This function handles converting from our context as a dictionary, list of articles and the cost if there is one into the text format VW understands.</p>
 
@@ -251,7 +252,7 @@
 |Action article=food
 </code></pre></div></div>
 
-<h3 id="getting-a-decision">Getting a decision</h3>
+<h2 id="getting-a-decision">Getting a decision</h2>
 
 <p>When we call VW we get a <em>pmf</em>, <a href="https://en.wikipedia.org/wiki/Probability_mass_function">probability mass function</a>, as the output. Since we are incorporating exploration into our strategy, VW will give us a list of probabilities over the set of actions. This means that the probability at a given index in the list corresponds to the likelihood of picking that specific action. In order to arrive at a decision/action, we will have to sample from this list.</p>
 
@@ -285,7 +286,7 @@
     <span class="k">return</span> <span class="n">actions</span><span class="p">[</span><span class="n">chosen_action_index</span><span class="p">],</span> <span class="n">prob</span>
 </code></pre></div></div>
 
-<h3 id="simulation-set-up">Simulation set up</h3>
+<h2 id="simulation-set-up">Simulation set up</h2>
 
 <p>Now that we have done all of the setup work and know how to interface with VW, let’s simulate the world of Tom and Anna. The scenario is they go to a website and are shown an article. Remember that the reward function allows us to define the worlds reaction to what VW recommends.</p>
 
@@ -358,11 +359,11 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
-<h3 id="scenario-1">Scenario 1</h3>
+<h2 id="scenario-1">Scenario 1</h2>
 
 <p>We will use the first reward function <code class="highlighter-rouge">get_cost</code> and assume that Tom and Anna do not change their preferences over time and see what happens to user engagement as we learn. We will also see what happens when there is no learning. We will use the “no learning” case as our baseline to compare to.</p>
 
-<h4 id="with-learning">With learning</h4>
+<h3 id="with-learning">With learning</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Instantiate learner in VW
 </span><span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="o">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb_explore_adf -q UA --quiet --epsilon 0.2"</span><span class="p">)</span>
@@ -375,7 +376,7 @@
 
 <p><img src="cb_simulation_assets/output_22_0.png" alt="png" /></p>
 
-<h5 id="aside-interactions">Aside: interactions</h5>
+<h4 id="aside-interactions">Aside: interactions</h4>
 <p>You’ll notice in the arguments we supply to VW, <strong>we include <code class="highlighter-rouge">-q UA</code></strong>. This is telling VW to create additional features which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. This allows us to learn the interaction between when certain actions are good in certain times of days and for particular users. If we didn’t do that, the learning wouldn’t really work. We can see that in action below.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Instantiate learner in VW but without -q
@@ -389,7 +390,7 @@
 
 <p><img src="cb_simulation_assets/output_24_0.png" alt="png" /></p>
 
-<h4 id="without-learning">Without learning</h4>
+<h3 id="without-learning">Without learning</h3>
 <p>Let’s do the same thing again (but with <code class="highlighter-rouge">-q</code>, but this time show the effect if we don’t learn from what happens. The ctr never improves are we just hover around 0.2.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Instantiate learner in VW
@@ -403,11 +404,11 @@
 
 <p><img src="cb_simulation_assets/output_26_0.png" alt="png" /></p>
 
-<h3 id="scenario-2">Scenario 2</h3>
+<h2 id="scenario-2">Scenario 2</h2>
 
 <p>In the real world people’s preferences change over time. So now in the simulation we are going to incorporate two different cost functions, and swap over to the second one halfway through. Below is a a table of the new reward function we are going to use, <code class="highlighter-rouge">get_cost_1</code>:</p>
 
-<h4 id="tom">Tom</h4>
+<h3 id="tom">Tom</h3>
 
 <table>
   <thead>
@@ -431,7 +432,7 @@
   </tbody>
 </table>
 
-<h4 id="anna">Anna</h4>
+<h3 id="anna">Anna</h3>
 
 <table>
   <thead>
@@ -513,7 +514,7 @@
     <span class="k">return</span> <span class="n">ctr</span>
 </code></pre></div></div>
 
-<h4 id="with-learning-1">With learning</h4>
+<h3 id="with-learning-1">With learning</h3>
 <p>Let us now switch to the second reward function after a few samples (running the first reward function). Recall that this reward function changes the preferences of the web users but it is still working with the same action space as before. We should see the learner pick up these changes and optimize towards the new preferences.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># use first reward function initially and then switch to second reward function
@@ -534,7 +535,7 @@
 
 <p><strong>Note:</strong> The initial spike in CTR depends on the rewards received for the first few examples. When you run on your own, you may see something different initially because our simulator is designed to have randomness.</p>
 
-<h4 id="without-learning-1">Without learning</h4>
+<h3 id="without-learning-1">Without learning</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Do not learn
 # use first reward function initially and then switch to second reward function
@@ -552,10 +553,10 @@
 
 <p><img src="cb_simulation_assets/output_35_0.png" alt="png" /></p>
 
-<h3 id="scenario-3">Scenario 3</h3>
+<h2 id="scenario-3">Scenario 3</h2>
 <p>In this scenario we are going to start rewarding actions that have never seen a reward previously when we change the cost function.</p>
 
-<h4 id="tom-1">Tom</h4>
+<h3 id="tom-1">Tom</h3>
 
 <table>
   <thead>
@@ -579,7 +580,7 @@
   </tbody>
 </table>
 
-<h4 id="anna-1">Anna</h4>
+<h3 id="anna-1">Anna</h3>
 
 <table>
   <thead>
@@ -620,7 +621,7 @@
             <span class="k">return</span> <span class="n">USER_DISLIKED_ARTICLE</span>
 </code></pre></div></div>
 
-<h4 id="with-learning-2">With learning</h4>
+<h3 id="with-learning-2">With learning</h3>
 <p>Let us now switch to the third reward function after a few samples (running the first reward function). Recall that this reward function changes the preferences of the users and is working with a <strong>different</strong> action space than before. We should see the learner pick up these changes and optimize towards the new preferences</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># use first reward function initially and then switch to third reward function
@@ -639,7 +640,7 @@
 
 <p><img src="cb_simulation_assets/output_39_0.png" alt="png" /></p>
 
-<h4 id="without-learning-2">Without Learning</h4>
+<h3 id="without-learning-2">Without Learning</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Do not learn
 # use first reward function initially and then switch to third reward function
@@ -658,11 +659,11 @@
 
 <p><img src="cb_simulation_assets/output_41_0.png" alt="png" /></p>
 
-<h3 id="summary">Summary</h3>
+<h2 id="summary">Summary</h2>
 
 <p>This tutorial aimed at showcasing a real world scenario where contextual bandit algorithms can be used. We were able to take a context and set of actions and learn what actions worked best for a given context. We saw that the learner was able to respond rapidly to changes in the world.  We showed that allowing the learner to interact with the world resulted in higher rewards than the no learning baseline.</p>
 
-<p>This tutorial worked with simplistic features. VW supports high dimensional sparse features, <a href="contextual_bandits.html#cb-algorithms">different exploration algorithms and policy evaluation approaches</a>.</p>
+<p>This tutorial worked with simplistic features. VW supports high dimensional sparse features, <a href="contextual_bandits.html#contextual-bandit-algorithms-and-input-formats">different exploration algorithms and policy evaluation approaches</a>.</p>
 
         </div>
       </div>
