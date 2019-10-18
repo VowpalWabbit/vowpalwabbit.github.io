@@ -2,8 +2,8 @@
 title: Contextual bandits and Vowpal Wabbit
 order: 2
 module_id: contextual_bandits
-description: This tutorial will run you through using VW for a Contextual Bandit problem.
-guide_link_text: Read the Contextual Bandit tutorial
+description: This tutorial runs through the contextual bandit approach to reinforcement learning with Vowpal Wabbit.
+guide_link_text: Read the contextual bandit tutorial
 level: advanced
 layout: tutorial
 tags: contextual&nbsp;bandits
@@ -61,10 +61,10 @@ Contexts and actions are typically represented as feature vectors in contextual 
 
 There are multiple policy evaluation approaches available to optimize a policy. Vowpal Wabbit offers four approaches to specify a contextual bandit approach using `--cb_type`:
 
-- **Inverse Propensity Score <sup>{% cite doi:10.1080/01621459.1952.10483446 %}</sup> :** `--cb_type ips`
-- **Doubly Robust <sup>{% cite DBLP:conf/icml/JiangL16 %} {% cite DBLP:conf/icml/DudikLL11 %}</sup> :** `--cb_type dr`
+- **Inverse Propensity Score <sup>{% cite doi:10.1080/01621459.1952.10483446 %}</sup>:** `--cb_type ips`
+- **Doubly Robust <sup>{% cite DBLP:conf/icml/JiangL16 %} {% cite DBLP:conf/icml/DudikLL11 %}</sup>:** `--cb_type dr`
 - **Direct Method:** `--cb_type dm`
-- **Multi Task Regression/Importance Weighted Regression <sup>{% cite bietti2018a %} {% cite Karampatziakis:2011:OIW:3020548.3020594 %}</sup> :** `--cb_type mtr`
+- **Multi Task Regression/Importance Weighted Regression <sup>{% cite bietti2018a %} {% cite Karampatziakis:2011:OIW:3020548.3020594 %}</sup>:** `--cb_type mtr`
 
 >**Note:** The focal point of contextual bandit learning research is efficient exploration algorithms. For more details, see the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.
 
@@ -72,11 +72,11 @@ There are multiple policy evaluation approaches available to optimize a policy. 
 
 Vowpal Wabbit offers five exploration algorithms:
 
-- **Explore-First** `--first`
+- **Explore-First <sup>{% cite DBLP:journals/corr/OsbandR15 %} {%cite DBLP:journals/corr/EcklesK14 %}<sup>:** `--first`
 - **Epsilon-Greedy** `--epsilon`
 - **Bagging Explorer** `--bag`
-- **Online Cover** `--cover`
-- **Softmax Explorer** `--softmax` (only supported for `--cb_explore_adf`)
+- **Online Cover <sup>{% cite DBLP:journals/corr/AgarwalHKLLS14 %}<sup>:** `--cover`
+- **Softmax Explorer <sup>{% cite DBLP:journals/corr/abs-1811-04383 %}<sup>:** `--softmax` (only supported for `--cb_explore_adf`)
 
 >**Note:** For more details on contextual bandits algorithms and Vowpal Wabbit, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Vowpal Wabbit Github Wiki</a>.
 
