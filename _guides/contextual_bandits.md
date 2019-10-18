@@ -57,7 +57,7 @@ We use the term _policy_ many times in this tutorial. In reinforcement learning,
 
 Contexts and actions are typically represented as feature vectors in contextual bandit algorithms. For example, _APP_ chooses actions by applying a policy **π** that takes a context as input and returns an action. The goal is to find a policy that maximizes the average reward over a sequence of interactions.
 
-### Specifying the CB approach
+### Specifying the contextual bandit approach
 
 There are multiple policy evaluation approaches available to optimize a policy. Vowpal Wabbit offers four approaches to specify a contextual bandit approach using `--cb_type`:
 
