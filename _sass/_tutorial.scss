@@ -15,11 +15,19 @@
   position: relative;
   padding: 5rem 1rem;
 
-  h2 {
+
+  h1 {
+    font-size: $h2;
+    line-height: 1.1;
+    font-weight: 300;
     padding-bottom: 1rem;
   }
 
-  h3 {
+  h2 {
+    font-size: $h3;
+    line-height: 1.1;
+    font-weight: 300;
+
     padding: 1rem 0 0.8rem;
     position: relative;
 
@@ -46,6 +54,12 @@
         border: 0;
       }
     }
+  }
+
+  h3 {
+    font-size: $h4;
+    line-height: 1.25;
+    font-weight: 400;
   }
 
   sup {
