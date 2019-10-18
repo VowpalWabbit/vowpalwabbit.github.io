@@ -71,7 +71,6 @@ $breakpoint-sm: 600px;
 @mixin inline-link {
   a {
     color: $blue-20;
-    display: inline-block;
     padding-bottom: 2px;
     border-bottom: 1px solid $blue-20;
 
