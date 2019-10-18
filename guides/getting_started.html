@@ -14,6 +14,7 @@
   <script src="/assets/nav.js"></script>
 
   <title>Get started with Vowpal Wabbit</title>
+  <meta name="description" content="This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output." >
 </head>
 
 
@@ -150,9 +151,9 @@
           </ol>
         </div>
         <div class="col-lg-9">
-          <h2 id="a-step-by-step-introduction-to-linear-regression">A Step by Step Introduction to Linear Regression</h2>
+          <h1 id="a-step-by-step-introduction-to-linear-regression">A Step by Step Introduction to Linear Regression</h1>
 
-<h3 id="a-first-data-set">A first data-set</h3>
+<h2 id="a-first-data-set">A first data-set</h2>
 
 <p>Now, let’s create a data-set. Suppose we want to predict whether a house will require a new roof in the next 10 years. We can create a training-set file, <code class="highlighter-rouge">house_dataset</code> with the following contents:</p>
 
@@ -194,7 +195,7 @@ best constant = 0.500000
 best constant's loss = 0.250000
 total feature number = 15
 </code></pre></div></div>
-<h3 id="vws-diagnostic-information">VW’s diagnostic information</h3>
+<h2 id="vws-diagnostic-information">VW’s diagnostic information</h2>
 
 <p>There is a burble of diagnostic information which you can turn off with <code class="highlighter-rouge">--quiet</code>. However, it’s worthwhile to first understand it, so let’s work through it bit by bit.</p>
 
@@ -276,14 +277,14 @@ loss     last          counter         weight    label  predict features
 
 <p>You’ll notice that by example 47 (25 passes over 3 examples result in 75 examples), the <code class="highlighter-rouge">since last</code> column has dropped to 0, implying that by looking at the same (3 lines of) data 25 times we have reached a perfect predictor. This is unsurprising with 3 examples having 5 features each. The reason we have to add <code class="highlighter-rouge">--holdout_off</code> is that when running multiple-passes, VW automatically switches to ‘over-fit avoidance’ mode by holding-out 10% of the examples (the period “one in 10” can be changed using <code class="highlighter-rouge">--holdout_period period</code>) and evaluating performance on the held-out data instead of using the online-training progressive loss.</p>
 
-<h3 id="saving-your-model-aka-regressor-into-a-file">Saving your model (a.k.a. regressor) into a file</h3>
+<h2 id="saving-your-model-aka-regressor-into-a-file">Saving your model (a.k.a. regressor) into a file</h2>
 
 <p>By default VW learns the weights of the features and keeps them in an in memory vector. If you want to save the final regressor weights into a file, add <code class="highlighter-rouge">-f filename</code>:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset <span class="nt">-l</span> 10 <span class="nt">-c</span> <span class="nt">--passes</span> 25 <span class="nt">--holdout_off</span> <span class="nt">-f</span> house.model
 </code></pre></div></div>
 
-<h3 id="getting-predictions">Getting predictions</h3>
+<h2 id="getting-predictions">Getting predictions</h2>
 
 <p>We want to make predictions of course, this can be done by supplying the <code class="highlighter-rouge">-p filename</code> option. Stdout can be used as below:</p>
 
@@ -319,7 +320,7 @@ loss     last          counter         weight    label  predict features
 
 <p>Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data, whereas in the 2nd example we first loaded an over-fitted (25 pass) model and used our data-set <code class="highlighter-rouge">house_dataset</code> with <code class="highlighter-rouge">-t</code> (testing only mode). In real prediction settings, one should use a different data-set for testing vs training.</p>
 
-<h3 id="auditing">Auditing</h3>
+<h2 id="auditing">Auditing</h2>
 
 <p>When developing a new ML application, it’s very helpful to debug. VW can help with this using the <code class="highlighter-rouge">--audit</code> option, which outputs extra informations about predictions and features.</p>
 
@@ -352,7 +353,7 @@ loss     last          counter         weight    label  predict features
 
 <p>The advantage of using unique integer-based feature-names is that they are guaranteed not to collide after hashing. The advantage of free-text (non integer) feature names is readability and self-documentation. Since only <code class="highlighter-rouge">:</code>, <code class="highlighter-rouge">|</code>, and <em>spaces</em> are special to the VW parser, you can give features extremely readable names like: <code class="highlighter-rouge">height&gt;2 value_in_range[1..5] color=red</code> and so on. Feature names may even start with a digit, e.g.: <code class="highlighter-rouge">1st-guess:0.5 2nd-guess:3</code> etc.</p>
 
-<h3 id="whats-next">What’s next?</h3>
+<h2 id="whats-next">What’s next?</h2>
 
 <p>The above only scratches the surface of VW. You can learn with other loss functions, with other optimizers, with other representations, with clusters of 1000s of machines, and even do ridiculously fast active learning.</p>
 

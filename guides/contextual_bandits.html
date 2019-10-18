@@ -13,7 +13,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/nav.js"></script>
 
-  <title>Contextual Bandits in VW</title>
+  <title>Contextual bandits and Vowpal Wabbit</title>
+  <meta name="description" content="This tutorial runs through the contextual bandit approach to reinforcement learning with Vowpal Wabbit." >
 </head>
 
 
@@ -150,122 +151,125 @@
           </ol>
         </div>
         <div class="col-lg-9">
-          <h2 id="contextual-bandits-in-vw">Contextual Bandits in VW</h2>
+          <h1 id="contextual-bandits-and-vowpal-wabbit">Contextual bandits and Vowpal Wabbit</h1>
 
-<p>The goal of this tutorial is to have you walk away with an understanding of Contextual Bandits, when CB can be used, how to run CB algorithms in Vowpal Wabbit (VW), and hopefully make you feel empowered and excited to use it on your own. This tutorial focuses on Python but VW is also supported in C++ and C#.</p>
+<p>This tutorial includes an overview of the contextual bandits approach to reinforcement learning and describes how to approach a contextual bandit problem using Vowpal Wabbit. You will learn how to use Vowpal Wabbit in a contextual bandit setting with the Python tutorial—including when and how to work with different contextual bandits approaches, how to format data, and understand the results. No prior knowledge of contextual bandits or Vowpal Wabbit is required.</p>
 
-<h3 id="what-is-a-contextual-bandit">What is a Contextual Bandit?</h3>
+<h2 id="getting-started-with-vowpal-wabbit">Getting started with Vowpal Wabbit</h2>
 
-<p>Consider an application that interacts with its environment, such as a news website with users or a cloud controller with machines. Let’s call this application <em>APP</em>. This application repeatedly goes through the following:</p>
-<ol>
-  <li>Some context x arrives and is observed by <em>APP</em></li>
-  <li><em>APP</em> chooses an action <em>a</em> from a set of actions <em>A</em> i.e. a ∈ A to take (A may depend on x)</li>
-  <li>Some reward r for the chosen a is observed by <em>APP</em></li>
-</ol>
+<p>To install Vowpal Wabbit—and for more information on building from source or using a package manager—see <a href="getting_started.html">Getting started</a> guide.</p>
 
-<p>We want our application <em>APP</em> to take actions such that we get the highest possible reward. In machine learning parlance, we want a <em>model</em> that tells us which action to take.</p>
+<blockquote>
+  <p><strong>Note:</strong> The contextual bandits tutorial uses <a href="https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python">Vowpal Wabbit Python package</a>. Additional binary packages are available for select platforms. See <a href="../index.html#install_vw">Getting started</a> module on the homepage for more information.</p>
+</blockquote>
 
-<p>This scenario is very similar to a traditional <a href="https://en.wikipedia.org/wiki/Multi-armed_bandit" target="_blank">Multi Armed Bandit (MAB)</a>. The term “multi-armed bandit” comes from a hypothetical experiment where a gambler must choose between multiple actions (i.e. slot machines, the “one-armed bandits”), each with an unknown payout. The goal is to maximize the payout by optimally choosing the best actions when odds and payouts are unknown.</p>
+<h2 id="the-contextual-bandit-problem">The contextual bandit problem</h2>
 
-<p>In MAB, the gambler has no information at all to make a decision. However, our application <em>APP</em> differs from MAB because we have some information available to the <em>APP</em> which is the “context”. Contextual Bandits uses additional information i.e. context available to make better decisions while choosing actions. Hence, the name “contextual” bandits.</p>
+<p>In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms  use additional side information (or context) to aid real world decision-making <sup><a class="cite_sup" href="#DBLP:journals/corr/AgarwalBCHLLLMO16">[1]</a> <a class="cite_sup" href="#DBLP:journals/corr/abs-1003-0146">[2]</a></sup>. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited.</p>
 
-<p>In the contextual bandit problem, a learner (the gambler in the hypothetical experiment) repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only.</p>
+<h2 id="working-with-contextual-bandits-in-vowpal-wabbit">Working with contextual bandits in Vowpal Wabbit</h2>
 
-<p>We use the term “policy” many times in this tutorial. For those new to RL, let’s try to understand the distinction between <em>model</em> and <em>policy</em>. In essence “policy” for RL is roughly equivalent to “model”.  The word “model”, as used in machine learning essentially means “learned function”. When someone says “policy”, it is more specific than “model”, because it indicates this is a model that acts in the world.</p>
+<p>To introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this approach to reinforcement learning, this guide uses a hypothetical application called <em>APP</em>.</p>
 
-<p>In Contextual Bandits, the contexts and actions are usually represented as feature vectors. <em>APP</em> chooses actions by applying a policy <em>π</em> that takes a context as input and returns an action. The goal is to find a policy that maximizes average reward over a sequence of interactions.</p>
+<p><em>APP</em> interacts with the context of a user’s behavior (search history, visited pages, or geolocation) in a dynamic environment–such as a news website or a cloud controller. <em>APP</em> differs from MAB because we have some information available to the <em>APP</em>, which is the context.</p>
 
-<h3 id="real-world-examples-of-contextual-bandit-1-2">Real world examples of contextual bandit <sup><a class="cite_sup" href="#DBLP:journals/corr/AgarwalBCHLLLMO16">[1]</a> <a class="cite_sup" href="#DBLP:journals/corr/abs-1003-0146">[2]</a></sup></h3>
-
-<ol>
-  <li>News website
-    <ul>
-      <li>Decision to optimize: which article to display to user</li>
-      <li>Context: user features - browsing history, location, device, time of day</li>
-      <li>Actions: available news articles</li>
-      <li>Reward: user engagement - click or no click</li>
-    </ul>
-  </li>
-  <li>Cloud Controller
-    <ul>
-      <li>Decision to optimize: wait time before reboot of unresponsive machine</li>
-      <li>Context: machine hardware spec - sku, os etc., failure history, location, load</li>
-      <li>Actions: minutes - {1 ,2 , …N}</li>
-      <li>Reward: - total downtime</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="cb-algorithms">CB algorithms</h3>
-
-<p>The focal point of Contextual Bandit learning research is efficient exploration algorithms. For more details, please refer to the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.</p>
-
-<p>VW offers various CB algorithms. For more details, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Github wiki</a>.</p>
-
-<p>Having said that, we have tried to summarize as much as we can in this tutorial with the intention that you learn a quite a bit about CB in general and working with CB algorithms in VW.</p>
-
-<h3 id="vw-cb-functionalities">VW CB functionalities</h3>
-
-<p>In this section we go over different CB functionalities offered by VW, understand how to format data and understand the results.</p>
-
-<h4 id="specifying-cb-approach">Specifying CB approach</h4>
-
-<p>Multiple policy evaluation approaches can be used when optimizing a policy. VW offers 4 approaches that you can specify using <code class="highlighter-rouge">--cb_type</code>:</p>
+<p><em>APP</em> performs the following functions:</p>
 
 <ul>
-  <li>Inverse Propensity Score <sup><a class="cite_sup" href="#doi:10.1080/01621459.1952.10483446">[3]</a></sup> <code class="highlighter-rouge">--cb_type ips</code></li>
-  <li>Doubly Robust <sup><a class="cite_sup" href="#DBLP:conf/icml/JiangL16">[4]</a> <a class="cite_sup" href="#DBLP:conf/icml/DudikLL11">[5]</a></sup> <code class="highlighter-rouge">--cb_type dr</code></li>
-  <li>Direct Method <code class="highlighter-rouge">--cb_type dm</code></li>
-  <li>Multi Task Regression/Importance Weighted Regression <sup><a class="cite_sup" href="#bietti2018a">[6]</a> <a class="cite_sup" href="#Karampatziakis:2011:OIW:3020548.3020594">[7]</a></sup> <code class="highlighter-rouge">--cb_type mtr</code></li>
+  <li>Some context <em>x</em> arrives and is observed by <em>APP</em>.</li>
+  <li><em>APP</em> chooses an action <em>a</em> from a set of actions <em>A, i.e., a ∈A</em> (<em>A</em> may depend on <em>x</em>).</li>
+  <li>Some reward <em>r</em> for the chosen a is observed by <em>APP</em>.</li>
 </ul>
 
-<p>For more details, please refer to the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.</p>
+<p>For example:</p>
 
-<p><strong>CB algorithms</strong> in VW can be classified as:</p>
+<p><em>APP</em> news website:</p>
+<ul>
+  <li><strong>Decision to optimize:</strong> articles to display to user.</li>
+  <li><strong>Context:</strong> user data (browsing history, location, device, time of day)</li>
+  <li><strong>Actions:</strong> available news articles</li>
+  <li><strong>Reward:</strong> user engagement (click or no click)</li>
+</ul>
 
-<ol>
-  <li><code class="highlighter-rouge">--cb</code>: CB module which allows you to optimize predictor based on already collected CB data, CB without exploration</li>
-  <li><code class="highlighter-rouge">--cb_explore</code>: CB learning algorithm for when the maximum number of actions is known ahead of time and semantics of actions stays the same across examples</li>
-  <li><code class="highlighter-rouge">--cb_explore_adf</code>: CB learning algorithm for when the set of actions changes over time or we have rich information for each action</li>
-</ol>
+<p><em>APP</em> cloud controller:</p>
+<ul>
+  <li><strong>Decision to optimize:</strong> the wait time before reboot of unresponsive machine.</li>
+  <li><strong>Context:</strong> the machine hardware specs (SKU, OS, failure history, location, load).</li>
+  <li><strong>Actions:</strong> time in minutes - {1 ,2 , …N}</li>
+  <li><strong>Reward:</strong> - the total downtime</li>
+</ul>
 
-<h4 id="specifying-exploration-algorithms">Specifying exploration algorithms</h4>
+<p>You want  <em>APP</em> to take actions that provide the highest possible reward. In machine learning parlance, we want a <em>model</em> that tells us which action to take.</p>
 
-<p>VW offers 5 exploration algorithms</p>
+<h3 id="policy-vs-model">Policy vs. model</h3>
+
+<p>We use the term <em>policy</em> many times in this tutorial. In reinforcement learning, the policy is roughly equivalent to <em>model</em>. In machine learning, the model means <em>learned function</em>. When someone says policy, it is more specific than model because it indicates this is a model that acts in the world.</p>
+
+<p>Contexts and actions are typically represented as feature vectors in contextual bandit algorithms. For example, <em>APP</em> chooses actions by applying a policy <strong>π</strong> that takes a context as input and returns an action. The goal is to find a policy that maximizes the average reward over a sequence of interactions.</p>
+
+<h2 id="specifying-the-contextual-bandit-approach">Specifying the contextual bandit approach</h2>
+
+<p>There are multiple policy evaluation approaches available to optimize a policy. Vowpal Wabbit offers four approaches to specify a contextual bandit approach using <code class="highlighter-rouge">--cb_type</code>:</p>
 
 <ul>
-  <li>Explore-first <code class="highlighter-rouge">--first</code></li>
-  <li>Epsilon-greedy <code class="highlighter-rouge">--epsilon</code></li>
-  <li>Bagging Explorer <sup><a class="cite_sup" href="#DBLP:journals/corr/OsbandR15">[8]</a> <a class="cite_sup" href="#DBLP:journals/corr/EcklesK14">[9]</a></sup> <code class="highlighter-rouge">--bag</code></li>
-  <li>Online Cover <sup><a class="cite_sup" href="#DBLP:journals/corr/AgarwalHKLLS14">[10]</a></sup> <code class="highlighter-rouge">--cover</code></li>
-  <li>Softmax Explorer <sup><a class="cite_sup" href="#DBLP:journals/corr/abs-1811-04383">[11]</a></sup> <code class="highlighter-rouge">--softmax</code> (only supported for <code class="highlighter-rouge">--cb_explore_adf</code>)</li>
+  <li><strong>Inverse Propensity Score</strong><sup><a class="cite_sup" href="#doi:10.1080/01621459.1952.10483446">[3]</a></sup>: <code class="highlighter-rouge">--cb_type ips</code></li>
+  <li><strong>Doubly Robust</strong><sup><a class="cite_sup" href="#DBLP:conf/icml/JiangL16">[4]</a> <a class="cite_sup" href="#DBLP:conf/icml/DudikLL11">[5]</a></sup>: <code class="highlighter-rouge">--cb_type dr</code></li>
+  <li><strong>Direct Method</strong>: <code class="highlighter-rouge">--cb_type dm</code></li>
+  <li><strong>Multi Task Regression/Importance Weighted Regression</strong><sup><a class="cite_sup" href="#bietti2018a">[6]</a> <a class="cite_sup" href="#Karampatziakis:2011:OIW:3020548.3020594">[7]</a></sup>: <code class="highlighter-rouge">--cb_type mtr</code></li>
 </ul>
 
-<p>For more details, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Github wiki</a>.</p>
+<blockquote>
+  <p><strong>Note:</strong> The focal point of contextual bandit learning research is efficient exploration algorithms. For more details, see the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="_blank">Contextual Bandit bake-off paper</a>.</p>
+</blockquote>
 
-<h3 id="input-format">Input Format</h3>
+<h2 id="specifying-exploration-algorithms">Specifying exploration algorithms</h2>
 
-<p>Let’s recall - A CB problem has four main components:</p>
+<p>Vowpal Wabbit offers five exploration algorithms:</p>
 
 <ul>
-  <li><strong>Context (x)</strong>: the additional information which helps in choosing action</li>
-  <li><strong>Action (a)</strong>: the action chosen from a set of possible actions <em>A</em></li>
-  <li><strong>Probability (p)</strong>: probability of choosing <em>a</em> from <em>A</em></li>
-  <li><strong>Cost/Reward (r)</strong>: reward received for action <em>a</em></li>
+  <li><strong>Explore-First</strong><sup><a class="cite_sup" href="#DBLP:journals/corr/OsbandR15">[8]</a> <a class="cite_sup" href="#DBLP:journals/corr/EcklesK14">[9]</a></sup>: <code class="highlighter-rouge">--first</code></li>
+  <li><strong>Epsilon-Greedy</strong>: <code class="highlighter-rouge">--epsilon</code></li>
+  <li><strong>Bagging Explorer</strong>: <code class="highlighter-rouge">--bag</code></li>
+  <li><strong>Online Cover</strong><sup><a class="cite_sup" href="#DBLP:journals/corr/AgarwalHKLLS14">[10]</a></sup>: <code class="highlighter-rouge">--cover</code></li>
+  <li><strong>Softmax Explorer</strong><sup><a class="cite_sup" href="#DBLP:journals/corr/abs-1811-04383">[11]</a></sup>: <code class="highlighter-rouge">--softmax</code> (only supported for <code class="highlighter-rouge">--cb_explore_adf</code>)</li>
 </ul>
 
-<p>We next look at the input format for different CB types that VW offers</p>
+<blockquote>
+  <p><strong>Note:</strong> For more details on contextual bandits algorithms and Vowpal Wabbit, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="_blank">Vowpal Wabbit Github Wiki</a>.</p>
+</blockquote>
 
-<h4 id="1---cb">1. <code class="highlighter-rouge">--cb</code></h4>
+<h2 id="contextual-bandit-algorithms-and-input-formats">Contextual bandit algorithms and input formats</h2>
 
-<p><code class="highlighter-rouge">--cb &lt;number_of_actions&gt;</code>: e.g. –cb 4 specifies we want to use CB module and our data has a total of 4 actions.</p>
+<p>There are four main components to a contextual bandit problem:</p>
 
-<p>Each example must be a separate line in your data file and must follow the format:</p>
+<ul>
+  <li><strong>Context (x)</strong>: the additional information which helps in choosing action.</li>
+  <li><strong>Action (a)</strong>: the action chosen from a set of possible actions <em>A</em>.</li>
+  <li><strong>Probability (p)</strong>: the probability of choosing <em>a</em> from <em>A</em>.</li>
+  <li><strong>Cost/Reward (r)</strong>: the reward received for action <em>a</em>.</li>
+</ul>
+
+<p>Vowpal Wabbit provides three contextual bandits algorithms:</p>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">--cb</code>:</strong> The contextual bandit module which allows you to optimize predictor based on already collected data, or contextual bandits without exploration.</li>
+  <li><strong><code class="highlighter-rouge">--cb_explore</code>:</strong> The contextual bandit learning algorithm for when the maximum number of actions is known ahead of time and semantics of actions stays the same across examples.</li>
+  <li><strong><code class="highlighter-rouge">--cb_explore_adf</code>:</strong> The contextual bandit learning algorithm for when the set of actions changes over time or you have rich information for each action. Vowpal Wabbit offers different input formats for contextual bandits.</li>
+</ul>
+
+<h3 id="input-format-for---cb">Input format for <code class="highlighter-rouge">--cb</code></h3>
+
+<p><code class="highlighter-rouge">--cb &lt;number_of_actions&gt;</code></p>
+
+<p>The <code class="highlighter-rouge">--cb 4</code> command specifies that we want to use the contextual bandit module and our data has a total of four actions.</p>
+
+<p>Each example is represented as a separate line in your data file and must follow the following format:</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>action:cost:probability | features
 </code></pre></div></div>
-<p>You may notice that the left side of the | is different to the example in the linear regression tutorial. This is because CB has a different label type. The format is the same on the right side of the |, and in this case they are specified by the context <em>x</em>.</p>
 
-<p>Sample data file (train.dat) with five examples:</p>
+<p>Sample data file <strong>train.dat</strong> with five examples:</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1:2:0.4 | a c
 3:0.5:0.2 | b d
 4:1.2:0.5 | a b c
@@ -273,58 +277,71 @@
 3:1.5:0.7 | a d
 </code></pre></div></div>
 
-<p>Usage: <code class="highlighter-rouge">./vw -d train.dat --cb 4</code></p>
+<p>Use the command <code class="highlighter-rouge">./vw -d train.dat --cb 4</code></p>
 
-<p><strong>Note:</strong> The usage mentioned in this section is for using VW command line. However, in the example tutorial below, we also see how to use it in Python.</p>
+<blockquote>
+  <p><strong>Note:</strong> This usage is for the Vowpal Wabbit command line. See below for a Python tutorial.</p>
+</blockquote>
 
-<h4 id="2---cb_explore">2. <code class="highlighter-rouge">--cb_explore</code></h4>
+<h3 id="input-format-for---cb_explore">Input format for <code class="highlighter-rouge">--cb_explore</code></h3>
 
-<p><code class="highlighter-rouge">--cb_explore &lt;number_of_actions&gt;</code>: e.g. <code class="highlighter-rouge">--cb_explore 4</code> specifies our examples explore a total of 4 actions. Since this is exploring through the action space, you also have to specify which algorithm you want to use for exploration.</p>
+<p><code class="highlighter-rouge">--cb_explore &lt;number_of_actions&gt;</code></p>
 
-<p>The example format is same as in the case of <code class="highlighter-rouge">--cb</code></p>
+<p>The command <code class="highlighter-rouge">--cb_explore 4</code> specifies our examples explore a total of four actions.</p>
 
-<p>Usage:</p>
-<ul>
-  <li><code class="highlighter-rouge">./vw -d train.dat --cb_explore 4 --first 2</code>
-    <ul>
-      <li>In this case, on the first two actions, we take each of the 4 actions with probability 1/4.</li>
-    </ul>
-  </li>
-  <li><code class="highlighter-rouge">./vw -d train.dat --cb_explore 4 --epsilon 0.2</code>
-    <ul>
-      <li>In this case, the prediction of the current learned policy is taken with probability 1 - <em>epsilon</em> (i.e. 80% of the time) and with the remaining (i.e. 20%) epsilon probability an action is chosen uniformly at random.</li>
-    </ul>
-  </li>
-  <li><code class="highlighter-rouge">./vw -d train.dat --cb_explore 4 --bag 5</code>
-    <ul>
-      <li>In this case, we use an ensemble approach. We take an argument <em>m</em> for <code class="highlighter-rouge">--bag</code> and train <em>m</em> different policies, i.e. 5 in the above example. The policies differ because they are being trained on different subsets of data, with each example going to a subset of the <em>m</em> policies.</li>
-    </ul>
-  </li>
-  <li><code class="highlighter-rouge">./vw -d train.dat --cb_explore 4 --cover 3</code>
-    <ul>
-      <li>In this case, similar to bagging <em>m</em> different policies are trained but unlike bagging the training of these policies is explicitly optimized to result in a diverse set of predictions, choosing all the actions which are not already learned to be bad in a given context. This is a <em>theoretically optimal</em> exploration algorithm. If you are curious to learn more, you can read more about it in this <a href="http://arxiv.org/abs/1402.0555" target="_blank">paper</a>.</li>
-    </ul>
-  </li>
-</ul>
+<blockquote>
+  <p><strong>Note:</strong> This format explores the action space so you must specify which algorithm you want to use for exploration.</p>
+</blockquote>
 
-<h4 id="3---cb_explore_adf">3. <code class="highlighter-rouge">--cb_explore_adf</code></h4>
+<h4 id="usage">Usage</h4>
 
-<p><code class="highlighter-rouge">--cb_explore_adf</code> e.g. <code class="highlighter-rouge">--cb_explore_adf</code> Since this exploring through the action space, you also have to specify which algorithm you want to use for exploration.</p>
+<p>The following examples use the input format for the <code class="highlighter-rouge">--cb</code> command example above:</p>
 
-<p>The example format for this one is a little bit different from the other two cases because the action set changes over time or we have rich information for each action. Hence, it is best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.</p>
+<p><code class="highlighter-rouge">./vw -d train.dat --cb_explore 4 --first 2</code></p>
 
-<p>Let’s look at it in more detail to understand it better -</p>
+<p>In this case, on the first two actions, you take each of the four actions with probability 1/4.</p>
+
+<p><code class="highlighter-rouge">./vw -d train.dat --cb_explore 4 --epsilon 0.2</code></p>
+
+<p>In this case, the prediction of the current learned policy takes with probability 1 - <em>epsilon</em> 80% of the time, and with the remaining 20% epsilon probability, an action is chosen uniformly at random.</p>
+
+<p><code class="highlighter-rouge">./vw -d train.dat --cb_explore 4 --bag 5</code></p>
+
+<p><code class="highlighter-rouge">./vw -d train.dat --cb_explore 4 --cover 3</code></p>
+
+<p>This algorithm is a theoretically optimal exploration algorithm. Similar to the previous bagging <em>m</em> example, different policies are trained in this case. Unlike bagging, the training of these policies is explicitly optimized to result in a diverse set of predictions—choosing all the actions which are not already learned to be bad in a given context.</p>
+
+<p>For more information and research on this theoretically optimal exploration algorithm see this <a href="http://arxiv.org/abs/1402.0555" target="_blank">paper</a>.</p>
+
+<h3 id="input-format-for---cb_explore_adf">Input format for <code class="highlighter-rouge">--cb_explore_adf</code></h3>
+
+<p><code class="highlighter-rouge">--cb_explore_adf</code></p>
+
+<p>The command <code class="highlighter-rouge">--cb_explore_adf</code> is different from the other two example cases because the action set changes over time (or we have rich information for each action).</p>
+
 <ul>
   <li>Each example now spans multiple lines, with one line per action</li>
-  <li>For each action, we have the label information (action, cost, probability), if known, as before</li>
-  <li>The action field <em>a</em> is ignored now since actions are identified by line numbers, and typically set to 0</li>
-  <li>The semantics of cost and probability are same as before</li>
-  <li>Each example is also allowed to specify the label information on precisely one action</li>
-  <li>A newline signals end of a multiline example</li>
-  <li>Additionally, we can specify contextual features which are shared across all actions in a line at the beginning of an example, which always has a <code class="highlighter-rouge">shared</code> label, as in the second multiline example below. Since the shared line is not associated with any action, it should never contain the label information.</li>
+  <li>For each action, we have the label information (action, cost, probability), if known.</li>
+  <li>The action field <em>a</em> is ignored now since line numbers identify actions and typically set to the 0.</li>
+  <li>The semantics of cost and probability are the same as before.</li>
+  <li>Each example is also allowed to specify the label information on precisely one action.</li>
+  <li>A new line signals end of a multiline example.</li>
 </ul>
 
-<p>Sample data file (train.dat) with two examples:</p>
+<p>It best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.</p>
+
+<blockquote>
+  <p><strong>Note:</strong> This format explores the action space so you must specify which algorithm you want to use for exploration.</p>
+</blockquote>
+
+<h3 id="shared-contextual-features">Shared contextual features</h3>
+
+<p>You can specify contextual features which share all line actions at the beginning of an example, which always has a <code class="highlighter-rouge">shared</code> label, as in the second multiline example below.</p>
+
+<p>Since the shared line is not associated with any action, it should never contain the label information.</p>
+
+<p>Sample data file <strong>train.dat</strong> with two examples:</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| a:1 b:0.5
 0:0.1:0.75 | a:0.5 b:1 c:2
 
@@ -332,13 +349,24 @@ shared | s_1 s_2
 0:1.0:0.5 | a:1 b:1 c:1
 | a:0.5 b:2 c:1
 </code></pre></div></div>
-<p>In the first example above, we have 2 actions, one line for each. The first line represents the first action and it has two action dependent features <em>a</em> and <em>b</em>. The second line represents the second action and it has three action dependent features <em>a</em>, <em>b</em> and <em>c</em>. The second action was the chosen action for the example and it follows the format</p>
+<p>In the first example, we have two actions, one line for each. The first line represents the first action, and it has two action dependent features <em>a</em> and <em>b</em>.</p>
+
+<p><code class="highlighter-rouge">| a:1 b:0.5</code></p>
+
+<p>The second line represents the second action, and it has three action dependent features <em>a</em>, <em>b</em>, and <em>c</em>.</p>
+
+<p><code class="highlighter-rouge">0:0.1:0.75 | a:0.5 b:1 c:2</code></p>
+
+<p>If the second action is the chosen action it follows the following format:</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>action:cost:probability | features
 0:0.1:0.75 |
 </code></pre></div></div>
-<p>Action 0 is ignored, has cost 0.1 and probability of 0.75.</p>
+<p>Action 0 is ignored, has cost 0.1 and a probability of 0.75.</p>
 
-<p>Usage:</p>
+<h4 id="usage-1">Usage</h4>
+
+<p>In the case of the softmax explorer, which uses the policy not only to predict an action but also predict a score indicating the quality of each action. The probability of action <em>a</em> creates distribution proportional to exp(lambda*score(x,a)).</p>
 
 <ul>
   <li><code class="highlighter-rouge">./vw -d train_adf.dat --cb_explore_adf</code></li>
@@ -348,24 +376,26 @@ shared | s_1 s_2
   <li><code class="highlighter-rouge">./vw -d train.dat --cb_explore_adf --softmax --lambda 10</code></li>
 </ul>
 
-<p>In the case of the softmax explorer, which uses the policy to not only predict an action but also predict a score indicating the quality of each action. A distribution is then created with the probability of action a being is proportional to exp(lambda*score(x,a)). Here lambda is a parameter, which leads to uniform exploration for lambda = 0, and stops exploring as lambda approaches infinity. In general, this provides another nice knob for controlled exploration based on the uncertainty in the learned policy.</p>
+<p>Here lambda is a parameter, which leads to uniform exploration for lambda = 0, and stops exploring as lambda approaches infinity. In general, this provides an excellent knob for controlled exploration based on the uncertainty in the learned policy.</p>
 
-<h3 id="lets-create-a-small-data-set">Let’s create a small data-set</h3>
+<h2 id="create-contextual-bandit-data">Create contextual bandit data</h2>
 
-<h4 id="set-up">Set-up</h4>
-<p>Load required packages</p>
+<p>Begin by loading the required Python packages:</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="kn">import</span> <span class="nn">sklearn</span> <span class="k">as</span> <span class="n">sk</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 </code></pre></div></div>
 
-<p>Install <a href="https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python">Vowpal Wabbit Python package</a></p>
+<p>Install <a href="https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python">Vowpal Wabbit Python package</a>:</p>
+
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>boost
 apt-get <span class="nb">install </span>libboost-program-options-dev zlib1g-dev libboost-python-dev <span class="nt">-y</span>
 pip <span class="nb">install </span>vowpalwabbit
 </code></pre></div></div>
 
-<p>Generate sample training data that could originate from previous random trial, e.g. AB test, for the CB to explore. The data here is equivalent to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example" target="_blank">wiki example</a>.</p>
+<p>Now, generate some sample training data that could originate from previous random trial (for example A/B test) for the contextual bandit to explore:</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_data</span> <span class="o">=</span> <span class="p">[{</span><span class="s">'action'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'cost'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'probability'</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s">'feature1'</span><span class="p">:</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">''</span><span class="p">},</span>
               <span class="p">{</span><span class="s">'action'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'cost'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'probability'</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s">'feature1'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">''</span><span class="p">},</span>
               <span class="p">{</span><span class="s">'action'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'cost'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'probability'</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s">'feature1'</span><span class="p">:</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">''</span><span class="p">},</span>
@@ -379,7 +409,12 @@ pip <span class="nb">install </span>vowpalwabbit
 <span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">"index"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Generate some test data that you want the CB to make decisions for, e.g. features describing new users, for the CB to exploit.</p>
+<blockquote>
+  <p><strong>Note:</strong> The data here is equivalent to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example" target="_blank">VW wiki example</a>.</p>
+</blockquote>
+
+<p>Next, create data for the contextual bandit to exploit to make decisions (for example features describing new users):</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test_data</span> <span class="o">=</span> <span class="p">[{</span><span class="s">'feature1'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">''</span><span class="p">},</span>
             <span class="p">{</span><span class="s">'feature1'</span><span class="p">:</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">},</span>
             <span class="p">{</span><span class="s">'feature1'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">''</span><span class="p">},</span>
@@ -392,22 +427,30 @@ pip <span class="nb">install </span>vowpalwabbit
 <span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">"index"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Let’s look at the dataframes</p>
+<p>Your dataframes are:</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
 <span class="n">test_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
-<h4 id="lets-try---cb-in-python">Let’s try <code class="highlighter-rouge">--cb</code> in Python</h4>
+<h2 id="contextual-bandits-python-tutorial">Contextual bandits Python tutorial</h2>
 
-<p>First, create the Python model - this stores the model parameters in the Python <code class="highlighter-rouge">vw</code> object. Here we use arguments for a Contextual Bandit with four possible actions.</p>
+<p>First, create the Python model store the model parameters in the Python <code class="highlighter-rouge">vw</code> object.</p>
+
+<p>Use the following command for a contextual bandit with four possible actions:</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">vowpalwabbit</span> <span class="kn">import</span> <span class="n">pyvw</span>
 
 <span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="o">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb 4"</span><span class="p">)</span>
 </code></pre></div></div>
-<p>Note: You can pass <code class="highlighter-rouge">--quiet</code> if you want vw to stop talking while it’s working.</p>
 
-<p>Next, for each train example we call learn on our vw model.</p>
+<blockquote>
+  <p><strong>Note:</strong> Use <code class="highlighter-rouge">--quiet</code> command to turn off diagnostic information in Vowpal Wabbit.</p>
+</blockquote>
+
+<p>Now, call learn for each trained example on your Vowpal Wabbit model.</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">train_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
   <span class="n">action</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"action"</span><span class="p">]</span>
   <span class="n">cost</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"cost"</span><span class="p">]</span>
@@ -423,7 +466,8 @@ pip <span class="nb">install </span>vowpalwabbit
 </span>  <span class="n">vw</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">learn_example</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Use the model that was just trained on the train set to perform predictions on the test set. We construct the example as before but don’t include the label and pass it into predict instead of learn.</p>
+<p>Use the model that was just trained on the train set to perform predictions on the test set. Construct the example like before but don’t include the label and pass it into <em>predict</em> instead of <em>learn</em>. For example:</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">test_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
   <span class="n">feature1</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="s">"feature1"</span><span class="p">]</span>
   <span class="n">feature2</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="s">"feature2"</span><span class="p">]</span>
@@ -434,9 +478,13 @@ pip <span class="nb">install </span>vowpalwabbit
   <span class="n">choice</span> <span class="o">=</span> <span class="n">vw</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_example</span><span class="p">)</span>
   <span class="k">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">choice</span><span class="p">)</span>
 </code></pre></div></div>
-<p>The CB assigns every instance to action 3 as it should per the cost structure of the train data; you can play with the cost structure to see that the CB updates its predictions accordingly.</p>
 
-<p>The model you just trained can be saved and loaded from a file. The <code class="highlighter-rouge">-i</code> argument means input regressor, telling vw to load a model from that file instead of starting from scratch.</p>
+<blockquote>
+  <p><strong>Note:</strong> The contextual bandit assigns every instance to the third action as it should per the cost structure of the train data. You can save and load the model you train from a file.</p>
+</blockquote>
+
+<p>Finally, experiment with the cost structure to see that the contextual bandit updates its predictions accordingly.</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vw</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">'cb.model'</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">vw</span>
 
@@ -444,14 +492,16 @@ pip <span class="nb">install </span>vowpalwabbit
 <span class="k">print</span><span class="p">(</span><span class="n">vw</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">'| a b'</span><span class="p">))</span>
 </code></pre></div></div>
 
-<h3 id="whats-next">What’s next?</h3>
+<p>The <code class="highlighter-rouge">-i</code> argument means input regressor, telling Vowpal Wabbit to load a model from that file instead of starting from scratch.</p>
+
+<h2 id="more-to-explore">More to explore</h2>
 
 <ul>
-  <li>Explore more content in the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials" target="_blank">tutorials section of the GitHub wiki</a></li>
-  <li>Browse <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples" target="_blank">examples on the GitHub wiki</a></li>
+  <li>Review the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples" target="_blank">example Python notebooks</a>.</li>
+  <li>Explore the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials" target="_blank">tutorials section of the GitHub wiki</a>.</li>
+  <li>Browse <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples" target="_blank">examples on the GitHub wiki</a>.</li>
+  <li>Learn various <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments" target="_blank">VW commands</a>.</li>
 </ul>
-
-<p>We hope you have fun exploring VW!</p>
 
         </div>
       </div>
