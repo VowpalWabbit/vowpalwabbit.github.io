@@ -180,6 +180,20 @@
         color: $gray-50;
         padding: 2rem 0;
       }
+
+      @media screen and (max-width: $breakpoint-lg) {
+        .avatar img {
+          height: 45px;
+          width: 45px;
+        }
+      }
+
+      @media screen and (max-width: $breakpoint-sm) {
+        .avatar img {
+          height: 40px;
+          width: 40px;
+        }
+      }
     }
   }
 
