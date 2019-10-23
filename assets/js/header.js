@@ -44,6 +44,7 @@ const headerModule = (function() {
 
   function bindMobileEvents() {
     $(".mobile_nav_container").on("click", ".hamburger_icon", function (e) {
+      e.stopPropagation();
       openMobileNav();
     });
 
