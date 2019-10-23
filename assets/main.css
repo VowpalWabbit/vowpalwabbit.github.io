@@ -44,10 +44,11 @@ h4 { font-size: 1.5rem; line-height: 1.25; font-weight: 400; }
   .mobile_nav_container { display: block; } }
 @media screen and (min-width: 768px) { .main_nav_container { display: block; }
   .mobile_nav_container { display: none; } }
+.mobile_nav_container .hamburger_icon { width: 3rem; height: 3rem; display: flex; align-items: center; }
 .mobile_nav_container .logo { flex: 1 1 0; }
 .mobile_nav_container .logo a { display: block; text-align: center; }
 
-.mobile_nav { background: white; position: fixed; z-index: 4; top: 0; left: 0; height: 100vh; width: 0; transition: 0.5s; overflow-x: hidden; font-size: 1.2rem; white-space: nowrap; }
+.mobile_nav { background: white; position: fixed; z-index: 4; top: 0; left: 0; height: 100%; width: 0; transition: 0.5s; overflow-x: hidden; font-size: 1.2rem; white-space: nowrap; }
 .mobile_nav button { background: white; text-align: left; border: none; width: 100%; }
 .mobile_nav a, .mobile_nav button { color: #333333; display: block; padding: 1.7rem 1rem; border-bottom: 1px solid #EBEBEB; height: 64px; }
 .mobile_nav a:hover, .mobile_nav a:focus, .mobile_nav a.active, .mobile_nav button:hover, .mobile_nav button:focus, .mobile_nav button.active { background: #EBEBEB; }
