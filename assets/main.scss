@@ -185,6 +185,10 @@
   background: $gray-10;
   padding: 5rem 1rem;
 
+  .chart_icon {
+    max-width: 100%;
+  }
+
   .description {
     padding: 1rem 0 0.8rem;
   }

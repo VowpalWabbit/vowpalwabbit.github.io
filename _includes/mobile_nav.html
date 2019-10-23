@@ -1,0 +1,43 @@
+{% assign current = page.url | downcase | remove: ".html" | split: '/' %}
+{% assign header_class = include.header_class %}
+
+<div class="navbar_container {{header_class}} mobile_nav_container">
+  <div class="container navbar">
+    <div class="hamburger_icon">
+      {% include svg/icons/icon_menu.svg %}
+    </div>
+    <div class="logo">
+      <a href="{{ site.url }}{{ site.baseurl }}/index.html">
+        {% include svg/logo.svg %}
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mobile_nav">
+  <button type="button" class="go_back_button">
+    <
+  </button>
+
+  <a href="{{ 'start.html' | relative_url }}" class='{% if current[1] == "start" %}active{% endif %}'>
+    Get started
+  </a>
+  <a href="{{ 'tutorials.html' | relative_url }}" class='{% if current[1] == "tutorials" %}active{% endif %}'>
+    Tutorials
+  </a>
+  <a href="{{ 'publications.html' | relative_url }}" class='{% if current[1] == "publications" %}active{% endif %}'>
+    Research
+  </a>
+  <div class="external_links">
+    <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki" target="_blank">
+      Wiki
+    </a>
+
+    <a href="https://github.com/VowpalWabbit/vowpal_wabbit" target="_blank" class="github_link">
+      {% include svg/github.svg %}
+      <div>
+        GitHub
+      </div>
+    </a>
+  </div>
+</div>

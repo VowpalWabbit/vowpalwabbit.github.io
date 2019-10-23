@@ -1,9 +1,24 @@
+.external_links .github_link {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 0.5rem;
+
+    path {
+      fill: $gray-10;
+    }
+  }
+
+  &:hover {
+    svg path {
+      fill: white;
+    }
+  }
+}
+
 .navbar_container {
   background: rgba(42, 59, 147, 0.95);
-  font-size: 1.125rem;
-  line-height: 1.33;
-  top: -240px;
-  transition: top 0.5s ease;
   font-size: 1.125rem;
   line-height: 1.33;
   top: -240px;
@@ -13,62 +28,9 @@
     height: 4rem;
   }
 
-  a {
-    display: inline-block;
-    color: $gray-10;
-    padding-bottom: 4px;
-
-    &:hover {
-      text-decoration: none;
-      color: white;
-    }
-
-    &.active {
-      color: white;
-      border-bottom: 1px solid;
-      pointer-events: none;
-    }
-  }
-
   .logo {
     svg path{
       fill: white;
-    }
-  }
-
-  .nav {
-    display: flex;
-    align-items: center;
-
-    a {
-      margin: 0 1rem;
-    }
-  }
-
-  .external_links {
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    margin-left: 1rem;
-    padding-left: 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .github_link {
-    display: flex;
-    align-items: center;
-
-    svg {
-      margin-right: 0.5rem;
-
-      path {
-        fill: $gray-10;
-      }
-    }
-
-    &:hover {
-      svg path {
-        fill: white;
-      }
     }
   }
 
@@ -109,5 +71,136 @@
         }
       }
     }
+  }
+}
+
+.main_nav_container {
+  a {
+    display: inline-block;
+    color: $gray-10;
+    padding-bottom: 4px;
+
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+
+    &.active {
+      color: white;
+      border-bottom: 1px solid;
+      pointer-events: none;
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin: 0 1rem;
+    }
+  }
+
+  .external_links {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    margin-left: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .main_nav_container {
+    display: none;
+  }
+
+  .mobile_nav_container {
+    display: block;
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .main_nav_container {
+    display: block;
+  }
+
+  .mobile_nav_container {
+    display: none;
+  }
+}
+
+.mobile_nav_container {
+  .logo {
+    flex: 1 1 0;
+
+    a {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+.mobile_nav {
+  background: white;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0;
+  transition: 0.5s;
+  overflow-x: hidden;
+  font-size: 1.2rem;
+  white-space: nowrap;
+
+  button {
+    background: white;
+    text-align: left;
+    border: none;
+    width: 100%;
+  }
+
+  a, button {
+    color: $primary-text;
+    display: block;
+    padding: 1.7rem 1rem;
+    border-bottom: 1px solid $gray-10;
+    height: 64px;
+
+    &:hover, &:focus, &.active {
+      background: $gray-10;
+    }
+  }
+
+  .external_links {
+    background-color: $gray-10;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+
+    a {
+      border-bottom: 1px solid $gray-20;
+
+      &:last-child {
+        border: 0;
+      }
+
+      &:hover, &:focus {
+        background: white;
+      }
+    }
+
+    .github_link {
+      svg {
+        path {
+          fill: $primary-text;
+        }
+      }
+    }
+  }
+
+  &.open {
+    width: 320px;
   }
 }

@@ -1,13 +1,12 @@
 const citationModule = (function() {
   'use strict';
   let DOM = {};
-  const breakpoint_lg = 1024;
 
   function init() {
     cacheDom();
     updateSupFormat();
 
-    if ($(window).width() <= breakpoint_lg) {
+    if ($(window).width() <= BREAKPOINT_LG) {
       bindMobileEvents();
     } else {
       bindDesktopEvents();
@@ -25,20 +24,19 @@ const citationModule = (function() {
   }
 
   function cacheDom() {
-    DOM.$html = $('html');
     DOM.$sup = $('sup');
   }
 
   function bindDesktopEvents() {
     DOM.$sup.on('mouseenter', handleSupMouseEnter);
     DOM.$sup.on('mouseleave', handleSupMouseLeave);
-    DOM.$sup.on('click', 'a', handleSupDesktopOnClick);
   }
 
   function bindMobileEvents() {
     DOM.$sup.on('click', handleSupMobileOnClick);
 
     $('body').on("click", ".overlay, .citation_tooltip .close_button", () => {
+      removeTooltip();
       disableOverlay();
     });
   }
@@ -81,10 +79,6 @@ const citationModule = (function() {
     }, 300);
   }
 
-  function handleSupDesktopOnClick() {
-    const link = '#' + $(this).attr('id');
-  }
-
   function handleSupMobileOnClick(e) {
     e.preventDefault();
 
@@ -117,15 +111,8 @@ const citationModule = (function() {
     new Popper($sup, $tooltip, popper_config);
   }
 
-  function enableOverlay() {
-    DOM.$html.addClass('overlay_on');
-    $('.overlay').show();
-  }
-
-  function disableOverlay() {
+  function removeTooltip() {
     $(".citation_tooltip").remove();
-    $('.overlay').hide();
-    DOM.$html.removeClass('overlay_on');
   }
 
   function addTooltip($sup) {

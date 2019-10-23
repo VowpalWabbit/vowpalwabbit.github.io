@@ -8,13 +8,14 @@
   }
 
   .community {
-    margin: 0.5rem -5px;
+    margin: 0.5rem auto;
+    max-width: 23.8rem;
     background-color: white;
     color: $primary-text;
 
     .card_header {
       padding: 0 1.5rem;
-      height: 200px;
+      height: 12.5rem;
       background-color: $blue-5;
       box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
 
@@ -46,7 +47,7 @@
       .community_description {
         font-size: 2.25rem;
         font-weight: 300;
-        letter-spacing: -0.5px;
+        letter-spacing: -0.6px;
         line-height: 1.16;
       }
     }
@@ -178,6 +179,20 @@
       .note {
         color: $gray-50;
         padding: 2rem 0;
+      }
+
+      @media screen and (max-width: $breakpoint-lg) {
+        .avatar img {
+          height: 45px;
+          width: 45px;
+        }
+      }
+
+      @media screen and (max-width: $breakpoint-sm) {
+        .avatar img {
+          height: 40px;
+          width: 40px;
+        }
       }
     }
   }
