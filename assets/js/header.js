@@ -35,7 +35,6 @@ const headerModule = (function() {
 
   function onResize(e) {
     const width = e.target.outerWidth;
-    console.log(width)
     if (width <= BREAKPOINT_MD) {
       bindMobileEvents();
     } else {
