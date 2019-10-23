@@ -16,19 +16,14 @@ h3 { font-size: 2.25rem; line-height: 1.1; font-weight: 300; }
 
 h4 { font-size: 1.5rem; line-height: 1.25; font-weight: 400; }
 
-.navbar_container { background: rgba(42, 59, 147, 0.95); font-size: 1.125rem; line-height: 1.33; top: -240px; transition: top 0.5s ease; font-size: 1.125rem; line-height: 1.33; top: -240px; transition: top 0.5s ease; }
+.external_links .github_link { display: flex; align-items: center; }
+.external_links .github_link svg { margin-right: 0.5rem; }
+.external_links .github_link svg path { fill: #EBEBEB; }
+.external_links .github_link:hover svg path { fill: white; }
+
+.navbar_container { background: rgba(42, 59, 147, 0.95); font-size: 1.125rem; line-height: 1.33; top: -240px; transition: top 0.5s ease; }
 .navbar_container .navbar { height: 4rem; }
-.navbar_container a { display: inline-block; color: #EBEBEB; padding-bottom: 4px; }
-.navbar_container a:hover { text-decoration: none; color: white; }
-.navbar_container a.active { color: white; border-bottom: 1px solid; pointer-events: none; }
 .navbar_container .logo svg path { fill: white; }
-.navbar_container .nav { display: flex; align-items: center; }
-.navbar_container .nav a { margin: 0 1rem; }
-.navbar_container .external_links { border-left: 1px solid rgba(255, 255, 255, 0.3); margin-left: 1rem; padding-left: 1rem; display: flex; align-items: center; }
-.navbar_container .github_link { display: flex; align-items: center; }
-.navbar_container .github_link svg { margin-right: 0.5rem; }
-.navbar_container .github_link svg path { fill: #EBEBEB; }
-.navbar_container .github_link:hover svg path { fill: white; }
 .navbar_container.sticky { position: sticky; top: 0; z-index: 2; }
 .navbar_container.light { background: white; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1); }
 .navbar_container.light a { color: #333333; }
@@ -37,6 +32,31 @@ h4 { font-size: 1.5rem; line-height: 1.25; font-weight: 400; }
 .navbar_container.light #logo_vw_color path { fill: #2A3B93; }
 .navbar_container.light .external_links { border-left: 1px solid rgba(51, 51, 51, 0.3); }
 .navbar_container.light .github_link:hover svg path { fill: #2A3B93; }
+
+.main_nav_container a { display: inline-block; color: #EBEBEB; padding-bottom: 4px; }
+.main_nav_container a:hover { text-decoration: none; color: white; }
+.main_nav_container a.active { color: white; border-bottom: 1px solid; pointer-events: none; }
+.main_nav_container .nav { display: flex; align-items: center; }
+.main_nav_container .nav a { margin: 0 1rem; }
+.main_nav_container .external_links { border-left: 1px solid rgba(255, 255, 255, 0.3); margin-left: 1rem; padding-left: 1rem; display: flex; align-items: center; }
+
+@media screen and (max-width: 768px) { .main_nav_container { display: none; }
+  .mobile_nav_container { display: block; } }
+@media screen and (min-width: 768px) { .main_nav_container { display: block; }
+  .mobile_nav_container { display: none; } }
+.mobile_nav_container .logo { flex: 1 1 0; }
+.mobile_nav_container .logo a { display: block; text-align: center; }
+
+.mobile_nav { background: white; position: fixed; z-index: 4; top: 0; left: 0; height: 100vh; width: 0; transition: 0.5s; overflow-x: hidden; font-size: 1.2rem; white-space: nowrap; }
+.mobile_nav button { background: white; text-align: left; border: none; width: 100%; }
+.mobile_nav a, .mobile_nav button { color: #333333; display: block; padding: 1.7rem 1rem; border-bottom: 1px solid #EBEBEB; height: 64px; }
+.mobile_nav a:hover, .mobile_nav a:focus, .mobile_nav a.active, .mobile_nav button:hover, .mobile_nav button:focus, .mobile_nav button.active { background: #EBEBEB; }
+.mobile_nav .external_links { background-color: #EBEBEB; bottom: 0; position: absolute; width: 100%; }
+.mobile_nav .external_links a { border-bottom: 1px solid #D0D0D0; }
+.mobile_nav .external_links a:last-child { border: 0; }
+.mobile_nav .external_links a:hover, .mobile_nav .external_links a:focus { background: white; }
+.mobile_nav .external_links .github_link svg path { fill: #333333; }
+.mobile_nav.open { width: 320px; }
 
 .footer_container { background: #EBEBEB; padding: 1rem 0; height: 3.5rem; font-size: 1.125rem; line-height: 1.33; }
 
@@ -103,6 +123,7 @@ sup .cite_sup:last-child:after { content: ''; }
 .bibliography_container ol.bibliography li > span { padding: 1rem; display: block; }
 .bibliography_container ol.bibliography li > span:target { background-color: #F2F4FF; }
 
+ol.bibliography { word-break: break-word; }
 ol.bibliography .details { margin-left: 1rem; }
 ol.bibliography .details:before { display: inline-block; content: ''; background-image: url("../assets/images/icons/icon_export_small.svg"); background-size: 16px 16px; height: 16px; width: 16px; margin-right: 0.5rem; }
 ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
@@ -126,13 +147,13 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
   .publications_container .bibliography li { display: block; } }
 .community_container { background: #2A3B93; color: white; padding: 5rem 1rem; }
 .community_container .description { padding: 2rem 0 4rem; }
-.community_container .community { margin: 0.5rem -5px; background-color: white; color: #333333; }
-.community_container .community .card_header { padding: 0 1.5rem; height: 200px; background-color: #F2F4FF; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1); }
+.community_container .community { margin: 0.5rem auto; max-width: 23.8rem; background-color: white; color: #333333; }
+.community_container .community .card_header { padding: 0 1.5rem; height: 12.5rem; background-color: #F2F4FF; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1); }
 .community_container .community .card_header .community_title { display: flex; align-items: center; padding: 1.5rem 0; }
 .community_container .community .card_header .community_title .icon { padding-right: 0.5rem; }
 .community_container .community .card_header .community_title .icon svg path { fill: #666666; }
 .community_container .community .card_header .community_title h3 { font-size: 1.125rem; font-weight: 600; line-height: 1.33; margin: 0; padding: 0; text-transform: uppercase; }
-.community_container .community .card_header .community_description { font-size: 2.25rem; font-weight: 300; letter-spacing: -0.5px; line-height: 1.16; }
+.community_container .community .card_header .community_description { font-size: 2.25rem; font-weight: 300; letter-spacing: -0.6px; line-height: 1.16; }
 .community_container .card_content { padding: 1.5rem 1.5rem 0; height: 15rem; }
 .community_container .loader_wrapper { height: 12rem; background-color: white; padding: 1.2rem; }
 @keyframes placeHolderShimmer { 0% { background-position: -468px 0; }
@@ -155,6 +176,8 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .community_container .gitter .card_content .avatars { display: flex; justify-content: space-between; }
 .community_container .gitter .card_content .avatar img { height: 51px; width: 51px; border-radius: 5px; box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15); }
 .community_container .gitter .card_content .note { color: #666666; padding: 2rem 0; }
+@media screen and (max-width: 1024px) { .community_container .gitter .card_content .avatar img { height: 45px; width: 45px; } }
+@media screen and (max-width: 600px) { .community_container .gitter .card_content .avatar img { height: 40px; width: 40px; } }
 .community_container .card_footer { padding-bottom: 1rem; }
 .community_container .card_footer a { background: white; border: 3px solid white; border-radius: 28px; color: #2A3B93; display: inline-block; font-weight: 600; margin: 0.5rem 0; padding: 0.8rem 0; text-align: center; width: 100%; }
 .community_container .card_footer a:hover { background: #F2F4FF; text-decoration: none; transition: 0.3s; border: 3px solid #F2F4FF; }
@@ -162,7 +185,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 
 .tabs_container { padding-top: 1rem; }
 .tabs_container .tab_content { padding: 2rem; background: white; }
-.tabs_container .tab_content img { display: block; margin: 0 auto; }
+.tabs_container .tab_content img { display: block; margin: 0 auto; max-width: 100%; }
 .tabs_container .hidden { display: none; }
 .tabs_container .link a { color: #2A3B93; font-weight: 600; display: inline-block; padding-bottom: 4px; border-bottom: 2px solid transparent; }
 .tabs_container .link a:hover { text-decoration: none; border-bottom: 2px solid #2A3B93; }
@@ -220,9 +243,9 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .start .start_container .tutorials_container .intro { padding: 1rem 0 2rem; }
 .start .start_container .tutorials_container .intro a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .start .start_container .tutorials_container .intro a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
-.start .start_container .tutorials_container .tutorial_card { background-color: white; padding: 0 1.5rem; }
+.start .start_container .tutorials_container .tutorial_card { background-color: white; padding: 0 1.5rem; margin-bottom: 2rem; }
 .start .start_container .tutorials_container .tutorial_card .header { padding: 1.5rem 0; text-transform: uppercase; font-weight: 600; }
-.start .start_container .tutorials_container .tutorial_card .title { padding-bottom: 1.5rem; }
+.start .start_container .tutorials_container .tutorial_card .title { padding-bottom: 1.5rem; height: 10rem; }
 .start .start_container .tutorials_container .tutorial_card .title h3 { font-weight: 300; font-size: 2.25rem; line-height: 1.2; }
 .start .start_container .tutorials_container .tutorial_card .description { height: 10rem; }
 .start .start_container .tutorials_container .tutorial_card .footer { padding-bottom: 1rem; }
@@ -249,7 +272,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tutorials .tutorials_container .tutorial_card .tags .tag:first-child { margin-left: 0; }
 .tutorials .tutorials_container .help_section a { color: #2A3B93; font-weight: 600; display: inline-block; padding-bottom: 4px; border-bottom: 2px solid transparent; }
 .tutorials .tutorials_container .help_section a:hover { text-decoration: none; border-bottom: 2px solid #2A3B93; }
-.tutorials .tutorials_container .help_section a { margin-bottom: 0.8rem; }
+.tutorials .tutorials_container .help_section a { margin-bottom: 0.8rem; display: block; }
 .tutorials .tutorials_container .help_section h3 { font-size: 1.125rem; font-weight: 600; line-height: 1.33; padding-bottom: 1rem; }
 .tutorials .tutorials_container .help_section .description { padding-bottom: 1rem; }
 
@@ -398,6 +421,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .research_container { background: #EBEBEB; padding: 5rem 1rem; }
 .research_container a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
 .research_container a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
+.research_container .chart_icon { max-width: 100%; }
 .research_container .description { padding: 1rem 0 0.8rem; }
 
 @media screen and (max-width: 768px) { .research_container .chart_icon { padding-bottom: 3rem; } }
