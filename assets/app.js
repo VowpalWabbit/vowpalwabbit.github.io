@@ -1,3 +1,6 @@
+const BREAKPOINT_LG = 1024;
+const BREAKPOINT_MD = 768;
+
 $(document).ready(function() {
   $(".language-sh pre.highlight").append(
     '<button class="copy">' +
@@ -42,8 +45,16 @@ function download(bib_key, text) {
 
   element.style.display = 'none';
   document.body.appendChild(element);
-
   element.click();
-
   document.body.removeChild(element);
+}
+
+function enableOverlay() {
+  $('html').addClass('overlay_on');
+  $('.overlay').show();
+}
+
+function disableOverlay() {
+  $('.overlay').hide();
+  $('html').removeClass('overlay_on');
 }
