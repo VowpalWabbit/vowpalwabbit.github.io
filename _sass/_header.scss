@@ -131,6 +131,13 @@
 }
 
 .mobile_nav_container {
+  .hamburger_icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+
   .logo {
     flex: 1 1 0;
 
@@ -147,7 +154,7 @@
   z-index: 4;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 0;
   transition: 0.5s;
   overflow-x: hidden;
