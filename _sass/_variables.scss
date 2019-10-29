@@ -31,6 +31,7 @@ $breakpoint-xl: 1440px;
 $breakpoint-lg: 1024px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 600px;
+$breakpoint-xs: 320px;
 
 @mixin primary-link {
   a {
@@ -182,7 +183,7 @@ $breakpoint-sm: 600px;
   background: white;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
-  height: 26.25rem;
+  min-height: 26.25rem;
   position: relative;
 
   .description {
@@ -210,6 +211,13 @@ $breakpoint-sm: 600px;
         background: $blue-10;
         border: 3px solid $blue-10;
       }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-xs) {
+    .footer {
+      position: relative;
+      bottom: 0;
     }
   }
 }
