@@ -9,37 +9,7 @@
   }
 
   .tutorial_card {
-    background: white;
-    margin-bottom: 2rem;
-    padding: 1.5rem 2rem;
-    height: 420px;
-    position: relative;
-
-    .description {
-      padding: 1rem 0 0.8rem;
-    }
-
-    .footer {
-      @include primary-link;
-      padding: 1rem 1rem 0;
-      position: absolute;
-      bottom: 1.5rem;
-
-      a {
-        background: $blue-20;
-        border: 3px solid $blue-20;
-        box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
-        color: white;
-        display: block;
-        width: 15rem;
-        margin: 0 auto;
-
-        &:hover {
-          background: $blue-10;
-          border: 3px solid $blue-10;
-        }
-      }
-    }
+    @include tutorial-card;
 
     .tags {
       font-size: 15px;
