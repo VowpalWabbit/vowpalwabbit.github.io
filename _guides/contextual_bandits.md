@@ -4,8 +4,8 @@ order: 2
 module_id: contextual_bandits
 description: This tutorial runs through the contextual bandit approach to reinforcement learning with Vowpal Wabbit.
 guide_link_text: Read the contextual bandit tutorial
-level: advanced
 layout: tutorial
+level: advanced
 tags: contextual&nbsp;bandits
 ---
 
@@ -15,17 +15,17 @@ This tutorial includes an overview of the contextual bandits approach to reinfor
 
 ## Getting started with Vowpal Wabbit
 
-To install Vowpal Wabbit—and for more information on building from source or using a package manager—see [Getting started](getting_started.html) guide. 
+To install Vowpal Wabbit—and for more information on building from source or using a package manager—see [Getting started](getting_started.html) guide.
 
 >**Note:** The contextual bandits tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms. See [Getting started](../index.html#install_vw) module on the homepage for more information.
 
 ## The contextual bandit problem
 
-In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms  use additional side information (or context) to aid real world decision-making <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup>. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited. 
+In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms  use additional side information (or context) to aid real world decision-making <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup>. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited.
 
 ## Working with contextual bandits in Vowpal Wabbit
 
-To introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this approach to reinforcement learning, this guide uses a hypothetical application called _APP_. 
+To introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this approach to reinforcement learning, this guide uses a hypothetical application called _APP_.
 
 _APP_ interacts with the context of a user's behavior (search history, visited pages, or geolocation) in a dynamic environment–such as a news website or a cloud controller. _APP_ differs from MAB because we have some information available to the _APP_, which is the context.
 
@@ -49,7 +49,7 @@ _APP_ news website:
   - **Actions:** time in minutes - {1 ,2 , ...N}
   - **Reward:** - the total downtime
 
-You want  _APP_ to take actions that provide the highest possible reward. In machine learning parlance, we want a _model_ that tells us which action to take. 
+You want  _APP_ to take actions that provide the highest possible reward. In machine learning parlance, we want a _model_ that tells us which action to take.
 
 ### Policy vs. model
 
@@ -145,7 +145,7 @@ In this case, the prediction of the current learned policy takes with probabilit
 
 `./vw -d train.dat --cb_explore 4 --cover 3`
 
-This algorithm is a theoretically optimal exploration algorithm. Similar to the previous bagging _m_ example, different policies are trained in this case. Unlike bagging, the training of these policies is explicitly optimized to result in a diverse set of predictions—choosing all the actions which are not already learned to be bad in a given context. 
+This algorithm is a theoretically optimal exploration algorithm. Similar to the previous bagging _m_ example, different policies are trained in this case. Unlike bagging, the training of these policies is explicitly optimized to result in a diverse set of predictions—choosing all the actions which are not already learned to be bad in a given context.
 
 For more information and research on this theoretically optimal exploration algorithm see this <a href="http://arxiv.org/abs/1402.0555" target="_blank">paper</a>.
 
@@ -153,7 +153,7 @@ For more information and research on this theoretically optimal exploration algo
 
 `--cb_explore_adf`
 
-The command `--cb_explore_adf` is different from the other two example cases because the action set changes over time (or we have rich information for each action). 
+The command `--cb_explore_adf` is different from the other two example cases because the action set changes over time (or we have rich information for each action).
 
 - Each example now spans multiple lines, with one line per action
 - For each action, we have the label information (action, cost, probability), if known.
@@ -182,11 +182,11 @@ shared | s_1 s_2
 0:1.0:0.5 | a:1 b:1 c:1
 | a:0.5 b:2 c:1
 ```
-In the first example, we have two actions, one line for each. The first line represents the first action, and it has two action dependent features _a_ and _b_. 
+In the first example, we have two actions, one line for each. The first line represents the first action, and it has two action dependent features _a_ and _b_.
 
 `| a:1 b:0.5`
 
-The second line represents the second action, and it has three action dependent features _a_, _b_, and _c_. 
+The second line represents the second action, and it has three action dependent features _a_, _b_, and _c_.
 
 `0:0.1:0.75 | a:0.5 b:1 c:2`
 
