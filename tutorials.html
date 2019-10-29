@@ -26,52 +26,39 @@ title: Tutorials
   <div class="tutorials_list">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          {% for guide in guides %}
-            <div class="row">
-              <div class="col-12">
-                <div class="tutorial_card">
-                  <div class="header">
-                    <div class="label">
-                      LEVEL
-                    </div>
-                    <div class="level">
-                      {{guide.level}}
-                    </div>
-                  </div>
-                  <h3>
-                    {{guide.title}}
-                  </h3>
-                  <div class="tags">
-                    <span>
-                      {% for tag in guide.tags %}
-                        <span class="tag">
-                          {{tag}}
-                        </span>
-                      {% endfor %}
-                    </span>
-                  </div>
-                  <div class="description col-lg-8">
-                    {{guide.description}}
-                  </div>
+        {% for guide in guides %}
+          <div class="col-sm col-lg-4">
+            <div class="tutorial_card">
+              <h4>
+                {{guide.title}}
+              </h4>
+              <div class="tags">
+                <span class="tag">
+                  {{guide.level}}
+                </span>
+                {% for tag in guide.tags %}
+                  <span class="tag">
+                    {{tag}}
+                  </span>
+                {% endfor %}
+              </div>
+              <div class="description">
+                {{guide.description}}
+              </div>
 
-                  {% assign guide_link = guide.link %}
-                  {% unless guide_link %}
-                    {% assign guide_link = guide.url | relative_url %}
-                  {% endunless %}
+              {% assign guide_link = guide.link %}
+              {% unless guide_link %}
+                {% assign guide_link = guide.url | relative_url %}
+              {% endunless %}
 
-                  <div class="footer row justify-content-end">
-                    <div class="col-lg-4">
-                      <a target="_blank" href="{{ guide_link }}">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                </div>
+              <div class="footer">
+                <a target="_blank" href="{{ guide_link }}">
+                  Start
+                </a>
               </div>
             </div>
-          {% endfor %}
-        </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>

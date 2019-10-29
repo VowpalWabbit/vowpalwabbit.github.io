@@ -11,29 +11,19 @@
   .tutorial_card {
     background: white;
     margin-bottom: 2rem;
-    padding: 0 2rem;
-
-    .header {
-      display: flex;
-      padding: 1.5rem 0;
-
-      .label {
-        font-weight: 600;
-        padding-right: 0.8rem;
-      }
-
-      .level {
-        text-transform: capitalize;
-      }
-    }
+    padding: 1.5rem 2rem;
+    height: 420px;
+    position: relative;
 
     .description {
-      padding: 1.5rem 0 0.8rem;
+      padding: 1rem 0 0.8rem;
     }
 
     .footer {
       @include primary-link;
-      padding-bottom: 1rem;
+      padding: 1rem 1rem 0;
+      position: absolute;
+      bottom: 1.5rem;
 
       a {
         background: $blue-20;
@@ -42,6 +32,7 @@
         color: white;
         display: block;
         width: 15rem;
+        margin: 0 auto;
 
         &:hover {
           background: $blue-10;
@@ -56,14 +47,10 @@
 
       .tag {
         background: $blue-5;
-        padding: 0.3rem 0.7rem;
-        margin: 0.25rem;
+        padding: 0.3rem 0.6rem;
+        margin: 0.2rem 0.2rem 0.2rem 0;
         display: inline-block;
         text-transform: capitalize;
-
-        &:first-child {
-          margin-left: 0;
-        }
       }
     }
   }
