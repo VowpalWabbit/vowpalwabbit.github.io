@@ -1,6 +1,6 @@
 ---
 title: Getting started with the command line
-order: 2
+order: 5
 module_id: cmd_getting_started
 description: This tutorial runs you through the absolute basics for the command line
 guide_link_text: Read the command line getting started
