@@ -26,7 +26,7 @@ title: Tutorials
   <div class="tutorials_list">
     <div class="container">
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-12">
           {% for guide in guides %}
             <div class="row">
               <div class="col-12">
@@ -72,22 +72,30 @@ title: Tutorials
             </div>
           {% endfor %}
         </div>
-        <div class="col-lg-3 help_section">
-          <h3>
-            Need help? Reach out to the community.
-          </h3>
-          <p class="description">
-            See the latest code, ask QA, or chat with a team of experts and community to get answers to your questions.
-          </p>
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="links">
-            {% for community in communities %}
-              <a href="{{community.link}}" target="_blank">
-                {{community.link_text}}
-              </a>
-            {% endfor %}
-          </div>
-        </div>
+<div class="col-12 content help_section_container text-center">
+  <div class="container">
+    <h2>
+      Need help?
+    </h2>
+    <div class="row justify-content-center">
+      <p class="col-6 description">
+        See the latest code, ask QA, or chat with a team of experts and community to get answers to your questions.
+      </p>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-6 col-lg-5 links">
+        {% for community in communities %}
+          <a href="{{community.link}}" target="_blank">
+            {% include {{community.logo}} %}
+            {{ community.title }}
+          </a>
+        {% endfor %}
       </div>
     </div>
   </div>

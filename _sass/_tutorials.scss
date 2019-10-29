@@ -67,24 +67,39 @@
       }
     }
   }
+}
 
-  .help_section {
-    @include secondary-link;
+.tutorials .help_section_container {
+  padding: 6rem 1rem;
+
+  h2 {
+    padding-bottom: 1rem;
+  }
+
+  .description {
+    padding-bottom: 1rem;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     a {
-      margin-bottom: 0.8rem;
-      display: block;
-    }
+      svg path {
+        fill: $gray-90;
+      }
 
-    h3 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      line-height: 1.33;
-      padding-bottom: 1rem;
-    }
+      color: $gray-90;
+      text-decoration: none;
 
-    .description {
-      padding-bottom: 1rem;
+      &:hover {
+        color: $blue-20;
+
+        svg path {
+          fill: $blue-20;
+        }
+      }
     }
   }
 }
