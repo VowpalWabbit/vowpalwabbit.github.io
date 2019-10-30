@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="17px" height="24px" viewBox="0 0 17 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
     <title>logo_gitter</title>
     <desc>Created with Sketch.</desc>
     <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Home" transform="translate(-966.000000, -2986.000000)" fill="#666666">
-            <g id="community" transform="translate(129.000000, 2734.000000)">
-                <g id="Gitter" transform="translate(801.000000, 225.000000)">
-                    <g id="logo_gitter" transform="translate(36.000000, 27.000000)">
-                        <g id="Rectangle">
-                            <rect x="0" y="0" width="2" height="14"></rect>
-                            <rect x="15" y="5" width="2" height="10"></rect>
-                            <rect x="5" y="5" width="2" height="19"></rect>
-                            <rect x="10" y="5" width="2" height="19"></rect>
-                        </g>
+        <g id="Tutorial_landing" transform="translate(-850.000000, -1524.000000)" fill="#666666">
+            <g id="help" transform="translate(0.000000, 1302.000000)">
+                <g id="logo_gitter" transform="translate(850.000000, 222.000000)">
+                    <g id="Rectangle">
+                        <rect fill-rule="nonzero" x="0" y="0" width="2" height="14"></rect>
+                        <rect fill-rule="nonzero" x="15" y="5" width="2" height="10"></rect>
+                        <rect fill-rule="nonzero" x="5" y="5" width="2" height="19"></rect>
+                        <rect fill-rule="nonzero" x="10" y="5" width="2" height="19"></rect>
                     </g>
                 </g>
             </g>
