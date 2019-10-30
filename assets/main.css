@@ -242,40 +242,41 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .start .start_container .install_vw_container .links a:hover { text-decoration: none; border-bottom: 2px solid #2A3B93; }
 .start .start_container .tutorials_container { background-color: #EBEBEB; padding: 5rem 1rem; }
 .start .start_container .tutorials_container .intro { padding: 1rem 0 2rem; }
-.start .start_container .tutorials_container .intro a { color: #2A3B93; padding-bottom: 2px; border-bottom: 1px solid #2A3B93; }
-.start .start_container .tutorials_container .intro a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
-.start .start_container .tutorials_container .tutorial_card { background-color: white; padding: 0 1.5rem; margin-bottom: 2rem; }
-.start .start_container .tutorials_container .tutorial_card .header { padding: 1.5rem 0; text-transform: uppercase; font-weight: 600; }
-.start .start_container .tutorials_container .tutorial_card .title { padding-bottom: 1.5rem; height: 10rem; }
-.start .start_container .tutorials_container .tutorial_card .title h3 { font-weight: 300; font-size: 2.25rem; line-height: 1.2; }
-.start .start_container .tutorials_container .tutorial_card .description { height: 10rem; }
-.start .start_container .tutorials_container .tutorial_card .footer { padding-bottom: 1rem; }
+.start .start_container .tutorials_container .all_tutorials_link { padding-top: 1rem; }
+.start .start_container .tutorials_container .all_tutorials_link a { color: #2A3B93; font-weight: 600; display: inline-block; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+.start .start_container .tutorials_container .all_tutorials_link a:hover { text-decoration: none; border-bottom: 2px solid #2A3B93; }
+.start .start_container .tutorials_container .tutorial_card { background: white; margin-bottom: 2rem; padding: 1.5rem 2rem; min-height: 26.25rem; position: relative; }
+.start .start_container .tutorials_container .tutorial_card .description { padding: 1rem 0 0.8rem; }
+.start .start_container .tutorials_container .tutorial_card .footer { position: absolute; left: 0; right: 0; padding: 1rem 1rem 0; bottom: 1.5rem; }
 .start .start_container .tutorials_container .tutorial_card .footer a { background: white; border: 3px solid white; border-radius: 28px; color: #2A3B93; display: inline-block; font-weight: 600; margin: 0.5rem 0; padding: 0.8rem 0; text-align: center; width: 100%; }
 .start .start_container .tutorials_container .tutorial_card .footer a:hover { background: #F2F4FF; text-decoration: none; transition: 0.3s; border: 3px solid #F2F4FF; }
-.start .start_container .tutorials_container .tutorial_card .footer a { background: #2A3B93; border: 3px solid #2A3B93; box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1); color: white; display: block; width: 15rem; margin: 1rem auto; }
+.start .start_container .tutorials_container .tutorial_card .footer a { background: #2A3B93; border: 3px solid #2A3B93; box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1); color: white; display: block; width: 15rem; margin: auto; }
 .start .start_container .tutorials_container .tutorial_card .footer a:hover { background: #415EBF; border: 3px solid #415EBF; }
+@media screen and (max-width: 320px) { .start .start_container .tutorials_container .tutorial_card .footer { position: relative; bottom: 0; } }
+.start .start_container .tutorials_container .tutorial_card .header { padding-bottom: 1rem; text-transform: uppercase; font-weight: 600; }
 
 .tutorials .tutorials_container .hero { background: #2A3B93; color: white; padding: 3rem 1rem; }
 .tutorials .tutorials_container .hero h1 { padding-bottom: 1rem; }
 .tutorials .tutorials_container .tutorials_list { background: #EBEBEB; padding: 5rem 1rem; }
-.tutorials .tutorials_container .tutorial_card { background: white; margin-bottom: 2rem; padding: 0 2rem; }
-.tutorials .tutorials_container .tutorial_card .header { display: flex; padding: 1.5rem 0; }
-.tutorials .tutorials_container .tutorial_card .header .label { font-weight: 600; padding-right: 0.8rem; }
-.tutorials .tutorials_container .tutorial_card .header .level { text-transform: capitalize; }
-.tutorials .tutorials_container .tutorial_card .description { padding: 1.5rem 0 0.8rem; }
-.tutorials .tutorials_container .tutorial_card .footer { padding-bottom: 1rem; }
+.tutorials .tutorials_container .tutorial_card { background: white; margin-bottom: 2rem; padding: 1.5rem 2rem; min-height: 26.25rem; position: relative; }
+.tutorials .tutorials_container .tutorial_card .description { padding: 1rem 0 0.8rem; }
+.tutorials .tutorials_container .tutorial_card .footer { position: absolute; left: 0; right: 0; padding: 1rem 1rem 0; bottom: 1.5rem; }
 .tutorials .tutorials_container .tutorial_card .footer a { background: white; border: 3px solid white; border-radius: 28px; color: #2A3B93; display: inline-block; font-weight: 600; margin: 0.5rem 0; padding: 0.8rem 0; text-align: center; width: 100%; }
 .tutorials .tutorials_container .tutorial_card .footer a:hover { background: #F2F4FF; text-decoration: none; transition: 0.3s; border: 3px solid #F2F4FF; }
-.tutorials .tutorials_container .tutorial_card .footer a { background: #2A3B93; border: 3px solid #2A3B93; box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1); color: white; display: block; width: 15rem; }
+.tutorials .tutorials_container .tutorial_card .footer a { background: #2A3B93; border: 3px solid #2A3B93; box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1); color: white; display: block; width: 15rem; margin: auto; }
 .tutorials .tutorials_container .tutorial_card .footer a:hover { background: #415EBF; border: 3px solid #415EBF; }
+@media screen and (max-width: 320px) { .tutorials .tutorials_container .tutorial_card .footer { position: relative; bottom: 0; } }
 .tutorials .tutorials_container .tutorial_card .tags { font-size: 15px; line-height: 20px; }
-.tutorials .tutorials_container .tutorial_card .tags .tag { background: #F2F4FF; padding: 0.3rem 0.7rem; margin: 0.25rem; display: inline-block; text-transform: capitalize; }
-.tutorials .tutorials_container .tutorial_card .tags .tag:first-child { margin-left: 0; }
-.tutorials .tutorials_container .help_section a { color: #2A3B93; font-weight: 600; display: inline-block; padding-bottom: 4px; border-bottom: 2px solid transparent; }
-.tutorials .tutorials_container .help_section a:hover { text-decoration: none; border-bottom: 2px solid #2A3B93; }
-.tutorials .tutorials_container .help_section a { margin-bottom: 0.8rem; display: block; }
-.tutorials .tutorials_container .help_section h3 { font-size: 1.125rem; font-weight: 600; line-height: 1.33; padding-bottom: 1rem; }
-.tutorials .tutorials_container .help_section .description { padding-bottom: 1rem; }
+.tutorials .tutorials_container .tutorial_card .tags .tag { background: #F2F4FF; padding: 0.3rem 0.6rem; margin: 0.2rem 0.2rem 0.2rem 0; display: inline-block; text-transform: capitalize; }
+
+.tutorials .help_section_container { padding: 6rem 1rem; }
+.tutorials .help_section_container h2 { padding-bottom: 1rem; }
+.tutorials .help_section_container .description { padding-bottom: 1rem; }
+.tutorials .help_section_container .links { display: flex; justify-content: space-between; align-items: center; }
+.tutorials .help_section_container .links a { color: #333333; text-decoration: none; }
+.tutorials .help_section_container .links a svg path { fill: #666666; }
+.tutorials .help_section_container .links a:hover { color: #415EBF; }
+.tutorials .help_section_container .links a:hover svg g, .tutorials .help_section_container .links a:hover svg path { fill: #415EBF; }
 
 .edit { position: absolute; right: 0; top: 2rem; z-index: 1; }
 
