@@ -44,17 +44,17 @@
 
     a {
       svg path {
-        fill: $gray-90;
+        fill: $gray-50;
       }
 
       color: $gray-90;
       text-decoration: none;
 
       &:hover {
-        color: $blue-20;
+        color: $blue-10;
 
-        svg path {
-          fill: $blue-20;
+        svg g, svg path {
+          fill: $blue-10;
         }
       }
     }
