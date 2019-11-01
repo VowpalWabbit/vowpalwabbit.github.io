@@ -183,7 +183,7 @@
   }
 }
 
-.research_container {
+.home .research_container {
   @include inline-link;
   background: $gray-10;
   padding: 5rem 1rem;
@@ -198,7 +198,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .research_container .chart_icon {
+  .home .research_container .chart_icon {
     padding-bottom: 3rem;
   }
 }
