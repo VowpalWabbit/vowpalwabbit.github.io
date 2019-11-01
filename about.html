@@ -17,38 +17,7 @@ body_class: about
       </div>
     </div>
   </div>
-
-  {% assign values=site.core_values | sort: 'order' %}
-  <div class="values_container">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-sm col-lg-8">
-          <h2>
-            Our core values
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis.
-          </p>
-        </div>
-      </div>
-      <div class="row values">
-        {% for value in values %}
-          <div class="col-sm col-lg-3">
-            <div class="value text-center">
-              <img alt="image for value" src={{value.icon}} />
-              <h3 class="title">
-                {{value.title}}
-              </h3>
-              <p>
-                {{value.description}}
-              </p>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
+  
   <div class="contributions_container">
     <div class="container">
       <div class="row">

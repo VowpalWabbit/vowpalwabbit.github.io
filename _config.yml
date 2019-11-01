@@ -60,8 +60,6 @@ collections:
     output: true
   technical_details:
     output: true
-  core_values:
-    output: true
   users:
     output: true
   bibliography:
