@@ -54,8 +54,6 @@ collections:
     output: true
   documentation:
     output: true
-  technical_details:
-    output: true
   users:
     output: true
   bibliography:
