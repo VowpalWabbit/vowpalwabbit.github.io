@@ -85,6 +85,15 @@
 
   .hero_buttons {
     @include primary-link;
+
+    .tutorials_button a {
+      background-color: transparent;
+      color: white;
+
+      &:hover {
+        background: $blue-10;
+      }
+    }
   }
 }
 
