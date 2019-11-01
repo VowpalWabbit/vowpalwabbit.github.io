@@ -50,8 +50,6 @@ collections:
     output: true
   flexibility:
     output: true
-  resources:
-    output: true
   guides:
     output: true
   documentation:
