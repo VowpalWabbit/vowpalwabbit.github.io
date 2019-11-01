@@ -60,8 +60,6 @@ collections:
     output: true
   technical_details:
     output: true
-  case_studies:
-    output: true
   core_values:
     output: true
   users:
