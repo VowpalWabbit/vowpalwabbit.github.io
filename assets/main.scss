@@ -16,13 +16,7 @@
 @import "edit_button";
 
 
-@import "case_studies";
-@import "resources";
 @import "how_it_works";
-@import "learn";
-@import "guide";
-@import "paper";
-@import "about";
 
 // overwrite bootstrap
 @media screen and (min-width: 1200px) {
@@ -85,6 +79,15 @@
 
   .hero_buttons {
     @include primary-link;
+
+    .tutorials_button a {
+      background-color: transparent;
+      color: white;
+
+      &:hover {
+        background: $blue-10;
+      }
+    }
   }
 }
 
