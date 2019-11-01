@@ -9,13 +9,13 @@
     {{ item.content }}
   </div>
 
-  {% if item.show_guide %}
+  {% if item.show_tutorial %}
     {%
-      assign guide = site.guides | where: "module_id", item.module_id | first
+      assign tutorial = site.tutorials | where: "module_id", item.module_id | first
     %}
     <div class="link">
-      <a href="{{ guide.url | relative_url}}">
-        {{guide.guide_link_text}}
+      <a href="{{ tutorial.url | relative_url}}">
+        {{tutorial.tutorial_link_text}}
       </a>
     </div>
   {% endif %}

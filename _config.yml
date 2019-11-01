@@ -50,7 +50,7 @@ collections:
     output: true
   flexibility:
     output: true
-  guides:
+  tutorials:
     output: true
   bibliography:
     output: true

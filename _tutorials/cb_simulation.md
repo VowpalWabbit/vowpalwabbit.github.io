@@ -3,7 +3,7 @@ title: Simulating a news personalization scenario using Contextual Bandits
 order: 4
 module_id: cb_simulator
 description: This tutorial will guide you through how to structure a simulator to model a real world scenario using contextual bandit algorithms.
-guide_link_text: 'Begin tutorial'
+tutorial_link_text: 'Begin tutorial'
 layout: tutorial
 body_class: tutorial
 level: advanced

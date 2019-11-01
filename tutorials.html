@@ -20,39 +20,39 @@ title: Tutorials
     </div>
   </div>
 
-  {% assign guides = site.guides | sort: 'order' %}
+  {% assign tutorials = site.tutorials | sort: 'order' %}
   {% assign communities = site.communities | sort: 'order' %}
 
   <div class="tutorials_list">
     <div class="container">
       <div class="row">
-        {% for guide in guides %}
+        {% for tutorial in tutorials %}
           <div class="col-12 col-md-6 col-lg-4">
             <div class="tutorial_card">
               <h4>
-                {{guide.title}}
+                {{tutorial.title}}
               </h4>
               <div class="tags">
                 <span class="tag">
-                  {{guide.level}}
+                  {{tutorial.level}}
                 </span>
-                {% for tag in guide.tags %}
+                {% for tag in tutorial.tags %}
                   <span class="tag">
                     {{tag}}
                   </span>
                 {% endfor %}
               </div>
               <div class="description">
-                {{guide.description}}
+                {{tutorial.description}}
               </div>
 
-              {% assign guide_link = guide.link %}
-              {% unless guide_link %}
-                {% assign guide_link = guide.url | relative_url %}
+              {% assign tutorial_link = tutorial.link %}
+              {% unless tutorial_link %}
+                {% assign tutorial_link = tutorial.url | relative_url %}
               {% endunless %}
 
               <div class="footer">
-                <a target="_blank" href="{{ guide_link }}">
+                <a target="_blank" href="{{ tutorial_link }}">
                   Start
                 </a>
               </div>

@@ -231,6 +231,6 @@ The advantage of using unique integer-based feature-names is that they are guara
 
 The above only scratches the surface of VW. You can learn with other loss functions, with other optimizers, with other representations, with clusters of 1000s of machines, and even do ridiculously fast active learning.
 
-- Learn about using VW to do reinforcement learning in the [Contextual Bandit tutorial]( {{ "guides/contextual_bandits.html" | relative_url}} )
+- Learn about using VW to do reinforcement learning in the [Contextual Bandit tutorial]( {{ "tutorials/contextual_bandits.html" | relative_url}} )
 - Explore more content in the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials" target="_blank">tutorials section of the GitHub wiki</a>
 - Browse <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples" target="_blank">examples on the GitHub wiki</a>

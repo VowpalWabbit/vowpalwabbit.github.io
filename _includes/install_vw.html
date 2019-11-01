@@ -63,7 +63,7 @@
   </div>
 
   <div class="installation_step">
-    {% assign getting_started = site.guides | where: "module_id", "getting_started" | first %}
+    {% assign getting_started = site.tutorials | where: "module_id", "getting_started" | first %}
     <div class="step_title">
       Ready to use Vowpal Wabbit? Follow this
       <a href="{{ getting_started.url | relative_url}}">

@@ -3,7 +3,7 @@ title: Contextual bandits and Vowpal Wabbit
 order: 2
 module_id: contextual_bandits
 description: This tutorial runs through the contextual bandit approach to reinforcement learning with Vowpal Wabbit.
-guide_link_text: Read the contextual bandit tutorial
+tutorial_link_text: Read the contextual bandit tutorial
 layout: tutorial
 level: advanced
 tags: contextual&nbsp;bandits

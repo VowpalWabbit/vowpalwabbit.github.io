@@ -3,7 +3,7 @@ tab: Contextual Bandits
 title: Optimize rewards with Contextual Bandits
 order: 1
 module_id: contextual_bandits
-show_guide: true
+show_tutorial: true
 illustration: assets/images/features/cb.svg
 ---
 
