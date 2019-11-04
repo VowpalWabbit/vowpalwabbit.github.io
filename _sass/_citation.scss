@@ -202,6 +202,11 @@ sup {
 ol.bibliography {
   word-break: break-word;
 
+  .bib_content {
+    flex: 0 0 80%;
+    padding: 1rem;
+  }
+
   .details {
     margin-left: 1rem;
 
@@ -244,10 +249,6 @@ ol.bibliography {
 
       span {
         flex: 1 1 0;
-      }
-
-      .details {
-        width: 6rem;
       }
     }
   }
