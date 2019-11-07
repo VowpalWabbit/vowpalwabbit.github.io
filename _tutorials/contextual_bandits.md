@@ -271,8 +271,7 @@ pip install vowpalwabbit
 Now, generate some sample training data that could originate from previous random trial (for example A/B test) for the contextual bandit to explore:
 
 ```python
-train_data = [{'action': 1, 'cost': 2, 'probability': 0.4, 'feature1': 'a',
-              'feature2': 'c', 'feature3': ''},
+train_data = [{'action': 1, 'cost': 2, 'probability': 0.4, 'feature1': 'a', 'feature2': 'c', 'feature3': ''},
               {'action': 3, 'cost': 0, 'probability': 0.2, 'feature1': 'b', 'feature2': 'd', 'feature3': ''},
               {'action': 4, 'cost': 1, 'probability': 0.5, 'feature1': 'a', 'feature2': 'b', 'feature3': ''},
               {'action': 2, 'cost': 1, 'probability': 0.3, 'feature1': 'a', 'feature2': 'b', 'feature3': 'c'},

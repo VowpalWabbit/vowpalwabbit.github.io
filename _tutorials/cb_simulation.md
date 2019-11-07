@@ -267,7 +267,7 @@ Let's do the same thing again (but with `-q`, but this time show the effect if w
 vw = pyvw.vw("--cb_explore_adf -q UA --quiet --epsilon 0.2")
 
 num_iterations = 5000
-ctr  = run_simulation(vw, num_iterations, users, times_of_day, actions, get_cost, do_learn=False)
+ctr = run_simulation(vw, num_iterations, users, times_of_day, actions, get_cost, do_learn=False)
 
 plot_ctr(num_iterations, ctr)
 ```
