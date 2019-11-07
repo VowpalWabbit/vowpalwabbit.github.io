@@ -94,6 +94,7 @@
 
     li {
       display: block;
+      margin-bottom: 0;
 
       span {
         padding: 1rem 0;
@@ -158,11 +159,15 @@
   }
 
   ol li {
-    margin-bottom: 1.875rem;
+    margin-bottom: 0.9rem;
 
     .highlighter-rouge {
       margin-bottom: 0.9rem;
       display: inline-block;
     }
+  }
+
+  ul li {
+    margin-bottom: 0.9rem;
   }
 }

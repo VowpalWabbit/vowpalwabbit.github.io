@@ -12,7 +12,7 @@ tags: contextual&nbsp;bandits
 
 # Simulating a news personalization scenario using Contextual Bandits
 
-In the [Contextual Bandit(CB) introduction tutorial](contextual_bandits.html), we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (ctr).
+In the [Contextual Bandit(CB) introduction tutorial](contextual_bandits.html), we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (CTR).
 
 Let's recall that in a CB setting, a data point has four components,
 

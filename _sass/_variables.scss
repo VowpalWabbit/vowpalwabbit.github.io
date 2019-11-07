@@ -74,7 +74,6 @@ $breakpoint-xs: 320px;
 @mixin inline-link {
   a {
     color: $blue-20;
-    padding-bottom: 2px;
     border-bottom: 1px solid $blue-20;
 
     &:hover {
