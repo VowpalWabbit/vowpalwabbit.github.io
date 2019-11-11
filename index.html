@@ -53,7 +53,22 @@ title: Vowpal Wabbit
           </p>
         </div>
       </div>
-      {% include tabs.html items=site.problem_framing %}
+
+      {% assign features = site.features | sort: 'order' %}
+      <div class="row">
+        {% for feature in features %}
+          <div class="col">
+            <div class="feature">
+              <div class="feature_icon">
+
+              </div>
+              <p>
+                {{ feature.name }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 

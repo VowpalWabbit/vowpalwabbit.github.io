@@ -40,6 +40,8 @@ sass:
 collections:
   communities:
     output: true
+  features:
+    output: true
   problem_framing:
     output: true
   reinforcement:
