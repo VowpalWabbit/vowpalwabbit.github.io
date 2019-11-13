@@ -1,9 +1,9 @@
 ---
-tab: Input format
-title: Input format
+tab: Versatile Learning 
+title: Flexible input format and manipulation
 order: 1
-module_id: input_format
+module_id: flexible_input_format_and_manipulation
 illustration: assets/images/features/input_format.svg
 ---
 
-Vowpal Wabbit’s input format is more flexible than many toolkits. This flexibility allows examples with features consisting of free form text and multiple feature sources to be explicitly represented within an example and used later.
+Vowpal Wabbit’s input format allows examples with features consisting of free form text and multiple sources to be explicitly represented and used later. It includes example manipulators for ease of deployment to suppress or combine different feature sources and maximize performance.
