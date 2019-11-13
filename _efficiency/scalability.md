@@ -1,8 +1,8 @@
 ---
 tab: Efficient Learning 
 title: Speed and scalability 
-order: 1
-module_id: speed_and_scalability 
+order: 4
+module_id: efficient_learning
 illustration: assets/images/features/speed.svg
 ---
 
