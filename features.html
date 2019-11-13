@@ -1,0 +1,155 @@
+---
+layout: default
+body_class: features
+title: Features
+---
+
+<div class="content features_container">
+  <div class="hero">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1>
+            Lorem ipsum headline ipsum dolor sit amet
+          </h1>
+          <p class="description">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature_detail_container">
+    <div class="container">
+      <h2>
+        Why chose Vowpal Wabbit?
+      </h2>
+      {% include tabs.html items=site.problem_framing %}
+    </div>
+  </div>
+
+  <div class="how_it_works_container">
+    <div class="container">
+      <div class="how_it_works_content">
+        <div class="row">
+          <div class="col-12 col-lg-9">
+            <h2>
+              How it works
+            </h2>
+            <p>
+              In order to understand how Vowpal Wabbit works, you first need to understand what kind of problem you are trying to solve. The most common problem applications include <strong>reductions</strong> and <strong>contextual bandits</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="row reductions_container">
+          <div class="col-12">
+            <h4>
+              Anatomy of a reduction stack
+            </h4>
+          </div>
+          <div class="col-12 reductions">
+            <div class="row">
+              <div class="col-12 col-md-5">
+                Many problems in machine learning can be efficiently reduced to other solved problems in machine learning. This allows one to derive many important bounds of one algorithm in terms of other well-known and efficient algorithms. We call this a <strong>reduction stack</strong>.
+              </div>
+              <div class="col-12 col-md-7">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-7">
+              </div>
+
+              <div class="col-12 col-md-5">
+                <p>
+                  Vowpal Wabbit is built around the reduction approach to machine learning.  Reductions in Vowpal Wabbit encapsulate this idea by transforming their inputs, invoking a base reduction, and transforming the outputs. [Add explaination of result].
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row cb_container">
+          <div class="col-12">
+            <h4>
+              Clever contextual bandits headline
+            </h4>
+          </div>
+          <div class="col-12 cb">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, voluptate velit esse cillum sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+              <div class="col-12">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row examples_container">
+          <div class="col-12">
+            <h4>
+              Examples from the community
+            </h4>
+            <ul>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </li>
+              <li>
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </li>
+              <li>
+                Sit amet commodo nulla facilisi nullam vehicula
+              </li>
+            </ul>
+
+            <div>
+              <a
+                href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples"
+                target="_blank"
+                class="github_link"
+              >
+                {% include svg/github.svg %}
+                <div class="more_examples_label">
+                  More examples on GitHub
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="get_started_container">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-sm-12">
+          <h2>
+            Get started with Vowpal Wabbit
+          </h2>
+          <p class="description">
+            Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.
+          </p>
+          <div class="get_started_buttons">
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm col-lg-4">
+                <a href="{{ 'start.html' | relative_url }}">
+                  Get started
+                </a>
+              </div>
+              <div class="col-12 col-sm col-lg-4 tutorials_button">
+                <a href="{{ 'tutorials.html' | relative_url }}">
+                  Tutorials
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

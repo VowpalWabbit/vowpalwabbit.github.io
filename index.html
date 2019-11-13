@@ -57,10 +57,10 @@ title: Vowpal Wabbit
       {% assign features = site.features | sort: 'order' %}
       <div class="row">
         {% for feature in features %}
-          <div class="col">
+          <div class="col text-center">
             <div class="feature">
               <div class="feature_icon">
-
+                <img alt="image for feature" src={{feature.illustration}} />
               </div>
               <p>
                 {{ feature.name }}

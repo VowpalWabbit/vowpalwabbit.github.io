@@ -13,10 +13,8 @@
 @import "download";
 @import "start";
 @import "tutorials";
+@import "features";
 @import "edit_button";
-
-
-@import "how_it_works";
 
 // overwrite bootstrap
 @media screen and (min-width: 1200px) {
@@ -94,6 +92,11 @@
 .problem_framing_container {
   background: $blue-5;
   padding: 3rem 0 6rem;
+
+  .feature_icon img{
+    width: 45px;
+    height: 45px;
+  }
 
   .description {
     @include inline-link;
