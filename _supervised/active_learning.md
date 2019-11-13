@@ -2,7 +2,7 @@
 tab: Supervised Learning
 title: Active learning
 order: 1
-module_id: active_learning
+module_id: supervised_learning
 illustration: assets/images/features/online.svg
 ---
 
