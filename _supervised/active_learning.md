@@ -1,9 +1,9 @@
 ---
-tab: Active learning
-title: Active learning
+tab: Supervised Learning
+title: Minimize data cost
 order: 1
-module_id: active_learning
+module_id: supervised_learning
 illustration: assets/images/features/online.svg
 ---
 
- Active learning enables a learner to choose which examples to label given what it knows and a source of unlabeled examples. Active learning is used to minimize the cost of labeling datasets.
+Active learning requires a learner to choose which examples to label given what it knows and a source of unlabeled examples. It is used to minimize the cost of labeling datasets in Vowpal Wabbit. 
