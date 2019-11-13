@@ -1,8 +1,8 @@
 ---
 tab: Supervised Learning
-title: Minimize data cost
+title: Active learning
 order: 1
-module_id: supervised_learning
+module_id: active_learning
 illustration: assets/images/features/online.svg
 ---
 
