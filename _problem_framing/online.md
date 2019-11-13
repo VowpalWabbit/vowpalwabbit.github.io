@@ -2,7 +2,7 @@
 tab: Online Learning
 title: Interactive machine learning
 order: 3
-module_id: interactive_machine_learning
+module_id: online_learning
 illustration: assets/images/features/online.svg
 ---
 
