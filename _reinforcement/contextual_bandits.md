@@ -2,7 +2,7 @@
 tab: Reinforcement Learning
 title: The contextual bandit approach
 order: 1
-module_id: contextual_bandits
+module_id: reinforcement_learning
 show_guide: true
 illustration: assets/images/features/cb.svg
 ---
