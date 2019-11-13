@@ -2,7 +2,7 @@
 tab: Reinforcement Learning
 title: Learning to search (L2S) 
 order: 2
-module_id: Learning to search
+module_id: Learning_to_search
 illustration: assets/images/features/cb.svg
 ---
 
