@@ -1,8 +1,8 @@
 ---
 tab: Versatile Learning 
 title: Adaptable deployment and reductions 
-order: 2
-module_id: adaptable_deployment_and_reduction 
+order: 5
+module_id: versatile_learning
 illustration: assets/images/features/input_format.svg
 ---
 
