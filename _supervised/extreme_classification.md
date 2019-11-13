@@ -2,7 +2,7 @@
 tab: Supervised Learning
 title: Extreme classification
 order: 2
-module_id: extreme_classification
+module_id: supervised_learning
 illustration: assets/images/features/online.svg
 ---
 
