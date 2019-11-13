@@ -1,8 +1,8 @@
 ---
 tab: Versatile Learning 
 title: Flexible input format and manipulation
-order: 1
-module_id: flexible_input_format_and_manipulation
+order: 5
+module_id: versatile_learning
 illustration: assets/images/features/input_format.svg
 ---
 
