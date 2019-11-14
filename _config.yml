@@ -48,8 +48,6 @@ collections:
     output: true
   supervised:
     output: true
-  efficiency:
-    output: true
   flexibility:
     output: true
   tutorials:
