@@ -4,7 +4,7 @@ const communityModule = (function() {
   const api = {
     github: 'https://api.github.com/search/repositories?q=repo:VowpalWabbit/vowpal_wabbit',
     github_contributors: 'https://api.github.com/repos/VowpalWabbit/vowpal_wabbit/contributors?per_page=1',
-    stackoverflow: 'https://api.stackexchange.com/2.2/search/advanced?page=1&pagesize=1&order=desc&sort=activity&tagged=vowpalwabbit&site=stackoverflow'
+    stackoverflow: 'https://api.stackexchange.com/2.2/search/advanced?page=1&pagesize=1&order=desc&sort=creation&tagged=vowpalwabbit&site=stackoverflow'
   };
 
   function init() {
