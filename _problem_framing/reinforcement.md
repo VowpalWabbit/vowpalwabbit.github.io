@@ -1,5 +1,5 @@
 ---
-tab: Reinforcement
+tab: Reinforcement learning
 title: Reinforcement
 order: 1
 module_id: reinforcement

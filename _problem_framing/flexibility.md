@@ -1,5 +1,5 @@
 ---
-tab: Flexibility
+tab: Versatile learning
 title: Flexibility
 order: 5
 module_id: flexibility

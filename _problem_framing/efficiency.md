@@ -1,5 +1,5 @@
 ---
-tab: Efficiency
+tab: Efficient learning
 title: Efficiency
 order: 4
 module_id: efficiency

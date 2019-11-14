@@ -1,30 +1,11 @@
 {% assign item = include.item %}
 
-<div class="col">
-  <h3>
+<div class="col-12 col-md-6">
+  <h4>
     {{ item.title }}
-  </h3>
+  </h4>
 
-  <div class="description">
+  <div>
     {{ item.content }}
   </div>
-
-  {% if item.show_tutorial %}
-    {%
-      assign tutorial = site.tutorials | where: "module_id", item.module_id | first
-    %}
-    <div class="link">
-      <a href="{{ tutorial.url | relative_url}}">
-        {{tutorial.tutorial_link_text}}
-      </a>
-    </div>
-  {% endif %}
-
-  {% if item.link %}
-    <div class="link">
-      <a href={{item.link}} target="_blank">
-        {{item.link_text}}
-      </a>
-    </div>
-  {% endif %}
 </div>

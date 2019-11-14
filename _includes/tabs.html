@@ -2,18 +2,21 @@
 
 <div class="tabs_container">
   <div class="row">
-    <div class="nav col-lg-2">
-      {% for item in items %}
-        <button
-          class="col-12 {% if item.order == 1 %}active{% endif %}"
-          data-module_id={{item.module_id}}
-        >
-          {{item.tab}}
-        </button>
-      {% endfor %}
+    <div class="col-lg-3">
+      <div class="nav">
+        {% for item in items %}
+          <button
+            class="col-12 {% if item.order == 1 %}active{% endif %}"
+            data-module_id={{item.module_id}}
+          >
+            <span class="tab_text">
+              {{item.tab}}
+            </span>
+          </button>
+        {% endfor %}
+      </div>
     </div>
-
-    <div class="col-lg-10 ">
+    <div class="col-lg-9">
       {% for item in items %}
         <div class="{% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
           {% if item.has_sub_module %}

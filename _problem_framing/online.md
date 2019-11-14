@@ -1,5 +1,5 @@
 ---
-tab: Online
+tab: Online learning
 title: Online
 order: 3
 module_id: online
