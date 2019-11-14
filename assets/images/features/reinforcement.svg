@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="63px" viewBox="0 0 49 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 60 (101010) - https://sketch.com -->
+    <title>14357F7E-9912-4CEF-906E-EA473C290515</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-181.000000, -1295.000000)">
+            <g id="features" transform="translate(0.000000, 1000.000000)">
+                <g id="illustration_reinforcement" transform="translate(183.000000, 295.000000)">
+                    <circle id="Oval" fill="#FFFFFF" cx="22" cy="21" r="21"></circle>
+                    <g id="icon_reinforcement-icon_reinforcment" transform="translate(0.000000, 14.000000)" stroke="#415EBF" stroke-linecap="round" stroke-width="2.25">
+                        <g id="icon_reinforcment">
+                            <polyline id="Path-4" points="17 8 20 11 29 0"></polyline>
+                            <g id="Group-13" transform="translate(16.000000, 36.000000)">
+                                <line x1="9.65449942e-13" y1="2.84286483e-14" x2="11.3137085" y2="11.3137085" id="Path-5"></line>
+                                <line x1="9.65449942e-13" y1="2.84286483e-14" x2="11.3137085" y2="11.3137085" id="Path-5" transform="translate(5.656854, 5.656854) scale(-1, 1) translate(-5.656854, -5.656854) "></line>
+                            </g>
+                            <g id="Group-12" transform="translate(0.000000, 6.000000)">
+                                <path d="M9,0 C3,4.66666667 0,10.6666667 0,18 C0,25.3333333 3,31 9,35" id="Path-6"></path>
+                                <polyline id="Path-7" points="3 0 9 0 9 6"></polyline>
+                                <path d="M9,0 C3,4.66666667 0,10.6666667 0,18 C0,25.3333333 3,31 9,35" id="Path-6"></path>
+                                <polyline id="Path-7" points="3 0 9 0 9 6"></polyline>
+                            </g>
+                            <g id="Group-12" transform="translate(40.500000, 23.500000) scale(-1, -1) translate(-40.500000, -23.500000) translate(36.000000, 6.000000)">
+                                <path d="M9,0 C3,4.66666667 0,10.6666667 0,18 C0,25.3333333 3,31 9,35" id="Path-6"></path>
+                                <polyline id="Path-7" points="3 0 9 0 9 6"></polyline>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

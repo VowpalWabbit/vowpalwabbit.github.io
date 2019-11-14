@@ -1,5 +1,5 @@
 ---
 order: 1
-name: Reinforcement Learning
-illustration: assets/images/features/cb.svg
+name: Reinforcement learning
+illustration: assets/images/features/reinforcement.svg
 ---

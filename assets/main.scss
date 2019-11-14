@@ -43,8 +43,8 @@
 }
 
 .hero_container {
-  background: $blue-20;
-  padding: 7rem 1rem 8.5rem;
+  background: $blue-30;
+  padding: 4rem 1rem 5.5rem;
   color: white;
 
   .hero_content {
@@ -83,23 +83,40 @@
       color: white;
 
       &:hover {
-        background: $blue-10;
+        background: $blue-20;
       }
     }
   }
 }
 
-.problem_framing_container {
+.home .features_container {
+  @include inline-link;
   background: $blue-5;
-  padding: 3rem 0 6rem;
+  padding: 4rem 0;
 
-  .feature_icon img{
-    width: 45px;
-    height: 45px;
+  .features {
+    letter-spacing: -0.5px;
+    margin: 2rem 0 3rem;
   }
 
-  .link {
-    padding-bottom: 1rem;
+  .feature_icon {
+    padding: 1rem 0;
+
+    img {
+      height: 60px;
+      width: auto;
+    }
+  }
+
+  .learn_more_link {
+    @include primary-link;
+
+    a {
+      width: 12.5rem;
+      box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin: 1rem auto;
+    }
   }
 }
 
@@ -123,7 +140,7 @@
 
 .home .research_container {
   @include inline-link;
-  background: $gray-10;
+  background: $blue-5;
   padding: 5rem 1rem;
 
   .chart_icon {

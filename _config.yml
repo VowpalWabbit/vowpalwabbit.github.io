@@ -42,7 +42,7 @@ collections:
     output: true
   features:
     output: true
-  problem_framing:
+  feature_details:
     output: true
   reinforcement:
     output: true

@@ -1,5 +1,5 @@
 ---
 order: 4
-name: Efficient Learning
-illustration: assets/images/features/speed.svg
+name: Efficient learning
+illustration: assets/images/features/efficient.svg
 ---

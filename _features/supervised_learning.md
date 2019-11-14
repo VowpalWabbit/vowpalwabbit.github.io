@@ -1,5 +1,5 @@
 ---
 order: 2
-name: Supervised Learning
-illustration: assets/images/features/online.svg
+name: Supervised learning
+illustration: assets/images/features/supervised.svg
 ---

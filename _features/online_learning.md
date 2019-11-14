@@ -1,5 +1,5 @@
 ---
 order: 3
-name: Online Learning
+name: Online learning
 illustration: assets/images/features/online.svg
 ---

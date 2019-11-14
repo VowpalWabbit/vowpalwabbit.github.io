@@ -11,11 +11,11 @@
   }
 
   .feature_detail_container {
-    padding: 4rem 1rem 7rem;
+    padding: 4rem 1rem;
   }
 
   .reductions_container, .cb_container, .examples_container {
-    margin: 3rem 1rem;
+    margin: 3rem 1rem 0;
   }
 
   .reductions, .cb {
@@ -69,8 +69,8 @@
   }
 
   .how_it_works_container {
-    padding: 0 1rem 7rem;
-    background: linear-gradient(180deg, white 20%, $blue-5 20%);
+    padding: 5rem 1rem;
+    background: $blue-5;
 
     h2 {
       padding-bottom: 2rem;

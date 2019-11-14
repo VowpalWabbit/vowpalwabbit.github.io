@@ -17,6 +17,12 @@
         Get started
       </a>
       <a
+        href="{{ 'features.html' | relative_url }}"
+        class='{% if current[1] == "features" %}active{% endif %}'
+      >
+        Features
+      </a>
+      <a
         href="{{ 'tutorials.html' | relative_url }}"
         class='{% if current[1] == "tutorials" %}active{% endif %}'
       >
