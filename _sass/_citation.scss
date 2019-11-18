@@ -231,13 +231,31 @@ ol.bibliography {
   .hero {
     @include secondary-hero;
   }
+
+  .intro {
+    @include secondary-link;
+
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    line-height: 1.25;
+
+    a {
+      margin-top: 1rem;
+      font-size: 1.125rem;
+      line-height: 1.3;
+    }
+  }
 }
 
 .publications_container {
-  padding: 3rem 1rem;
+  padding: 1rem 1rem 3rem;
 
-  h1 {
-    padding: 1.5rem 0 0.5rem;
+  .header {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
   }
 
   .bibliography {

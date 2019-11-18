@@ -3,4 +3,6 @@ title: The contextual bandit approach
 order: 1
 ---
 
-The vast majority of reinforcement learning systems use an interactive contextual bandits approach to learning problems because the approach enables people and organizations to learn and adapt continuously. For an overview of the method, including how to use Vowpal Wabbit in this setting, see the [contextual bandit reinforcement learning tutorial](../tutorials/contextual_bandits.html).
+The vast majority of real-world reinforcement learning systems use an interactive contextual bandits approach. This approach enables people and organizations to learn and adapt continuously.
+
+For an overview of a contextual bandit approach to reinforcement learning and how to use Vowpal Wabbit, see the [contextual bandit reinforcement learning tutorial](../tutorials/contextual_bandits.html).
