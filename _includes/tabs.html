@@ -20,11 +20,14 @@
       {% for item in items %}
         <div class="{% if item.order != 1 %}hidden{% endif %}" data-module_id={{item.module_id}}>
           {% if item.has_sub_module %}
-            {% assign sub_module_items = site.[item.module_id] | sort: 'order' %}
-            {% include tab_content_with_sub_module.html %}
+            {% assign items = site.[item.module_id] | sort: 'order' %}
           {% else %}
-            {% include tab_content.html item=item %}
+            {% assign items = "" | split: ',' | push: item %}
           {% endif %}
+
+          <div class="row">
+            {% include tab_content.html items=items %}
+          </div>
         </div>
       {% endfor %}
     </div>

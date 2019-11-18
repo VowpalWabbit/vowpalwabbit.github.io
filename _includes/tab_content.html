@@ -1,11 +1,13 @@
-{% assign item = include.item %}
+{% assign items = include.items %}
 
-<div class="col-12 col-md-6">
-  <h4>
-    {{ item.title }}
-  </h4>
+{% for item in items %}
+  <div class="col-12 col-md-6">
+    <h4>
+      {{ item.title }}
+    </h4>
 
-  <div>
-    {{ item.content }}
+    <div>
+      {{ item.content }}
+    </div>
   </div>
-</div>
+{% endfor %}
