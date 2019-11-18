@@ -47,6 +47,10 @@
   padding: 4rem 1rem 5.5rem;
   color: white;
 
+  img {
+    width: 100%;
+  }
+
   .hero_content {
     position: relative;
 
@@ -152,8 +156,21 @@
     max-width: 100%;
   }
 
-  .description {
-    padding: 1rem 0 0.8rem;
+
+  .research_description {
+    position: relative;
+
+    .content {
+      position: relative;
+      top: 45%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .description {
+      padding: 1rem 0 0.8rem;
+    }
   }
 }
 

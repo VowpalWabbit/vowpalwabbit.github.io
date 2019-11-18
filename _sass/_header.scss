@@ -18,7 +18,7 @@
 }
 
 .navbar_container {
-  background: rgba(0, 12, 76, 0.95);
+  background: rgba(42, 59, 147, 0.95);
   font-size: 1.125rem;
   line-height: 1.33;
   top: -240px;
@@ -38,6 +38,10 @@
     position: sticky;
     top: 0;
     z-index: 2;
+  }
+
+  &.dark {
+    background-color: rgba(0, 12, 76, 0.95);
   }
 
   &.light {

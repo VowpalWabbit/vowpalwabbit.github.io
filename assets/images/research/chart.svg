@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="540px" height="355px" viewBox="0 0 540 355" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="540px" height="440px" viewBox="0 0 540 440" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 60 (101010) - https://sketch.com -->
     <title>DEB85D62-2882-4484-8DAE-75C6399059EE</title>
     <desc>Created with sketchtool.</desc>
     <defs>
-        <rect id="path-1" x="0" y="45" width="500" height="280" rx="78"></rect>
-        <filter x="-7.0%" y="-8.9%" width="114.0%" height="125.0%" filterUnits="objectBoundingBox" id="filter-2">
+        <rect id="path-1" x="0" y="0" width="500" height="400" rx="78"></rect>
+        <filter x="-7.0%" y="-6.2%" width="114.0%" height="117.5%" filterUnits="objectBoundingBox" id="filter-2">
             <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.08 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
     <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Home" transform="translate(-110.000000, -2381.000000)">
+        <g id="Home" transform="translate(-120.000000, -2310.000000)">
             <g id="research" transform="translate(0.000000, 2250.000000)">
-                <g id="illustration_chart" transform="translate(130.000000, 131.000000)">
+                <g id="illustration_chart" transform="translate(140.000000, 70.000000)">
                     <g id="Rectangle">
                         <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
                         <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
                     </g>
-                    <polygon id="Path" points="361 290 398 290 398 43 361 43"></polygon>
-                    <polygon id="Path" fill="#FF3AB0" points="412 278 449 278 449 0 412 0"></polygon>
-                    <polygon id="Path" fill="#415EBF" points="292 278 329 278 329 92 292 92"></polygon>
-                    <polygon id="Path" fill="#415EBF" points="111 278 148 278 148 185 111 185"></polygon>
-                    <polygon id="Path" fill="#415EBF" points="51 278 88 278 88 258 51 258"></polygon>
-                    <polygon id="Path" fill="#415EBF" points="231 278 268 278 268 73 231 73"></polygon>
-                    <polygon id="Path" fill="#415EBF" points="172 278 209 278 209 128 172 128"></polygon>
-                    <polygon id="Path" fill="#415EBF" points="352 278 389 278 389 110 352 110"></polygon>
+                    <g id="bar_accent" transform="translate(380.000000, 51.000000)">
+                        <polygon id="Path" fill="#FFEEF8" points="0 288 30 288 30 10 0 10"></polygon>
+                        <polygon id="Path" stroke="#FF3AB0" stroke-width="2.25" fill="#FF83CC" points="10 278 40 278 40 0 10 0"></polygon>
+                    </g>
+                    <g id="bar_default" transform="translate(280.000000, 143.000000)">
+                        <polygon id="Path" fill="#F2F4FF" points="0 196 30 196 30 10 0 10"></polygon>
+                        <polygon id="Path" stroke="#415EBF" stroke-width="2" points="10 186 40 186 40 0 10 0"></polygon>
+                    </g>
+                    <g id="bar_default" transform="translate(130.000000, 236.000000)">
+                        <polygon id="Path" fill="#F2F4FF" points="0 103 30 103 30 10 0 10"></polygon>
+                        <polygon id="Path" stroke="#415EBF" stroke-width="2" points="10 93 40 93 40 0 10 0"></polygon>
+                    </g>
+                    <g id="bar_default" transform="translate(80.000000, 309.000000)">
+                        <polygon id="Path" fill="#F2F4FF" points="0 30 30 30 30 10 0 10"></polygon>
+                        <polygon id="Path" stroke="#415EBF" stroke-width="2" points="10 20 40 20 40 0 10 0"></polygon>
+                    </g>
+                    <g id="bar_default" transform="translate(230.000000, 124.000000)">
+                        <polygon id="Path" fill="#F2F4FF" points="0 215 30 215 30 10 0 10"></polygon>
+                        <polygon id="Path" stroke="#415EBF" stroke-width="2" points="10 205 40 205 40 0 10 0"></polygon>
+                    </g>
+                    <g id="bar_default" transform="translate(180.000000, 179.000000)">
+                        <polygon id="Path" fill="#F2F4FF" points="0 160 30 160 30 10 0 10"></polygon>
+                        <polygon id="Path" stroke="#415EBF" stroke-width="2" points="10 150 40 150 40 0 10 0"></polygon>
+                    </g>
+                    <g id="bar_default" transform="translate(330.000000, 161.000000)">
+                        <polygon id="Path" fill="#F2F4FF" points="0 178 30 178 30 10 0 10"></polygon>
+                        <polygon id="Path" stroke="#415EBF" stroke-width="2" points="10 168 40 168 40 0 10 0"></polygon>
+                    </g>
                 </g>
             </g>
         </g>
