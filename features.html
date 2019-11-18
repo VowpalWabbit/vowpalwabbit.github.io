@@ -1,0 +1,165 @@
+---
+layout: default
+body_class: features
+page_title: Features | Vowpal Wabbit
+---
+
+<div class="content features_container">
+  <div class="hero">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1>
+            What does Vowpal Wabbit do?
+          </h1>
+          <p class="description">
+            Vowpal Wabbit provides a fast, flexible, and open interactive machine learning solution for reinforcement learning, supervised learning, and other machine learning paradigms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature_detail_container">
+    <div class="container">
+      {% include tabs.html items=site.feature_details %}
+    </div>
+  </div>
+
+  <div class="how_it_works_container">
+    <div class="container">
+      <div class="how_it_works_content">
+        <div class="row">
+          <div class="col-12 col-lg-9">
+            <h2>
+              How it works
+            </h2>
+            <p>
+              In order to understand how Vowpal Wabbit works, you first need to understand what kind of problem you are trying to solve. The most common problem applications include <strong>reductions</strong> and <strong>contextual bandits</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="row reductions_container">
+          <div class="col-12">
+            <h4>
+              Anatomy of a reduction stack
+            </h4>
+          </div>
+          <div class="col-12 reductions">
+            <div class="row">
+              <div class="col-12 col-md-5">
+                Many problems in machine learning can be efficiently reduced to other solved problems in machine learning. This allows one to derive many important bounds of one algorithm in terms of other well-known and efficient algorithms. We call this a <strong>reduction stack</strong>.
+              </div>
+              <div class="col-12 col-md-7">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-7">
+              </div>
+
+              <div class="col-12 col-md-5">
+                <strong>Real-world reduction</strong>
+                <p>
+                  Vowpal Wabbit supports solutions to a range of real-world problems through reductions to standard learning algorithms. This versatility empowers you to frame learning problems effectively and achieve the best solution.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row cb_container">
+          <div class="col-12">
+            <h4>
+              Contextual bandits reinforcement learning
+            </h4>
+          </div>
+          <div class="col-12 cb">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                The contextual bandits approach to reinforcement learning is a fast, efficient learning strategy that is useful for website content optimization, delivering targeted advertising, and data analysis methods that depend on different environments and conditions.
+              </div>
+              <div class="col-12 col-md-6">
+                Vowpal Wabbit is the reinforcement learning framework for services like Microsoft Personalizer because the contextual bandits approach allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events.
+              </div>
+              <div class="col-12">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row examples_container">
+          <div class="col-12">
+            <h4>
+              Community contributions
+            </h4>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                Vowpal Wabbit is a mature, open source project and the result of community contributions and research since 2007. Hosted on GitHub, people all over the world contribute code and research to Vowpal Wabbit technology.
+                <br><br>
+                See community examples on GitHub and contribute to the development of Vowpal Wabbit technology.
+              </div>
+              <div class="col-12 col-lg-6">
+              <ul>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </li>
+                <li>
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </li>
+                <li>
+                  Sit amet commodo nulla facilisi nullam vehicula
+                </li>
+              </ul>
+
+              <div>
+                <a
+                  href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples"
+                  target="_blank"
+                  class="github_link"
+                >
+                  {% include svg/github.svg %}
+                  <div class="more_examples_label">
+                    More examples on GitHub
+                  </div>
+                </a>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="get_started_container">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-sm-12">
+          <h2>
+            Get started with Vowpal Wabbit
+          </h2>
+          <p class="description">
+            Install Vowpal Wabbit and start exploring with easy-to-access tutorials and documentation.
+          </p>
+          <div class="get_started_buttons">
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm col-lg-4">
+                <a href="{{ 'start.html' | relative_url }}">
+                  Get started
+                </a>
+              </div>
+              <div class="col-12 col-sm col-lg-4 tutorials_button">
+                <a href="{{ 'tutorials.html' | relative_url }}">
+                  Tutorials
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

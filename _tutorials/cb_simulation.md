@@ -1,9 +1,9 @@
 ---
+page_title: Content Personalization with Contextual Bandits  | Vowpal Wabbit
+page_description: In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using contextual bandits to make choices between actions in a given context.
 title: Simulating a news personalization scenario using Contextual Bandits
 order: 4
-module_id: cb_simulator
 description: This tutorial will guide you through how to structure a simulator to model a real world scenario using contextual bandit algorithms.
-guide_link_text: 'Begin tutorial'
 layout: tutorial
 body_class: tutorial
 level: advanced
@@ -12,7 +12,7 @@ tags: contextual&nbsp;bandits
 
 # Simulating a news personalization scenario using Contextual Bandits
 
-In the [Contextual Bandit(CB) introduction tutorial](contextual_bandits.html), we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (ctr).
+In the [Contextual Bandit(CB) introduction tutorial](contextual_bandits.html), we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (CTR).
 
 Let's recall that in a CB setting, a data point has four components,
 
@@ -267,7 +267,7 @@ Let's do the same thing again (but with `-q`, but this time show the effect if w
 vw = pyvw.vw("--cb_explore_adf -q UA --quiet --epsilon 0.2")
 
 num_iterations = 5000
-ctr  = run_simulation(vw, num_iterations, users, times_of_day, actions, get_cost, do_learn=False)
+ctr = run_simulation(vw, num_iterations, users, times_of_day, actions, get_cost, do_learn=False)
 
 plot_ctr(num_iterations, ctr)
 ```

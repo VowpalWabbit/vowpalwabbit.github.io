@@ -1,3 +1,14 @@
 ---
 ---
-{{ reference }}
+<div class="bib_content" id="{{entry.key}}">
+  {{ entry.author }},
+  {% if entry.url %}
+    <a href="{{entry.url}}">
+  {% endif %}
+    {{entry.title}}
+
+  {% if entry.url %}
+    </a>
+  {% endif %}
+  ({{entry.year}})
+</div>

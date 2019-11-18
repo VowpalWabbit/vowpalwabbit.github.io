@@ -40,6 +40,10 @@
     z-index: 2;
   }
 
+  &.dark {
+    background-color: rgba(0, 12, 76, 0.95);
+  }
+
   &.light {
     background: white;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);

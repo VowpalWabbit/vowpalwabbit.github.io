@@ -40,17 +40,17 @@ sass:
 collections:
   communities:
     output: true
-  problem_framing:
+  features:
+    output: true
+  feature_details:
     output: true
   reinforcement:
     output: true
   supervised:
     output: true
-  efficiency:
-    output: true
   flexibility:
     output: true
-  guides:
+  tutorials:
     output: true
   bibliography:
     output: true

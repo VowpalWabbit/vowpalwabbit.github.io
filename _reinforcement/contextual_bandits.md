@@ -1,10 +1,8 @@
 ---
-tab: Contextual Bandits
-title: Optimize rewards with Contextual Bandits
+title: The contextual bandit approach
 order: 1
-module_id: contextual_bandits
-show_guide: true
-illustration: assets/images/features/cb.svg
 ---
 
-Contextual Bandits are a form of reinforcement learning (RL). The vast majority of production real-world RL systems use contextual bandits techniques. <br><br> For an overview of a contextual bandit problem, including how to use Vowpal Wabbit in a CB setting with Python, read the contextual bandit tutorial.
+The vast majority of real-world reinforcement learning systems use an interactive contextual bandits approach. This approach enables people and organizations to learn and adapt continuously.
+
+For an overview of a contextual bandit approach to reinforcement learning and how to use Vowpal Wabbit, see the [contextual bandit reinforcement learning tutorial](../tutorials/contextual_bandits.html).

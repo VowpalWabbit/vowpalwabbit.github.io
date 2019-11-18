@@ -1,34 +1,13 @@
-{% assign item = include.item %}
+{% assign items = include.items %}
 
-<div class="col-12 col-md-6">
-  <h3>
-    {{ item.title }}
-  </h3>
+{% for item in items %}
+  <div class="col-12 col-md-6">
+    <h4>
+      {{ item.title }}
+    </h4>
 
-  <div class="description">
-    {{ item.content }}
+    <div>
+      {{ item.content }}
+    </div>
   </div>
-
-  {% if item.show_guide %}
-    {%
-      assign guide = site.guides | where: "module_id", item.module_id | first
-    %}
-    <div class="link">
-      <a href="{{ guide.url | relative_url}}">
-        {{guide.guide_link_text}}
-      </a>
-    </div>
-  {% endif %}
-
-  {% if item.link %}
-    <div class="link">
-      <a href={{item.link}} target="_blank">
-        {{item.link_text}}
-      </a>
-    </div>
-  {% endif %}
-</div>
-
-<div class="col">
-  <img alt="image for feature" src={{item.illustration}} />
-</div>
+{% endfor %}
