@@ -7,6 +7,7 @@ description: This tutorial runs through the contextual bandit approach to reinfo
 layout: tutorial
 level: advanced
 tags: contextual&nbsp;bandits command&nbsp;line python
+jupyter_notebook_name: Contextual_bandits_and_Vowpal_Wabbit.ipynb
 ---
 
 # Contextual bandits and Vowpal Wabbit
@@ -49,7 +50,7 @@ For example:
   - **Decision to optimize**: the wait time before reboot of unresponsive machine.
   - **Context**: the machine hardware specs (SKU, OS, failure history, location, load).
   - **Actions**: time in minutes - {1 ,2 , ...N}
-  - **Reward**: - the total downtime
+  - **Reward**: negative of the total downtime
 
 You want  **APP** to take actions that provide the highest possible reward. In machine learning parlance, we want a **model** that tells us which action to take.
 

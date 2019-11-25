@@ -5,9 +5,9 @@ title: Simulating a news personalization scenario using Contextual Bandits
 order: 4
 description: This tutorial will guide you through how to structure a simulator to model a real world scenario using contextual bandit algorithms.
 layout: tutorial
-body_class: tutorial
 level: advanced
 tags: contextual&nbsp;bandits python
+jupyter_notebook_name: Simulating_a_news_personalization_scenario_using_Contextual_Bandits.ipynb
 ---
 
 # Simulating a news personalization scenario using Contextual Bandits
