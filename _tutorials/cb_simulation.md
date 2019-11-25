@@ -107,25 +107,25 @@ print(to_vw_example_format(context,actions))
 ```
 
 Output:
-```
+<div class="output" markdown="1">
 shared |User user=Tom time_of_day=morning
 |Action article=politics
 |Action article=sports
 |Action article=music
 |Action article=food
-```
+</div>
 
 ## Getting a decision
 
-When we call VW we get a _pmf_, [probability mass function](https://en.wikipedia.org/wiki/Probability_mass_function), as the output. Since we are incorporating exploration into our strategy, VW will give us a list of probabilities over the set of actions. This means that the probability at a given index in the list corresponds to the likelihood of picking that specific action. In order to arrive at a decision/action, we will have to sample from this list.
+When we call VW we get a **pmf**, [probability mass function](https://en.wikipedia.org/wiki/Probability_mass_function), as the output. Since we are incorporating exploration into our strategy, VW will give us a list of probabilities over the set of actions. This means that the probability at a given index in the list corresponds to the likelihood of picking that specific action. In order to arrive at a decision/action, we will have to sample from this list.
 
-So, given a list `[0.7, 0.1, 0.1, 0.1]`, we would choose the first item with a 70% chance. `sample_custom_pmf` takes such a list and gives us the index it chose and what the probability of choosing that index was.
+So, given a list **[0.7, 0.1, 0.1, 0.1]**, we would choose the first item with a 70% chance. `sample_custom_pmf` takes such a list and gives us the index it chose and what the probability of choosing that index was.
 
 
 ```python
 def sample_custom_pmf(pmf):
     total = sum(pmf)
-    scale = 1/total
+    scale = 1 / total
     pmf = [x * scale for x in pmf]
     draw = random.random()
     sum_prob = 0.0
@@ -243,7 +243,7 @@ plot_ctr(num_iterations, ctr)
 ![png](cb_simulation_assets/output_22_0.png)
 
 #### Aside: interactions
-You'll notice in the arguments we supply to VW, **we include `-q UA`**. This is telling VW to create additional features which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. This allows us to learn the interaction between when certain actions are good in certain times of days and for particular users. If we didn't do that, the learning wouldn't really work. We can see that in action below.
+You'll notice in the arguments we supply to VW, we include `-q UA`. This is telling VW to create additional features which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. This allows us to learn the interaction between when certain actions are good in certain times of days and for particular users. If we didn't do that, the learning wouldn't really work. We can see that in action below.
 
 ```python
 # Instantiate learner in VW but without -q
@@ -280,14 +280,14 @@ In the real world people's preferences change over time. So now in the simulatio
 
 ### Tom
 
-| | `get_cost` | `get_cost_new1` |
+| | **get_cost** | **get_cost_new1** |
 |:---|:---:|:---:|
 | **Morning** | Politics | Politics |
 | **Afternoon** | Music | Sports |
 
 ### Anna
 
-| | `get_cost` | `get_cost_new1`  |
+| | **get_cost** | **get_cost_new1**  |
 |:---|:---:|:---:|
 | **Morning** | Sports | Sports |
 | **Afternoon** | Politics | Sports |
@@ -373,7 +373,7 @@ plot_ctr(total_iterations, ctr)
 
 ![png](cb_simulation_assets/output_32_0.png)
 
-**Note:** The initial spike in CTR depends on the rewards received for the first few examples. When you run on your own, you may see something different initially because our simulator is designed to have randomness.
+> **Note:** The initial spike in CTR depends on the rewards received for the first few examples. When you run on your own, you may see something different initially because our simulator is designed to have randomness.
 
 ### Without learning
 
@@ -399,14 +399,14 @@ In this scenario we are going to start rewarding actions that have never seen a 
 
 ### Tom
 
-| | `get_cost` | `get_cost_new2` |
+| | **get_cost** | **get_cost_new2** |
 |:---|:---:|:---:|
 | **Morning** | Politics |  Politics|
 | **Afternoon** | Music |   Food |
 
 ### Anna
 
-| | `get_cost` | `get_cost_new2` |
+| | **get_cost** | **get_cost_new2** |
 |:---|:---:|:---:|
 | **Morning** | Sports | Food|
 | **Afternoon** | Politics |  Food |

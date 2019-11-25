@@ -306,9 +306,38 @@ Your dataframes are:
 
 ```python
 train_df.head()
+```
 
+Output:
+
+<div class="output" markdown="1">
+
+| index | action | cost | feature1 | feature2 | feature3 | probability |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | 1 | 2 | a | c |  | 0.4 |
+| 2 | 3 | 0 | b | d |  | 0.2 |
+| 3 | 4 | 1 | a | b |  | 0.5 |
+| 4 | 2 | 1 | a | b | c | 0.3 |
+| 5 | 3 | 1 | a | d |  | 0.7 |
+
+</div>
+
+```python
 test_df.head()
 ```
+
+Output:
+
+<div class="output" markdown="1">
+
+| index | feature1 | feature2 | feature3 |
+|:---:|:---:|:---:|:---:|
+| 1 | b | c | |
+| 2 | a | | b|
+| 3 | b | b | |
+| 4 | a | | b |
+
+</div>
 
 ##  Contextual bandits Python tutorial
 
@@ -356,6 +385,13 @@ for j in test_df.index:
   print(j, choice)
 ```
 
+<div class="output" markdown="1">
+1 3
+2 3
+3 3
+4 3
+</div>
+
 >**Note:** The contextual bandit assigns every instance to the third action as it should per the cost structure of the train data. You can save and load the model you train from a file.
 
 Finally, experiment with the cost structure to see that the contextual bandit updates its predictions accordingly.
@@ -367,6 +403,10 @@ del vw
 vw = pyvw.vw("--cb 4 -i cb.model")
 print(vw.predict('| a b'))
 ```
+
+<div class="output" markdown="1">
+3
+</div>
 
 The `-i` argument means input regressor, telling Vowpal Wabbit to load a model from that file instead of starting from scratch.
 
