@@ -7,7 +7,7 @@ module_id: getting_started
 description: This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output.
 layout: tutorial
 level: beginner
-tags: linear&nbsp;regression getting&nbsp;started
+tags: linear&nbsp;regression getting&nbsp;started command&nbsp;line
 ---
 
 # A Step by Step Introduction to Linear Regression

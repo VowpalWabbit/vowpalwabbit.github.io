@@ -7,7 +7,7 @@ description: This tutorial will guide you through how to structure a simulator t
 layout: tutorial
 body_class: tutorial
 level: advanced
-tags: contextual&nbsp;bandits
+tags: contextual&nbsp;bandits python
 ---
 
 # Simulating a news personalization scenario using Contextual Bandits

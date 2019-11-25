@@ -6,7 +6,7 @@ order: 2
 description: This tutorial runs through the contextual bandit approach to reinforcement learning with Vowpal Wabbit.
 layout: tutorial
 level: advanced
-tags: contextual&nbsp;bandits
+tags: contextual&nbsp;bandits command&nbsp;line python
 ---
 
 # Contextual bandits and Vowpal Wabbit
