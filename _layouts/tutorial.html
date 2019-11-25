@@ -28,26 +28,35 @@
             <label>
               Table of contents
             </label>
-            <ul>
+            <ul class="tutorial_content_nav">
             </ul>
             {% if page.jupyter_notebook_name %}
               <div class="run_tutorial_links">
                 <label>
                   Run this tutorial
                 </label>
-                <a
-                  href="{{ site.github.jupyter_notebook_source_url }}/blob/master/{{page.jupyter_notebook_name}}"
-                  target="_blank"
-                >
-                  GitHub source file
-                </a>
-
-                <a
-                  href="{{ site.github.jupyter_notebook_url }}{{page.jupyter_notebook_name}}"
-                  target="_blank"
-                >
-                  Jupyter Notebook
-                </a>
+                <ul>
+                  <li>
+                    <span>
+                      <a
+                        href="{{ site.github.jupyter_notebook_source_url }}/blob/master/{{page.jupyter_notebook_name}}"
+                        target="_blank"
+                      >
+                        GitHub source file
+                      </a>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a
+                        href="{{ site.github.jupyter_notebook_url }}{{page.jupyter_notebook_name}}"
+                        target="_blank"
+                      >
+                        Jupyter Notebook
+                      </a>
+                    </span>
+                  </li>
+                </ul>
               </div>
             {% endif %}
           </div>
