@@ -385,6 +385,7 @@ for j in test_df.index:
   print(j, choice)
 ```
 
+Output:
 <div class="output" markdown="1">
 1 3
 2 3
@@ -404,6 +405,7 @@ vw = pyvw.vw("--cb 4 -i cb.model")
 print(vw.predict('| a b'))
 ```
 
+Output:
 <div class="output" markdown="1">
 3
 </div>
