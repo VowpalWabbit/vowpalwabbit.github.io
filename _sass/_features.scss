@@ -14,21 +14,38 @@
     padding: 4rem 1rem;
   }
 
-  .reductions_container, .cb_container, .examples_container {
-    margin: 3rem 1rem 0;
+  .how_it_works_container {
+    padding: 5rem 1rem;
+    background: $blue-5;
+
+    h2 {
+      padding-bottom: 2rem;
+    }
+
+    .how_it_works_content {
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+      padding: 4rem;
+      background-color: white;
+    }
   }
 
-  .reductions, .cb {
-    background-image: linear-gradient($yellow-20 50%, white 0%);
-    background-position: left;
-    background-size: 1.5px 5px;
-    background-repeat: repeat-y;
+  .reductions_container, .examples_container {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  .reductions_content, .examples_content {
     margin-top: 0.8rem;
-    margin-left: 15px;
-    padding-left: 1.5rem;
   }
 
   .examples_container {
+    border-top: 1px solid $gray-10;
+
+    .examples_header {
+      font-weight: 600;
+      padding-bottom: 0.8rem;
+    }
+
     ul {
       list-style-type: none;
       padding: 0;
@@ -69,21 +86,6 @@
           fill: $blue-10;
         }
       }
-    }
-  }
-
-  .how_it_works_container {
-    padding: 5rem 1rem;
-    background: $blue-5;
-
-    h2 {
-      padding-bottom: 2rem;
-    }
-
-    .how_it_works_content {
-      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
-      padding: 4rem;
-      background-color: white;
     }
   }
 
