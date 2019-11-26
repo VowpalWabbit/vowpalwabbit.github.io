@@ -40,93 +40,81 @@ page_title: Features | Vowpal Wabbit
           </div>
         </div>
 
-        <div class="row reductions_container">
-          <div class="col-12">
-            <h4>
-              Anatomy of a reduction stack
-            </h4>
-          </div>
-          <div class="col-12 reductions">
-            <div class="row">
-              <div class="col-12 col-md-5">
-                Many problems in machine learning can be efficiently reduced to other solved problems in machine learning. This allows one to derive many important bounds of one algorithm in terms of other well-known and efficient algorithms. We call this a <strong>reduction stack</strong>.
-              </div>
-              <div class="col-12 col-md-7">
-
+        <div class="reductions_container">
+          <div class="row">
+            <div class="col-12 col-md-5">
+              <h4>
+                Anatomy of a reduction stack
+              </h4>
+              <div class="reductions_content">
+                  Many problems in machine learning can be efficiently reduced to other solved problems in machine learning. This allows one to derive many important bounds of one algorithm in terms of other well-known and efficient algorithms. We call this a <strong>reduction stack</strong>.
               </div>
             </div>
-            <div class="row">
-              <div class="col-12 col-md-7">
-              </div>
+            <div class="col-12 col-md-7">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-7">
+            </div>
 
-              <div class="col-12 col-md-5">
-                <strong>Real-world reduction</strong>
-                <p>
-                  Vowpal Wabbit supports solutions to a range of real-world problems through reductions to standard learning algorithms. This versatility empowers you to frame learning problems effectively and achieve the best solution.
-                </p>
+            <div class="col-12 col-md-5">
+              <h4>Real-world reduction</h4>
+              <div class="reductions_content">
+                Vowpal Wabbit supports solutions to a range of real-world problems through reductions to standard learning algorithms. This versatility empowers you to frame learning problems effectively and achieve the best solution.
               </div>
             </div>
           </div>
         </div>
 
-        <div class="row cb_container">
-          <div class="col-12">
-            <h4>
-              Contextual bandits reinforcement learning
-            </h4>
-          </div>
-          <div class="col-12 cb">
-            <div class="row">
-              <div class="col-12 col-md-6">
-                The contextual bandits approach to reinforcement learning is a fast, efficient learning strategy that is useful for website content optimization, delivering targeted advertising, and data analysis methods that depend on different environments and conditions.
-              </div>
-              <div class="col-12 col-md-6">
-                Vowpal Wabbit is the reinforcement learning framework for services like Microsoft Personalizer because the contextual bandits approach allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events.
-              </div>
-              <div class="col-12">
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row examples_container">
-          <div class="col-12">
-            <h4>
-              Community contributions
-            </h4>
-            <div class="row">
-              <div class="col-12 col-lg-6">
-                Vowpal Wabbit is a mature, open source project and the result of community contributions and research since 2007. Hosted on GitHub, people all over the world contribute code and research to Vowpal Wabbit technology.
-                <br><br>
-                See community examples on GitHub and contribute to the development of Vowpal Wabbit technology.
-              </div>
-              <div class="col-12 col-lg-6">
-              <ul>
-                <li>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </li>
-                <li>
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-                </li>
-                <li>
-                  Sit amet commodo nulla facilisi nullam vehicula
-                </li>
-              </ul>
-
-              <div>
-                <a
-                  href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples"
-                  target="_blank"
-                  class="github_link"
-                >
-                  {% include svg/github.svg %}
-                  <div class="more_examples_label">
-                    More examples on GitHub
+        <div class="examples_container">
+          <div class="row">
+            <div class="col-12">
+              <h4>
+                Community contributions
+              </h4>
+              <div class="row">
+                <div class="col-12 col-lg-6 examples_content">
+                  Vowpal Wabbit is a mature, open source project and the result of community contributions and research since 2007. Hosted on GitHub, people all over the world contribute code and research to Vowpal Wabbit technology.
+                  <br><br>
+                  See community examples on GitHub and contribute to the development of Vowpal Wabbit technology.
+                </div>
+                <div class="col-12 col-lg-6 examples_content">
+                  <div class="examples_header">
+                    Examples on GitHub
                   </div>
-                </a>
+                  <ul>
+                    <li>
+                      <a
+                        href="{{ site.github.jupyter_notebook_source_url }}/blob/master/Contextual_bandits_and_Vowpal_Wabbit.ipynb"
+                        target="_blank"
+                      >
+                        Contextual bandits and Vowpal Wabbit
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="{{ site.github.jupyter_notebook_source_url }}/blob/master/Simulating_a_news_personalization_scenario_using_Contextual_Bandits.ipynb"
+                        target="_blank"
+                      >
+                        Simulating a news personalization scenario using Contextual Bandits
+                      </a>
+                    </li>
+                  </ul>
+
+                  <div>
+                    <a
+                      href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples"
+                      target="_blank"
+                      class="github_link"
+                    >
+                      {% include svg/github.svg %}
+                      <div class="more_examples_label">
+                        More examples on GitHub
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ const tutorialModule = (function() {
   }
 
   function cacheDom() {
-    DOM.$tutorial_nav = $(".tutorial_container .tutorial_nav");
+    DOM.$tutorial_nav = $(".tutorial_container .tutorial_nav .tutorial_content_nav");
     DOM.$h2s = $(".tutorial_container h2");
   }
 
