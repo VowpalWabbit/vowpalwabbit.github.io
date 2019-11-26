@@ -9,12 +9,10 @@ const tabsModule = (function() {
 
   function cacheDom() {
     DOM.$nav = $(".tabs_container .nav");
-    DOM.$sub_nav = $(".tabs_container .sub_nav");
   }
 
   function bindEvents() {
     DOM.$nav.on('click', 'button', handleClick);
-    DOM.$sub_nav.on('click', 'button', handleClick);
   }
 
   return {

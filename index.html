@@ -3,6 +3,7 @@
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
+  <link rel="canonical" href="/" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -14,14 +15,14 @@
   <script src="/assets/app.js"></script>
 
   <title>Vowpal Wabbit</title>
-  <meta name="description" content="" >
+  <meta name="description" content="Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems." >
 </head>
 
   <body class=home>
     
 
 
-<div class="navbar_container  main_nav_container">
+<div class="navbar_container dark main_nav_container">
   <div class="container navbar">
     <div class="logo">
       <a href="/index.html">
@@ -53,13 +54,19 @@
         Get started
       </a>
       <a
+        href="/features.html"
+        class=''
+      >
+        Features
+      </a>
+      <a
         href="/tutorials.html"
         class=''
       >
         Tutorials
       </a>
       <a
-        href="/publications.html"
+        href="/research.html"
         class=''
       >
         Research
@@ -102,7 +109,7 @@
 
 
 
-<div class="navbar_container  mobile_nav_container">
+<div class="navbar_container dark mobile_nav_container">
   <div class="container navbar">
     <div class="hamburger_icon">
       <?xml version="1.0" encoding="UTF-8"?>
@@ -159,10 +166,16 @@
   <a href="/start.html" class=''>
     Get started
   </a>
+  <a
+    href="/features.html"
+    class=''
+  >
+    Features
+  </a>
   <a href="/tutorials.html" class=''>
     Tutorials
   </a>
-  <a href="/publications.html" class=''>
+  <a href="/research.html" class=''>
     Research
   </a>
   <div class="external_links">
@@ -196,7 +209,7 @@
     <div class="content">
   <div class="hero_container">
     <div class="container hero_content">
-      <div class="row justify-content-center text-center">
+      <div class="row">
         <div class="edit">
   
   
@@ -231,28 +244,28 @@
             Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.
           </p>
           <div class="hero_buttons">
-            <div class="row justify-content-center">
+            <div class="row">
               <div class="col-12 col-sm col-lg-4">
                 <a href="/start.html">
                   Get started
                 </a>
               </div>
-              <div class="col-12 col-sm col-lg-4">
-                <a
-                  href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki"
-                  target="_blank"
-                >
-                  Wiki on GitHub
+              <div class="col-12 col-sm col-lg-4 tutorials_button">
+                <a href="/tutorials.html">
+                  Tutorials
                 </a>
               </div>
             </div>
           </div>
         </div>
+        <div class="col-12 col-lg-4">
+          <img alt="rabbit illustration for hero" src="assets/images/hero/rabbit.svg"/>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="problem_framing_container">
+  <div class="features_container">
     <div class="container">
       <div class="row justify-content-center text-center">
         <div class="col-12 col-lg-8">
@@ -270,504 +283,65 @@
           </p>
         </div>
       </div>
-      
 
-<div class="tabs_container">
-  <div class="row justify-content-start">
-    <div class="nav">
       
-        <button
-          class="col col-lg-2 active"
-          data-module_id=reinforcement
-        >
-          Reinforcement
-        </button>
-      
-        <button
-          class="col col-lg-2 "
-          data-module_id=supervised
-        >
-          Supervised
-        </button>
-      
-        <button
-          class="col col-lg-2 "
-          data-module_id=online
-        >
-          Online
-        </button>
-      
-        <button
-          class="col col-lg-2 "
-          data-module_id=efficiency
-        >
-          Efficiency
-        </button>
-      
-        <button
-          class="col col-lg-2 "
-          data-module_id=flexibility
-        >
-          Flexibility
-        </button>
-      
-    </div>
-  </div>
-
-  <div class="row tab_content">
-    
-      <div class=" row" data-module_id=reinforcement>
+      <div class="row features">
         
-          
-          <div class="col-sm-12 col-lg-2 sub_nav">
-  
-    <button
-      class="active"
-      data-module_id=contextual_bandits
-    >
-      Contextual Bandits
-    </button>
-  
-    <button
-      class=""
-      data-module_id=learning2search
-    >
-      Learning2Search
-    </button>
-  
-</div>
-
-<div class="col col-lg-10">
-  
-    <div
-      class="row "
-      data-module_id=contextual_bandits
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Optimize rewards with Contextual Bandits
-  </h3>
-
-  <div class="description">
-    <p>Contextual Bandits are a form of reinforcement learning (RL). The vast majority of production real-world RL systems use contextual bandits techniques. <br /><br /> For an overview of a contextual bandit problem, including how to use Vowpal Wabbit in a CB setting with Python, read the contextual bandit tutorial.</p>
-
-  </div>
-
-  
-    
-    <div class="link">
-      <a href="/guides/contextual_bandits.html">
-        Read the contextual bandit tutorial
-      </a>
-    </div>
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/cb.svg />
-</div>
-
-    </div>
-  
-    <div
-      class="row hidden"
-      data-module_id=learning2search
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Learning2Search
-  </h3>
-
-  <div class="description">
-    <p>Learning2Search (L2S) is a form of guided reinforcement learning, which enjoys global guarantees on performance. For more on L2S and how to use Vowpal Wabbit in an L2S setting, read the learning2search tutorial.</p>
-
-  </div>
-
-  
-
-  
-    <div class="link">
-      <a href=http://hunch.net/~l2s target="_blank">
-        Read the Learning2search tutorial
-      </a>
-    </div>
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/cb.svg />
-</div>
-
-    </div>
-  
-</div>
-
+          <div class="col text-center">
+            <div class="feature_icon">
+              <img alt="image for feature" src=assets/images/features/reinforcement.svg />
+            </div>
+            <p>
+              Reinforcement learning
+            </p>
+          </div>
+        
+          <div class="col text-center">
+            <div class="feature_icon">
+              <img alt="image for feature" src=assets/images/features/supervised.svg />
+            </div>
+            <p>
+              Supervised learning
+            </p>
+          </div>
+        
+          <div class="col text-center">
+            <div class="feature_icon">
+              <img alt="image for feature" src=assets/images/features/online.svg />
+            </div>
+            <p>
+              Interactive learning
+            </p>
+          </div>
+        
+          <div class="col text-center">
+            <div class="feature_icon">
+              <img alt="image for feature" src=assets/images/features/efficient.svg />
+            </div>
+            <p>
+              Efficient learning
+            </p>
+          </div>
+        
+          <div class="col text-center">
+            <div class="feature_icon">
+              <img alt="image for feature" src=assets/images/features/versatile.svg />
+            </div>
+            <p>
+              Versatile learning
+            </p>
+          </div>
         
       </div>
-    
-      <div class="hidden row" data-module_id=supervised>
-        
-          
-          <div class="col-sm-12 col-lg-2 sub_nav">
-  
-    <button
-      class="active"
-      data-module_id=active_learning
-    >
-      Active learning
-    </button>
-  
-    <button
-      class=""
-      data-module_id=extreme_classification
-    >
-      Extreme classification
-    </button>
-  
-</div>
 
-<div class="col col-lg-10">
-  
-    <div
-      class="row "
-      data-module_id=active_learning
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Active learning
-  </h3>
-
-  <div class="description">
-    <p>Active learning enables a learner to choose which examples to label given what it knows and a source of unlabeled examples. Active learning is used to minimize the cost of labeling datasets.</p>
-
-  </div>
-
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/online.svg />
-</div>
-
-    </div>
-  
-    <div
-      class="row hidden"
-      data-module_id=extreme_classification
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Extreme classification
-  </h3>
-
-  <div class="description">
-    <p>In the extreme multi-class (or multi-label) learning setting, there is a vast number of classes to choose. Classification algorithms that run in logarithmic time have applications in document tagging, ranking, and recommendation systems.</p>
-
-  </div>
-
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/online.svg />
-</div>
-
-    </div>
-  
-</div>
-
-        
+      <div class="learn_more_link">
+        <a
+          href="/features.html"
+          target="_blank"
+        >
+          Learn more
+        </a>
       </div>
-    
-      <div class="hidden row" data-module_id=online>
-        
-          
-
-<div class="col-12 col-md-6">
-  <h3>
-    Online
-  </h3>
-
-  <div class="description">
-    <p>Most learning algorithms require all data before they start learning. Vowpal Wabbit enables efficient learning from a continuously growing data source for situations where a problem changes or interactive learning is needed.</p>
-
-  </div>
-
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/online.svg />
-</div>
-
-        
-      </div>
-    
-      <div class="hidden row" data-module_id=efficiency>
-        
-          
-          <div class="col-sm-12 col-lg-2 sub_nav">
-  
-    <button
-      class="active"
-      data-module_id=speed
-    >
-      Speed
-    </button>
-  
-    <button
-      class=""
-      data-module_id=scalability
-    >
-      Scalability
-    </button>
-  
-</div>
-
-<div class="col col-lg-10">
-  
-    <div
-      class="row "
-      data-module_id=speed
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Speed
-  </h3>
-
-  <div class="description">
-    <p>Vowpal Wabbit handles learning problems with any number of sparse features. It is the first published tera-scale learner<sup><a class="cite_sup" href="#DBLP:journals/corr/abs-1110-4198">[1]</a></sup>.</p>
-
-<div class="hidden">
-  <ol class="bibliography"><li><span id="DBLP:journals/corr/abs-1110-4198">Agarwal, A., Chapelle, O., Dudı́k Miroslav, &amp; Langford, J. (2011). A Reliable Effective Terascale Linear Learning System. <i>CoRR</i>, <i>abs/1110.4198</i>. Retrieved from http://arxiv.org/abs/1110.4198</span>
-<a class="details" href="/bibliography/DBLP_journals/corr/abs-1110-4198.html">Get .bib</a></li></ol>
-</div>
-
-  </div>
-
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/speed.svg />
-</div>
-
-    </div>
-  
-    <div
-      class="row hidden"
-      data-module_id=scalability
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Scalability
-  </h3>
-
-  <div class="description">
-    <p>Vowpal Wabbit pioneered hashing techniques <sup><a class="cite_sup" href="#Shi:2009:HKS:1577069.1755873">[1]</a> <a class="cite_sup" href="#DBLP:journals/corr/abs-0902-2206">[2]</a></sup> and used distributed out-of-core learning to achieve scalability and keep its memory footprint bounded independent of the training dataset.</p>
-
-<div class="hidden">
-  <ol class="bibliography"><li><span id="Shi:2009:HKS:1577069.1755873">Shi, Q., Petterson, J., Dror, G., Langford, J., Smola, A., &amp; Vishwanathan, S. V. N. (2009). Hash Kernels for Structured Data. <i>J. Mach. Learn. Res.</i>, <i>10</i>, 2615–2637. Retrieved from http://dl.acm.org/citation.cfm?id=1577069.1755873</span>
-<a class="details" href="/bibliography/Shi_2009_HKS_1577069.1755873.html">Get .bib</a></li>
-<li><span id="DBLP:journals/corr/abs-0902-2206">Weinberger, K. Q., Dasgupta, A., Attenberg, J., Langford, J., &amp; Smola, A. J. (2009). Feature Hashing for Large Scale Multitask Learning. <i>CoRR</i>, <i>abs/0902.2206</i>. Retrieved from http://arxiv.org/abs/0902.2206</span>
-<a class="details" href="/bibliography/DBLP_journals/corr/abs-0902-2206.html">Get .bib</a></li></ol>
-</div>
-
-  </div>
-
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/speed.svg />
-</div>
-
-    </div>
-  
-</div>
-
-        
-      </div>
-    
-      <div class="hidden row" data-module_id=flexibility>
-        
-          
-          <div class="col-sm-12 col-lg-2 sub_nav">
-  
-    <button
-      class="active"
-      data-module_id=input_format
-    >
-      Input format
-    </button>
-  
-    <button
-      class=""
-      data-module_id=example_manipulation
-    >
-      Example manipulation
-    </button>
-  
-    <button
-      class=""
-      data-module_id=reductions
-    >
-      Reductions
-    </button>
-  
-    <button
-      class=""
-      data-module_id=deployability
-    >
-      Deployability
-    </button>
-  
-</div>
-
-<div class="col col-lg-10">
-  
-    <div
-      class="row "
-      data-module_id=input_format
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Input format
-  </h3>
-
-  <div class="description">
-    <p>Vowpal Wabbit’s input format is more flexible than many toolkits. This flexibility allows examples with features consisting of free form text and multiple feature sources to be explicitly represented within an example and used later.</p>
-
-  </div>
-
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/input_format.svg />
-</div>
-
-    </div>
-  
-    <div
-      class="row hidden"
-      data-module_id=example_manipulation
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Example manipulation
-  </h3>
-
-  <div class="description">
-    <p>Vowpal Wabbit includes example manipulators for efficiency and ease of deployment so you can suppress or combine different feature sources to maximize performance.</p>
-
-  </div>
-
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/input_format.svg />
-</div>
-
-    </div>
-  
-    <div
-      class="row hidden"
-      data-module_id=reductions
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Reductions
-  </h3>
-
-  <div class="description">
-    <p>Vowpal Wabbit supports solutions to a range of real problems through reductions to standard learning algorithms. This versatility empowers you to frame learning problems effectively to achieve the best solution.</p>
-
-  </div>
-
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/input_format.svg />
-</div>
-
-    </div>
-  
-    <div
-      class="row hidden"
-      data-module_id=deployability
-    >
-      
-
-<div class="col-12 col-md-6">
-  <h3>
-    Deployability
-  </h3>
-
-  <div class="description">
-    <p>Vowpal Wabbit is available on the command line, as a library, and as a daemon. It is available as a service via the <a href="http://aka.ms/personalizer" target="_blank">Microsoft Azure Cognitive Services Personalizer</a> and <a href="https://github.com/Azure/mmlspark" target="_blank">Microsoft Machine Learning for Apache Spark (MMLSpark)</a>.</p>
-
-  </div>
-
-  
-
-  
-</div>
-
-<div class="col">
-  <img alt="image for feature" src=assets/images/features/input_format.svg />
-</div>
-
-    </div>
-  
-</div>
-
-        
-      </div>
-    
-  </div>
-</div>
-
-<script src="/assets/js/tabs.js"></script>
-
     </div>
   </div>
 
@@ -859,7 +433,7 @@
     
     <div class="step_title">
       Ready to use Vowpal Wabbit? Follow this
-      <a href="/guides/getting_started.html">
+      <a href="/tutorials/getting_started.html">
         getting started tutorial
       </a>.
       You will learn how to perform Linear Regression with VW—including how to interact with VW by structuring input and learning how to interpret VW output.
@@ -880,18 +454,20 @@
           <img alt="chart" class="chart_icon" src="assets/images/research/chart.svg" />
         </div>
 
-        <div class="col">
-          <h2>
-            A vehicle for machine learning research
-          </h2>
-          <p class="description">
-            Vowpal Wabbit’s design is informed and influenced by advanced interactive and online learning research.
-          </p>
-          <div>
-            For more details on the research driving Vowpal Wabbit
-            <a href="/publications.html">
-              visit the Vowpal Wabbit publications list.
-            </a>
+        <div class="col research_description">
+          <div class="content">
+            <h2>
+              A vehicle for machine learning research
+            </h2>
+            <p class="description">
+              Vowpal Wabbit’s design is informed and influenced by advanced interactive and online learning research.
+            </p>
+            <div>
+              For more details on the research driving Vowpal Wabbit
+              <a href="/research.html">
+                visit the Vowpal Wabbit publications list.
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
+  <link rel="canonical" href="/tutorials/cb_simulation.html" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -13,8 +14,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/app.js"></script>
 
-  <title>Simulating a news personalization scenario using Contextual Bandits</title>
-  <meta name="description" content="This tutorial will guide you through how to structure a simulator to model a real world scenario using contextual bandit algorithms." >
+  <title>Content Personalization with Contextual Bandits  | Vowpal Wabbit</title>
+  <meta name="description" content="In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using contextual bandits to make choices between actions in a given context." >
 </head>
 
 
@@ -54,13 +55,19 @@
         Get started
       </a>
       <a
-        href="/tutorials.html"
+        href="/features.html"
         class=''
+      >
+        Features
+      </a>
+      <a
+        href="/tutorials.html"
+        class='active'
       >
         Tutorials
       </a>
       <a
-        href="/publications.html"
+        href="/research.html"
         class=''
       >
         Research
@@ -160,10 +167,16 @@
   <a href="/start.html" class=''>
     Get started
   </a>
-  <a href="/tutorials.html" class=''>
+  <a
+    href="/features.html"
+    class=''
+  >
+    Features
+  </a>
+  <a href="/tutorials.html" class='active'>
     Tutorials
   </a>
-  <a href="/publications.html" class=''>
+  <a href="/research.html" class=''>
     Research
   </a>
   <div class="external_links">
@@ -215,7 +228,7 @@
   
   
 
-  <a href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/blob/source/_guides/cb_simulation.md" target="_blank">
+  <a href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/blob/source/_tutorials/cb_simulation.md" target="_blank">
     <?xml version="1.0" encoding="UTF-8"?>
 <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
@@ -239,13 +252,47 @@
 
       <div class="row">
         <div class="col-lg-3">
-          <ol class="tutorial_nav">
-          </ol>
+          <div class="tutorial_nav">
+            <label>
+              Table of contents
+            </label>
+            <ul class="tutorial_content_nav">
+            </ul>
+            
+              <div class="run_tutorial_links">
+                <label>
+                  Run this tutorial
+                </label>
+                <ul>
+                  <li>
+                    <span>
+                      <a
+                        href="https://github.com/VowpalWabbit/jupyter-notebooks/blob/master/Simulating_a_news_personalization_scenario_using_Contextual_Bandits.ipynb"
+                        target="_blank"
+                      >
+                        GitHub source file
+                      </a>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a
+                        href="https://mybinder.org/v2/gh/VowpalWabbit/jupyter-notebooks/master?filepath=Simulating_a_news_personalization_scenario_using_Contextual_Bandits.ipynb"
+                        target="_blank"
+                      >
+                        Jupyter Notebook
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            
+          </div>
         </div>
         <div class="col-lg-9">
           <h1 id="simulating-a-news-personalization-scenario-using-contextual-bandits">Simulating a news personalization scenario using Contextual Bandits</h1>
 
-<p>In the <a href="contextual_bandits.html">Contextual Bandit(CB) introduction tutorial</a>, we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (ctr).</p>
+<p>In the <a href="contextual_bandits.html">Contextual Bandit(CB) introduction tutorial</a>, we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (CTR).</p>
 
 <p>Let’s recall that in a CB setting, a data point has four components,</p>
 
@@ -337,22 +384,23 @@
 </code></pre></div></div>
 
 <p>Output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shared |User user=Tom time_of_day=morning
+<div class="output">
+  <p>shared |User user=Tom time_of_day=morning
 |Action article=politics
 |Action article=sports
 |Action article=music
-|Action article=food
-</code></pre></div></div>
+|Action article=food</p>
+</div>
 
 <h2 id="getting-a-decision">Getting a decision</h2>
 
-<p>When we call VW we get a <em>pmf</em>, <a href="https://en.wikipedia.org/wiki/Probability_mass_function">probability mass function</a>, as the output. Since we are incorporating exploration into our strategy, VW will give us a list of probabilities over the set of actions. This means that the probability at a given index in the list corresponds to the likelihood of picking that specific action. In order to arrive at a decision/action, we will have to sample from this list.</p>
+<p>When we call VW we get a <strong>pmf</strong>, <a href="https://en.wikipedia.org/wiki/Probability_mass_function">probability mass function</a>, as the output. Since we are incorporating exploration into our strategy, VW will give us a list of probabilities over the set of actions. This means that the probability at a given index in the list corresponds to the likelihood of picking that specific action. In order to arrive at a decision/action, we will have to sample from this list.</p>
 
-<p>So, given a list <code class="highlighter-rouge">[0.7, 0.1, 0.1, 0.1]</code>, we would choose the first item with a 70% chance. <code class="highlighter-rouge">sample_custom_pmf</code> takes such a list and gives us the index it chose and what the probability of choosing that index was.</p>
+<p>So, given a list <strong>[0.7, 0.1, 0.1, 0.1]</strong>, we would choose the first item with a 70% chance. <code class="highlighter-rouge">sample_custom_pmf</code> takes such a list and gives us the index it chose and what the probability of choosing that index was.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sample_custom_pmf</span><span class="p">(</span><span class="n">pmf</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">pmf</span><span class="p">)</span>
-    <span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">total</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">total</span>
     <span class="n">pmf</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">scale</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pmf</span><span class="p">]</span>
     <span class="n">draw</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
     <span class="n">sum_prob</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -469,7 +517,7 @@
 <p><img src="cb_simulation_assets/output_22_0.png" alt="png" /></p>
 
 <h4 id="aside-interactions">Aside: interactions</h4>
-<p>You’ll notice in the arguments we supply to VW, <strong>we include <code class="highlighter-rouge">-q UA</code></strong>. This is telling VW to create additional features which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. This allows us to learn the interaction between when certain actions are good in certain times of days and for particular users. If we didn’t do that, the learning wouldn’t really work. We can see that in action below.</p>
+<p>You’ll notice in the arguments we supply to VW, we include <code class="highlighter-rouge">-q UA</code>. This is telling VW to create additional features which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. This allows us to learn the interaction between when certain actions are good in certain times of days and for particular users. If we didn’t do that, the learning wouldn’t really work. We can see that in action below.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Instantiate learner in VW but without -q
 </span><span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="o">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb_explore_adf --quiet --epsilon 0.2"</span><span class="p">)</span>
@@ -489,7 +537,7 @@
 </span><span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="o">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb_explore_adf -q UA --quiet --epsilon 0.2"</span><span class="p">)</span>
 
 <span class="n">num_iterations</span> <span class="o">=</span> <span class="mi">5000</span>
-<span class="n">ctr</span>  <span class="o">=</span> <span class="n">run_simulation</span><span class="p">(</span><span class="n">vw</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">,</span> <span class="n">users</span><span class="p">,</span> <span class="n">times_of_day</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">get_cost</span><span class="p">,</span> <span class="n">do_learn</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">ctr</span> <span class="o">=</span> <span class="n">run_simulation</span><span class="p">(</span><span class="n">vw</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">,</span> <span class="n">users</span><span class="p">,</span> <span class="n">times_of_day</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">get_cost</span><span class="p">,</span> <span class="n">do_learn</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="n">plot_ctr</span><span class="p">(</span><span class="n">num_iterations</span><span class="p">,</span> <span class="n">ctr</span><span class="p">)</span>
 </code></pre></div></div>
@@ -506,8 +554,8 @@
   <thead>
     <tr>
       <th style="text-align: left"> </th>
-      <th style="text-align: center"><code class="highlighter-rouge">get_cost</code></th>
-      <th style="text-align: center"><code class="highlighter-rouge">get_cost_new1</code></th>
+      <th style="text-align: center"><strong>get_cost</strong></th>
+      <th style="text-align: center"><strong>get_cost_new1</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -530,8 +578,8 @@
   <thead>
     <tr>
       <th style="text-align: left"> </th>
-      <th style="text-align: center"><code class="highlighter-rouge">get_cost</code></th>
-      <th style="text-align: center"><code class="highlighter-rouge">get_cost_new1</code></th>
+      <th style="text-align: center"><strong>get_cost</strong></th>
+      <th style="text-align: center"><strong>get_cost_new1</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -625,7 +673,9 @@
 
 <p><img src="cb_simulation_assets/output_32_0.png" alt="png" /></p>
 
-<p><strong>Note:</strong> The initial spike in CTR depends on the rewards received for the first few examples. When you run on your own, you may see something different initially because our simulator is designed to have randomness.</p>
+<blockquote>
+  <p><strong>Note:</strong> The initial spike in CTR depends on the rewards received for the first few examples. When you run on your own, you may see something different initially because our simulator is designed to have randomness.</p>
+</blockquote>
 
 <h3 id="without-learning-1">Without learning</h3>
 
@@ -654,8 +704,8 @@
   <thead>
     <tr>
       <th style="text-align: left"> </th>
-      <th style="text-align: center"><code class="highlighter-rouge">get_cost</code></th>
-      <th style="text-align: center"><code class="highlighter-rouge">get_cost_new2</code></th>
+      <th style="text-align: center"><strong>get_cost</strong></th>
+      <th style="text-align: center"><strong>get_cost_new2</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -678,8 +728,8 @@
   <thead>
     <tr>
       <th style="text-align: left"> </th>
-      <th style="text-align: center"><code class="highlighter-rouge">get_cost</code></th>
-      <th style="text-align: center"><code class="highlighter-rouge">get_cost_new2</code></th>
+      <th style="text-align: center"><strong>get_cost</strong></th>
+      <th style="text-align: center"><strong>get_cost_new2</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -767,7 +817,7 @@
       CITATIONS
     </h3>
     <div class="all_publications_link">
-      <a href="/publications.html">
+      <a href="/research.html">
         All publications
       </a>
     </div>
