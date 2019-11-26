@@ -3,6 +3,7 @@
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
+  <link rel="canonical" href="/features.html" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -13,12 +14,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/app.js"></script>
 
-  <title>Get started with Vowpal Wabbit</title>
-  <meta name="description" content="This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output." >
+  <title>Features | Vowpal Wabbit</title>
+  <meta name="description" content="" >
 </head>
 
-
-  <body class="tutorial">
+  <body class=features>
     
 
 
@@ -54,13 +54,19 @@
         Get started
       </a>
       <a
+        href="/features.html"
+        class='active'
+      >
+        Features
+      </a>
+      <a
         href="/tutorials.html"
         class=''
       >
         Tutorials
       </a>
       <a
-        href="/publications.html"
+        href="/research.html"
         class=''
       >
         Research
@@ -160,10 +166,16 @@
   <a href="/start.html" class=''>
     Get started
   </a>
+  <a
+    href="/features.html"
+    class='active'
+  >
+    Features
+  </a>
   <a href="/tutorials.html" class=''>
     Tutorials
   </a>
-  <a href="/publications.html" class=''>
+  <a href="/research.html" class=''>
     Research
   </a>
   <div class="external_links">
@@ -194,284 +206,421 @@
 
 <script src="/assets/js/header.js"></script>
 
-
-    <div class="hero">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h1>
-              Tutorials
-            </h1>
-            <a href="/tutorials.html">
-              < Back to all tutorials
-            </a>
-          </div>
+    <div class="content features_container">
+  <div class="hero">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1>
+            What does Vowpal Wabbit do?
+          </h1>
+          <p class="description">
+            Vowpal Wabbit provides a fast, flexible, and open interactive machine learning solution for reinforcement learning, supervised learning, and other machine learning paradigms.
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="container content tutorial_container">
-      <div class="edit">
-  
-  
+  <div class="feature_detail_container">
+    <div class="container">
+      
 
-  <a href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/blob/source/_guides/getting_started.md" target="_blank">
-    <?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
-    <title>icon_edit</title>
+<div class="tabs_container">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="nav">
+        
+          <button
+            class="col-12 active"
+            data-module_id=reinforcement
+          >
+            <span class="tab_text">
+              Reinforcement learning
+            </span>
+          </button>
+        
+          <button
+            class="col-12 "
+            data-module_id=supervised
+          >
+            <span class="tab_text">
+              Supervised learning
+            </span>
+          </button>
+        
+          <button
+            class="col-12 "
+            data-module_id=online
+          >
+            <span class="tab_text">
+              Interactive learning
+            </span>
+          </button>
+        
+          <button
+            class="col-12 "
+            data-module_id=efficiency
+          >
+            <span class="tab_text">
+              Efficient learning
+            </span>
+          </button>
+        
+          <button
+            class="col-12 "
+            data-module_id=flexibility
+          >
+            <span class="tab_text">
+              Versatile learning
+            </span>
+          </button>
+        
+      </div>
+    </div>
+    <div class="col-lg-9">
+      
+        <div class="" data-module_id=reinforcement>
+          
+
+          <div class="row">
+            
+
+
+  <div class="col-12 col-md-6">
+    <h4>
+      The contextual bandit approach
+    </h4>
+
+    <div>
+      <p>The vast majority of real-world reinforcement learning systems use an interactive contextual bandits approach. This approach enables people and organizations to learn and adapt continuously.</p>
+
+<p>For an overview of a contextual bandit approach to reinforcement learning and how to use Vowpal Wabbit, see the <a href="/tutorials/contextual_bandits.html">contextual bandit reinforcement learning tutorial</a>.</p>
+
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <h4>
+      Learning to search (L2S)
+    </h4>
+
+    <div>
+      <p>Learning to Search (L2S) is a form of guided reinforcement learning used for solving complex joint prediction problems based on learning to search through a problem-defined search space.</p>
+
+<p>For more on how to use Vowpal Wabbit in an L2S setting, see the <a href="http://hunch.net/~l2s" target="blank">learning to search tutorial</a>.</p>
+
+    </div>
+  </div>
+
+
+          </div>
+        </div>
+      
+        <div class="hidden" data-module_id=supervised>
+          
+
+          <div class="row">
+            
+
+
+  <div class="col-12 col-md-6">
+    <h4>
+      Active learning algorithms
+    </h4>
+
+    <div>
+      <p>Active learning allows a learning algorithm to choose which examples to label given what it knows and a source of unlabeled examples. Vowpal Wabbit provides several active learning algorithms to use that minimize the cost of labeling datasets.</p>
+
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <h4>
+      Extreme classification
+    </h4>
+
+    <div>
+      <p>In the extreme multi-class learning setting, there are a vast number of classes to predict amongst. Vowpal Wabbit’s classification algorithms that run in logarithmic time have applications in document tagging, ranking, and recommendation systems.</p>
+
+    </div>
+  </div>
+
+
+          </div>
+        </div>
+      
+        <div class="hidden" data-module_id=online>
+          
+
+          <div class="row">
+            
+
+
+  <div class="col-12 col-md-6">
+    <h4>
+      Online machine learning
+    </h4>
+
+    <div>
+      <p>Most learning algorithms require all data before they start learning. Vowpal Wabbit enables efficient learning from a continuously growing data source for situations where a problem changes.</p>
+
+    </div>
+  </div>
+
+
+          </div>
+        </div>
+      
+        <div class="hidden" data-module_id=efficiency>
+          
+
+          <div class="row">
+            
+
+
+  <div class="col-12 col-md-6">
+    <h4>
+      Speed and scalability
+    </h4>
+
+    <div>
+      <p>Vowpal Wabbit handles learning problems with any number of sparse features. It is the first published tera-scale learner<sup><a class="cite_sup" href="#DBLP:journals/corr/abs-1110-4198">[1]</a></sup> achieving great scaling. It features distributed, out-of-core learning and pioneered the hashing techniques<sup><a class="cite_sup" href="#Shi:2009:HKS:1577069.1755873">[2]</a> <a class="cite_sup" href="#DBLP:journals/corr/abs-0902-2206">[3]</a></sup>, which together make its memory footprint bounded independent of training data size.</p>
+
+<div class="hidden">
+  <ol class="bibliography"><li><div class="bib_content" id="DBLP:journals/corr/abs-1110-4198">
+  Alekh Agarwal and
+               Olivier Chapelle and
+               Miroslav Dudı́k and
+               John Langford,
+  
+    <a href="http://arxiv.org/abs/1110.4198">
+  
+    A Reliable Effective Terascale Linear Learning System
+
+  
+    </a>
+  
+  (2011)
+</div>
+<a class="details" href="/bibliography/DBLP_journals/corr/abs-1110-4198.html">Get .bib</a></li>
+<li><div class="bib_content" id="Shi:2009:HKS:1577069.1755873">
+  Shi, Qinfeng and Petterson, James and Dror, Gideon and Langford, John and Smola, Alex and Vishwanathan, S.V.N.,
+  
+    <a href="http://dl.acm.org/citation.cfm?id=1577069.1755873">
+  
+    Hash Kernels for Structured Data
+
+  
+    </a>
+  
+  (2009)
+</div>
+<a class="details" href="/bibliography/Shi_2009_HKS_1577069.1755873.html">Get .bib</a></li>
+<li><div class="bib_content" id="DBLP:journals/corr/abs-0902-2206">
+  Kilian Q. Weinberger and
+               Anirban Dasgupta and
+               Josh Attenberg and
+               John Langford and
+               Alexander J. Smola,
+  
+    <a href="http://arxiv.org/abs/0902.2206">
+  
+    Feature Hashing for Large Scale Multitask Learning
+
+  
+    </a>
+  
+  (2009)
+</div>
+<a class="details" href="/bibliography/DBLP_journals/corr/abs-0902-2206.html">Get .bib</a></li></ol>
+</div>
+
+    </div>
+  </div>
+
+
+          </div>
+        </div>
+      
+        <div class="hidden" data-module_id=flexibility>
+          
+
+          <div class="row">
+            
+
+
+  <div class="col-12 col-md-6">
+    <h4>
+      Flexible input format and manipulation
+    </h4>
+
+    <div>
+      <p>Vowpal Wabbit’s input format allows examples with features consisting of free form text and multiple sources to be explicitly represented and used later. It includes example manipulators for ease of deployment and to maximize performance by suppressing or combining different feature sources.</p>
+
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <h4>
+      Adaptable deployment
+    </h4>
+
+    <div>
+      <p>Vowpal Wabbit is available on the command line, as a library, as a daemon, and as a service via the <a href="http://aka.ms/personalizer" target="blank">Microsoft Azure Cognitive Services Personalizer</a> and <a href="https://github.com/Azure/mmlspark" target="blank">Microsoft Machine Learning for Apache Spark (MMLSpark)</a>.</p>
+
+    </div>
+  </div>
+
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/tabs.js"></script>
+
+    </div>
+  </div>
+
+  <div class="how_it_works_container">
+    <div class="container">
+      <div class="how_it_works_content">
+        <div class="row">
+          <div class="col-12 col-lg-9">
+            <h2>
+              How it works
+            </h2>
+            <p>
+              In order to understand how Vowpal Wabbit works, you first need to understand what kind of problem you are trying to solve. The most common problem applications include <strong>reductions</strong> and <strong>contextual bandits</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="reductions_container">
+          <div class="row">
+            <div class="col-12 col-md-5">
+              <h4>
+                Anatomy of a reduction stack
+              </h4>
+              <div class="reductions_content">
+                  Many problems in machine learning can be efficiently reduced to other solved problems in machine learning. This allows one to derive many important bounds of one algorithm in terms of other well-known and efficient algorithms. We call this a <strong>reduction stack</strong>.
+              </div>
+            </div>
+            <div class="col-12 col-md-7">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-7">
+            </div>
+
+            <div class="col-12 col-md-5">
+              <h4>Real-world reduction</h4>
+              <div class="reductions_content">
+                Vowpal Wabbit supports solutions to a range of real-world problems through reductions to standard learning algorithms. This versatility empowers you to frame learning problems effectively and achieve the best solution.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="examples_container">
+          <div class="row">
+            <div class="col-12">
+              <h4>
+                Community contributions
+              </h4>
+              <div class="row">
+                <div class="col-12 col-lg-6 examples_content">
+                  Vowpal Wabbit is a mature, open source project and the result of community contributions and research since 2007. Hosted on GitHub, people all over the world contribute code and research to Vowpal Wabbit technology.
+                  <br><br>
+                  See community examples on GitHub and contribute to the development of Vowpal Wabbit technology.
+                </div>
+                <div class="col-12 col-lg-6 examples_content">
+                  <div class="examples_header">
+                    Examples on GitHub
+                  </div>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://github.com/VowpalWabbit/jupyter-notebooks/blob/master/Contextual_bandits_and_Vowpal_Wabbit.ipynb"
+                        target="_blank"
+                      >
+                        Contextual bandits and Vowpal Wabbit
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://github.com/VowpalWabbit/jupyter-notebooks/blob/master/Simulating_a_news_personalization_scenario_using_Contextual_Bandits.ipynb"
+                        target="_blank"
+                      >
+                        Simulating a news personalization scenario using Contextual Bandits
+                      </a>
+                    </li>
+                  </ul>
+
+                  <div>
+                    <a
+                      href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples"
+                      target="_blank"
+                      class="github_link"
+                    >
+                      <?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>GitHub</title>
     <desc>Created with Sketch.</desc>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="button_edit" transform="translate(-7.000000, -7.000000)" stroke="#2A3B93">
-            <g id="icon_edit_selected">
-                <g transform="translate(8.000000, 8.000000)">
-                    <path d="M3.99393054,13.0502777 C0,14.1182229 0,14.1182229 0,14.1182229 C1.01972686,10.1881871 1.01972686,10.1881871 1.01972686,10.1881871 C10.579668,0.576689783 10.579668,0.576689783 10.579668,0.576689783 C11.3869519,-0.192229928 12.661609,-0.192229928 13.4264041,0.576689783 C14.1911991,1.34560988 14.1911991,2.62714261 13.4264041,3.43878036 L3.99393054,13.0502777 Z M9.85736179,1.30289223 C12.7465867,4.16498242 12.7465867,4.16498242 12.7465867,4.16498242 L9.85736179,1.30289223 Z M3.99393054,13.0502777 C3.99393054,13.0502777 4.16388585,12.0677717 3.14415784,10.9143911 C2.12443098,9.7610106 1.01972686,10.1881871 1.01972686,10.1881871" id="icon_edit"></path>
-                </g>
+        <g id="HD_Desktop_header_Home" transform="translate(-1538.000000, -58.000000)" fill="#FFFFFF">
+            <g id="Header">
+                <path d="M1568,73.7951128 C1567.94603,74.2583723 1567.89891,74.7224863 1567.83682,75.1847206 C1567.56271,77.2238487 1566.86543,79.1138828 1565.7732,80.8526868 C1564.55268,82.7956941 1562.9969,84.4188114 1561.05088,85.6538569 C1560.03339,86.2996179 1558.94817,86.8066231 1557.80753,87.1895684 C1557.17559,87.4016322 1556.73848,87.0743943 1556.73531,86.4093237 C1556.72907,85.1020808 1556.73745,83.7947524 1556.73164,82.487424 C1556.72804,81.6908602 1556.64825,80.9063436 1556.21259,80.2087201 C1556.0855,80.0052003 1555.92463,79.8226135 1555.77393,79.6234512 C1556.35935,79.5140871 1556.9463,79.4362506 1557.51632,79.2916849 C1559.04696,78.9034423 1560.41543,78.2275208 1561.34791,76.8924242 C1562.03287,75.9115647 1562.34632,74.7851144 1562.48436,73.6108172 C1562.59169,72.6982249 1562.62222,71.7826422 1562.42971,70.8740656 C1562.23608,69.9599354 1561.84044,69.1418405 1561.22834,68.4359293 C1561.07756,68.2620575 1561.04763,68.1215929 1561.12221,67.896713 C1561.52468,66.6818314 1561.3562,65.491984 1560.9042,64.3262309 C1560.87829,64.2595017 1560.76574,64.1973008 1560.68569,64.1853391 C1560.15364,64.1058793 1559.65196,64.2559986 1559.18533,64.4761793 C1558.42904,64.8332361 1557.69764,65.242668 1556.9487,65.6159585 C1556.82229,65.6790137 1556.64782,65.7219904 1556.51706,65.6889249 C1554.16941,65.0964789 1551.82595,65.097077 1549.47805,65.6883268 C1549.34078,65.7228448 1549.14638,65.677134 1549.02331,65.5987849 C1548.07109,64.9919849 1547.06446,64.5120644 1545.97001,64.2236166 C1545.9511,64.218661 1545.93272,64.2115694 1545.91364,64.2077246 C1545.22551,64.0670892 1545.09971,64.1456947 1544.9036,64.8108506 C1544.58682,65.884755 1544.5296,66.9550708 1544.90668,68.0296587 C1544.93627,68.1139033 1544.90129,68.2616303 1544.8404,68.3306664 C1543.60397,69.7341156 1543.31096,71.3989279 1543.46559,73.1936101 C1543.55933,74.2817831 1543.81162,75.3262104 1544.29869,76.3083514 C1544.97176,77.6654063 1546.11181,78.4952066 1547.4926,78.982475 C1548.35956,79.2884382 1549.27852,79.4473579 1550.18824,79.6758264 C1550.19526,79.6319098 1550.20056,79.6666842 1550.18568,79.6820635 C1549.71726,80.1697591 1549.45556,80.755028 1549.34531,81.4170227 C1549.33137,81.5007546 1549.27365,81.6203716 1549.20685,81.6454912 C1548.16482,82.0372369 1547.11706,82.2433199 1546.08683,81.6149888 C1545.61867,81.3295314 1545.27683,80.9169382 1545.00101,80.4479541 C1544.56852,79.712395 1543.95864,79.179074 1543.13923,78.9361661 C1542.84434,78.8487602 1542.50823,78.8709748 1542.19359,78.8892591 C1541.97909,78.9018189 1541.90862,79.062362 1542.05256,79.2422147 C1542.18529,79.4077988 1542.32025,79.5950849 1542.4978,79.6971865 C1543.28625,80.1507913 1543.72798,80.8753286 1544.08881,81.6641173 C1544.30382,82.1341266 1544.48812,82.6140471 1544.88675,82.9753759 C1545.52169,83.5510755 1546.29115,83.7682658 1547.11612,83.8044072 C1547.81434,83.834995 1548.51496,83.8107298 1549.24722,83.8107298 C1549.24611,83.8009041 1549.26073,83.8742123 1549.26167,83.9476058 C1549.27211,84.7377616 1549.2828,85.5279173 1549.28844,86.3180731 C1549.294,87.0913115 1548.82935,87.4109452 1548.0952,87.1563319 C1544.28705,85.8355039 1541.4928,83.3342269 1539.62819,79.7992882 C1538.22405,77.1372118 1537.78027,74.2780237 1538.09739,71.2935795 C1538.4294,68.1688416 1539.66702,65.4337134 1541.73193,63.0872551 C1543.89022,60.6347648 1546.57714,59.0045559 1549.78825,58.3523869 C1554.45335,57.4048494 1558.71409,58.3562318 1562.44442,61.3515269 C1565.27245,63.6222848 1567.02271,66.5767393 1567.72914,70.1361141 C1567.83314,70.6605492 1567.87265,71.197715 1567.94398,71.7286436 C1567.95792,71.832625 1567.9811,71.9354102 1568,72.0387934 L1568,73.7951128 Z" id="GitHub"></path>
             </g>
         </g>
     </g>
 </svg>
-    <div class="text">
-      Edit on GitHub
-    </div>
-  </a>
-</div>
-
-      <div class="row">
-        <div class="col-lg-3">
-          <ol class="tutorial_nav">
-          </ol>
-        </div>
-        <div class="col-lg-9">
-          <h1 id="a-step-by-step-introduction-to-linear-regression">A Step by Step Introduction to Linear Regression</h1>
-
-<h2 id="a-first-data-set">A first data-set</h2>
-
-<p>Now, let’s create a data-set. Suppose we want to predict whether a house will require a new roof in the next 10 years. We can create a training-set file, <code class="highlighter-rouge">house_dataset</code> with the following contents:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 | price:.23 sqft:.25 age:.05 2006
-1 2 'second_house | price:.18 sqft:.15 age:.35 1976
-0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
-</code></pre></div></div>
-
-<p>There is quite a bit going on here. The first number in each line is a label. A <code class="highlighter-rouge">0</code> label corresponds to no roof-replacement, while a <code class="highlighter-rouge">1</code> label corresponds to a roof-replacement. The bar <code class="highlighter-rouge">|</code> separates label related data (what we want to predict) from features (what we always know). The features in the 1st line are <code class="highlighter-rouge">price</code>, <code class="highlighter-rouge">sqft</code>, <code class="highlighter-rouge">age</code>, and <code class="highlighter-rouge">2006</code>. Each feature may have an optional <code class="highlighter-rouge">:&lt;numeric_value&gt;</code> following it or, if the value is missing, an implied value of <code class="highlighter-rouge">1</code>. By default, Vowpal Wabbit hashes feature names into in-memory indexes unless the feature names themselves are positive integers. In this case, the first 3 features use an index derived from a hash function while the last feature uses index 2006 directly. Also the 1st 3 features have explicit values (<code class="highlighter-rouge">.23</code>, <code class="highlighter-rouge">.25</code>, and <code class="highlighter-rouge">.05</code> respectively) while the last, <code class="highlighter-rouge">2006</code> has an implicit default value of 1.</p>
-
-<p>The next example, on the next line, is similar, but the label information is more complex. The <code class="highlighter-rouge">1</code> is the label indicating that a roof-replacement is required. The <code class="highlighter-rouge">2</code> is an optional importance weight which implies that this example counts twice. Importance weights come up in many settings. A missing importance weight defaults to 1. <code class="highlighter-rouge">'second_house</code> is the tag, it is used elsewhere to identify the example.</p>
-
-<p>The 3rd example is straightforward, except there is an additional number: <code class="highlighter-rouge">0.5</code> following the importance weight, in the label information. This is an initial prediction. Sometimes you have multiple interacting learning systems and want to be able to predict an offset rather than an absolute value.</p>
-
-<p>Next, we learn:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset
-</code></pre></div></div>
-
-<p>Output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Num weight bits = 18
-learning rate = 0.5
-initial_t = 0
-power_t = 0.5
-using no cache
-Reading datafile = house_dataset
-num sources = 1
-average  since         example        example  current  current  current
-loss     last          counter         weight    label  predict features
-0.000000 0.000000            1            1.0   0.0000   0.0000        5
-0.666667 1.000000            2            3.0   1.0000   0.0000        5
-
-finished run
-number of examples = 3
-weighted example sum = 4.000000
-weighted label sum = 2.000000
-average loss = 0.750000
-best constant = 0.500000
-best constant's loss = 0.250000
-total feature number = 15
-</code></pre></div></div>
-<h2 id="vws-diagnostic-information">VW’s diagnostic information</h2>
-
-<p>There is a burble of diagnostic information which you can turn off with <code class="highlighter-rouge">--quiet</code>. However, it’s worthwhile to first understand it, so let’s work through it bit by bit.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Num weight bits = 18
-</code></pre></div></div>
-<p>Only 18 bits of the hash function will be used. That’s much more than necessary for this example. You could adjust the number of bits using <code class="highlighter-rouge">-b bits</code></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>learning rate = 0.5
-</code></pre></div></div>
-<p>The default learning rate is 0.5 which we found to be a good default with the current default update (<code class="highlighter-rouge">--normalized --invariant --adaptive</code>). If the data is noisy you’ll need a larger data-set and/or multiple passes to predict well. On these larger data-sets, our learning rate will by default decay towards 0 as we run through examples. You can adjust the learning rate up or down with <code class="highlighter-rouge">-l rate</code>. A higher learning rate will make the model converge faster but a too high learning rate may over-fit and end-up worse on average.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>initial_t = 0
-</code></pre></div></div>
-<p>Learning rates should often decay over time, and this specifies the initial time. You can adjust with <code class="highlighter-rouge">--initial_t time</code>, although this is rarely necessary these days.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>power_t = 0.5
-</code></pre></div></div>
-<p>This specifies the power on the learning rate decay. You can adjust this <code class="highlighter-rouge">--power_t p</code> where <em>p</em> is in the range [0,1]. 0 means the learning rate does not decay, which can be helpful when state tracking, while 1 is very aggressive, but plausibly optimal for <a href="https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables">IID</a> data-sets. 0.5 is a minimax optimal choice. A different way of stating this is: stationary data-sets where the fundamental relation between the input features and target label are not changing over time, should benefit from a high (close to 1.0) <code class="highlighter-rouge">--power_t</code> while learning against changing conditions, like learning against an adversary who continuously changes the rules-of-the-game, would benefit from low (close to 0) <code class="highlighter-rouge">--power_t</code> so the learner can react quickly to these changing conditions. For many problems, 0.5, which is the default, seems to work best.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using no cache
-</code></pre></div></div>
-<p>This says you are not using a cache. If you use multiple passes with <code class="highlighter-rouge">--passes</code>, you would need to also pass <code class="highlighter-rouge">-c</code> so VW can cache the data in a faster to handle format (passes &gt; 1 should be much faster). By default, the cache file name will be the data-set file with <code class="highlighter-rouge">.cache</code> appended. In this case: <code class="highlighter-rouge">house_dataset.cache</code>. You may also override the default cache file name by passing: <code class="highlighter-rouge">--cache_file housing.cache</code>. A cache file can greatly speed up training when you run many experiments (with different options) on the same data-set even if each experiment is only a single pass. So if you want to experiment with the same data-set over and over, it is highly recommended to pass <code class="highlighter-rouge">-c</code> every time you train. If the cache exists and is newer than the data-set, it will be used, if it doesn’t exist, it’ll be created the first time <code class="highlighter-rouge">-c</code> is used.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reading datafile = house_dataset
-</code></pre></div></div>
-<p>There are many different ways to input data to VW. Here we’re just using a simple text file and VW tells us the source of the data. Alternative sources include cache files (from previous VW runs), stdin, or a tcp socket.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num sources = 1
-</code></pre></div></div>
-<p>There is only one input file in our example. But you can specify multiple files.</p>
-
-<p>Next, there is a bunch of header information. VW is going to print out some live diagnostic information.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>average  since         example        example  current  current  current
-loss     last          counter         weight    label  predict features
-0.000000 0.000000            1            1.0   0.0000   0.0000        5
-0.666667 1.000000            2            3.0   1.0000   0.0000        5
-</code></pre></div></div>
-
-<ul>
-  <li><code class="highlighter-rouge">average loss</code> computes the <a href="http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf" target="_blank">progressive validation</a> loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.</li>
-  <li><code class="highlighter-rouge">since last</code> is the progressive validation loss since the last printout.</li>
-  <li><code class="highlighter-rouge">example counter</code> tells you which example is printed out. In this case, it’s example 2.</li>
-  <li><code class="highlighter-rouge">example weight</code> tells you the sum of the importance weights of examples seen so far. In this case it’s 3, because the second example has an importance weight of 2.</li>
-  <li><code class="highlighter-rouge">current label</code> tells you the label of the second example.</li>
-  <li><code class="highlighter-rouge">current predict</code> tells you the prediction (before training) on the current example.</li>
-  <li><code class="highlighter-rouge">current features</code> tells you how many features the current example has. This is great for debugging, and you’ll note that we have 5 features when you expect 4. This happens, because VW has a default constant feature which is always added in. Use the <code class="highlighter-rouge">--noconstant</code> command-line option to turn it off.</li>
-</ul>
-
-<p>VW prints a new line with an exponential backoff. This is very handy, because often you can debug some problem before the learning algorithm finishes going through a data-set.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>finished run
-number of examples = 3
-weighted example sum = 4.000000
-weighted label sum = 2.000000
-average loss = 0.750000
-best constant = 0.500000
-best constant's loss = 0.250000
-total feature number = 15
-</code></pre></div></div>
-<p>At the end, some more straightforward totals are printed. The only mysterious one is:
-<code class="highlighter-rouge">best constant</code> and <code class="highlighter-rouge">best constant's loss</code> These really only work if you are using squared loss, which is the default. They compute the best constant’s predictor and the loss of the best constant predictor. If <code class="highlighter-rouge">average loss</code> is not better than <code class="highlighter-rouge">best constant's loss</code>, something is wrong. In this case, we have too few examples to generalize.</p>
-
-<p>If we want to overfit like mad, we can simply use:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset <span class="nt">-l</span> 10 <span class="nt">-c</span> <span class="nt">--passes</span> 25 <span class="nt">--holdout_off</span>
-</code></pre></div></div>
-
-<p>The progress section of the output is:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>average  since         example        example  current  current  current
-loss     last          counter         weight    label  predict features
-0.000000 0.000000            1            1.0   0.0000   0.0000        5
-0.666667 1.000000            2            3.0   1.0000   0.0000        5
-0.589385 0.531424            5            7.0   1.0000   0.2508        5
-0.378923 0.194769           11           15.0   1.0000   0.8308        5
-0.184476 0.002182           23           31.0   1.0000   0.9975        5
-0.090774 0.000000           47           63.0   1.0000   1.0000        5
-</code></pre></div></div>
-
-<p>You’ll notice that by example 47 (25 passes over 3 examples result in 75 examples), the <code class="highlighter-rouge">since last</code> column has dropped to 0, implying that by looking at the same (3 lines of) data 25 times we have reached a perfect predictor. This is unsurprising with 3 examples having 5 features each. The reason we have to add <code class="highlighter-rouge">--holdout_off</code> is that when running multiple-passes, VW automatically switches to ‘over-fit avoidance’ mode by holding-out 10% of the examples (the period “one in 10” can be changed using <code class="highlighter-rouge">--holdout_period period</code>) and evaluating performance on the held-out data instead of using the online-training progressive loss.</p>
-
-<h2 id="saving-your-model-aka-regressor-into-a-file">Saving your model (a.k.a. regressor) into a file</h2>
-
-<p>By default VW learns the weights of the features and keeps them in an in memory vector. If you want to save the final regressor weights into a file, add <code class="highlighter-rouge">-f filename</code>:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset <span class="nt">-l</span> 10 <span class="nt">-c</span> <span class="nt">--passes</span> 25 <span class="nt">--holdout_off</span> <span class="nt">-f</span> house.model
-</code></pre></div></div>
-
-<h2 id="getting-predictions">Getting predictions</h2>
-
-<p>We want to make predictions of course, this can be done by supplying the <code class="highlighter-rouge">-p filename</code> option. Stdout can be used as below:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset <span class="nt">-p</span> /dev/stdout <span class="nt">--quiet</span>
-</code></pre></div></div>
-
-<p>The output is:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.000000
-0.000000 second_house
-1.000000 third_house
-</code></pre></div></div>
-
-<ul>
-  <li>The 1st output line <code class="highlighter-rouge">0.000000</code> is for the 1st example which has an empty tag.</li>
-  <li>The 2nd output <code class="highlighter-rouge">0.000000 second_house</code> is for the 2nd example. You’ll notice the tag appears here. This is the primary use of the tag: mapping predictions to the examples they belong to.</li>
-  <li>The 3rd output <code class="highlighter-rouge">1.000000 third_house</code> is for the 3rd example. Clearly, some learning happened, because the prediction is now <code class="highlighter-rouge">1.000000</code> while the initial prediction was set to <code class="highlighter-rouge">0.5</code>.</li>
-</ul>
-
-<p>Note that in this last example, we predicted <em>while we learned</em>. The model was being incrementally built in memory as VW went over the examples.</p>
-
-<p>Alternatively, and more commonly, we would first learn and save the model into a file. Later we would predict using the saved model.</p>
-
-<p>You may load a initial model to memory by adding <code class="highlighter-rouge">-i house.model</code>. You may also want to specify <code class="highlighter-rouge">-t</code> which stands for “test-only” (do no learning):</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw <span class="nt">-i</span> house.model <span class="nt">-t</span> house_dataset <span class="nt">-p</span> /dev/stdout <span class="nt">--quiet</span>
-</code></pre></div></div>
-
-<p>Which would output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.000000
-1.000000 second_house
-0.000000 third_house
-</code></pre></div></div>
-
-<p>Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data, whereas in the 2nd example we first loaded an over-fitted (25 pass) model and used our data-set <code class="highlighter-rouge">house_dataset</code> with <code class="highlighter-rouge">-t</code> (testing only mode). In real prediction settings, one should use a different data-set for testing vs training.</p>
-
-<h2 id="auditing">Auditing</h2>
-
-<p>When developing a new ML application, it’s very helpful to debug. VW can help with this using the <code class="highlighter-rouge">--audit</code> option, which outputs extra informations about predictions and features.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset <span class="nt">--audit</span> <span class="nt">--quiet</span>
-</code></pre></div></div>
-
-<p>Output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0
-  price:229902:0.23:0@0  sqft:162853:0.25:0@0  age:165201:0.05:0@0  2006:2006:1:0@0  Constant:116060:1:0@0
-0 second_house
-  price:229902:0.18:0@0  sqft:162853:0.15:0@0  age:165201:0.35:0@0  1976:1976:1:0@0  Constant:116060:1:0@0
-1 third_house
-  price:229902:0.53:0.882655@0.2592  age:165201:0.87:0.453833@0.98  sqft:162853:0.32:1.05905@0.18  Constant:116060:1:0.15882@8  1924:1924:1:0@0
-</code></pre></div></div>
-
-<p>Every example uses two lines. The first line has the prediction, and the second line has one entry per feature. Looking at the first feature, we see:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>price:229902:0.23:0@0.25
-</code></pre></div></div>
-
-<ul>
-  <li><code class="highlighter-rouge">price</code> is the original feature name. If you use a namespace, it appears before <code class="highlighter-rouge">^</code> (i.e. <code class="highlighter-rouge">Namespace^Feature</code>). Namespaces are an advanced feature which allows you to group features and operate them on-the-fly, in the core of VW with the options: <code class="highlighter-rouge">-q XY</code> (cross a pair of namespaces), <code class="highlighter-rouge">--cubic XYZ</code> (cross 3 namespaces), <code class="highlighter-rouge">--lrq XYn</code> (low-rank quadratic interactions), and <code class="highlighter-rouge">--ignore X</code> (skip all features belonging to a namespace).</li>
-  <li><code class="highlighter-rouge">229902</code> is the index of the feature, computed by a hash function on the feature name.</li>
-  <li><code class="highlighter-rouge">0.23</code> is the value of the feature.</li>
-  <li><code class="highlighter-rouge">0</code> is the value of the feature’s weight.</li>
-  <li><code class="highlighter-rouge">@0.25</code> represents the sum of gradients squared for that feature when you are using per-feature adaptive learning rates.</li>
-</ul>
-
-<p>Examining further, you’ll notice that the feature <code class="highlighter-rouge">2006</code> uses the index 2006. This means that you may use hashes or pre-computed indices for features, as is common in other machine learning systems.</p>
-
-<p>The advantage of using unique integer-based feature-names is that they are guaranteed not to collide after hashing. The advantage of free-text (non integer) feature names is readability and self-documentation. Since only <code class="highlighter-rouge">:</code>, <code class="highlighter-rouge">|</code>, and <em>spaces</em> are special to the VW parser, you can give features extremely readable names like: <code class="highlighter-rouge">height&gt;2 value_in_range[1..5] color=red</code> and so on. Feature names may even start with a digit, e.g.: <code class="highlighter-rouge">1st-guess:0.5 2nd-guess:3</code> etc.</p>
-
-<h2 id="whats-next">What’s next?</h2>
-
-<p>The above only scratches the surface of VW. You can learn with other loss functions, with other optimizers, with other representations, with clusters of 1000s of machines, and even do ridiculously fast active learning.</p>
-
-<ul>
-  <li>Learn about using VW to do reinforcement learning in the <a href="/guides/contextual_bandits.html">Contextual Bandit tutorial</a></li>
-  <li>Explore more content in the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials" target="_blank">tutorials section of the GitHub wiki</a></li>
-  <li>Browse <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples" target="_blank">examples on the GitHub wiki</a></li>
-</ul>
-
+                      <div class="more_examples_label">
+                        More examples on GitHub
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="container bibliography_container">
-  <div class="header">
-    <h3>
-      CITATIONS
-    </h3>
-    <div class="all_publications_link">
-      <a href="/publications.html">
-        All publications
-      </a>
-    </div>
   </div>
 
-  <ol class="bibliography"></ol>
+  <div class="get_started_container">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-sm-12">
+          <h2>
+            Get started with Vowpal Wabbit
+          </h2>
+          <p class="description">
+            Install Vowpal Wabbit and start exploring with easy-to-access tutorials and documentation.
+          </p>
+          <div class="get_started_buttons">
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm col-lg-4">
+                <a href="/start.html">
+                  Get started
+                </a>
+              </div>
+              <div class="col-12 col-sm col-lg-4 tutorials_button">
+                <a href="/tutorials.html">
+                  Tutorials
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
     <div class="container-fluid footer_container">
@@ -488,7 +637,5 @@ loss     last          counter         weight    label  predict features
 
     <div class="overlay">
     </div>
-
-    <script src="/assets/js/tutorial.js"></script>
   </body>
 </html>
