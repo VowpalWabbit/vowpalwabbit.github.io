@@ -57,6 +57,14 @@
       &:first-child {
         padding-top: 0;
       }
+
+      a {
+        color: $blue-20;
+
+        &:hover {
+          color: $blue-10;
+        }
+      }
     }
 
     .github_link {
