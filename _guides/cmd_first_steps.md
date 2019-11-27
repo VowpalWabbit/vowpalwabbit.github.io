@@ -25,8 +25,6 @@ For this tutorial scenario, we want to use Vowpal Wabbit to help us predict whet
 
 First, create a file ‘train.txt’ and copy the following dataset:
 
-Create a file, called `train.txt` and paste this into it:
-
 ```
 0 | price:.23 sqft:.25 age:.05 2006
 1 | price:.18 sqft:.15 age:.35 1976
