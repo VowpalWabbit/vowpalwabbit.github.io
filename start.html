@@ -1,7 +1,8 @@
 ---
 layout: default
 body_class: start
-title: Get started
+page_title: Get Started | Vowpal Wabbit
+page_description: Vowpal Wabbit quick installation and getting started tutorials.
 ---
 
 <div class="content start_container">
@@ -31,7 +32,7 @@ title: Get started
           </div>
 
           <div class="links">
-            <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Installing" target="_blank">
+            <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies" target="_blank">
               More details
             </a>
           </div>
@@ -40,7 +41,7 @@ title: Get started
     </div>
   </div>
 
-  {% assign guides = site.guides | sort: 'order' %}
+  {% assign tutorials = site.tutorials | sort: 'order' %}
   {% assign gitter = site.communities | where: "community_id", "gitter" | first %}
 
   <div class="tutorials_container">
@@ -50,36 +51,37 @@ title: Get started
       </h2>
       <div class="row intro">
         <div class="col-12 col-lg-6">
-          Learn, explore, and experiment using our tutorials below. Have questions? Chat with the team on
-          <a href={{gitter.link}} target="_blank">
-            Gitter
+          Learn, explore, and experiment using our tutorials below.
+        </div>
+        <div class="col-12 all_tutorials_link">
+          <a href="{{ 'tutorials.html' | relative_url }}">
+            All tutorials
           </a>
-          .
         </div>
       </div>
       <div class="row">
-        {% for guide in guides limit:3 %}
-          <div class="col-lg-4 col-sm">
+        {% for tutorial in tutorials limit:3 %}
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="tutorial_card">
               <div class="header">
-                {{guide.level}}
+                {{tutorial.level}}
               </div>
               <div class="title">
-                <h3>
-                  {{guide.title}}
-                </h3>
+                <h4>
+                  {{tutorial.title}}
+                </h4>
               </div>
               <div class="description">
-                {{guide.description}}
+                {{tutorial.description}}
               </div>
 
-              {% assign guide_link = guide.link %}
-              {% unless guide_link %}
-                {% assign guide_link = guide.url | relative_url %}
+              {% assign tutorial_link = tutorial.link %}
+              {% unless tutorial_link %}
+                {% assign tutorial_link = tutorial.url | relative_url %}
               {% endunless %}
 
               <div class="footer">
-                <a target="_blank" href="{{ guide_link }}">
+                <a target="_blank" href="{{ tutorial_link }}">
                   Start
                 </a>
               </div>

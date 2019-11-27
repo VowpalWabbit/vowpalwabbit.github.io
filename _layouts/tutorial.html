@@ -24,8 +24,42 @@
       {% include edit_button.html %}
       <div class="row">
         <div class="col-lg-3">
-          <ol class="tutorial_nav">
-          </ol>
+          <div class="tutorial_nav">
+            <label>
+              Table of contents
+            </label>
+            <ul class="tutorial_content_nav">
+            </ul>
+            {% if page.jupyter_notebook_name %}
+              <div class="run_tutorial_links">
+                <label>
+                  Run this tutorial
+                </label>
+                <ul>
+                  <li>
+                    <span>
+                      <a
+                        href="{{ site.github.jupyter_notebook_source_url }}/blob/master/{{page.jupyter_notebook_name}}"
+                        target="_blank"
+                      >
+                        GitHub source file
+                      </a>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a
+                        href="{{ site.github.jupyter_notebook_url }}{{page.jupyter_notebook_name}}"
+                        target="_blank"
+                      >
+                        Jupyter Notebook
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            {% endif %}
+          </div>
         </div>
         <div class="col-lg-9">
           {{ content }}

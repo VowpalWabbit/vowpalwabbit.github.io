@@ -19,7 +19,7 @@
     font-size: $h2;
     line-height: 1.1;
     font-weight: 300;
-    padding-bottom: 1rem;
+    padding-bottom: 1.875rem;
   }
 
   h2 {
@@ -27,7 +27,7 @@
     line-height: 1.1;
     font-weight: 300;
 
-    padding: 1rem 0 0.8rem;
+    margin: 5rem 0 1.875rem;
     position: relative;
 
     &:hover {
@@ -59,6 +59,7 @@
     font-size: $h4;
     line-height: 1.25;
     font-weight: 400;
+    margin: 3.125rem 0 1.25rem;
   }
 
   sup {
@@ -86,13 +87,28 @@
     }
   }
 
+  img {
+    max-width: 100%;
+  }
+
   .tutorial_nav {
-    @include ordered-list;
     position: sticky;
     top: 5rem;
 
+    label {
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    ul {
+      padding-left: 0;
+    }
+
     li {
       display: block;
+      padding: 0.8rem 0;
 
       span {
         padding: 1rem 0;
@@ -104,19 +120,95 @@
         color: $gray-30;
       }
 
-      &:before {
-        color: $gray-30;
-      }
-
       &.active {
         a {
           color: $primary-text;
-        }
-
-        &:before {
-          color: $primary-text;
+          font-weight: 600;
+          letter-spacing: -0.5px;
         }
       }
+    }
+  }
+
+  .tutorial_nav .run_tutorial_links {
+    padding: 2rem 0;
+    border-top: 1px solid $gray-20;
+
+    a {
+      border: none;
+      color: $blue-20;
+
+      &:after {
+        display: inline-block;
+        content: '';
+        background-image: url("../assets/images/icons/icon_export_small.svg");
+        background-size: 16px 16px;
+        height: 16px;
+        width: 16px;
+        margin-right: 0.5rem;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: $blue-10;
+      }
+    }
+  }
+
+  .prerequisites {
+    background: $gray-5;
+    padding: 1rem 2rem;
+  }
+
+  blockquote {
+    margin: 0 0 0 2rem;
+    position: relative;
+
+    &:before {
+      display: block;
+      content: ' ';
+      background-image: url("../assets/images/icons/icon_note_small.svg");
+      background-size: 20px 20px;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      left: -2rem;
+      top: 0.2rem;
+    }
+  }
+
+  code {
+    &.highlighter-rouge {
+      font-weight: bold;
+      background-color: $gray-5;
+      padding: 0 0.2rem;
+    }
+  }
+
+  .language-text pre {
+    border: 1px solid $gray-10;
+    padding: 1rem;
+    background: white;
+  }
+
+  .output {
+    border: 1px solid $gray-10;
+    padding: 1rem 1rem 0;
+    background: $yellow-10;
+    margin: 0.5rem 0 1rem;
+    overflow: auto;
+
+    p {
+      white-space: pre;
+    }
+  }
+
+  ol li {
+    margin-bottom: 0.9rem;
+
+    .highlighter-rouge {
+      margin-bottom: 0.9rem;
+      display: inline-block;
     }
   }
 }

@@ -1,5 +1,35 @@
 .tabs_container {
+  @include inline-link;
   padding-top: 1rem;
+
+  .nav {
+    display: block;
+
+    button {
+      background: transparent;
+      border: 0;
+      color: $sub-nav;
+      display: block;
+      font-size: 15px;
+      line-height: 20px;
+      margin-bottom: 1.5rem;
+      text-align: left;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .active {
+      color: $sub-nav-active;
+      font-weight: 600;
+
+      .tab_text {
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid $yellow-40;
+      }
+    }
+  }
 
   .tab_content {
     padding: 2rem;
@@ -12,11 +42,15 @@
     }
   }
 
-  .hidden {
-    display: none;
+  .cite_sup {
+    border-bottom: 0;
+
+    &:hover {
+      border-bottom: 0;
+    }
   }
 
-  .link {
-    @include secondary-link;
+  .hidden {
+    display: none;
   }
 }

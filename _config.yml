@@ -33,6 +33,8 @@ plugins:
 
 github:
   repository_url: https://github.com/VowpalWabbit/vowpalwabbit.github.io
+  jupyter_notebook_source_url: https://github.com/VowpalWabbit/jupyter-notebooks
+  jupyter_notebook_url: https://mybinder.org/v2/gh/VowpalWabbit/jupyter-notebooks/master?filepath=
 
 sass:
   style: compact
@@ -40,31 +42,17 @@ sass:
 collections:
   communities:
     output: true
-  problem_framing:
+  features:
+    output: true
+  feature_details:
     output: true
   reinforcement:
     output: true
   supervised:
     output: true
-  efficiency:
-    output: true
   flexibility:
     output: true
-  resources:
-    output: true
-  guides:
-    output: true
-  documentation:
-    output: true
-  papers:
-    output: true
-  technical_details:
-    output: true
-  case_studies:
-    output: true
-  core_values:
-    output: true
-  users:
+  tutorials:
     output: true
   bibliography:
     output: true
@@ -87,6 +75,7 @@ defaults:
     values:
       layout: "default"
       navgroup: "tutorials"
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
