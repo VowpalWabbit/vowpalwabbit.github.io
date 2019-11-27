@@ -22,7 +22,7 @@ For more advanced Vowpal Wabbit tutorials, including how to format data and unde
 
 To install Vowpal Wabbit see [Get Started](getting_started.html).
 
->**Note** This tutorial uses the [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python).
+>**Note:** This tutorial uses the [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python).
 </div>
 
 ## Getting started
