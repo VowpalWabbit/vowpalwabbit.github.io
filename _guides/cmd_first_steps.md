@@ -15,16 +15,25 @@ This tutorial introduces Vowpal Wabbit command line basics with a quick introduc
 
 To learn more about interacting with Vowpal Wabbit, including advanced tutorials on input formatting and interpreting results, see [Tutorials](https://vowpalwabbit.org/tutorials.html).
 
-## Data
+### Install Vowpal Wabbit
+
+To install Vowpal Wabbit see [Get Started](https://vowpalwabbit.org/start.html).
+
+## Training scenario and dataset
+
+For this tutorial scenario, we want to use Vowpal Wabbit to help us predict whether or not a house will require a new roof in the next 10 years.
+
+First, create a file ‘train.txt’ and copy the following dataset:
 
 Create a file, called `train.txt` and paste this into it:
+
 ```
 0 | price:.23 sqft:.25 age:.05 2006
 1 | price:.18 sqft:.15 age:.35 1976
 0 | price:.53 sqft:.32 age:.87 1924
 ```
 
-The format may look odd, but go with it. The [linear regression tutorial](https://vowpalwabbit.org/guides/getting_started.html#a-first-data-set) goes into more detail about what it all means.
+>**Note:** If the format of this sample dataset looks unfamiliar and you want more details see the Vowpal Wabbit [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html#a-first-data-set) for information on input format and feature hashing techniques.
 
 ## Train
 
