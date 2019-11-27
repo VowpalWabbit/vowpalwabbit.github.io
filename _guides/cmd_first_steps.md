@@ -1,4 +1,6 @@
 ---
+page_title: Command Line Tutorial | Vowpal Wabbit
+page_description: Learn command line basics and explore how to train and test your models with Vowpal Wabbit.
 title: Getting started with Vowpal Wabbit command line
 order: 5
 module_id: cmd_getting_started
