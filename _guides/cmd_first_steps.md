@@ -49,7 +49,7 @@ This tells Vowpal Wabbit to:
 With Vowpal Wabbit, the output includes more than a few statistics and statuses. The [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html#vws-diagnostic-information) and [Contextual Bandit Reinforcement Learning Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html) covers this format in more detail:
 
 <details>
-  <summary>Output for comparison</summary>
+  <summary><strong>Output for comparison</strong></summary>
 
 ```
 final_regressor = model.vw
