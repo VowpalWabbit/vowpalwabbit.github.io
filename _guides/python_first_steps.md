@@ -21,13 +21,11 @@ For more advanced Vowpal Wabbit tutorials, including how to format data and unde
 **Prerequisites**
 
 To install Vowpal Wabbit see [Get Started](getting_started.html).
-
->**Note:** This tutorial uses the [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python).
 </div>
 
 ## Getting started
 
-First, make sure you import the following Python package for this tutorial:
+First, import the [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python) for this tutorial:
 
 ```Python
 from vowpalwabbit import pyvw
