@@ -15,9 +15,11 @@ This tutorial introduces Vowpal Wabbit command line basics with a quick introduc
 
 To learn more about interacting with Vowpal Wabbit, including advanced tutorials on input formatting and interpreting results, see [Tutorials](https://vowpalwabbit.org/tutorials.html).
 
-### Install Vowpal Wabbit
+<div class="prerequisites" markdown="1">
+**Prerequisites**
 
 To install Vowpal Wabbit see [Get Started](https://vowpalwabbit.org/start.html).
+</div>
 
 ## Training scenario and dataset
 
