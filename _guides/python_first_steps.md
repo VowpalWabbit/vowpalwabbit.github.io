@@ -15,11 +15,19 @@ tags: getting&nbsp;started Python
 
 This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction. 
 
-To learn more about interacting with Vowpal Wabbit, including advanced tutorials on input formatting and interpreting results, see [Tutorials](https://vowpalwabbit.org/tutorials.html).
+For more advanced Vowpal Wabbit tutorials, including how to format data and understand results, see [Tutorials](https://vowpalwabbit.org/tutorials.html).
+
+<div class="prerequisites" markdown="1">
+**Prerequisites**
+
+To install Vowpal Wabbit see [Get Started](getting_started.html).
+
+>**Note** This tutorial uses the [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python).
+</div>
 
 ## Getting started
 
-First, make sure you have the following Python package installed for this tutorial:
+First, make sure you import the following Python package for this tutorial:
 
 ```Python
 from vowpalwabbit import pyvw
