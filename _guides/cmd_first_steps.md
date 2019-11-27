@@ -46,10 +46,10 @@ This tells Vowpal Wabbit to:
 - Use the '-d' **data** file `train.txt`
 - Write the '-f" **final** model to `model.vw`
 
-With Vowpal Wabbit, the output includes more than a few statistics and statuses. The [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html#vws-diagnostic-information) and [Contextual Bandit Reinforcement Learning Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html) covers the format in more detail.
+With Vowpal Wabbit, the output includes more than a few statistics and statuses. The [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html#vws-diagnostic-information) and [Contextual Bandit Reinforcement Learning Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html) covers this format in more detail:
 
 <details>
-  <summary>Output for comparison</summary>
+  <summary>**Output for comparison**</summary>
 
 ```
 final_regressor = model.vw
