@@ -66,6 +66,6 @@ The model predicted a value of `0`. According to our learning model, our house w
 
 ## More to explore
 
-- See the [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html) for a different look at the roof replacement problem and learn more about Vowpal Wabbit's format and understanding the results.
-- To learn more about how to approach a contextual bandits problem using Vowpal Wabbit — including how to  work with different contextual bandits approaches, how to format data, and understand the results — see the [Contextual Bandit Reinforcement Learning Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html).
+- To learn how to approach a contextual bandits problem using Vowpal Wabbit — including how to  work with different contextual bandits approaches, how to format data, and understand the results — see the [Contextual Bandit Reinforcement Learning Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html).
 - For more on the contextual bandits approach to reinforcement learning, including a content personalization scenario, see the [Contextual Bandit Simulation Tutorial](https://vowpalwabbit.org/tutorials/cb_simulation.html).
+- See the [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html) for a different look at the roof replacement problem and learn more about Vowpal Wabbit's format and understanding the results.
