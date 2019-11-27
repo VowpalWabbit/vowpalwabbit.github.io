@@ -1,15 +1,19 @@
 ---
-title: Getting started with Python
+title: Getting started with Vowpal Wabbit and Python
 order: 6
 module_id: python_getting_started
 description: This tutorial runs you through the absolute basics for Python
-guide_link_text: Read the Python getting started
+guide_link_text: See the Vowpal Wabbit Python tutorial 
 level: basic
 layout: tutorial
 tags: getting&nbsp;started Python
 ---
 
-Now that VW is installed, let's make sure it works by passing it some data, learning something then getting a prediction. This tutorial won't go in depth, it is just a really quick introduction and you can deep dive in the later tutorials.
+# Getting started with Vowpal Wabbit and Python
+
+This tutorial is quick introduction to training and testing your model with Vowpal Wabbit using Python. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction. 
+
+To learn more about interacting with Vowpal Wabbit, including advanced tutorials on input formatting and interpreting results, see [Tutorials](https://vowpalwabbit.org/tutorials.html).
 
 This scenario is predicting whether a house will need a new roof in the next 10 years.
 
