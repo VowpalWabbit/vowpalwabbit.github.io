@@ -9,9 +9,11 @@ layout: tutorial
 tags: getting&nbsp;started command&nbsp;line
 ---
 
-Now that VW is installed, let's make sure it works by passing it some data, learning something then getting a prediction. This tutorial won't go in depth, it is just a really quick introduction and you can deep dive in the later tutorials.
+## Getting started with Vowpal Wabbit command line
 
-This scenario is predicting whether a house will need a new roof in the next 10 years.
+This tutorial introduces Vowpal Wabbit command line basics with a quick introduction to training and testing your model with Vowpal Wabbit. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction. 
+
+To learn more about interacting with Vowpal Wabbit, including advanced tutorials on input formatting and interpreting results, see [Tutorials](https://vowpalwabbit.org/tutorials.html).
 
 ## Data
 
