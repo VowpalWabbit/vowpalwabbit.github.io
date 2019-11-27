@@ -23,7 +23,7 @@ To install Vowpal Wabbit see [Get Started](https://vowpalwabbit.org/start.html).
 
 For this tutorial scenario, we want to use Vowpal Wabbit to help us predict whether or not a house will require a new roof in the next 10 years.
 
-First, create a file ‘train.txt’ and copy the following dataset:
+First, create a file `train.txt` and copy the following dataset:
 
 ```
 0 | price:.23 sqft:.25 age:.05 2006
@@ -43,13 +43,13 @@ vw -d train.txt -f model.vw
 
 This tells Vowpal Wabbit to:
 
-- Use the '-d' **data** file `train.txt`
-- Write the '-f" **final** model to `model.vw`
+- Use the `-d` **data** file `train.txt`
+- Write the `-f` **final** model to `model.vw`
 
 With Vowpal Wabbit, the output includes more than a few statistics and statuses. The [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html#vws-diagnostic-information) and [Contextual Bandit Reinforcement Learning Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html) covers this format in more detail:
 
 <details>
-  <summary><strong>Output for comparison</strong></summary>
+  <summary><strong>Output for comparison:</strong></summary>
 
 ```
 final_regressor = model.vw
@@ -77,24 +77,27 @@ total feature number = 15
 
 </details>
 
-## Test
+## Test a model
 
-Create a file, called `test.txt` and paste this into it:
+Now, create a file called `test.tx` and copy this data:
+
 ```
 | price:.46 sqft:.4 age:.10 1924
 ```
 
-We can then get a prediction by loading in the model and supplying our test set:
+We get a prediction by loading the model and supplying our test data:
+
 ```sh
 vw -d test.txt -i model.vw -p predictions.txt
 ```
-This tells VW to:
-- Use the **d**ata file `test.txt`
-- Use the **i**nput model `model.vw`
-- Write **p**redictions to `predictions.txt`
+This tells Vowpal Wabbit to:
+
+- Use the `-d` **data** file `test.txt`
+- Use the `-i` **input** model `model.vw`
+- Write `-p` **predictions** to `predictions.txt`
 
 <details>
-  <summary>Output for comparison</summary>
+  <summary><strong>Output for comparison:</strong></summary>
 
 ```
 predictions = predictions.txt
@@ -119,6 +122,7 @@ average loss = n.a.
 </details>
 
 `cat predictions.txt` shows:
+
 ```
 0
 ```
