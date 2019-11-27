@@ -2,7 +2,7 @@
 title: Getting started with Vowpal Wabbit and Python
 order: 6
 module_id: python_getting_started
-description: This tutorial runs you through the absolute basics for Python
+description: This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python. 
 guide_link_text: See the Vowpal Wabbit Python tutorial 
 level: basic
 layout: tutorial
@@ -11,7 +11,7 @@ tags: getting&nbsp;started Python
 
 # Getting started with Vowpal Wabbit and Python
 
-This tutorial is quick introduction to training and testing your model with Vowpal Wabbit using Python. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction. 
+This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction. 
 
 To learn more about interacting with Vowpal Wabbit, including advanced tutorials on input formatting and interpreting results, see [Tutorials](https://vowpalwabbit.org/tutorials.html).
 
@@ -61,8 +61,11 @@ print(prediction)
 ```
 
 ### Vowpal Wabbit results
+
 The model predicted a value of `0`. According to our learning model, our house will not need a new roof in the next 10 years (at least that is the result from just three examples we used in our training dataset). 
 
-## Next Steps
+## More to explore
 
-Learn more about using VW in Python in the [Contextual Bandit tutorial](https://vowpalwabbit.org/guides/contextual_bandits.html). Alternatively, get another look at the house roof problem and learn about VW's input format and output information in the [linear regression tutorial](https://vowpalwabbit.org/guides/getting_started.html)
+- See the [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html) for a different look at the roof replacement problem and learn more about Vowpal Wabbit's format and understanding the results.
+- To learn more about how to approach a contextual bandits problem using Vowpal Wabbit — including how to  work with different contextual bandits approaches, how to format data, and understand the results — see the [Contextual Bandit Reinforcement Learning Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html).
+- For more on the contextual bandits approach to reinforcement learning, including a content personalization scenario, see the [Contextual Bandit Simulation Tutorial](https://vowpalwabbit.org/tutorials/cb_simulation.html).
