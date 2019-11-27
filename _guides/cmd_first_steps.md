@@ -1,9 +1,9 @@
 ---
-title: Getting started with the command line
+title: Getting started with Vowpal Wabbit command line
 order: 5
 module_id: cmd_getting_started
-description: This tutorial runs you through the absolute basics for the command line
-guide_link_text: Read the command line getting started
+description: Learn command line basics and explore how to train and test your models with Vowpal Wabbit.
+guide_link_text: See command line tutorial
 level: basic
 layout: tutorial
 tags: getting&nbsp;started command&nbsp;line
@@ -43,8 +43,8 @@ vw -d train.txt -f model.vw
 
 This tells Vowpal Wabbit to:
 
-- Use the `-d` **data** file `train.txt`
-- Write the `-f` **final** model to `model.vw`
+- Use the `-d` **data** file `train.txt`.
+- Write the `-f` **final** model to `model.vw`.
 
 With Vowpal Wabbit, the output includes more than a few statistics and statuses. The [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html#vws-diagnostic-information) and [Contextual Bandit Reinforcement Learning Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html) covers this format in more detail:
 
@@ -92,9 +92,9 @@ vw -d test.txt -i model.vw -p predictions.txt
 ```
 This tells Vowpal Wabbit to:
 
-- Use the `-d` **data** file `test.txt`
-- Use the `-i` **input** model `model.vw`
-- Write `-p` **predictions** to `predictions.txt`
+- Use the `-d` **data** file `test.txt`.
+- Use the `-i` **input** model `model.vw`.
+- Write `-p` **predictions** to `predictions.txt`.
 
 <details>
   <summary><strong>Output for comparison:</strong></summary>
@@ -127,8 +127,12 @@ average loss = n.a.
 0
 ```
 
-So the model predicted a value of 0, this house wont need a new roof in the next 10 years. Well, at least according to our model learned from 3 examples...
+### Vowpal Wabbit results
+The model predicted a value of ‘0’. This result means our house will not need a new roof in the next 10 years (based on just three examples we used in our training dataset). 
 
-## Next Steps
+## More to explore
 
-The next step is the [linear regression tutorial](https://vowpalwabbit.org/guides/getting_started.html). You'll get another look at the house roof problem and learn about VW's input format and output information.
+- See the Vowpal Wabbit Python Tutorial for a quick introduction to the basics of training and testing your model.
+- To learn more on how to approach a contextual bandits problem using Vowpal Wabbit with a Python tutorial — including how to  work with different contextual bandits approaches, how to format data, and understand the results — see the [Contextual Bandit Reinforcement Learning Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html).
+- For more on the contextual bandits approach to reinforcement learning with Vowpal Wabbit, including a content personalization scenario, see the [Contextual Bandit Simulation Tutorial](https://vowpalwabbit.org/tutorials/cb_simulation.html).
+- See the [Linear Regression Tutorial](https://vowpalwabbit.org/guides/getting_started.html) for a different look at the roof replacement problem and learn more about Vowpal Wabbit's format and understanding the results.
