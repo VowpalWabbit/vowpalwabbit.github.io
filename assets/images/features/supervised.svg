@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="73px" height="59px" viewBox="0 0 73 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 60 (101010) - https://sketch.com -->
+    <title>94E7375D-55B6-4785-9205-757D9DE09AFC</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-431.000000, -1308.000000)">
+            <g id="features" transform="translate(0.000000, 1000.000000)">
+                <g id="illustration_supervised" transform="translate(433.000000, 309.000000)">
+                    <path d="M2,41.5151515 C2,37.5652174 18.7246377,26 34,26 C49.2753623,26 66,37.5652174 66,41.5151515 C66,45.4650856 48.3768116,58 34,58 C19.6231884,58 2,45.4650856 2,41.5151515 Z" id="Path-2" fill="#FFFFFF"></path>
+                    <g id="icon_eye" stroke="#415EBF" stroke-width="2.25">
+                        <g>
+                            <path d="M0,31 C11.6666667,20.3333333 23.1666667,15 34.5,15 C45.8333333,15 57.3333333,20.3333333 69,31 C56.6666667,42.3333333 45.1666667,48 34.5,48 C23.8333333,48 12.3333333,42.3333333 0,31 Z" id="Path-2" stroke-linejoin="round"></path>
+                            <circle id="Oval" cx="35" cy="31" r="9"></circle>
+                            <line x1="17" y1="4" x2="20" y2="10" id="Path-3" stroke-linecap="round"></line>
+                            <line x1="49" y1="4" x2="52" y2="10" id="Path-3" stroke-linecap="round" transform="translate(50.500000, 7.000000) scale(-1, 1) translate(-50.500000, -7.000000) "></line>
+                            <line x1="34.5" y1="0.5" x2="34.5" y2="7.5" id="Path-3" stroke-linecap="round" transform="translate(34.500000, 4.000000) scale(-1, 1) translate(-34.500000, -4.000000) "></line>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

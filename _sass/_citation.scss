@@ -202,6 +202,11 @@ sup {
 ol.bibliography {
   word-break: break-word;
 
+  .bib_content {
+    flex: 0 0 80%;
+    padding: 1rem;
+  }
+
   .details {
     margin-left: 1rem;
 
@@ -222,17 +227,36 @@ ol.bibliography {
   }
 }
 
-.publications {
+.research {
   .hero {
     @include secondary-hero;
+  }
+
+  .intro {
+    @include secondary-link;
+
+    margin: 3rem 0;
+    font-size: 1.25rem;
+    line-height: 1.25;
+
+    a {
+      margin-top: 1rem;
+      font-size: 1.125rem;
+      line-height: 1.3;
+    }
   }
 }
 
 .publications_container {
   padding: 3rem 1rem;
+  border-top: 1px solid $gray-10;
 
-  h1 {
-    padding: 1.5rem 0 0.5rem;
+  .header {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
   }
 
   .bibliography {
@@ -244,10 +268,6 @@ ol.bibliography {
 
       span {
         flex: 1 1 0;
-      }
-
-      .details {
-        width: 6rem;
       }
     }
   }

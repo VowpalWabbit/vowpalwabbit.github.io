@@ -13,16 +13,8 @@
 @import "download";
 @import "start";
 @import "tutorials";
+@import "features";
 @import "edit_button";
-
-
-@import "case_studies";
-@import "resources";
-@import "how_it_works";
-@import "learn";
-@import "guide";
-@import "paper";
-@import "about";
 
 // overwrite bootstrap
 @media screen and (min-width: 1200px) {
@@ -51,9 +43,13 @@
 }
 
 .hero_container {
-  background: $blue-20;
-  padding: 7rem 1rem 8.5rem;
+  background: $blue-30;
+  padding: 4rem 1rem 5.5rem;
   color: white;
+
+  img {
+    width: 100%;
+  }
 
   .hero_content {
     position: relative;
@@ -85,78 +81,49 @@
 
   .hero_buttons {
     @include primary-link;
+
+    .tutorials_button a {
+      background-color: transparent;
+      color: white;
+
+      &:hover {
+        background: $blue-20;
+      }
+    }
   }
 }
 
-.problem_framing_container {
-  background: $gray-10;
-  padding: 3rem 0 6rem;
+.home .features_container {
+  @include inline-link;
+  background: $blue-5;
+  padding: 4rem 0;
 
-  .description {
-    @include inline-link;
+  .features {
+    letter-spacing: -0.5px;
+    margin: 2rem 0 3rem;
+  }
+
+  .feature_icon {
     padding: 1rem 0;
 
-    .cite_sup {
-      border-bottom: 0;
-
-      &:hover {
-        border-bottom: 0;
-      }
+    img {
+      height: 60px;
+      width: auto;
     }
   }
 
-  .link {
-    padding-bottom: 1rem;
-  }
+  .learn_more_link {
+    @include primary-link;
 
-  .nav {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    justify-content: flex-start;
-    text-align: center;
-
-    button {
-      color: $secondary-text;
-      background: transparent;
-      border: 0;
-      padding: 1rem 0;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &.active {
-        background-color: white;
-        color: $primary-text;
-      }
-    }
-  }
-
-  .sub_nav {
-    button {
-      background: transparent;
-      border: 0;
-      color: $sub-nav;
+    a {
+      width: 12.5rem;
+      box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1);
       display: block;
-      font-size: 15px;
-      line-height: 20px;
-      margin-bottom: 1.5rem;
-      text-align: left;
+      margin: 1rem auto;
 
       &:hover {
-        cursor: pointer;
-      }
-    }
-
-    .active {
-      color: $sub-nav-active;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .sub_nav {
-      button {
-        display: inline-block;
+        background: rgba(255, 255, 255, 0.7);
+        border-color: rgba(255, 255, 255, 0.7);
       }
     }
   }
@@ -180,22 +147,35 @@
   }
 }
 
-.research_container {
+.home .research_container {
   @include inline-link;
-  background: $gray-10;
+  background: $blue-5;
   padding: 5rem 1rem;
 
   .chart_icon {
     max-width: 100%;
   }
 
-  .description {
-    padding: 1rem 0 0.8rem;
+
+  .research_description {
+    position: relative;
+
+    .content {
+      position: relative;
+      top: 45%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .description {
+      padding: 1rem 0 0.8rem;
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
-  .research_container .chart_icon {
+  .home .research_container .chart_icon {
     padding-bottom: 3rem;
   }
 }
