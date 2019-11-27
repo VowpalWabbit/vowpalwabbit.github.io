@@ -1,4 +1,6 @@
 ---
+page_title: Python Tutorial | Vowpal Wabbit
+page_description: This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python.
 title: Getting started with Vowpal Wabbit and Python
 order: 6
 module_id: python_getting_started
