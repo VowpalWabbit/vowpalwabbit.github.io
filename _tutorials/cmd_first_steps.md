@@ -13,7 +13,7 @@ tags: getting&nbsp;started command&nbsp;line
 
 # Getting started with Vowpal Wabbit command line
 
-This tutorial introduces Vowpal Wabbit command line basics with a quick introduction to training and testing your model with Vowpal Wabbit. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction. 
+This tutorial introduces Vowpal Wabbit command line basics with a quick introduction to training and testing your model with Vowpal Wabbit. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction.
 
 For more advanced Vowpal Wabbit tutorials, including how to format data and understand results, see [Tutorials](https://vowpalwabbit.org/tutorials.html).
 
@@ -55,7 +55,7 @@ With Vowpal Wabbit, the output includes more than a few statistics and statuses.
 <details>
   <summary><strong>Output for comparison:</strong></summary>
 
-```
+  <div class="output" markdown="1">
 final_regressor = model.vw
 Num weight bits = 18
 learning rate = 0.5
@@ -77,8 +77,7 @@ average loss = 0.666667
 best constant = 0.333333
 best constant's loss = 0.222222
 total feature number = 15
-```
-
+</div>
 </details>
 
 ## Test a model
@@ -132,7 +131,7 @@ average loss = n.a.
 ```
 
 ### Vowpal Wabbit results
-The model predicted a value of ‘0’. This result means our house will not need a new roof in the next 10 years (based on just three examples we used in our training dataset). 
+The model predicted a value of ‘0’. This result means our house will not need a new roof in the next 10 years (based on just three examples we used in our training dataset).
 
 ## More to explore
 
