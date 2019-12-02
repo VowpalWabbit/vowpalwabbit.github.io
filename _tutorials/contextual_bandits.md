@@ -47,6 +47,10 @@ The contextual bandits setting considered in part two of this tutorial is the sa
 
 The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see [Research](https://vowpalwabbit.org/research.html). 
 
+## Part Two: Vowpal Wabbit Contextual Bandits Tutorial 
+
+Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like [Microsoft Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/). It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework and simulating web content personalization, see [Content Personalization with Contextual Bandits](https://vowpalwabbit.org/tutorials/cb_simulation.html).
+
 ## Working with contextual bandits in Vowpal Wabbit
 
 To introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this approach to reinforcement learning, this guide uses a hypothetical application called **APP**.
