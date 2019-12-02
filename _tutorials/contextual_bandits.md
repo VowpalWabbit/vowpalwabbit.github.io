@@ -31,11 +31,21 @@ This tutorial includes an overview of the contextual bandits approach to reinfor
 
 Vowpal Wabbit founder John Langford coined the term [contextual bandits](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf) to describe a flexible subset of reinforcement learning. The contextual bandit approach to reinforcement learning frames decision-making (choices) between separate actions in a given context.
 
-The Microsoft Azure cloud-based API service [Personalizer]https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/ uses a bandit approach to reinforcement learning to help choose the best experience to show users — learning from real-time behavior to make choices between discrete actions in a given context.  
+The Microsoft Azure cloud-based API service [Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/) uses a bandit approach to reinforcement learning to help choose the best experience to show users — learning from real-time behavior to make choices between discrete actions in a given context.  
 
-### The contextual bandit problem
+## The contextual bandits problem  
 
-In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms  use additional side information (or context) to aid real world decision-making <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup>. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited.
+In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandits algorithms use additional side information (or context) to aid real-world decision-making <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup>. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited.  
+
+The standard k-armed bandits problem, or multi-armed bandits problem, is well-studied in the research literature. It is regarded as a repeated game between two players, with every stage consisting of the following:  
+
+* **Step One:** The world chooses k rewards r1, ..., rk ∈ \[0, 1\]. 
+* **Step Two:** The player chooses an arm i ∈ {1, k} without knowledge of the world's chosen rewards. 
+* **Step Three:** The player observes the reward ri.   
+
+The contextual bandits setting considered in part two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit's default algorithm for this type of exploration is [Epsilon-Greedy](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf). 
+
+The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see [Research](https://vowpalwabbit.org/research.html). 
 
 ## Working with contextual bandits in Vowpal Wabbit
 
