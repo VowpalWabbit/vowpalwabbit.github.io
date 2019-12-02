@@ -1,6 +1,6 @@
 .tabs_container {
   @include inline-link;
-  padding-top: 1rem;
+  min-height: 18rem;
 
   .nav {
     display: block;
@@ -17,28 +17,19 @@
 
       &:hover {
         cursor: pointer;
+        color: $gray-50;
       }
     }
 
     .active {
       color: $sub-nav-active;
       font-weight: 600;
+      pointer-events: none;
 
       .tab_text {
         padding-bottom: 0.4rem;
         border-bottom: 1px solid $yellow-40;
       }
-    }
-  }
-
-  .tab_content {
-    padding: 2rem;
-    background: white;
-
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
     }
   }
 
@@ -48,6 +39,22 @@
     &:hover {
       border-bottom: 0;
     }
+  }
+
+  .tab_content_wrapper {
+    position: relative;
+  }
+
+  .tab_content > div:not(.active_content) {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .tab_content .active_content {
+    opacity: 1;
+    position: absolute;
+    transition: all 0.35s ease-in;
   }
 
   .hidden {
