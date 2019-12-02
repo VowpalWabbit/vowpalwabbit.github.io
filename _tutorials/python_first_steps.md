@@ -12,16 +12,15 @@ tags: getting&nbsp;started Python
 
 # Getting started with Vowpal Wabbit and Python
 
+This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction.
+
+For more advanced Vowpal Wabbit tutorials, including how to format data and understand results, see [Tutorials](../tutorials.html).
+
 <div class="prerequisites" markdown="1">
 **Prerequisites**
 
 To install Vowpal Wabbit see [Get Started](../start.html).
 </div>
-
-### Overview
-This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction.
-
-For more advanced Vowpal Wabbit tutorials, including how to format data and understand results, see [Tutorials](../tutorials.html).
 
 ## Getting started
 
