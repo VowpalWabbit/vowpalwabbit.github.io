@@ -2,18 +2,18 @@
 page_title: Python Tutorial | Vowpal Wabbit
 page_description: This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python.
 title: Getting started with Vowpal Wabbit and Python
-order: 6
+order: 1
 module_id: python_getting_started
-description: This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python. 
-guide_link_text: See the Vowpal Wabbit Python tutorial 
-level: basic
+description: This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python.
+guide_link_text: See the Vowpal Wabbit Python tutorial
+level: beginner
 layout: tutorial
 tags: getting&nbsp;started Python
 ---
 
 # Getting started with Vowpal Wabbit and Python
 
-This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction. 
+This tutorial is a quick introduction to training and testing your model with Vowpal Wabbit using Python. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction.
 
 For more advanced Vowpal Wabbit tutorials, including how to format data and understand results, see [Tutorials](https://vowpalwabbit.org/tutorials.html).
 
@@ -41,7 +41,7 @@ model = pyvw.vw(quiet=True)
 
 For this tutorial scenario, we want Vowpal Wabbit to help us predict whether or not our house will require a new roof in the next 10 years.
 
-To create some examples, we use the Vowpal Wabbit text format and then learn on them: 
+To create some examples, we use the Vowpal Wabbit text format and then learn on them:
 
 ```Python
 train_examples = ["0 | price:.23 sqft:.25 age:.05 2006"
@@ -70,7 +70,7 @@ print(prediction)
 
 ### Vowpal Wabbit results
 
-The model predicted a value of `0`. According to our learning model, our house will not need a new roof in the next 10 years (at least that is the result from just three examples we used in our training dataset). 
+The model predicted a value of `0`. According to our learning model, our house will not need a new roof in the next 10 years (at least that is the result from just three examples we used in our training dataset).
 
 ## More to explore
 

@@ -2,7 +2,7 @@
 page_title: Contextual Bandits Reinforcement Learning | Vowpal Wabbit
 page_description: This tutorial includes an overview of the contextual bandits approach to reinforcement learning and how to approach this problem using Vowpal Wabbit.
 title: Contextual bandits and Vowpal Wabbit
-order: 2
+order: 3
 description: This tutorial runs through the contextual bandit approach to reinforcement learning with Vowpal Wabbit.
 layout: tutorial
 level: advanced
