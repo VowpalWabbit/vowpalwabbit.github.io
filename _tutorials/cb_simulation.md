@@ -42,21 +42,26 @@ import random
 import matplotlib.pyplot as plt
 ```
 
-## Simulate reward
+## Simulating reward for Vowpal Wabbit 
 
-In the real world, we will have to learn Tom and Anna's preferences for articles as we observe their interactions. Since this is a simulation, we will have to define Tom and Anna's preference profile. The reward that we provide to the learner will follow this preference profile. Our hope is to see if the learner can take better and better decisions as we see more samples which in turn means we are maximizing the reward.
+In the real world, we must learn Tom and Anna’s preferences for articles as we observe their interactions. Since this is a simulation, we must define Tom and Anna’s preference profile.  
 
-We will also modify the reward function in a few different ways and see if the CB learner picks up the changes. We will compare the CTR with and without learning.
+The reward that we provide to the learner follows this preference profile. We hope to see if the learner can make better and better decisions as we see more samples, which in turn means we are maximizing the reward. 
 
-VW optimizes to minimize **cost which is negative of reward**. Therefore, we will always pass negative of reward as cost to VW.
+To accomplish this, we need to modify the reward function in a few different ways and see if the contextual bandit learner picks up the changes. Then, we compare the CTR with and without learning. 
+
+Vowpal Wabbit optimizes to minimize cost, which is negative of reward.  
+
+Therefore, **we always pass negative of reward as cost to Vowpal Wabbit.** 
 
 ```python
 # VW tries to minimize loss/cost, therefore we will pass cost as -reward
 USER_LIKED_ARTICLE = -1.0
 USER_DISLIKED_ARTICLE = 0.0
 ```
+The reward function below specifies that Tom likes politics in the morning and music in the afternoon. Anna likes sports in the morning and politics in the afternoon. It looks dense, but we are simulating a hypothetical world in the format of the feedback the learner understands — cost.  
 
-The reward function below specifies that Tom likes politics in the morning and music in the afternoon whereas Anna likes sports in the morning and politics in the afternoon. It looks dense but we are just simulating our hypothetical world in the format of the feedback the learner understands: cost. If the learner recommends an article that aligns with the reward function, we give a positive reward. In our simulated world this is a click.
+If the learner recommends an article that aligns with the reward function, we give a positive reward. In our simulation, this is a click: 
 
 ```python
 def get_cost(context,action):
@@ -76,9 +81,11 @@ def get_cost(context,action):
             return USER_DISLIKED_ARTICLE
 ```
 
-## Understanding VW format
+## Understanding Vowpal Wabbit format
 
-There are some things we need to do to get our input into a format VW understands. This function handles converting from our context as a dictionary, list of articles and the cost if there is one into the text format VW understands.
+There are steps we need to take to set up our input in a format Vowpal Wabbit understands.  
+
+This function handles converting from our context as a dictionary, list of articles, and the cost if there is one into the text format it understands: 
 
 ```python
 # This function modifies (context, action, cost, probability) to VW friendly format
@@ -95,8 +102,9 @@ def to_vw_example_format(context, actions, cb_label = None):
     return example_string[:-1]
 ```
 
-To understand what's going on here let's go through an example. Here, it's the morning and the user is Tom. There are four possible articles. So in the VW format there is one line that starts with shared, this is the shared context, followed by four lines each corresponding to an article.
+To make sense of this format, we go through an example. In this example, the time of day is morning, and the user is Tom. There are four possible articles.  
 
+In Vowpal Wabbit format, there is one line that starts with shared-the shared context-followed by four lines each corresponding to an article:
 
 ```python
 context = {"user":"Tom","time_of_day":"morning"}
@@ -105,7 +113,8 @@ actions = ["politics", "sports", "music", "food"]
 print(to_vw_example_format(context,actions))
 ```
 
-Output:
+**Output:**
+
 <div class="output" markdown="1">
 shared |User user=Tom time_of_day=morning
 |Action article=politics
