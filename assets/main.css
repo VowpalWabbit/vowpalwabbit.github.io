@@ -189,18 +189,19 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .community_container .card_footer a:hover { background: #F2F4FF; text-decoration: none; transition: 0.3s; border: 3px solid #F2F4FF; }
 .community_container .card_footer a { width: 15rem; box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1); display: block; margin: 1rem auto; }
 
-.tabs_container { padding-top: 1rem; }
+.tabs_container { min-height: 18rem; }
 .tabs_container a { color: #2A3B93; border-bottom: 1px solid #2A3B93; }
 .tabs_container a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
 .tabs_container .nav { display: block; }
 .tabs_container .nav button { background: transparent; border: 0; color: #999999; display: block; font-size: 15px; line-height: 20px; margin-bottom: 1.5rem; text-align: left; }
-.tabs_container .nav button:hover { cursor: pointer; }
-.tabs_container .nav .active { color: #333333; font-weight: 600; }
+.tabs_container .nav button:hover { cursor: pointer; color: #666666; }
+.tabs_container .nav .active { color: #333333; font-weight: 600; pointer-events: none; }
 .tabs_container .nav .active .tab_text { padding-bottom: 0.4rem; border-bottom: 1px solid #FFB700; }
-.tabs_container .tab_content { padding: 2rem; background: white; }
-.tabs_container .tab_content img { display: block; margin: 0 auto; max-width: 100%; }
 .tabs_container .cite_sup { border-bottom: 0; }
 .tabs_container .cite_sup:hover { border-bottom: 0; }
+.tabs_container .tab_content_wrapper { position: relative; }
+.tabs_container .tab_content > div:not(.active_content) { opacity: 0; visibility: hidden; position: absolute; }
+.tabs_container .tab_content .active_content { opacity: 1; position: absolute; transition: all 0.35s ease-in; }
 .tabs_container .hidden { display: none; }
 
 .tutorial .hero { background: #2A3B93; color: white; padding: 3rem 1rem; }
@@ -222,8 +223,8 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tutorial_container table th { border: 1px solid #EBEBEB; padding: 0.9rem 1.3rem; }
 .tutorial_container table td { border: 1px solid #EBEBEB; padding: 0.9rem 1.3rem; }
 .tutorial_container img { max-width: 100%; }
-.tutorial_container .tutorial_nav { position: sticky; top: 5rem; }
-.tutorial_container .tutorial_nav label { font-size: 15px; line-height: 20px; font-weight: 600; text-transform: uppercase; }
+.tutorial_container .tutorial_nav { position: sticky; top: 5rem; font-size: 15px; line-height: 20px; }
+.tutorial_container .tutorial_nav label { font-weight: 600; text-transform: uppercase; }
 .tutorial_container .tutorial_nav ul { padding-left: 0; }
 .tutorial_container .tutorial_nav li { display: block; padding: 0.8rem 0; }
 .tutorial_container .tutorial_nav li span { padding: 1rem 0; }
@@ -233,13 +234,15 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tutorial_container .tutorial_nav .run_tutorial_links a { border: none; color: #2A3B93; }
 .tutorial_container .tutorial_nav .run_tutorial_links a:after { display: inline-block; content: ''; background-image: url("../assets/images/icons/icon_export_small.svg"); background-size: 16px 16px; height: 16px; width: 16px; margin-right: 0.5rem; }
 .tutorial_container .tutorial_nav .run_tutorial_links a:hover { text-decoration: none; color: #415EBF; }
-.tutorial_container .prerequisites { background: #F2F2F2; padding: 1rem 2rem; }
+.tutorial_container .prerequisites { background: #F2F2F2; padding: 1rem 2rem; margin-top: 2rem; }
 .tutorial_container blockquote { margin: 0 0 0 2rem; position: relative; }
 .tutorial_container blockquote:before { display: block; content: ' '; background-image: url("../assets/images/icons/icon_note_small.svg"); background-size: 20px 20px; height: 20px; width: 20px; position: absolute; left: -2rem; top: 0.2rem; }
 .tutorial_container code.highlighter-rouge { font-weight: bold; background-color: #F2F2F2; padding: 0 0.2rem; }
 .tutorial_container .language-text pre { border: 1px solid #EBEBEB; padding: 1rem; background: white; }
-.tutorial_container .output { border: 1px solid #EBEBEB; padding: 1rem 1rem 0; background: #FFF4DB; margin: 0.5rem 0 1rem; overflow: auto; }
+.tutorial_container .output { padding: 1rem 1rem 0; background: rgba(255, 244, 219, 0.75); margin: 0.5rem 0 1rem; overflow: auto; }
 .tutorial_container .output p { white-space: pre; }
+.tutorial_container .output table { border: 0; width: 100%; margin: 0 0 3rem; }
+.tutorial_container .output table th, .tutorial_container .output table td { border: 0; border-bottom: 1px solid #FFDD56; }
 .tutorial_container ol li { margin-bottom: 0.9rem; }
 .tutorial_container ol li .highlighter-rouge { margin-bottom: 0.9rem; display: inline-block; }
 
@@ -307,6 +310,9 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .features .features_container .how_it_works_container h2 { padding-bottom: 2rem; }
 .features .features_container .how_it_works_container .how_it_works_content { box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1); padding: 4rem; background-color: white; }
 .features .features_container .reductions_container, .features .features_container .examples_container { padding-top: 3rem; padding-bottom: 4rem; }
+.features .features_container .reductions_container .row { padding-bottom: 5rem; }
+.features .features_container .reductions_container .row:last-child { padding-bottom: 0; }
+.features .features_container .reductions_container .row img { width: 100%; padding: 1rem 0; }
 .features .features_container .reductions_content, .features .features_container .examples_content { margin-top: 0.8rem; }
 .features .features_container .examples_container { border-top: 1px solid #EBEBEB; }
 .features .features_container .examples_container .examples_header { font-weight: 600; padding-bottom: 0.8rem; }
