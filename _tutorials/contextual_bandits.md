@@ -48,11 +48,11 @@ The standard k-armed bandits problem, or multi-armed bandits problem, is well-st
 
 The contextual bandits setting considered in Part Two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit's default algorithm for this type of exploration is [Epsilon-Greedy](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf){:target="blank"}. 
 
-The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see [Research](https://vowpalwabbit.org/research.html){:target="blank"}. 
+The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see [Research](../research.html). 
 
 ## Part Two: Vowpal Wabbit Contextual Bandits Tutorial 
 
-Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like [Microsoft Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"}. It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework, including a tutorial for simulating web content personalization, see [Content Personalization with Contextual Bandits](https://vowpalwabbit.org/tutorials/cb_simulation.html){:target="blank"}.
+Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like [Microsoft Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"}. It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework, including a tutorial for simulating web content personalization, see [Content Personalization with Contextual Bandits](../cb_simulation.html).
 
 ## Vowpal Wabbit tutorial 
 
@@ -78,7 +78,6 @@ This tutorial uses an application example we'll call **AP** to introduce a Vowpa
   - **Reward**: user engagement (click or no click)
 
 **APP** cloud controller:
-
   - **Decision to optimize**: the wait time before reboot of unresponsive machine.
   - **Context**: the machine hardware specs (SKU, OS, failure history, location, load).
   - **Actions**: time in minutes - {1 ,2 , ...N}
@@ -452,8 +451,8 @@ The `-i` argument means input regressor, telling Vowpal Wabbit to load a model f
 
 ## More to explore
 
-- Continue to the next tutorial, [Content Personalization with Contextual Bandits](https://vowpalwabbit.org/tutorials/cb_simulation.html){:target="blank"}.
-- Explore more Vowpal Wabbit [Tutorials](https://vowpalwabbit.org/tutorials.html){:target="blank"}.
+- Continue to the next tutorial, [Content Personalization with Contextual Bandits](../cb_simulation.html).
+- Explore more Vowpal Wabbit [Tutorials](../tutorials.html).
 - Browse [examples on the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples){:target="blank"}.
 - Learn various [Vowpal Wabbit commands](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments){:target="blank"}.
 - Review the [example Python notebooks](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples){:target="blank"}.
