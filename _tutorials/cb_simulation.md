@@ -123,12 +123,13 @@ shared |User user=Tom time_of_day=morning
 |Action article=food
 </div>
 
-## Getting a decision
+## Getting a decision from Vowpal Wabbit
 
-When we call VW we get a **pmf**, [probability mass function](https://en.wikipedia.org/wiki/Probability_mass_function), as the output. Since we are incorporating exploration into our strategy, VW will give us a list of probabilities over the set of actions. This means that the probability at a given index in the list corresponds to the likelihood of picking that specific action. In order to arrive at a decision/action, we will have to sample from this list.
+When we call Vowpal Wabbit, the output is a [probability mass function](https://en.wikipedia.org/wik i/Probability_mass_function){:target="blank"}(PMF). Vowpal Wabbit provides a list of probabilities over the set of actions because we are incorporating exploration into our strategy. This exploration means that the probability at a given index in the list corresponds to the likelihood of picking that specific action.  
 
-So, given a list **[0.7, 0.1, 0.1, 0.1]**, we would choose the first item with a 70% chance. `sample_custom_pmf` takes such a list and gives us the index it chose and what the probability of choosing that index was.
-
+To arrive at a decision/action, we must sample from this list. 
+ 
+For example, given the list **[0.7, 0.1, 0.1, 0.1]**, we would choose the first item with a 70% chance. The command `sample_custom_pmf` takes such a list and gives us the index it chose and what the probability of choosing that index was.
 
 ```python
 def sample_custom_pmf(pmf):
@@ -143,13 +144,14 @@ def sample_custom_pmf(pmf):
             return index, prob
 ```
 
-We have all of the information we need to choose an action for a specific user and context. To use VW to achieve this, we will do the following:
+We have all the information we need to choose an action for a specific user and context. Use Vowpal Wabbit to achieve this with the following steps: 
 
-1. We convert our context and actions into the text format we need
-2. We pass this example to vw and get the pmf out
-3. Now, we sample this pmf to get what article we will end up showing
-4. Finally we return the article chosen, and the probability of choosing it (we are going to need the probability when we learn form this example)
+1. Convert the context and actions into the text format needed. 
+2. Pass this example to Vowpal Wabbit and get the PMF output. 
+3. Sample this PMF to get the article to show. 
+4. Return the chosen article and the probability of choosing it.  
 
+>**Note:** We need the probability when we learn from this example. 
 
 ```python
 def get_action(vw, context, actions):
