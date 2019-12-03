@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="543px" height="514px" viewBox="0 0 543 514" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>diagram_2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="53 418.50151 198.474289 486 343 418.5 197.529468 351"></polygon>
+        <filter x="-9.5%" y="-13.0%" width="119.0%" height="140.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-3" points="53 367.001521 198.474289 435 343 367 197.529468 299"></polygon>
+        <filter x="-9.5%" y="-12.9%" width="119.0%" height="140.4%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-5" points="53 305.500755 198.474289 373 343 305.499245 197.529468 238"></polygon>
+        <filter x="-9.5%" y="-13.0%" width="119.0%" height="140.7%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-7" points="53 244.500755 198.474289 312 343 244.499245 197.529468 177"></polygon>
+        <filter x="-9.5%" y="-13.0%" width="119.0%" height="140.7%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-9" points="53 183.00076 198.474289 251 343 182.99924 197.529468 115"></polygon>
+        <filter x="-9.5%" y="-12.9%" width="119.0%" height="140.4%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-11" points="53 121.00076 198.474289 189 343 120.99924 197.529468 53"></polygon>
+        <filter x="-9.5%" y="-12.9%" width="119.0%" height="140.4%" filterUnits="objectBoundingBox" id="filter-12">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-13" points="53 67.5015095 198.4677 135 343 67.4954714 197.534179 0"></polygon>
+        <filter x="-9.5%" y="-13.0%" width="119.0%" height="140.7%" filterUnits="objectBoundingBox" id="filter-14">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Features" transform="translate(-684.000000, -2121.000000)">
+            <g id="how-it-works" transform="translate(0.000000, 942.000000)">
+                <g id="diagram_2" transform="translate(682.000000, 1183.000000)">
+                    <g id="Fill-1">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FDDC55" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="Fill-3">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        <use fill="#EBEBEB" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                    <g id="Fill-5">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                        <use fill="#EBEBEB" fill-rule="evenodd" xlink:href="#path-5"></use>
+                    </g>
+                    <g id="Fill-7">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                        <use fill="#FFEEF8" fill-rule="evenodd" xlink:href="#path-7"></use>
+                    </g>
+                    <g id="Fill-9">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                        <use fill="#FFEEF8" fill-rule="evenodd" xlink:href="#path-9"></use>
+                    </g>
+                    <g id="Fill-9">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
+                        <use fill="#EBEBEB" fill-rule="evenodd" xlink:href="#path-11"></use>
+                    </g>
+                    <text id="gd" transform="translate(267.664073, 439.392130) rotate(-25.000000) translate(-267.664073, -439.392130) " font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#666666">
+                        <tspan x="192.664073" y="442.89213">gd</tspan>
+                    </text>
+                    <text id="Known-problem" transform="translate(273.424289, 461.387434) rotate(-25.000000) translate(-273.424289, -461.387434) " font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="15" fill="#CCCCCC">
+                        <tspan x="198.424289" y="464.887434">Known problem</tspan>
+                    </text>
+                    <text id="scorer-identity" transform="translate(265.784688, 389.573579) rotate(-25.000000) translate(-265.784688, -389.573579) " font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#666666">
+                        <tspan x="190.784688" y="393.073579">scorer-identity</tspan>
+                    </text>
+                    <text id="csoaa_ldf" transform="translate(263.551120, 328.612566) rotate(-25.000000) translate(-263.551120, -328.612566) " font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#666666">
+                        <tspan x="188.55112" y="332.112566">csoaa_ldf</tspan>
+                    </text>
+                    <text id="cb_adf" transform="translate(265.975409, 268.500000) rotate(-25.000000) translate(-265.975409, -268.500000) " font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#666666">
+                        <tspan x="190.975409" y="272">cb_adf</tspan>
+                    </text>
+                    <text id="cb_explore_adf-softm" transform="translate(265.975409, 205.500000) rotate(-25.000000) translate(-265.975409, -205.500000) " font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#666666">
+                        <tspan x="190.975409" y="209">cb_explore_adf-softmax</tspan>
+                    </text>
+                    <text id="shared_feature_merge" transform="translate(265.975409, 143.768209) rotate(-25.000000) translate(-265.975409, -143.768209) " font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#666666">
+                        <tspan x="190.975409" y="147.268209">shared_feature_merger</tspan>
+                    </text>
+                    <g id="Fill-11">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-14)" xlink:href="#path-13"></use>
+                        <use fill="#415EBF" fill-rule="evenodd" xlink:href="#path-13"></use>
+                    </g>
+                    <text id="Unknown-problem" transform="translate(265.975409, 90.768209) rotate(-25.000000) translate(-265.975409, -90.768209) " font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#FFFFFF">
+                        <tspan x="190.975409" y="94.2682092">Unknown problem</tspan>
+                    </text>
+                    <text id="Reduction-stack-sequ" transform="translate(7.000000, 246.500000) rotate(-90.000000) translate(-7.000000, -246.500000) " font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#999999">
+                        <tspan x="-68" y="250">Reduction stack sequence</tspan>
+                    </text>
+                    <line x1="343" y1="121.75" x2="368" y2="121.25" id="Stroke-14" stroke="#999999" stroke-dasharray="1,2"></line>
+                    <line x1="343" y1="183.75" x2="368" y2="183.25" id="Stroke-14" stroke="#999999" stroke-dasharray="1,2"></line>
+                    <line x1="343" y1="244.75" x2="368" y2="244.25" id="Stroke-14" stroke="#999999" stroke-dasharray="1,2"></line>
+                    <line x1="343" y1="305.75" x2="368" y2="305.25" id="Stroke-14" stroke="#999999" stroke-dasharray="1,2"></line>
+                    <line x1="343" y1="366.75" x2="368" y2="366.25" id="Stroke-14" stroke="#999999" stroke-dasharray="1,2"></line>
+                    <text id="Contextual-Bandit-Ex" font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#999999">
+                        <tspan x="377" y="187">Contextual Bandit Exploration </tspan>
+                        <tspan x="377" y="200">with action dependent </tspan>
+                        <tspan x="377" y="213">features and softmax</tspan>
+                    </text>
+                    <text id="Contextual-Bandits-w" font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#999999">
+                        <tspan x="377" y="248">Contextual Bandits with action </tspan>
+                        <tspan x="377" y="261">dependent features</tspan>
+                    </text>
+                    <text id="Utility-reduction-to" font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#999999">
+                        <tspan x="377" y="123">Utility reduction to merge </tspan>
+                        <tspan x="377" y="136">shared features with action </tspan>
+                        <tspan x="377" y="149">dependent features</tspan>
+                    </text>
+                    <text id="Existing-example-of" font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#333333">
+                        <tspan x="377" y="34">Existing example of a simple </tspan>
+                        <tspan x="377" y="47">real-world reduction stack in </tspan>
+                        <tspan x="377" y="60">Vowpal Wabbit</tspan>
+                    </text>
+                    <text id="Problem-is-reduced-t" font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#333333">
+                        <tspan x="377" y="423">Problem is reduced to gradient </tspan>
+                        <tspan x="377" y="436">descent (gd), a well-known </tspan>
+                        <tspan x="377" y="449">machine learning problem.</tspan>
+                    </text>
+                    <text id="See-more-details" font-family="WorkSans-SemiBold, Work Sans SemiBold" font-size="11" font-weight="500" line-spacing="13" fill="#415EBF">
+                        <tspan x="377" y="79">See more details</tspan>
+                    </text>
+                    <text id="Transforms-score-fro" font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#999999">
+                        <tspan x="377" y="372">Transforms score from gd </tspan>
+                        <tspan x="377" y="385">multiply by 1 </tspan>
+                    </text>
+                    <text id="Cost-Sensitive-One-A" font-family="WorkSans-Regular, Work Sans" font-size="11" font-weight="normal" line-spacing="13" fill="#999999">
+                        <tspan x="377" y="307">Cost Sensitive One Against All </tspan>
+                        <tspan x="377" y="320">(Label dependent features)</tspan>
+                    </text>
+                    <line x1="342.5" y1="418.75" x2="367.5" y2="418.75" id="Stroke-14" stroke="#999999" stroke-dasharray="1,2"></line>
+                    <polygon id="Fill-15" fill="#BBBDBF" points="19 413.672244 19.7159799 413 22.9995109 416.556102 26.2830419 413 27 413.672244 22.9995109 418"></polygon>
+                    <line x1="263.5" y1="29.5" x2="367.5" y2="29.75" id="Stroke-14" stroke="#999999" stroke-dasharray="1,2"></line>
+                    <path id="Stroke-14" d="M23.5,415.385401 L23.5,416.385401 L22.5,416.385401 L22.5,415.385401 L23.5,415.385401 Z M23.5,412.385401 L23.5,413.385401 L22.5,413.385401 L22.5,412.385401 L23.5,412.385401 Z M23.5,409.385401 L23.5,410.385401 L22.5,410.385401 L22.5,409.385401 L23.5,409.385401 Z M23.5,406.385401 L23.5,407.385401 L22.5,407.385401 L22.5,406.385401 L23.5,406.385401 Z M23.5,403.385401 L23.5,404.385401 L22.5,404.385401 L22.5,403.385401 L23.5,403.385401 Z M23.5,400.385401 L23.5,401.385401 L22.5,401.385401 L22.5,400.385401 L23.5,400.385401 Z M23.5,397.385401 L23.5,398.385401 L22.5,398.385401 L22.5,397.385401 L23.5,397.385401 Z M23.5,394.385401 L23.5,395.385401 L22.5,395.385401 L22.5,394.385401 L23.5,394.385401 Z M23.5,391.385401 L23.5,392.385401 L22.5,392.385401 L22.5,391.385401 L23.5,391.385401 Z M23.5,388.385401 L23.5,389.385401 L22.5,389.385401 L22.5,388.385401 L23.5,388.385401 Z M23.5,385.385401 L23.5,386.385401 L22.5,386.385401 L22.5,385.385401 L23.5,385.385401 Z M23.5,382.385401 L23.5,383.385401 L22.5,383.385401 L22.5,382.385401 L23.5,382.385401 Z M23.5,379.385401 L23.5,380.385401 L22.5,380.385401 L22.5,379.385401 L23.5,379.385401 Z M23.5,376.385401 L23.5,377.385401 L22.5,377.385401 L22.5,376.385401 L23.5,376.385401 Z M23.5,373.385401 L23.5,374.385401 L22.5,374.385401 L22.5,373.385401 L23.5,373.385401 Z M23.5,370.385401 L23.5,371.385401 L22.5,371.385401 L22.5,370.385401 L23.5,370.385401 Z M23.5,367.385401 L23.5,368.385401 L22.5,368.385401 L22.5,367.385401 L23.5,367.385401 Z M23.5,364.385401 L23.5,365.385401 L22.5,365.385401 L22.5,364.385401 L23.5,364.385401 Z M23.5,361.385401 L23.5,362.385401 L22.5,362.385401 L22.5,361.385401 L23.5,361.385401 Z M23.5,358.385401 L23.5,359.385401 L22.5,359.385401 L22.5,358.385401 L23.5,358.385401 Z M23.5,355.385401 L23.5,356.385401 L22.5,356.385401 L22.5,355.385401 L23.5,355.385401 Z M23.5,352.385401 L23.5,353.385401 L22.5,353.385401 L22.5,352.385401 L23.5,352.385401 Z M23.5,349.385401 L23.5,350.385401 L22.5,350.385401 L22.5,349.385401 L23.5,349.385401 Z M23.5,346.385401 L23.5,347.385401 L22.5,347.385401 L22.5,346.385401 L23.5,346.385401 Z M23.5,343.385401 L23.5,344.385401 L22.5,344.385401 L22.5,343.385401 L23.5,343.385401 Z M23.5,340.385401 L23.5,341.385401 L22.5,341.385401 L22.5,340.385401 L23.5,340.385401 Z M23.5,337.385401 L23.5,338.385401 L22.5,338.385401 L22.5,337.385401 L23.5,337.385401 Z M23.5,334.385401 L23.5,335.385401 L22.5,335.385401 L22.5,334.385401 L23.5,334.385401 Z M23.5,331.385401 L23.5,332.385401 L22.5,332.385401 L22.5,331.385401 L23.5,331.385401 Z M23.5,328.385401 L23.5,329.385401 L22.5,329.385401 L22.5,328.385401 L23.5,328.385401 Z M23.5,325.385401 L23.5,326.385401 L22.5,326.385401 L22.5,325.385401 L23.5,325.385401 Z M23.5,322.385401 L23.5,323.385401 L22.5,323.385401 L22.5,322.385401 L23.5,322.385401 Z M23.5,319.385401 L23.5,320.385401 L22.5,320.385401 L22.5,319.385401 L23.5,319.385401 Z M23.5,316.385401 L23.5,317.385401 L22.5,317.385401 L22.5,316.385401 L23.5,316.385401 Z M23.5,313.385401 L23.5,314.385401 L22.5,314.385401 L22.5,313.385401 L23.5,313.385401 Z M23.5,310.385401 L23.5,311.385401 L22.5,311.385401 L22.5,310.385401 L23.5,310.385401 Z M23.5,307.385401 L23.5,308.385401 L22.5,308.385401 L22.5,307.385401 L23.5,307.385401 Z M23.5,304.385401 L23.5,305.385401 L22.5,305.385401 L22.5,304.385401 L23.5,304.385401 Z M23.5,301.385401 L23.5,302.385401 L22.5,302.385401 L22.5,301.385401 L23.5,301.385401 Z M23.5,298.385401 L23.5,299.385401 L22.5,299.385401 L22.5,298.385401 L23.5,298.385401 Z M23.5,295.385401 L23.5,296.385401 L22.5,296.385401 L22.5,295.385401 L23.5,295.385401 Z M23.5,292.385401 L23.5,293.385401 L22.5,293.385401 L22.5,292.385401 L23.5,292.385401 Z M23.5,289.385401 L23.5,290.385401 L22.5,290.385401 L22.5,289.385401 L23.5,289.385401 Z M23.5,286.385401 L23.5,287.385401 L22.5,287.385401 L22.5,286.385401 L23.5,286.385401 Z M23.5,283.385401 L23.5,284.385401 L22.5,284.385401 L22.5,283.385401 L23.5,283.385401 Z M23.5,280.385401 L23.5,281.385401 L22.5,281.385401 L22.5,280.385401 L23.5,280.385401 Z M23.5,277.385401 L23.5,278.385401 L22.5,278.385401 L22.5,277.385401 L23.5,277.385401 Z M23.5,274.385401 L23.5,275.385401 L22.5,275.385401 L22.5,274.385401 L23.5,274.385401 Z M23.5,271.385401 L23.5,272.385401 L22.5,272.385401 L22.5,271.385401 L23.5,271.385401 Z M23.5,268.385401 L23.5,269.385401 L22.5,269.385401 L22.5,268.385401 L23.5,268.385401 Z M23.5,265.385401 L23.5,266.385401 L22.5,266.385401 L22.5,265.385401 L23.5,265.385401 Z M23.5,262.385401 L23.5,263.385401 L22.5,263.385401 L22.5,262.385401 L23.5,262.385401 Z M23.5,259.385401 L23.5,260.385401 L22.5,260.385401 L22.5,259.385401 L23.5,259.385401 Z M23.5,256.385401 L23.5,257.385401 L22.5,257.385401 L22.5,256.385401 L23.5,256.385401 Z M23.5,253.385401 L23.5,254.385401 L22.5,254.385401 L22.5,253.385401 L23.5,253.385401 Z M23.5,250.385401 L23.5,251.385401 L22.5,251.385401 L22.5,250.385401 L23.5,250.385401 Z M23.5,247.385401 L23.5,248.385401 L22.5,248.385401 L22.5,247.385401 L23.5,247.385401 Z M23.5,244.385401 L23.5,245.385401 L22.5,245.385401 L22.5,244.385401 L23.5,244.385401 Z M23.5,241.385401 L23.5,242.385401 L22.5,242.385401 L22.5,241.385401 L23.5,241.385401 Z M23.5,238.385401 L23.5,239.385401 L22.5,239.385401 L22.5,238.385401 L23.5,238.385401 Z M23.5,235.385401 L23.5,236.385401 L22.5,236.385401 L22.5,235.385401 L23.5,235.385401 Z M23.5,232.385401 L23.5,233.385401 L22.5,233.385401 L22.5,232.385401 L23.5,232.385401 Z M23.5,229.385401 L23.5,230.385401 L22.5,230.385401 L22.5,229.385401 L23.5,229.385401 Z M23.5,226.385401 L23.5,227.385401 L22.5,227.385401 L22.5,226.385401 L23.5,226.385401 Z M23.5,223.385401 L23.5,224.385401 L22.5,224.385401 L22.5,223.385401 L23.5,223.385401 Z M23.5,220.385401 L23.5,221.385401 L22.5,221.385401 L22.5,220.385401 L23.5,220.385401 Z M23.5,217.385401 L23.5,218.385401 L22.5,218.385401 L22.5,217.385401 L23.5,217.385401 Z M23.5,214.385401 L23.5,215.385401 L22.5,215.385401 L22.5,214.385401 L23.5,214.385401 Z M23.5,211.385401 L23.5,212.385401 L22.5,212.385401 L22.5,211.385401 L23.5,211.385401 Z M23.5,208.385401 L23.5,209.385401 L22.5,209.385401 L22.5,208.385401 L23.5,208.385401 Z M23.5,205.385401 L23.5,206.385401 L22.5,206.385401 L22.5,205.385401 L23.5,205.385401 Z M23.5,202.385401 L23.5,203.385401 L22.5,203.385401 L22.5,202.385401 L23.5,202.385401 Z M23.5,199.385401 L23.5,200.385401 L22.5,200.385401 L22.5,199.385401 L23.5,199.385401 Z M23.5,196.385401 L23.5,197.385401 L22.5,197.385401 L22.5,196.385401 L23.5,196.385401 Z M23.5,193.385401 L23.5,194.385401 L22.5,194.385401 L22.5,193.385401 L23.5,193.385401 Z M23.5,190.385401 L23.5,191.385401 L22.5,191.385401 L22.5,190.385401 L23.5,190.385401 Z M23.5,187.385401 L23.5,188.385401 L22.5,188.385401 L22.5,187.385401 L23.5,187.385401 Z M23.5,184.385401 L23.5,185.385401 L22.5,185.385401 L22.5,184.385401 L23.5,184.385401 Z M23.5,181.385401 L23.5,182.385401 L22.5,182.385401 L22.5,181.385401 L23.5,181.385401 Z M23.5,178.385401 L23.5,179.385401 L22.5,179.385401 L22.5,178.385401 L23.5,178.385401 Z M23.5,175.385401 L23.5,176.385401 L22.5,176.385401 L22.5,175.385401 L23.5,175.385401 Z M23.5,172.385401 L23.5,173.385401 L22.5,173.385401 L22.5,172.385401 L23.5,172.385401 Z M23.5,169.385401 L23.5,170.385401 L22.5,170.385401 L22.5,169.385401 L23.5,169.385401 Z M23.5,166.385401 L23.5,167.385401 L22.5,167.385401 L22.5,166.385401 L23.5,166.385401 Z M23.5,163.385401 L23.5,164.385401 L22.5,164.385401 L22.5,163.385401 L23.5,163.385401 Z M23.5,160.385401 L23.5,161.385401 L22.5,161.385401 L22.5,160.385401 L23.5,160.385401 Z M23.5,157.385401 L23.5,158.385401 L22.5,158.385401 L22.5,157.385401 L23.5,157.385401 Z M23.5,154.385401 L23.5,155.385401 L22.5,155.385401 L22.5,154.385401 L23.5,154.385401 Z M23.5,151.385401 L23.5,152.385401 L22.5,152.385401 L22.5,151.385401 L23.5,151.385401 Z M23.5,148.385401 L23.5,149.385401 L22.5,149.385401 L22.5,148.385401 L23.5,148.385401 Z M23.5,145.385401 L23.5,146.385401 L22.5,146.385401 L22.5,145.385401 L23.5,145.385401 Z M23.5,142.385401 L23.5,143.385401 L22.5,143.385401 L22.5,142.385401 L23.5,142.385401 Z M23.5,139.385401 L23.5,140.385401 L22.5,140.385401 L22.5,139.385401 L23.5,139.385401 Z M23.5,136.385401 L23.5,137.385401 L22.5,137.385401 L22.5,136.385401 L23.5,136.385401 Z M23.5,133.385401 L23.5,134.385401 L22.5,134.385401 L22.5,133.385401 L23.5,133.385401 Z M23.5,130.385401 L23.5,131.385401 L22.5,131.385401 L22.5,130.385401 L23.5,130.385401 Z M23.5,127.385401 L23.5,128.385401 L22.5,128.385401 L22.5,127.385401 L23.5,127.385401 Z M23.5,124.385401 L23.5,125.385401 L22.5,125.385401 L22.5,124.385401 L23.5,124.385401 Z M23.5,121.385401 L23.5,122.385401 L22.5,122.385401 L22.5,121.385401 L23.5,121.385401 Z M23.5,118.385401 L23.5,119.385401 L22.5,119.385401 L22.5,118.385401 L23.5,118.385401 Z M23.5,115.385401 L23.5,116.385401 L22.5,116.385401 L22.5,115.385401 L23.5,115.385401 Z M23.5,112.385401 L23.5,113.385401 L22.5,113.385401 L22.5,112.385401 L23.5,112.385401 Z M23.5,109.385401 L23.5,110.385401 L22.5,110.385401 L22.5,109.385401 L23.5,109.385401 Z M23.5,106.385401 L23.5,107.385401 L22.5,107.385401 L22.5,106.385401 L23.5,106.385401 Z M23.5,103.385401 L23.5,104.385401 L22.5,104.385401 L22.5,103.385401 L23.5,103.385401 Z M23.5,100.385401 L23.5,101.385401 L22.5,101.385401 L22.5,100.385401 L23.5,100.385401 Z M23.5,97.3854008 L23.5,98.3854008 L22.5,98.3854008 L22.5,97.3854008 L23.5,97.3854008 Z M23.5,94.3854008 L23.5,95.3854008 L22.5,95.3854008 L22.5,94.3854008 L23.5,94.3854008 Z M23.5,91.3854008 L23.5,92.3854008 L22.5,92.3854008 L22.5,91.3854008 L23.5,91.3854008 Z M23.5,88.3854008 L23.5,89.3854008 L22.5,89.3854008 L22.5,88.3854008 L23.5,88.3854008 Z M23.5,85.3854008 L23.5,86.3854008 L22.5,86.3854008 L22.5,85.3854008 L23.5,85.3854008 Z M23.5,82.3854008 L23.5,83.3854008 L22.5,83.3854008 L22.5,82.3854008 L23.5,82.3854008 Z M23.5,79.3854008 L23.5,80.3854008 L22.5,80.3854008 L22.5,79.3854008 L23.5,79.3854008 Z M23.5,76.3854008 L23.5,77.3854008 L22.5,77.3854008 L22.5,76.3854008 L23.5,76.3854008 Z M23.5,73.3854008 L23.5,74.3854008 L22.5,74.3854008 L22.5,73.3854008 L23.5,73.3854008 Z M23.5,70.3854008 L23.5,71.3854008 L22.5,71.3854008 L22.5,70.3854008 L23.5,70.3854008 Z M27,66.8854008 L27,67.8854008 L23.5,67.885 L23.5,68.3854008 L22.5,68.3854008 L22.5,67.885 L19,67.8854008 L19,66.8854008 L27,66.8854008 Z" fill="#999999" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

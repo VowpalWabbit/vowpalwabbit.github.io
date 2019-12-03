@@ -3,7 +3,7 @@
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
-  <link rel="canonical" href="/features.html" />
+  <link rel="canonical" href="/tutorials/cmd_first_steps.html" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -14,11 +14,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/app.js"></script>
 
-  <title>Features | Vowpal Wabbit</title>
-  <meta name="description" content="" >
+  <title>Command Line Tutorial | Vowpal Wabbit</title>
+  <meta name="description" content="Learn command line basics and explore how to train and test your models with Vowpal Wabbit." >
 </head>
 
-  <body class=features>
+
+  <body class="tutorial">
     
 
 
@@ -55,13 +56,13 @@
       </a>
       <a
         href="/features.html"
-        class='active'
+        class=''
       >
         Features
       </a>
       <a
         href="/tutorials.html"
-        class=''
+        class='active'
       >
         Tutorials
       </a>
@@ -168,11 +169,11 @@
   </a>
   <a
     href="/features.html"
-    class='active'
+    class=''
   >
     Features
   </a>
-  <a href="/tutorials.html" class=''>
+  <a href="/tutorials.html" class='active'>
     Tutorials
   </a>
   <a href="/research.html" class=''>
@@ -206,424 +207,206 @@
 
 <script src="/assets/js/header.js"></script>
 
-    <div class="content features_container">
-  <div class="hero">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-8">
-          <h1>
-            What does Vowpal Wabbit do?
-          </h1>
-          <p class="description">
-            Vowpal Wabbit provides a fast, flexible, and open interactive machine learning solution for reinforcement learning, supervised learning, and other machine learning paradigms.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="feature_detail_container">
-    <div class="container">
-      
-
-<div class="tabs_container">
-  <div class="row">
-    <div class="col-lg-3">
-      <div class="nav">
-        
-          <button
-            class="col-12 active"
-            data-module_id=reinforcement
-          >
-            <span class="tab_text">
-              Reinforcement learning
-            </span>
-          </button>
-        
-          <button
-            class="col-12 "
-            data-module_id=supervised
-          >
-            <span class="tab_text">
-              Supervised learning
-            </span>
-          </button>
-        
-          <button
-            class="col-12 "
-            data-module_id=online
-          >
-            <span class="tab_text">
-              Interactive learning
-            </span>
-          </button>
-        
-          <button
-            class="col-12 "
-            data-module_id=efficiency
-          >
-            <span class="tab_text">
-              Efficient learning
-            </span>
-          </button>
-        
-          <button
-            class="col-12 "
-            data-module_id=flexibility
-          >
-            <span class="tab_text">
-              Versatile learning
-            </span>
-          </button>
-        
-      </div>
-    </div>
-    <div class="col-lg-9 tab_content_wrapper">
-      <div class="tab_content">
-        
-          <div class="active_content" data-module_id=reinforcement>
-            
-
-            <div class="row">
-              
-
-
-  <div class="col-12 col-md-6">
-    <h4>
-      The contextual bandit approach
-    </h4>
-
-    <div>
-      <p>The vast majority of real-world reinforcement learning systems use an interactive contextual bandits approach. This approach enables people and organizations to learn and adapt continuously.</p>
-
-<p>For an overview of a contextual bandit approach to reinforcement learning and how to use Vowpal Wabbit, see the <a href="/tutorials/contextual_bandits.html">contextual bandit reinforcement learning tutorial</a>.</p>
-
-    </div>
-  </div>
-
-  <div class="col-12 col-md-6">
-    <h4>
-      Learning to search (L2S)
-    </h4>
-
-    <div>
-      <p>Learning to Search (L2S) is a form of guided reinforcement learning used for solving complex joint prediction problems based on learning to search through a problem-defined search space.</p>
-
-<p>For more on how to use Vowpal Wabbit in an L2S setting, see the <a href="http://hunch.net/~l2s" target="blank">learning to search tutorial</a>.</p>
-
-    </div>
-  </div>
-
-
-            </div>
-          </div>
-        
-          <div class="" data-module_id=supervised>
-            
-
-            <div class="row">
-              
-
-
-  <div class="col-12 col-md-6">
-    <h4>
-      Active learning algorithms
-    </h4>
-
-    <div>
-      <p>Active learning allows a learning algorithm to choose which examples to label given what it knows and a source of unlabeled examples. Vowpal Wabbit provides several active learning algorithms to use that minimize the cost of labeling datasets.</p>
-
-    </div>
-  </div>
-
-  <div class="col-12 col-md-6">
-    <h4>
-      Extreme classification
-    </h4>
-
-    <div>
-      <p>In the extreme multi-class learning setting, there are a vast number of classes to predict amongst. Vowpal Wabbit’s classification algorithms that run in logarithmic time have applications in document tagging, ranking, and recommendation systems.</p>
-
-    </div>
-  </div>
-
-
-            </div>
-          </div>
-        
-          <div class="" data-module_id=online>
-            
-
-            <div class="row">
-              
-
-
-  <div class="col-12 col-md-6">
-    <h4>
-      Online machine learning
-    </h4>
-
-    <div>
-      <p>Most learning algorithms require all data before they start learning. Vowpal Wabbit enables efficient learning from a continuously growing data source for situations where a problem changes.</p>
-
-    </div>
-  </div>
-
-
-            </div>
-          </div>
-        
-          <div class="" data-module_id=efficiency>
-            
-
-            <div class="row">
-              
-
-
-  <div class="col-12 col-md-6">
-    <h4>
-      Speed and scalability
-    </h4>
-
-    <div>
-      <p>Vowpal Wabbit handles learning problems with any number of sparse features. It is the first published tera-scale learner<sup><a class="cite_sup" href="#DBLP:journals/corr/abs-1110-4198">[1]</a></sup> achieving great scaling. It features distributed, out-of-core learning and pioneered the hashing techniques<sup><a class="cite_sup" href="#Shi:2009:HKS:1577069.1755873">[2]</a> <a class="cite_sup" href="#DBLP:journals/corr/abs-0902-2206">[3]</a></sup>, which together make its memory footprint bounded independent of training data size.</p>
-
-<div class="hidden">
-  <ol class="bibliography"><li><div class="bib_content" id="DBLP:journals/corr/abs-1110-4198">
-  Alekh Agarwal and
-               Olivier Chapelle and
-               Miroslav Dudı́k and
-               John Langford,
-  
-    <a href="http://arxiv.org/abs/1110.4198">
-  
-    A Reliable Effective Terascale Linear Learning System
-
-  
-    </a>
-  
-  (2011)
-</div>
-<a class="details" href="/bibliography/DBLP_journals/corr/abs-1110-4198.html">Get .bib</a></li>
-<li><div class="bib_content" id="Shi:2009:HKS:1577069.1755873">
-  Shi, Qinfeng and Petterson, James and Dror, Gideon and Langford, John and Smola, Alex and Vishwanathan, S.V.N.,
-  
-    <a href="http://dl.acm.org/citation.cfm?id=1577069.1755873">
-  
-    Hash Kernels for Structured Data
-
-  
-    </a>
-  
-  (2009)
-</div>
-<a class="details" href="/bibliography/Shi_2009_HKS_1577069.1755873.html">Get .bib</a></li>
-<li><div class="bib_content" id="DBLP:journals/corr/abs-0902-2206">
-  Kilian Q. Weinberger and
-               Anirban Dasgupta and
-               Josh Attenberg and
-               John Langford and
-               Alexander J. Smola,
-  
-    <a href="http://arxiv.org/abs/0902.2206">
-  
-    Feature Hashing for Large Scale Multitask Learning
-
-  
-    </a>
-  
-  (2009)
-</div>
-<a class="details" href="/bibliography/DBLP_journals/corr/abs-0902-2206.html">Get .bib</a></li></ol>
-</div>
-
-    </div>
-  </div>
-
-
-            </div>
-          </div>
-        
-          <div class="" data-module_id=flexibility>
-            
-
-            <div class="row">
-              
-
-
-  <div class="col-12 col-md-6">
-    <h4>
-      Flexible input format and manipulation
-    </h4>
-
-    <div>
-      <p>Vowpal Wabbit’s input format allows examples with features consisting of free form text and multiple sources to be explicitly represented and used later. It includes example manipulators for ease of deployment and to maximize performance by suppressing or combining different feature sources.</p>
-
-    </div>
-  </div>
-
-  <div class="col-12 col-md-6">
-    <h4>
-      Adaptable deployment
-    </h4>
-
-    <div>
-      <p>Vowpal Wabbit is available on the command line, as a library, as a daemon, and as a service via the <a href="http://aka.ms/personalizer" target="blank">Microsoft Azure Cognitive Services Personalizer</a> and <a href="https://github.com/Azure/mmlspark" target="blank">Microsoft Machine Learning for Apache Spark (MMLSpark)</a>.</p>
-
-    </div>
-  </div>
-
-
-            </div>
-          </div>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<script src="/assets/js/tabs.js"></script>
-
-    </div>
-  </div>
-
-  <div class="how_it_works_container">
-    <div class="container">
-      <div class="how_it_works_content">
+    <div class="hero">
+      <div class="container">
         <div class="row">
-          <div class="col-12 col-lg-9">
-            <h2>
-              How it works
-            </h2>
-            <p>
-              In order to understand how Vowpal Wabbit works, you first need to understand what kind of problem you are trying to solve. The most common problem applications include <strong>reductions</strong> and <strong>contextual bandits</strong>.
-            </p>
+          <div class="col-lg-6">
+            <h1>
+              Tutorials
+            </h1>
+            <a href="/tutorials.html">
+              < Back to all tutorials
+            </a>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="reductions_container">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <h4>
-                Anatomy of a reduction stack
-              </h4>
-              <div class="reductions_content">
-                  Many problems in machine learning can be efficiently reduced to other solved problems in machine learning. This allows one to derive many important bounds of one algorithm in terms of other well-known and efficient algorithms. We call this a <strong>reduction stack</strong>.
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <img alt="flowchart for reduction stack" src="assets/images/feature_details/reduction_stack.svg">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <h4>Real-world reduction</h4>
-              <div class="reductions_content">
-                Vowpal Wabbit supports solutions to a range of real-world problems through reductions to standard learning algorithms. This versatility empowers you to frame learning problems effectively and achieve the best solution.
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <img alt="flowchart for real world reductions" src="assets/images/feature_details/real_world_reduction.svg">
-            </div>
-          </div>
-        </div>
+    <div class="container content tutorial_container">
+      <div class="edit">
+  
+  
 
-        <div class="examples_container">
-          <div class="row">
-            <div class="col-12">
-              <h4>
-                Community contributions
-              </h4>
-              <div class="row">
-                <div class="col-12 col-lg-6 examples_content">
-                  Vowpal Wabbit is a mature, open source project and the result of community contributions and research since 2007. Hosted on GitHub, people all over the world contribute code and research to Vowpal Wabbit technology.
-                  <br><br>
-                  See community examples on GitHub and contribute to the development of Vowpal Wabbit technology.
-                </div>
-                <div class="col-12 col-lg-6 examples_content">
-                  <div class="examples_header">
-                    Examples on GitHub
-                  </div>
-                  <ul>
-                    <li>
-                      <a
-                        href="https://github.com/VowpalWabbit/jupyter-notebooks/blob/master/Contextual_bandits_and_Vowpal_Wabbit.ipynb"
-                        target="_blank"
-                      >
-                        Contextual bandits and Vowpal Wabbit
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/VowpalWabbit/jupyter-notebooks/blob/master/Simulating_a_news_personalization_scenario_using_Contextual_Bandits.ipynb"
-                        target="_blank"
-                      >
-                        Simulating a news personalization scenario using Contextual Bandits
-                      </a>
-                    </li>
-                  </ul>
-
-                  <div>
-                    <a
-                      href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples"
-                      target="_blank"
-                      class="github_link"
-                    >
-                      <?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
-    <title>GitHub</title>
+  <a href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/blob/source/_tutorials/cmd_first_steps.md" target="_blank">
+    <?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>icon_edit</title>
     <desc>Created with Sketch.</desc>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="HD_Desktop_header_Home" transform="translate(-1538.000000, -58.000000)" fill="#FFFFFF">
-            <g id="Header">
-                <path d="M1568,73.7951128 C1567.94603,74.2583723 1567.89891,74.7224863 1567.83682,75.1847206 C1567.56271,77.2238487 1566.86543,79.1138828 1565.7732,80.8526868 C1564.55268,82.7956941 1562.9969,84.4188114 1561.05088,85.6538569 C1560.03339,86.2996179 1558.94817,86.8066231 1557.80753,87.1895684 C1557.17559,87.4016322 1556.73848,87.0743943 1556.73531,86.4093237 C1556.72907,85.1020808 1556.73745,83.7947524 1556.73164,82.487424 C1556.72804,81.6908602 1556.64825,80.9063436 1556.21259,80.2087201 C1556.0855,80.0052003 1555.92463,79.8226135 1555.77393,79.6234512 C1556.35935,79.5140871 1556.9463,79.4362506 1557.51632,79.2916849 C1559.04696,78.9034423 1560.41543,78.2275208 1561.34791,76.8924242 C1562.03287,75.9115647 1562.34632,74.7851144 1562.48436,73.6108172 C1562.59169,72.6982249 1562.62222,71.7826422 1562.42971,70.8740656 C1562.23608,69.9599354 1561.84044,69.1418405 1561.22834,68.4359293 C1561.07756,68.2620575 1561.04763,68.1215929 1561.12221,67.896713 C1561.52468,66.6818314 1561.3562,65.491984 1560.9042,64.3262309 C1560.87829,64.2595017 1560.76574,64.1973008 1560.68569,64.1853391 C1560.15364,64.1058793 1559.65196,64.2559986 1559.18533,64.4761793 C1558.42904,64.8332361 1557.69764,65.242668 1556.9487,65.6159585 C1556.82229,65.6790137 1556.64782,65.7219904 1556.51706,65.6889249 C1554.16941,65.0964789 1551.82595,65.097077 1549.47805,65.6883268 C1549.34078,65.7228448 1549.14638,65.677134 1549.02331,65.5987849 C1548.07109,64.9919849 1547.06446,64.5120644 1545.97001,64.2236166 C1545.9511,64.218661 1545.93272,64.2115694 1545.91364,64.2077246 C1545.22551,64.0670892 1545.09971,64.1456947 1544.9036,64.8108506 C1544.58682,65.884755 1544.5296,66.9550708 1544.90668,68.0296587 C1544.93627,68.1139033 1544.90129,68.2616303 1544.8404,68.3306664 C1543.60397,69.7341156 1543.31096,71.3989279 1543.46559,73.1936101 C1543.55933,74.2817831 1543.81162,75.3262104 1544.29869,76.3083514 C1544.97176,77.6654063 1546.11181,78.4952066 1547.4926,78.982475 C1548.35956,79.2884382 1549.27852,79.4473579 1550.18824,79.6758264 C1550.19526,79.6319098 1550.20056,79.6666842 1550.18568,79.6820635 C1549.71726,80.1697591 1549.45556,80.755028 1549.34531,81.4170227 C1549.33137,81.5007546 1549.27365,81.6203716 1549.20685,81.6454912 C1548.16482,82.0372369 1547.11706,82.2433199 1546.08683,81.6149888 C1545.61867,81.3295314 1545.27683,80.9169382 1545.00101,80.4479541 C1544.56852,79.712395 1543.95864,79.179074 1543.13923,78.9361661 C1542.84434,78.8487602 1542.50823,78.8709748 1542.19359,78.8892591 C1541.97909,78.9018189 1541.90862,79.062362 1542.05256,79.2422147 C1542.18529,79.4077988 1542.32025,79.5950849 1542.4978,79.6971865 C1543.28625,80.1507913 1543.72798,80.8753286 1544.08881,81.6641173 C1544.30382,82.1341266 1544.48812,82.6140471 1544.88675,82.9753759 C1545.52169,83.5510755 1546.29115,83.7682658 1547.11612,83.8044072 C1547.81434,83.834995 1548.51496,83.8107298 1549.24722,83.8107298 C1549.24611,83.8009041 1549.26073,83.8742123 1549.26167,83.9476058 C1549.27211,84.7377616 1549.2828,85.5279173 1549.28844,86.3180731 C1549.294,87.0913115 1548.82935,87.4109452 1548.0952,87.1563319 C1544.28705,85.8355039 1541.4928,83.3342269 1539.62819,79.7992882 C1538.22405,77.1372118 1537.78027,74.2780237 1538.09739,71.2935795 C1538.4294,68.1688416 1539.66702,65.4337134 1541.73193,63.0872551 C1543.89022,60.6347648 1546.57714,59.0045559 1549.78825,58.3523869 C1554.45335,57.4048494 1558.71409,58.3562318 1562.44442,61.3515269 C1565.27245,63.6222848 1567.02271,66.5767393 1567.72914,70.1361141 C1567.83314,70.6605492 1567.87265,71.197715 1567.94398,71.7286436 C1567.95792,71.832625 1567.9811,71.9354102 1568,72.0387934 L1568,73.7951128 Z" id="GitHub"></path>
+        <g id="button_edit" transform="translate(-7.000000, -7.000000)" stroke="#2A3B93">
+            <g id="icon_edit_selected">
+                <g transform="translate(8.000000, 8.000000)">
+                    <path d="M3.99393054,13.0502777 C0,14.1182229 0,14.1182229 0,14.1182229 C1.01972686,10.1881871 1.01972686,10.1881871 1.01972686,10.1881871 C10.579668,0.576689783 10.579668,0.576689783 10.579668,0.576689783 C11.3869519,-0.192229928 12.661609,-0.192229928 13.4264041,0.576689783 C14.1911991,1.34560988 14.1911991,2.62714261 13.4264041,3.43878036 L3.99393054,13.0502777 Z M9.85736179,1.30289223 C12.7465867,4.16498242 12.7465867,4.16498242 12.7465867,4.16498242 L9.85736179,1.30289223 Z M3.99393054,13.0502777 C3.99393054,13.0502777 4.16388585,12.0677717 3.14415784,10.9143911 C2.12443098,9.7610106 1.01972686,10.1881871 1.01972686,10.1881871" id="icon_edit"></path>
+                </g>
             </g>
         </g>
     </g>
 </svg>
-                      <div class="more_examples_label">
-                        More examples on GitHub
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div class="text">
+      Edit on GitHub
+    </div>
+  </a>
+</div>
+
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="tutorial_nav">
+            <label>
+              Table of contents
+            </label>
+            <ul class="tutorial_content_nav">
+            </ul>
+            
           </div>
         </div>
+        <div class="col-lg-9">
+          <h1 id="getting-started-with-vowpal-wabbit-command-line">Getting started with Vowpal Wabbit command line</h1>
+
+<p>This tutorial introduces Vowpal Wabbit command line basics with a quick introduction to training and testing your model with Vowpal Wabbit. We explore passing some data to Vowpal Wabbit to learn a model and get a prediction.</p>
+
+<p>For more advanced Vowpal Wabbit tutorials, including how to format data and understand results, see <a href="../tutorials.html">Tutorials</a>.</p>
+
+<div class="prerequisites">
+  <p><strong>Prerequisites</strong></p>
+
+  <p>To install Vowpal Wabbit see <a href="../start.html">Get Started</a>.</p>
+</div>
+
+<h2 id="training-scenario-and-dataset">Training scenario and dataset</h2>
+
+<p>For this tutorial scenario, we want to use Vowpal Wabbit to help us predict whether or not a house will require a new roof in the next 10 years.</p>
+
+<p>First, create a file <code class="highlighter-rouge">train.txt</code> and copy the following dataset:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 | price:.23 sqft:.25 age:.05 2006
+1 | price:.18 sqft:.15 age:.35 1976
+0 | price:.53 sqft:.32 age:.87 1924
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Note:</strong> If the format of this sample dataset looks unfamiliar and you want more details see the Vowpal Wabbit <a href="getting_started.html#a-first-data-set">Linear Regression Tutorial</a> for information on input format and feature hashing techniques.</p>
+</blockquote>
+
+<h2 id="train-a-model">Train a model</h2>
+
+<p>Next, we train a model, and save it to a file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw <span class="nt">-d</span> train.txt <span class="nt">-f</span> model.vw
+</code></pre></div></div>
+
+<p>This tells Vowpal Wabbit to:</p>
+
+<ul>
+  <li>Use the <code class="highlighter-rouge">-d</code> <strong>data</strong> file <code class="highlighter-rouge">train.txt</code>.</li>
+  <li>Write the <code class="highlighter-rouge">-f</code> <strong>final</strong> model to <code class="highlighter-rouge">model.vw</code>.</li>
+</ul>
+
+<p>With Vowpal Wabbit, the output includes more than a few statistics and statuses. The <a href="getting_started.html#vws-diagnostic-information">Linear Regression Tutorial</a> and <a href="contextual_bandits.html">Contextual Bandit Reinforcement Learning Tutorial</a> covers this format in more detail:</p>
+
+<p>Output:</p>
+
+<div class="output">
+  <p>final_regressor = model.vw
+Num weight bits = 18
+learning rate = 0.5
+initial_t = 0
+power_t = 0.5
+using no cache
+Reading datafile = train.txt
+num sources = 1
+average  since         example        example  current  current  current
+loss     last          counter         weight    label  predict features
+0.000000 0.000000            1            1.0   0.0000   0.0000        5
+0.500000 1.000000            2            2.0   1.0000   0.0000        5</p>
+
+  <p>finished run
+number of examples = 3
+weighted example sum = 3.000000s
+weighted label sum = 1.000000
+average loss = 0.666667
+best constant = 0.333333
+best constant’s loss = 0.222222
+total feature number = 15</p>
+</div>
+
+<h2 id="test-a-model">Test a model</h2>
+
+<p>Now, create a file called <code class="highlighter-rouge">test.txt</code> and copy this data:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| price:.46 sqft:.4 age:.10 1924
+</code></pre></div></div>
+
+<p>We get a prediction by loading the model and supplying our test data:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw <span class="nt">-d</span> test.txt <span class="nt">-i</span> model.vw <span class="nt">-p</span> predictions.txt
+</code></pre></div></div>
+<p>This tells Vowpal Wabbit to:</p>
+
+<ul>
+  <li>Use the <code class="highlighter-rouge">-d</code> <strong>data</strong> file <code class="highlighter-rouge">test.txt</code>.</li>
+  <li>Use the <code class="highlighter-rouge">-i</code> <strong>input</strong> model <code class="highlighter-rouge">model.vw</code>.</li>
+  <li>Write <code class="highlighter-rouge">-p</code> <strong>predictions</strong> to <code class="highlighter-rouge">predictions.txt</code>.</li>
+</ul>
+
+<p>Output:</p>
+
+<div class="output">
+  <p>predictions = predictions.txt
+Num weight bits = 18
+learning rate = 0.5
+initial_t = 0
+power_t = 0.5
+using no cache
+Reading datafile = test.txt
+num sources = 1
+average  since         example        example  current  current  current
+loss     last          counter         weight    label  predict features
+    n.a.     n.a.            1            1.0  unknown   0.0000        5</p>
+
+  <p>finished run
+number of examples = 1
+weighted example sum = 1.000000
+weighted label sum = 0.000000
+average loss = n.a.</p>
+</div>
+
+<p><code class="highlighter-rouge">cat predictions.txt</code> shows:</p>
+
+<div class="output">
+  <p>0</p>
+</div>
+
+<h3 id="vowpal-wabbit-results">Vowpal Wabbit results</h3>
+<p>The model predicted a value of <strong>0</strong>. This result means our house will not need a new roof in the next 10 years (based on just three examples we used in our training dataset).</p>
+
+<h2 id="more-to-explore">More to explore</h2>
+
+<ul>
+  <li>See the Vowpal Wabbit Python Tutorial for a quick introduction to the basics of training and testing your model.</li>
+  <li>To learn more about how to approach a contextual bandits problem using Vowpal Wabbit — including how to  work with different contextual bandits approaches, how to format data, and understand the results — see the <a href="contextual_bandits.html">Contextual Bandit Reinforcement Learning Tutorial</a>.</li>
+  <li>For more on the contextual bandits approach to reinforcement learning, including a content personalization scenario, see the <a href="cb_simulation.html">Contextual Bandit Simulation Tutorial</a>.</li>
+  <li>See the <a href="getting_started.html">Linear Regression Tutorial</a> for a different look at the roof replacement problem and learn more about Vowpal Wabbit’s format and understanding the results.</li>
+</ul>
+
+        </div>
       </div>
+    </div>
+
+    <div class="container bibliography_container">
+  <div class="header">
+    <h3>
+      CITATIONS
+    </h3>
+    <div class="all_publications_link">
+      <a href="/research.html">
+        All publications
+      </a>
     </div>
   </div>
 
-  <div class="get_started_container">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-8 col-sm-12">
-          <h2>
-            Get started with Vowpal Wabbit
-          </h2>
-          <p class="description">
-            Install Vowpal Wabbit and start exploring with easy-to-access tutorials and documentation.
-          </p>
-          <div class="get_started_buttons">
-            <div class="row justify-content-center">
-              <div class="col-12 col-sm col-lg-4">
-                <a href="/start.html">
-                  Get started
-                </a>
-              </div>
-              <div class="col-12 col-sm col-lg-4 tutorials_button">
-                <a href="/tutorials.html">
-                  Tutorials
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <ol class="bibliography"></ol>
 </div>
 
     <div class="container-fluid footer_container">
@@ -640,5 +423,7 @@
 
     <div class="overlay">
     </div>
+
+    <script src="/assets/js/tutorial.js"></script>
   </body>
 </html>
