@@ -161,13 +161,11 @@ def get_action(vw, context, actions):
     return actions[chosen_action_index], prob
 ```
 
-## Simulation set up
+## Reinforcement learning simulation 
 
-Now that we have done all of the setup work and know how to interface with VW, let's simulate the world of Tom and Anna. The scenario is they go to a website and are shown an article. Remember that the reward function allows us to define the worlds reaction to what VW recommends.
+Now that we have done all of the setup work and we know how to interface with Vowpal Wabbit let’s simulate the world of Tom and Anna. The scenario is as follows: Tom and Anna go to a website and are shown an article. Remember that the reward function allows us to define the real-world reaction to the content that Vowpal Wabbit recommends. 
 
-
-We will choose between Tom and Anna uniformly at random and also choose their time of visit uniformly at random. You can think of this as us tossing a coin to choose between Tom and Anna (Anna if heads and Tom if tails) and another coin toss for choosing time of day.
-
+We choose between Tom and Anna uniformly at random and choose the time of day they visit the site uniformly at random. Think of this as flipping a coin to choose between Tom and Anna and flipping the coin again to choose the time of day. 
 
 ```python
 users = ['Tom', 'Anna']
@@ -181,17 +179,20 @@ def choose_time_of_day(times_of_day):
     return random.choice(times_of_day)
 ```
 
-We will instantiate a CB learner in VW and then simulate Tom and Anna's website visits `num_iterations` number of times. In each visit, we:
+### Instantiate learner
+
+We instantiate a contextual bandit learner in Vowpal Wabbit and then simulate Tom and Anna’s website visits num_iterations number of times. With each visit, we do the following: 
 
 1. Decide between Tom and Anna
-2. Decide time of day
-3. Pass context i.e. (user, time of day) to learner to get action i.e. article recommendation and probability of choosing action
-4. Receive reward i.e. see if user clicked or not. Remember that cost is just negative reward.
-5. Format context, action, probability, reward in VW format
+2. Decide the time of day
+3. Pass context (i.e., user, time of day) to the learner to get action (i.e., article recommendation,   and the probability of choosing action). 
+4. Receive reward (i.e., see if the user clicked or not). Remember that cost is just a negative reward. 
+5. Format context, action, probability, reward in Vowpal Wabbit format 
 6. Learn from the example
-    - VW _reduces_ a CB problem to a cost sensitive multiclass classification problem.
+   
+>**Note:** Vowpal Wabbit reduces a contextual bandit problem to a cost-sensitive multiclass classification problem. 
 
-This is the same for every one of our simulations, so we define the process in the `run_simulation` function. The cost function must be supplied as this is essentially us simulating how the world works.
+This reduction is the same for every one of our simulations, so we define the process in the `run_simulation` function. We have to supply the cost function to simulate how the real world works: 
 
 ```python
 def run_simulation(vw, num_iterations, users, times_of_day, actions, cost_function, do_learn = True):
@@ -224,7 +225,7 @@ def run_simulation(vw, num_iterations, users, times_of_day, actions, cost_functi
     return ctr
 ```
 
-We want to be able to visualize what is occurring, so we are going to plot the click through rate over each iteration of the simulation. If VW is showing actions the get rewards the ctr will be higher. Below is a little utility function to make showing the plot easier.
+We want to be able to visualize what is occurring, so we are going to plot the click-through rate over each iteration of the simulation. The CTR is higher if Vowpal Wabbit is showing actions that get rewards. Use this utility function to make showing the plot easier: 
 
 ```python
 def plot_ctr(num_iterations, ctr):
