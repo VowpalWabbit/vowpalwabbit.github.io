@@ -1,6 +1,6 @@
 ---
 page_title: Content Personalization with Contextual Bandits  | Vowpal Wabbit
-page_description: In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using contextual bandits to make choices between actions in a given context.
+page_description: In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using the contextual bandits approach to reinforcement learning. 
 title: Simulating Content Personalization with Contextual Bandits  
 order: 4
 description: This tutorial will guide you through how to structure a simulator to model a real world scenario using contextual bandit algorithms.
