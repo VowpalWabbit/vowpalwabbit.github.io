@@ -114,7 +114,6 @@ print(to_vw_example_format(context,actions))
 ```
 
 **Output:**
-
 <div class="output" markdown="1">
 shared |User user=Tom time_of_day=morning
 |Action article=politics
