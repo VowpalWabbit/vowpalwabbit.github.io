@@ -1,7 +1,7 @@
 ---
 page_title: Content Personalization with Contextual Bandits  | Vowpal Wabbit
 page_description: In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using contextual bandits to make choices between actions in a given context.
-title: Simulating a news personalization scenario using Contextual Bandits
+title: Simulating Content Personalization with Contextual Bandits  
 order: 4
 description: This tutorial will guide you through how to structure a simulator to model a real world scenario using contextual bandit algorithms.
 layout: tutorial
@@ -10,32 +10,31 @@ tags: contextual&nbsp;bandits python
 jupyter_notebook_name: Simulating_a_news_personalization_scenario_using_Contextual_Bandits.ipynb
 ---
 
-# Simulating a news personalization scenario using Contextual Bandits
+# Simulating Content Personalization with Contextual Bandits  
 
-In the [Contextual Bandit(CB) introduction tutorial](contextual_bandits.html), we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (CTR).
+In the first [Contextual Bandits Reinforcement Learning](contextual_bandits.html) tutorial, we learned about this approach to reinforcement learning with Vowpal Wabbit and contextual bandit algorithms. In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using contextual bandits to make choices between actions in a given context. The goal is to maximize user engagement as quantified by measuring the expected reward — click-through rate (CTR). 
 
-Let's recall that in a CB setting, a data point has four components,
+In a contextual bandit setting, a data point has four components: 
 
 - Context
 - Action
-- Probability of choosing action
-- Reward/cost for chosen action
+- Probability of choosing the action
+- Reward/cost for the chosen action
 
-In our simulator, we will need to generate a context, get an action/decision for the given context and also simulate generating a reward.
+We need to generate a context in our simulator to get an action/decision for the given context, and to simulate generating a reward. The goal of the simulator is to maximize reward (CTR) — or minimize loss (-CTR).  
 
-In our simulator, our goal is to maximize reward (click through rate/CTR) or minimize loss (-CTR)
+The **context** is therefore (user, time_of_day):
 
-- We have two website visitors: 'Tom' and 'Anna'
-- Each of them may visit the website either in the morning or in the afternoon
+- We have two website visitors: "Tom" and "Anna."
+- Tom and Anna visit the website in the morning or the afternoon. 
 
-The **context** is therefore (user, time_of_day)
+We have the option of recommending a variety of articles to Tom and Anna. Therefore, the **actions** are the different choices of articles: "politics", "sports", "music", "food", "finance", "health", or "cheese." 
 
-We have the option of recommending a variety of articles to Tom and Anna. Therefore, **actions** are the different choices of articles: "politics", "sports", "music", "food", "finance", "health", "cheese"
+The **reward** is whether they click on the article or not: “click” or “no click.” 
 
-The **reward** is whether they click on the article or not: 'click' or 'no click'
+## Getting started 
 
-Let's first start with importing the necessary packages:
-
+Import the following packages to build this simulation in Python: 
 
 ```python
 from vowpalwabbit import pyvw
