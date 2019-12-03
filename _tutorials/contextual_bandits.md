@@ -22,7 +22,7 @@ To install Vowpal Wabbit see [Get Started](../start.html).
 >**Note** The contextual bandits tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms.
 </div>
 
-## Get started
+## Getting started
 
 If you are familiar with reinforcement learning and ready to start using Vowpal Wabbit in a contextual bandit setting, please see Part Two: Vowpal Wabbit Contextual Bandits Tutorial. This section includes a Python tutorial, information for how to work with Vowpal Wabbit contextual bandits approaches, how to format data, and understand the results.
 
@@ -52,7 +52,7 @@ The contextual bandits problem is more suitable than the standard bandits proble
 
 ## Part Two: Vowpal Wabbit Contextual Bandits Tutorial 
 
-Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like [Microsoft Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"}. It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework, including a tutorial for simulating web content personalization, see [Content Personalization with Contextual Bandits](../cb_simulation.html).
+Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like [Microsoft Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"}. It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework, including a tutorial for simulating web content personalization, see [Content Personalization with Contextual Bandits](cb_simulation.html).
 
 ## Vowpal Wabbit tutorial 
 
@@ -451,7 +451,7 @@ The `-i` argument means input regressor, telling Vowpal Wabbit to load a model f
 
 ## More to explore
 
-- Continue to the next tutorial, [Content Personalization with Contextual Bandits](../cb_simulation.html).
+- Continue to the next tutorial, [Content Personalization with Contextual Bandits](cb_simulation.html).
 - Explore more Vowpal Wabbit [Tutorials](../tutorials.html).
 - Browse [examples on the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples){:target="blank"}.
 - Learn various [Vowpal Wabbit commands](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments){:target="blank"}.
