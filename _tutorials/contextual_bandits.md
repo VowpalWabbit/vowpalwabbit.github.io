@@ -56,7 +56,7 @@ Vowpal Wabbit is an interactive machine learning library and the reinforcement l
 
 ## Vowpal Wabbit tutorial 
 
-This tutorial uses an application example we'll call **AP** to introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this reinforcement learning approach. The problem scenario of web content personalization motivates our example  **APP**. The goal is to show the user the most relevant web content on each page to maximize engagement (clicks). 
+This tutorial uses an application example we'll call **APP** to introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this reinforcement learning approach. The problem scenario of web content personalization motivates our example  **APP**. The goal is to show the user the most relevant web content on each page to maximize engagement (clicks). 
 
 ## Working with contextual bandits in Vowpal Wabbit
 
