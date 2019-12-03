@@ -2,7 +2,7 @@
 page_title: Contextual Bandits Reinforcement Learning | Vowpal Wabbit
 page_description: This tutorial includes an overview of the contextual bandits approach to reinforcement learning and how to approach this problem using Vowpal Wabbit.
 title: Contextual bandits and Vowpal Wabbit
-order: 2
+order: 3
 description: This tutorial runs through the contextual bandit approach to reinforcement learning with Vowpal Wabbit.
 layout: tutorial
 level: advanced
@@ -12,21 +12,19 @@ jupyter_notebook_name: Contextual_bandits_and_Vowpal_Wabbit.ipynb
 
 # Contextual Bandits Reinforcement Learning with Vowpal Wabbit
 
+This tutorial includes a brief overview of reinforcement learning, the contextual bandits approach to this machine learning paradigm, and describes how to approach a contextual bandits problem with Vowpal Wabbit. No prior knowledge of contextual bandits, reinforcement learning, or Vowpal Wabbit is required.
+
 <div class="prerequisites" markdown="1">
 **Prerequisites**
 
-To install Vowpal Wabbit see [Get Started](getting_started.html).
+To install Vowpal Wabbit see [Get Started](../start.html).
 
->**Note** The contextual bandits tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms. 
+>**Note** The contextual bandits tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms.
 </div>
-
-### Overview
-
-This tutorial includes a brief overview of reinforcement learning, the contextual bandits approach to this machine learning paradigm, and describes how to approach a contextual bandits problem with Vowpal Wabbit. No prior knowledge of contextual bandits, reinforcement learning, or Vowpal Wabbit is required.
 
 ## Get started
 
-If you are familiar with reinforcement learning and ready to start using Vowpal Wabbit in a contextual bandit setting, please see Part Two: Vowpal Wabbit Contextual Bandits Tutorial. This section includes a Python tutorial, information for how to work with Vowpal Wabbit contextual bandits approaches, how to format data, and understand the results. 
+If you are familiar with reinforcement learning and ready to start using Vowpal Wabbit in a contextual bandit setting, please see Part Two: Vowpal Wabbit Contextual Bandits Tutorial. This section includes a Python tutorial, information for how to work with Vowpal Wabbit contextual bandits approaches, how to format data, and understand the results.
 
 ### The contextual bandit problem
 

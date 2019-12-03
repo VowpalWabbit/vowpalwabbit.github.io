@@ -75,13 +75,8 @@ page_description: Vowpal Wabbit quick installation and getting started tutorials
                 {{tutorial.description}}
               </div>
 
-              {% assign tutorial_link = tutorial.link %}
-              {% unless tutorial_link %}
-                {% assign tutorial_link = tutorial.url | relative_url %}
-              {% endunless %}
-
               <div class="footer">
-                <a target="_blank" href="{{ tutorial_link }}">
+                <a href="{{ tutorial.url | relative_url }}">
                   Start
                 </a>
               </div>
