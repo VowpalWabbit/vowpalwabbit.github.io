@@ -1,7 +1,7 @@
 ---
 page_title: Content Personalization with Contextual Bandits  | Vowpal Wabbit
 page_description: In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using the contextual bandits approach to reinforcement learning. 
-title: Simulating Content Personalization with Contextual Bandits  
+title: Simulating Content Personalization with Contextual Bandits
 order: 4
 description: This tutorial will guide you through how to structure a simulator to model a real world scenario using contextual bandit algorithms.
 layout: tutorial
@@ -21,7 +21,7 @@ In a contextual bandit setting, a data point has four components:
 - Probability of choosing the action
 - Reward/cost for the chosen action
 
-We need to generate a context in our simulator to get an action/decision for the given context, and to simulate generating a reward. The goal of the simulator is to maximize reward (CTR) — or minimize loss (-CTR).  
+We need to generate a context in our simulator to get an action/decision for the given context, and to simulate generating a reward. The goal of the simulator is to maximize reward (CTR) — or minimize loss (-CTR).
 
 The **context** is therefore (user, time_of_day):
 
@@ -30,7 +30,7 @@ The **context** is therefore (user, time_of_day):
 
 We have the option of recommending a variety of articles to Tom and Anna. Therefore, the **actions** are the different choices of articles: "politics", "sports", "music", "food", "finance", "health", or "cheese." 
 
-The **reward** is whether they click on the article or not: “click” or “no click.” 
+The **reward** is whether they click on the article or not: "click" or "no click." 
 
 ## Getting started 
 
@@ -46,9 +46,9 @@ import matplotlib.pyplot as plt
 
 In the real world, we must learn Tom and Anna’s preferences for articles as we observe their interactions. Since this is a simulation, we must define Tom and Anna’s preference profile.  
 
-The reward that we provide to the learner follows this preference profile. We hope to see if the learner can make better and better decisions as we see more samples, which in turn means we are maximizing the reward. 
+The reward that we provide to the learner follows this preference profile. We hope to see if the learner can make better and better decisions as we see more samples, which in turn means we are maximizing the reward.
 
-To accomplish this, we need to modify the reward function in a few different ways and see if the contextual bandit learner picks up the changes. Then, we compare the CTR with and without learning. 
+To accomplish this, we need to modify the reward function in a few different ways and see if the contextual bandit learner picks up the changes. Then, we compare the CTR with and without learning.
 
 Vowpal Wabbit optimizes to minimize cost, which is negative of reward.  
 
@@ -162,9 +162,9 @@ def get_action(vw, context, actions):
 
 ## Reinforcement learning simulation 
 
-Now that we have done all of the setup work and we know how to interface with Vowpal Wabbit let’s simulate the world of Tom and Anna. The scenario is as follows: Tom and Anna go to a website and are shown an article. Remember that the reward function allows us to define the real-world reaction to the content that Vowpal Wabbit recommends. 
+Now that we have done all of the setup work and we know how to interface with Vowpal Wabbit let’s simulate the world of Tom and Anna. The scenario is as follows: Tom and Anna go to a website and are shown an article. Remember that the reward function allows us to define the real-world reaction to the content that Vowpal Wabbit recommends.
 
-We choose between Tom and Anna uniformly at random and choose the time of day they visit the site uniformly at random. Think of this as flipping a coin to choose between Tom and Anna and flipping the coin again to choose the time of day. 
+We choose between Tom and Anna uniformly at random and choose the time of day they visit the site uniformly at random. Think of this as flipping a coin to choose between Tom and Anna and flipping the coin again to choose the time of day.
 
 ```python
 users = ['Tom', 'Anna']
@@ -184,9 +184,9 @@ We instantiate a contextual bandit learner in Vowpal Wabbit and then simulate To
 
 1. Decide between Tom and Anna
 2. Decide the time of day
-3. Pass context (i.e., user, time of day) to the learner to get action (i.e., article recommendation,   and the probability of choosing action). 
-4. Receive reward (i.e., see if the user clicked or not). Remember that cost is just a negative reward. 
-5. Format context, action, probability, reward in Vowpal Wabbit format 
+3. Pass context (i.e., user, time of day) to the learner to get action (i.e., article recommendation,  and the probability of choosing action).
+4. Receive reward (i.e., see if the user clicked or not). Remember that cost is just a negative reward.
+5. Format context, action, probability, reward in Vowpal Wabbit format
 6. Learn from the example
    
 >**Note:** Vowpal Wabbit reduces a contextual bandit problem to a cost-sensitive multiclass classification problem. 
@@ -236,9 +236,9 @@ def plot_ctr(num_iterations, ctr):
 
 ## First scenario 
 
-First, we use the first reward function `get_cost` and assume that Tom and Anna do not change their preferences over time to see what happens to user engagement as we learn. Then, we see what happens when there is no learning. We use the no learning case as our baseline comparison. 
+First, we use the first reward function `get_cost` and assume that Tom and Anna do not change their preferences over time to see what happens to user engagement as we learn. Then, we see what happens when there is no learning. We use the no learning case as our baseline comparison.
 
-### With learning 
+### With learning
 
 ```python
 # Instantiate learner in VW
@@ -289,9 +289,9 @@ plot_ctr(num_iterations, ctr)
 
 ## Second scenario
 
-People’s preferences change over time in the real world. To account for this in the simulation, we incorporate two different cost functions and swap over to the second one halfway through.  
+People’s preferences change over time in the real world. To account for this in the simulation, we incorporate two different cost functions and swap over to the second one halfway through.
 
-The following table represents the new reward function `get_cost_1`: 
+The following table represents the new reward function `get_cost_1`:
 
 ### Tom
 
@@ -495,6 +495,6 @@ plot_ctr(total_iterations, ctr)
 
 ## Summary
 
-This contextual bandit tutorial showcases a real-world simulation scenario for using the contextual bandit approach to reinforcement learning. We take a context and a set of actions and learn what actions worked best for a given context. The result is that the learner responds rapidly to real-world changes. We showed that allowing the learner to interact with the world resulted in higher rewards than the “without learning” baseline. 
+This contextual bandit tutorial showcases a real-world simulation scenario for using the contextual bandit approach to reinforcement learning. We take a context and a set of actions and learn what actions worked best for a given context. The result is that the learner responds rapidly to real-world changes. We showed that allowing the learner to interact with the world resulted in higher rewards than the "without learning" baseline.
 
 This tutorial worked with simplistic features. VW supports high dimensional sparse features, [different exploration algorithms and policy evaluation approaches](contextual_bandits.html#contextual-bandit-algorithms-and-input-formats).
