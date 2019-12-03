@@ -475,4 +475,4 @@ plot_ctr(total_iterations, ctr)
 
 This tutorial aimed at showcasing a real world scenario where contextual bandit algorithms can be used. We were able to take a context and set of actions and learn what actions worked best for a given context. We saw that the learner was able to respond rapidly to changes in the world.  We showed that allowing the learner to interact with the world resulted in higher rewards than the no learning baseline.
 
-This tutorial worked with simplistic features. VW supports high dimensional sparse features, [different exploration algorithms and policy evaluation approaches](contextual_bandits.html#contextual-bandit-algorithms-and-input-formats).
+This tutorial worked with simplistic features. VW supports high dimensional sparse features, [different exploration algorithms and policy evaluation approaches](contextual_bandits.html#Vowpal-Wabbit-contextual-bandits-algorithms-and-format).
