@@ -25,13 +25,13 @@ This tutorial includes an overview of the contextual bandits approach to reinfor
 
 ## What is reinforcement learning?
 
-[Reinforcement learning](https://docs.microsoft.com/en-us/azure/cognitive-services/personalizer/concepts-reinforcement-learning) is a machine learning paradigm used to train models for sequential decision making. It involves using algorithms concerned with how a software agent takes suitable actions in complex environments and uses the feedback to maximize reward over time. This approach provides the freedom to enact specific user behavior, in a given context, and provide feedback on how the chosen behavior is rewarded based on the goal. 
+[Reinforcement learning](https://docs.microsoft.com/en-us/azure/cognitive-services/personalizer/concepts-reinforcement-learning){:target="blank"} is a machine learning paradigm used to train models for sequential decision making. It involves using algorithms concerned with how a software agent takes suitable actions in complex environments and uses the feedback to maximize reward over time. This approach provides the freedom to enact specific user behavior, in a given context, and provide feedback on how the chosen behavior is rewarded based on the goal. 
 
 ## The contextual bandits approach to reinforcement learning 
 
-Vowpal Wabbit founder John Langford coined the term [contextual bandits](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf) to describe a flexible subset of reinforcement learning. The contextual bandit approach to reinforcement learning frames decision-making (choices) between separate actions in a given context.
+Vowpal Wabbit founder John Langford coined the term [contextual bandits](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf){:target="blank"} to describe a flexible subset of reinforcement learning. The contextual bandit approach to reinforcement learning frames decision-making (choices) between separate actions in a given context.
 
-The Microsoft Azure cloud-based API service [Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/) uses a bandit approach to reinforcement learning to help choose the best experience to show users — learning from real-time behavior to make choices between discrete actions in a given context.  
+The Microsoft Azure cloud-based API service [Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"} uses a bandit approach to reinforcement learning to help choose the best experience to show users — learning from real-time behavior to make choices between discrete actions in a given context.  
 
 ## The contextual bandits problem  
 
@@ -43,13 +43,13 @@ The standard k-armed bandits problem, or multi-armed bandits problem, is well-st
 * **Step Two:** The player chooses an arm i ∈ {1, k} without knowledge of the world's chosen rewards. 
 * **Step Three:** The player observes the reward ri.   
 
-The contextual bandits setting considered in Part Two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit's default algorithm for this type of exploration is [Epsilon-Greedy](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf). 
+The contextual bandits setting considered in Part Two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit's default algorithm for this type of exploration is [Epsilon-Greedy](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf){:target="blank"}. 
 
-The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see [Research](https://vowpalwabbit.org/research.html). 
+The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see [Research](https://vowpalwabbit.org/research.html){:target="blank"}. 
 
 ## Part Two: Vowpal Wabbit Contextual Bandits Tutorial 
 
-Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like [Microsoft Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/). It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework and simulating web content personalization, see [Content Personalization with Contextual Bandits](https://vowpalwabbit.org/tutorials/cb_simulation.html).
+Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like [Microsoft Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"}. It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework, including a tutorial for simulating web content personalization, see [Content Personalization with Contextual Bandits](https://vowpalwabbit.org/tutorials/cb_simulation.html){:target="blank"}.
 
 ## Vowpal Wabbit tutorial 
 
@@ -198,7 +198,7 @@ vw -d train.dat --cb_explore 4 --cover 3
 
 This algorithm is a theoretically optimal exploration algorithm. Similar to the previous bagging **m** example, different policies are trained in this case. Unlike bagging, the training of these policies is explicitly optimized to result in a diverse set of predictions — choosing all the actions which are not already learned to be bad in a given context.
 
-For more information and research on this theoretically optimal exploration algorithm see [Taming the Monster: A Fast and Simple Algorithm for Contextual Bandits](http://arxiv.org/abs/1402.0555){target=blank}.
+For more information and research on this theoretically optimal exploration algorithm see [Taming the Monster: A Fast and Simple Algorithm for Contextual Bandits](http://arxiv.org/abs/1402.0555){:target="blank"}.
 
 ### Input format for `--cb_explore_adf`
 
@@ -292,7 +292,7 @@ import sklearn as sk
 import numpy as np
 ```
 
-Next, install [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python):
+Next, install [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python){:target="blank"}:
 
 ```sh
 pip install boost
@@ -316,7 +316,7 @@ train_df['index'] = range(1, len(train_df) + 1)
 train_df = train_df.set_index("index")
 ```
 
->**Note:** The data here is equivalent to this [Vowpal Wabbit wiki example](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example).
+>**Note:** The data here is equivalent to this [Vowpal Wabbit wiki example](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example){:target="blank"}.
 
 Next, create data for the contextual bandit to exploit to make decisions (for example features describing new users):
 
@@ -449,7 +449,8 @@ The `-i` argument means input regressor, telling Vowpal Wabbit to load a model f
 
 ## More to explore
 
-- Review the [example Python notebooks](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples){:target="blank"}.
-- Explore the [tutorials section of the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials){:target="blank"}.
+- Continue to the next tutorial, [Content Personalization with Contextual Bandits](https://vowpalwabbit.org/tutorials/cb_simulation.html){:target="blank"}.
+- Explore more Vowpal Wabbit [Tutorials](https://vowpalwabbit.org/tutorials.html){:target="blank"}.
 - Browse [examples on the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples){:target="blank"}.
 - Learn various [Vowpal Wabbit commands](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments){:target="blank"}.
+- Review the [example Python notebooks](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples){:target="blank"}.
