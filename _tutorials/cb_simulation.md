@@ -124,7 +124,7 @@ shared |User user=Tom time_of_day=morning
 
 ## Getting a decision from Vowpal Wabbit
 
-When we call Vowpal Wabbit, the output is a [probability mass function](https://en.wikipedia.org/wiki/Probability_mass_function){:target="blank"}. Vowpal Wabbit provides a list of probabilities over the set of actions because we are incorporating exploration into our strategy. This exploration means that the probability at a given index in the list corresponds to the likelihood of picking that specific action.  
+When we call Vowpal Wabbit, the output is a [probability mass function](https://en.wikipedia.org/wiki/Probability_mass_function){:target="blank"} (PMF). Vowpal Wabbit provides a list of probabilities over the set of actions because we are incorporating exploration into our strategy. This exploration means that the probability at a given index in the list corresponds to the likelihood of picking that specific action.  
 
 To arrive at a decision/action, we must sample from this list. 
  
