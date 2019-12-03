@@ -132,11 +132,11 @@ Vowpal Wabbit provides three contextual bandits algorithms:
 
 ### Input format for `--cb`
 
+The `--cb 4` command specifies that we want to use the contextual bandit module, and our data has a total of four actions: 
+
 ```text
 --cb <number_of_actions>
 ```
-
-The `--cb 4` command specifies that we want to use the contextual bandit module and our data has a total of four actions.
 
 Each example is represented as a separate line in your data file and must follow the following format:
 
@@ -154,7 +154,8 @@ Sample data file **train.dat** with five examples:
 3:1.5:0.7 | a d
 ```
 
-Use the command
+**Use the command:**
+
 ```text
 vw -d train.dat --cb 4
 ```
@@ -163,17 +164,17 @@ vw -d train.dat --cb 4
 
 ### Input format for `--cb_explore`
 
+The command `--cb_explore 4` specifies our examples explore a total of four actions:
+
 ```text
 --cb_explore <number_of_actions>
 ```
 
-The command `--cb_explore 4` specifies our examples explore a total of four actions.
-
 >**Note:** This format explores the action space so you must specify which algorithm you want to use for exploration.
 
-#### Usage
+### Usage
 
-The following examples use the input format for the `--cb` command example above:
+The following examples use the input format from the `--cb` command example:
 
 ```text
 vw -d train.dat --cb_explore 4 --first 2
@@ -195,15 +196,11 @@ vw -d train.dat --cb_explore 4 --bag 5
 vw -d train.dat --cb_explore 4 --cover 3
 ```
 
-This algorithm is a theoretically optimal exploration algorithm. Similar to the previous bagging **m** example, different policies are trained in this case. Unlike bagging, the training of these policies is explicitly optimized to result in a diverse set of predictions—choosing all the actions which are not already learned to be bad in a given context.
+This algorithm is a theoretically optimal exploration algorithm. Similar to the previous bagging **m** example, different policies are trained in this case. Unlike bagging, the training of these policies is explicitly optimized to result in a diverse set of predictions — choosing all the actions which are not already learned to be bad in a given context.
 
-For more information and research on this theoretically optimal exploration algorithm see this [paper](http://arxiv.org/abs/1402.0555).
+For more information and research on this theoretically optimal exploration algorithm see [Taming the Monster: A Fast and Simple Algorithm for Contextual Bandits](http://arxiv.org/abs/1402.0555){target=blank}.
 
 ### Input format for `--cb_explore_adf`
-
-```text
---cb_explore_adf
-```
 
 The command `--cb_explore_adf` is different from the other two example cases because the action set changes over time (or we have rich information for each action):
 
@@ -215,6 +212,10 @@ The command `--cb_explore_adf` is different from the other two example cases bec
 - A new line signals end of a multiline example.
 
 It best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.
+
+```text
+--cb_explore_adf
+```
 
 >**Note:** This format explores the action space so you must specify which algorithm you want to use for exploration.
 
@@ -234,6 +235,7 @@ shared | s_1 s_2
 0:1.0:0.5 | a:1 b:1 c:1
 | a:0.5 b:2 c:1
 ```
+
 In the first example, we have two actions, one line for each. The first line represents the first action, and it has two action dependent features **a** and **b**.
 
 ```text
@@ -254,7 +256,7 @@ action:cost:probability | features
 ```
 Action 0 is ignored, has cost 0.1 and a probability of 0.75.
 
-#### Usage
+### Usage
 
 In the case of the softmax explorer, which uses the policy not only to predict an action but also predict a score indicating the quality of each action. The probability of action **a** creates distribution proportional to **exp(lambda * score(x, a))**.
 
@@ -282,7 +284,7 @@ Here **lambda** is a parameter, which leads to uniform exploration for **lambda 
 
 ## Create contextual bandit data
 
-Begin by loading the required Python packages:
+First, import the required Python packages:
 
 ```python
 import pandas as pd
@@ -290,7 +292,7 @@ import sklearn as sk
 import numpy as np
 ```
 
-Install [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python):
+Next, install [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python):
 
 ```sh
 pip install boost
@@ -314,7 +316,7 @@ train_df['index'] = range(1, len(train_df) + 1)
 train_df = train_df.set_index("index")
 ```
 
->**Note:** The data here is equivalent to the [VW wiki example](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example){:target="blank"}.
+>**Note:** The data here is equivalent to this [Vowpal Wabbit wiki example](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example).
 
 Next, create data for the contextual bandit to exploit to make decisions (for example features describing new users):
 
@@ -382,7 +384,7 @@ vw = pyvw.vw("--cb 4")
 
 >**Note:** Use `--quiet` command to turn off diagnostic information in Vowpal Wabbit.
 
-Now, call learn for each trained example on your Vowpal Wabbit model.
+Now, call learn for each trained example on your Vowpal Wabbit model:
 
 ```python
 for i in train_df.index:
@@ -400,7 +402,9 @@ for i in train_df.index:
   vw.learn(learn_example)
 ```
 
-Use the model that was just trained on the train set to perform predictions on the test set. Construct the example like before but don't include the label and pass it into **predict** instead of **learn**. For example:
+Use the model that was just trained on the train set to perform predictions on the test set. Construct the example like before but don't include the label and pass it into **predict** instead of **learn**. 
+
+**For example:**
 
 ```python
 for j in test_df.index:
@@ -414,7 +418,8 @@ for j in test_df.index:
   print(j, choice)
 ```
 
-Output:
+**Output:**
+
 <div class="output" markdown="1">
 1 3
 2 3
@@ -424,7 +429,7 @@ Output:
 
 >**Note:** The contextual bandit assigns every instance to the third action as it should per the cost structure of the train data. You can save and load the model you train from a file.
 
-Finally, experiment with the cost structure to see that the contextual bandit updates its predictions accordingly.
+Finally, experiment with the cost structure to see that the contextual bandit updates its predictions accordingly:
 
 ```python
 vw.save('cb.model')
@@ -434,7 +439,8 @@ vw = pyvw.vw("--cb 4 -i cb.model")
 print(vw.predict('| a b'))
 ```
 
-Output:
+**Output:**
+
 <div class="output" markdown="1">
 3
 </div>
@@ -446,4 +452,4 @@ The `-i` argument means input regressor, telling Vowpal Wabbit to load a model f
 - Review the [example Python notebooks](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples){:target="blank"}.
 - Explore the [tutorials section of the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials){:target="blank"}.
 - Browse [examples on the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples){:target="blank"}.
-- Learn various [VW commands](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments){:target="blank"}.
+- Learn various [Vowpal Wabbit commands](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments){:target="blank"}.
