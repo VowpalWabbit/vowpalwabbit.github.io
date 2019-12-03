@@ -235,11 +235,11 @@ def plot_ctr(num_iterations, ctr):
     plt.ylim([0,1])
 ```
 
-## Scenario 1
+## First scenario 
 
-We will use the first reward function `get_cost` and assume that Tom and Anna do not change their preferences over time and see what happens to user engagement as we learn. We will also see what happens when there is no learning. We will use the "no learning" case as our baseline to compare to.
+First, we use the first reward function `get_cost` and assume that Tom and Anna do not change their preferences over time to see what happens to user engagement as we learn. Then, we see what happens when there is no learning. We use the no learning case as our baseline comparison. 
 
-### With learning
+### With learning 
 
 ```python
 # Instantiate learner in VW
@@ -253,8 +253,11 @@ plot_ctr(num_iterations, ctr)
 
 ![png](cb_simulation_assets/output_22_0.png)
 
-#### Aside: interactions
-You'll notice in the arguments we supply to VW, we include `-q UA`. This is telling VW to create additional features which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. This allows us to learn the interaction between when certain actions are good in certain times of days and for particular users. If we didn't do that, the learning wouldn't really work. We can see that in action below.
+#### Interactions
+
+You’ll notice that we include `-q UA` in the arguments we supply to Vowpal Wabbit. This step tells Vowpal Wabbit to create additional features, which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. Doing so allows us to learn the interaction between when specific actions are good at certain times of days and for specific users.  
+
+If we didn’t include `-q UA`, the learning would not work. We can see that in the following action: 
 
 ```python
 # Instantiate learner in VW but without -q
@@ -270,8 +273,8 @@ plot_ctr(num_iterations, ctr)
 
 
 ### Without learning
-Let's do the same thing again (but with `-q`, but this time show the effect if we don't learn from what happens. The ctr never improves are we just hover around 0.2.
 
+Let’s do the same thing again, but with `-q`. This step shows the effect if we don’t learn from what happens. The CTR never improves, and we hover around 0.2. 
 
 ```python
 # Instantiate learner in VW
@@ -285,9 +288,11 @@ plot_ctr(num_iterations, ctr)
 
 ![png](cb_simulation_assets/output_26_0.png)
 
-## Scenario 2
+## Second scenario
 
-In the real world people's preferences change over time. So now in the simulation we are going to incorporate two different cost functions, and swap over to the second one halfway through. Below is a a table of the new reward function we are going to use, `get_cost_1`:
+People’s preferences change over time in the real world. To account for this in the simulation, we incorporate two different cost functions and swap over to the second one halfway through.  
+
+The following table represents the new reward function `get_cost_1`: 
 
 ### Tom
 
@@ -303,7 +308,7 @@ In the real world people's preferences change over time. So now in the simulatio
 | **Morning** | Sports | Sports |
 | **Afternoon** | Politics | Sports |
 
-This reward function is still working with actions that the learner has seen previously.
+This reward function is still working with the previous learner actions: 
 
 ```python
 def get_cost_new1(context,action):
@@ -323,8 +328,9 @@ def get_cost_new1(context,action):
             return USER_DISLIKED_ARTICLE
 ```
 
-To make it easy to show the effect of the cost function changing we are going to modify the `run_simulation` function. It is a little less readable now, but it supports accepting a list of cost functions and it will operate over each cost function in turn. This is perfect for what we need.
+To make it easy to show the effect of the cost function changing, we modify the `run_simulation` function. It is a little less readable, but it supports accepting a list of cost functions, and it operates over each cost function in turn. 
 
+This change is perfect for our scenario: 
 
 ```python
 def run_simulation_multiple_cost_functions(vw, num_iterations, users, times_of_day, actions, cost_functions, do_learn = True):
@@ -365,7 +371,8 @@ def run_simulation_multiple_cost_functions(vw, num_iterations, users, times_of_d
 ```
 
 ### With learning
-Let us now switch to the second reward function after a few samples (running the first reward function). Recall that this reward function changes the preferences of the web users but it is still working with the same action space as before. We should see the learner pick up these changes and optimize towards the new preferences.
+
+Now, we switch to the second reward function after a few samples (running the first reward function). Recall that this reward function changes the preferences of web users, but it is still working with the same action space as before. We should see the learner pick up these changes and optimize the new preferences. 
 
 ```python
 # use first reward function initially and then switch to second reward function
@@ -388,6 +395,8 @@ plot_ctr(total_iterations, ctr)
 
 ### Without learning
 
+We repeat this step without learning to demonstrate the effect:
+
 ```python
 # Do not learn
 # use first reward function initially and then switch to second reward function
@@ -405,8 +414,9 @@ plot_ctr(total_iterations, ctr)
 
 ![png](cb_simulation_assets/output_35_0.png)
 
-## Scenario 3
-In this scenario we are going to start rewarding actions that have never seen a reward previously when we change the cost function.
+## Third scenario 
+
+In the final scenario, we start rewarding actions that have never seen a reward previously when we change the cost function:
 
 ### Tom
 
@@ -442,8 +452,8 @@ def get_cost_new2(context,action):
 ```
 
 ### With learning
-Let us now switch to the third reward function after a few samples (running the first reward function). Recall that this reward function changes the preferences of the users and is working with a **different** action space than before. We should see the learner pick up these changes and optimize towards the new preferences
 
+Now, we switch to the third reward function after a few samples (running the first reward function). Remember that this reward function changes the preferences of the users. It is working with a **different** action space than before. We should see the learner pick up these changes and optimize the new preferences. 
 
 ```python
 # use first reward function initially and then switch to third reward function
@@ -463,6 +473,8 @@ plot_ctr(total_iterations, ctr)
 ![png](cb_simulation_assets/output_39_0.png)
 
 ### Without Learning
+
+Finally, we repeat the steps wihout learning to see the effects:
 
 ```python
 # Do not learn
@@ -484,6 +496,6 @@ plot_ctr(total_iterations, ctr)
 
 ## Summary
 
-This tutorial aimed at showcasing a real world scenario where contextual bandit algorithms can be used. We were able to take a context and set of actions and learn what actions worked best for a given context. We saw that the learner was able to respond rapidly to changes in the world.  We showed that allowing the learner to interact with the world resulted in higher rewards than the no learning baseline.
+This contextual bandit tutorial showcases a real-world simulation scenario for using the contextual bandit approach to reinforcement learning. We take a context and a set of actions and learn what actions worked best for a given context. The result is that the learner responds rapidly to real-world changes. We showed that allowing the learner to interact with the world resulted in higher rewards than the “without learning” baseline. 
 
 This tutorial worked with simplistic features. VW supports high dimensional sparse features, [different exploration algorithms and policy evaluation approaches](contextual_bandits.html#contextual-bandit-algorithms-and-input-formats).
