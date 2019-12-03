@@ -22,19 +22,45 @@ To install Vowpal Wabbit see [Get Started](../start.html).
 >**Note** The contextual bandits tutorial uses [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python). Additional binary packages are available for select platforms.
 </div>
 
-## Get started
+## Getting started
 
 If you are familiar with reinforcement learning and ready to start using Vowpal Wabbit in a contextual bandit setting, please see Part Two: Vowpal Wabbit Contextual Bandits Tutorial. This section includes a Python tutorial, information for how to work with Vowpal Wabbit contextual bandits approaches, how to format data, and understand the results.
 
-### The contextual bandit problem
+## What is reinforcement learning?
 
-In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandit algorithms  use additional side information (or context) to aid real world decision-making <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup>. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited.
+[Reinforcement learning](https://docs.microsoft.com/en-us/azure/cognitive-services/personalizer/concepts-reinforcement-learning){:target="blank"} is a machine learning paradigm used to train models for sequential decision making. It involves using algorithms concerned with how a software agent takes suitable actions in complex environments and uses the feedback to maximize reward over time. This approach provides the freedom to enact specific user behavior, in a given context, and provide feedback on how the chosen behavior is rewarded based on the goal. 
+
+## The contextual bandits approach to reinforcement learning 
+
+Vowpal Wabbit founder John Langford coined the term [contextual bandits](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf){:target="blank"} to describe a flexible subset of reinforcement learning. The contextual bandit approach to reinforcement learning frames decision-making (choices) between separate actions in a given context.
+
+The Microsoft Azure cloud-based API service [Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"} uses a bandit approach to reinforcement learning to help choose the best experience to show users — learning from real-time behavior to make choices between discrete actions in a given context.  
+
+## The contextual bandits problem  
+
+In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandits algorithms use additional side information (or context) to aid real-world decision-making <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup>. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited.  
+
+The standard k-armed bandits problem, or multi-armed bandits problem, is well-studied in the research literature. It is regarded as a repeated game between two players, with every stage consisting of the following:  
+
+* **Step One:** The world chooses k rewards r1, ..., rk ∈ [0, 1]. 
+* **Step Two:** The player chooses an arm i ∈ {1, k} without knowledge of the world's chosen rewards. 
+* **Step Three:** The player observes the reward ri.   
+
+The contextual bandits setting considered in Part Two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit's default algorithm for this type of exploration is [Epsilon-Greedy](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf){:target="blank"}. 
+
+The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see [Research](../research.html). 
+
+## Part Two: Vowpal Wabbit Contextual Bandits Tutorial 
+
+Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like [Microsoft Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"}. It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework, including a tutorial for simulating web content personalization, see [Content Personalization with Contextual Bandits](cb_simulation.html).
+
+## Vowpal Wabbit tutorial 
+
+This tutorial uses an application example we'll call **APP** to introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this reinforcement learning approach. The problem scenario of web content personalization motivates our example  **APP**. The goal is to show the user the most relevant web content on each page to maximize engagement (clicks). 
 
 ## Working with contextual bandits in Vowpal Wabbit
 
-To introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this approach to reinforcement learning, this guide uses a hypothetical application called **APP**.
-
-**APP** interacts with the context of a user's behavior (search history, visited pages, or geolocation) in a dynamic environment–such as a news website or a cloud controller. **APP** differs from MAB because we have some information available to the **APP**, which is the context.
+**APP** interacts with the context of a user's behavior (search history, visited pages, or geolocation) in a dynamic environment – such as a news website or a cloud controller. **APP** differs from the multi-armed bandits problem because we have some information available to the **APP**, which is the context.
 
 **APP** performs the following functions:
 
@@ -42,9 +68,10 @@ To introduce a Vowpal Wabbit approach to the contextual bandit problem and explo
 * **APP** chooses an action **a** from a set of actions **A**, i.e., **a** ∈ **A** (**A** may depend on **x**).
 * Some reward **r** for the chosen **a** is observed by **APP**.
 
-For example:
+**For example:**
 
 **APP** news website:
+
   - **Decision to optimize**: articles to display to user.
   - **Context**: user data (browsing history, location, device, time of day)
   - **Actions**: available news articles
@@ -64,7 +91,7 @@ We use the term **policy** many times in this tutorial. In reinforcement learnin
 
 Contexts and actions are typically represented as feature vectors in contextual bandit algorithms. For example, **APP** chooses actions by applying a policy **π** that takes a context as input and returns an action. The goal is to find a policy that maximizes the average reward over a sequence of interactions.
 
-### Specifying the contextual bandit approach
+## Specifying the contextual bandit approach
 
 There are multiple policy evaluation approaches available to optimize a policy. Vowpal Wabbit offers four approaches to specify a contextual bandit approach using `--cb_type`:
 
@@ -75,7 +102,7 @@ There are multiple policy evaluation approaches available to optimize a policy. 
 
 >**Note:** The focal point of contextual bandit learning research is efficient exploration algorithms. For more details, see the [Contextual Bandit bake-off paper](https://arxiv.org/pdf/1802.04064.pdf){:target="blank"}.
 
-### Specifying exploration algorithms
+## Specifying exploration algorithms
 
 Vowpal Wabbit offers five exploration algorithms:
 
@@ -87,7 +114,7 @@ Vowpal Wabbit offers five exploration algorithms:
 
 >**Note:** For more details on contextual bandits algorithms and Vowpal Wabbit, please refer to the [Vowpal Wabbit Github Wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms){:target="blank"}.
 
-## Contextual bandit algorithms and input formats
+## Vowpal Wabbit contextual bandits algorithms and format
 
 There are four main components to a contextual bandit problem:
 
@@ -107,11 +134,11 @@ Vowpal Wabbit provides three contextual bandits algorithms:
 
 ### Input format for `--cb`
 
+The `--cb 4` command specifies that we want to use the contextual bandit module, and our data has a total of four actions: 
+
 ```text
 --cb <number_of_actions>
 ```
-
-The `--cb 4` command specifies that we want to use the contextual bandit module and our data has a total of four actions.
 
 Each example is represented as a separate line in your data file and must follow the following format:
 
@@ -129,7 +156,8 @@ Sample data file **train.dat** with five examples:
 3:1.5:0.7 | a d
 ```
 
-Use the command
+**Use the command:**
+
 ```text
 vw -d train.dat --cb 4
 ```
@@ -138,17 +166,17 @@ vw -d train.dat --cb 4
 
 ### Input format for `--cb_explore`
 
+The command `--cb_explore 4` specifies our examples explore a total of four actions:
+
 ```text
 --cb_explore <number_of_actions>
 ```
 
-The command `--cb_explore 4` specifies our examples explore a total of four actions.
-
 >**Note:** This format explores the action space so you must specify which algorithm you want to use for exploration.
 
-#### Usage
+### Usage
 
-The following examples use the input format for the `--cb` command example above:
+The following examples use the input format from the `--cb` command example:
 
 ```text
 vw -d train.dat --cb_explore 4 --first 2
@@ -170,15 +198,11 @@ vw -d train.dat --cb_explore 4 --bag 5
 vw -d train.dat --cb_explore 4 --cover 3
 ```
 
-This algorithm is a theoretically optimal exploration algorithm. Similar to the previous bagging **m** example, different policies are trained in this case. Unlike bagging, the training of these policies is explicitly optimized to result in a diverse set of predictions—choosing all the actions which are not already learned to be bad in a given context.
+This algorithm is a theoretically optimal exploration algorithm. Similar to the previous bagging **m** example, different policies are trained in this case. Unlike bagging, the training of these policies is explicitly optimized to result in a diverse set of predictions — choosing all the actions which are not already learned to be bad in a given context.
 
-For more information and research on this theoretically optimal exploration algorithm see this [paper](http://arxiv.org/abs/1402.0555).
+For more information and research on this theoretically optimal exploration algorithm see [Taming the Monster: A Fast and Simple Algorithm for Contextual Bandits](http://arxiv.org/abs/1402.0555){:target="blank"}.
 
 ### Input format for `--cb_explore_adf`
-
-```text
---cb_explore_adf
-```
 
 The command `--cb_explore_adf` is different from the other two example cases because the action set changes over time (or we have rich information for each action):
 
@@ -190,6 +214,10 @@ The command `--cb_explore_adf` is different from the other two example cases bec
 - A new line signals end of a multiline example.
 
 It best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.
+
+```text
+--cb_explore_adf
+```
 
 >**Note:** This format explores the action space so you must specify which algorithm you want to use for exploration.
 
@@ -209,6 +237,7 @@ shared | s_1 s_2
 0:1.0:0.5 | a:1 b:1 c:1
 | a:0.5 b:2 c:1
 ```
+
 In the first example, we have two actions, one line for each. The first line represents the first action, and it has two action dependent features **a** and **b**.
 
 ```text
@@ -229,7 +258,7 @@ action:cost:probability | features
 ```
 Action 0 is ignored, has cost 0.1 and a probability of 0.75.
 
-#### Usage
+### Usage
 
 In the case of the softmax explorer, which uses the policy not only to predict an action but also predict a score indicating the quality of each action. The probability of action **a** creates distribution proportional to **exp(lambda * score(x, a))**.
 
@@ -257,7 +286,7 @@ Here **lambda** is a parameter, which leads to uniform exploration for **lambda 
 
 ## Create contextual bandit data
 
-Begin by loading the required Python packages:
+First, import the required Python packages:
 
 ```python
 import pandas as pd
@@ -265,7 +294,7 @@ import sklearn as sk
 import numpy as np
 ```
 
-Install [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python):
+Next, install [Vowpal Wabbit Python package](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python){:target="blank"}:
 
 ```sh
 pip install boost
@@ -289,7 +318,7 @@ train_df['index'] = range(1, len(train_df) + 1)
 train_df = train_df.set_index("index")
 ```
 
->**Note:** The data here is equivalent to the [VW wiki example](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example){:target="blank"}.
+>**Note:** The data here is equivalent to this [Vowpal Wabbit wiki example](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Logged-Contextual-Bandit-Example){:target="blank"}.
 
 Next, create data for the contextual bandit to exploit to make decisions (for example features describing new users):
 
@@ -357,7 +386,7 @@ vw = pyvw.vw("--cb 4")
 
 >**Note:** Use `--quiet` command to turn off diagnostic information in Vowpal Wabbit.
 
-Now, call learn for each trained example on your Vowpal Wabbit model.
+Now, call learn for each trained example on your Vowpal Wabbit model:
 
 ```python
 for i in train_df.index:
@@ -375,7 +404,9 @@ for i in train_df.index:
   vw.learn(learn_example)
 ```
 
-Use the model that was just trained on the train set to perform predictions on the test set. Construct the example like before but don't include the label and pass it into **predict** instead of **learn**. For example:
+Use the model that was just trained on the train set to perform predictions on the test set. Construct the example like before but don't include the label and pass it into **predict** instead of **learn**. 
+
+**For example:**
 
 ```python
 for j in test_df.index:
@@ -389,7 +420,8 @@ for j in test_df.index:
   print(j, choice)
 ```
 
-Output:
+**Output:**
+
 <div class="output" markdown="1">
 1 3
 2 3
@@ -399,7 +431,7 @@ Output:
 
 >**Note:** The contextual bandit assigns every instance to the third action as it should per the cost structure of the train data. You can save and load the model you train from a file.
 
-Finally, experiment with the cost structure to see that the contextual bandit updates its predictions accordingly.
+Finally, experiment with the cost structure to see that the contextual bandit updates its predictions accordingly:
 
 ```python
 vw.save('cb.model')
@@ -409,7 +441,8 @@ vw = pyvw.vw("--cb 4 -i cb.model")
 print(vw.predict('| a b'))
 ```
 
-Output:
+**Output:**
+
 <div class="output" markdown="1">
 3
 </div>
@@ -418,7 +451,8 @@ The `-i` argument means input regressor, telling Vowpal Wabbit to load a model f
 
 ## More to explore
 
-- Review the [example Python notebooks](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples){:target="blank"}.
-- Explore the [tutorials section of the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials){:target="blank"}.
+- Continue to the next tutorial, [Content Personalization with Contextual Bandits](cb_simulation.html).
+- Explore more Vowpal Wabbit [Tutorials](../tutorials.html).
 - Browse [examples on the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples){:target="blank"}.
-- Learn various [VW commands](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments){:target="blank"}.
+- Learn various [Vowpal Wabbit commands](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments){:target="blank"}.
+- Review the [example Python notebooks](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python/examples){:target="blank"}.
