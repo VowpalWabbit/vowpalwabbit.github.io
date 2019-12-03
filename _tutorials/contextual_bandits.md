@@ -42,7 +42,7 @@ In the contextual bandit problem, a learner repeatedly observes a context, choos
 
 The standard k-armed bandits problem, or multi-armed bandits problem, is well-studied in the research literature. It is regarded as a repeated game between two players, with every stage consisting of the following:  
 
-* **Step One:** The world chooses k rewards r1, ..., rk ∈ \[0, 1\]. 
+* **Step One:** The world chooses k rewards r1, ..., rk ∈ [0, 1]. 
 * **Step Two:** The player chooses an arm i ∈ {1, k} without knowledge of the world's chosen rewards. 
 * **Step Three:** The player observes the reward ri.   
 
