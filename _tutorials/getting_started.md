@@ -2,12 +2,12 @@
 page_title: Linear Regression Tutorial | Vowpal Wabbit
 page_description: This tutorial describes how to run Linear Regression algorithms and features a simple regression problem overview using a Vowpal Wabbit workflow.
 title: Get started with Vowpal Wabbit
-order: 1
+order: 5
 module_id: getting_started
 description: This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output.
 layout: tutorial
 level: beginner
-tags: linear&nbsp;regression getting&nbsp;started command&nbsp;line
+tags: linear&nbsp;regression command&nbsp;line
 ---
 
 # A Step by Step Introduction to Linear Regression
