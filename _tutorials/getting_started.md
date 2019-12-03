@@ -23,9 +23,11 @@ To install Vowpal Wabbit, and for more information on building Vowpal Wabbit fro
 
 </div>
 
-## A first data-set
+## Create a dataset 
 
-Now, let's create a data-set. Suppose we want to predict whether a house will require a new roof in the next 10 years. We can create a training-set file, `house_dataset` with the following contents:
+Before we begin making predictions for regression problems, we need to create a dataset. For example, say we want to predict whether a house will require a new roof in the next 10 years.
+
+Create a training-set file in Vowpal Wabbit `house_dataset` and copy the following dataset:
 
 ```
 0 | price:.23 sqft:.25 age:.05 2006
@@ -33,19 +35,47 @@ Now, let's create a data-set. Suppose we want to predict whether a house will re
 0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
 ```
 
-There is quite a bit going on here. The first number in each line is a label. A `0` label corresponds to no roof-replacement, while a `1` label corresponds to a roof-replacement. The bar `|` separates label related data (what we want to predict) from features (what we always know). The features in the 1st line are `price`, `sqft`, `age`, and `2006`. Each feature may have an optional `:<numeric_value>` following it or, if the value is missing, an implied value of `1`. By default, Vowpal Wabbit hashes feature names into in-memory indexes unless the feature names themselves are positive integers. In this case, the first 3 features use an index derived from a hash function while the last feature uses index 2006 directly. Also the 1st 3 features have explicit values (`.23`, `.25`, and `.05` respectively) while the last, `2006` has an implicit default value of 1.
+### Vowpal Wabbit hashing techniques
 
-The next example, on the next line, is similar, but the label information is more complex. The `1` is the label indicating that a roof-replacement is required. The `2` is an optional importance weight which implies that this example counts twice. Importance weights come up in many settings. A missing importance weight defaults to 1. `'second_house` is the tag, it is used elsewhere to identify the example.
+Vowpal Wabbit hashes feature names into in-memory indexes by default unless the feature names are positive integers.
 
-The 3rd example is straightforward, except there is an additional number: `0.5` following the importance weight, in the label information. This is an initial prediction. Sometimes you have multiple interacting learning systems and want to be able to predict an offset rather than an absolute value.
+For example, in the first line of the `house_dataset` example, the first three features use an index derived from a hash function while the last feature uses index `2006` directly. Also, the first three features have explicit values (`.23`, `.25`, and `.05` respectively) while the last, `2006` has an implicit default value of `1`:
 
-Next, we learn:
+```
+0 | price:.23 sqft:.25 age:.05 2006
+```
+
+ - The first number in each line is a label.
+ - A `0` label corresponds to no roof-replacement, while a `1` label corresponds to a roof-replacement.
+ - The bar `|` separates label related data (what we want to predict) from features (what we always know).
+ - The features in the first line are `price`, `sqft`, `age`, and `2006`. Each feature may have an optional `:<numeric_value>` following it or, if the value is missing, an implied value of `1`.
+
+The label information for the second line is more complex:
+
+```
+1 2 'second_house | price:.18 sqft:.15 age:.35 1976
+```
+
+ - The `1` is the label indicating that a roof-replacement is required.
+ - The `2` is an optional importance weight which implies that this example counts twice. Importance weights come up in many settings.
+ - A missing importance weight defaults to 1. `'second_house` is the tag, it is used elsewhere to identify the example.
+
+The third line is more straightforward, except for an additional number. In the label information following the importance weight, the `0.5` is an initial prediction.:
+
+```
+0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
+```
+
+Sometimes you have multiple interacting learning systems and want to be able to predict an offset rather than an absolute value.
+
+Now, we learn:
 
 ```sh
 vw house_dataset
 ```
 
-Output:
+**Output:**
+
 ```
 Num weight bits = 18
 learning rate = 0.5
@@ -68,6 +98,7 @@ best constant = 0.500000
 best constant's loss = 0.250000
 total feature number = 15
 ```
+
 ## VW's diagnostic information
 
 There is a burble of diagnostic information which you can turn off with `--quiet`. However, it's worthwhile to first understand it, so let's work through it bit by bit.
