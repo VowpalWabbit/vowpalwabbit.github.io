@@ -45,10 +45,10 @@ For example, in the first line of the `house_dataset` example, the first three f
 0 | price:.23 sqft:.25 age:.05 2006
 ```
 
- - The first number in each line is a label.
- - A `0` label corresponds to no roof-replacement, while a `1` label corresponds to a roof-replacement.
- - The bar `|` separates label related data (what we want to predict) from features (what we always know).
- - The features in the first line are `price`, `sqft`, `age`, and `2006`. Each feature may have an optional `:<numeric_value>` following it or, if the value is missing, an implied value of `1`.
+- The first number in each line is a label.
+- A `0` label corresponds to no roof-replacement, while a `1` label corresponds to a roof-replacement.
+- The bar `|` separates label related data (what we want to predict) from features (what we always know).
+- The features in the first line are `price`, `sqft`, `age`, and `2006`. Each feature may have an optional `:<numeric_value>` following it or, if the value is missing, an implied value of `1`.
 
 The label information for the second line is more complex:
 
@@ -56,9 +56,9 @@ The label information for the second line is more complex:
 1 2 'second_house | price:.18 sqft:.15 age:.35 1976
 ```
 
- - The `1` is the label indicating that a roof-replacement is required.
- - The `2` is an optional importance weight which implies that this example counts twice. Importance weights come up in many settings.
- - A missing importance weight defaults to 1. `'second_house` is the tag. See Vowpal Wabbit live diagnostics section for more on importance weight.
+- The `1` is the label indicating that a roof-replacement is required.
+- The `2` is an optional importance weight which implies that this example counts twice. Importance weights come up in many settings.
+- A missing importance weight defaults to 1. `'second_house` is the tag. See Vowpal Wabbit live diagnostics section for more on importance weight.
 
 The third line is more straightforward, except for an additional number. In the label information following the importance weight, the `0.5` is an initial prediction.:
 
@@ -204,13 +204,13 @@ loss     last          counter         weight    label  predict features
 0.666667 1.000000            2            3.0   1.0000   0.0000        5
 ```
 
- - The `average loss` output computes the [progressive validation](http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf){:target="blank"} loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
- - The `since last` output is the progressive validation loss since the last printout.
- - The `example counter` output tells you which example is printed. In this case, it's example `2`.
- - `example weight` tells you the sum of the importance weights of examples seen so far. In this case it's `3.0`, because the second example has an importance weight of `2.0`.
- - The `current label` output tells you the label of the second example.
- - The `current predict` output tells you the prediction (before training) on the current example.
- - The `current features` output tells you the amount of features in the current example. 
+- The `average loss` output computes the [progressive validation](http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf){:target="blank"} loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
+- The `since last` output is the progressive validation loss since the last printout.
+- The `example counter` output tells you which example is printed. In this case, it's example `2`.
+- `example weight` tells you the sum of the importance weights of examples seen so far. In this case it's `3.0`, because the second example has an importance weight of `2.0`.
+- The `current label` output tells you the label of the second example.
+- The `current predict` output tells you the prediction (before training) on the current example.
+- The `current features` output tells you the amount of features in the current example. 
  
 The `current features` diagnostic is great for debugging. Note that we have five features when you expect four. This happens because VW always adds a default constant feature.
 
@@ -256,51 +256,62 @@ You'll notice that by example 47 (25 passes over 3 examples result in 75 example
 
 The reason we have to add `--holdout_off` is that when running multiple-passes, Vowpal Wabbit automatically switches to 'over-fit avoidance' mode by holding-out 10% of the examples (the "1 in 10" period can be changed using `--holdout_period period`) and evaluating performance on the held-out data instead of using the online-training progressive loss.
 
-## Saving your model (a.k.a. regressor) into a file
+## Saving your model into a file
 
-By default VW learns the weights of the features and keeps them in an in memory vector. If you want to save the final regressor weights into a file, add `-f filename`:
+Vowpal Wabbit learns the weights of the features and keeps them in an in memory vector by default. 
+
+Add `-f filename` to save the final regressor weights to a file. 
+
+For example:
 
 ```sh
 vw house_dataset -l 10 -c --passes 25 --holdout_off -f house.model
 ```
 
-## Getting predictions
+## Vowpal Wabbit predictions
 
-We want to make predictions of course, this can be done by supplying the `-p filename` option. Stdout can be used as below:
+We can make predictions in Vowpal Wabbit by supplying the `-p filename`. 
+
+For example, to output them to standard out `stdout`:
 
 ```sh
 vw house_dataset -p /dev/stdout --quiet
 ```
 
-The output is:
+**Output:**
+
 ```
 0.000000
 0.000000 second_house
 1.000000 third_house
 ```
 
-- The 1st output line `0.000000` is for the 1st example which has an empty tag.
-- The 2nd output `0.000000 second_house` is for the 2nd example. You'll notice the tag appears here. This is the primary use of the tag: mapping predictions to the examples they belong to.
-- The 3rd output `1.000000 third_house` is for the 3rd example. Clearly, some learning happened, because the prediction is now `1.000000` while the initial prediction was set to `0.5`.
+- The first line `0.000000` refers to the first example which has an empty tag.
+- The second line `0.000000 second_house` refers to the second example. Notice that the tag appears here. The primary use of the tag is mapping predictions to the corresponding examples.
+- The third output `1.000000 third_house` refers to the third example. The initial prediction was set to `0.5`, and the prediction is now `1.000000`. This means _some_ learning occurred. 
 
-Note that in this last example, we predicted _while we learned_. The model was being incrementally built in memory as VW went over the examples.
+In the last example, Vowpal Wabbit predicted while it learned. The model was being built in memory incrementally, as it went over the examples.
 
-Alternatively, and more commonly, we would first learn and save the model into a file. Later we would predict using the saved model.
+It is more common to learn first, then save the model to a file. Then, you make predictions using that saved model.
 
-You may load a initial model to memory by adding `-i house.model`. You may also want to specify `-t` which stands for "test-only" (do no learning):
+Use `-i house.model` to load the initial model to memory. Add `-t` to specify **test-only** (do no learning): 
+
 
 ```sh
 vw -i house.model -t house_dataset -p /dev/stdout --quiet
 ```
 
-Which would output:
+**Output:**
+
 ```
 0.000000
 1.000000 second_house
 0.000000 third_house
 ```
 
-Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data, whereas in the 2nd example we first loaded an over-fitted (25 pass) model and used our data-set `house_dataset` with `-t` (testing only mode). In real prediction settings, one should use a different data-set for testing vs training.
+Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data. For the second example, we loaded an over-fitted (25 pass) model and used our dataset `house_dataset` with `-t` (testing only mode). 
+
+>**Note:** Always use a different dataset for testing vs training for real prediction settings.
 
 ## Auditing
 
