@@ -315,13 +315,16 @@ Obviously the results are different this time, because in the first prediction e
 
 ## Auditing
 
-When developing a new ML application, it's very helpful to debug. VW can help with this using the `--audit` option, which outputs extra informations about predictions and features.
+Vowpal Wabbit has a built in `--audit` option that is helpful for debugging a machine learning application.
+
+Use `--audit` to output helpful information about predictions and features: 
 
 ```sh
 vw house_dataset --audit --quiet
 ```
 
-Output:
+**Output:**
+
 ```
 0
   price:229902:0.23:0@0  sqft:162853:0.25:0@0  age:165201:0.05:0@0  2006:2006:1:0@0  Constant:116060:1:0@0
@@ -331,21 +334,48 @@ Output:
   price:229902:0.53:0.882655@0.2592  age:165201:0.87:0.453833@0.98  sqft:162853:0.32:1.05905@0.18  Constant:116060:1:0.15882@8  1924:1924:1:0@0
 ```
 
-Every example uses two lines. The first line has the prediction, and the second line has one entry per feature. Looking at the first feature, we see:
+Every example uses two lines:
+
+- The first line is the prediction.
+- The second line shows one entry per feature. 
+
+The first feature listed is:
 
 ```
 price:229902:0.23:0@0.25
 ```
 
-- `price` is the original feature name. If you use a namespace, it appears before `^` (i.e. `Namespace^Feature`). Namespaces are an advanced feature which allows you to group features and operate them on-the-fly, in the core of VW with the options: `-q XY` (cross a pair of namespaces), `--cubic XYZ` (cross 3 namespaces), `--lrq XYn` (low-rank quadratic interactions), and `--ignore X` (skip all features belonging to a namespace).
-- `229902` is the index of the feature, computed by a hash function on the feature name.
-- `0.23` is the value of the feature.
-- `0` is the value of the feature's weight.
-- `@0.25` represents the sum of gradients squared for that feature when you are using per-feature adaptive learning rates.
+The original feature name is `price`. Vowpal Wabbit has an advanced _namespaces_ option that allows us to group features and operate them on-the-fly. If we use a namespace, it appears before `^` (i.e. `Namespace^Feature`). 
 
-Examining further, you'll notice that the feature `2006` uses the index 2006. This means that you may use hashes or pre-computed indices for features, as is common in other machine learning systems.
+Namespace options include the following:
 
-The advantage of using unique integer-based feature-names is that they are guaranteed not to collide after hashing. The advantage of free-text (non integer) feature names is readability and self-documentation. Since only `:`, `|`, and _spaces_ are special to the VW parser, you can give features extremely readable names like: `height>2 value_in_range[1..5] color=red` and so on. Feature names may even start with a digit, e.g.: `1st-guess:0.5 2nd-guess:3` etc.
+- `-q XY` to cross a pair of namespaces. 
+- `--cubic XYZ` to cross 3 namespaces.
+- `--lrq XYn` low-rank quadratic interactions. 
+- `--ignore X` skip all features belonging to a namespace.
+
+Now, let’s return to the first feature listed again:
+
+```
+price:229902:0.23:0@0.25
+```
+
+- The index of the feature `229902`, computed by a hash function on the feature name.
+- The value of the feature is `0.23`.
+- The value of the feature's weight `0`.
+- The sum of gradients squared for that feature is `@0.25` (when you use _per-feature adaptive learning rates_).
+
+Notice that the feature `2006` uses the index 2006. This means that you may use _hashes_ or _pre-computed indices_ for features, as is common in other machine learning systems.
+
+The advantage of using unique _integer-based feature names_ is that they are guaranteed not to collide after hashing. The advantage of _free-text (non integer)_ feature names is readability and self-documentation. 
+
+Because only `:`, `|`, and _spaces_ are special to the Vowpal Wabbit parser, we can give features easy-to-read names. For example:
+
+`height>2 value_in_range[1..5] color=red`
+
+We can even start feature names with a digit. For example: 
+
+`1st-guess:0.5 2nd-guess:3`
 
 ## What's next?
 
