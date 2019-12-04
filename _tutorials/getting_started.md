@@ -193,7 +193,9 @@ num sources = 1
 
 There is only one input file in this example, but we can specify multiple files.
 
-Next, there is a bunch of header information. VW is going to print out some live diagnostic information.
+## Vowpal Wabbit diagnostic header
+
+Vowpal Wabbit prints live diagnostic information in the header like the following:
 
 ```
 average  since         example        example  current  current  current
@@ -202,13 +204,17 @@ loss     last          counter         weight    label  predict features
 0.666667 1.000000            2            3.0   1.0000   0.0000        5
 ```
 
-- `average loss` computes the <a href="http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf" target="_blank">progressive validation</a> loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
-- `since last` is the progressive validation loss since the last printout.
-- `example counter` tells you which example is printed out. In this case, it's example 2.
-- `example weight` tells you the sum of the importance weights of examples seen so far. In this case it's 3, because the second example has an importance weight of 2.
-- `current label` tells you the label of the second example.
-- `current predict` tells you the prediction (before training) on the current example.
-- `current features` tells you how many features the current example has. This is great for debugging, and you'll note that we have 5 features when you expect 4. This happens, because VW has a default constant feature which is always added in. Use the `--noconstant` command-line option to turn it off.
+ - The `average loss` output computes the [progressive validation](http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf){:target="blank"} loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
+ - The `since last` output is the progressive validation loss since the last printout.
+ - The `example counter` output tells you which example is printed. In this case, it's example `2`.
+ - `example weight` tells you the sum of the importance weights of examples seen so far. In this case it's `3.0`, because the second example has an importance weight of `2.0`.
+ - The `current label` output tells you the label of the second example.
+ - The `current predict` output tells you the prediction (before training) on the current example.
+ - The `current features` output tells you the amount of features in the current example. 
+ 
+The `current features` diagnostic is great for debugging. Note that we have five features when you expect four. This happens because VW always adds a default constant feature.
+
+Use the `--noconstant` command-line option to turn it off.
 
 VW prints a new line with an exponential backoff. This is very handy, because we can often debug a problem before the learning algorithm finishes going through a data-set.
 
@@ -222,16 +228,19 @@ best constant = 0.500000
 best constant's loss = 0.250000
 total feature number = 15
 ```
-At the end, some more straightforward totals are printed. The only mysterious one is:
-`best constant` and `best constant's loss` These really only work if you are using squared loss, which is the default. They compute the best constant's predictor and the loss of the best constant predictor. If `average loss` is not better than `best constant's loss`, something is wrong. In this case, we have too few examples to generalize.
 
-If we want to overfit like mad, we can simply use:
+At the end, some more straightforward totals are printed. The `best constant` and `best constant's loss` only work if you are using squared loss. Squared loss is the Vowpal Wabbit default. They compute the best constant's predictor and the loss of the best constant predictor. 
+
+If `average loss` is not better than `best constant's loss`, something is wrong. In this case, we have too few examples to generalize.
+
+If you want to overfit, use the following:
 
 ```sh
 vw house_dataset -l 10 -c --passes 25 --holdout_off
 ```
 
 The progress section of the output is:
+
 ```
 average  since         example        example  current  current  current
 loss     last          counter         weight    label  predict features
@@ -243,7 +252,9 @@ loss     last          counter         weight    label  predict features
 0.090774 0.000000           47           63.0   1.0000   1.0000        5
 ```
 
-You'll notice that by example 47 (25 passes over 3 examples result in 75 examples), the `since last` column has dropped to 0, implying that by looking at the same (3 lines of) data 25 times we have reached a perfect predictor. This is unsurprising with 3 examples having 5 features each. The reason we have to add `--holdout_off` is that when running multiple-passes, VW automatically switches to 'over-fit avoidance' mode by holding-out 10% of the examples (the "1 in 10" period can be changed using `--holdout_period period`) and evaluating performance on the held-out data instead of using the online-training progressive loss.
+You'll notice that by example 47 (25 passes over 3 examples result in 75 examples), the `since last` column has dropped to `0`, implying that by looking at the same (three lines) of data 25 times we have reached a perfect predictor. This is unsurprising with three examples having five features each. 
+
+The reason we have to add `--holdout_off` is that when running multiple-passes, Vowpal Wabbit automatically switches to 'over-fit avoidance' mode by holding-out 10% of the examples (the "1 in 10" period can be changed using `--holdout_period period`) and evaluating performance on the held-out data instead of using the online-training progressive loss.
 
 ## Saving your model (a.k.a. regressor) into a file
 
