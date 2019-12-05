@@ -34,7 +34,7 @@ First, create a file `train.txt` and copy the following dataset:
 0 | price:.53 sqft:.32 age:.87 1924
 ```
 
->**Note:** If the format of this sample dataset looks unfamiliar and you want more details see the Vowpal Wabbit [Linear Regression Tutorial](getting_started.html#a-first-data-set) for information on input format and feature hashing techniques.
+>**Note:** If the format of this sample dataset looks unfamiliar and you want more details see the Vowpal Wabbit [Linear Regression Tutorial](getting_started.html#create-a-dataset) for information on input format and feature hashing techniques.
 
 ## Train a model
 
@@ -49,7 +49,7 @@ This tells Vowpal Wabbit to:
 - Use the `-d` **data** file `train.txt`.
 - Write the `-f` **final** model to `model.vw`.
 
-With Vowpal Wabbit, the output includes more than a few statistics and statuses. The [Linear Regression Tutorial](getting_started.html#vws-diagnostic-information) and [Contextual Bandit Reinforcement Learning Tutorial](contextual_bandits.html) covers this format in more detail:
+With Vowpal Wabbit, the output includes more than a few statistics and statuses. The [Linear Regression Tutorial](getting_started.html#vowpal-wabbit-diagnostic-header) and [Contextual Bandit Reinforcement Learning Tutorial](contextual_bandits.html) covers this format in more detail:
 
 Output:
 
