@@ -4,7 +4,7 @@ page_description: This tutorial runs through a regression problem with Vowpal Wa
 title: Vowpal Wabbit Linear Regression Tutorial
 order: 5
 module_id: getting_started
-description: This tutorial runs through a regression problem using a Vowpal Wabbit workflow and explains how to structure input and understand results. 
+description: This tutorial runs through a regression problem using a Vowpal Wabbit workflow and explains how to structure input and understand results.
 layout: tutorial
 level: beginner
 tags: linear&nbsp;regression command&nbsp;line
@@ -75,8 +75,7 @@ vw house_dataset
 ```
 
 **Output:**
-
-```
+<div class="output" markdown="1">
 Num weight bits = 18
 learning rate = 0.5
 initial_t = 0
@@ -97,7 +96,7 @@ average loss = 0.750000
 best constant = 0.500000
 best constant's loss = 0.250000
 total feature number = 15
-```
+</div>
 
 ## Vowpal Wabbit output
 
@@ -213,7 +212,7 @@ loss     last          counter         weight    label  predict features
 - The `current label` output tells you the label of the second example.
 - The `current predict` output tells you the prediction (before training) on the current example.
 - The `current features` output tells you the amount of features in the current example.
- 
+
 The `current features` diagnostic is great for debugging. Note that we have five features when you expect four. This happens because Vowpal Wabbit always adds a default constant feature.
 
 Use the `--noconstant` command-line option to turn it off.
@@ -282,15 +281,15 @@ vw house_dataset -p /dev/stdout --quiet
 
 **Output:**
 
-```
+<div class="output" markdown="1">
 0.000000
 0.000000 second_house
 1.000000 third_house
-```
+</div>
 
 - The first line `0.000000` refers to the first example which has an empty tag.
 - The second line `0.000000 second_house` refers to the second example. Notice that the tag appears here. The primary use of the tag is mapping predictions to the corresponding examples.
-- The third output `1.000000 third_house` refers to the third example. The initial prediction was set to `0.5`, and the prediction is now `1.000000`. This means _some_ learning occurred. 
+- The third output `1.000000 third_house` refers to the third example. The initial prediction was set to `0.5`, and the prediction is now `1.000000`. This means _some_ learning occurred.
 
 In the last example, Vowpal Wabbit predicted while it learned. The model was being built in memory incrementally, as it went over the examples.
 
@@ -303,12 +302,11 @@ vw -i house.model -t house_dataset -p /dev/stdout --quiet
 ```
 
 **Output:**
-
-```
+<div class="output" markdown="1">
 0.000000
 1.000000 second_house
 0.000000 third_house
-```
+</div>
 
 Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data. For the second example, we loaded an over-fitted (25 pass) model and used our dataset `house_dataset` with `-t` (testing only mode).
 
@@ -325,15 +323,14 @@ vw house_dataset --audit --quiet
 ```
 
 **Output:**
-
-```
+<div class="output" markdown="1">
 0
   price:229902:0.23:0@0  sqft:162853:0.25:0@0  age:165201:0.05:0@0  2006:2006:1:0@0  Constant:116060:1:0@0
 0 second_house
   price:229902:0.18:0@0  sqft:162853:0.15:0@0  age:165201:0.35:0@0  1976:1976:1:0@0  Constant:116060:1:0@0
 1 third_house
   price:229902:0.53:0.882655@0.2592  age:165201:0.87:0.453833@0.98  sqft:162853:0.32:1.05905@0.18  Constant:116060:1:0.15882@8  1924:1924:1:0@0
-```
+</div>
 
 Every example uses two lines:
 
@@ -350,9 +347,9 @@ The original feature name is `price`. Vowpal Wabbit has an advanced _namespaces_
 
 Namespace options include the following:
 
-- `-q XY` to cross a pair of namespaces. 
+- `-q XY` to cross a pair of namespaces.
 - `--cubic XYZ` to cross 3 namespaces.
-- `--lrq XYn` low-rank quadratic interactions. 
+- `--lrq XYn` low-rank quadratic interactions.
 - `--ignore X` skip all features belonging to a namespace.
 
 Now, let’s return to the first feature listed again:
