@@ -28,9 +28,9 @@ If you are familiar with reinforcement learning and ready to start using Vowpal 
 
 ## What is reinforcement learning?
 
-[Reinforcement learning](https://docs.microsoft.com/en-us/azure/cognitive-services/personalizer/concepts-reinforcement-learning){:target="blank"} is a machine learning paradigm used to train models for sequential decision making. It involves using algorithms concerned with how a software agent takes suitable actions in complex environments and uses the feedback to maximize reward over time. This approach provides the freedom to enact specific user behavior, in a given context, and provide feedback on how the chosen behavior is rewarded based on the goal. 
+[Reinforcement learning](https://docs.microsoft.com/en-us/azure/cognitive-services/personalizer/concepts-reinforcement-learning){:target="blank"} is a machine learning paradigm used to train models for sequential decision making. It involves using algorithms concerned with how a software agent takes suitable actions in complex environments and uses the feedback to maximize reward over time. This approach provides the freedom to enact specific user behavior, in a given context, and provide feedback on how the chosen behavior is rewarded based on the goal.
 
-## The contextual bandits approach to reinforcement learning 
+## The contextual bandits approach to reinforcement learning
 
 Vowpal Wabbit founder John Langford coined the term [contextual bandits](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf){:target="blank"} to describe a flexible subset of reinforcement learning. The contextual bandit approach to reinforcement learning frames decision-making (choices) between separate actions in a given context.
 
@@ -42,21 +42,21 @@ In the contextual bandit problem, a learner repeatedly observes a context, choos
 
 The standard k-armed bandits problem, or multi-armed bandits problem, is well-studied in the research literature. It is regarded as a repeated game between two players, with every stage consisting of the following:  
 
-* **Step One:** The world chooses k rewards r1, ..., rk ∈ [0, 1]. 
-* **Step Two:** The player chooses an arm i ∈ {1, k} without knowledge of the world's chosen rewards. 
+* **Step One:** The world chooses k rewards r1, ..., rk ∈ [0, 1].
+* **Step Two:** The player chooses an arm i ∈ {1, k} without knowledge of the world's chosen rewards.
 * **Step Three:** The player observes the reward ri.   
 
-The contextual bandits setting considered in Part Two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit's default algorithm for this type of exploration is [Epsilon-Greedy](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf){:target="blank"}. 
+The contextual bandits setting considered in Part Two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit's default algorithm for this type of exploration is [Epsilon-Greedy](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf){:target="blank"}.
 
-The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see [Research](../research.html). 
+The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see [Research](../research.html).
 
-## Part Two: Vowpal Wabbit Contextual Bandits Tutorial 
+## Part Two: Vowpal Wabbit Contextual Bandits Tutorial
 
 Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like [Microsoft Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"}. It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework, including a tutorial for simulating web content personalization, see [Content Personalization with Contextual Bandits](cb_simulation.html).
 
-## Vowpal Wabbit tutorial 
+## Vowpal Wabbit tutorial
 
-This tutorial uses an application example we'll call **APP** to introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this reinforcement learning approach. The problem scenario of web content personalization motivates our example  **APP**. The goal is to show the user the most relevant web content on each page to maximize engagement (clicks). 
+This tutorial uses an application example we'll call **APP** to introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this reinforcement learning approach. The problem scenario of web content personalization motivates our example  **APP**. The goal is to show the user the most relevant web content on each page to maximize engagement (clicks).
 
 ## Working with contextual bandits in Vowpal Wabbit
 
@@ -134,7 +134,7 @@ Vowpal Wabbit provides three contextual bandits algorithms:
 
 ### Input format for `--cb`
 
-The `--cb 4` command specifies that we want to use the contextual bandit module, and our data has a total of four actions: 
+The `--cb 4` command specifies that we want to use the contextual bandit module, and our data has a total of four actions:
 
 ```text
 --cb <number_of_actions>
@@ -404,7 +404,7 @@ for i in train_df.index:
   vw.learn(learn_example)
 ```
 
-Use the model that was just trained on the train set to perform predictions on the test set. Construct the example like before but don't include the label and pass it into **predict** instead of **learn**. 
+Use the model that was just trained on the train set to perform predictions on the test set. Construct the example like before but don't include the label and pass it into **predict** instead of **learn**.
 
 **For example:**
 
