@@ -123,6 +123,16 @@
   }
 }
 
+@media screen and (min-width: $breakpoint-md) {
+  .main_nav_container {
+    display: block;
+  }
+
+  .mobile_nav_container {
+    display: none;
+  }
+}
+
 .mobile_nav_container {
   .hamburger_icon {
     width: 3rem;
