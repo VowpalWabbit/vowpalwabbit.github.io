@@ -36,15 +36,15 @@ Vowpal Wabbit founder John Langford coined the term [contextual bandits](http://
 
 The Microsoft Azure cloud-based API service [Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/){:target="blank"} uses a bandit approach to reinforcement learning to help choose the best experience to show users — learning from real-time behavior to make choices between discrete actions in a given context.  
 
-## The contextual bandits problem  
+## The contextual bandits problem
 
-In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandits algorithms use additional side information (or context) to aid real-world decision-making <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup>. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited.  
+In the contextual bandit problem, a learner repeatedly observes a context, chooses an action, and observes a loss/cost/reward for the chosen action only. Contextual bandits algorithms use additional side information (or context) to aid real-world decision-making <sup>{% cite DBLP:journals/corr/AgarwalBCHLLLMO16 %} {% cite DBLP:journals/corr/abs-1003-0146 %}</sup>. They work well for choosing actions in dynamic environments where options change rapidly, and the set of available actions is limited.
 
-The standard k-armed bandits problem, or multi-armed bandits problem, is well-studied in the research literature. It is regarded as a repeated game between two players, with every stage consisting of the following:  
+The standard k-armed bandits problem, or multi-armed bandits problem, is well-studied in the research literature. It is regarded as a repeated game between two players, with every stage consisting of the following:
 
 * **Step One:** The world chooses k rewards r1, ..., rk ∈ [0, 1].
 * **Step Two:** The player chooses an arm i ∈ {1, k} without knowledge of the world's chosen rewards.
-* **Step Three:** The player observes the reward ri.   
+* **Step Three:** The player observes the reward ri.
 
 The contextual bandits setting considered in Part Two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit's default algorithm for this type of exploration is [Epsilon-Greedy](http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf){:target="blank"}.
 
@@ -125,11 +125,11 @@ There are four main components to a contextual bandit problem:
 
 Vowpal Wabbit provides three contextual bandits algorithms:
 
-1. `--cb`  
+1. `--cb`
   The contextual bandit module which allows you to optimize predictor based on already collected data, or contextual bandits without exploration.
-2. `--cb_explore`  
+2. `--cb_explore`
   The contextual bandit learning algorithm for when the maximum number of actions is known ahead of time and semantics of actions stays the same across examples.
-3. `--cb_explore_adf`  
+3. `--cb_explore_adf`
   The contextual bandit learning algorithm for when the set of actions changes over time or you have rich information for each action. Vowpal Wabbit offers different input formats for contextual bandits.
 
 ### Input format for `--cb`

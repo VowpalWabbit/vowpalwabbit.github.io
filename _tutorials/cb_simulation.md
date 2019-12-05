@@ -44,7 +44,7 @@ import matplotlib.pyplot as plt
 
 ## Simulating reward for Vowpal Wabbit
 
-In the real world, we must learn Tom and Anna’s preferences for articles as we observe their interactions. Since this is a simulation, we must define Tom and Anna’s preference profile. 
+In the real world, we must learn Tom and Anna's preferences for articles as we observe their interactions. Since this is a simulation, we must define Tom and Anna's preference profile. 
 
 The reward that we provide to the learner follows this preference profile. We hope to see if the learner can make better and better decisions as we see more samples, which in turn means we are maximizing the reward.
 
@@ -59,7 +59,7 @@ Therefore, **we always pass negative of reward as cost to Vowpal Wabbit.**
 USER_LIKED_ARTICLE = -1.0
 USER_DISLIKED_ARTICLE = 0.0
 ```
-The reward function below specifies that Tom likes politics in the morning and music in the afternoon. Anna likes sports in the morning and politics in the afternoon. It looks dense, but we are simulating a hypothetical world in the format of the feedback the learner understands — cost.  
+The reward function below specifies that Tom likes politics in the morning and music in the afternoon. Anna likes sports in the morning and politics in the afternoon. It looks dense, but we are simulating a hypothetical world in the format of the feedback the learner understands — cost.
 
 If the learner recommends an article that aligns with the reward function, we give a positive reward. In our simulation, this is a click:
 
@@ -180,7 +180,7 @@ def choose_time_of_day(times_of_day):
 
 ### Instantiate learner
 
-We instantiate a contextual bandit learner in Vowpal Wabbit and then simulate Tom and Anna’s website visits num_iterations number of times. With each visit, we do the following:
+We instantiate a contextual bandit learner in Vowpal Wabbit and then simulate Tom and Anna's website visits num_iterations number of times. With each visit, we do the following:
 
 1. Decide between Tom and Anna
 2. Decide the time of day
@@ -254,7 +254,7 @@ plot_ctr(num_iterations, ctr)
 
 #### Interactions
 
-You’ll notice that we include `-q UA` in the arguments we supply to Vowpal Wabbit. This step tells Vowpal Wabbit to create additional features, which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. Doing so allows us to learn the interaction between when specific actions are good at certain times of days and for specific users.  
+You’ll notice that we include `-q UA` in the arguments we supply to Vowpal Wabbit. This step tells Vowpal Wabbit to create additional features, which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. Doing so allows us to learn the interaction between when specific actions are good at certain times of days and for specific users.
 
 If we didn’t include `-q UA`, the learning would not work. We can see that in the following action:
 
