@@ -1,20 +1,33 @@
 ---
 page_title: Linear Regression Tutorial | Vowpal Wabbit
-page_description: This tutorial describes how to run Linear Regression algorithms and features a simple regression problem overview using a Vowpal Wabbit workflow.
-title: Get started with Vowpal Wabbit
+page_description: This tutorial runs through a regression problem with Vowpal Wabbit to introduce unique features, explain how to structure input, and understand the results using examples.  
+title: Vowpal Wabbit Linear Regression Tutorial
 order: 5
 module_id: getting_started
-description: This tutorial will run you through a familiar simple regression problem as a VW workflow. It will teach you about how to interact with VW, structure input and understand its output.
+description: This tutorial runs through a regression problem using a Vowpal Wabbit workflow and explains how to structure input and understand results. 
 layout: tutorial
 level: beginner
 tags: linear&nbsp;regression command&nbsp;line
 ---
 
-# A Step by Step Introduction to Linear Regression
+# Vowpal Wabbit Linear Regression Tutorial
 
-## A first data-set
+This tutorial demonstrates how to approach a regression problem with Vowpal Wabbit. It features an overview of a linear regression problem using a Vowpal Wabbit workflow tutorial with examples, introduces unique Vowpal Wabbit features, and explains how to structure input and understand the results.
 
-Now, let's create a data-set. Suppose we want to predict whether a house will require a new roof in the next 10 years. We can create a training-set file, `house_dataset` with the following contents:
+<div class="prerequisites" markdown="1">
+**Prerequisites**
+
+To install Vowpal Wabbit, and for more information on building Vowpal Wabbit from source or using a package manager, see [Get Started](../start.html).
+
+>**Note:** See [Command Line Tutorial](cmd_first_steps.html) for Vowpal Wabbit command line basics and a quick introduction to training and testing your model. See [Python Tutorial](python_first_steps.html) to explore the basics for using Python to pass some data to Vowpal Wabbit to learn a model and get a prediction.
+
+</div>
+
+## Create a dataset
+
+Before we begin making predictions for regression problems, we need to create a dataset. For example, say we want to predict whether a house will require a new roof in the next 10 years.
+
+Create a training-set file in Vowpal Wabbit `house_dataset` and copy the following dataset:
 
 ```
 0 | price:.23 sqft:.25 age:.05 2006
@@ -22,19 +35,47 @@ Now, let's create a data-set. Suppose we want to predict whether a house will re
 0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
 ```
 
-There is quite a bit going on here. The first number in each line is a label. A `0` label corresponds to no roof-replacement, while a `1` label corresponds to a roof-replacement. The bar `|` separates label related data (what we want to predict) from features (what we always know). The features in the 1st line are `price`, `sqft`, `age`, and `2006`. Each feature may have an optional `:<numeric_value>` following it or, if the value is missing, an implied value of `1`. By default, Vowpal Wabbit hashes feature names into in-memory indexes unless the feature names themselves are positive integers. In this case, the first 3 features use an index derived from a hash function while the last feature uses index 2006 directly. Also the 1st 3 features have explicit values (`.23`, `.25`, and `.05` respectively) while the last, `2006` has an implicit default value of 1.
+### Vowpal Wabbit hashing techniques
 
-The next example, on the next line, is similar, but the label information is more complex. The `1` is the label indicating that a roof-replacement is required. The `2` is an optional importance weight which implies that this example counts twice. Importance weights come up in many settings. A missing importance weight defaults to 1. `'second_house` is the tag, it is used elsewhere to identify the example.
+Vowpal Wabbit hashes feature names into in-memory indexes by default unless the feature names are positive integers.
 
-The 3rd example is straightforward, except there is an additional number: `0.5` following the importance weight, in the label information. This is an initial prediction. Sometimes you have multiple interacting learning systems and want to be able to predict an offset rather than an absolute value.
+For example, in the first line of the `house_dataset` example, the first three features use an index derived from a hash function while the last feature uses index `2006` directly. Also, the first three features have explicit values (`.23`, `.25`, and `.05` respectively) while the last, `2006` has an implicit default value of `1`:
 
-Next, we learn:
+```
+0 | price:.23 sqft:.25 age:.05 2006
+```
+
+- The first number in each line is a label.
+- A `0` label corresponds to no roof-replacement, while a `1` label corresponds to a roof-replacement.
+- The bar `|` separates label related data (what we want to predict) from features (what we always know).
+- The features in the first line are `price`, `sqft`, `age`, and `2006`. Each feature may have an optional `:<numeric_value>` following it or, if the value is missing, an implied value of `1`.
+
+The label information for the second line is more complex:
+
+```
+1 2 'second_house | price:.18 sqft:.15 age:.35 1976
+```
+
+- The `1` is the label indicating that a roof-replacement is required.
+- The `2` is an optional importance weight which implies that this example counts twice. Importance weights come up in many settings.
+- A missing importance weight defaults to 1. `'second_house` is the tag. See Vowpal Wabbit live diagnostics section for more on importance weight.
+
+The third line is more straightforward, except for an additional number. In the label information following the importance weight, the `0.5` is an initial prediction.:
+
+```
+0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
+```
+
+Sometimes you have multiple interacting learning systems and want to be able to predict an offset rather than an absolute value.
+
+Now, we learn:
 
 ```sh
 vw house_dataset
 ```
 
-Output:
+**Output:**
+
 ```
 Num weight bits = 18
 learning rate = 0.5
@@ -57,47 +98,106 @@ best constant = 0.500000
 best constant's loss = 0.250000
 total feature number = 15
 ```
-## VW's diagnostic information
 
-There is a burble of diagnostic information which you can turn off with `--quiet`. However, it's worthwhile to first understand it, so let's work through it bit by bit.
+## Vowpal Wabbit output
+
+This section provides information on the various types of diagnostic output Vowpal Wabbit presents.
+
+Use `--quiet`  command to turn off diagnostic information in Vowpal Wabbit.
+
+### Hash function bits
+
+The following output shows the number of bits from the hash function:
 
 ```
 Num weight bits = 18
 ```
-Only 18 bits of the hash function will be used. That's much more than necessary for this example. You could adjust the number of bits using `-b bits`
+
+This diagnostic ouput shows that the number of bits from the hash function is 18 (more than enough for this example).
+
+Use `-b bits` to adjust the number of bits to be used from the hash function.
+
+### Learning rate
+
+The following output shows the learning rate:
 
 ```
 learning rate = 0.5
 ```
-The default learning rate is 0.5 which we found to be a good default with the current default update (`--normalized --invariant --adaptive`). If the data is noisy you'll need a larger data-set and/or multiple passes to predict well. On these larger data-sets, our learning rate will by default decay towards 0 as we run through examples. You can adjust the learning rate up or down with `-l rate`. A higher learning rate will make the model converge faster but a too high learning rate may over-fit and end-up worse on average.
+
+The default learning rate is `0.5` with current default update (`--normalized --invariant --adaptive`).
+
+If the data is noisy, you need a larger data-set or multiple passes to predict well. For massive data-sets, the learning rate decays towards `0` by default.
+
+Use  `-l rate` to adjust the learning rate up or down.
+
+>**Note:** A higher learning rate makes the model converge faster, but if you adjust the learning rate too high, you risk over-fit and end-up worse on average.
+
+### Initial time
+
+The following output shows the initial time for learning rate decay:
 
 ```
 initial_t = 0
 ```
-Learning rates should often decay over time, and this specifies the initial time. You can adjust with `--initial_t time`, although this is rarely necessary these days.
+
+>**Note:** Learning rates often decay over time, and this diagnostic output specifies the initial time. You can adjust with `--initial_t time`, although this is rarely necessary these days.
+
+### Power on learning rate decay
+
+The following output specifies the power on the learning rate decay:
 
 ```
 power_t = 0.5
 ```
-This specifies the power on the learning rate decay. You can adjust this `--power_t p` where _p_ is in the range [0,1]. 0 means the learning rate does not decay, which can be helpful when state tracking, while 1 is very aggressive, but plausibly optimal for [IID](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) data-sets. 0.5 is a minimax optimal choice. A different way of stating this is: stationary data-sets where the fundamental relation between the input features and target label are not changing over time, should benefit from a high (close to 1.0) `--power_t` while learning against changing conditions, like learning against an adversary who continuously changes the rules-of-the-game, would benefit from low (close to 0) `--power_t` so the learner can react quickly to these changing conditions. For many problems, 0.5, which is the default, seems to work best.
+
+The default is `0.5` and a minimax optimal choice that works well for most problems in Vowpal Wabbit. A different way of stating this is: stationary data-sets where the fundamental relation between the input features and target label are not changing over time, should benefit from a high (close to 1.0) `--power_t` while learning against changing conditions, like learning against an adversary who continuously changes the rules-of-the-game, would benefit from low (close to 0) `--power_t` so the learner can react quickly to these changing conditions.
+
+>**Note:** You can adjust this `--power_t p` where _p_ is in the range [0,1]. 0 means the learning rate does not decay, which can be helpful when state tracking, while 1 is very aggressive, but plausibly optimal for [IID](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) data-sets.
+
+### Cache files
+
+The following output shows that you are not using a cache file:
 
 ```
 using no cache
 ```
-This says you are not using a cache. If you use multiple passes with `--passes`, you would need to also pass `-c` so VW can cache the data in a faster to handle format (passes > 1 should be much faster). By default, the cache file name will be the data-set file with `.cache` appended. In this case: `house_dataset.cache`. You may also override the default cache file name by passing: `--cache_file housing.cache`. A cache file can greatly speed up training when you run many experiments (with different options) on the same data-set even if each experiment is only a single pass. So if you want to experiment with the same data-set over and over, it is highly recommended to pass `-c` every time you train. If the cache exists and is newer than the data-set, it will be used, if it doesn't exist, it'll be created the first time `-c` is used.
+
+A cache file contains our dataset in a faster to handle format and can greatly speed up training if we use multiple passes or run multiple experiments on the same dataset (even with different options). The default cache file name is the dataset file name with `.cache` appended.
+
+For example:
+
+`house_dataset.cache`
+
+Use `--cache_file housing.cache` to override the default cache file name.
+
+The cache file is created the first time you use `-c`. If the cache exists and is newer than the dataset, that file is used by default.
+
+Use `-c` for multiple passes `--passes`, so Vowpal Wabbit caches the data in a faster format (passes > 1 should be much faster).  If you want to experiment with the same dataset over and over, it is highly recommended to pass `-c` every time you train.
+
+### Data sources
+
+The following output shows the source of the data:
 
 ```
 Reading datafile = house_dataset
 ```
-There are many different ways to input data to VW. Here we're just using a simple text file and VW tells us the source of the data. Alternative sources include cache files (from previous VW runs), stdin, or a tcp socket.
+
+>**Note:** There are many different ways to input data to Vowpal Wabbit. Here we're just using a simple text file and Vowpal Wabbit tells us the source of the data. Alternative sources include **cache files** (from previous runs), **stdin**, or a **tcp socket**.
+
+### Number of data sources
+
+The following output shows the number of data sources:
 
 ```
 num sources = 1
 ```
-There is only one input file in our example. But you can specify multiple files.
 
+There is only one input file in this example, but we can specify multiple files.
 
-Next, there is a bunch of header information. VW is going to print out some live diagnostic information.
+## Vowpal Wabbit diagnostic header
+
+Vowpal Wabbit prints live diagnostic information in the header like the following:
 
 ```
 average  since         example        example  current  current  current
@@ -106,15 +206,19 @@ loss     last          counter         weight    label  predict features
 0.666667 1.000000            2            3.0   1.0000   0.0000        5
 ```
 
-- `average loss` computes the <a href="http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf" target="_blank">progressive validation</a> loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
-- `since last` is the progressive validation loss since the last printout.
-- `example counter` tells you which example is printed out. In this case, it's example 2.
-- `example weight` tells you the sum of the importance weights of examples seen so far. In this case it's 3, because the second example has an importance weight of 2.
-- `current label` tells you the label of the second example.
-- `current predict` tells you the prediction (before training) on the current example.
-- `current features` tells you how many features the current example has. This is great for debugging, and you'll note that we have 5 features when you expect 4. This happens, because VW has a default constant feature which is always added in. Use the `--noconstant` command-line option to turn it off.
+- The `average loss` output computes the [progressive validation](http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf){:target="blank"} loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.
+- The `since last` output is the progressive validation loss since the last printout.
+- The `example counter` output tells you which example is printed. In this case, it's example `2`.
+- The `example weight` output tells you the sum of the importance weights of examples seen so far. In this case it's `3.0`, because the second example has an importance weight of `2.0`.
+- The `current label` output tells you the label of the second example.
+- The `current predict` output tells you the prediction (before training) on the current example.
+- The `current features` output tells you the amount of features in the current example.
+ 
+The `current features` diagnostic is great for debugging. Note that we have five features when you expect four. This happens because Vowpal Wabbit always adds a default constant feature.
 
-VW prints a new line with an exponential backoff. This is very handy, because often you can debug some problem before the learning algorithm finishes going through a data-set.
+Use the `--noconstant` command-line option to turn it off.
+
+Vowpal Wabbit prints a new line with an exponential backoff. This is very handy, because we can often debug a problem before the learning algorithm finishes going through a data-set.
 
 ```
 finished run
@@ -126,16 +230,19 @@ best constant = 0.500000
 best constant's loss = 0.250000
 total feature number = 15
 ```
-At the end, some more straightforward totals are printed. The only mysterious one is:
-`best constant` and `best constant's loss` These really only work if you are using squared loss, which is the default. They compute the best constant's predictor and the loss of the best constant predictor. If `average loss` is not better than `best constant's loss`, something is wrong. In this case, we have too few examples to generalize.
 
-If we want to overfit like mad, we can simply use:
+At the end, some more straightforward totals are printed. The `best constant` and `best constant's loss` only work if you are using squared loss. Squared loss is the Vowpal Wabbit default. They compute the best constant's predictor and the loss of the best constant predictor.
+
+If `average loss` is not better than `best constant's loss`, something is wrong. In this case, we have too few examples to generalize.
+
+If you want to overfit, use the following:
 
 ```sh
 vw house_dataset -l 10 -c --passes 25 --holdout_off
 ```
 
 The progress section of the output is:
+
 ```
 average  since         example        example  current  current  current
 loss     last          counter         weight    label  predict features
@@ -147,63 +254,78 @@ loss     last          counter         weight    label  predict features
 0.090774 0.000000           47           63.0   1.0000   1.0000        5
 ```
 
-You'll notice that by example 47 (25 passes over 3 examples result in 75 examples), the `since last` column has dropped to 0, implying that by looking at the same (3 lines of) data 25 times we have reached a perfect predictor. This is unsurprising with 3 examples having 5 features each. The reason we have to add `--holdout_off` is that when running multiple-passes, VW automatically switches to 'over-fit avoidance' mode by holding-out 10% of the examples (the period "one in 10" can be changed using `--holdout_period period`) and evaluating performance on the held-out data instead of using the online-training progressive loss.
+You'll notice that by example 47 (25 passes over 3 examples result in 75 examples), the `since last` column has dropped to `0`, implying that by looking at the same (three lines) of data 25 times we have reached a perfect predictor. This is unsurprising with three examples having five features each.
 
-## Saving your model (a.k.a. regressor) into a file
+The reason we have to add `--holdout_off` is that when running multiple-passes, Vowpal Wabbit automatically switches to 'over-fit avoidance' mode by holding-out 10% of the examples (the "1 in 10" period can be changed using `--holdout_period period`) and evaluating performance on the held-out data instead of using the online-training progressive loss.
 
-By default VW learns the weights of the features and keeps them in an in memory vector. If you want to save the final regressor weights into a file, add `-f filename`:
+## Saving your model into a file
+
+Vowpal Wabbit learns the weights of the features and keeps them in an in memory vector by default.
+
+Add `-f filename` to save the final regressor weights to a file.
+
+For example:
 
 ```sh
 vw house_dataset -l 10 -c --passes 25 --holdout_off -f house.model
 ```
 
-## Getting predictions
+## Vowpal Wabbit predictions
 
-We want to make predictions of course, this can be done by supplying the `-p filename` option. Stdout can be used as below:
+We can make predictions in Vowpal Wabbit by supplying the `-p filename`.
+
+For example, to output them to standard out `stdout`:
 
 ```sh
 vw house_dataset -p /dev/stdout --quiet
 ```
 
-The output is:
+**Output:**
+
 ```
 0.000000
 0.000000 second_house
 1.000000 third_house
 ```
 
-- The 1st output line `0.000000` is for the 1st example which has an empty tag.
-- The 2nd output `0.000000 second_house` is for the 2nd example. You'll notice the tag appears here. This is the primary use of the tag: mapping predictions to the examples they belong to.
-- The 3rd output `1.000000 third_house` is for the 3rd example. Clearly, some learning happened, because the prediction is now `1.000000` while the initial prediction was set to `0.5`.
+- The first line `0.000000` refers to the first example which has an empty tag.
+- The second line `0.000000 second_house` refers to the second example. Notice that the tag appears here. The primary use of the tag is mapping predictions to the corresponding examples.
+- The third output `1.000000 third_house` refers to the third example. The initial prediction was set to `0.5`, and the prediction is now `1.000000`. This means _some_ learning occurred. 
 
-Note that in this last example, we predicted _while we learned_. The model was being incrementally built in memory as VW went over the examples.
+In the last example, Vowpal Wabbit predicted while it learned. The model was being built in memory incrementally, as it went over the examples.
 
-Alternatively, and more commonly, we would first learn and save the model into a file. Later we would predict using the saved model.
+It is more common to learn first, then save the model to a file. Then, you make predictions using that saved model.
 
-You may load a initial model to memory by adding `-i house.model`. You may also want to specify `-t` which stands for "test-only" (do no learning):
+Use `-i house.model` to load the initial model to memory. Add `-t` to specify **test-only** (do no learning):
 
 ```sh
 vw -i house.model -t house_dataset -p /dev/stdout --quiet
 ```
 
-Which would output:
+**Output:**
+
 ```
 0.000000
 1.000000 second_house
 0.000000 third_house
 ```
 
-Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data, whereas in the 2nd example we first loaded an over-fitted (25 pass) model and used our data-set `house_dataset` with `-t` (testing only mode). In real prediction settings, one should use a different data-set for testing vs training.
+Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data. For the second example, we loaded an over-fitted (25 pass) model and used our dataset `house_dataset` with `-t` (testing only mode).
+
+>**Note:** Always use a different dataset for testing vs training for real prediction settings.
 
 ## Auditing
 
-When developing a new ML application, it's very helpful to debug. VW can help with this using the `--audit` option, which outputs extra informations about predictions and features.
+Vowpal Wabbit has a built in `--audit` option that is helpful for debugging a machine learning application.
+
+Use `--audit` to output helpful information about predictions and features:
 
 ```sh
 vw house_dataset --audit --quiet
 ```
 
-Output:
+**Output:**
+
 ```
 0
   price:229902:0.23:0@0  sqft:162853:0.25:0@0  age:165201:0.05:0@0  2006:2006:1:0@0  Constant:116060:1:0@0
@@ -213,26 +335,54 @@ Output:
   price:229902:0.53:0.882655@0.2592  age:165201:0.87:0.453833@0.98  sqft:162853:0.32:1.05905@0.18  Constant:116060:1:0.15882@8  1924:1924:1:0@0
 ```
 
-Every example uses two lines. The first line has the prediction, and the second line has one entry per feature. Looking at the first feature, we see:
+Every example uses two lines:
+
+- The first line is the prediction.
+- The second line shows one entry per feature.
+
+The first feature listed is:
 
 ```
 price:229902:0.23:0@0.25
 ```
 
-- `price` is the original feature name. If you use a namespace, it appears before `^` (i.e. `Namespace^Feature`). Namespaces are an advanced feature which allows you to group features and operate them on-the-fly, in the core of VW with the options: `-q XY` (cross a pair of namespaces), `--cubic XYZ` (cross 3 namespaces), `--lrq XYn` (low-rank quadratic interactions), and `--ignore X` (skip all features belonging to a namespace).
-- `229902` is the index of the feature, computed by a hash function on the feature name.
-- `0.23` is the value of the feature.
-- `0` is the value of the feature's weight.
-- `@0.25` represents the sum of gradients squared for that feature when you are using per-feature adaptive learning rates.
+The original feature name is `price`. Vowpal Wabbit has an advanced _namespaces_ option that allows us to group features and operate them on-the-fly. If we use a namespace, it appears before `^` (i.e. `Namespace^Feature`).
 
-Examining further, you'll notice that the feature `2006` uses the index 2006. This means that you may use hashes or pre-computed indices for features, as is common in other machine learning systems.
+Namespace options include the following:
 
-The advantage of using unique integer-based feature-names is that they are guaranteed not to collide after hashing. The advantage of free-text (non integer) feature names is readability and self-documentation. Since only `:`, `|`, and _spaces_ are special to the VW parser, you can give features extremely readable names like: `height>2 value_in_range[1..5] color=red` and so on. Feature names may even start with a digit, e.g.: `1st-guess:0.5 2nd-guess:3` etc.
+- `-q XY` to cross a pair of namespaces. 
+- `--cubic XYZ` to cross 3 namespaces.
+- `--lrq XYn` low-rank quadratic interactions. 
+- `--ignore X` skip all features belonging to a namespace.
 
-## What's next?
+Now, let’s return to the first feature listed again:
 
-The above only scratches the surface of VW. You can learn with other loss functions, with other optimizers, with other representations, with clusters of 1000s of machines, and even do ridiculously fast active learning.
+```
+price:229902:0.23:0@0.25
+```
 
-- Learn about using VW to do reinforcement learning in the [Contextual Bandit tutorial]( {{ "tutorials/contextual_bandits.html" | relative_url}} )
-- Explore more content in the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Tutorial#more-tutorials" target="_blank">tutorials section of the GitHub wiki</a>
-- Browse <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples" target="_blank">examples on the GitHub wiki</a>
+- The index of the feature `229902`, computed by a hash function on the feature name.
+- The value of the feature is `0.23`.
+- The value of the feature's weight `0`.
+- The sum of gradients squared for that feature is `@0.25` (when you use _per-feature adaptive learning rates_).
+
+Notice that the feature `2006` uses the index 2006. This means that you may use _hashes_ or _pre-computed indices_ for features, as is common in other machine learning systems.
+
+The advantage of using unique _integer-based feature names_ is that they are guaranteed not to collide after hashing. The advantage of _free-text (non integer)_ feature names is readability and self-documentation.
+
+Because only `:`, `|`, and _spaces_ are special to the Vowpal Wabbit parser, we can give features easy-to-read names. For example:
+
+`height>2 value_in_range[1..5] color=red`
+
+We can even start feature names with a digit. For example:
+
+`1st-guess:0.5 2nd-guess:3`
+
+## More to explore
+
+This tutorial only describes a fraction of Vowpal Wabbit’s capabilities. To explore more about other Vowpal Wabbit features and performance — loss functions, optimizers, and representations — including ridiculously fast active learning with clusters of thousands of machines, see the following resources:
+
+- To learn how to approach a contextual bandits problem using Vowpal Wabbit — including how to  work with different contextual bandits approaches, how to format data, and understand the results — see the [Contextual Bandit Reinforcement Learning Tutorial](contextual_bandits.html).
+- For more on the contextual bandits approach to reinforcement learning, including a content personalization scenario, see the [Contextual Bandit Simulation Tutorial](cb_simulation.html).
+- Explore more Vowpal Wabbit [Tutorials](../tutorials.html).
+- Browse [examples on the GitHub wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples){:target="blank"}.
