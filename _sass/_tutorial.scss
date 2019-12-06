@@ -97,11 +97,6 @@
     font-size: 15px;
     line-height: 20px;
 
-    label {
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
     ul {
       padding-left: 0;
     }
@@ -124,8 +119,13 @@
         a {
           color: $primary-text;
           font-weight: 600;
-          letter-spacing: -0.5px;
+          letter-spacing: -0.2px;
         }
+      }
+
+      &.label {
+        font-weight: 600;
+        text-transform: uppercase;
       }
     }
   }
