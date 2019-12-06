@@ -117,9 +117,7 @@
 
       &.active {
         a {
-          color: $primary-text;
-          font-weight: 600;
-          letter-spacing: -0.2px;
+          color: $blue-10;
         }
       }
 
@@ -136,7 +134,7 @@
 
     a {
       border: none;
-      color: $blue-20;
+      color: $primary-text;
 
       &:after {
         display: inline-block;
