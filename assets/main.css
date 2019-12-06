@@ -41,9 +41,9 @@ h4 { font-size: 1.5rem; line-height: 1.25; font-weight: 400; }
 .main_nav_container .nav a { margin: 0 1rem; }
 .main_nav_container .external_links { border-left: 1px solid rgba(255, 255, 255, 0.3); margin-left: 1rem; padding-left: 1rem; display: flex; align-items: center; }
 
-@media screen and (max-width: 768px) { .main_nav_container { display: none; }
+@media screen and (max-width: 800px) { .main_nav_container { display: none; }
   .mobile_nav_container { display: block; } }
-@media screen and (min-width: 768px) { .main_nav_container { display: block; }
+@media screen and (min-width: 800px) { .main_nav_container { display: block; }
   .mobile_nav_container { display: none; } }
 .mobile_nav_container .hamburger_icon { width: 3rem; height: 3rem; display: flex; align-items: center; }
 .mobile_nav_container .logo { flex: 1 1 0; }
@@ -202,6 +202,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tabs_container .tab_content_wrapper { position: relative; }
 .tabs_container .tab_content > div:not(.active_content) { opacity: 0; visibility: hidden; position: absolute; }
 .tabs_container .tab_content .active_content { opacity: 1; position: absolute; transition: all 0.35s ease-in; }
+@media screen and (max-width: 800px) { .tabs_container .tab_content .active_content { position: relative; } }
 .tabs_container .hidden { display: none; }
 
 .tutorial .hero { background: #2A3B93; color: white; padding: 3rem 1rem; }
@@ -224,12 +225,12 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tutorial_container table td { border: 1px solid #EBEBEB; padding: 0.9rem 1.3rem; }
 .tutorial_container img { max-width: 100%; }
 .tutorial_container .tutorial_nav { position: sticky; top: 5rem; font-size: 15px; line-height: 20px; }
-.tutorial_container .tutorial_nav label { font-weight: 600; text-transform: uppercase; }
 .tutorial_container .tutorial_nav ul { padding-left: 0; }
 .tutorial_container .tutorial_nav li { display: block; padding: 0.8rem 0; }
 .tutorial_container .tutorial_nav li span { padding: 1rem 0; }
 .tutorial_container .tutorial_nav li a { border: 0; padding: 0; color: #999999; }
-.tutorial_container .tutorial_nav li.active a { color: #333333; font-weight: 600; letter-spacing: -0.5px; }
+.tutorial_container .tutorial_nav li.active a { color: #333333; font-weight: 600; letter-spacing: -0.2px; }
+.tutorial_container .tutorial_nav li.label { font-weight: 600; text-transform: uppercase; }
 .tutorial_container .tutorial_nav .run_tutorial_links { padding: 2rem 0; border-top: 1px solid #D0D0D0; }
 .tutorial_container .tutorial_nav .run_tutorial_links a { border: none; color: #2A3B93; }
 .tutorial_container .tutorial_nav .run_tutorial_links a:after { display: inline-block; content: ''; background-image: url("../assets/images/icons/icon_export_small.svg"); background-size: 16px 16px; height: 16px; width: 16px; margin-right: 0.5rem; }
