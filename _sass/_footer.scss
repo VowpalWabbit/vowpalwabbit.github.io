@@ -4,4 +4,22 @@
   height: 3.5rem;
   font-size: 1.125rem;
   line-height: 1.33;
+
+  .feedback_col {
+    text-align: end;
+  }
+
+  .feedback_link {
+    color: $primary-text;
+
+    &:hover {
+      color: $blue-10;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    .feedback_col {
+      display: none;
+    }
+  }
 }

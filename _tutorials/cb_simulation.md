@@ -497,4 +497,4 @@ plot_ctr(total_iterations, ctr)
 
 This contextual bandit tutorial showcases a real-world simulation scenario for using the contextual bandit approach to reinforcement learning. We take a context and a set of actions and learn what actions worked best for a given context. The result is that the learner responds rapidly to real-world changes. We showed that allowing the learner to interact with the world resulted in higher rewards than the "without learning" baseline.
 
-This tutorial worked with simplistic features. VW supports high dimensional sparse features, [different exploration algorithms and policy evaluation approaches](contextual_bandits.html#vowpal-wabbit-contextual-bandits-algorithms-and-format).
+This tutorial worked with simplistic features. VW supports high dimensional sparse features, [different exploration algorithms and policy evaluation approaches](contextual_bandits.html#algorithms-and-format).
