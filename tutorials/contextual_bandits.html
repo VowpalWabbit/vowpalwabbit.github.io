@@ -180,6 +180,13 @@
     Research
   </a>
   <div class="external_links">
+    <a
+      href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/issues/new"
+      target="_blank"
+    >
+      Feedback
+    </a>
+
     <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki" target="_blank">
       Wiki
     </a>
@@ -306,13 +313,13 @@
 
 <h2 id="getting-started">Getting started</h2>
 
-<p>If you are familiar with reinforcement learning and ready to start using Vowpal Wabbit in a contextual bandit setting, please see Part Two: Vowpal Wabbit Contextual Bandits Tutorial. This section includes a Python tutorial, information for how to work with Vowpal Wabbit contextual bandits approaches, how to format data, and understand the results.</p>
+<p>If you are familiar with reinforcement learning and ready to start using Vowpal Wabbit in a contextual bandit setting, please see <a href="contextual_bandits.html#part-two">Part Two</a> tutorial. This section includes a Python tutorial, information for how to work with Vowpal Wabbit contextual bandits approaches, how to format data, and understand the results.</p>
 
 <h2 id="what-is-reinforcement-learning">What is reinforcement learning?</h2>
 
 <p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/personalizer/concepts-reinforcement-learning" target="blank">Reinforcement learning</a> is a machine learning paradigm used to train models for sequential decision making. It involves using algorithms concerned with how a software agent takes suitable actions in complex environments and uses the feedback to maximize reward over time. This approach provides the freedom to enact specific user behavior, in a given context, and provide feedback on how the chosen behavior is rewarded based on the goal.</p>
 
-<h2 id="the-contextual-bandits-approach-to-reinforcement-learning">The contextual bandits approach to reinforcement learning</h2>
+<h2 id="the-contextual-bandits-approach">The contextual bandits approach</h2>
 
 <p>Vowpal Wabbit founder John Langford coined the term <a href="http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf" target="blank">contextual bandits</a> to describe a flexible subset of reinforcement learning. The contextual bandit approach to reinforcement learning frames decision-making (choices) between separate actions in a given context.</p>
 
@@ -330,11 +337,11 @@
   <li><strong>Step Three:</strong> The player observes the reward ri.</li>
 </ul>
 
-<p>The contextual bandits setting considered in Part Two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit’s default algorithm for this type of exploration is <a href="http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf" target="blank">Epsilon-Greedy</a>.</p>
+<p>The contextual bandits setting considered in part two of this tutorial is the same except for the second step, in which the player also observes context information x (which is used to determine which arm to pull). Vowpal Wabbit’s default algorithm for this type of exploration is <a href="http://hunch.net/~jl/projects/interactive/sidebandits/bandit.pdf" target="blank">Epsilon-Greedy</a>.</p>
 
 <p>The contextual bandits problem is more suitable than the standard bandits problem because settings with no context information are rare in practice. For more on the research behind contextual bandits and this approach to Vowpal Wabbit reinforcement learning, see <a href="../research.html">Research</a>.</p>
 
-<h2 id="part-two-vowpal-wabbit-contextual-bandits-tutorial">Part Two: Vowpal Wabbit Contextual Bandits Tutorial</h2>
+<h2 id="part-two">Part Two</h2>
 
 <p>Vowpal Wabbit is an interactive machine learning library and the reinforcement learning framework for services like <a href="https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/" target="blank">Microsoft Personalizer</a>. It allows for maximum throughput and lowest latency when making personalization ranks and training the model with all events. For more on the Vowpal Wabbit framework, including a tutorial for simulating web content personalization, see <a href="cb_simulation.html">Content Personalization with Contextual Bandits</a>.</p>
 
@@ -342,7 +349,7 @@
 
 <p>This tutorial uses an application example we’ll call <strong>APP</strong> to introduce a Vowpal Wabbit approach to the contextual bandit problem and explore the capabilities of this reinforcement learning approach. The problem scenario of web content personalization motivates our example  <strong>APP</strong>. The goal is to show the user the most relevant web content on each page to maximize engagement (clicks).</p>
 
-<h2 id="working-with-contextual-bandits-in-vowpal-wabbit">Working with contextual bandits in Vowpal Wabbit</h2>
+<h3 id="working-with-contextual-bandits">Working with contextual bandits</h3>
 
 <p><strong>APP</strong> interacts with the context of a user’s behavior (search history, visited pages, or geolocation) in a dynamic environment – such as a news website or a cloud controller. <strong>APP</strong> differs from the multi-armed bandits problem because we have some information available to the <strong>APP</strong>, which is the context.</p>
 
@@ -381,7 +388,7 @@
 
 <p>Contexts and actions are typically represented as feature vectors in contextual bandit algorithms. For example, <strong>APP</strong> chooses actions by applying a policy <strong>π</strong> that takes a context as input and returns an action. The goal is to find a policy that maximizes the average reward over a sequence of interactions.</p>
 
-<h2 id="specifying-the-contextual-bandit-approach">Specifying the contextual bandit approach</h2>
+<h3 id="specify-the-approach">Specify the approach</h3>
 
 <p>There are multiple policy evaluation approaches available to optimize a policy. Vowpal Wabbit offers four approaches to specify a contextual bandit approach using <code class="highlighter-rouge">--cb_type</code>:</p>
 
@@ -396,7 +403,7 @@
   <p><strong>Note:</strong> The focal point of contextual bandit learning research is efficient exploration algorithms. For more details, see the <a href="https://arxiv.org/pdf/1802.04064.pdf" target="blank">Contextual Bandit bake-off paper</a>.</p>
 </blockquote>
 
-<h2 id="specifying-exploration-algorithms">Specifying exploration algorithms</h2>
+<h3 id="specifying-exploration">Specifying exploration</h3>
 
 <p>Vowpal Wabbit offers five exploration algorithms:</p>
 
@@ -412,7 +419,7 @@
   <p><strong>Note:</strong> For more details on contextual bandits algorithms and Vowpal Wabbit, please refer to the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms" target="blank">Vowpal Wabbit Github Wiki</a>.</p>
 </blockquote>
 
-<h2 id="vowpal-wabbit-contextual-bandits-algorithms-and-format">Vowpal Wabbit contextual bandits algorithms and format</h2>
+<h2 id="algorithms-and-format">Algorithms and format</h2>
 
 <p>There are four main components to a contextual bandit problem:</p>
 
@@ -742,7 +749,7 @@ pip <span class="nb">install </span>vowpalwabbit
 
 </div>
 
-<h2 id="contextual-bandits-python-tutorial">Contextual bandits Python tutorial</h2>
+<h2 id="python-tutorial">Python tutorial</h2>
 
 <p>First, create the Python model store the model parameters in the Python <code class="highlighter-rouge">vw</code> object.</p>
 
@@ -1016,9 +1023,18 @@ pip <span class="nb">install </span>vowpalwabbit
 
     <div class="container-fluid footer_container">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center justify-content-between">
       <div class="col">
         Sponsored by Microsoft
+      </div>
+      <div class="col feedback_col">
+        <a
+          class="feedback_link"
+          href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/issues/new"
+          target="_blank"
+        >
+          Feedback
+        </a>
       </div>
     </div>
   </div>

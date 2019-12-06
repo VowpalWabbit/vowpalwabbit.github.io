@@ -61,6 +61,10 @@ h4 { font-size: 1.5rem; line-height: 1.25; font-weight: 400; }
 .mobile_nav.open { width: 320px; }
 
 .footer_container { background: #EBEBEB; padding: 1rem 0; height: 3.5rem; font-size: 1.125rem; line-height: 1.33; }
+.footer_container .feedback_col { text-align: end; }
+.footer_container .feedback_link { color: #333333; }
+.footer_container .feedback_link:hover { color: #415EBF; }
+@media screen and (max-width: 800px) { .footer_container .feedback_col { display: none; } }
 
 .install_vw_config { padding-left: 4rem; counter-reset: install-step-counter; }
 .install_vw_config .installation_step { padding-bottom: 2rem; }
@@ -229,10 +233,10 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tutorial_container .tutorial_nav li { display: block; padding: 0.8rem 0; }
 .tutorial_container .tutorial_nav li span { padding: 1rem 0; }
 .tutorial_container .tutorial_nav li a { border: 0; padding: 0; color: #999999; }
-.tutorial_container .tutorial_nav li.active a { color: #333333; font-weight: 600; letter-spacing: -0.2px; }
+.tutorial_container .tutorial_nav li.active a { color: #415EBF; }
 .tutorial_container .tutorial_nav li.label { font-weight: 600; text-transform: uppercase; }
 .tutorial_container .tutorial_nav .run_tutorial_links { padding: 2rem 0; border-top: 1px solid #D0D0D0; }
-.tutorial_container .tutorial_nav .run_tutorial_links a { border: none; color: #2A3B93; }
+.tutorial_container .tutorial_nav .run_tutorial_links a { border: none; color: #333333; }
 .tutorial_container .tutorial_nav .run_tutorial_links a:after { display: inline-block; content: ''; background-image: url("../assets/images/icons/icon_export_small.svg"); background-size: 16px 16px; height: 16px; width: 16px; margin-right: 0.5rem; }
 .tutorial_container .tutorial_nav .run_tutorial_links a:hover { text-decoration: none; color: #415EBF; }
 .tutorial_container .prerequisites { background: #F2F2F2; padding: 1rem 2rem; margin-top: 2rem; }
