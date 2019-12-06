@@ -15,7 +15,7 @@
   <script src="/assets/app.js"></script>
 
   <title>Content Personalization with Contextual Bandits  | Vowpal Wabbit</title>
-  <meta name="description" content="In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using contextual bandits to make choices between actions in a given context." >
+  <meta name="description" content="In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using the contextual bandits approach to reinforcement learning." >
 </head>
 
 
@@ -253,17 +253,17 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="tutorial_nav">
-            <label>
-              Table of contents
-            </label>
             <ul class="tutorial_content_nav">
+              <li class="label">
+                Table of contents
+              </li>
             </ul>
             
               <div class="run_tutorial_links">
-                <label>
-                  Run this tutorial
-                </label>
                 <ul>
+                  <li class="label">
+                    Run this tutorial
+                  </li>
                   <li>
                     <span>
                       <a
@@ -290,55 +290,60 @@
           </div>
         </div>
         <div class="col-lg-9">
-          <h1 id="simulating-a-news-personalization-scenario-using-contextual-bandits">Simulating a news personalization scenario using Contextual Bandits</h1>
+          <h1 id="simulating-content-personalization-with-contextual-bandits">Simulating Content Personalization with Contextual Bandits </h1>
 
-<p>In the <a href="contextual_bandits.html">Contextual Bandit(CB) introduction tutorial</a>, we learnt about CB and different CB algorithms. In this tutorial we will simulate the scenario of personalizing news content on a site, using CB, to users. The goal is to maximize user engagement quantified by measuring click through rate (CTR).</p>
+<p>In the first <a href="contextual_bandits.html">Contextual Bandits Reinforcement Learning</a> tutorial, we learned about this approach to reinforcement learning with Vowpal Wabbit and contextual bandit algorithms. In this tutorial, we simulate a content personalization scenario with Vowpal Wabbit using contextual bandits to make choices between actions in a given context. The goal is to maximize user engagement as quantified by measuring the expected reward — click-through rate (CTR).</p>
 
-<p>Let’s recall that in a CB setting, a data point has four components,</p>
+<p>In a contextual bandit setting, a data point has four components:</p>
 
 <ul>
   <li>Context</li>
   <li>Action</li>
-  <li>Probability of choosing action</li>
-  <li>Reward/cost for chosen action</li>
+  <li>Probability of choosing the action</li>
+  <li>Reward/cost for the chosen action</li>
 </ul>
 
-<p>In our simulator, we will need to generate a context, get an action/decision for the given context and also simulate generating a reward.</p>
+<p>We need to generate a context in our simulator to get an action/decision for the given context, and to simulate generating a reward. The goal of the simulator is to maximize reward (CTR) — or minimize loss (-CTR).</p>
 
-<p>In our simulator, our goal is to maximize reward (click through rate/CTR) or minimize loss (-CTR)</p>
+<p>The <strong>context</strong> is therefore (user, time_of_day):</p>
 
 <ul>
-  <li>We have two website visitors: ‘Tom’ and ‘Anna’</li>
-  <li>Each of them may visit the website either in the morning or in the afternoon</li>
+  <li>We have two website visitors: “Tom” and “Anna.”</li>
+  <li>Tom and Anna visit the website in the morning or the afternoon.</li>
 </ul>
 
-<p>The <strong>context</strong> is therefore (user, time_of_day)</p>
+<p>We have the option of recommending a variety of articles to Tom and Anna. Therefore, the <strong>actions</strong> are the different choices of articles: “politics”, “sports”, “music”, “food”, “finance”, “health”, or “cheese.”</p>
 
-<p>We have the option of recommending a variety of articles to Tom and Anna. Therefore, <strong>actions</strong> are the different choices of articles: “politics”, “sports”, “music”, “food”, “finance”, “health”, “cheese”</p>
+<p>The <strong>reward</strong> is whether they click on the article or not: “click” or “no click.”</p>
 
-<p>The <strong>reward</strong> is whether they click on the article or not: ‘click’ or ‘no click’</p>
+<h2 id="getting-started">Getting started</h2>
 
-<p>Let’s first start with importing the necessary packages:</p>
+<p>Import the following packages to build this simulation in Python:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">vowpalwabbit</span> <span class="kn">import</span> <span class="n">pyvw</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </code></pre></div></div>
 
-<h2 id="simulate-reward">Simulate reward</h2>
+<h2 id="simulating-reward-for-vowpal-wabbit">Simulating reward for Vowpal Wabbit</h2>
 
-<p>In the real world, we will have to learn Tom and Anna’s preferences for articles as we observe their interactions. Since this is a simulation, we will have to define Tom and Anna’s preference profile. The reward that we provide to the learner will follow this preference profile. Our hope is to see if the learner can take better and better decisions as we see more samples which in turn means we are maximizing the reward.</p>
+<p>In the real world, we must learn Tom and Anna’s preferences for articles as we observe their interactions. Since this is a simulation, we must define Tom and Anna’s preference profile. </p>
 
-<p>We will also modify the reward function in a few different ways and see if the CB learner picks up the changes. We will compare the CTR with and without learning.</p>
+<p>The reward that we provide to the learner follows this preference profile. We hope to see if the learner can make better and better decisions as we see more samples, which in turn means we are maximizing the reward.</p>
 
-<p>VW optimizes to minimize <strong>cost which is negative of reward</strong>. Therefore, we will always pass negative of reward as cost to VW.</p>
+<p>To accomplish this, we need to modify the reward function in a few different ways and see if the contextual bandit learner picks up the changes. Then, we compare the CTR with and without learning.</p>
+
+<p>Vowpal Wabbit optimizes to minimize cost, which is negative of reward. </p>
+
+<p>Therefore, <strong>we always pass negative of reward as cost to Vowpal Wabbit.</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># VW tries to minimize loss/cost, therefore we will pass cost as -reward
 </span><span class="n">USER_LIKED_ARTICLE</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
 <span class="n">USER_DISLIKED_ARTICLE</span> <span class="o">=</span> <span class="mf">0.0</span>
 </code></pre></div></div>
+<p>The reward function below specifies that Tom likes politics in the morning and music in the afternoon. Anna likes sports in the morning and politics in the afternoon. It looks dense, but we are simulating a hypothetical world in the format of the feedback the learner understands — cost.</p>
 
-<p>The reward function below specifies that Tom likes politics in the morning and music in the afternoon whereas Anna likes sports in the morning and politics in the afternoon. It looks dense but we are just simulating our hypothetical world in the format of the feedback the learner understands: cost. If the learner recommends an article that aligns with the reward function, we give a positive reward. In our simulated world this is a click.</p>
+<p>If the learner recommends an article that aligns with the reward function, we give a positive reward. In our simulation, this is a click:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_cost</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="n">action</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">context</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Tom"</span><span class="p">:</span>
@@ -357,9 +362,11 @@
             <span class="k">return</span> <span class="n">USER_DISLIKED_ARTICLE</span>
 </code></pre></div></div>
 
-<h2 id="understanding-vw-format">Understanding VW format</h2>
+<h2 id="understanding-vowpal-wabbit-format">Understanding Vowpal Wabbit format</h2>
 
-<p>There are some things we need to do to get our input into a format VW understands. This function handles converting from our context as a dictionary, list of articles and the cost if there is one into the text format VW understands.</p>
+<p>There are steps we need to take to set up our input in a format Vowpal Wabbit understands. </p>
+
+<p>This function handles converting from our context as a dictionary, list of articles, and the cost if there is one into the text format it understands:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This function modifies (context, action, cost, probability) to VW friendly format
 </span><span class="k">def</span> <span class="nf">to_vw_example_format</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">cb_label</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
@@ -375,7 +382,9 @@
 </span>    <span class="k">return</span> <span class="n">example_string</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div></div>
 
-<p>To understand what’s going on here let’s go through an example. Here, it’s the morning and the user is Tom. There are four possible articles. So in the VW format there is one line that starts with shared, this is the shared context, followed by four lines each corresponding to an article.</p>
+<p>To make sense of this format, we go through an example. In this example, the time of day is morning, and the user is Tom. There are four possible articles. </p>
+
+<p>In Vowpal Wabbit format, there is one line that starts with shared-the shared context-followed by four lines each corresponding to an article:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">"user"</span><span class="p">:</span><span class="s">"Tom"</span><span class="p">,</span><span class="s">"time_of_day"</span><span class="p">:</span><span class="s">"morning"</span><span class="p">}</span>
 <span class="n">actions</span> <span class="o">=</span> <span class="p">[</span><span class="s">"politics"</span><span class="p">,</span> <span class="s">"sports"</span><span class="p">,</span> <span class="s">"music"</span><span class="p">,</span> <span class="s">"food"</span><span class="p">]</span>
@@ -383,7 +392,7 @@
 <span class="k">print</span><span class="p">(</span><span class="n">to_vw_example_format</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="n">actions</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p>Output:</p>
+<p><strong>Output:</strong></p>
 <div class="output">
   <p>shared |User user=Tom time_of_day=morning
 |Action article=politics
@@ -392,11 +401,13 @@
 |Action article=food</p>
 </div>
 
-<h2 id="getting-a-decision">Getting a decision</h2>
+<h2 id="getting-a-decision-from-vowpal-wabbit">Getting a decision from Vowpal Wabbit</h2>
 
-<p>When we call VW we get a <strong>pmf</strong>, <a href="https://en.wikipedia.org/wiki/Probability_mass_function">probability mass function</a>, as the output. Since we are incorporating exploration into our strategy, VW will give us a list of probabilities over the set of actions. This means that the probability at a given index in the list corresponds to the likelihood of picking that specific action. In order to arrive at a decision/action, we will have to sample from this list.</p>
+<p>When we call Vowpal Wabbit, the output is a <a href="https://en.wikipedia.org/wiki/Probability_mass_function" target="blank">probability mass function</a> (PMF). Vowpal Wabbit provides a list of probabilities over the set of actions because we are incorporating exploration into our strategy. This exploration means that the probability at a given index in the list corresponds to the likelihood of picking that specific action. </p>
 
-<p>So, given a list <strong>[0.7, 0.1, 0.1, 0.1]</strong>, we would choose the first item with a 70% chance. <code class="highlighter-rouge">sample_custom_pmf</code> takes such a list and gives us the index it chose and what the probability of choosing that index was.</p>
+<p>To arrive at a decision/action, we must sample from this list.</p>
+
+<p>For example, given the list <strong>[0.7, 0.1, 0.1, 0.1]</strong>, we would choose the first item with a 70% chance. The command <code class="highlighter-rouge">sample_custom_pmf</code> takes such a list and gives us the index it chose and what the probability of choosing that index was.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sample_custom_pmf</span><span class="p">(</span><span class="n">pmf</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">pmf</span><span class="p">)</span>
@@ -410,14 +421,18 @@
             <span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="n">prob</span>
 </code></pre></div></div>
 
-<p>We have all of the information we need to choose an action for a specific user and context. To use VW to achieve this, we will do the following:</p>
+<p>We have all the information we need to choose an action for a specific user and context. Use Vowpal Wabbit to achieve this with the following steps:</p>
 
 <ol>
-  <li>We convert our context and actions into the text format we need</li>
-  <li>We pass this example to vw and get the pmf out</li>
-  <li>Now, we sample this pmf to get what article we will end up showing</li>
-  <li>Finally we return the article chosen, and the probability of choosing it (we are going to need the probability when we learn form this example)</li>
+  <li>Convert the context and actions into the text format needed.</li>
+  <li>Pass this example to Vowpal Wabbit and get the PMF output.</li>
+  <li>Sample this PMF to get the article to show.</li>
+  <li>Return the chosen article and the probability of choosing it. </li>
 </ol>
+
+<blockquote>
+  <p><strong>Note:</strong> We need the probability when we learn from this example.</p>
+</blockquote>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="n">vw</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">actions</span><span class="p">):</span>
     <span class="n">vw_text_example</span> <span class="o">=</span> <span class="n">to_vw_example_format</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="n">actions</span><span class="p">)</span>
@@ -426,11 +441,11 @@
     <span class="k">return</span> <span class="n">actions</span><span class="p">[</span><span class="n">chosen_action_index</span><span class="p">],</span> <span class="n">prob</span>
 </code></pre></div></div>
 
-<h2 id="simulation-set-up">Simulation set up</h2>
+<h2 id="reinforcement-learning-simulation">Reinforcement learning simulation</h2>
 
-<p>Now that we have done all of the setup work and know how to interface with VW, let’s simulate the world of Tom and Anna. The scenario is they go to a website and are shown an article. Remember that the reward function allows us to define the worlds reaction to what VW recommends.</p>
+<p>Now that we have done all of the setup work and we know how to interface with Vowpal Wabbit let’s simulate the world of Tom and Anna. The scenario is as follows: Tom and Anna go to a website and are shown an article. Remember that the reward function allows us to define the real-world reaction to the content that Vowpal Wabbit recommends.</p>
 
-<p>We will choose between Tom and Anna uniformly at random and also choose their time of visit uniformly at random. You can think of this as us tossing a coin to choose between Tom and Anna (Anna if heads and Tom if tails) and another coin toss for choosing time of day.</p>
+<p>We choose between Tom and Anna uniformly at random and choose the time of day they visit the site uniformly at random. Think of this as flipping a coin to choose between Tom and Anna and flipping the coin again to choose the time of day.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Tom'</span><span class="p">,</span> <span class="s">'Anna'</span><span class="p">]</span>
 <span class="n">times_of_day</span> <span class="o">=</span> <span class="p">[</span><span class="s">'morning'</span><span class="p">,</span> <span class="s">'afternoon'</span><span class="p">]</span>
@@ -443,22 +458,24 @@
     <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">times_of_day</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>We will instantiate a CB learner in VW and then simulate Tom and Anna’s website visits <code class="highlighter-rouge">num_iterations</code> number of times. In each visit, we:</p>
+<h3 id="instantiate-learner">Instantiate learner</h3>
+
+<p>We instantiate a contextual bandit learner in Vowpal Wabbit and then simulate Tom and Anna’s website visits num_iterations number of times. With each visit, we do the following:</p>
 
 <ol>
   <li>Decide between Tom and Anna</li>
-  <li>Decide time of day</li>
-  <li>Pass context i.e. (user, time of day) to learner to get action i.e. article recommendation and probability of choosing action</li>
-  <li>Receive reward i.e. see if user clicked or not. Remember that cost is just negative reward.</li>
-  <li>Format context, action, probability, reward in VW format</li>
-  <li>Learn from the example
-    <ul>
-      <li>VW <em>reduces</em> a CB problem to a cost sensitive multiclass classification problem.</li>
-    </ul>
-  </li>
+  <li>Decide the time of day</li>
+  <li>Pass context (i.e., user, time of day) to the learner to get action (i.e., article recommendation, and the probability of choosing action).</li>
+  <li>Receive reward (i.e., see if the user clicked or not). Remember that cost is just a negative reward.</li>
+  <li>Format context, action, probability, reward in Vowpal Wabbit format</li>
+  <li>Learn from the example</li>
 </ol>
 
-<p>This is the same for every one of our simulations, so we define the process in the <code class="highlighter-rouge">run_simulation</code> function. The cost function must be supplied as this is essentially us simulating how the world works.</p>
+<blockquote>
+  <p><strong>Note:</strong> Vowpal Wabbit reduces a contextual bandit problem to a cost-sensitive multiclass classification problem.</p>
+</blockquote>
+
+<p>This reduction is the same for every one of our simulations, so we define the process in the <code class="highlighter-rouge">run_simulation</code> function. We have to supply the cost function to simulate how the real world works:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">run_simulation</span><span class="p">(</span><span class="n">vw</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">,</span> <span class="n">users</span><span class="p">,</span> <span class="n">times_of_day</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">cost_function</span><span class="p">,</span> <span class="n">do_learn</span> <span class="o">=</span> <span class="bp">True</span><span class="p">):</span>
     <span class="n">cost_sum</span> <span class="o">=</span> <span class="mf">0.</span>
@@ -490,7 +507,7 @@
     <span class="k">return</span> <span class="n">ctr</span>
 </code></pre></div></div>
 
-<p>We want to be able to visualize what is occurring, so we are going to plot the click through rate over each iteration of the simulation. If VW is showing actions the get rewards the ctr will be higher. Below is a little utility function to make showing the plot easier.</p>
+<p>We want to be able to visualize what is occurring, so we are going to plot the click-through rate over each iteration of the simulation. The CTR is higher if Vowpal Wabbit is showing actions that get rewards. Use this utility function to make showing the plot easier:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">plot_ctr</span><span class="p">(</span><span class="n">num_iterations</span><span class="p">,</span> <span class="n">ctr</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">num_iterations</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">ctr</span><span class="p">)</span>
@@ -499,9 +516,9 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
-<h2 id="scenario-1">Scenario 1</h2>
+<h2 id="first-scenario">First scenario</h2>
 
-<p>We will use the first reward function <code class="highlighter-rouge">get_cost</code> and assume that Tom and Anna do not change their preferences over time and see what happens to user engagement as we learn. We will also see what happens when there is no learning. We will use the “no learning” case as our baseline to compare to.</p>
+<p>First, we use the first reward function <code class="highlighter-rouge">get_cost</code> and assume that Tom and Anna do not change their preferences over time to see what happens to user engagement as we learn. Then, we see what happens when there is no learning. We use the no learning case as our baseline comparison.</p>
 
 <h3 id="with-learning">With learning</h3>
 
@@ -516,8 +533,11 @@
 
 <p><img src="cb_simulation_assets/output_22_0.png" alt="png" /></p>
 
-<h4 id="aside-interactions">Aside: interactions</h4>
-<p>You’ll notice in the arguments we supply to VW, we include <code class="highlighter-rouge">-q UA</code>. This is telling VW to create additional features which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. This allows us to learn the interaction between when certain actions are good in certain times of days and for particular users. If we didn’t do that, the learning wouldn’t really work. We can see that in action below.</p>
+<h4 id="interactions">Interactions</h4>
+
+<p>You’ll notice that we include <code class="highlighter-rouge">-q UA</code> in the arguments we supply to Vowpal Wabbit. This step tells Vowpal Wabbit to create additional features, which are the features in the (U)ser namespace and (A)ction namespaces multiplied together. Doing so allows us to learn the interaction between when specific actions are good at certain times of days and for specific users.</p>
+
+<p>If we didn’t include <code class="highlighter-rouge">-q UA</code>, the learning would not work. We can see that in the following action:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Instantiate learner in VW but without -q
 </span><span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="o">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb_explore_adf --quiet --epsilon 0.2"</span><span class="p">)</span>
@@ -531,7 +551,8 @@
 <p><img src="cb_simulation_assets/output_24_0.png" alt="png" /></p>
 
 <h3 id="without-learning">Without learning</h3>
-<p>Let’s do the same thing again (but with <code class="highlighter-rouge">-q</code>, but this time show the effect if we don’t learn from what happens. The ctr never improves are we just hover around 0.2.</p>
+
+<p>Let’s do the same thing again, but with <code class="highlighter-rouge">-q</code>. This step shows the effect if we don’t learn from what happens. The CTR never improves, and we hover around 0.2.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Instantiate learner in VW
 </span><span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="o">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb_explore_adf -q UA --quiet --epsilon 0.2"</span><span class="p">)</span>
@@ -544,9 +565,11 @@
 
 <p><img src="cb_simulation_assets/output_26_0.png" alt="png" /></p>
 
-<h2 id="scenario-2">Scenario 2</h2>
+<h2 id="second-scenario">Second scenario</h2>
 
-<p>In the real world people’s preferences change over time. So now in the simulation we are going to incorporate two different cost functions, and swap over to the second one halfway through. Below is a a table of the new reward function we are going to use, <code class="highlighter-rouge">get_cost_1</code>:</p>
+<p>People’s preferences change over time in the real world. To account for this in the simulation, we incorporate two different cost functions and swap over to the second one halfway through.</p>
+
+<p>The following table represents the new reward function <code class="highlighter-rouge">get_cost_1</code>:</p>
 
 <h3 id="tom">Tom</h3>
 
@@ -596,7 +619,7 @@
   </tbody>
 </table>
 
-<p>This reward function is still working with actions that the learner has seen previously.</p>
+<p>This reward function is still working with the previous learner actions:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_cost_new1</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="n">action</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">context</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Tom"</span><span class="p">:</span>
@@ -615,7 +638,9 @@
             <span class="k">return</span> <span class="n">USER_DISLIKED_ARTICLE</span>
 </code></pre></div></div>
 
-<p>To make it easy to show the effect of the cost function changing we are going to modify the <code class="highlighter-rouge">run_simulation</code> function. It is a little less readable now, but it supports accepting a list of cost functions and it will operate over each cost function in turn. This is perfect for what we need.</p>
+<p>To make it easy to show the effect of the cost function changing, we modify the <code class="highlighter-rouge">run_simulation</code> function. It is a little less readable, but it supports accepting a list of cost functions, and it operates over each cost function in turn.</p>
+
+<p>This change is perfect for our scenario:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">run_simulation_multiple_cost_functions</span><span class="p">(</span><span class="n">vw</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">,</span> <span class="n">users</span><span class="p">,</span> <span class="n">times_of_day</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">cost_functions</span><span class="p">,</span> <span class="n">do_learn</span> <span class="o">=</span> <span class="bp">True</span><span class="p">):</span>
     <span class="n">cost_sum</span> <span class="o">=</span> <span class="mf">0.</span>
@@ -655,7 +680,8 @@
 </code></pre></div></div>
 
 <h3 id="with-learning-1">With learning</h3>
-<p>Let us now switch to the second reward function after a few samples (running the first reward function). Recall that this reward function changes the preferences of the web users but it is still working with the same action space as before. We should see the learner pick up these changes and optimize towards the new preferences.</p>
+
+<p>Now, we switch to the second reward function after a few samples (running the first reward function). Recall that this reward function changes the preferences of web users, but it is still working with the same action space as before. We should see the learner pick up these changes and optimize the new preferences.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># use first reward function initially and then switch to second reward function
 </span>
@@ -679,6 +705,8 @@
 
 <h3 id="without-learning-1">Without learning</h3>
 
+<p>We repeat this step without learning to demonstrate the effect:</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Do not learn
 # use first reward function initially and then switch to second reward function
 </span>
@@ -695,8 +723,9 @@
 
 <p><img src="cb_simulation_assets/output_35_0.png" alt="png" /></p>
 
-<h2 id="scenario-3">Scenario 3</h2>
-<p>In this scenario we are going to start rewarding actions that have never seen a reward previously when we change the cost function.</p>
+<h2 id="third-scenario">Third scenario</h2>
+
+<p>In the final scenario, we start rewarding actions that have never seen a reward previously when we change the cost function:</p>
 
 <h3 id="tom-1">Tom</h3>
 
@@ -764,7 +793,8 @@
 </code></pre></div></div>
 
 <h3 id="with-learning-2">With learning</h3>
-<p>Let us now switch to the third reward function after a few samples (running the first reward function). Recall that this reward function changes the preferences of the users and is working with a <strong>different</strong> action space than before. We should see the learner pick up these changes and optimize towards the new preferences</p>
+
+<p>Now, we switch to the third reward function after a few samples (running the first reward function). Remember that this reward function changes the preferences of the users. It is working with a <strong>different</strong> action space than before. We should see the learner pick up these changes and optimize the new preferences.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># use first reward function initially and then switch to third reward function
 </span>
@@ -783,6 +813,8 @@
 <p><img src="cb_simulation_assets/output_39_0.png" alt="png" /></p>
 
 <h3 id="without-learning-2">Without Learning</h3>
+
+<p>Finally, we repeat the steps wihout learning to see the effects:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Do not learn
 # use first reward function initially and then switch to third reward function
@@ -803,9 +835,9 @@
 
 <h2 id="summary">Summary</h2>
 
-<p>This tutorial aimed at showcasing a real world scenario where contextual bandit algorithms can be used. We were able to take a context and set of actions and learn what actions worked best for a given context. We saw that the learner was able to respond rapidly to changes in the world.  We showed that allowing the learner to interact with the world resulted in higher rewards than the no learning baseline.</p>
+<p>This contextual bandit tutorial showcases a real-world simulation scenario for using the contextual bandit approach to reinforcement learning. We take a context and a set of actions and learn what actions worked best for a given context. The result is that the learner responds rapidly to real-world changes. We showed that allowing the learner to interact with the world resulted in higher rewards than the “without learning” baseline.</p>
 
-<p>This tutorial worked with simplistic features. VW supports high dimensional sparse features, <a href="contextual_bandits.html#contextual-bandit-algorithms-and-input-formats">different exploration algorithms and policy evaluation approaches</a>.</p>
+<p>This tutorial worked with simplistic features. VW supports high dimensional sparse features, <a href="contextual_bandits.html#vowpal-wabbit-contextual-bandits-algorithms-and-format">different exploration algorithms and policy evaluation approaches</a>.</p>
 
         </div>
       </div>

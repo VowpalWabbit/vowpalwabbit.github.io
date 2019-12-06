@@ -87,6 +87,9 @@ const communityModule = (function() {
       });
       DOM.$github.find('.loader_wrapper').hide();
       DOM.$github.append(github_content);
+    })
+    .catch(function(error) {
+      console.log(error);
     });
   }
 
