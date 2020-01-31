@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
+  <link rel="canonical" href="/rlos_code_exercises.html" />
+  <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/syntax.css">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="/assets/app.js"></script>
+
+  <title>RL Open Source Fest Application Exercises | Vowpal Wabbit</title>
+  <meta name="description" content="Code exercises for the RL Open Source Fest Application" >
+</head>
+
+  <body class=rlos>
+    
+
+<div class="content">
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>
+            Exercises
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container content tutorial_container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="tutorial_nav">
+          <ul class="tutorial_content_nav">
+            <li class="label">
+              Table of contents
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <h1 id="rlopen-source-fest-application-exercises">RL Open Source Fest Application Exercises</h1>
+
+<h2 id="c-exercise">C++ Exercise</h2>
+<p>If your project involved C++, complete the following exercise.</p>
+
+<ol>
+  <li>Clone the <a href="https://github.com/VowpalWabbit/vowpal_wabbit">vowpal_wabbit repo</a> and build it. Instructions can be found on the wiki <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies">here</a></li>
+  <li>Change the output of the <code class="highlighter-rouge">--version</code> option to include your name and the hash of your name</li>
+  <li>Send the code change as a diff (use <code class="highlighter-rouge">git diff</code>) and the output of <code class="highlighter-rouge">vw --version</code> with your change</li>
+</ol>
+
+<p>The original output looks like this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8.8.0 (git commit: 96e08b3bc)
+</code></pre></div></div>
+<p>We’re looking for something like this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8.8.0 (git commit: 92aa2d713)
+
+My name is John Smith and my hash is 5a8e90dd454acc31
+</code></pre></div></div>
+
+<p>The code for argument parsing lives in <a href="https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/vowpalwabbit/parse_args.cc">vowpalwabbit/parse_args.cc</a> and the hash function is called <code class="highlighter-rouge">hashall</code>.</p>
+
+<h2 id="pythondata-science-exercise">Python/Data Science Exercise</h2>
+<p>If your project involves python or data science, complete the following exercise.</p>
+
+<ol>
+  <li>Follow the <a href="https://vowpalwabbit.org/tutorials/cb_simulation.html">Simulating Content Personalization with Contextual Bandits tutorial</a></li>
+  <li>In the <a href="https://vowpalwabbit.org/tutorials/cb_simulation.html#first-scenario">first scenario</a> it runs the simulation with the argument <code class="highlighter-rouge">--epsilon 0.2</code>. Change the notebook to visualize the effect of different values of <code class="highlighter-rouge">epsilon</code> from <strong>0</strong> to <strong>1</strong> in <strong>0.1</strong> increments</li>
+  <li>Send the modified notebook in <strong>HTML</strong> (File -&gt; Download as -&gt; HTML). Make sure your change is evaluated.</li>
+</ol>
+
+      </div>
+    </div>
+  </div>
+  <script src="/assets/js/tutorial.js"></script>
+</div>
+
+  </body>
+</html>

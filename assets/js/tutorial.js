@@ -53,13 +53,12 @@ const tutorialModule = (function() {
 
   function highlightSectionLink() {
     const current_position = $(window).scrollTop();
-    const nav_height = DOM.$tutorial_nav.outerHeight() + 1;
 
     DOM.$tutorial_nav.find('a').each(function() {
       const $section_link = $(this);
       const $section = $($section_link.attr('href'));
 
-      if ($section.position().top - nav_height <= current_position &&
+      if ($section.position().top <= current_position &&
         $section_link.offset().top + $section.height() > current_position) {
         DOM.$tutorial_nav.children('li').removeClass('active');
         $section_link.closest('li').addClass('active');
