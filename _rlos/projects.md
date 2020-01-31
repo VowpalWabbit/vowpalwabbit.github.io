@@ -1,6 +1,6 @@
 ---
 module_id: "rlos_projects"
-title: RLOS projects
+title: RL Open Source Fest Projects
 ---
 
 1. [VW support for FlatBuff and/or Protobuf](#1-vw-support-for-flatbuff-andor-protobuf)
