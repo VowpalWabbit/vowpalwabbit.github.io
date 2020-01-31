@@ -1,21 +1,9 @@
 ---
 module_id: "rlos_projects"
-title: RL Open Source Fest Projects
+title: Projects
 ---
 
-1. [VW support for FlatBuff and/or Protobuf](#1-vw-support-for-flatbuff-andor-protobuf)
-2. [Parallelized parsing](#2-parallelized-parsing)
-3. [VW server mode revamp](#3-vw-server-mode-revamp)
-4. [Contextual bandits data visualization with Jupyter notebooks](#4-contextual-bandits-data-visualization-with-jupyter-notebooks)
-5. [Improve VW’s Python experience](#5-improve-vws-python-experience)
-6. [End-to-load local loop for reinforcement learning](#6-end-to-load-local-loop-for-reinforcement-learning)
-7. [TensorWatch and TensorBoard integration](#7-tensorwatch-and-tensorboard-integration)
-8. [ONNX operator set and model format for VW models](#8-onnx-operator-set-and-model-format-for-vw-models)
-9. [Enable implementation of a VW reduction in Python](#9-enable-implementation-of-a-vw-reduction-in-python)
-10. [Allow Python implementations of RLClientLib extensibility points](#10-allow-python-implementations-of-rlclientlib-extensibility-points)
-11. [Contextual bandit benchmark and competition](#11-contextual-bandit-benchmark-and-competition)
-12. [Library of contextual bandit estimators](#12-library-of-contextual-bandit-estimators)
-
+# RL Open Source Fest Projects
 ## 1. VW support for FlatBuff and/or Protobuf
 VW has several file inputs, examples, cache and models. This project involves adding support for a modern serialization framework such as FlatBuff or ProtoBuff. This will enable easier interop, better stability and potentially increased performance.
 
@@ -88,21 +76,19 @@ Build visualizations to help understand the behavior of Contextual Bandit polici
     - Feature importance
 - Produce a synthetic dataset that highlight the usefulness of the visualizations
 
-### Stretch Goals
-- TBD
-
 ## 5. Improve VW's Python experience
 VW's Python integration can be improved is several areas to make it easier for users. Supporting Pandas as a first class concept will make utilizing VW in experimentation workflows much more streamlined. Implementing IPython HTML representations for some common types will improve usability of these components.
 
 ### Goals
-- Implement _repr_html_ for examples, model and labels
+- Implement **repr_html** for examples, model and labels
 - Access to progressive validation and other model statistics
 - Pandas load and save from VW text format
 
 ### Stretch Goals
 - Simplify example lifecycle
+
 ### Links
-- [IPython HTML representation]https://ipython.readthedocs.io/en/stable/config/integrating.html
+- [IPython HTML representation](https://ipython.readthedocs.io/en/stable/config/integrating.html)
 
 ## 6. End-to-load local loop for reinforcement learning
 The reinforcement learning library has extension points to allow for swapping out parts of the framework, however there is no simple way to make it work end to end locally at the moment. Making RLClientLib support prediction, logging, joining and training locally will make for a great prototyping tool.
@@ -126,6 +112,7 @@ TensorBoard and TensorWatch are great tools for debugging and monitoring trainin
 - Integrate VW training with TensorWatch all within a notebook
 - Extend VW to output TensorBoard logs
 - Extend RLClientLib to support TensorBoard and TensorWatch
+
 ### Stretch Goals
 - Add lazy logging mode to VW and RLClientLib
 
@@ -147,6 +134,7 @@ VW has its own runtime for running inference off of its own model files. However
 ### Stretch Goals
 - Extend opset to Contextual Bandits
 - Export ONNX model directly from VW
+
 ### Links
 - [ONNX Runtime GitHub repo](https://github.com/Microsoft/onnxruntime)
 
@@ -156,9 +144,9 @@ All reductions in VW are implemented in C++. However, to allow for rapid prototy
 ### Goals
 - Create interface that allows Python code to implement a base learner in VW
 - Implement a simple gradient descent base learner using SKlearn
+
 ### Stretch Goals
 - Allow for the Python implemented reduction to be used at a different level of the reduction stack
-### Links
 
 ## 10. Allow Python implementations of RLClientLib extensibility points
 RLCLientLib supports several points of extensibility, but these are only exposed in C++. When using RLCLientLib in Python it is important to be able to support these.
@@ -166,13 +154,14 @@ RLCLientLib supports several points of extensibility, but these are only exposed
 ### Goals
 - Support a custom model implementation in Python through the `i_model` interface
 - Create an example of using these locally
+
 ### Stretch Goals
 - Support custom `i_sender` implementation for event logging
 - Support `i_data_transport` for retrieving updated models
 
 ### Links
-- [`i_sender`](https://github.com/VowpalWabbit/reinforcement_learning/blob/master/include/sender.h)
-- [`i_data_transport` and `i_model`](https://github.com/VowpalWabbit/reinforcement_learning/blob/master/include/model_mgmt.h)
+- [i_sender](https://github.com/VowpalWabbit/reinforcement_learning/blob/master/include/sender.h)
+- [i_data_transport and i_model](https://github.com/VowpalWabbit/reinforcement_learning/blob/master/include/model_mgmt.h)
 
 ## 11. Contextual bandit benchmark and competition
 There exists many different contextual bandit algorithms. In order to compare these a standard benchmark would be useful. Use the contextual bandit bake off paper as a base and build a set of standard CB benchmarks and supporting infrastructure to competitively evaluate CB algorithms. This is similar to the [GLUE benchmark for NLP](https://gluebenchmark.com/).
@@ -182,8 +171,10 @@ There exists many different contextual bandit algorithms. In order to compare th
 - Create infrastructure to obtain datasets
 - Upload predictions to evaluate performance of algorithm
 - Visualization, display results and compare to others
+
 ### Stretch Goals
 - Abstract what it means to be a CB algo to provide a more structured evaluation workflow
+
 ### Links
 - [CB bake off paper](https://arxiv.org/abs/1802.04064)
 - [GLUE](https://gluebenchmark.com/)
@@ -196,6 +187,7 @@ Estimators are used in off policy evaluation. One common estimator is IPS, and o
 - Simulator interface that allows evaluation against logging policy and target policy
 - Generate a random logging policy and target policy to use for evaluation
 - Visualization of comparison
+
 ### Stretch Goals
 - Pseudo inverse
 - Integrate into existing counterfactual evaluation framework
