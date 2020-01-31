@@ -1,0 +1,30 @@
+---
+layout: rlos
+body_class: rlos
+page_title: RLOS Projects | Vowpal Wabbit
+page_description: RLOS projects page description.
+---
+
+{% assign projects = site.rlos | where: "module_id", "rlos_projects" | first %}
+
+<div class="content">
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>
+            {{projects.title}}
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container content">
+    <div class="row">
+      <div class="col-12 col-md-10">
+        {{projects}}
+      </div>
+    </div>
+  </div>
+</div>
