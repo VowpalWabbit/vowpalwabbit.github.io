@@ -1,6 +1,9 @@
 .tutorials .tutorials_container {
   .hero {
     @include secondary-hero;
+    a {
+      color: white;
+    }
   }
 
   .tutorials_list {

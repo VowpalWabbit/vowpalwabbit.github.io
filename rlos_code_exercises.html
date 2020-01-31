@@ -1,11 +1,11 @@
 ---
 layout: rlos
 body_class: rlos
-page_title: RL Open Source Fest Projects | Vowpal Wabbit
-page_description: Projects for the RL Open Source Fest
+page_title: RL Open Source Fest Application Exercises | Vowpal Wabbit
+page_description: Code exercises for the RL Open Source Fest Application
 ---
 
-{% assign projects = site.rlos | where: "module_id", "rlos_projects" | first %}
+{% assign code_exercises = site.rlos | where: "module_id", "rlos_code_exercises" | first %}
 
 <div class="content">
   <div class="hero">
@@ -13,7 +13,7 @@ page_description: Projects for the RL Open Source Fest
       <div class="row">
         <div class="col-lg-6">
           <h1>
-            {{projects.title}}
+            {{code_exercises.title}}
           </h1>
         </div>
       </div>
@@ -32,7 +32,7 @@ page_description: Projects for the RL Open Source Fest
         </div>
       </div>
       <div class="col-lg-9">
-        {{ projects }}
+        {{ code_exercises }}
       </div>
     </div>
   </div>

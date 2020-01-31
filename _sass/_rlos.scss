@@ -4,5 +4,11 @@
     padding: 5rem 1rem 3rem;
   }
 
-  @include secondary-link;
+  h1 {
+    padding-bottom: 0;
+  }
+
+  .tutorial_container {
+    padding-bottom: 15rem;
+  }
 }
