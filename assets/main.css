@@ -286,6 +286,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 
 .tutorials .tutorials_container .hero { background: #2A3B93; color: white; padding: 3rem 1rem; }
 .tutorials .tutorials_container .hero h1 { padding-bottom: 1rem; }
+.tutorials .tutorials_container .hero a { color: white; }
 .tutorials .tutorials_container .tutorials_list { background: #EBEBEB; padding: 5rem 1rem; }
 .tutorials .tutorials_container .tutorial_card { background: white; margin-bottom: 2rem; padding: 1.5rem 2rem; min-height: 26.25rem; position: relative; }
 .tutorials .tutorials_container .tutorial_card .description { padding: 1rem 0 0.8rem; }
@@ -346,6 +347,11 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .edit a .text { width: auto; max-width: 0; white-space: nowrap; overflow: hidden; transition: max-width 0.3s linear; color: #2A3B93; text-decoration: none; }
 .edit a:hover { width: 10.5rem; text-decoration: none; border: 0; }
 .edit a:hover .text { max-width: 10rem; padding-left: 0.3rem; }
+
+.rlos .hero { background: #2A3B93; color: white; padding: 3rem 1rem; padding: 5rem 1rem 3rem; }
+.rlos .hero h1 { padding-bottom: 1rem; }
+.rlos h1 { padding-bottom: 0; }
+.rlos .tutorial_container { padding-bottom: 15rem; }
 
 @media screen and (min-width: 1200px) { .container { max-width: 1180px; } }
 .overlay_on { overflow-y: hidden; }
