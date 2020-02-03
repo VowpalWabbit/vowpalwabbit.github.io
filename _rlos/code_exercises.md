@@ -6,7 +6,7 @@ title: Exercises
 # RL Open Source Fest Application Exercises
 
 ## C++ Exercise
-If your project involved C++, complete the following exercise.
+If your project involves C++, complete the following exercise:
 
 1. Clone the [vowpal_wabbit repo](https://github.com/VowpalWabbit/vowpal_wabbit) and build it. Instructions can be found on the wiki [here](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies )
 2. Change the output of the `--version` option to include your name and the hash of your name
@@ -28,8 +28,8 @@ The code for argument parsing lives in [vowpalwabbit/parse_args.cc](https://gith
 
 
 ## Python/Data Science Exercise
-If your project involves python or data science, complete the following exercise.
+If your project involves Python or data science, complete the following exercise:
 
 1. Follow the [Simulating Content Personalization with Contextual Bandits tutorial](https://vowpalwabbit.org/tutorials/cb_simulation.html)
 2. In the [first scenario](https://vowpalwabbit.org/tutorials/cb_simulation.html#first-scenario) it runs the simulation with the argument `--epsilon 0.2`. Change the notebook to visualize the effect of different values of `epsilon` from **0** to **1** in **0.1** increments
-3. Send the modified notebook in **HTML** (File -> Download as -> HTML). Make sure your change is evaluated.
+3. Send the modified notebook in **HTML** (File -> Download as -> HTML). Make sure your change is evaluated
