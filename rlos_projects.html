@@ -76,10 +76,26 @@
   <li><a href="https://github.com/protocolbuffers/protobuf">Protobuf GitHub repo</a></li>
 </ul>
 
-<h2 id="2-parallelized-parsing">2. Parallelized parsing</h2>
-<p>Modern machines often utilize many threads to achieve performance. VW currently uses a single parse thread and a single learner thread, and parsing is often the bottleneck. Extending the parser to support many threads will allow us to better utilize resources.</p>
+<h2 id="2-contextual-bandits-data-visualization-with-jupyter-notebooks">2. Contextual bandits data visualization with Jupyter notebooks</h2>
+<p>Build visualizations to help understand the behavior of Contextual Bandit policies and logs.</p>
 
 <h3 id="goals-1">Goals</h3>
+<ul>
+  <li>Vizualizations for:
+    <ul>
+      <li>Action distribution</li>
+      <li>Action/reward distribution by feature(s) or model used</li>
+      <li>Model comparison</li>
+      <li>Feature importance</li>
+    </ul>
+  </li>
+  <li>Produce a synthetic dataset that highlight the usefulness of the visualizations</li>
+</ul>
+
+<h2 id="3-parallelized-parsing">3. Parallelized parsing</h2>
+<p>Modern machines often utilize many threads to achieve performance. VW currently uses a single parse thread and a single learner thread, and parsing is often the bottleneck. Extending the parser to support many threads will allow us to better utilize resources.</p>
+
+<h3 id="goals-2">Goals</h3>
 <ul>
   <li>Produce wiki page outlining design and usage</li>
   <li>Extract parser to standalone component</li>
@@ -100,10 +116,10 @@
   <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/vowpalwabbit/parse_example.cc">Code pointer for text example parsing</a></li>
 </ul>
 
-<h2 id="3-vw-server-mode-revamp">3. VW server mode revamp</h2>
+<h2 id="4-vw-server-mode-revamp">4. VW server mode revamp</h2>
 <p>VW currently has daemon mode, which allows clients to send examples, train and model and receive predictions. This uses raw sockets and a custom binary protocol We want to provide a modern version of VW’s server mode utilizing a modern RPC technology.</p>
 
-<h3 id="goals-2">Goals</h3>
+<h3 id="goals-3">Goals</h3>
 <ul>
   <li>Single model serving using GRPC with the following endpoints:
     <ul>
@@ -126,22 +142,6 @@
 <h3 id="links-2">Links</h3>
 <ul>
   <li><a href="https://grpc.io/">GRPC</a></li>
-</ul>
-
-<h2 id="4-contextual-bandits-data-visualization-with-jupyter-notebooks">4. Contextual bandits data visualization with Jupyter notebooks</h2>
-<p>Build visualizations to help understand the behavior of Contextual Bandit policies and logs.</p>
-
-<h3 id="goals-3">Goals</h3>
-<ul>
-  <li>Vizualizations for:
-    <ul>
-      <li>Action distribution</li>
-      <li>Action/reward distribution by feature(s) or model used</li>
-      <li>Model comparison</li>
-      <li>Feature importance</li>
-    </ul>
-  </li>
-  <li>Produce a synthetic dataset that highlight the usefulness of the visualizations</li>
 </ul>
 
 <h2 id="5-improve-vws-python-experience">5. Improve VW’s Python experience</h2>
@@ -229,7 +229,7 @@
   <li><a href="https://github.com/Microsoft/onnxruntime">ONNX Runtime GitHub repo</a></li>
 </ul>
 
-<h2 id="9-enable-implementation-of-a-vw-reduction-in-python">9. Enable implementation of a VW reduction in Python</h2>
+<h2 id="9-support-implementation-of-a-vw-reduction-in-python">9. Support implementation of a VW reduction in Python</h2>
 <p>All reductions in VW are implemented in C++. However, to allow for rapid prototyping and taking advantage of the Python ecosystem, using Python to do this makes sense.</p>
 
 <h3 id="goals-8">Goals</h3>
@@ -243,7 +243,7 @@
   <li>Allow for the Python implemented reduction to be used at a different level of the reduction stack</li>
 </ul>
 
-<h2 id="10-allow-python-implementations-of-rlclientlib-extensibility-points">10. Allow Python implementations of RLClientLib extensibility points</h2>
+<h2 id="10-support-python-implementations-of-rlclientlib-extensibility-points">10. Support Python implementations of RLClientLib extensibility points</h2>
 <p>RLCLientLib supports several points of extensibility, but these are only exposed in C++. When using RLCLientLib in Python it is important to be able to support these.</p>
 
 <h3 id="goals-9">Goals</h3>
@@ -306,6 +306,26 @@
 <h3 id="links-9">Links</h3>
 <ul>
   <li><a href="https://github.com/VowpalWabbit/estimators">Estimators GitHub repo</a></li>
+</ul>
+
+<h2 id="13-scriptable-feature-engineering-with-python">13. Scriptable feature engineering with Python</h2>
+<p>VW supports example manipulation through its command line. It provides a lot of flexibility but it’s hard to express anything beyond the fixed set of options. The idea is to enable example manipulation to be scripted in Python as a series of hooks in the parsing pipeline.</p>
+
+<h3 id="goals-12">Goals</h3>
+<ul>
+  <li>Allow hooks to inject and rewrite features into a namespace</li>
+  <li>Allow hooks to rewrite and manipulate namespaces</li>
+</ul>
+
+<h3 id="stretch-goals-11">Stretch Goals</h3>
+<ul>
+  <li>Allow hooks that manipulate multi-line examples (such as Contextual Bandits input) by adding or removing whole examples</li>
+  <li>Extend support for attaching C++ code to the parse pipeline hooks</li>
+</ul>
+
+<h3 id="links-10">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments#example-manipulation-options">Existing example manipulation options</a></li>
 </ul>
 
       </div>

@@ -228,7 +228,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tutorial_container table th { border: 1px solid #EBEBEB; padding: 0.9rem 1.3rem; }
 .tutorial_container table td { border: 1px solid #EBEBEB; padding: 0.9rem 1.3rem; }
 .tutorial_container img { max-width: 100%; }
-.tutorial_container .tutorial_nav { position: sticky; top: 5rem; font-size: 15px; line-height: 20px; }
+.tutorial_container .tutorial_nav { position: sticky; top: 1rem; font-size: 15px; line-height: 20px; }
 .tutorial_container .tutorial_nav ul { padding-left: 0; }
 .tutorial_container .tutorial_nav li { display: block; padding: 0.8rem 0; }
 .tutorial_container .tutorial_nav li span { padding: 1rem 0; }
