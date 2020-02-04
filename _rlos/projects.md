@@ -193,3 +193,17 @@ Estimators are used in off policy evaluation. One common estimator is IPS, and o
 
 ### Links
 - [Estimators GitHub repo](https://github.com/VowpalWabbit/estimators)
+
+## 13. Scriptable feature engineering with Python
+VW supports example manipulation through its command line. It provides a lot of flexibility but it's hard to express anything beyond the fixed set of options. The idea is to enable example manipulation to be scripted in Python as a series of hooks in the parsing pipeline.
+
+### Goals
+- Allow hooks to inject and rewrite features into a namespace
+- Allow hooks to rewrite and manipulate namespaces
+
+### Stretch Goals
+- Allow hooks that manipulate multi-line examples (such as Contextual Bandits input) by adding or removing whole examples
+- Extend support for attaching C++ code to the parse pipeline hooks
+
+### Links
+- [Existing example manipulation options](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments#example-manipulation-options)
