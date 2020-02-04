@@ -27,8 +27,18 @@ VW has several file inputs, examples, cache and models. This project involves ad
 - [Flatbuffers GitHub repo](https://github.com/google/flatbuffers)
 - [Protobuf GitHub repo](https://github.com/protocolbuffers/protobuf)
 
+## 2. Contextual bandits data visualization with Jupyter notebooks
+Build visualizations to help understand the behavior of Contextual Bandit policies and logs.
 
-## 2. Parallelized parsing
+### Goals
+- Vizualizations for:
+    - Action distribution
+    - Action/reward distribution by feature(s) or model used
+    - Model comparison
+    - Feature importance
+- Produce a synthetic dataset that highlight the usefulness of the visualizations
+
+## 3. Parallelized parsing
 Modern machines often utilize many threads to achieve performance. VW currently uses a single parse thread and a single learner thread, and parsing is often the bottleneck. Extending the parser to support many threads will allow us to better utilize resources.
 
 ### Goals
@@ -46,7 +56,7 @@ Modern machines often utilize many threads to achieve performance. VW currently 
 - [Code pointer for parser component](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/vowpalwabbit/parser.cc)
 - [Code pointer for text example parsing](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/vowpalwabbit/parse_example.cc)
 
-## 3. VW server mode revamp
+## 4. VW server mode revamp
 VW currently has daemon mode, which allows clients to send examples, train and model and receive predictions. This uses raw sockets and a custom binary protocol We want to provide a modern version of VW's server mode utilizing a modern RPC technology.
 
 ### Goals
@@ -64,17 +74,6 @@ VW currently has daemon mode, which allows clients to send examples, train and m
 
 ### Links
 - [GRPC](https://grpc.io/)
-
-## 4. Contextual bandits data visualization with Jupyter notebooks
-Build visualizations to help understand the behavior of Contextual Bandit policies and logs.
-
-### Goals
-- Vizualizations for:
-    - Action distribution
-    - Action/reward distribution by feature(s) or model used
-    - Model comparison
-    - Feature importance
-- Produce a synthetic dataset that highlight the usefulness of the visualizations
 
 ## 5. Improve VW's Python experience
 VW's Python integration can be improved is several areas to make it easier for users. Supporting Pandas as a first class concept will make utilizing VW in experimentation workflows much more streamlined. Implementing IPython HTML representations for some common types will improve usability of these components.
@@ -138,7 +137,7 @@ VW has its own runtime for running inference off of its own model files. However
 ### Links
 - [ONNX Runtime GitHub repo](https://github.com/Microsoft/onnxruntime)
 
-## 9. Enable implementation of a VW reduction in Python
+## 9. Support implementation of a VW reduction in Python
 All reductions in VW are implemented in C++. However, to allow for rapid prototyping and taking advantage of the Python ecosystem, using Python to do this makes sense.
 
 ### Goals
@@ -148,7 +147,7 @@ All reductions in VW are implemented in C++. However, to allow for rapid prototy
 ### Stretch Goals
 - Allow for the Python implemented reduction to be used at a different level of the reduction stack
 
-## 10. Allow Python implementations of RLClientLib extensibility points
+## 10. Support Python implementations of RLClientLib extensibility points
 RLCLientLib supports several points of extensibility, but these are only exposed in C++. When using RLCLientLib in Python it is important to be able to support these.
 
 ### Goals
