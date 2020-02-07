@@ -348,7 +348,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .edit a:hover { width: 10.5rem; text-decoration: none; border: 0; }
 .edit a:hover .text { max-width: 10rem; padding-left: 0.3rem; }
 
-.rlos .hero { background: #2A3B93; color: white; padding: 3rem 1rem; padding: 5rem 1rem 3rem; }
+.rlos .hero { background: #2A3B93; color: white; padding: 3rem 1rem; }
 .rlos .hero h1 { padding-bottom: 1rem; }
 .rlos h1 { padding-bottom: 0; }
 .rlos .tutorial_container { padding-bottom: 15rem; }
@@ -357,6 +357,15 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .overlay_on { overflow-y: hidden; }
 
 .overlay { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.2); z-index: 3; cursor: pointer; }
+
+.banner_container { padding: 1.25rem 0; opacity: 0.99; background-color: black; color: #EBEBEB; font-size: 1.125rem; line-height: 1.5; }
+.banner_container a { color: #EBEBEB; border-bottom: 1px solid #EBEBEB; }
+.banner_container a:hover { text-decoration: none; color: white; border-bottom: 1px solid white; }
+.banner_container p { margin-bottom: 0; }
+.banner_container .close_icon { display: block; background: transparent; border: 0; padding-right: 0.8rem; margin-left: -0.8em; }
+.banner_container .close_icon:hover { cursor: pointer; }
+.banner_container .close_icon svg { width: 16px; height: 16px; }
+.banner_container.hidden { display: none; }
 
 .hero_container { background: #000C4C; padding: 4rem 1rem 5.5rem; color: white; }
 .hero_container img { width: 100%; }
