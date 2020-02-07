@@ -2,6 +2,10 @@
 <html lang="en">
   {% include head.html %}
   <body class={{page.body_class}}>
+    {% if page.body_class == "home" %}
+      {% include banner.html %}
+      <script src="{{ site.baseurl }}/assets/js/banner.js"></script>
+    {% endif %}
     {% include header.html header_class=page.header_class %}
     {{ content }}
     {% include footer.html %}

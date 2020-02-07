@@ -58,6 +58,8 @@ collections:
     output: true
   rlos:
     output: true
+  banner:
+    output: true
 
 scholar:
   style: ieee
