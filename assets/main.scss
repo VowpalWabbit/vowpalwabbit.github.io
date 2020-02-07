@@ -43,6 +43,51 @@
   cursor: pointer;
 }
 
+.banner_container {
+  padding: 1.25rem 0;
+  opacity: 0.99;
+  background-color: black;
+  color: $gray-10;
+  font-size: 1.125rem;
+  line-height: 1.5;
+
+  a {
+    color: $gray-10;
+    border-bottom: 1px solid $gray-10;
+
+    &:hover {
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid white;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .close_icon {
+    display: block;
+    background: transparent;
+    border: 0;
+    padding-right: 0.8rem;
+    margin-left: -0.8em;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
 .hero_container {
   background: $blue-30;
   padding: 4rem 1rem 5.5rem;
