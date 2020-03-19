@@ -152,7 +152,7 @@ power_t = 0.5
 
 The default is `0.5` and a minimax optimal choice that works well for most problems in Vowpal Wabbit. A different way of stating this is: stationary data-sets where the fundamental relation between the input features and target label are not changing over time, should benefit from a high (close to 1.0) `--power_t` while learning against changing conditions, like learning against an adversary who continuously changes the rules-of-the-game, would benefit from low (close to 0) `--power_t` so the learner can react quickly to these changing conditions.
 
->**Note:** You can adjust this `--power_t p` where _p_ is in the range [0,1]. 0 means the learning rate does not decay, which can be helpful when state tracking, while 1 is very aggressive, but plausibly optimal for [IID](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) data-sets.
+>**Note:** You can adjust this `--power_t p` typically _p_ is in the range [0,1]. 0 means the learning rate does not decay, which can be helpful when state tracking, while 1 is very aggressive, but plausibly optimal for [IID](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) data-sets.
 
 ### Cache files
 
