@@ -130,9 +130,9 @@ The default learning rate is `0.5` with current default update (`--normalized --
 
 If the data is noisy, you need a larger data-set or multiple passes to predict well. For massive data-sets, the learning rate decays towards `0` by default.
 
-Use  `-l new_learning_rate` to adjust the learning rate up or down.
+Use `-l <learning rate>` to adjust the learning rate up or down.
 
-So you can try something like `vw -l 0.4` if you want the new learning rate to be 0.4. You can always choose the learning rate based on your project
+For example: `vw -l 0.4`
 
 >**Note:** A higher learning rate makes the model converge faster, but if you adjust the learning rate too high, you risk over-fit and end-up worse on average.
 
