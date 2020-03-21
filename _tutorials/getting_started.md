@@ -144,7 +144,7 @@ The following output shows the initial time for learning rate decay:
 initial_t = 0
 ```
 
->**Note:** Learning rates often decay over time, and this diagnostic output specifies the initial time. You can adjust with `--initial_t new_time`, although this is rarely necessary these days.
+>**Note:** Learning rates often decay over time, and this diagnostic output specifies the initial time. You can adjust with `--initial_t <time>`, although this is rarely necessary these days.
 
 So you can have something like `vw --initial_t 4` if you want the new initial time to be 4
 
