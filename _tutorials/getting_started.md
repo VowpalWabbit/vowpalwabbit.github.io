@@ -182,7 +182,7 @@ The cache file is created the first time you use `-c`. If the cache exists and i
 
 Use `-c` for multiple passes `--passes`, so Vowpal Wabbit caches the data in a faster format (passes > 1 should be much faster).  If you want to experiment with the same dataset over and over, it is highly recommended to pass `-c` every time you train.
 
-So we can have something like: ```vw -c --passes 50 house_dataset```
+For example: `vw -c --passes 50 -d house_dataset`
 
 ### Data sources
 
