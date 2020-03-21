@@ -116,7 +116,7 @@ This diagnostic ouput shows that the number of bits from the hash function is 18
 
 Use `-b <Number of bits>` to adjust the number of bits to be used from the hash function. 
 
-So you have `vw -b <Number of bits> house_dataset` to run the code again
+For example: `vw -b 10 house_dataset`
 
 ### Learning rate
 
