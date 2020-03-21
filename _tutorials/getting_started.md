@@ -114,7 +114,7 @@ Num weight bits = 18
 
 This diagnostic ouput shows that the number of bits from the hash function is 18 (more than enough for this example).
 
-Use `-b <Number of bits>` to adjust the number of bits to be used from the hash function. 
+Use `-b <number of bits>` to adjust the number of bits to be used from the hash function. 
 
 For example: `vw -b 10 house_dataset`
 
