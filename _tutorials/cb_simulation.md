@@ -217,12 +217,16 @@ def run_simulation(vw, num_iterations, users, times_of_day, actions, cost_functi
             vw_format = vw.parse(to_vw_example_format(context, actions, (action, cost, prob)),pyvw.vw.lContextualBandit)
             # 6. Learn
             vw.learn(vw_format)
+            # 7. Let VW know you're done with these objects
+            vw.finish_example(vw_format)
 
         # We negate this so that on the plot instead of minimizing cost, we are maximizing reward
         ctr.append(-1*cost_sum/i)
 
     return ctr
 ```
+
+>**Note:** `finish_example` is important as it updates statistics and frees used memory.
 
 We want to be able to visualize what is occurring, so we are going to plot the click-through rate over each iteration of the simulation. The CTR is higher if Vowpal Wabbit is showing actions that get rewards. Use this utility function to make showing the plot easier:
 
