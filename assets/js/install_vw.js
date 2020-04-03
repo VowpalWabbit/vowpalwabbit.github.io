@@ -75,7 +75,7 @@ const getStartedModule = (function() {
     const command_list = {
       "linux,python3": "sudo apt update" +
                        "<br><br>" +
-                       "sudo apt install libboost-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libboost-math-dev libboost-test-dev libboost-python-dev zlib1g-dev cmake python3 python3-pip" +
+                       "sudo apt install libboost-dev libboost-program-options-dev libboost-system-dev libboost-math-dev libboost-test-dev libboost-python-dev zlib1g-dev cmake python3 python3-pip" +
                        "<br><br>" +
                        "pip3 install vowpalwabbit",
       "linux,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#ubuntu' target='_blank'>source</a>",
