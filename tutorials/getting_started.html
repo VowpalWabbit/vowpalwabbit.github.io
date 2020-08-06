@@ -413,7 +413,7 @@ total feature number = 15</p>
 <p>The default is <code class="highlighter-rouge">0.5</code> and a minimax optimal choice that works well for most problems in Vowpal Wabbit. A different way of stating this is: stationary data-sets where the fundamental relation between the input features and target label are not changing over time, should benefit from a high (close to 1.0) <code class="highlighter-rouge">--power_t</code> while learning against changing conditions, like learning against an adversary who continuously changes the rules-of-the-game, would benefit from low (close to 0) <code class="highlighter-rouge">--power_t</code> so the learner can react quickly to these changing conditions.</p>
 
 <blockquote>
-  <p><strong>Note:</strong> You can adjust this <code class="highlighter-rouge">--power_t p</code> where <em>p</em> is in the range [0,1]. 0 means the learning rate does not decay, which can be helpful when state tracking, while 1 is very aggressive, but plausibly optimal for <a href="https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables">IID</a> data-sets.</p>
+  <p><strong>Note:</strong> You can adjust this <code class="highlighter-rouge">--power_t p</code> typically <em>p</em> is in the range [0,1]. 0 means the learning rate does not decay, which can be helpful when state tracking, while 1 is very aggressive, but plausibly optimal for <a href="https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables">IID</a> data-sets.</p>
 </blockquote>
 
 <h3 id="cache-files">Cache files</h3>
