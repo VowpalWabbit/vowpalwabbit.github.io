@@ -81,7 +81,9 @@ const getStartedModule = (function() {
       "linux,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#ubuntu' target='_blank'>source</a>",
       "linux,java": "Build from source",
       "linux,c#": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#ubuntu' target='_blank'>source</a>",
-      "mac,python3": "pip install vowpalwabbit",
+      "mac,python3": "brew install cmake boost boost-python3 zlib" +
+                     "<br><br>" +
+                     "pip install vowpalwabbit",
       "mac,c++": "brew install vowpal-wabbit",
       "mac,java": "Build from source",
       "mac,c#": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#macos' target='_blank'>source</a>",
