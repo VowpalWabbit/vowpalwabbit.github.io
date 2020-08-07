@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+
+  <body class="blog">
+    {% include header.html %}
+
+    <div class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1>
+              Blog
+            </h1>
+            <a href="{{ 'blog.html' | relative_url }}">
+              < Back to all blogs 
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container content blog_container">
+      <div class="row">
+        <div class="col-lg-9">
+          {{ content }}
+        </div>
+        <div class="col-lg-3">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
