@@ -1,5 +1,5 @@
 ---
-visible: false
+visible: true
 ---
 
-Microsoft Research is running RL OS Fest 2020 supporting open source development in Vowpal Wabbit. Learn more [here](https://www.microsoft.com/en-us/research/academic-program/rl-open-source-fest/), and see the projects [here]({{ 'rlos_projects.html' | relative_url }}).
+Vowpal Wabbit 8.9.0 was just released. Read the release notes [here]({% post_url 2020-11-05-vowpalwabbit-8.9.0 %}).
