@@ -83,6 +83,7 @@ conv2.convert_df()
 # ['1 |ns1 a:2', '-1 |ns1 a:3']
 ```
 
+- [Input format wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Input-format)
 - [Documentation](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/vowpalwabbit.DFtoVW.html#vowpalwabbit.DFtoVW.DFtoVW)
 - [More examples](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/tests/test_DFtoVW.py)
 - [Code](https://github.com/VowpalWabbit/vowpal_wabbit/blob/80917701fb0353f8f862cab3a0f8425bab37396c/python/vowpalwabbit/DFtoVW.py#L517)
