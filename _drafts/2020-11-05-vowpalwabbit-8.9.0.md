@@ -11,7 +11,16 @@ We now produce Python wheels for [most platforms](https://github.com/VowpalWabbi
 
 ## Initial Pandas support in Python
 
-@lalo to fill in
+We introduced in this release `DFtoVW`, a class that converts `pandas.DataFrame` object into VW input format. To use import it from `vowpalwabbit.DFtoVW`. We currently support simple label, multiclass label and feature transformations.
+
+For more information be sure to check out:
+
+- https://github.com/VowpalWabbit/vowpal_wabbit/blob/80917701fb0353f8f862cab3a0f8425bab37396c/python/vowpalwabbit/DFtoVW.py#L517 
+- https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Input-format
+- https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/tests/test_DFtoVW.py
+
+Thanks to Etienne Kintzler @etiennekintzler for this contribution
+
 
 ## Continuous Actions
 CATS is a contextual bandit algorithm with a continuous action space. It uses epsilon greedy exploration with tree policy classes and smoothing.
