@@ -97,7 +97,7 @@ Example:
 ```
 0.1 | string_name:string_value
 ```
-
+When using the JSON format this option changes the behavior from concatenation to chain hashing when a string feature value is used.
 - [Pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2214)
 
 ### `--local`
