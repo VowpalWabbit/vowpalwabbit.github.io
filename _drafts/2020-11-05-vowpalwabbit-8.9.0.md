@@ -9,25 +9,12 @@ It's been a while since we last released, but a lot of exciting things have been
 
 We now produce Python wheels for [most platforms](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Python#support) which are uploaded to PyPi. This means you almost never have to build from source to use VW in Python! We're committed to making using VW in Python a great experience, and this is just the first step.
 
-## Initial Pandas support in Python
-
-We introduced in this release `DFtoVW`, a class that converts `pandas.DataFrame` object into VW input format. To use import it from `vowpalwabbit.DFtoVW`. We currently support simple label, multiclass label and feature transformations.
-
-For more information be sure to check out:
-
-- https://github.com/VowpalWabbit/vowpal_wabbit/blob/80917701fb0353f8f862cab3a0f8425bab37396c/python/vowpalwabbit/DFtoVW.py#L517 
-- https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Input-format
-- https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/tests/test_DFtoVW.py
-
-Thanks to Etienne Kintzler @etiennekintzler for this contribution
-
-
 ## Continuous Actions
 CATS is a contextual bandit algorithm with a continuous action space. It uses epsilon greedy exploration with tree policy classes and smoothing.
 
 CATS, utilizing the features given as input, will first choose a center from a continuous action range using a tree policy, and then will use a bandwidth to determine a radius of randomization around the chosen center (centers or discrete actions). The depth of the tree and the bandwidth need to be specified beforehand.
 
-Contributed by [@mmajzoubi](https://github.com/mmajzoubi)
+Thanks to Maryam Majzoubi ([@mmajzoubi](https://github.com/mmajzoubi)) for this contribution.
 
 - [Read the paper](https://arxiv.org/pdf/2006.06040.pdf)
 - [Learn more at the wiki page](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/CATS,-CATS-pdf-for-Continuous-Actions)
@@ -36,7 +23,7 @@ Contributed by [@mmajzoubi](https://github.com/mmajzoubi)
 ## Square CB
 Square CB is a new exploration algorithm for contextual bandits which works by reducing contextual bandits to regression. It is the first reduction of this type that provably has optimal performance for contextual bandits, and has comparable runtime to other basic exploration algorithms such as epsilon-greedy. Empirically, it has been shown that it has competitive performance on the large-scale evaluation setup from the [bake-off paper](https://arxiv.org/abs/1802.04064).
 
-Contributed by [@canondetortugas](https://github.com/canondetortugas)
+Thanks to Dylan Foster ([@canondetortugas](https://github.com/canondetortugas)) for this contribution.
 
 - [Learn more at the wiki page](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-Exploration-with-SquareCB)
 - [Pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2536)
@@ -44,7 +31,7 @@ Contributed by [@canondetortugas](https://github.com/canondetortugas)
 ## Probabilistic Label Tree
 Probabilistic label tree is a new reduction for logarithmic time multilabel classification. It is especially useful when there is a large number of classes, around 10000 or more.
 
-Contributed by [@mwydmuch](https://github.com/mwydmuch).
+Thanks to Marek Wydmuch ([@mwydmuch](https://github.com/mwydmuch)) for this contribution.
 
 - [Read the paper](http://proceedings.mlr.press/v48/jasinska16.html)
 - [See a demo of it](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/demo/plt)
@@ -72,6 +59,35 @@ This adds a new exploration algorithm for CB ADF inspired by random network dist
 - [Learn more at the wiki page (point 5.)](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms#changing-action-set-or-featurized-actions
 )
 - [Pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2407)
+
+## Initial Pandas support in Python
+
+We introduced in this release `DFtoVW`, a class that converts `pandas.DataFrame` object into VW input format. To use import it from `vowpalwabbit.DFtoVW`. We currently support simple label, multiclass label and feature transformations.
+
+Example:
+```Python
+from vowpalwabbit.DFtoVW import DFtoVW, SimpleLabel, Feature, Namespace
+import pandas as pd
+
+df = pd.DataFrame({"y": [1, -1], "a": [2, 3], "b": [3, 2]})
+conv1 = DFtoVW(df=df,
+    label=SimpleLabel("y"),
+    features=[Feature("a"), Feature("b")])
+conv1.convert_df()
+# ['1 | a:2 b:3', '-1 | a:3 b:2']
+
+conv2 = DFtoVW(df=df,
+    label=SimpleLabel("y"),
+    namespaces=[Namespace(name="ns1", features=Feature("a"))])
+conv2.convert_df()
+# ['1 |ns1 a:2', '-1 |ns1 a:3']
+```
+
+- [Documentation](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/vowpalwabbit.DFtoVW.html#vowpalwabbit.DFtoVW.DFtoVW)
+- [More examples](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/tests/test_DFtoVW.py)
+- [Code](https://github.com/VowpalWabbit/vowpal_wabbit/blob/80917701fb0353f8f862cab3a0f8425bab37396c/python/vowpalwabbit/DFtoVW.py#L517)
+
+Thanks to Etienne Kintzler ([@etiennekintzler](https://github.com/etiennekintzler)) for this contribution.
 
 ## New options
 ### `--chain_hash`
