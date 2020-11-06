@@ -9,6 +9,39 @@ It's been a while since we last released, but a lot of exciting things have been
 
 We now produce Python wheels for [most platforms](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Python#support) which are uploaded to PyPi. This means you almost never have to build from source to use VW in Python! We're committed to making using VW in Python a great experience, and this is just the first step.
 
+## String feature value in text format
+In a small loosening of the text format you can now supply a string as the value for a feature. If this was tried previously you'd receive a malformed example warning and the feature would be skipped. When a feature value is supplied in this way the hash is now calculated as `hash(feature_value, hash(feature_name, namespace_hash))` where hash's signature is `hash(input, seed)`. This chained hashing is denoted by a `^` in the audit output.
+
+```
+echo "| myname:myvalue" | vw --audit
+```
+
+```
+Num weight bits = 18
+learning rate = 0.5
+initial_t = 0
+power_t = 0.5
+using no cache
+Reading datafile =
+num sources = 1
+Enabled reductions: gd, scorer
+average  since         example        example  current  current  current
+loss     last          counter         weight    label  predict features
+0
+	myname^myvalue:112555:1:0@0	Constant:116060:1:0@0
+    n.a.     n.a.            1            1.0  unknown   0.0000        2
+
+finished run
+number of examples = 1
+weighted example sum = 1.000000
+weighted label sum = 0.000000
+average loss = n.a.
+total feature number = 2
+```
+
+- [Input format wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Input-format)
+- [Audit wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Audit)
+
 ## Continuous Actions
 CATS is a contextual bandit algorithm with a continuous action space. It uses epsilon greedy exploration with tree policy classes and smoothing.
 
@@ -90,14 +123,11 @@ conv2.convert_df()
 
 Thanks to Etienne Kintzler ([@etiennekintzler](https://github.com/etiennekintzler)) for this contribution.
 
+
 ## New options
 ### `--chain_hash`
-This new option allows the value of a feature to be a string. In this case the feature name will be hashed along with the feature value to form the overall feature index. Without using this flag you will receive a warning for doing this.
-Example:
-```
-0.1 | string_name:string_value
-```
-When using the JSON format this option changes the behavior from concatenation to chain hashing when a string feature value is used.
+In the JSON and DSJSON formats when a string was supplied as a value the old behavior was to concatenate the property name with the value. This option changes the behavior to hash the feature name a long with the value to determine the feature index. The old behavior is deprecated and you'll receive a warning if `--chain_hash` is not supplied and you are using either `--json` or `--dsjson`. The old behavior will be removed in a future version.
+
 - [Pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2214)
 
 ### `--local`
