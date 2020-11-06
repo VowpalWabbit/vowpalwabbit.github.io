@@ -1,4 +1,13 @@
-# VowpalWabbit 8.9.0
+---
+layout: post
+title: "VowpalWabbit 8.9.0 Release Notes"
+layout: blog
+excerpt_separator: <!--more-->
+---
+
+<!--more-->
+
+# VowpalWabbit 8.9.0 Release Notes
 
 - [GitHub release](https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.9.0)
 - [PyPi](https://pypi.org/project/vowpalwabbit/)
