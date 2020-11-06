@@ -18,8 +18,8 @@ It's been a while since we last released, but a lot of exciting things have been
 
 We now produce Python wheels for [most platforms](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Python#support) which are uploaded to PyPi. This means you almost never have to build from source to use VW in Python! We're committed to making using VW in Python a great experience, and this is just the first step.
 
-## String feature value in text format
-In a small loosening of the text format you can now supply a string as the value for a feature. If this was tried previously you'd receive a malformed example warning and the feature would be skipped. When a feature value is supplied in this way the hash is now calculated as `hash(feature_value, hash(feature_name, namespace_hash))` where hash's signature is `hash(input, seed)`. This chained hashing is denoted by a `^` in the audit output.
+## String feature values in text format
+In a small expansion of the text format you can now supply a string as the value for a feature. This strictly adds a case which is now valid and doesn't affect any existing valid data files. If this was tried previously you'd receive a malformed example warning and the feature would be skipped. When a feature value is supplied in this way the hash is now calculated as `hash(feature_value, hash(feature_name, namespace_hash))` where hash's signature is `hash(input, seed)`. This chained hashing is denoted by a `^` in the audit output.
 
 ```
 echo "| myname:myvalue" | vw --audit
