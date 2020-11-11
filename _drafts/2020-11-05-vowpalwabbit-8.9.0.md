@@ -224,6 +224,17 @@ And of course thank you to existing contributors:
 <details>
   <summary>There were plenty more changes! Click here to expand and see the full changelist.</summary>
 
+- [Enable automatic CB and CCB equivalence for single slot examples (#2610)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2610) - Jack Gerrits
+- [fixed duplicate quadratic interactions (#2636)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2636) - Rajan
+- [bug fix: action index is inconsistent in explore_eval (#2631)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2631) - cheng-tan
+- [benchmark against master (#2637)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2637) - olgavrou
+- [Experimental benchmarking pipeline (#2625)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2625) - olgavrou
+- [cats pdf edge cases (#2623)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2623) - olgavrou
+- [Make chain hash the default with text format and warn with json formats (#2634)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2634) - Jack Gerrits
+- [Update DFtoVW examples to reflect the move to a different file (#2632)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2632) - Jack Gerrits
+- [[py] add docs for DFtoVW (#2630)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2630) - Eduardo Salinas
+- [Add python to clang format script (#2627)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2627) - Jack Gerrits
+- [Run clang-format over codebase (#2626)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2626) - Jack Gerrits
 - [Update ubuntu version for formatting CI (#2628)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2628) - Jack Gerrits
 - [Rename p, lp, simple_label (#2622)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2622) - Jack Gerrits
 - [Contributing guidelines (#2508)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2508) - Eduardo Salinas
