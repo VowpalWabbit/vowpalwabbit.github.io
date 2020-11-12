@@ -12,8 +12,8 @@
             <h1>
               Blog
             </h1>
-            <a href="{{ 'blog.html' | relative_url }}">
-              < Back to all blogs 
+            <a href="{{ 'blogs.html' | relative_url }}">
+              < Back to all blogs
             </a>
           </div>
         </div>
@@ -29,5 +29,7 @@
         </div>
       </div>
     </div>
+    {% include footer.html %}
+    <script src="{{ site.baseurl }}/assets/js/blog.js"></script>
   </body>
 </html>
