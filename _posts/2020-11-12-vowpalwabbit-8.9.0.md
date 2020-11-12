@@ -1,7 +1,9 @@
 ---
-layout: post
 title: "VowpalWabbit 8.9.0 Release Notes"
 layout: blog
+tags: Release&nbsp;notes
+description: It's been a while since we last released, but a lot of exciting things have been going on! <br><br><br> Let's take a look at some of the big items from this release.
+permalink: /blogs/:title
 excerpt_separator: <!--more-->
 ---
 
@@ -9,10 +11,10 @@ excerpt_separator: <!--more-->
 
 # VowpalWabbit 8.9.0 Release Notes
 
+<div class="blog_highlight" markdown="1">
 - [GitHub release](https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.9.0)
 - [PyPi](https://pypi.org/project/vowpalwabbit/)
-
-It's been a while since we last released, but a lot of exciting things have been going on! Let's take a look at some of the big items from this release.
+</div>
 
 ## Python Wheels
 
@@ -21,11 +23,13 @@ We now produce Python wheels for [most platforms](https://github.com/VowpalWabbi
 ## String feature values in text format
 In a small expansion of the text format you can now supply a string as the value for a feature. This strictly adds a case which is now valid and doesn't affect any existing valid data files. If this was tried previously you'd receive a malformed example warning and the feature would be skipped. When a feature value is supplied in this way the hash is now calculated as `hash(feature_value, hash(feature_name, namespace_hash))` where hash's signature is `hash(input, seed)`. This chained hashing is denoted by a `^` in the audit output.
 
-```
+```sh
 echo "| myname:myvalue" | vw --audit
 ```
 
-```
+**Output:**
+<div class="output" markdown="1">
+
 Num weight bits = 18
 learning rate = 0.5
 initial_t = 0
@@ -46,7 +50,8 @@ weighted example sum = 1.000000
 weighted label sum = 0.000000
 average loss = n.a.
 total feature number = 2
-```
+
+</div>
 
 - [Input format wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Input-format)
 - [Audit wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Audit)
@@ -107,7 +112,7 @@ This adds a new exploration algorithm for CB ADF inspired by random network dist
 We introduced in this release `DFtoVW`, a class that converts `pandas.DataFrame` object into VW input format. To use import it from `vowpalwabbit.DFtoVW`. We currently support simple label, multiclass label and feature transformations.
 
 Example:
-```Python
+```python
 from vowpalwabbit.DFtoVW import DFtoVW, SimpleLabel, Feature, Namespace
 import pandas as pd
 
@@ -150,13 +155,14 @@ Contributed by [@zechyw](https://github.com/zechyw).
 ### `--dry_run`
 This option will skip running the driver. It is especially helpful with the new diagnostic about enabled reductions.
 
-Example:
+**Example:**
 ```sh
 vw --ccb_explore_adf --dry_run
 ```
 
-Output:
-```
+**Output:**
+<div class="output" markdown="1">
+
 Num weight bits = 18
 learning rate = 0.5
 initial_t = 0
@@ -172,13 +178,14 @@ weighted example sum = 0.000000
 weighted label sum = 0.000000
 average loss = n.a.
 total feature number = 0
-```
+
+</div>
 
 - [Pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2531)
 
 ### `--nounif`
 This option was added to cb_explore with cover so that it can behave the same way as cb_explore_adf_cover which provides a switch for turning off the uniform exploration on zero-probability actions. Uniform exploration on zero-probability actions is now on by default in cb cover to match the existing behavior of cb_explore_adf_cover.
-  
+
 - [Pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2633)
 
 ## Other improvements
@@ -226,8 +233,14 @@ And of course thank you to existing contributors:
 
 ## Full changelist
 
-<details>
-  <summary>There were plenty more changes! Click here to expand and see the full changelist.</summary>
+<div>
+  <i class="fa fa-caret-right"></i>
+  <button class="changelist_button">
+    There were plenty more changes! Click here to expand and see the full changelist.
+  </button>
+</div>
+
+<div class="changelist hidden" markdown="1">
 
 - [cover to mimic cover adf (#2633)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2633) - olgavrou
 - [Enable automatic CB and CCB equivalence for single slot examples (#2610)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2610) - Jack Gerrits
@@ -381,7 +394,7 @@ And of course thank you to existing contributors:
 - [Update config.yml (#2415)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2415) - Jack Gerrits
 - [Update build-linux-valgrind.yml (#2417)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2417) - Jack Gerrits
 - [ Change Interactions from signed char to uint8_t to avoid casting (#2296)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2296) - Sharad Chitlangia
-- [Added `--local` option (for loading active learning/damon models) (#2411)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2411) - Zechy Wong
+- [Added --local option (for loading active learning/damon models) (#2411)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2411) - Zechy Wong
 - [Create tool to help measure throughput of parser (#2402)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2402) - Jack Gerrits
 - [Merge symbol export visibility handling between C++ lib and DLL and fixes to vw_exception (#2404)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2404) - Jack Gerrits
 - [Fix push many (#2409)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2409) - cheng-tan
@@ -495,4 +508,4 @@ And of course thank you to existing contributors:
 - [Update test/README (#2198)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2198) - Ariel Faigon
 - [Standardize copyright comments (#2185)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2185) - Jack Gerrits
 
-</details>
+</div>
