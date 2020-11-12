@@ -176,6 +176,11 @@ total feature number = 0
 
 - [Pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2531)
 
+### `--nounif`
+This option was added to cb_explore with cover so that it can behave the same way as cb_explore_adf_cover which provides a switch for turning off the uniform exploration on zero-probability actions. Uniform exploration on zero-probability actions is now on by default in cb cover to match the existing behavior of cb_explore_adf_cover.
+  
+- [Pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2633)
+
 ## Other improvements
 - [Automatic documentation generation on each commit.](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2381) Published here: https://vowpalwabbit.org/docs
 - [Valgrind checking on every pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2316)
