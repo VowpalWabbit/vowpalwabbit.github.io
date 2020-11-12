@@ -275,7 +275,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .start .start_container .tutorials_container .all_tutorials_link a { color: #2A3B93; font-weight: 600; display: inline-block; padding-bottom: 4px; border-bottom: 2px solid transparent; }
 .start .start_container .tutorials_container .all_tutorials_link a:hover { text-decoration: none; border-bottom: 2px solid #2A3B93; }
 .start .start_container .tutorials_container .tutorial_card { background: white; margin-bottom: 2rem; padding: 1.5rem 2rem; min-height: 26.25rem; position: relative; }
-.start .start_container .tutorials_container .tutorial_card .description { padding: 1rem 0 0.8rem; }
+.start .start_container .tutorials_container .tutorial_card .description { padding: 1rem 0 0.8rem; letter-spacing: -0.5px; }
 .start .start_container .tutorials_container .tutorial_card .footer { position: absolute; left: 0; right: 0; padding: 1rem 1rem 0; bottom: 1.5rem; }
 .start .start_container .tutorials_container .tutorial_card .footer a { background: white; border: 3px solid white; border-radius: 28px; color: #2A3B93; display: inline-block; font-weight: 600; margin: 0.5rem 0; padding: 0.8rem 0; text-align: center; width: 100%; }
 .start .start_container .tutorials_container .tutorial_card .footer a:hover { background: #F2F4FF; text-decoration: none; transition: 0.3s; border: 3px solid #F2F4FF; }
@@ -289,7 +289,7 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tutorials .tutorials_container .hero a { color: white; }
 .tutorials .tutorials_container .tutorials_list { background: #EBEBEB; padding: 5rem 1rem; }
 .tutorials .tutorials_container .tutorial_card { background: white; margin-bottom: 2rem; padding: 1.5rem 2rem; min-height: 26.25rem; position: relative; }
-.tutorials .tutorials_container .tutorial_card .description { padding: 1rem 0 0.8rem; }
+.tutorials .tutorials_container .tutorial_card .description { padding: 1rem 0 0.8rem; letter-spacing: -0.5px; }
 .tutorials .tutorials_container .tutorial_card .footer { position: absolute; left: 0; right: 0; padding: 1rem 1rem 0; bottom: 1.5rem; }
 .tutorials .tutorials_container .tutorial_card .footer a { background: white; border: 3px solid white; border-radius: 28px; color: #2A3B93; display: inline-block; font-weight: 600; margin: 0.5rem 0; padding: 0.8rem 0; text-align: center; width: 100%; }
 .tutorials .tutorials_container .tutorial_card .footer a:hover { background: #F2F4FF; text-decoration: none; transition: 0.3s; border: 3px solid #F2F4FF; }
@@ -299,14 +299,14 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .tutorials .tutorials_container .tutorial_card .tags { font-size: 15px; line-height: 20px; }
 .tutorials .tutorials_container .tutorial_card .tags .tag { background: #F2F4FF; padding: 0.3rem 0.6rem; margin: 0.2rem 0.2rem 0.2rem 0; display: inline-block; text-transform: capitalize; }
 
-.tutorials .help_section_container { padding: 6rem 1rem; }
-.tutorials .help_section_container h2 { padding-bottom: 1rem; }
-.tutorials .help_section_container .description { padding-bottom: 1rem; }
-.tutorials .help_section_container .links { display: flex; justify-content: space-between; align-items: center; }
-.tutorials .help_section_container .links a { color: #333333; text-decoration: none; }
-.tutorials .help_section_container .links a svg path { fill: #666666; }
-.tutorials .help_section_container .links a:hover { color: #415EBF; }
-.tutorials .help_section_container .links a:hover svg g, .tutorials .help_section_container .links a:hover svg path { fill: #415EBF; }
+.help_section_container { padding: 6rem 1rem; }
+.help_section_container h2 { padding-bottom: 1rem; }
+.help_section_container .description { padding-bottom: 1rem; }
+.help_section_container .links { display: flex; justify-content: space-between; align-items: center; }
+.help_section_container .links a { color: #333333; text-decoration: none; }
+.help_section_container .links a svg path { fill: #666666; }
+.help_section_container .links a:hover { color: #415EBF; }
+.help_section_container .links a:hover svg g, .help_section_container .links a:hover svg path { fill: #415EBF; }
 
 .features .features_container .hero { background: #2A3B93; color: white; padding: 3rem 1rem; padding: 6rem 1rem; }
 .features .features_container .hero h1 { padding-bottom: 1rem; }
@@ -352,6 +352,46 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .rlos .hero h1 { padding-bottom: 1rem; }
 .rlos h1 { padding-bottom: 0; }
 .rlos .tutorial_container { padding-bottom: 15rem; }
+
+.blogs .blogs_container .hero { background: #2A3B93; color: white; padding: 3rem 1rem; }
+.blogs .blogs_container .hero h1 { padding-bottom: 1rem; }
+.blogs .blogs_container .hero a { color: white; }
+.blogs .blogs_container .blogs_list { background: #EBEBEB; padding: 5rem 1rem; }
+.blogs .blogs_container .blog_card { background: white; margin-bottom: 2rem; padding: 1.5rem 2rem; min-height: 26.25rem; position: relative; }
+.blogs .blogs_container .blog_card .description { padding: 1rem 0 0.8rem; letter-spacing: -0.5px; }
+.blogs .blogs_container .blog_card .footer { position: absolute; left: 0; right: 0; padding: 1rem 1rem 0; bottom: 1.5rem; }
+.blogs .blogs_container .blog_card .footer a { background: white; border: 3px solid white; border-radius: 28px; color: #2A3B93; display: inline-block; font-weight: 600; margin: 0.5rem 0; padding: 0.8rem 0; text-align: center; width: 100%; }
+.blogs .blogs_container .blog_card .footer a:hover { background: #F2F4FF; text-decoration: none; transition: 0.3s; border: 3px solid #F2F4FF; }
+.blogs .blogs_container .blog_card .footer a { background: #2A3B93; border: 3px solid #2A3B93; box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.1); color: white; display: block; width: 15rem; margin: auto; }
+.blogs .blogs_container .blog_card .footer a:hover { background: #415EBF; border: 3px solid #415EBF; }
+@media screen and (max-width: 320px) { .blogs .blogs_container .blog_card .footer { position: relative; bottom: 0; } }
+.blogs .blogs_container .blog_card .tags { font-size: 15px; line-height: 20px; }
+.blogs .blogs_container .blog_card .tags .tag { background: #F2F4FF; padding: 0.3rem 0.6rem; margin: 0.2rem 0.2rem 0.2rem 0; display: inline-block; text-transform: capitalize; }
+
+.blog .hero { background: #2A3B93; color: white; padding: 3rem 1rem; }
+.blog .hero h1 { padding-bottom: 1rem; }
+.blog .hero a { color: white; font-size: 1.125rem; line-height: 1.33; }
+
+.blog_container { position: relative; padding: 5rem 1rem; }
+.blog_container a { color: #2A3B93; border-bottom: 1px solid #2A3B93; }
+.blog_container a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
+.blog_container .blog_highlight { background: #F2F2F2; padding: 1rem 0; margin-bottom: 2rem; }
+.blog_container .blog_highlight ul { margin: 0; }
+.blog_container h1 { font-size: 3rem; line-height: 1.1; font-weight: 300; padding-bottom: 1.875rem; }
+.blog_container h2 { font-size: 2.25rem; line-height: 1.1; font-weight: 300; margin: 5rem 0 1.875rem; position: relative; }
+.blog_container h2:hover > a { display: inline-block; }
+.blog_container h2 > a { border: 0; display: none; font-weight: 400; font-size: 1.5rem; padding: 0 1rem; position: absolute; height: 1.5rem; top: 0; bottom: 0; margin: auto; vertical-align: middle; }
+.blog_container h2 > a:hover { border: 0; }
+.blog_container h3 { font-size: 1.5rem; line-height: 1.25; font-weight: 400; margin: 3.125rem 0 1.25rem; }
+.blog_container code.highlighter-rouge { font-weight: bold; background-color: #F2F2F2; padding: 0 0.2rem; }
+.blog_container .output { padding: 1rem 1rem 0; background: rgba(255, 244, 219, 0.75); margin: 0.5rem 0 1rem; overflow: auto; }
+.blog_container .output p { white-space: pre; }
+.blog_container .output table { border: 0; width: 100%; margin: 0 0 3rem; }
+.blog_container .output table th, .blog_container .output table td { border: 0; border-bottom: 1px solid #FFDD56; }
+.blog_container ul li { margin: 0.4rem 0; padding: 0; }
+.blog_container button { background-color: transparent; border: 0; margin: 0; padding: 0; }
+.blog_container button:before { width: 0; height: 0; border-top: 60px solid transparent; border-bottom: 60px solid transparent; border-left: 60px solid green; }
+.blog_container .hidden { display: none; }
 
 @media screen and (min-width: 1200px) { .container { max-width: 1180px; } }
 .overlay_on { overflow-y: hidden; }
