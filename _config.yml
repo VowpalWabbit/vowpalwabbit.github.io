@@ -60,6 +60,9 @@ collections:
     output: true
   banner:
     output: true
+  posts:
+    output: true
+    permalink: /blog/:title:output_ext
 
 scholar:
   style: ieee
