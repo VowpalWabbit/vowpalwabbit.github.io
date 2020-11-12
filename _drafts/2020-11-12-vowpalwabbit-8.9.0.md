@@ -229,6 +229,7 @@ And of course thank you to existing contributors:
 <details>
   <summary>There were plenty more changes! Click here to expand and see the full changelist.</summary>
 
+- [cover to mimic cover adf (#2633)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2633) - olgavrou
 - [Enable automatic CB and CCB equivalence for single slot examples (#2610)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2610) - Jack Gerrits
 - [fixed duplicate quadratic interactions (#2636)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2636) - Rajan
 - [bug fix: action index is inconsistent in explore_eval (#2631)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2631) - cheng-tan
