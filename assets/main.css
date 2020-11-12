@@ -375,6 +375,10 @@ ol.bibliography .details:hover { text-decoration: none; color: #415EBF; }
 .blog_container { position: relative; padding: 5rem 1rem; }
 .blog_container a { color: #2A3B93; border-bottom: 1px solid #2A3B93; }
 .blog_container a:hover { text-decoration: none; color: #415EBF; border-bottom: 1px solid #415EBF; }
+.blog_container .blog_date { color: #666666; letter-spacing: 0; line-height: 1.25; padding-bottom: 0.6rem; }
+.blog_container .blog_title h1 { padding-bottom: 1.6rem; margin-bottom: 0; }
+.blog_container .author { color: #666666; padding-bottom: 1.6rem; display: flex; align-items: center; }
+.blog_container .author_avatar { width: 30px; height: 30px; border-radius: 50%; margin-right: 0.5rem; }
 .blog_container .blog_highlight { background: #F2F2F2; padding: 1rem 0; margin-bottom: 2rem; }
 .blog_container .blog_highlight ul { margin: 0; }
 .blog_container h1 { font-size: 3rem; line-height: 1.1; font-weight: 300; padding-bottom: 1.875rem; }
