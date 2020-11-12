@@ -2,19 +2,19 @@
 title: "VowpalWabbit 8.9.0 Release Notes"
 layout: blog
 tags: Release&nbsp;notes
-description: It's been a while since we last released, but a lot of exciting things have been going on! <br><br><br> Let's take a look at some of the big items from this release.
-permalink: /blogs/:title
-excerpt_separator: <!--more-->
+description: This release includes major features such as continuous actions, square CB, probabilistic label tree, slates, CB distributionally robust optimization, CB ADF RND, Python wheels and many bug fixes.
+author: Jack Gerrits
+avatar_link: https://avatars1.githubusercontent.com/u/7558482?s=400&u=21e4cca683799d65a20a4cf3d11d0c17853ef9cb&v=4
 ---
-
-<!--more-->
-
-# VowpalWabbit 8.9.0 Release Notes
 
 <div class="blog_highlight" markdown="1">
 - [GitHub release](https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.9.0)
 - [PyPi](https://pypi.org/project/vowpalwabbit/)
 </div>
+
+It's been a while since we last released, but a lot of exciting things have been going on!
+
+Let's take a look at some of the big items from this release.
 
 ## Python Wheels
 

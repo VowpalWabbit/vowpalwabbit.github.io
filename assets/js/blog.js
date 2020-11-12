@@ -4,6 +4,7 @@ const blogModule = (function() {
 
   function init() {
     cacheDom();
+    addLinkToHeader();
     bindButtonEvent();
   }
 
@@ -13,6 +14,19 @@ const blogModule = (function() {
 
   function cacheDom() {
     DOM.$button = $(".blog_container button");
+    DOM.$h2s = $(".blog_container h2");
+  }
+
+  function addLinkToHeader() {
+    DOM.$h2s.each(function(_, h2) {
+      const $h2 = $(h2);
+      const id = $h2.attr('id');
+      const icon = '<i class="fa fa-link"></i>';
+
+      if (id) {
+        return $h2.append($("<a />").attr("href", "#" + id).html(icon));
+      }
+    });
   }
 
   function bindButtonEvent() {
