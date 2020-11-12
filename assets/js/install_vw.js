@@ -84,7 +84,7 @@ const getStartedModule = (function() {
       "windows,python3": "pip install vowpalwabbit",
       "windows,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#windows' target='_blank'>source</a>",
       "windows,java": "Build from source",
-      "windows,c#": "Install-Package VowpalWabbit -Version 8.7.0",
+      "windows,c#": "Install-Package VowpalWabbit -Version 8.9.0",
     }
 
     let selected_options = [];
