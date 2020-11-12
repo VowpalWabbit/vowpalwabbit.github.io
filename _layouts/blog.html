@@ -23,6 +23,24 @@
     <div class="container content blog_container">
       <div class="row">
         <div class="col-lg-9">
+          <div class="blog_date">
+            {{ page.date | date: "%B %d, %Y" }}
+          </div>
+          <div class="blog_title">
+            <h1>
+              {{ page.title }}
+            </h1>
+          </div>
+          <div class="author">
+            {% if page.avatar_link %}
+              <img
+                class="author_avatar"
+                alt="author's avatar"
+                src="{{page.avatar_link}}"
+              />
+            {% endif %}
+            {{page.author}}
+          </div>
           {{ content }}
         </div>
         <div class="col-lg-3">

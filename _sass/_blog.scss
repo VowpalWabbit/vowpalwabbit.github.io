@@ -46,6 +46,29 @@
   position: relative;
   padding: 5rem 1rem;
 
+  .blog_date {
+    color: $gray-50;
+    letter-spacing: 0;
+    line-height: 1.25;
+    padding-bottom: 0.6rem;
+  }
+
+  .blog_title h1 {
+    padding-bottom: 1.6rem;
+    margin-bottom: 0;
+  }
+
+  .author {
+    color: $gray-50;
+    padding-bottom: 1.6rem;
+  }
+
+  .author_avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
   .blog_highlight {
     background: $gray-5;
     padding: 1rem 0;
