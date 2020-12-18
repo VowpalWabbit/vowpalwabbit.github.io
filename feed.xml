@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-11-12T17:17:23-05:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">VowpalWabbit 8.9.0 Release Notes</title><link href="/blog/vowpalwabbit-8.9.0.html" rel="alternate" type="text/html" title="VowpalWabbit 8.9.0 Release Notes" /><published>2020-11-12T00:00:00-05:00</published><updated>2020-11-12T00:00:00-05:00</updated><id>/blog/vowpalwabbit-8.9.0</id><content type="html" xml:base="/blog/vowpalwabbit-8.9.0.html">&lt;div class=&quot;blog_highlight&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-12-18T17:29:36-05:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">VowpalWabbit @ NeurIPS 2020</title><link href="/blog/neurips2020.html" rel="alternate" type="text/html" title="VowpalWabbit @ NeurIPS 2020" /><published>2020-12-16T00:00:00-05:00</published><updated>2020-12-16T00:00:00-05:00</updated><id>/blog/neurips2020</id><content type="html" xml:base="/blog/neurips2020.html">&lt;p&gt;Vowpal Wabbit, John Langford and others have been regulars at the yearly NeurIPS and ICML conferences. This year was no different, apart from the fact that for the first time NeurIPS was completely online and remote. A benefit of this is that the complete workshop is now accessible online to anyone.&lt;/p&gt;
+
+&lt;p&gt;A huge thanks to everyone who presented, specially to Jacob Alber who organized the entire workshop.&lt;/p&gt;
+
+&lt;p&gt;The entire presentation is available &lt;a href=&quot;https://slideslive.com/38942331/vowpal-wabbit&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;div id=&quot;presentation-embed-38942331&quot;&gt;&lt;/div&gt;
+        &lt;script src=&quot;https://slideslive.com/embed_presentation.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+            embed = new SlidesLiveEmbed('presentation-embed-38942331', {
+                presentationId: '38942331',
+                autoPlay: false
+            });
+        &lt;/script&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;sections&quot;&gt;Sections:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Introduction
+    &lt;ul&gt;
+      &lt;li&gt;Presenter: John Langford&lt;/li&gt;
+      &lt;li&gt;Start time: &lt;code class=&quot;highlighter-rouge&quot;&gt;00:00:19&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/workshop/blob/master/NeurIPS2020/01_VWIntroduction.pdf&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Probabilistic Label Trees
+    &lt;ul&gt;
+      &lt;li&gt;Presenter: Marek Wydmuch&lt;/li&gt;
+      &lt;li&gt;Start time: &lt;code class=&quot;highlighter-rouge&quot;&gt;00:11:23&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/workshop/blob/master/NeurIPS2020/02_PLT.pdf&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Contextual Bandits with Continuous Actions
+    &lt;ul&gt;
+      &lt;li&gt;Presenter: Maryam Majzoubi&lt;/li&gt;
+      &lt;li&gt;Start time: &lt;code class=&quot;highlighter-rouge&quot;&gt;00:30:41&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/workshop/blob/master/NeurIPS2020/03_CBWithContinuousActions.pdf&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Slates
+    &lt;ul&gt;
+      &lt;li&gt;Presenters: Adith Swaminathan &amp;amp; Jack Gerrits&lt;/li&gt;
+      &lt;li&gt;Start time: &lt;code class=&quot;highlighter-rouge&quot;&gt;00:52:39&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SquareCB
+    &lt;ul&gt;
+      &lt;li&gt;Presenter: Dylan Foster&lt;/li&gt;
+      &lt;li&gt;Start time: &lt;code class=&quot;highlighter-rouge&quot;&gt;01:10:55&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Distributionally-Robust CB
+    &lt;ul&gt;
+      &lt;li&gt;Presenter: Paul Mineiro&lt;/li&gt;
+      &lt;li&gt;Start time: &lt;code class=&quot;highlighter-rouge&quot;&gt;01:30:26&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CB Visualizations
+    &lt;ul&gt;
+      &lt;li&gt;Presenter: Milind Agarwal&lt;/li&gt;
+      &lt;li&gt;Start time: &lt;code class=&quot;highlighter-rouge&quot;&gt;01:50:41&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/workshop/blob/master/NeurIPS2020/07_RLOS_CBVisualization.pdf&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CB Benchmarks
+    &lt;ul&gt;
+      &lt;li&gt;Presenter: Mark Rucker&lt;/li&gt;
+      &lt;li&gt;Start time: &lt;code class=&quot;highlighter-rouge&quot;&gt;02:07:42&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/workshop/blob/master/NeurIPS2020/08_RLOS_CoBa.pdf&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can find some of the content from past years here:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vowpalwabbit.org/workshop/NeurIPS2019/&quot;&gt;NeurIPS 2019&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vowpalwabbit.org/workshop/ICML2019/&quot;&gt;ICML 2019&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jack Gerrits</name></author><category term="Workshop" /><summary type="html">Vowpal Wabbit, John Langford and others have been regulars at the yearly NeurIPS and ICML conferences. This year was no different, apart from the fact that for the first time NeurIPS was completely online and remote. A benefit of this is that the complete workshop is now accessible online to anyone.</summary></entry><entry><title type="html">VowpalWabbit 8.9.0 Release Notes</title><link href="/blog/vowpalwabbit-8.9.0.html" rel="alternate" type="text/html" title="VowpalWabbit 8.9.0 Release Notes" /><published>2020-11-12T00:00:00-05:00</published><updated>2020-11-12T00:00:00-05:00</updated><id>/blog/vowpalwabbit-8.9.0</id><content type="html" xml:base="/blog/vowpalwabbit-8.9.0.html">&lt;div class=&quot;blog_highlight&quot;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.9.0&quot;&gt;GitHub release&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://pypi.org/project/vowpalwabbit/&quot;&gt;PyPi&lt;/a&gt;&lt;/li&gt;
