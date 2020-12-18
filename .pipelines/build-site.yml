@@ -16,4 +16,4 @@ steps:
 - script: gem install bundler
 - script: bundle install 
 - script: jekyll build
-- script: htmlproofer ./_site
+- script: htmlproofer --url-ignore www.github.com ./_site
