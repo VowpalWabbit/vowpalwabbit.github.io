@@ -16,4 +16,4 @@ steps:
 - script: gem install bundler
 - script: bundle install 
 - script: jekyll build
-- script: htmlproofer ./_site
+- script: htmlproofer --http-status-ignore "429" ./_site
