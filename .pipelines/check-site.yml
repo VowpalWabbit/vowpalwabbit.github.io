@@ -14,4 +14,4 @@ steps:
     versionSpec: '>= 2.4'
     addToPath: true
 - script: gem install html-proofer
-- script: htmlproofer --url-ignore www.github.com .
+- script: htmlproofer --http-status-ignore "429" .
