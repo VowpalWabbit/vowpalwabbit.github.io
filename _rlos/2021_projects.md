@@ -1,6 +1,6 @@
 ---
 title: 2021 Projects
-layout: generic_page_with_TOC
+layout: rlos_page
 body_class: rlos
 permalink: rlos/2021/projects
 ---
