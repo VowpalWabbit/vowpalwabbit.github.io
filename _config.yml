@@ -30,6 +30,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-scholar
+  - jekyll-redirect-from
 
 github:
   repository_url: https://github.com/VowpalWabbit/vowpalwabbit.github.io

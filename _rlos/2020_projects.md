@@ -1,6 +1,8 @@
 ---
-module_id: "rlos_projects"
-title: Projects
+title: 2020 Projects
+layout: generic_page_with_TOC
+body_class: rlos
+permalink: rlos/2020/projects
 ---
 
 # RL Open Source Fest Projects
