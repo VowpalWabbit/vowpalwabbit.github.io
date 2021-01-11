@@ -43,3 +43,23 @@ Submit a diff file through `git --diff` for this exercise or a link to the commi
 ### Links
 - [vowpal_wabbit repo](https://github.com/VowpalWabbit/vowpal_wabbit) 
 - [build instructions](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies)
+
+
+## Python / Data Science Exercise
+If your project involves Python or data science, complete the following exercise:
+
+For this exercise we'll look into how non-stationarity affects different Contextual Bandits algorithms.
+
+First, get yourself familiarized with the [Simulating Content Personalization with Contextual Bandits](https://vowpalwabbit.org/tutorials/cb_simulation.html)
+Vowpal Wabbit tutorial and in particular to the second scenario, which shows the effects of non-stationarity.
+
+Modify the second scenario in the following ways:
+
+- Add multiple changes to rewards distribution over time
+- Introduce varying noize in the reward distribution
+
+Run this new simulator with different exploration algorithsm and vizualize their performance.
+
+### Links
+- [Contextual Bandits Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html)
+- [Exploration Algorithms](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms#changing-action-set-or-featurized-actions)
