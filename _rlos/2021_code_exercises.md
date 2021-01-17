@@ -2,12 +2,12 @@
 title: 2021 Exercises
 layout: rlos_page
 body_class: rlos
-permalink: rlos/2021/code_exercises
+permalink: rlos/2021/code_exercises.html
 ---
 
 # RL Open Source Fest Application Exercises
 
-See [here](/rlos/2020/code_exercises) for last year's exercises.
+See [here](/rlos/2020/code_exercises.html) for last year's exercises.
 
 ## C++ Exercise
 If your project involves C++, complete the following exercise:

@@ -2,7 +2,7 @@
 title: 2020 Exercises
 layout: rlos_page
 body_class: rlos
-permalink: rlos/2020/code_exercises
+permalink: rlos/2020/code_exercises.html
 ---
 
 # RL Open Source Fest Application Exercises

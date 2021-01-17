@@ -2,7 +2,7 @@
 title: 2020 Projects
 layout: rlos_page
 body_class: rlos
-permalink: rlos/2020/projects
+permalink: rlos/2020/projects.html
 ---
 
 # RL Open Source Fest Projects
