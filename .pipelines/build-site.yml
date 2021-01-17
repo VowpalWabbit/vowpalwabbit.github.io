@@ -14,6 +14,6 @@ steps:
     versionSpec: '2.x'
     addToPath: true
 - script: gem install bundler
-- script: bundle install 
-- script: jekyll build
+- script: bundle install
+- script: bundle exec jekyll build
 - script: htmlproofer --http-status-ignore "429" ./_site

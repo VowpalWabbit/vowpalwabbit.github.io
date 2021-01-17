@@ -1,6 +1,8 @@
 ---
-module_id: "rlos_code_exercises"
-title: Exercises
+title: 2020 Exercises
+layout: rlos_page
+body_class: rlos
+permalink: rlos/2020/code_exercises
 ---
 
 # RL Open Source Fest Application Exercises
