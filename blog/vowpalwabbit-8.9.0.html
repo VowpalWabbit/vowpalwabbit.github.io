@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
   <link rel="canonical" href="/blog/vowpalwabbit-8.9.0.html" />
@@ -388,17 +389,17 @@ total feature number = 2</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">vowpalwabbit.DFtoVW</span> <span class="kn">import</span> <span class="n">DFtoVW</span><span class="p">,</span> <span class="n">SimpleLabel</span><span class="p">,</span> <span class="n">Feature</span><span class="p">,</span> <span class="n">Namespace</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">"y"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s">"a"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s">"b"</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">"y"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s">"a"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s">"b"</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
 <span class="n">conv1</span> <span class="o">=</span> <span class="n">DFtoVW</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
     <span class="n">label</span><span class="o">=</span><span class="n">SimpleLabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">),</span>
     <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="n">Feature</span><span class="p">(</span><span class="s">"a"</span><span class="p">),</span> <span class="n">Feature</span><span class="p">(</span><span class="s">"b"</span><span class="p">)])</span>
-<span class="n">conv1</span><span class="o">.</span><span class="n">convert_df</span><span class="p">()</span>
+<span class="n">conv1</span><span class="p">.</span><span class="n">convert_df</span><span class="p">()</span>
 <span class="c1"># ['1 | a:2 b:3', '-1 | a:3 b:2']
 </span>
 <span class="n">conv2</span> <span class="o">=</span> <span class="n">DFtoVW</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
     <span class="n">label</span><span class="o">=</span><span class="n">SimpleLabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">),</span>
     <span class="n">namespaces</span><span class="o">=</span><span class="p">[</span><span class="n">Namespace</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"ns1"</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">Feature</span><span class="p">(</span><span class="s">"a"</span><span class="p">))])</span>
-<span class="n">conv2</span><span class="o">.</span><span class="n">convert_df</span><span class="p">()</span>
+<span class="n">conv2</span><span class="p">.</span><span class="n">convert_df</span><span class="p">()</span>
 <span class="c1"># ['1 |ns1 a:2', '-1 |ns1 a:3']
 </span></code></pre></div></div>
 

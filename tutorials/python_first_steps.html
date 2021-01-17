@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
   <link rel="canonical" href="/tutorials/python_first_steps.html" />
@@ -302,7 +303,7 @@
 
 <p>Next, we create an instance of Vowpal Wabbit, and pass the <code class="highlighter-rouge">quiet=True</code> option to avoid diagnostic information output to <code class="highlighter-rouge">stdout</code> location:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">pyvw</span><span class="o">.</span><span class="n">vw</span><span class="p">(</span><span class="n">quiet</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">pyvw</span><span class="p">.</span><span class="n">vw</span><span class="p">(</span><span class="n">quiet</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="training-scenario-and-dataset">Training scenario and dataset</h2>
@@ -318,7 +319,7 @@
 <span class="p">]</span>
 
 <span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">train_examples</span><span class="p">:</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+    <span class="n">model</span><span class="p">.</span><span class="n">learn</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -329,7 +330,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test_example</span> <span class="o">=</span> <span class="s">"| price:.46 sqft:.4 age:.10 1924"</span>
 
-<span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_example</span><span class="p">)</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_example</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
 </code></pre></div></div>
 

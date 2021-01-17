@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
-  <link rel="canonical" href="/bibliography/DBLP_conf/icml/DudikLL11.html" />
+  <link rel="canonical" href="/rlos/2020/projects.html" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -15,15 +15,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/app.js"></script>
 
-  <title>BibTeX Record</title>
+  <title></title>
   <meta name="description" content="" >
 </head>
 
-  <body class='download'>
+  <body class=rlos>
+    
     
 
 
-<div class="navbar_container light main_nav_container">
+<div class="navbar_container  main_nav_container">
   <div class="container navbar">
     <div class="logo">
       <a href="/index.html">
@@ -116,7 +117,7 @@
 
 
 
-<div class="navbar_container light mobile_nav_container">
+<div class="navbar_container  mobile_nav_container">
   <div class="container navbar">
     <div class="hamburger_icon">
       <?xml version="1.0" encoding="UTF-8"?>
@@ -226,38 +227,342 @@
 
 <script src="/assets/js/header.js"></script>
 
-    <div class="container content download_container">
-      <h1>
-        <span class="header">
-          BibTeX record
-        </span>
-        DBLP:conf/icml/DudikLL11
-      </h1>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <ol class="bibliography"><li><pre>@inproceedings{DBLP:conf/icml/DudikLL11,
-  author = {Miroslav Dud{\'{\i}}k and
-                 John Langford and
-                 Lihong Li},
-  title = {Doubly Robust Policy Evaluation and Learning},
-  booktitle = {Proceedings of the 28th International Conference on Machine Learning,
-                 {ICML} 2011, Bellevue, Washington, USA, June 28 - July 2, 2011},
-  pages = {1097--1104},
-  year = {2011},
-  crossref = {DBLP:conf/icml/2011},
-  url = {https://icml.cc/2011/papers/554\_icmlpaper.pdf},
-  timestamp = {Wed, 03 Apr 2019 17:43:35 +0200},
-  biburl = {https://dblp.org/rec/bib/conf/icml/DudikLL11},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-</pre>
-<a class="details" href="/bibliography/DBLP_conf/icml/DudikLL11.html">Get .bib</a></li></ol>
-
-          <button class="download_bib_button" data-bib_key=DBLP:conf/icml/DudikLL11>
-            Download
-          </button>
+    
+    <div class="content">
+      <div class="hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h1>
+                2020 Projects
+              </h1>
+            </div>
+          </div>
         </div>
       </div>
+    
+      <div class="container content tutorial_container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="tutorial_nav">
+              <ul class="tutorial_content_nav">
+                <li class="label">
+                  Table of contents
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <h1 id="rlopen-source-fest-projects">RL Open Source Fest Projects</h1>
+<h2 id="1-vw-support-for-flatbuff-andor-protobuf">1. VW support for FlatBuff and/or Protobuf</h2>
+<p>VW has several file inputs, examples, cache and models. This project involves adding support for a modern serialization framework such as FlatBuff or ProtoBuff. This will enable easier interop, better stability and potentially increased performance.</p>
+
+<h3 id="goals">Goals</h3>
+<ul>
+  <li>Produce wiki page outlining design and usage</li>
+  <li>Design schemas</li>
+  <li>Load and save a model</li>
+  <li>Load examples from a file. Start by keeping labels stored as a string.</li>
+  <li>Utilities to inspect and convert to/from VW’s file formats</li>
+  <li>Produce wiki page outlining design and usage</li>
+</ul>
+
+<h3 id="stretch-goals">Stretch Goals</h3>
+<ul>
+  <li>Load and save the cache file</li>
+  <li>Schemas for structured label types</li>
+  <li>Benchmark and optimize performance</li>
+</ul>
+
+<h3 id="links">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Input-format">VW example text input format</a></li>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/vowpalwabbit/parse_example.cc">Code pointer for text example parsing</a></li>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/vowpalwabbit/parse_regressor.cc">Code pointer for model saving and loading</a></li>
+  <li><a href="https://github.com/google/flatbuffers">Flatbuffers GitHub repo</a></li>
+  <li><a href="https://github.com/protocolbuffers/protobuf">Protobuf GitHub repo</a></li>
+</ul>
+
+<h2 id="2-contextual-bandits-data-visualization-with-jupyter-notebooks">2. Contextual bandits data visualization with Jupyter notebooks</h2>
+<p>Build visualizations to help understand the behavior of Contextual Bandit policies and logs.</p>
+
+<h3 id="goals-1">Goals</h3>
+<ul>
+  <li>Vizualizations for:
+    <ul>
+      <li>Action distribution</li>
+      <li>Action/reward distribution by feature(s) or model used</li>
+      <li>Model comparison</li>
+      <li>Feature importance</li>
+    </ul>
+  </li>
+  <li>Produce a synthetic dataset that highlight the usefulness of the visualizations</li>
+</ul>
+
+<h2 id="3-parallelized-parsing">3. Parallelized parsing</h2>
+<p>Modern machines often utilize many threads to achieve performance. VW currently uses a single parse thread and a single learner thread, and parsing is often the bottleneck. Extending the parser to support many threads will allow us to better utilize resources.</p>
+
+<h3 id="goals-2">Goals</h3>
+<ul>
+  <li>Produce wiki page outlining design and usage</li>
+  <li>Extract parser to standalone component</li>
+  <li>Spawn threads for parse jobs</li>
+  <li>Ensure original ordering in datafile is preserved</li>
+</ul>
+
+<h3 id="stretch-goals-1">Stretch Goals</h3>
+<ul>
+  <li>Lock free synchronization of threads</li>
+  <li>Use all reduce to support multi threaded learning</li>
+  <li>Separate I/O threads from parse threads</li>
+</ul>
+
+<h3 id="links-1">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/vowpalwabbit/parser.cc">Code pointer for parser component</a></li>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/vowpalwabbit/parse_example.cc">Code pointer for text example parsing</a></li>
+</ul>
+
+<h2 id="4-vw-server-mode-revamp">4. VW server mode revamp</h2>
+<p>VW currently has daemon mode, which allows clients to send examples, train and model and receive predictions. This uses raw sockets and a custom binary protocol We want to provide a modern version of VW’s server mode utilizing a modern RPC technology.</p>
+
+<h3 id="goals-3">Goals</h3>
+<ul>
+  <li>Single model serving using GRPC with the following endpoints:
+    <ul>
+      <li>Predict</li>
+      <li>Learn</li>
+      <li>Statistics (number of features, current loss, etc)</li>
+      <li>Management (download current model, number of features)</li>
+    </ul>
+  </li>
+  <li>Packaging tools to create docker containers from VW params and model</li>
+  <li>Wiki page describing how to use it</li>
+</ul>
+
+<h3 id="stretch-goals-2">Stretch Goals</h3>
+<ul>
+  <li>Persistent model storage.</li>
+  <li>Multiple models from a single daemon.</li>
+</ul>
+
+<h3 id="links-2">Links</h3>
+<ul>
+  <li><a href="https://grpc.io/">GRPC</a></li>
+</ul>
+
+<h2 id="5-improve-vws-python-experience">5. Improve VW’s Python experience</h2>
+<p>VW’s Python integration can be improved is several areas to make it easier for users. Supporting Pandas as a first class concept will make utilizing VW in experimentation workflows much more streamlined. Implementing IPython HTML representations for some common types will improve usability of these components.</p>
+
+<h3 id="goals-4">Goals</h3>
+<ul>
+  <li>Implement <strong>repr_html</strong> for examples, model and labels</li>
+  <li>Access to progressive validation and other model statistics</li>
+  <li>Pandas load and save from VW text format</li>
+</ul>
+
+<h3 id="stretch-goals-3">Stretch Goals</h3>
+<ul>
+  <li>Simplify example lifecycle</li>
+</ul>
+
+<h3 id="links-3">Links</h3>
+<ul>
+  <li><a href="https://ipython.readthedocs.io/en/stable/config/integrating.html">IPython HTML representation</a></li>
+</ul>
+
+<h2 id="6-end-to-load-local-loop-for-reinforcement-learning">6. End-to-load local loop for reinforcement learning</h2>
+<p>The reinforcement learning library has extension points to allow for swapping out parts of the framework, however there is no simple way to make it work end to end locally at the moment. Making RLClientLib support prediction, logging, joining and training locally will make for a great prototyping tool.</p>
+
+<h3 id="goals-5">Goals</h3>
+<ul>
+  <li>In-memory joining and training</li>
+  <li>Extend configuration to enable local mode</li>
+  <li>Python and C# API support</li>
+</ul>
+
+<h3 id="stretch-goals-4">Stretch Goals</h3>
+<ul>
+  <li>Checkpointing - load and save model</li>
+  <li>Port some of our RLClientLib simulators to use the local loop</li>
+</ul>
+
+<h3 id="links-4">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/reinforcement_learning">RLClientLib GitHub repo</a></li>
+</ul>
+
+<h2 id="7-tensorwatch-and-tensorboard-integration">7. TensorWatch and TensorBoard integration</h2>
+<p>TensorBoard and TensorWatch are great tools for debugging and monitoring training making them a great choice for  integrating with VW and RLClientLib.</p>
+
+<h3 id="goals-6">Goals</h3>
+<ul>
+  <li>Integrate VW training with TensorWatch all within a notebook</li>
+  <li>Extend VW to output TensorBoard logs</li>
+  <li>Extend RLClientLib to support TensorBoard and TensorWatch</li>
+</ul>
+
+<h3 id="stretch-goals-5">Stretch Goals</h3>
+<ul>
+  <li>Add lazy logging mode to VW and RLClientLib</li>
+</ul>
+
+<h3 id="links-5">Links</h3>
+<ul>
+  <li><a href="https://github.com/Microsoft/tensorwatch">TensorWatch GitHub repo</a></li>
+  <li><a href="https://www.tensorflow.org/tensorboard/">TensorBoard</a></li>
+</ul>
+
+<h2 id="8-onnx-operator-set-and-model-format-for-vw-models">8. ONNX operator set and model format for VW models</h2>
+<p>VW has its own runtime for running inference off of its own model files. However, ONNX is the emerging standard for defining models and supporting inference. This project enables VW models to interoperate with ONNX runtime.</p>
+
+<h3 id="goals-7">Goals</h3>
+<ul>
+  <li>Define ONNX.vw operation set for the reductions needed for classification (CSOAA)</li>
+  <li>Define shape of VW example in tensor format</li>
+  <li>Converter tool from vw model to ONNX model</li>
+  <li>Implement the new opset with ONNX runtime</li>
+  <li>Sample app that runs inference</li>
+</ul>
+
+<h3 id="stretch-goals-6">Stretch Goals</h3>
+<ul>
+  <li>Extend opset to Contextual Bandits</li>
+  <li>Export ONNX model directly from VW</li>
+</ul>
+
+<h3 id="links-6">Links</h3>
+<ul>
+  <li><a href="https://github.com/Microsoft/onnxruntime">ONNX Runtime GitHub repo</a></li>
+</ul>
+
+<h2 id="9-support-implementation-of-a-vw-reduction-in-python">9. Support implementation of a VW reduction in Python</h2>
+<p>All reductions in VW are implemented in C++. However, to allow for rapid prototyping and taking advantage of the Python ecosystem, using Python to do this makes sense.</p>
+
+<h3 id="goals-8">Goals</h3>
+<ul>
+  <li>Create interface that allows Python code to implement a base learner in VW</li>
+  <li>Implement a simple gradient descent base learner using SKlearn</li>
+</ul>
+
+<h3 id="stretch-goals-7">Stretch Goals</h3>
+<ul>
+  <li>Allow for the Python implemented reduction to be used at a different level of the reduction stack</li>
+</ul>
+
+<h2 id="10-support-python-implementations-of-rlclientlib-extensibility-points">10. Support Python implementations of RLClientLib extensibility points</h2>
+<p>RLCLientLib supports several points of extensibility, but these are only exposed in C++. When using RLCLientLib in Python it is important to be able to support these.</p>
+
+<h3 id="goals-9">Goals</h3>
+<ul>
+  <li>Support a custom model implementation in Python through the <code class="highlighter-rouge">i_model</code> interface</li>
+  <li>Create an example of using these locally</li>
+</ul>
+
+<h3 id="stretch-goals-8">Stretch Goals</h3>
+<ul>
+  <li>Support custom <code class="highlighter-rouge">i_sender</code> implementation for event logging</li>
+  <li>Support <code class="highlighter-rouge">i_data_transport</code> for retrieving updated models</li>
+</ul>
+
+<h3 id="links-7">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/reinforcement_learning/blob/master/include/sender.h">i_sender</a></li>
+  <li><a href="https://github.com/VowpalWabbit/reinforcement_learning/blob/master/include/model_mgmt.h">i_data_transport and i_model</a></li>
+</ul>
+
+<h2 id="11-contextual-bandit-benchmark-and-competition">11. Contextual bandit benchmark and competition</h2>
+<p>There exists many different contextual bandit algorithms. In order to compare these a standard benchmark would be useful. Use the contextual bandit bake off paper as a base and build a set of standard CB benchmarks and supporting infrastructure to competitively evaluate CB algorithms. This is similar to the <a href="https://gluebenchmark.com/">GLUE benchmark for NLP</a>.</p>
+
+<h3 id="goals-10">Goals</h3>
+<ul>
+  <li>Design CB experiments - start off with CB bakeoff paper</li>
+  <li>Create infrastructure to obtain datasets</li>
+  <li>Upload predictions to evaluate performance of algorithm</li>
+  <li>Visualization, display results and compare to others</li>
+</ul>
+
+<h3 id="stretch-goals-9">Stretch Goals</h3>
+<ul>
+  <li>Abstract what it means to be a CB algo to provide a more structured evaluation workflow</li>
+</ul>
+
+<h3 id="links-8">Links</h3>
+<ul>
+  <li><a href="https://arxiv.org/abs/1802.04064">CB bake off paper</a></li>
+  <li><a href="https://gluebenchmark.com/">GLUE</a></li>
+</ul>
+
+<h2 id="12-library-of-contextual-bandit-estimators">12. Library of contextual bandit estimators</h2>
+<p>Estimators are used in off policy evaluation. One common estimator is IPS, and others are DR and PseudoInverse. These estimators work better or worse in different settings. This project explores reference implementations of each and allows for comparison between them to aid in understanding. As a stretch goal it involves utilizing this common library of estimators in the existing counterfactual estimation module.</p>
+
+<h3 id="goals-11">Goals</h3>
+<ul>
+  <li>Add implementation of DR, and DR in episodic settings</li>
+  <li>Simulator interface that allows evaluation against logging policy and target policy</li>
+  <li>Generate a random logging policy and target policy to use for evaluation</li>
+  <li>Visualization of comparison</li>
+</ul>
+
+<h3 id="stretch-goals-10">Stretch Goals</h3>
+<ul>
+  <li>Pseudo inverse</li>
+  <li>Integrate into existing counterfactual evaluation framework</li>
+</ul>
+
+<h3 id="links-9">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/estimators">Estimators GitHub repo</a></li>
+</ul>
+
+<h2 id="13-scriptable-feature-engineering-with-python">13. Scriptable feature engineering with Python</h2>
+<p>VW supports example manipulation through its command line. It provides a lot of flexibility but it’s hard to express anything beyond the fixed set of options. The idea is to enable example manipulation to be scripted in Python as a series of hooks in the parsing pipeline.</p>
+
+<h3 id="goals-12">Goals</h3>
+<ul>
+  <li>Allow hooks to inject and rewrite features into a namespace</li>
+  <li>Allow hooks to rewrite and manipulate namespaces</li>
+</ul>
+
+<h3 id="stretch-goals-11">Stretch Goals</h3>
+<ul>
+  <li>Allow hooks that manipulate multi-line examples (such as Contextual Bandits input) by adding or removing whole examples</li>
+  <li>Extend support for attaching C++ code to the parse pipeline hooks</li>
+</ul>
+
+<h3 id="links-10">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Command-Line-Arguments#example-manipulation-options">Existing example manipulation options</a></li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      <script src="/assets/js/tutorial.js"></script>
+    </div>
+    
+    <div class="container-fluid footer_container">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col">
+        Microsoft is a major contributor
+      </div>
+      <div class="col feedback_col">
+        <a
+          class="feedback_link"
+          href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/issues/new"
+          target="_blank"
+        >
+          Feedback
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/citation.js"></script>
+
+    <div class="overlay">
     </div>
   </body>
 </html>

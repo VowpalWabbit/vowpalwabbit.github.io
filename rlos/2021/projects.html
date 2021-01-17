@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
-  <link rel="canonical" href="/bibliography/DBLP_conf/icml/DudikLL11.html" />
+  <link rel="canonical" href="/rlos/2021/projects.html" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -15,15 +15,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/app.js"></script>
 
-  <title>BibTeX Record</title>
+  <title></title>
   <meta name="description" content="" >
 </head>
 
-  <body class='download'>
+  <body class=rlos>
+    
     
 
 
-<div class="navbar_container light main_nav_container">
+<div class="navbar_container  main_nav_container">
   <div class="container navbar">
     <div class="logo">
       <a href="/index.html">
@@ -116,7 +117,7 @@
 
 
 
-<div class="navbar_container light mobile_nav_container">
+<div class="navbar_container  mobile_nav_container">
   <div class="container navbar">
     <div class="hamburger_icon">
       <?xml version="1.0" encoding="UTF-8"?>
@@ -226,38 +227,525 @@
 
 <script src="/assets/js/header.js"></script>
 
-    <div class="container content download_container">
-      <h1>
-        <span class="header">
-          BibTeX record
-        </span>
-        DBLP:conf/icml/DudikLL11
-      </h1>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <ol class="bibliography"><li><pre>@inproceedings{DBLP:conf/icml/DudikLL11,
-  author = {Miroslav Dud{\'{\i}}k and
-                 John Langford and
-                 Lihong Li},
-  title = {Doubly Robust Policy Evaluation and Learning},
-  booktitle = {Proceedings of the 28th International Conference on Machine Learning,
-                 {ICML} 2011, Bellevue, Washington, USA, June 28 - July 2, 2011},
-  pages = {1097--1104},
-  year = {2011},
-  crossref = {DBLP:conf/icml/2011},
-  url = {https://icml.cc/2011/papers/554\_icmlpaper.pdf},
-  timestamp = {Wed, 03 Apr 2019 17:43:35 +0200},
-  biburl = {https://dblp.org/rec/bib/conf/icml/DudikLL11},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-</pre>
-<a class="details" href="/bibliography/DBLP_conf/icml/DudikLL11.html">Get .bib</a></li></ol>
-
-          <button class="download_bib_button" data-bib_key=DBLP:conf/icml/DudikLL11>
-            Download
-          </button>
+    
+    <div class="content">
+      <div class="hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h1>
+                2021 Projects
+              </h1>
+            </div>
+          </div>
         </div>
       </div>
+    
+      <div class="container content tutorial_container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="tutorial_nav">
+              <ul class="tutorial_content_nav">
+                <li class="label">
+                  Table of contents
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <h1 id="rlopen-source-fest-projects">RL Open Source Fest Projects</h1>
+
+<p>See <a href="/rlos/2020/projects.html">here</a> for last year’s projects.</p>
+
+<h2 id="1-raspberry-wabbit">1. Raspberry Wabbit</h2>
+<p>Recent Raspberry Pi boards are more than powerful enough to run VW for online RL learning on device. However, ssome infrastructure work would facilitate mass adoption. This project would perform this infrastructure work and provide a demo application.</p>
+
+<h3 id="goals">Goals</h3>
+<ul>
+  <li>Support for audio and video featurization for VW
+    <ul>
+      <li>Support at least one audio and one video device</li>
+      <li>Support NPU featurization</li>
+    </ul>
+  </li>
+  <li>Virtual kit
+    <ul>
+      <li>Docker container and boot image containing all code ready to go</li>
+      <li>Links to buy all associated hardware</li>
+      <li>Nicely documented hello world instructions</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="stretch-goals">Stretch goals</h3>
+<ul>
+  <li>Canonical closed-loop application
+    <ul>
+      <li>Support for actions, GPIO or networked actuator</li>
+      <li>Support for feedback, e.g., GPIO or networked sensor, Fitbit, etc</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2-python-support-for-variable-and-model-introspection">2. Python support for variable and model introspection</h2>
+<p>Understanding how model variables influence predictions helps both troubleshooting and gaining insights into ones dataset. This project aims at bringing those capabilities to VW’s Python API.</p>
+
+<h3 id="goals-1">Goals</h3>
+<ul>
+  <li>Understand functionality of vw-varinfo2 (Python implementation)</li>
+  <li>Figure out why 2 passes are needed, figure out exact dependency on audit mode
+    <ul>
+      <li>Re-implement vw-varinfo2 using pyvw api, instead of using vw as a subprocess</li>
+      <li>Propose and implement a proper api inside pyvw api, no more separate script</li>
+    </ul>
+  </li>
+  <li>Deliver easy to use experience
+    <ul>
+      <li>Easy to use api to the end user (as in the user does not have to be guessing which args to use)</li>
+      <li>Suggestion: Jupyter notebook widgets to inspect individual variables and the whole model</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="stretch-goals-1">Stretch goals</h3>
+<ul>
+  <li>Augment Jupyter notebook experience for pyvw (easy stretch goal, could be also used as an intro to pyvw)</li>
+  <li>Multiclass/CB support</li>
+  <li>Figure out if some functionality can be implemented below Python api, augment cpp implementation (i.e. surface info obtained from audit mode in a more direct way rather than depending on audit mode)</li>
+  <li>Weights for interaction related features</li>
+</ul>
+
+<h3 id="links">Links</h3>
+<ul>
+  <li>https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Using-vw-varinfo</li>
+  <li>https://github.com/arielf/weight-loss/blob/master/vw-varinfo2</li>
+</ul>
+
+<h2 id="3-add-extensive-benchmarks-to-vw">3. Add extensive benchmarks to VW</h2>
+<p>VW has an experimental benchmarking solution but since it is a project where performance is central, having more extensive coverage is important.
+The benchmarks will run on every code change and help contributors assess their immediate impact and long term trends.</p>
+
+<h3 id="goals-2">Goals</h3>
+<ul>
+  <li>Implement micro and end-to-end benchmarks for VW
+    <ul>
+      <li>Focus on latency performance but could also consider throughput</li>
+    </ul>
+  </li>
+  <li>Add developer tools to debug performance issues (e.g. flamegraph visualizations, git bisect scripts)</li>
+  <li>Setup CI pipeline(s) to run the benchmarks</li>
+</ul>
+
+<h3 id="stretch-goals-2">Stretch goals</h3>
+<ul>
+  <li>Track and visualize long term performance trends</li>
+  <li>Ability to compare all tests between VW versions/releases</li>
+  <li>Ability to run the same VW benchmark on different libraries and compare</li>
+</ul>
+
+<h3 id="links-1">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/.github/workflows/run_benchmarks.yml">Current experimental benchmark yml file</a></li>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/actions?query=workflow%3A%22Run+Benchmarks%22">Current experimental benchmark pipeline</a></li>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/test/benchmarks">current experimental benchmark code</a></li>
+  <li><a href="https://wiki.mozilla.org/EngineeringProductivity/Projects/Perfherder">Framework used by arewefastyer.com</a></li>
+</ul>
+
+<h2 id="4-tensorboard-and-tensorwatch-integration">4. Tensorboard and Tensorwatch Integration</h2>
+<p>Integrate VW and RLClientLib(rl_sim) with Tensorboard and TensorWatch.
+It would allow VW training to be overseen using TensorBoard / TensorWatch visualizations.</p>
+
+<h3 id="goals-3">Goals</h3>
+<ul>
+  <li>Integrate VW training with TensorWatch within a Jupyter notebook.</li>
+  <li>Extend VW to output TensorBoard logs.</li>
+  <li>Extend RLClientLib(rl_sim) to support TensorBoard and TensorWatch in the same way.</li>
+</ul>
+
+<h3 id="stretch-goals-3">Stretch Goals</h3>
+<ul>
+  <li>Support distribution, what-if and hyperparam tunning features of TensorBoard</li>
+</ul>
+
+<h3 id="links-2">Links</h3>
+<ul>
+  <li>https://github.com/Microsoft/tensorwatch</li>
+  <li>https://www.tensorflow.org/tensorboard</li>
+</ul>
+
+<h2 id="5-vw-server-mode-revamp">5. VW Server mode revamp</h2>
+<p>VW’s current model serving uses an old-school daemon that is quite limited.
+We want to modernize it and convert into a service using GRPC and a richer set of features.</p>
+
+<h3 id="goals-4">Goals</h3>
+<ul>
+  <li>Single model serving using GRPC with the following endpoints:
+    <ul>
+      <li>Predict</li>
+      <li>Learn</li>
+      <li>Statistics (number of features, current loss, etc)</li>
+      <li>Management (download current model, number of features)</li>
+    </ul>
+  </li>
+  <li>Wiki page describing how to use it</li>
+</ul>
+
+<h3 id="stretch-goals-4">Stretch goals</h3>
+<ul>
+  <li>Persistent model storage</li>
+  <li>Multiple models from a single daemon</li>
+  <li>Packaging tools with VW params and model</li>
+</ul>
+
+<h3 id="links-3">Links</h3>
+<ul>
+  <li><a href="https://grpc.io/">GRPC</a></li>
+</ul>
+
+<h2 id="6-end-to-load-local-training-loop-for-reinforcement-learning">6. End-to-load local training loop for reinforcement learning</h2>
+<p>Our reinforcement-learning library currently doesn’t offer an end-to-end local experience and requires some networked services for it.
+Add a mode that works entirely local would be a great tool for learning and prototyping.</p>
+
+<h3 id="goals-5">Goals</h3>
+<ul>
+  <li>In-memory joining and training</li>
+  <li>Extend configuration to enable local mode</li>
+  <li>Python and C# API support</li>
+</ul>
+
+<h3 id="stretch-goals-5">Stretch Goals</h3>
+<ul>
+  <li>Checkpointing, load/save model</li>
+  <li>Port some of our VW simulators to use it</li>
+</ul>
+
+<h2 id="7-contextual-bandits-estimators-in-python">7. Contextual Bandits Estimators in Python</h2>
+<p>All of VW’s estimators used by contextual bandits are implemented in C++. This makes it a lot harder to work on new ones.
+The goal of this project is allow them to be implemented in Python.</p>
+
+<h3 id="goals-6">Goals</h3>
+<ul>
+  <li>Add hooks for Python cb_type estimator</li>
+  <li>Covert current IPS estimator to Python.</li>
+</ul>
+
+<h3 id="stretch-goals-6">Stretch Goals</h3>
+<ul>
+  <li>Integrate this with VW’s estimators library</li>
+</ul>
+
+<h3 id="links-4">Links</h3>
+<ul>
+  <li>https://github.com/VowpalWabbit/vowpal_wabbit/wiki/What-is-a-learner%3F</li>
+  <li>https://github.com/VowpalWabbit/vowpal_wabbit/wiki/VW-Reductions-Workflows</li>
+</ul>
+
+<h1 id="8-extensibility-improvements-to-rlclientlib">8. Extensibility improvements to RLClientLib</h1>
+<p>VW’s RL client library currently has most of its extension points available only thought the C++ API.
+This limits a lot of what can be done by our users. Making those extension points available in Python and/or C# would make the library significantly more useful for our users.</p>
+
+<h3 id="goals-7">Goals</h3>
+<ul>
+  <li>The i_model extension point for inference.</li>
+  <li>Create an example of using it to expose a sklearn model.</li>
+</ul>
+
+<h3 id="stretch-goals-7">Stretch Goals</h3>
+<ul>
+  <li>The i_transport extension point for log shipping</li>
+  <li>The i_model_downloader extension point for model managament</li>
+</ul>
+
+<h3 id="links-5">Links</h3>
+<ul>
+  <li>github.com/vowpalwabbit/reinforcement_learning</li>
+</ul>
+
+<h2 id="9-sample-data-generator-library">9. Sample Data Generator Library</h2>
+<p>A library of functions that can simplify generating sample data in all of VW’s input formats (text, json, fb) and problem types (regression, classification, CB, etc)</p>
+
+<h3 id="goals-8">Goals</h3>
+<ul>
+  <li>A specification of the distribution of examples (e.g. number of features, feature types, feature sizes, string lengths, number of adf/ldf examples per multi_ex, action cadinality, etc)</li>
+  <li>A specification of the number of examples</li>
+  <li>Text / JSON / FlatBuffer support</li>
+</ul>
+
+<h3 id="stretch-goals-8">Stretch goals</h3>
+<ul>
+  <li>Bindability/x-lang (use from multiple languages)</li>
+  <li>Multiple ways of input (command line, API, input file)</li>
+</ul>
+
+<h2 id="10-implement-and-evaluate-stream-join-algorithms">10. Implement and evaluate stream join algorithms</h2>
+<p>Large scale deployments of RL require doing a distributed data join of decisions and rewards.
+It’s not a simple problem as, in the real world, there could be a significant delay (days or weeks) between the decision and the reward.
+This project aims to investigate and design alternatives and prototype them.</p>
+
+<h3 id="goals-9">Goals</h3>
+<ul>
+  <li>Investigate system alternatives and algorithms for stream join</li>
+  <li>Design and implement a stream joiner prototype</li>
+  <li>Evaluate performance and compare with naïve, in-memory, solutions.</li>
+</ul>
+
+<h3 id="stretch-goals-9">Stretch goals</h3>
+<ul>
+  <li>Cloud prototype</li>
+</ul>
+
+<h2 id="11-rlclientlib-dataflow-benchmarks">11. RLClientLib dataflow benchmarks</h2>
+<p>Key features of RLClientLib are:</p>
+<ul>
+  <li>Maximize throughput</li>
+  <li>Minimize latency of inference calls</li>
+</ul>
+
+<p>But so far we are not measuring it in any standardized way (and it is not trivial to do since numbers depend a lot on multiple factors like number of threads, payload size, network condition etc).
+We have some pieces such as (reinforcement_learning/test_tools/sender_test)[https://github.com/VowpalWabbit/reinforcement_learning/tree/master/test_tools/sender_test]
+and (reinforcement_learning/examples/test_cpp)[https://github.com/VowpalWabbit/reinforcement_learning/tree/master/examples/test_cpp] which we are using from time to time for some ad-hoc testing, but arranging it into some unified benchmarking suite which we can run regularly and track progress/regression.</p>
+
+<h3 id="goals-10">Goals</h3>
+<ul>
+  <li>Design latency and throughput benchmarks for client library</li>
+  <li>Setup CI pipeline(s) to run the benchmarks</li>
+</ul>
+
+<h2 id="12-rlclientlib--end-to-end-learning-benchmarks">12. RLClientLib / End to end learning benchmarks</h2>
+<p>There is a theoretical understanding of the learning performance of using VW directly. But in the real world, there are extra factors such as scheduled model updates that affect observed performance. We have no notion of end-to-end learning performance and no way to get any quantitative benchmarks of that kind. This project wants to identify and quantify the impact of those factors.</p>
+
+<h3 id="goals-11">Goals</h3>
+<ul>
+  <li>Improve the end to end RLClientLib ecosystem so we can evaluate the impact of each of those factors</li>
+</ul>
+
+<h3 id="outcomes">Outcomes</h3>
+<ul>
+  <li>Changes to RLClientLib and VW to allow for closer to real world evaluation</li>
+  <li>An understanding of the impact of those factors</li>
+</ul>
+
+<h3 id="risks">Risks</h3>
+<p>This is an advanced project that will require the student to understand quite a bit of RL.</p>
+
+<h3 id="links-6">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit">VowpalWabbit</a></li>
+  <li><a href="https://github.com/VowpalWabbit/reinforcement_learning">RLClientLib</a></li>
+</ul>
+
+<h2 id="13-integrate-estimator-library-into-azure-machine-learning-aml-pipeline">13. Integrate estimator library into Azure Machine Learning (AML) pipeline</h2>
+
+<p>The current AML pipeline only produces the average loss from VW, for counterfactual evaluation, we’d like to add the data aggregation step into the pipeline.</p>
+
+<h3 id="goals-12">Goals:</h3>
+<ul>
+  <li>Support counterfactual evaluation using different estimators.</li>
+</ul>
+
+<h3 id="stretch-goals-10">Stretch goals:</h3>
+<ul>
+  <li>Visualize the results in Python</li>
+</ul>
+
+<h3 id="outcomes-1">Outcomes:</h3>
+<ul>
+  <li>Package and release the estimator lib</li>
+  <li>Design the counterfactual evaluation log format which supports different estimators</li>
+  <li>Add aggregation step in AML pipeline</li>
+</ul>
+
+<h3 id="links-7">Links:</h3>
+<ul>
+  <li>https://github.com/VowpalWabbit/data-science/tree/master/from_mwt_ds/DataScience/VwPipeline</li>
+  <li>https://github.com/VowpalWabbit/estimators</li>
+</ul>
+
+<h2 id="14-extend-fairlearn-to-include-rl-bias-analysis-using-vw">14. Extend FairLearn to include RL bias analysis using VW</h2>
+<p>Most RL algorithms focus on “how can a policy maximize rewards?”. But what if higher rewards on average are obtained at the expense of rewards reduced for a sub-population? With AI and specifically VW being used extensively for personalization, good tools to identify and understand biases will have positive societal impact in use of RL.</p>
+
+<p>This project will create an analysis script &amp; code that takes sensitive variables(features) into account in counterfactual evaluations to help discover and possibly mitigate biased rewards. The project outcomes will make it into FairLearn, a broadly used open source toolkit for Bias &amp; Fairness that is used in industry. You will interact with researchers, AI ethics experts, industry engineers and PMs to onramp on the concepts &amp; tools and get guidance when you want to.</p>
+
+<h3 id="goals-13">Goals:</h3>
+<ul>
+  <li>Create code that runs counterfactual analysis of VW data logs, splitting analysis by cohorts defined by sensitive variables, and producing useful output conclusions and report. This can build starting from existing open source analysis scripts.</li>
+  <li>Contribute the code and scripts and your work into FairLearn, with some basic how-to documentation for others to run it. This may include a synthetic demo dataset to showcase examples.</li>
+  <li>Document what you have learned along the way about reinforcement learning and bias &amp; fairness topics, and co-author a blog post with sponsors/experts.
+Mentor: Rodrigo</li>
+</ul>
+
+<h3 id="stretch-goals-11">Stretch Goals:</h3>
+<ul>
+  <li>Discuss &amp; document pros/cons and tradeoffs, if any, of using different reward estimators in this type of analysis</li>
+  <li>Discuss concepts such as Atkinson Index and Simpsons Paradox to identify sources of inequality, including them in the analysis</li>
+  <li>Invent wireframes for visualizations that make biased rewards clear to users, (and optionally code them in the tools)</li>
+  <li>Come up with a conceptual definition of “robustly better policy” and “do no harm” that applies to VW/ CB policies, considering sensitive variables in the definition.</li>
+</ul>
+
+<h3 id="outcomes-2">Outcomes:</h3>
+<ul>
+  <li>FairLearn includes VW-based counterfactual analysis of rewards considering sensitive features,</li>
+  <li>A co-authored blog post</li>
+</ul>
+
+<h3 id="links-8">Links:</h3>
+<ul>
+  <li><a href="https://fairlearn.github.io/">FairLearn</a></li>
+</ul>
+
+<h2 id="15-reproducible-and-programmable-feature-engineering-reduction">15. Reproducible and programmable feature engineering reduction</h2>
+<p>Reliable feature engineering across training and inference is a common source of bug in real world RL systems.
+By making more programable feature engineering available to VW users, we save them from having this sort of issues
+plus it makes for much simpler experimentation as train files don’t need to be modified.</p>
+
+<h3 id="goals-14">Goals:</h3>
+<ul>
+  <li>Enable programmatic feature engineering to be done using CEL (Google’s Common Expression Language).</li>
+  <li>Those expressions can be saved in the model, making them transparently available during inference.</li>
+  <li>Add a bunch of built-in functions to enable common feature engineering tasks such as interaction, binning and normalization.</li>
+</ul>
+
+<h3 id="outcomes-3">Outcomes:</h3>
+<ul>
+  <li>Contributions to VW that allow CEL to be used for feature engineering.</li>
+</ul>
+
+<h2 id="16-vw-parallel-parsing-improvements">16. VW Parallel parsing improvements</h2>
+<p>Example parsing is an expensive part of VW training pipeline. Support for parallel parsing of text input was contributed last year, but it doesn’t support the more efficient cache format.</p>
+
+<h3 id="goals-15">Goals</h3>
+<ul>
+  <li>Design and implement an extension to the cache file format to support efficient parallel parsing</li>
+</ul>
+
+<h3 id="outcomes-4">Outcomes</h3>
+<ul>
+  <li>Ability to utilize mutlicore machines more effectively when training with cache format</li>
+</ul>
+
+<h2 id="17-rl-based-query-planner-for-open-source-sql-engine">17. RL-based query planner for open-source SQL engine</h2>
+<p>Query planning with Reinforcement Learning in an active area of research and we want to enable VW to be used for it by embedding VW into a popular open source SQL engine.</p>
+
+<h3 id="goals-16">Goals</h3>
+<ul>
+  <li>Modify an open source engine (SQLite, MySQL or PostgreSQL) to use RLClientLib for some of the query query planning decisions.</li>
+  <li>Enable offline experimentation by producing a large body of exploratory data against well-established benchmarks.</li>
+</ul>
+
+<h3 id="outcomes-5">Outcomes</h3>
+<p>A modified SQL engine that would enable further research on RL and Query Planning.</p>
+
+<h2 id="18--vw-port-to-webassembly-and-javascript-api">18.  VW port to WebAssembly and JavaScript API</h2>
+<p>Javascript is the most popular programing language in the world and yet it’s not possible to use VW from it. WebAssembly allows running C/C++ code in the browser and is the right vehicle to bring VW there.</p>
+
+<h3 id="goals-17">Goals</h3>
+<p>The MSR team started a WebAssembly port of VW but never went beyond a prototype.</p>
+<ul>
+  <li>Wrap up and merge those changes.</li>
+  <li>Design and implement a JavaScript-centric API</li>
+</ul>
+
+<h3 id="stretch-goals-12">Stretch Goals:</h3>
+<ul>
+  <li>NPM package</li>
+  <li>Ensure it works on non-browser environments such as node and vscode</li>
+</ul>
+
+<h3 id="outcome">Outcome:</h3>
+<ul>
+  <li>First class support for VW from JavaScript</li>
+</ul>
+
+<h2 id="19-support-creating-a-reduction-in-rust">19. Support creating a reduction in Rust</h2>
+<p>A recent area of exploration we have been working on in supporting reductions implemented in languages other than C++. Rust would integrate well with C++ and VW and as such we would like it to become well supported in the ecosystem. Initial work for Rust+VW has been started here, but more work in needed on the C API and the Rust bindings consuming it.</p>
+
+<h3 id="goals-18">Goals</h3>
+<ul>
+  <li>Flesh out required functions in the new C API to facilitate required functionality</li>
+  <li>Simple reduction implemented in Rust</li>
+</ul>
+
+<h3 id="stretch-goals-13">Stretch Goals</h3>
+<ul>
+  <li>NPM package.</li>
+  <li>Support dynamic loading of the reduction</li>
+</ul>
+
+<h3 id="outcome-1">Outcome</h3>
+<ul>
+  <li>Ability to define and run a reduction implemented in Rust</li>
+</ul>
+
+<h3 id="links-9">Links</h3>
+<ul>
+  <li>https://github.com/jackgerrits/vowpalwabbit-sys-rs</li>
+  <li>https://github.com/jackgerrits/vowpalwabbit-rs</li>
+</ul>
+
+<h2 id="20-automl-for-online-learning">20. AutoML for online learning</h2>
+<p>Hyperparameter tuning is widely used in machine learning when trying to find the optimal learning algorithm. This is usually achieved via hyperparameter sweeping and is often performed manually, while requires enough knowledge and understanding of the data and the learning algorithm at hand.</p>
+
+<p>This project will focus on implementing AutoML techniques for online training in VW, focusing on the area of hyperparameter tuning.</p>
+
+<h3 id="goals-19">Goals</h3>
+<ul>
+  <li>Implement AutoML techniques</li>
+  <li>Provide visualizations (or other appropriate output) that demonstrates the parameter tuning and how the model learns to perform better/worse as the parameters are tuned</li>
+</ul>
+
+<h3 id="outcomes-6">Outcomes</h3>
+<ul>
+  <li>PR against the vowpalwabbit repo</li>
+  <li>wiki-page describing how to achieve auto parameter tuning</li>
+</ul>
+
+<h3 id="links-10">Links</h3>
+<ul>
+  <li>https://www.automl.org/</li>
+</ul>
+
+<h2 id="21-federated-residual-learning-prototype">21. Federated Residual Learning Prototype</h2>
+<p>Traditional Machine Learning requires clients to share data with a central service, which learns joint models across all clients. This results in the need for large joint models to faithfully capture all clients’ data, with large memory and inference time needs, as well as is undesirable from a privacy perspective. Simply learning local models on the clients, which preserves privacy, is also typically undesirable as each client sees only a small volume of data. The paper https://arxiv.org/abs/2003.12880 outlines a Federated Learning approach which blends local personalized models with global joint models, and achieves higher performance than purely joint or local learning approaches. This project aims to implement the algorithms laid out in the paper using VW and evaluating them at scale.</p>
+
+<h3 id="goals-20">Goals</h3>
+<ul>
+  <li>Client and server implementations of FedRes, as well as other popular Federated Learning algorithms.</li>
+  <li>Study its performance using a diverse collection of datasets.</li>
+</ul>
+
+<h2 id="22-safe-contextual-bandits">22. Safe Contextual Bandits</h2>
+<p>Contextual Bandit algorithms are commonly designed to maximize the expected reward over time which is the right choice in scenarios where the only cost of choosing the worst arm is increased regret. In systems settings where there’s an SLA or safety constraint, avoiding bad actions is as important as learning the optimal one.
+ 
+The goal of this project is to address those scenarios by developing a CB algorithm that takes a constraint signal together with the reward signal and trains a policy that maximizes reward subject to the probability of violating the constraint signal.</p>
+
+          </div>
+        </div>
+      </div>
+      <script src="/assets/js/tutorial.js"></script>
+    </div>
+    
+    <div class="container-fluid footer_container">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col">
+        Microsoft is a major contributor
+      </div>
+      <div class="col feedback_col">
+        <a
+          class="feedback_link"
+          href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/issues/new"
+          target="_blank"
+        >
+          Feedback
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/citation.js"></script>
+
+    <div class="overlay">
     </div>
   </body>
 </html>

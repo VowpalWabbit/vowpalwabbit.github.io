@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
   <link rel="canonical" href="/tutorials/contextual_bandits.html" />
@@ -618,11 +619,11 @@ pip <span class="nb">install </span>vowpalwabbit
               <span class="p">{</span><span class="s">'action'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'cost'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'probability'</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s">'feature1'</span><span class="p">:</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">'c'</span><span class="p">},</span>
               <span class="p">{</span><span class="s">'action'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'cost'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'probability'</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s">'feature1'</span><span class="p">:</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">''</span><span class="p">}]</span>
 
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
 
 <span class="c1"># Add index to data frame
 </span><span class="n">train_df</span><span class="p">[</span><span class="s">'index'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">"index"</span><span class="p">)</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">"index"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -636,16 +637,16 @@ pip <span class="nb">install </span>vowpalwabbit
             <span class="p">{</span><span class="s">'feature1'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">''</span><span class="p">},</span>
             <span class="p">{</span><span class="s">'feature1'</span><span class="p">:</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'feature2'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span> <span class="s">'feature3'</span><span class="p">:</span> <span class="s">'b'</span><span class="p">}]</span>
 
-<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
 
 <span class="c1"># Add index to data frame
 </span><span class="n">test_df</span><span class="p">[</span><span class="s">'index'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">"index"</span><span class="p">)</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">"index"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Your dataframes are:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Output:</p>
@@ -715,7 +716,7 @@ pip <span class="nb">install </span>vowpalwabbit
 
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test_df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Output:</p>
@@ -769,7 +770,7 @@ pip <span class="nb">install </span>vowpalwabbit
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">vowpalwabbit</span> <span class="kn">import</span> <span class="n">pyvw</span>
 
-<span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="o">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb 4"</span><span class="p">)</span>
+<span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="p">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb 4"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -778,33 +779,33 @@ pip <span class="nb">install </span>vowpalwabbit
 
 <p>Now, call learn for each trained example on your Vowpal Wabbit model:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">train_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-  <span class="n">action</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"action"</span><span class="p">]</span>
-  <span class="n">cost</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"cost"</span><span class="p">]</span>
-  <span class="n">probability</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"probability"</span><span class="p">]</span>
-  <span class="n">feature1</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"feature1"</span><span class="p">]</span>
-  <span class="n">feature2</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"feature2"</span><span class="p">]</span>
-  <span class="n">feature3</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"feature3"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">train_df</span><span class="p">.</span><span class="n">index</span><span class="p">:</span>
+  <span class="n">action</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"action"</span><span class="p">]</span>
+  <span class="n">cost</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"cost"</span><span class="p">]</span>
+  <span class="n">probability</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"probability"</span><span class="p">]</span>
+  <span class="n">feature1</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"feature1"</span><span class="p">]</span>
+  <span class="n">feature2</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"feature2"</span><span class="p">]</span>
+  <span class="n">feature3</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s">"feature3"</span><span class="p">]</span>
 
   <span class="c1"># Construct the example in the required vw format.
 </span>  <span class="n">learn_example</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span> <span class="o">+</span> <span class="s">" | "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">feature1</span><span class="p">)</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">feature2</span><span class="p">)</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">feature3</span><span class="p">)</span>
 
   <span class="c1"># Here we do the actual learning.
-</span>  <span class="n">vw</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">learn_example</span><span class="p">)</span>
+</span>  <span class="n">vw</span><span class="p">.</span><span class="n">learn</span><span class="p">(</span><span class="n">learn_example</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Use the model that was just trained on the train set to perform predictions on the test set. Construct the example like before but don’t include the label and pass it into <strong>predict</strong> instead of <strong>learn</strong>.</p>
 
 <p><strong>For example:</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">test_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-  <span class="n">feature1</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="s">"feature1"</span><span class="p">]</span>
-  <span class="n">feature2</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="s">"feature2"</span><span class="p">]</span>
-  <span class="n">feature3</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="s">"feature3"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">test_df</span><span class="p">.</span><span class="n">index</span><span class="p">:</span>
+  <span class="n">feature1</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="s">"feature1"</span><span class="p">]</span>
+  <span class="n">feature2</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="s">"feature2"</span><span class="p">]</span>
+  <span class="n">feature3</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="s">"feature3"</span><span class="p">]</span>
 
   <span class="n">test_example</span> <span class="o">=</span> <span class="s">"| "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">feature1</span><span class="p">)</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">feature2</span><span class="p">)</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">feature3</span><span class="p">)</span>
 
-  <span class="n">choice</span> <span class="o">=</span> <span class="n">vw</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_example</span><span class="p">)</span>
+  <span class="n">choice</span> <span class="o">=</span> <span class="n">vw</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_example</span><span class="p">)</span>
   <span class="k">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">choice</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -823,11 +824,11 @@ pip <span class="nb">install </span>vowpalwabbit
 
 <p>Finally, experiment with the cost structure to see that the contextual bandit updates its predictions accordingly:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vw</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">'cb.model'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vw</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">'cb.model'</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">vw</span>
 
-<span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="o">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb 4 -i cb.model"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">vw</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">'| a b'</span><span class="p">))</span>
+<span class="n">vw</span> <span class="o">=</span> <span class="n">pyvw</span><span class="p">.</span><span class="n">vw</span><span class="p">(</span><span class="s">"--cb 4 -i cb.model"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">vw</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="s">'| a b'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p><strong>Output:</strong></p>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
-  <link rel="canonical" href="/bibliography/DBLP_conf/icml/DudikLL11.html" />
+  <link rel="canonical" href="/rlos/2021/code_exercises.html" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -15,15 +15,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/app.js"></script>
 
-  <title>BibTeX Record</title>
+  <title></title>
   <meta name="description" content="" >
 </head>
 
-  <body class='download'>
+  <body class=rlos>
+    
     
 
 
-<div class="navbar_container light main_nav_container">
+<div class="navbar_container  main_nav_container">
   <div class="container navbar">
     <div class="logo">
       <a href="/index.html">
@@ -116,7 +117,7 @@
 
 
 
-<div class="navbar_container light mobile_nav_container">
+<div class="navbar_container  mobile_nav_container">
   <div class="container navbar">
     <div class="hamburger_icon">
       <?xml version="1.0" encoding="UTF-8"?>
@@ -226,38 +227,122 @@
 
 <script src="/assets/js/header.js"></script>
 
-    <div class="container content download_container">
-      <h1>
-        <span class="header">
-          BibTeX record
-        </span>
-        DBLP:conf/icml/DudikLL11
-      </h1>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <ol class="bibliography"><li><pre>@inproceedings{DBLP:conf/icml/DudikLL11,
-  author = {Miroslav Dud{\'{\i}}k and
-                 John Langford and
-                 Lihong Li},
-  title = {Doubly Robust Policy Evaluation and Learning},
-  booktitle = {Proceedings of the 28th International Conference on Machine Learning,
-                 {ICML} 2011, Bellevue, Washington, USA, June 28 - July 2, 2011},
-  pages = {1097--1104},
-  year = {2011},
-  crossref = {DBLP:conf/icml/2011},
-  url = {https://icml.cc/2011/papers/554\_icmlpaper.pdf},
-  timestamp = {Wed, 03 Apr 2019 17:43:35 +0200},
-  biburl = {https://dblp.org/rec/bib/conf/icml/DudikLL11},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-</pre>
-<a class="details" href="/bibliography/DBLP_conf/icml/DudikLL11.html">Get .bib</a></li></ol>
-
-          <button class="download_bib_button" data-bib_key=DBLP:conf/icml/DudikLL11>
-            Download
-          </button>
+    
+    <div class="content">
+      <div class="hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h1>
+                2021 Exercises
+              </h1>
+            </div>
+          </div>
         </div>
       </div>
+    
+      <div class="container content tutorial_container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="tutorial_nav">
+              <ul class="tutorial_content_nav">
+                <li class="label">
+                  Table of contents
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <h1 id="rlopen-source-fest-application-exercises">RL Open Source Fest Application Exercises</h1>
+
+<p>See <a href="/rlos/2020/code_exercises.html">here</a> for last year’s exercises.</p>
+
+<h2 id="c-exercise">C++ Exercise</h2>
+<p>If your project involves C++, complete the following exercise:</p>
+
+<p>VowpalWabbit (VW) has an input text format allows examples to have a tag associated with each example. A tag is a string that carries no specific meaning but can be used to identify examples later, or be used to signal some behavior. Given this example:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 foo_tag| feat_1 feat_2
+</code></pre></div></div>
+<p>The string <code class="highlighter-rouge">foo_tag</code> is the tag.</p>
+
+<h3 id="task">Task</h3>
+<p>Add a command line option (<code class="highlighter-rouge">--ignore_tag &lt;value&gt;</code>) to VW that makes it ignore examples with a specific tag <code class="highlighter-rouge">value</code>.</p>
+
+<p>To test it, use the following test file (<code class="highlighter-rouge">input.txt</code>):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.5 foo| a c
+0.5 bar| a
+0.5 ignore| b
+1 ignore| a b
+0 | c
+</code></pre></div></div>
+
+<p>Invoking vw with <code class="highlighter-rouge">./vw input.txt --ignore_tag ignore</code> should give the same result as using the following input:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.5 foo| a c
+0.5 bar| a
+0 | c
+</code></pre></div></div>
+
+<p>Submit a diff file through <code class="highlighter-rouge">git --diff</code> for this exercise or a link to the commit in your fork.</p>
+
+<h3 id="links">Links</h3>
+<ul>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit">vowpal_wabbit repo</a></li>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies">Build instructions</a></li>
+</ul>
+
+<h2 id="python--data-science-exercise">Python / Data Science Exercise</h2>
+<p>If your project involves Python or data science, complete the following exercise:</p>
+
+<p>For this exercise we’ll look into how non-stationarity affects different Contextual Bandit algorithms.</p>
+
+<p>First, get yourself familiarized with the <a href="https://vowpalwabbit.org/tutorials/cb_simulation.html">Simulating Content Personalization with Contextual Bandits</a>
+Vowpal Wabbit tutorial and in particular the second scenario, which shows the effects of non-stationarity.</p>
+
+<h3 id="task-1">Task</h3>
+<p>Modify the second scenario in the following ways:</p>
+
+<ul>
+  <li>Add multiple changes to the reward distribution over time</li>
+  <li>Introduce varying noise in the reward distribution</li>
+</ul>
+
+<p>Run this new simulator with different exploration algorithms and vizualize and compare their performance.</p>
+
+<p>Submit a Jupyter notebook showcasing the above.</p>
+<h3 id="links-1">Links</h3>
+<ul>
+  <li><a href="https://vowpalwabbit.org/tutorials/contextual_bandits.html">Contextual Bandits Tutorial</a></li>
+  <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms#changing-action-set-or-featurized-actions">Exploration Algorithms</a></li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      <script src="/assets/js/tutorial.js"></script>
+    </div>
+    
+    <div class="container-fluid footer_container">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col">
+        Microsoft is a major contributor
+      </div>
+      <div class="col feedback_col">
+        <a
+          class="feedback_link"
+          href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/issues/new"
+          target="_blank"
+        >
+          Feedback
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/citation.js"></script>
+
+    <div class="overlay">
     </div>
   </body>
 </html>
