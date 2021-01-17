@@ -11,9 +11,9 @@ trigger:
 steps:
 - task: UseRubyVersion@0
   inputs:
-    versionSpec: '>= 2.4'
+    versionSpec: '>= 3.0'
     addToPath: true
 - script: gem install bundler
-- script: bundle install 
-- script: jekyll build
+- script: bundle install
+- script: bundle exec jekyll build
 - script: htmlproofer --http-status-ignore "429" ./_site
