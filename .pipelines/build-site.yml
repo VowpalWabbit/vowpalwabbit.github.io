@@ -11,7 +11,7 @@ trigger:
 steps:
 - task: UseRubyVersion@0
   inputs:
-    versionSpec: '2.x'
+    versionSpec: '>= 2.4'
     addToPath: true
 - script: gem install bundler
 - script: bundle install
