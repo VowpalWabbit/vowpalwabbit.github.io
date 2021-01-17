@@ -7,7 +7,7 @@ permalink: rlos/2021/projects.html
 
 # RL Open Source Fest Projects
 
-See [here](/rlos/2020/projects) for last year's projects.
+See [here](/rlos/2020/projects.html) for last year's projects.
 
 ## 1. Raspberry Wabbit
 Recent Raspberry Pi boards are more than powerful enough to run VW for online RL learning on device. However, ssome infrastructure work would facilitate mass adoption. This project would perform this infrastructure work and provide a demo application.
