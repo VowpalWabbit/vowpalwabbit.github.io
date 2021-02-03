@@ -37,7 +37,7 @@ Invoking vw with `./vw input.txt --ignore_tag ignore` should give the same resul
 0 | c
 ```
 
-Submit a diff file through `git --diff` for this exercise or a link to the commit in your fork.
+Submit a diff file through `git --diff` for this exercise or a link to the commit in your fork for your application.
 
 ### Links
 - [vowpal_wabbit repo](https://github.com/VowpalWabbit/vowpal_wabbit)
@@ -59,7 +59,7 @@ Modify the second scenario in the following ways:
 
 Run this new simulator with different exploration algorithms and vizualize and compare their performance.
 
-Submit a Jupyter notebook showcasing the above.
+Submit a Jupyter notebook showcasing the above in a GitHub repo for your application.
 ### Links
 - [Contextual Bandits Tutorial](https://vowpalwabbit.org/tutorials/contextual_bandits.html)
 - [Exploration Algorithms](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-algorithms#changing-action-set-or-featurized-actions)
