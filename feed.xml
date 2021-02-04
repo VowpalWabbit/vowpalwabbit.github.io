@@ -1,4 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-17T17:02:11-05:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">VowpalWabbit @ NeurIPS 2020</title><link href="/blog/neurips2020.html" rel="alternate" type="text/html" title="VowpalWabbit @ NeurIPS 2020" /><published>2020-12-16T00:00:00-05:00</published><updated>2020-12-16T00:00:00-05:00</updated><id>/blog/neurips2020</id><content type="html" xml:base="/blog/neurips2020.html">&lt;p&gt;For a long time John Langford and others have presented about VW at the yearly NeurIPS and ICML conferences. This year was no different, apart from the fact that for the first time NeurIPS was completely online and remote. A benefit of this is that the complete workshop is now accessible online to anyone.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-04T09:48:51-05:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">RL Open Source Fest is back for 2021</title><link href="/blog/rlos-fest-2021.html" rel="alternate" type="text/html" title="RL Open Source Fest is back for 2021" /><published>2021-02-03T00:00:00-05:00</published><updated>2021-02-03T00:00:00-05:00</updated><id>/blog/rlos-fest-2021</id><content type="html" xml:base="/blog/rlos-fest-2021.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/research/academic-program/rl-open-source-fest/&quot;&gt;Apply here!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;a-successful-first-rlos-fest&quot;&gt;A successful first RLOS Fest&lt;/h1&gt;
+
+&lt;p&gt;In the (northern hemisphere) summer of 2020, we had the absolute pleasure of collaborating with 6 students from 3 continents on solving real problems in the Vowpal Wabbit ecosystem. The Reinforcement Learning Open Source (RLOS) Fest was organized and run by Microsoft Research. RLOS was a remote program, so we were fortunate that as the world was adjusting to new circumstances, we were able to continue as planned.&lt;/p&gt;
+
+&lt;p&gt;There were over 200 applications for the program, and it was an incredibly difficult task to narrow down the many impressive applicants. In the end, we landed on a group of 6 and the amazing work done over this summer was a testament to the incredible talent that was attracted to the program. Thank you to all applicants for your interest! See &lt;a href=&quot;#our-collaborators-for-2020&quot;&gt;below&lt;/a&gt; to learn more about them and see demos of the great work they did.&lt;/p&gt;
+
+&lt;h1 id=&quot;onwards-to-2021&quot;&gt;Onwards to 2021&lt;/h1&gt;
+
+&lt;p&gt;We’re extra excited that the program is returning for 2021! To learn more about the program head to the &lt;a href=&quot;https://www.microsoft.com/en-us/research/academic-program/rl-open-source-fest/&quot;&gt;MSR page&lt;/a&gt;. The list of available projects for this year can be found &lt;a href=&quot;/rlos/2021/projects.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;our-collaborators-for-2020&quot;&gt;Our collaborators for 2020&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Sharad24&quot;&gt;Sharad Chitlangia&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Pushing the limits of VW with Flatbuffers&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://youtu.be/CeOcNK1xSSA?t=72&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cassmarcussen&quot;&gt;Cassandra Marcussen&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Parallelized parsing&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://youtu.be/sDxhRkUPfwI?t=1177&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/harish-kamath&quot;&gt;Harish Kamath&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Conversion of VowpalWabbit models into ONNX format&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://youtu.be/CeOcNK1xSSA?t=2317&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/newtonmwai&quot;&gt;Newton Mwai Kinyanjui&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Library of contextual bandit estimators&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://youtu.be/sDxhRkUPfwI?t=248&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mrucker&quot;&gt;Mark Rucker&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/coba&quot;&gt;COBA: A modern benchmarking package for reproducible contextual bandit research&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://youtu.be/sDxhRkUPfwI?t=2209&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/magarw&quot;&gt;Milind Agarwal&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Contextual bandit data visualization with Jupyter notebooks&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://youtu.be/CeOcNK1xSSA?t=1230&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jack Gerrits</name></author><category term="RLOS&amp;nbsp;Fest" /><summary type="html"></summary></entry><entry><title type="html">VowpalWabbit @ NeurIPS 2020</title><link href="/blog/neurips2020.html" rel="alternate" type="text/html" title="VowpalWabbit @ NeurIPS 2020" /><published>2020-12-16T00:00:00-05:00</published><updated>2020-12-16T00:00:00-05:00</updated><id>/blog/neurips2020</id><content type="html" xml:base="/blog/neurips2020.html">&lt;p&gt;For a long time John Langford and others have presented about VW at the yearly NeurIPS and ICML conferences. This year was no different, apart from the fact that for the first time NeurIPS was completely online and remote. A benefit of this is that the complete workshop is now accessible online to anyone.&lt;/p&gt;
 
 &lt;p&gt;A huge thanks to everyone who presented, especially to Jacob Alber who organized the entire workshop.&lt;/p&gt;
 
