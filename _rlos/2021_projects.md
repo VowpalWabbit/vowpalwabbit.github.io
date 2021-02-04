@@ -45,8 +45,8 @@ Understanding how model variables influence predictions helps both troubleshooti
 - Weights for interaction related features
 
 ### Links
-- https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Using-vw-varinfo
-- https://github.com/arielf/weight-loss/blob/master/vw-varinfo2
+- [https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Using-vw-varinfo](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Using-vw-varinfo)
+- [https://github.com/arielf/weight-loss/blob/master/vw-varinfo2](https://github.com/arielf/weight-loss/blob/master/vw-varinfo2)
 
 
 ## 3. Add extensive benchmarks to VW
@@ -84,8 +84,8 @@ It would allow VW training to be overseen using TensorBoard / TensorWatch visual
 - Support distribution, what-if and hyperparam tunning features of TensorBoard
 
 ### Links
-- https://github.com/Microsoft/tensorwatch
-- https://www.tensorflow.org/tensorboard
+- [https://github.com/Microsoft/tensorwatch](https://github.com/Microsoft/tensorwatch)
+- [https://www.tensorflow.org/tensorboard](https://www.tensorflow.org/tensorboard)
 
 ## 5. VW Server mode revamp
 VW's current model serving uses an old-school daemon that is quite limited.
@@ -132,8 +132,8 @@ The goal of this project is allow them to be implemented in Python.
 - Integrate this with VW's estimators library
 
 ### Links
-- https://github.com/VowpalWabbit/vowpal_wabbit/wiki/What-is-a-learner%3F
-- https://github.com/VowpalWabbit/vowpal_wabbit/wiki/VW-Reductions-Workflows
+- [https://github.com/VowpalWabbit/vowpal_wabbit/wiki/What-is-a-learner%3F](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/What-is-a-learner%3F)
+- [https://github.com/VowpalWabbit/vowpal_wabbit/wiki/VW-Reductions-Workflows](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/VW-Reductions-Workflows)
 
 # 8. Extensibility improvements to RLClientLib
 VW's RL client library currently has most of its extension points available only thought the C++ API.
@@ -148,7 +148,7 @@ This limits a lot of what can be done by our users. Making those extension point
 - The i_model_downloader extension point for model managament
 
 ### Links
-- github.com/vowpalwabbit/reinforcement_learning
+- [https://github.com/vowpalwabbit/reinforcement_learning](https://github.com/vowpalwabbit/reinforcement_learning)
 
 ## 9. Sample Data Generator Library
 A library of functions that can simplify generating sample data in all of VW's input formats (text, json, fb) and problem types (regression, classification, CB, etc)
@@ -221,8 +221,8 @@ The current AML pipeline only produces the average loss from VW, for counterfact
 - Add aggregation step in AML pipeline
 
 ### Links:
-- https://github.com/VowpalWabbit/data-science/tree/master/from_mwt_ds/DataScience/VwPipeline
-- https://github.com/VowpalWabbit/estimators
+- [https://github.com/VowpalWabbit/data-science/tree/master/from_mwt_ds/DataScience/VwPipeline](https://github.com/VowpalWabbit/data-science/tree/master/from_mwt_ds/DataScience/VwPipeline)
+- [https://github.com/VowpalWabbit/estimators](https://github.com/VowpalWabbit/estimators)
 
 ## 14. Extend FairLearn to include RL bias analysis using VW
 Most RL algorithms focus on "how can a policy maximize rewards?". But what if higher rewards on average are obtained at the expense of rewards reduced for a sub-population? With AI and specifically VW being used extensively for personalization, good tools to identify and understand biases will have positive societal impact in use of RL.
@@ -310,8 +310,8 @@ A recent area of exploration we have been working on in supporting reductions im
 - Ability to define and run a reduction implemented in Rust
 
 ### Links
-- https://github.com/jackgerrits/vowpalwabbit-sys-rs
-- https://github.com/jackgerrits/vowpalwabbit-rs
+- [https://github.com/jackgerrits/vowpalwabbit-sys-rs](https://github.com/jackgerrits/vowpalwabbit-sys-rs)
+- [https://github.com/jackgerrits/vowpalwabbit-rs](https://github.com/jackgerrits/vowpalwabbit-rs)
 
 ## 20. AutoML for online learning
 Hyperparameter tuning is widely used in machine learning when trying to find the optimal learning algorithm. This is usually achieved via hyperparameter sweeping and is often performed manually, while requires enough knowledge and understanding of the data and the learning algorithm at hand.
@@ -327,7 +327,7 @@ This project will focus on implementing AutoML techniques for online training in
 - wiki-page describing how to achieve auto parameter tuning
 
 ### Links
-- https://www.automl.org/
+- [https://www.automl.org/](https://www.automl.org/)
 
 ## 21. Federated Residual Learning Prototype
 Traditional Machine Learning requires clients to share data with a central service, which learns joint models across all clients. This results in the need for large joint models to faithfully capture all clients’ data, with large memory and inference time needs, as well as is undesirable from a privacy perspective. Simply learning local models on the clients, which preserves privacy, is also typically undesirable as each client sees only a small volume of data. The paper https://arxiv.org/abs/2003.12880 outlines a Federated Learning approach which blends local personalized models with global joint models, and achieves higher performance than purely joint or local learning approaches. This project aims to implement the algorithms laid out in the paper using VW and evaluating them at scale.
