@@ -129,8 +129,10 @@ Vowpal Wabbit provides three contextual bandits algorithms:
   The contextual bandit module which allows you to optimize predictor based on already collected data, or contextual bandits without exploration.
 2. `--cb_explore`
   The contextual bandit learning algorithm for when the maximum number of actions is known ahead of time and semantics of actions stays the same across examples.
-3. `--cb_explore_adf`
-  The contextual bandit learning algorithm for when the set of actions changes over time or you have rich information for each action. Vowpal Wabbit offers different input formats for contextual bandits.
+3. `--cb_adf` and `--cb_explore_adf`
+  The contextual bandit learning algorithm for when the set of actions changes over time or you have rich information for each action.
+  
+Vowpal Wabbit offers different input formats for contextual bandits. Below we are going over main differences and unique capbilities.
 
 ### Input format for `--cb`
 
@@ -202,18 +204,16 @@ This algorithm is a theoretically optimal exploration algorithm. Similar to the 
 
 For more information and research on this theoretically optimal exploration algorithm see [Taming the Monster: A Fast and Simple Algorithm for Contextual Bandits](http://arxiv.org/abs/1402.0555){:target="blank"}.
 
-### Input format for `--cb_explore_adf`
+### Input format for `--cb_adf` or `--cb_explore_adf` - Action Dependent Features
 
-The command `--cb_explore_adf` is different from the other two example cases because the action set changes over time (or we have rich information for each action):
+In `--cb` and `--cb_explore` the action set is fixed, and each action is described by an index (i.e., actions have no features). These two limitations are addressed in the commands `--cb_adf` and `--cb_explore_adf`. In these action depended features versions the action set can change over time and/or we have features for each action. Key properties of this format are:
 
-- Each example now spans multiple lines, with one line per action
-- For each action, we have the label information (action, cost, probability), if known.
-- The action field **a** is ignored now since line numbers identify actions and typically set to the 0.
+- Each example now spans multiple lines. Each line describes one action, and a new line signals the end of a multiline example. 
+- For the chosen action, we have the label information (action, cost, probability).
+- The action field **a** is ignored (so it is typically set to 0) since the actions are explicitly described in each line.
 - The semantics of cost and probability are the same as before.
-- Each example is also allowed to specify the label information on precisely one action.
-- A new line signals end of a multiline example.
 
-It best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.
+It's best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.
 
 ```text
 --cb_explore_adf
