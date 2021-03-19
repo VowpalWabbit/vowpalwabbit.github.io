@@ -450,9 +450,11 @@
   The contextual bandit module which allows you to optimize predictor based on already collected data, or contextual bandits without exploration.</li>
   <li><code class="highlighter-rouge">--cb_explore</code>
   The contextual bandit learning algorithm for when the maximum number of actions is known ahead of time and semantics of actions stays the same across examples.</li>
-  <li><code class="highlighter-rouge">--cb_explore_adf</code>
-  The contextual bandit learning algorithm for when the set of actions changes over time or you have rich information for each action. Vowpal Wabbit offers different input formats for contextual bandits.</li>
+  <li><code class="highlighter-rouge">--cb_adf</code> and <code class="highlighter-rouge">--cb_explore_adf</code>
+  The contextual bandit learning algorithm for when the set of actions changes over time or you have rich information for each action.</li>
 </ol>
+
+<p>Vowpal Wabbit offers different input formats for contextual bandits. Below we are going over main differences and unique capbilities.</p>
 
 <h3 id="input-format-for---cb">Input format for <code class="highlighter-rouge">--cb</code></h3>
 
@@ -519,20 +521,18 @@
 
 <p>For more information and research on this theoretically optimal exploration algorithm see <a href="http://arxiv.org/abs/1402.0555" target="blank">Taming the Monster: A Fast and Simple Algorithm for Contextual Bandits</a>.</p>
 
-<h3 id="input-format-for---cb_explore_adf">Input format for <code class="highlighter-rouge">--cb_explore_adf</code></h3>
+<h3 id="input-format-for---cb_adf-or---cb_explore_adf---action-dependent-features">Input format for <code class="highlighter-rouge">--cb_adf</code> or <code class="highlighter-rouge">--cb_explore_adf</code> - Action Dependent Features</h3>
 
-<p>The command <code class="highlighter-rouge">--cb_explore_adf</code> is different from the other two example cases because the action set changes over time (or we have rich information for each action):</p>
+<p>In <code class="highlighter-rouge">--cb</code> and <code class="highlighter-rouge">--cb_explore</code> the action set is fixed, and each action is described by an index (i.e., actions have no features). These two limitations are addressed in the commands <code class="highlighter-rouge">--cb_adf</code> and <code class="highlighter-rouge">--cb_explore_adf</code>. In these action depended features versions the action set can change over time and/or we have features for each action. Key properties of this format are:</p>
 
 <ul>
-  <li>Each example now spans multiple lines, with one line per action</li>
-  <li>For each action, we have the label information (action, cost, probability), if known.</li>
-  <li>The action field <strong>a</strong> is ignored now since line numbers identify actions and typically set to the 0.</li>
+  <li>Each example now spans multiple lines. Each line describes one action, and a new line signals the end of a multiline example.</li>
+  <li>For the chosen action, we have the label information (action, cost, probability).</li>
+  <li>The action field <strong>a</strong> is ignored (so it is typically set to 0) since the actions are explicitly described in each line.</li>
   <li>The semantics of cost and probability are the same as before.</li>
-  <li>Each example is also allowed to specify the label information on precisely one action.</li>
-  <li>A new line signals end of a multiline example.</li>
 </ul>
 
-<p>It best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.</p>
+<p>It’s best to create features for every (context, action) pair rather than features associated only with context and shared across all actions.</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--cb_explore_adf
 </code></pre></div></div>
