@@ -104,7 +104,7 @@ Note what happens if we try to run `--eval` with an estimator we know is biased,
 
 The `cb_adf` format is especially useful is you have rich features associated with an arm, or a variable number of arms per round. In cases where you have the former, you can convert your `cb_adf` data into the equivalent `cb`-format data and follow the section above. Unfortunately, using `--eval` with `cb_adf` directly is not currently supported.
 
-A final note: `--eval` does not train a new policy, but some estimators such as DR require creating a regression model. For that reason, it is generally recommended never to load a policy (the '-i' option) when using `--eval`.
+A final note: `--eval` does not train a new policy, but some estimators such as DR require creating a regression model. Since VW will attempt to do online learning where possible, it is generally recommended *never to load a policy (the '-i' option) when using `--eval`*. This is especially true for a model with a DM estimator, as it will load that model and continue to incrementally train on it, leading to misleading results.
 
 ## Policy evaluation with `cb`-format data, training a candidate policy simultaneously
  
