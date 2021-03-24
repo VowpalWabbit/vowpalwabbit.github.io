@@ -87,7 +87,7 @@ This toy example has far to few examples to form a reliable estimate of the cand
 
 The interpretation of OPE is important to get right: if your candidate policy produces an OPE estimate of `3.0` and your production policy has an average loss of `6.0` (easily calculated by summing the costs in the bandit data, divided by the number of instances), it means that had you deployed the candidate policy, with no exploration, instead of the production policy _at the time the production policy was deployed_, you could have expected to see average costs reduce by 50%.
 
-Finally, note what happens if we try to run `--eval` with an estimator we know is biased, `vw --cb 2 --eval -d eval.dat --cb_type dm`. You will end up with an error, to prevent you from making a mistake:
+Note what happens if we try to run `--eval` with an estimator we know is biased, `vw --cb 2 --eval -d eval.dat --cb_type dm`. You will end up with an error, to prevent you from making a mistake:
 
     Error: direct method can not be used for evaluation --- it is biased.
 
@@ -103,6 +103,8 @@ Finally, note what happens if we try to run `--eval` with an estimator we know i
 ## Policy evaluation with `cb_adf`-format data, using a premade policy
 
 The `cb_adf` format is especially useful is you have rich features associated with an arm, or a variable number of arms per round. In cases where you have the former, you can convert your `cb_adf` data into the equivalent `cb`-format data and follow the section above. Unfortunately, using `--eval` with `cb_adf` directly is not currently supported.
+
+A final note: `--eval` does not train a new policy, but some estimators such as DR require creating a regression model. For that reason, it is generally recommended never to load a policy (the '-i' option) when using `--eval`.
 
 ## Policy evaluation with `cb`-format data, training a candidate policy simultaneously
  
