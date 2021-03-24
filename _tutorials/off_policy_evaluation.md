@@ -1,6 +1,6 @@
 ---
 page_title: Offline Policy Evaluation of Contextual Bandits | Vowpal Wabbit
-page_description: Foobar
+page_description: Learn how to evaluate contextual bandit policies offline in Vowpal Wabbit.
 title: Offline policy evaluation using the VW command line
 order: 6
 description: Learn how to evaluate contextual bandit policies offline in Vowpal Wabbit.
