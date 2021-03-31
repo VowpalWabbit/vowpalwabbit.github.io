@@ -67,10 +67,10 @@ loss     last          counter         weight    label  predict features
 [warning] malformed example! '|' or EOL expected after : "| x:0.7"in Example #0: "| x:0.7"
 ```
 
-## Flatbuffers
-Initial support for a new data format has been merged in this release. Documentation is currently sparse on this new format, so stay tuned for more info on this.
+## Experimental: Flatbuffers
+Experimental support for Flatbuffer schematized examples as an input format has been added. Flatbuffers are a schematized binary format and should provide efficiency and portability when used. This is still experimental as we want to ensure the schema is complete for real world use, documentation is currently limited, not all binary released support it and tooling to make it easier to work with is not there yet. The schema for the example objects can be found [here](https://github.com/VowpalWabbit/vowpal_wabbit/blob/3e4996533abac3d00c4174007705c94cdbd80759/vowpalwabbit/parser/flatbuffer/schema/example.fbs), but the file itself contains a sequence of size prefixed such objects to allow streamed input.
 
-Flatbuffer support is by default not included in the binary and must be enabled by passing `-BUILD_FLATBUFFERS=ON` to the CMake congigure step.
+When building from source support is disabled by default but can be enabled by passing `-BUILD_FLATBUFFERS=ON` to the CMake congigure step.
 
 ## Contextual Bandit Zeroth Order Optimization
 Contextual Bandit Zeroth Order Optimization (CBZO) is a new reduction (contributed by [@ajay0](https://github.com/ajay0)). CBZO is a contextual bandit-style algorithm meant for a multi-dimensional, continuous action space. It can learn different policies based on Zeroth-Order Optimization -- continuous optimization techniques which make use of gradient estimators that only require values of the function to make an estimate. The variant of CBZO currently implemented in VW works in the 1-dimensional action space setting and can learn either constant or linear policies. The algorithm has optimal bounded regret when the cost function is smooth and convex.
