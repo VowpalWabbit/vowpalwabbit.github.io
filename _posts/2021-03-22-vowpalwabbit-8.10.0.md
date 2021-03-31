@@ -118,6 +118,7 @@ And of course thank you to existing contributors:
 <div class="changelist hidden" markdown="1">
 
 
+- [Revert "Migrate example copying to clone function and deprecate old methods" (#2911)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2911)
 - [Add missing {} in fmt strings (#2910)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2910)
 - [Migrate example copying to `clone` function and deprecate old methods (#2906)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2906)
 - [Fix learn semantics (#2207)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2207)
