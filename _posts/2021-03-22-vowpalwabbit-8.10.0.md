@@ -77,6 +77,12 @@ Contextual Bandit Zeroth Order Optimization (CBZO) is a new reduction (contribut
 
 [Learn more at the wiki page.](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-Zeroth-Order-Optimization)
 
+## Internal improvments
+- Progress towards label information not being required in predict calls and reducing the number of redundant predict calls done before a learn call takes place
+- New Python test runner script which supports parallelized tests
+- Overhaul `v_array` to be an RAII type
+- Enable prediction and label structures to be RAII types
+
 ## Thank you
 
 A huge thank you and welcome to all of the new contributors since the last release:
