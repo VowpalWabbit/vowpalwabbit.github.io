@@ -18,6 +18,30 @@ if [ ! -z "$(ls -A ${TEMP_DIR})" ]; then
   exit 1
 fi
 
+git fetch origin
+commits_local_but_not_remote_master=$(git log master..origin/master --oneline)
+commits_remote_but_not_local_master=$(git log origin/master..master --oneline)
+commits_local_but_not_remote_source=$(git log source..origin/source --oneline)
+commits_remote_but_not_local_source=$(git log origin/source..source --oneline)
+
+if [[ "${commits_local_but_not_remote_master}" != "" ]] ; then
+  echo "commits_local_but_not_remote_master"
+  exit 1
+fi
+if [[ "${commits_remote_but_not_local_master}" != "" ]] ; then
+  echo "commits_remote_but_not_local_master"
+  exit 1
+fi
+if [[ "${commits_local_but_not_remote_source}" != "" ]] ; then
+  echo "commits_local_but_not_remote_source"
+  exit 1
+fi
+if [[ "${commits_remote_but_not_local_source}" != "" ]] ; then
+  echo "commits_remote_but_not_local_source"
+  exit 1
+fi
+
+git checkout "source"
 bundle exec jekyll build
 cp -r _site/* ${TEMP_DIR}
 
