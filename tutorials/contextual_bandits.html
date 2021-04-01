@@ -604,11 +604,9 @@ shared | s_1 s_2
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 </code></pre></div></div>
 
-<p>Next, install <a href="https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/python" target="blank">Vowpal Wabbit Python package</a>:</p>
+<p>Next, install <a href="https://pypi.org/project/vowpalwabbit/" target="blank">Vowpal Wabbit Python package</a>:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>boost
-apt-get <span class="nb">install </span>libboost-program-options-dev zlib1g-dev libboost-python-dev <span class="nt">-y</span>
-pip <span class="nb">install </span>vowpalwabbit
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>vowpalwabbit
 </code></pre></div></div>
 
 <p>Now, generate some sample training data that could originate from previous random trial (for example A/B test) for the contextual bandit to explore:</p>

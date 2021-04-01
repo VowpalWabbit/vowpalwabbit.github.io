@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
-  <link rel="canonical" href="/blog.html" />
+  <link rel="canonical" href="/blog/vowpalwabbit-8.10.0.html" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -15,12 +15,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/app.js"></script>
 
-  <title>Blog | Vowpal Wabbit</title>
-  <meta name="description" content="Vowpal Wabbit announcements and blog." >
+  <title></title>
+  <meta name="description" content="" >
 </head>
 
-  <body class=blogs>
-    
+
+  <body class="blog">
     
 
 
@@ -227,216 +227,368 @@
 
 <script src="/assets/js/header.js"></script>
 
-    <div class="content blogs_container">
-  <div class="hero">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h1>
-            Blog
-          </h1>
-          <p>
-            Get the latest news and announcements for Vowpal Wabbit.
-          </p>
+
+    <div class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1>
+              Blog
+            </h1>
+            <a href="/blog.html">
+              < Back to blog
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  
-
-  <div class="blogs_list">
-    <div class="container">
+    <div class="container content blog_container">
       <div class="row">
-        
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="blog_card">
-              <h4>
-                VowpalWabbit 8.10.0 Release Notes
-              </h4>
-              <div class="tags">
-                
-                  <span class="tag">
-                    Release&nbsp;notes
-                  </span>
-                
-              </div>
-              <div class="description">
-                Quadratic interaction speed improvements, ARM support, logging updates and more in VW 8.10.0!
-              </div>
-
-              <div class="footer">
-                <a href="/blog/vowpalwabbit-8.10.0.html">
-                  Start
-                </a>
-              </div>
+        <div class="col-lg-9">
+          <div class="blog_date">
+            March 22, 2021
+          </div>
+          <div class="blog_title">
+            <h1>
+              VowpalWabbit 8.10.0 Release Notes
+            </h1>
+          </div>
+          <div class="author">
+            
+              <img
+                class="author_avatar"
+                alt="author's avatar"
+                src="https://avatars1.githubusercontent.com/u/7558482?s=400&u=21e4cca683799d65a20a4cf3d11d0c17853ef9cb&v=4"
+              />
+            
+            <div>
+              Jack Gerrits
             </div>
           </div>
-        
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="blog_card">
-              <h4>
-                RL Open Source Fest is back for 2021
-              </h4>
-              <div class="tags">
-                
-                  <span class="tag">
-                    RLOS&nbsp;Fest
-                  </span>
-                
-              </div>
-              <div class="description">
-                The first RLOS Fest in 2020 was great, now we're back this year for another!
-              </div>
-
-              <div class="footer">
-                <a href="/blog/rlos-fest-2021.html">
-                  Start
-                </a>
-              </div>
-            </div>
-          </div>
-        
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="blog_card">
-              <h4>
-                VowpalWabbit @ NeurIPS 2020
-              </h4>
-              <div class="tags">
-                
-                  <span class="tag">
-                    Workshop
-                  </span>
-                
-              </div>
-              <div class="description">
-                NeurIPS 2020 VowpalWabbit Workshop
-              </div>
-
-              <div class="footer">
-                <a href="/blog/neurips2020.html">
-                  Start
-                </a>
-              </div>
-            </div>
-          </div>
-        
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="blog_card">
-              <h4>
-                VowpalWabbit 8.9.0 Release Notes
-              </h4>
-              <div class="tags">
-                
-                  <span class="tag">
-                    Release&nbsp;notes
-                  </span>
-                
-              </div>
-              <div class="description">
-                This release includes major features such as continuous actions, square CB, probabilistic label tree, slates, CB distributionally robust optimization, CB ADF RND, Python wheels and many bug fixes.
-              </div>
-
-              <div class="footer">
-                <a href="/blog/vowpalwabbit-8.9.0.html">
-                  Start
-                </a>
-              </div>
-            </div>
-          </div>
-        
-      </div>
-    </div>
-  </div>
+          <div class="blog_highlight">
+  <ul>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.10.0">GitHub release</a></li>
+    <li><a href="https://pypi.org/project/vowpalwabbit/">PyPi</a></li>
+  </ul>
 </div>
 
+<h2 id="-q--speedup"><code class="highlighter-rouge">-q ::</code> speedup</h2>
+<p>Using the wildcard (<code class="highlighter-rouge">:</code>) when doing quadratic interactions (<code class="highlighter-rouge">-q ::</code>) has been significantly sped up <a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2807">(#2807)</a>. This optimization only affects quadratics interactions for now, and not cubics or higher order interactions.</p>
 
-<div class="col-12 content help_section_container text-center">
-  <div class="container">
-    <h2>
-      Need help?
-    </h2>
-    <div class="row justify-content-center">
-      <p class="col-12 col-md-8 col-lg-6 description">
-        See the latest code, ask QA, or chat with a team of experts and community to get answers to your questions.
-      </p>
-    </div>
+<p>We saw a 35% speedup for <a href="https://github.com/VowpalWabbit/vowpal_wabbit/blob/68cedd7a35230eeb604a8f954b2bdc67f1cdec14/test/benchmarks/rcv1_benchmarks.cc#L4857">one of the benchmarks which tests quadratic interactions</a>. Additionally, we saw that the runtime for a CCB ADF run with a file of 347k examples and 3 interactions (Action, Slot, User) from ~11m41s to ~1m50s.</p>
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-12 col-md-6 col-lg-5 links">
-        
-          <a href="https://github.com/VowpalWabbit/vowpal_wabbit" target="_blank">
-            <?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
-    <title>GitHub</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="HD_Desktop_header_Home" transform="translate(-1538.000000, -58.000000)" fill="#FFFFFF">
-            <g id="Header">
-                <path d="M1568,73.7951128 C1567.94603,74.2583723 1567.89891,74.7224863 1567.83682,75.1847206 C1567.56271,77.2238487 1566.86543,79.1138828 1565.7732,80.8526868 C1564.55268,82.7956941 1562.9969,84.4188114 1561.05088,85.6538569 C1560.03339,86.2996179 1558.94817,86.8066231 1557.80753,87.1895684 C1557.17559,87.4016322 1556.73848,87.0743943 1556.73531,86.4093237 C1556.72907,85.1020808 1556.73745,83.7947524 1556.73164,82.487424 C1556.72804,81.6908602 1556.64825,80.9063436 1556.21259,80.2087201 C1556.0855,80.0052003 1555.92463,79.8226135 1555.77393,79.6234512 C1556.35935,79.5140871 1556.9463,79.4362506 1557.51632,79.2916849 C1559.04696,78.9034423 1560.41543,78.2275208 1561.34791,76.8924242 C1562.03287,75.9115647 1562.34632,74.7851144 1562.48436,73.6108172 C1562.59169,72.6982249 1562.62222,71.7826422 1562.42971,70.8740656 C1562.23608,69.9599354 1561.84044,69.1418405 1561.22834,68.4359293 C1561.07756,68.2620575 1561.04763,68.1215929 1561.12221,67.896713 C1561.52468,66.6818314 1561.3562,65.491984 1560.9042,64.3262309 C1560.87829,64.2595017 1560.76574,64.1973008 1560.68569,64.1853391 C1560.15364,64.1058793 1559.65196,64.2559986 1559.18533,64.4761793 C1558.42904,64.8332361 1557.69764,65.242668 1556.9487,65.6159585 C1556.82229,65.6790137 1556.64782,65.7219904 1556.51706,65.6889249 C1554.16941,65.0964789 1551.82595,65.097077 1549.47805,65.6883268 C1549.34078,65.7228448 1549.14638,65.677134 1549.02331,65.5987849 C1548.07109,64.9919849 1547.06446,64.5120644 1545.97001,64.2236166 C1545.9511,64.218661 1545.93272,64.2115694 1545.91364,64.2077246 C1545.22551,64.0670892 1545.09971,64.1456947 1544.9036,64.8108506 C1544.58682,65.884755 1544.5296,66.9550708 1544.90668,68.0296587 C1544.93627,68.1139033 1544.90129,68.2616303 1544.8404,68.3306664 C1543.60397,69.7341156 1543.31096,71.3989279 1543.46559,73.1936101 C1543.55933,74.2817831 1543.81162,75.3262104 1544.29869,76.3083514 C1544.97176,77.6654063 1546.11181,78.4952066 1547.4926,78.982475 C1548.35956,79.2884382 1549.27852,79.4473579 1550.18824,79.6758264 C1550.19526,79.6319098 1550.20056,79.6666842 1550.18568,79.6820635 C1549.71726,80.1697591 1549.45556,80.755028 1549.34531,81.4170227 C1549.33137,81.5007546 1549.27365,81.6203716 1549.20685,81.6454912 C1548.16482,82.0372369 1547.11706,82.2433199 1546.08683,81.6149888 C1545.61867,81.3295314 1545.27683,80.9169382 1545.00101,80.4479541 C1544.56852,79.712395 1543.95864,79.179074 1543.13923,78.9361661 C1542.84434,78.8487602 1542.50823,78.8709748 1542.19359,78.8892591 C1541.97909,78.9018189 1541.90862,79.062362 1542.05256,79.2422147 C1542.18529,79.4077988 1542.32025,79.5950849 1542.4978,79.6971865 C1543.28625,80.1507913 1543.72798,80.8753286 1544.08881,81.6641173 C1544.30382,82.1341266 1544.48812,82.6140471 1544.88675,82.9753759 C1545.52169,83.5510755 1546.29115,83.7682658 1547.11612,83.8044072 C1547.81434,83.834995 1548.51496,83.8107298 1549.24722,83.8107298 C1549.24611,83.8009041 1549.26073,83.8742123 1549.26167,83.9476058 C1549.27211,84.7377616 1549.2828,85.5279173 1549.28844,86.3180731 C1549.294,87.0913115 1548.82935,87.4109452 1548.0952,87.1563319 C1544.28705,85.8355039 1541.4928,83.3342269 1539.62819,79.7992882 C1538.22405,77.1372118 1537.78027,74.2780237 1538.09739,71.2935795 C1538.4294,68.1688416 1539.66702,65.4337134 1541.73193,63.0872551 C1543.89022,60.6347648 1546.57714,59.0045559 1549.78825,58.3523869 C1554.45335,57.4048494 1558.71409,58.3562318 1562.44442,61.3515269 C1565.27245,63.6222848 1567.02271,66.5767393 1567.72914,70.1361141 C1567.83314,70.6605492 1567.87265,71.197715 1567.94398,71.7286436 C1567.95792,71.832625 1567.9811,71.9354102 1568,72.0387934 L1568,73.7951128 Z" id="GitHub"></path>
-            </g>
-        </g>
-    </g>
-</svg>
-            GitHub
-          </a>
-        
-          <a href="https://stackoverflow.com/questions/tagged/vowpalwabbit" target="_blank">
-            <?xml version="1.0" encoding="UTF-8"?>
-<svg width="26px" height="30px" viewBox="0 0 26 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
-    <title>icon_stack-overflow_30x30</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Tutorial_landing" transform="translate(-639.000000, -1522.000000)" fill="#666666">
-            <g id="Group-2" transform="translate(0.000000, 1302.000000)">
-                <g id="Group-14" transform="translate(639.000000, 220.000000)">
-                    <g id="icon_stack-overflow_30x30">
-                        <polygon id="Fill-1" points="21.8263441 19.0909091 21.8263441 27.2812883 2.71911041 27.2812883 2.71911041 19.0909091 7.94031507e-12 19.0909091 7.94031507e-12 30 24.5454545 30 24.5454545 19.0909091"></polygon>
-                        <polygon id="Path" points="17.6645134 6.39488462e-14 15.4829053 1.60763756 23.5756158 12.4417167 25.7575758 10.8340792"></polygon>
-                        <polygon id="Path" points="10.9082139 6.39560159 21.3591723 15.0275668 23.0829946 12.9659464 12.6327399 4.33328219"></polygon>
-                        <polygon id="Path" points="7.49505278 12.4067681 19.8105824 18.1033968 20.9369256 15.6569919 8.62139594 9.92541448"></polygon>
-                        <polygon id="Path" points="5.73604328 18.6978732 19.0368153 21.4584665 19.5998109 18.8023697 6.29903892 16.0414269"></polygon>
-                        <polygon id="Path" points="5.45454545 24.8484848 19.0368153 24.8484848 19.0368153 22.1574394 5.45454545 22.1574394"></polygon>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
-            Stack Overflow
-          </a>
-        
-          <a href="https://gitter.im/VowpalWabbit/community?source=orgpage" target="_blank">
-            <?xml version="1.0" encoding="UTF-8"?>
-<svg width="17px" height="24px" viewBox="0 0 17 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
-    <title>logo_gitter</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Tutorial_landing" transform="translate(-850.000000, -1524.000000)" fill="#666666">
-            <g id="help" transform="translate(0.000000, 1302.000000)">
-                <g id="logo_gitter" transform="translate(850.000000, 222.000000)">
-                    <g id="Rectangle">
-                        <rect fill-rule="nonzero" x="0" y="0" width="2" height="14"></rect>
-                        <rect fill-rule="nonzero" x="15" y="5" width="2" height="10"></rect>
-                        <rect fill-rule="nonzero" x="5" y="5" width="2" height="19"></rect>
-                        <rect fill-rule="nonzero" x="10" y="5" width="2" height="19"></rect>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
-            Gitter
-          </a>
-        
-      </div>
-    </div>
-  </div>
+<h2 id="initial-arm-support">Initial ARM Support</h2>
+<p>We’ve added initial ARM support with this release. VW should now be able to build on ARM platforms, we are not yet supporting binary Python wheels on ARM yet though. The command line tool is now supported natively on Apple Silicon, and will be available once the Homebrew package is updated to 8.10.0.</p>
+
+<h2 id="logging-changes">Logging changes</h2>
+<p>We’ve made some steps to improve logging in VW, starting with unifying what we have on one system and adding log levels. This is still a bit of a work in progress, and so not all output quite follows it yet.</p>
+
+<ul>
+  <li>Progressive validation remains the same</li>
+  <li>Other logging messages have a log level prepended to the line</li>
+</ul>
+
+<h3 id="goals-of-the-logging-work">Goals of the logging work</h3>
+<ul>
+  <li>Easier to understand warnings, info, errors, etc</li>
+  <li>Ability to filter by level</li>
+  <li>Machine readable log format</li>
+  <li>More sensible output when VW is used as a library</li>
+</ul>
+
+<h4 id="comparison">Comparison</h4>
+<h5 id="old">Old</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Num weight bits = 18
+learning rate = 0.5
+initial_t = 0
+power_t = 0.5
+using no cache
+Reading datafile = train-sets/malformed.dat
+num sources = 1
+Enabled reductions: gd, scorer
+average  since         example        example  current  current  current
+loss     last          counter         weight    label  predict features
+malformed example! '|',space, or EOL expected after : "| x:0.7"in Example #0: "| x:0.7"
+malformed example! '|' or EOL expected after : "| x:0.7"in Example #0: "| x:0.7"
+</code></pre></div></div>
+
+<h5 id="new">New</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Num weight bits = 18
+learning rate = 0.5
+initial_t = 0
+power_t = 0.5
+using no cache
+Reading datafile = train-sets/malformed.dat
+num sources = 1
+Enabled reductions: gd, scorer
+average  since         example        example  current  current  current
+loss     last          counter         weight    label  predict features
+[warning] malformed example! '|',space, or EOL expected after : "| x:0.7"in Example #0: "| x:0.7"
+[warning] malformed example! '|' or EOL expected after : "| x:0.7"in Example #0: "| x:0.7"
+</code></pre></div></div>
+
+<h2 id="experimental-flatbuffers">Experimental: Flatbuffers</h2>
+<p>Experimental support for Flatbuffer schematized examples as an input format has been added. Flatbuffers are a schematized binary format and should provide efficiency and portability when used. This is still experimental as we want to ensure the schema is complete for real world use, and because documentation is currently limited, not all binaries released support it and tooling to make it easier to work with is not there yet. The schema for the example objects can be found <a href="https://github.com/VowpalWabbit/vowpal_wabbit/blob/3e4996533abac3d00c4174007705c94cdbd80759/vowpalwabbit/parser/flatbuffer/schema/example.fbs">here</a>, but the file itself contains a sequence of size prefixed such objects to allow streamed input.</p>
+
+<p>When building from source support is disabled by default but can be enabled by passing <code class="highlighter-rouge">-BUILD_FLATBUFFERS=ON</code> to the CMake configure step.</p>
+
+<h2 id="contextual-bandit-zeroth-order-optimization">Contextual Bandit Zeroth Order Optimization</h2>
+<p>Contextual Bandit Zeroth Order Optimization (CBZO) is a new reduction (contributed by <a href="https://github.com/ajay0">@ajay0</a>). CBZO is a contextual bandit-style algorithm meant for a multi-dimensional, continuous action space. It can learn different policies based on Zeroth-Order Optimization – continuous optimization techniques which make use of gradient estimators that only require values of the function to make an estimate. The variant of CBZO currently implemented in VW works in the 1-dimensional action space setting and can learn either constant or linear policies. The algorithm has optimal bounded regret when the cost function is smooth and convex.</p>
+
+<p><a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Contextual-Bandit-Zeroth-Order-Optimization">Learn more at the wiki page.</a></p>
+
+<h2 id="internal-improvements">Internal improvements</h2>
+<ul>
+  <li>Progress towards label information not being required in predict calls and reducing the number of redundant predict calls done before a learn call takes place</li>
+  <li>New Python test runner script which supports parallelized tests</li>
+  <li>Overhaul <code class="highlighter-rouge">v_array</code> to be an RAII type</li>
+  <li>Enable prediction and label structures to be RAII types</li>
+</ul>
+
+<h2 id="thank-you">Thank you</h2>
+
+<p>A huge thank you and welcome to all of the new contributors since the last release:</p>
+
+<ul>
+  <li><a href="https://github.com/ajay0">@ajay0</a></li>
+  <li><a href="https://github.com/orktes">@orktes</a></li>
+  <li><a href="https://github.com/zhxiaogg">@zhxiaogg</a></li>
+</ul>
+
+<p>And of course thank you to existing contributors:</p>
+
+<ul>
+  <li><a href="https://github.com/ataymano">@ataymano</a></li>
+  <li><a href="https://github.com/cheng-tan">@cheng-tan</a></li>
+  <li><a href="https://github.com/etiennekintzler">@etiennekintzler</a></li>
+  <li><a href="https://github.com/jackgerrits">@jackgerrits</a></li>
+  <li><a href="https://github.com/kumpera">@kumpera</a></li>
+  <li><a href="https://github.com/lalo">@lalo</a></li>
+  <li><a href="https://github.com/olgavrou">@olgavrou</a></li>
+  <li><a href="https://github.com/peterychang">@peterychang</a></li>
+  <li><a href="https://github.com/pmineiro">@pmineiro</a></li>
+  <li><a href="https://github.com/rajan-chari">@rajan-chari</a></li>
+  <li><a href="https://github.com/Sharad24">@Sharad24</a></li>
+  <li><a href="https://github.com/zwd-ms">@zwd-ms</a></li>
+</ul>
+
+<h2 id="full-changelist">Full changelist</h2>
+
+<div>
+  <i class="fa fa-caret-right"></i>
+  <button class="changelist_button">
+    Click here to expand and see the full changelist.
+  </button>
 </div>
 
+<div class="changelist hidden">
+
+  <ul>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2911">Revert “Migrate example copying to clone function and deprecate old methods” (#2911)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2910">Add missing {} in fmt strings (#2910)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2906">Migrate example copying to <code class="highlighter-rouge">clone</code> function and deprecate old methods (#2906)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2207">Fix learn semantics (#2207)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2844">coin weights fix (#2844)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2908">Fix memory tree demo (#2908)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2905">Deprecate v_array::resize (#2905)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2904">Deprecate v_array incr and decr (#2904)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2903">Deprecate explicit copy functions and use std::copy as implementation (#2903)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2884">cb model 2 ccb trainer  (#2884)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2896">[test] draw reduction graph (#2896)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2894">Create a CMake based Windows CI (#2894)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2901">v_array: rename end_array -&gt; _end_array (#2901)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2902">v_array: rename actual_resize -&gt; resize_but_with_stl_behavior (#2902)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2899">Only add sse flags on x86 systems (#2899)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2879">label initialization (#2879)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2898">add ability to use system installs for fmt, spdlog (#2898)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2874">Make v_array internals private, don’t allow begin/end to be modified (#2874)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2883">Use trace_message for shared_data output (#2883)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2869">Replace strncpy wit memcpy as the former is flagged as unsafe by linters. (#2869)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2887">[ci] cache nuget (#2887)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2889">Create benchmark workflow that can be manually run for two refs (#2889)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2892">Fix incorrect {VW} substitution (#2892)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2895">move fmt-dependent definitions into its own header to avoid exposing … (#2895)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2886">Support Loading the VW JNI library from JAR. (#2886)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2893">Support valgrind in the Python runtests (#2893)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2878">Use newer resize in plt (#2878)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2882">[Flatbuffers] actually skip tests that flatbuffers don’t convert in flatbuffers run_test (#2882)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2853">ftrl learners invert_hash fix (#2853)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2885">[Flatbuffers] add initial field to simple label (and enable –nn test) (#2885)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2877">[py] add enabled_reductions api (#2877)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2881">Update format_check.yml (#2881)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2875">Use erase for ignore some (#2875)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2873">Fix calloc_reserve and push_many (#2873)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2876">Logger libs (#2876)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2872">v_array insert range (#2872)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2870">Move rapidjson to ext_libs folder. Fix fmt/spdlog install (#2870)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2868">[test] RunTests VW options coverage script (#2868)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2857">Report completion for skipped tests (#2857)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2848">Add json parsing for dedup-ed examples (#2848)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2845">Remove unneeded deletes from tests (#2845)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2855">Do a fuzzy float compare instead of exact (#2855)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2846">Use insert and erase in interact (#2846)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2850">Add test for interact reduction (#2850)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2813">Refactoring VW logging (#2813)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2865">[test] add missing diff files (#2865)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2864">fix (#2864)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2863">add vw empty version (#2863)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2862">[cb, cb_explore] small refactor for reuse (#2862)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2861">[cbify] cbify_adf_data refactor (#2861)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2860">[test] check for missing test ids (#2860)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2858">re-enable fb tests (#2858)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2856">fb off by default in linux build (#2856)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2847">Use insert for search push_at (#2847)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2854">Let external parser link libraries to vw (#2854)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2849">Add bounds check for explicit test number running (#2849)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2851">Inject artificial dependencies for bash script based tests (#2851)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2843">Implement v_array::insert for single elements (#2843)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2837">Remove the inner v_array from io_buf (#2837)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2842">Don’t use implementation details of v_array in helper functions (#2842)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2841">Explicit delete_v is no longer needed (#2841)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2840">Remove search v_array misuse (#2840)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2838">Implement v_array::erase (#2838)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2829">add scaffolding for adding an external (binary) parser (#2829)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2791">[CATS ] report average loss instead of label cost (#2791)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2836">fix –help’s help message (#2836)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2835">Fix a case where VW would wait for more input on stdin rather than returning the already complete line (#2835)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2831">Enforce that v_array only contains TriviallyCopyable types (#2831)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2830">v_array unit tests (#2830)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2826">Ataymano/python safe constructor (#2826)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2828">Fix confusing API - dealloc_example (#2828)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2833">add quiet check before outputting to trace_message (#2833)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2824">v_array cleanup (#2824)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2823">Add reserve, resize_actual, make erase_count private (#2823)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2827">Remove manual prediction deletion now that it is automatic (#2827)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2825">Fix make_config PreBuildEvent for windows build (#2825)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2821">Remove code that can now be default (#2821)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2822">Add capacity function to v_array and migrate usage (#2822)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2819">Deprecate v_array pop and last in favor of standardized pop_back and back (#2819)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2817">Fix string too long compile error (#2817)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2771">[v_array] Make v_array an RAII type (#2771)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2775">[Prediction] Modernize polypred a little by introducing ctor. (#2775)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2807">Make -q :: faster by calculating interactions on the fly instead of pre calculating them (#2807)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2816">Add predictions to test comparisons (#2816)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2788">[CATS] bandwidth as a property of continuous action range (#2788)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2815">Fix fallback fuzzy compare (#2815)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2811">Fix parse_neighbor_features function (#2811)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2624">Add name field to learner and add learner callstack print statements (#2624)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2801">Consolidate ostream inner sink to using VW::io::writer framework (#2801)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2792">Consolidate get_observed_cost implementations (#2792)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2806">Add more tests for interactions (#2806)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2802">[nn] fix double free (#2802)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2800">Refactor trace_message and vw_ostream to allow for arbitrary streambuf objects (#2800)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2797">don’t fail in vcpkg auto link check if vcpkg is not configured (#2797)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2696">Make flatbuffers optional (#2696)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2796">check for newline when ccb in parser (#2796)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2794">enable audit info in flatbuffers (#2794)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2756">[py] fix test (#2756)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2789">Don’t export lib symbols from vw_jni binary when static linking (#2789)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2784">Make label_type a property of label_parser (#2784)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2783">[help] fix inconsistencies (#2783)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2741">Full RunTests for flatbuffers (#2741)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2718">Filtered –help output by enabled reductions (#2718)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2729">share example (namespace) objects inside object collections (#2729)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2629">[py] add native python vw config (#2629)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2778">[py] fix log issue (#2778)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2776">refactor header print to sd (#2776)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2749">[py] convenience api to get cerr/cout vw output (#2749)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2774">[test] add vw version test (#2774)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2770">[test] fix exception message of test (#2770)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2761">Make prediction a struct. (#2761)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2769">Fix cbzo test dependency mention (#2769)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2275">Change Polylabel to a struct of objects instead of union (#2275)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2768">fix invert hash (#2768)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2767">printable slot interactions (#2767)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2765">Fail instead of returning default (#2765)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2753">Typed option update (#2753)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2762">Fix some warnings (#2762)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2743">Add flatbuffer label for continuous actions (#2743)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2752">Add Python 3.9 wheel for Linux (#2752)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2759">Decouple concrete option type from the building interface (#2759)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2758">[cbify] Fix another dangling pointer in example to a cached v_array. (#2758)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2742">ccb test can have outcomes and explicit included actions (#2742)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2751">[py] with syntax for vw (#2751)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2746">Duplicated interactions issue mitigation (#2746)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2757">Revert "redirect cerr and cout (#2710)" (#2757)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2754">Fix fallthrough warning (#2754)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2410">Implement 1-slot continuous CB (#2410)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2744">Add python bindings for pdf prediction type (#2744)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2750">Fix missing progressive validation header (#2750)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2734">Update types used as option input (#2734)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2710">redirect cerr and cout (#2710)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2738">Add required new option type for constrained option input types (#2738)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2740">Adding a new line at the end of 2 multiline tests (#2740)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2739">Fix some flatbuffer bugs (#2739)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2728">Cats pdf hint in text (#2728)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2730">[cbify] Fix dangling pointer in example due prediction array caching. (#2730)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2715">Runtests driver in Python (#2715)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2727">Pass reduction features to label parsers (#2727)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2716">Remove unused label_size from label_parser struct (#2716)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2726">Benchmark fixes (#2726)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2725">Increase benchmarks to 10 reps, 2s min time (#2725)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2722">Rcv1 benchmarks (#2722)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2720">Vcpkg do not link everything (#2720)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2723">Update run-benchmarks.sh (#2723)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/anymore">Fix MacCI: uninstall openssl not needed anymore</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2717">Flatbuffers multi_ex (#2717)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2714">[test] runtest parser feature mask fix (#2714)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2712">[test] add –help test (#2712)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2711">Use ProjectDir for fb schema location (#2711)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2705">make options a unique_ptr (#2705)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2703">Fix issue with index in DFtoVW.empty_col (#2703)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2698">Turn CCB sanity checks into reported errors (#2698)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2706">Make a copy when doing text based parsing (#2706)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2702">[py] Run parser automatically based on str (#2702)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2708">Run doctest in Python CI (#2708)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2707">Fix examples in python lib docs (#2707)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2704">renaming (#2704)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2699">Add test to check regression of dsjson in python (#2699)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2700">Update vw.h (#2700)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2684">CCB don’t ignore slot namespace in interactions when slots have default namespace (#2684)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2701">Use variable for port (#2701)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2697">Fix missing test ref files (#2697)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2695">Use unique ports in each test (#2695)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2689">CB-as-CCB action indexing fix (#2689)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2692">Allow port to be selected in spanning tree tool (#2692)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2690">Do not go up directory in test definitions (#2690)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2693">[test] Add dicionary and feature_mask (#2693)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2688">To ensure runs are identical cache tests should use kill cache (#2688)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2679">Add two safe numeric casts (#2679)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2683">Update restore.sh (#2683)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2643">Cats response during inference based on user provided hints (#2643)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2664">Add third party notice (#2664)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2677">fix types (#2677)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2670">Stream flatbuffers instead of reading entire file (#2670)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2651">[test] runtests parser (#2651)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2665">Access union types with field access instead of cstyle casts (#2665)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2673">Fix CMake for libvw and libvw_c_wrapper install (#2673)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2666">Remove a raw pointer (#2666)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2668">cats via python (#2668)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2663">Syntheticcover exploration (#2663)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2660">Fix options warnings on macos (#2660)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2661">Remove generated flatbuffer file (#2661)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2647">Fix cover bug (#2647)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2496">Flatbuffers (#2496)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2642">Refactor explore_eval fix (#2642)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2657">add learn benchmarks (#2657)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2644">added java api binding for ccb learner (#2644)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2655">fix FOLDER_NAME variable in build_docs.yml (#2655)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2654">remove deprecated set-env (#2654)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2649">[tests] fix format of comments (#2649)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2650">Update build_python_wheels_macos.yml (#2650)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2641">update builds to point to latest vw image (#2641)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2282">Add framework for managing predict_data in the reduction stack (#2282)</a></li>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2640">Update PACKAGE.rst (#2640)</a></li>
+  </ul>
+
+</div>
+
+        </div>
+        <div class="col-lg-3">
+        </div>
+      </div>
+    </div>
     <div class="container-fluid footer_container">
   <div class="container">
     <div class="row align-items-center justify-content-between">
@@ -458,7 +610,6 @@
 
 <script src="/assets/js/citation.js"></script>
 
-    <div class="overlay">
-    </div>
+    <script src="/assets/js/blog.js"></script>
   </body>
 </html>
