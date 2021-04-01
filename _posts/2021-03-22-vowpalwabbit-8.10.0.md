@@ -18,7 +18,7 @@ Using the wildcard (`:`) when doing quadratic interactions (`-q ::`) has been si
 We saw a 35% speedup for [one of the benchmarks which tests quadratic interactions](https://github.com/VowpalWabbit/vowpal_wabbit/blob/68cedd7a35230eeb604a8f954b2bdc67f1cdec14/test/benchmarks/rcv1_benchmarks.cc#L4857). Additionally, we saw that the runtime for a CCB ADF run with a file of 347k examples and 3 interactions (Action, Slot, User) from ~11m41s to ~1m50s.
 
 ## Initial ARM Support
-We've added initial ARM support with this release. VW should now be able to build on ARM platforms, we are not yet supporting binary Python wheels on ARM yet though. The command line tool is now supported natively on Apple Silicon, and will be available once the Homebrew package is updated to 8.10.
+We've added initial ARM support with this release. VW should now be able to build on ARM platforms, we are not yet supporting binary Python wheels on ARM yet though. The command line tool is now supported natively on Apple Silicon, and will be available once the Homebrew package is updated to 8.10.0.
 
 ## Logging changes
 We've made some steps to improve logging in VW, starting with unifying what we have on one system and adding log levels. This is still a bit of a work in progress, and so not all output quite follows it yet.
