@@ -23,16 +23,14 @@ We've added initial ARM support with this release. VW should now be able to buil
 ## Logging changes
 We've made some steps to improve logging in VW, starting with unifying what we have on one system and adding log levels. This is still a bit of a work in progress, and so not all output quite follows it yet.
 
+- Progressive validation remains the same
+- Other logging messages have a log level prepended to the line
+
 ### Goals of the logging work
 - Easier to understand warnings, info, errors, etc
 - Ability to filter by level
 - Machine readable log format
 - More sensible output when VW is used as a library
-
-### Changes
-
-- Progressive validation remains the same
-- Other logging messages have a log level prepended to the line
 
 #### Comparison
 ##### Old
