@@ -2,7 +2,7 @@
 title: "VowpalWabbit 8.10.0 Release Notes"
 layout: blog
 tags: Release&nbsp;notes
-description: Quadratic interaction improvements, ARM support, logging updates and more in VW 8.10.0!
+description: Quadratic interaction speed improvements, ARM support, logging updates and more in VW 8.10.0!
 author: Jack Gerrits
 avatar_link: https://avatars1.githubusercontent.com/u/7558482?s=400&u=21e4cca683799d65a20a4cf3d11d0c17853ef9cb&v=4
 ---
