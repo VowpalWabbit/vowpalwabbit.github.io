@@ -68,7 +68,7 @@ loss     last          counter         weight    label  predict features
 ```
 
 ## Experimental: Flatbuffers
-Experimental support for Flatbuffer schematized examples as an input format has been added. Flatbuffers are a schematized binary format and should provide efficiency and portability when used. This is still experimental as we want to ensure the schema is complete for real world use, documentation is currently limited, not all binary released support it and tooling to make it easier to work with is not there yet. The schema for the example objects can be found [here](https://github.com/VowpalWabbit/vowpal_wabbit/blob/3e4996533abac3d00c4174007705c94cdbd80759/vowpalwabbit/parser/flatbuffer/schema/example.fbs), but the file itself contains a sequence of size prefixed such objects to allow streamed input.
+Experimental support for Flatbuffer schematized examples as an input format has been added. Flatbuffers are a schematized binary format and should provide efficiency and portability when used. This is still experimental as we want to ensure the schema is complete for real world use, and because documentation is currently limited, not all binaries released support it and tooling to make it easier to work with is not there yet. The schema for the example objects can be found [here](https://github.com/VowpalWabbit/vowpal_wabbit/blob/3e4996533abac3d00c4174007705c94cdbd80759/vowpalwabbit/parser/flatbuffer/schema/example.fbs), but the file itself contains a sequence of size prefixed such objects to allow streamed input.
 
 When building from source support is disabled by default but can be enabled by passing `-BUILD_FLATBUFFERS=ON` to the CMake configure step.
 
