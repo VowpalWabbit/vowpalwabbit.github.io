@@ -121,7 +121,7 @@ Feel free to add other options, including training over multiple passes with `--
     average loss = 0.500000
     total feature number = 32
 
-The `average loss` above is of less interest to us in this scenario since we have a separate test set.Let's load `candidate-model.vw` using `-i` and test against our test set. Remember to use the `-t` flag to disable learning, and to use the same `cb_type` as you did when training:
+The `average loss` above is of less interest to us in this scenario since we have a separate test set. Let's load `candidate-model.vw` using `-i` and test against our test set. Remember to use the `-t` flag to disable learning, and to use the same `cb_type` as you did when training:
 
     $ vw -i candidate-model.vw --cb_type ips -t -d test.dat
     only testing
