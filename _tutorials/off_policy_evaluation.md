@@ -151,7 +151,7 @@ The `average loss` reported is the OPE estimate for this policy, and in this cas
 
 Now that you have an OPE estimate of `0.250000`, how does it compare to the production policy in production? This comparison is easy to make since, for the same time period, we have the ground truth in the `test.dat` file. If we sum the costs in that file and divide by the number of examples, we get `0.625`. Generally, our toy example has far too little data with which to perform reliable estimates, but the principle applied: lower is better, so your candidate policy is estimated to perform better than the production policy in production. The exact definition of OPE is important: in this case, it means that had you deployed the candidate policy, with no exploration, instead of the production policy you could have expected to see the average cost reduce from `0.625` to `0.250000` _for the period of time covered in the test set_.
 
-Feel free to gridsearch several candidate policys using the same setup, to determine a combination of hyperparameters that work well for your use case!
+Feel free to gridsearch several candidate policies using the same setup, to determine a combination of hyperparameters that work well for your use case. Note however that mixing different `cb_type` options when gridsearching is discouraged, even if all specified estimators are unbiased. Choose either IPS or DR beforehand.
 
 ## Batch scenario: policy evaluation with a pre-trained VW policy, `cb_adf`-format data
 
@@ -232,7 +232,7 @@ If you have `adf`-format data, the same procedure as above applies – just chan
 
 ## Legacy: policy evaluation with `cb`-format data, using a pre-trained policy
 
-If your production policy produces bandit data in the standard `cb` format, and you already have a candidate policy even one trained outside VW, you can use the legacy `--eval` option to perform OPE. It is not recommended to use `--eval` if your are able to use any of the other methods described in this tutorial.
+If your production policy produces bandit data in the standard `cb` format, and you already have a candidate policy even one trained outside VW, you can use the legacy `--eval` option to perform OPE. It is not recommended to use `--eval` if you are able to use any of the other methods described in this tutorial.
 
 First, create a new file, e.g. `eval.dat`. Then, for each instance of your production policy's bandit data, write it to `eval.dat` but prepend the line with the action your candidate policy would have chosen given the same context. For example, if your current instance is `1:2:0.5 | feature_a feature_b` and your candidate policy chooses action 2 instead given the same context `feature_a feature_b`, write the line `2 1:2:0.5 | feature_a feature_b` (note the space!).
 
