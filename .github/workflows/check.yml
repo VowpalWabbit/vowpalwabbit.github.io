@@ -19,4 +19,5 @@ jobs:
     - name: Build site
       run: bundle exec jekyll build
     - name: Run HTMLProofer
-      run: bundle exec htmlproofer ./_site
+      # Ignore 429 as GitHub rate limits the requests
+      run: bundle exec htmlproofer --http-status-ignore "429" ./_site
