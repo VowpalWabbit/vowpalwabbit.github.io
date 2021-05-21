@@ -364,6 +364,8 @@ def run_simulation_multiple_cost_functions(vw, num_iterations, users, times_of_d
                 vw_format = vw.parse(to_vw_example_format(context, actions, (action, cost, prob)),pyvw.vw.lContextualBandit)
                 # 6. Learn
                 vw.learn(vw_format)
+                # 7. Let VW know you're done with these objects
+                vw.finish_example(vw_format)
 
             # We negate this so that on the plot instead of minimizing cost, we are maximizing reward
             ctr.append(-1*cost_sum/i)
