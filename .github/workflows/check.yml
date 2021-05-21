@@ -1,0 +1,23 @@
+name: Check website
+
+on:
+  push:
+    branches:
+      - source
+  pull_request:
+    branches:
+      - source
+jobs:
+  jekyll:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        bundler-cache: true
+    - name: Build site
+      run: bundle exec jekyll build
+    - name: Run HTMLProofer
+      # Ignore 429 as GitHub rate limits the requests
+      run: bundle exec htmlproofer --http-status-ignore "429" ./_site
