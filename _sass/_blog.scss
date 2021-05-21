@@ -1,0 +1,186 @@
+.blogs .blogs_container {
+  .hero {
+    @include secondary-hero;
+    a {
+      color: white;
+    }
+  }
+
+  .blogs_list {
+    background: $gray-10;
+    padding: 5rem 1rem;
+  }
+
+  .blog_card {
+    @include tutorial-card;
+
+    .tags {
+      font-size: 15px;
+      line-height: 20px;
+
+      .tag {
+        background: $blue-5;
+        padding: 0.3rem 0.6rem;
+        margin: 0.2rem 0.2rem 0.2rem 0;
+        display: inline-block;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.blog {
+  .hero {
+    @include secondary-hero;
+
+    a {
+      color: white;
+      font-size: 1.125rem;
+      line-height: 1.33;
+    }
+  }
+}
+
+.blog_container {
+  @include inline-link;
+  position: relative;
+  padding: 5rem 1rem;
+
+  .blog_date {
+    color: $gray-50;
+    letter-spacing: 0;
+    line-height: 1.25;
+    padding-bottom: 0.6rem;
+  }
+
+  .blog_title h1 {
+    padding-bottom: 1.6rem;
+    margin-bottom: 0;
+  }
+
+  .author {
+    color: $gray-50;
+    padding-bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .author_avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+
+  .blog_highlight {
+    background: $gray-5;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+
+    ul {
+      margin: 0;
+    }
+  }
+
+  h1 {
+    font-size: $h2;
+    line-height: 1.1;
+    font-weight: 300;
+    padding-bottom: 1.875rem;
+  }
+
+  h2 {
+    font-size: $h3;
+    line-height: 1.1;
+    font-weight: 300;
+
+    margin: 5rem 0 1.875rem;
+    position: relative;
+
+    &:hover {
+      & > a {
+        display: inline-block;
+      }
+    }
+
+    & > a {
+      border: 0;
+      display: none;
+      font-weight: 400;
+      font-size: 1.5rem;
+      padding: 0 1rem;
+      position: absolute;
+      height: 1.5rem;
+      top: 0;
+      bottom:0;
+      margin: auto;
+      vertical-align: middle;
+
+      &:hover {
+        border: 0;
+      }
+    }
+  }
+
+  h3 {
+    font-size: $h4;
+    line-height: 1.25;
+    font-weight: 400;
+    margin: 3.125rem 0 1.25rem;
+  }
+
+  code {
+    &.highlighter-rouge {
+      font-weight: bold;
+      background-color: $gray-5;
+      padding: 0 0.2rem;
+    }
+  }
+
+  .output {
+    padding: 1rem 1rem 0;
+    background: rgba(255, 244, 219, 0.75);
+    margin: 0.5rem 0 1rem;
+    overflow: auto;
+
+    p {
+      white-space: pre;
+    }
+
+    table {
+      border: 0;
+      width: 100%;
+      margin: 0 0 3rem;
+
+      th, td {
+        border: 0;
+        border-bottom: 1px solid $yellow-30;
+      }
+    }
+  }
+
+  ul li {
+    margin: 0.4rem 0;
+    padding: 0;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    &:before {
+      width: 0;
+      height: 0;
+      border-top: 60px solid transparent;
+      border-bottom: 60px solid transparent;
+
+      border-left: 60px solid green;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+}

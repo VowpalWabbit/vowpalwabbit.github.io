@@ -1,54 +1,50 @@
 ---
 layout: default
-body_class: tutorials
-page_title: Tutorials | Vowpal Wabbit
-page_description: Explore Vowpal Wabbit and learn with easy-to-access tutorials and documentation.
+body_class: blogs
+page_title: Blog | Vowpal Wabbit
+page_description: Vowpal Wabbit announcements and blog.
 ---
 
-<div class="content tutorials_container">
+<div class="content blogs_container">
   <div class="hero">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
           <h1>
-            Tutorials
+            Blog
           </h1>
           <p>
-            Learn, explore, and experiment using our tutorials below.
+            Get the latest news and announcements for Vowpal Wabbit.
           </p>
         </div>
       </div>
     </div>
   </div>
 
-  {% assign tutorials = site.tutorials | sort: 'order' %}
-  {% assign communities = site.communities | sort: 'order' %}
+  {% assign posts = site.posts %}
 
-  <div class="tutorials_list">
+  <div class="blogs_list">
     <div class="container">
       <div class="row">
-        {% for tutorial in tutorials %}
+        {% for post in posts %}
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="tutorial_card">
+            <div class="blog_card">
               <h4>
-                {{tutorial.title}}
+                {{post.title}}
               </h4>
               <div class="tags">
-                <span class="tag">
-                  {{tutorial.level}}
-                </span>
-                {% for tag in tutorial.tags %}
+                {% for tag in post.tags %}
                   <span class="tag">
                     {{tag}}
                   </span>
                 {% endfor %}
               </div>
               <div class="description">
-                {{tutorial.description}}
+                {{post.description}}
               </div>
 
               <div class="footer">
-                <a href="{{ tutorial.url | relative_url }}">
+                <a href="{{ post.url | relative_url }}">
                   Start
                 </a>
               </div>
@@ -60,6 +56,7 @@ page_description: Explore Vowpal Wabbit and learn with easy-to-access tutorials 
   </div>
 </div>
 
+{% assign communities = site.communities | sort: 'order' %}
 <div class="col-12 content help_section_container text-center">
   <div class="container">
     <h2>

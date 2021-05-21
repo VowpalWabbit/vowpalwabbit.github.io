@@ -3,3 +3,5 @@ _site
 .jekyll-metadata
 .vscode
 Gemfile.lock
+.jekyll-cache
+.DS_Store
