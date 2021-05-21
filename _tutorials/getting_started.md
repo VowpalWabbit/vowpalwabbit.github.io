@@ -145,8 +145,8 @@ initial_t = 0
 ```
 
 >**Note:** Learning rates often decay over time, and this diagnostic output specifies the initial time. You can adjust with `--initial_t <time>`, although this is rarely necessary these days.
-
-For example: `vw --initial_t 4`
+>
+> For example: `vw --initial_t 4`
 
 ### Power on learning rate decay
 
@@ -170,19 +170,15 @@ using no cache
 
 A cache file contains our dataset in a faster to handle format and can greatly speed up training if we use multiple passes or run multiple experiments on the same dataset (even with different options). The default cache file name is the dataset file name with `.cache` appended.
 
-For example:
-
-`house_dataset.cache`
+For example: `house_dataset.cache`
 
 Use `--cache_file housing.cache` to override the default cache file name.
-
-So you have something like `vw --cache_file housing.cache house_dataset` if you want to use the cache and not the original file
 
 The cache file is created the first time you use `-c`. If the cache exists and is newer than the dataset, that file is used by default.
 
 Use `-c` for multiple passes `--passes`, so Vowpal Wabbit caches the data in a faster format (passes > 1 should be much faster).  If you want to experiment with the same dataset over and over, it is highly recommended to pass `-c` every time you train.
 
-For example: `vw -c --passes 50 -d house_dataset`
+For example: `vw -c --passes 50 -d house_dataset`. Or, if you wish to use a specific name for the cache file: `vw -c --passes 50 --cache_file housing.cache -d house_dataset`
 
 ### Data sources
 
