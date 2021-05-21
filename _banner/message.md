@@ -2,4 +2,4 @@
 visible: false
 ---
 
-Microsoft Research is running RL OS Fest 2020 supporting open source development in Vowpal Wabbit. Learn more [here](https://www.microsoft.com/en-us/research/academic-program/rl-open-source-fest/), and see the projects [here]({{ 'rlos_projects.html' | relative_url }}).
+RL Open Source Fest is returning for 2021! To learn about last year and learn how to apply for this year see [here]({% post_url 2021-02-03-rlos-fest-2021 %}).

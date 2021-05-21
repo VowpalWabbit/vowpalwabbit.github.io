@@ -39,6 +39,7 @@ const getStartedModule = (function() {
     $selected_btn.siblings().removeClass('selected');
     $selected_btn.addClass('selected');
     showCommand();
+    showTutorial();
   };
 
   function selectDefaultSettings() {
@@ -48,6 +49,7 @@ const getStartedModule = (function() {
     selectOption('os', default_os);
     selectOption('language', default_language);
     showCommand();
+    showTutorial();
   }
 
   function selectOption(type, value) {
@@ -71,26 +73,49 @@ const getStartedModule = (function() {
     })
   }
 
+  function showTutorial() {
+    const command_list = {
+      "linux,python3": "Ready to use Vowpal Wabbit? Follow <a href='/tutorials/python_first_steps.html'>this tutorial</a> to get started with the Python bindings.",
+      "linux,c++": "Ready to use Vowpal Wabbit? Follow this <a href='/tutorials/cmd_first_steps.html'> getting started tutorial</a>. You will learn how to perform Linear Regression with VW—including how to interact with VW by structuring input and learning how to interpret VW output.",
+      "linux,java": "We don't currently have a tutorial for the Java bindings. The <a href='/tutorials/cmd_first_steps.html'>command line tutorial</a> will get you acquainted with some helpful concepts though.",
+      "linux,c#": "Not currently available on Linux",
+      "mac,python3": "Ready to use Vowpal Wabbit? Follow <a href='/tutorials/python_first_steps.html'>this tutorial</a> to get started with the Python bindings.",
+      "mac,c++": "Ready to use Vowpal Wabbit? Follow this <a href='/tutorials/cmd_first_steps.html'> getting started tutorial</a>. You will learn how to perform Linear Regression with VW—including how to interact with VW by structuring input and learning how to interpret VW output.",
+      "mac,java": "We don't currently have a tutorial for the Java bindings. The <a href='/tutorials/cmd_first_steps.html'>command line tutorial</a> will get you acquainted with some helpful concepts though.",
+      "mac,c#": "Not currently available on MacOS",
+      "windows,python3": "Ready to use Vowpal Wabbit? Follow <a href='/tutorials/python_first_steps.html'>this tutorial</a> to get started with the Python bindings.",
+      "windows,c++": "Ready to use Vowpal Wabbit? Follow this <a href='/tutorials/cmd_first_steps.html'> getting started tutorial</a>. You will learn how to perform Linear Regression with VW—including how to interact with VW by structuring input and learning how to interpret VW output.",
+      "windows,java": "We don't currently have a tutorial for the Java bindings. The <a href='/tutorials/cmd_first_steps.html'>command line tutorial</a> will get you acquainted with some helpful concepts though.",
+      "windows,c#": "We don't currently have a tutorial for the C# bindings. The <a href='/tutorials/cmd_first_steps.html'>command line tutorial</a> will get you acquainted with some helpful concepts though.",
+    }
+
+    let selected_options = [];
+    $(".settings_container .row").each((_, row) => {
+      const selected_option = getOptionText($(row).find(".selected"));
+      if(selected_option) {
+        selected_options.push(selected_option);
+      }
+    });
+
+    const command = command_list[selected_options.join(',')];
+    const $tutorial_info = $('#tutorial_info');
+    $tutorial_info.html(command);
+  }
+
   function showCommand() {
     const command_list = {
-      "linux,python3": "sudo apt update" +
-                       "<br><br>" +
-                       "sudo apt install libboost-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libboost-math-dev libboost-test-dev libboost-python-dev zlib1g-dev cmake python3 python3-pip" +
-                       "<br><br>" +
-                       "pip3 install vowpalwabbit",
+      "linux,python3": "pip install vowpalwabbit",
       "linux,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#ubuntu' target='_blank'>source</a>",
       "linux,java": "Build from source",
-      "linux,c#": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#ubuntu' target='_blank'>source</a>",
-      "mac,python3": "brew install cmake boost boost-python3 zlib" +
-                     "<br><br>" +
-                     "pip install vowpalwabbit",
+      "linux,c#": "Not currently available on Linux",
+      "mac,python3": "pip install vowpalwabbit",
       "mac,c++": "brew install vowpal-wabbit",
       "mac,java": "Build from source",
-      "mac,c#": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#macos' target='_blank'>source</a>",
+      "mac,c#": "Not currently available on MacOS",
       "windows,python3": "pip install vowpalwabbit",
       "windows,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#windows' target='_blank'>source</a>",
       "windows,java": "Build from source",
-      "windows,c#": "Install-Package VowpalWabbit -Version 8.7.0",
+      "windows,c#": "Install-Package VowpalWabbit -Version 8.9.0",
     }
 
     let selected_options = [];

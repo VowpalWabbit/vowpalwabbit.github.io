@@ -1,8 +1,8 @@
 ---
 layout: default
 body_class: blogs
-page_title: Blogs | Vowpal Wabbit
-page_description: Vowpal Wabbit announcements and blogs.
+page_title: Blog | Vowpal Wabbit
+page_description: Vowpal Wabbit announcements and blog.
 ---
 
 <div class="content blogs_container">
@@ -27,22 +27,54 @@ page_description: Vowpal Wabbit announcements and blogs.
     <div class="container">
       <div class="row">
         {% for post in posts %}
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="blog_card">
-            <h4>
-              {{post.title}}
-            </h4>
-            <div class="">
-              {{post.excerpt}}
-            </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="blog_card">
+              <h4>
+                {{post.title}}
+              </h4>
+              <div class="tags">
+                {% for tag in post.tags %}
+                  <span class="tag">
+                    {{tag}}
+                  </span>
+                {% endfor %}
+              </div>
+              <div class="description">
+                {{post.description}}
+              </div>
 
-            <div class="footer">
-              <a href="{{ post.url | relative_url }}">
-                Start
-              </a>
+              <div class="footer">
+                <a href="{{ post.url | relative_url }}">
+                  Start
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% assign communities = site.communities | sort: 'order' %}
+<div class="col-12 content help_section_container text-center">
+  <div class="container">
+    <h2>
+      Need help?
+    </h2>
+    <div class="row justify-content-center">
+      <p class="col-12 col-md-8 col-lg-6 description">
+        See the latest code, ask QA, or chat with a team of experts and community to get answers to your questions.
+      </p>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-6 col-lg-5 links">
+        {% for community in communities %}
+          <a href="{{community.link}}" target="_blank">
+            {% include {{community.logo}} %}
+            {{ community.title }}
+          </a>
         {% endfor %}
       </div>
     </div>
