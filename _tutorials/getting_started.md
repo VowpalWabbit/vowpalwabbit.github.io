@@ -114,7 +114,9 @@ Num weight bits = 18
 
 This diagnostic ouput shows that the number of bits from the hash function is 18 (more than enough for this example).
 
-Use `-b bits` to adjust the number of bits to be used from the hash function.
+Use `-b <number of bits>` to adjust the number of bits to be used from the hash function. 
+
+For example: `vw -b 10 house_dataset`
 
 ### Learning rate
 
@@ -128,7 +130,9 @@ The default learning rate is `0.5` with current default update (`--normalized --
 
 If the data is noisy, you need a larger data-set or multiple passes to predict well. For massive data-sets, the learning rate decays towards `0` by default.
 
-Use  `-l rate` to adjust the learning rate up or down.
+Use `-l <learning rate>` to adjust the learning rate up or down.
+
+For example: `vw -l 0.4`
 
 >**Note:** A higher learning rate makes the model converge faster, but if you adjust the learning rate too high, you risk over-fit and end-up worse on average.
 
@@ -140,7 +144,9 @@ The following output shows the initial time for learning rate decay:
 initial_t = 0
 ```
 
->**Note:** Learning rates often decay over time, and this diagnostic output specifies the initial time. You can adjust with `--initial_t time`, although this is rarely necessary these days.
+>**Note:** Learning rates often decay over time, and this diagnostic output specifies the initial time. You can adjust with `--initial_t <time>`, although this is rarely necessary these days.
+>
+> For example: `vw --initial_t 4`
 
 ### Power on learning rate decay
 
@@ -164,15 +170,15 @@ using no cache
 
 A cache file contains our dataset in a faster to handle format and can greatly speed up training if we use multiple passes or run multiple experiments on the same dataset (even with different options). The default cache file name is the dataset file name with `.cache` appended.
 
-For example:
-
-`house_dataset.cache`
+For example: `house_dataset.cache`
 
 Use `--cache_file housing.cache` to override the default cache file name.
 
 The cache file is created the first time you use `-c`. If the cache exists and is newer than the dataset, that file is used by default.
 
 Use `-c` for multiple passes `--passes`, so Vowpal Wabbit caches the data in a faster format (passes > 1 should be much faster).  If you want to experiment with the same dataset over and over, it is highly recommended to pass `-c` every time you train.
+
+For example: `vw -c --passes 50 -d house_dataset`. Or, if you wish to use a specific name for the cache file: `vw -c --passes 50 --cache_file housing.cache -d house_dataset`
 
 ### Data sources
 
