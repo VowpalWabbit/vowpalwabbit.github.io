@@ -696,6 +696,8 @@
 </span>                <span class="n">vw_format</span> <span class="o">=</span> <span class="n">vw</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">to_vw_example_format</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">prob</span><span class="p">)),</span><span class="n">pyvw</span><span class="p">.</span><span class="n">vw</span><span class="p">.</span><span class="n">lContextualBandit</span><span class="p">)</span>
                 <span class="c1"># 6. Learn
 </span>                <span class="n">vw</span><span class="p">.</span><span class="n">learn</span><span class="p">(</span><span class="n">vw_format</span><span class="p">)</span>
+                <span class="c1"># 7. Let VW know you're done with these objects
+</span>                <span class="n">vw</span><span class="p">.</span><span class="n">finish_example</span><span class="p">(</span><span class="n">vw_format</span><span class="p">)</span>
 
             <span class="c1"># We negate this so that on the plot instead of minimizing cost, we are maximizing reward
 </span>            <span class="n">ctr</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">cost_sum</span><span class="o">/</span><span class="n">i</span><span class="p">)</span>

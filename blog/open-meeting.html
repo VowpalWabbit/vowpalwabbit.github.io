@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
-  <link rel="canonical" href="/tutorials/getting_started.html" />
+  <link rel="canonical" href="/blog/open-meeting.html" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -15,12 +15,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="/assets/app.js"></script>
 
-  <title>Linear Regression Tutorial | Vowpal Wabbit</title>
-  <meta name="description" content="This tutorial runs through a regression problem with Vowpal Wabbit to introduce unique features, explain how to structure input, and understand the results using examples." >
+  <title></title>
+  <meta name="description" content="" >
 </head>
 
 
-  <body class="tutorial">
+  <body class="blog">
     
 
 
@@ -63,13 +63,13 @@
       </a>
       <a
         href="/tutorials.html"
-        class='active'
+        class=''
       >
         Tutorials
       </a>
       <a
         href="/blog.html"
-        class=''
+        class='active'
       >
         Blog
       </a>
@@ -180,12 +180,12 @@
   >
     Features
   </a>
-  <a href="/tutorials.html" class='active'>
+  <a href="/tutorials.html" class=''>
     Tutorials
   </a>
   <a
     href="/blog.html"
-    class=''
+    class='active'
   >
     Blog
   </a>
@@ -233,460 +233,60 @@
         <div class="row">
           <div class="col-lg-6">
             <h1>
-              Tutorials
+              Blog
             </h1>
-            <a href="/tutorials.html">
-              < Back to all tutorials
+            <a href="/blog.html">
+              < Back to blog
             </a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container content tutorial_container">
-      <div class="edit">
-  
-  
-
-  <a href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/blob/source/_tutorials/getting_started.md" target="_blank">
-    <?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
-    <title>icon_edit</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="button_edit" transform="translate(-7.000000, -7.000000)" stroke="#2A3B93">
-            <g id="icon_edit_selected">
-                <g transform="translate(8.000000, 8.000000)">
-                    <path d="M3.99393054,13.0502777 C0,14.1182229 0,14.1182229 0,14.1182229 C1.01972686,10.1881871 1.01972686,10.1881871 1.01972686,10.1881871 C10.579668,0.576689783 10.579668,0.576689783 10.579668,0.576689783 C11.3869519,-0.192229928 12.661609,-0.192229928 13.4264041,0.576689783 C14.1911991,1.34560988 14.1911991,2.62714261 13.4264041,3.43878036 L3.99393054,13.0502777 Z M9.85736179,1.30289223 C12.7465867,4.16498242 12.7465867,4.16498242 12.7465867,4.16498242 L9.85736179,1.30289223 Z M3.99393054,13.0502777 C3.99393054,13.0502777 4.16388585,12.0677717 3.14415784,10.9143911 C2.12443098,9.7610106 1.01972686,10.1881871 1.01972686,10.1881871" id="icon_edit"></path>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
-    <div class="text">
-      Edit on GitHub
-    </div>
-  </a>
-</div>
-
+    <div class="container content blog_container">
       <div class="row">
-        <div class="col-lg-3">
-          <div class="tutorial_nav">
-            <ul class="tutorial_content_nav">
-              <li class="label">
-                Table of contents
-              </li>
-            </ul>
-            
-          </div>
-        </div>
         <div class="col-lg-9">
-          <h1 id="vowpal-wabbit-linear-regression-tutorial">Vowpal Wabbit Linear Regression Tutorial</h1>
-
-<p>This tutorial demonstrates how to approach a regression problem with Vowpal Wabbit. It features an overview of a linear regression problem using a Vowpal Wabbit workflow tutorial with examples, introduces unique Vowpal Wabbit features, and explains how to structure input and understand the results.</p>
-
-<div class="prerequisites">
-  <p><strong>Prerequisites</strong></p>
-
-  <p>To install Vowpal Wabbit, and for more information on building Vowpal Wabbit from source or using a package manager, see <a href="../start.html">Get Started</a>.</p>
-
-  <blockquote>
-    <p><strong>Note:</strong> See <a href="cmd_first_steps.html">Command Line Tutorial</a> for Vowpal Wabbit command line basics and a quick introduction to training and testing your model. See <a href="python_first_steps.html">Python Tutorial</a> to explore the basics for using Python to pass some data to Vowpal Wabbit to learn a model and get a prediction.</p>
-  </blockquote>
-
+          <div class="blog_date">
+            June 14, 2021
+          </div>
+          <div class="blog_title">
+            <h1>
+              Open Meeting
+            </h1>
+          </div>
+          <div class="author">
+            
+              <img
+                class="author_avatar"
+                alt="author's avatar"
+                src="https://avatars1.githubusercontent.com/u/7558482?s=400&u=21e4cca683799d65a20a4cf3d11d0c17853ef9cb&v=4"
+              />
+            
+            <div>
+              Jack Gerrits
+            </div>
+          </div>
+          <div class="blog_highlight">
+  <ul>
+    <li><a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZmU2Y2I5YmEtODgyZi00M2RmLWFkZWYtOGIwYzYzZWU4OGUz%40thread.v2/0?context=%7b%22Tid%22%3a%2272f988bf-86f1-41af-91ab-2d7cd011db47%22%2c%22Oid%22%3a%22d8045fbb-f9c3-4187-bb1a-4e12bd02cfcf%22%7d">Join link</a></li>
+    <li><a href="https://github.com/VowpalWabbit/agenda/issues">Agenda</a></li>
+    <li>Every second Thursday, 11:30 AM New York local time.</li>
+  </ul>
 </div>
 
-<h2 id="create-a-dataset">Create a dataset</h2>
+<h2 id="open-meeting">Open Meeting</h2>
 
-<p>Before we begin making predictions for regression problems, we need to create a dataset. For example, say we want to predict whether a house will require a new roof in the next 10 years.</p>
+<p>We hold a meeting every two weeks where we discuss open pull requests, pending work, open issues and ideas for the future. We wanted to extend an invite to for anyone who would like to join. This is an opportunity to come and speak to the Vowpal Wabbit developers, ask any questions, suggest a feature or just listen in and see whats happening.</p>
 
-<p>Create a training-set file in Vowpal Wabbit <code class="highlighter-rouge">house_dataset</code> and copy the following dataset:</p>
+<p>If you wish to bring up a topic please comment on the <a href="https://github.com/VowpalWabbit/agenda/issues">issue dedicated to that particular date in the agena repo</a>. The issue title also has the date and time of that occurance in case you forget.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 | price:.23 sqft:.25 age:.05 2006
-1 2 'second_house | price:.18 sqft:.15 age:.35 1976
-0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
-</code></pre></div></div>
+<p>The meeting is held with Microsoft teams. <a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZmU2Y2I5YmEtODgyZi00M2RmLWFkZWYtOGIwYzYzZWU4OGUz%40thread.v2/0?context=%7b%22Tid%22%3a%2272f988bf-86f1-41af-91ab-2d7cd011db47%22%2c%22Oid%22%3a%22d8045fbb-f9c3-4187-bb1a-4e12bd02cfcf%22%7d">Click here to join the meeting.</a>. This blog post will be kept up to date with the most current information, should the link ever change for example.</p>
 
-<h3 id="vowpal-wabbit-hashing-techniques">Vowpal Wabbit hashing techniques</h3>
-
-<p>Vowpal Wabbit hashes feature names into in-memory indexes by default unless the feature names are positive integers.</p>
-
-<p>For example, in the first line of the <code class="highlighter-rouge">house_dataset</code> example, the first three features use an index derived from a hash function while the last feature uses index <code class="highlighter-rouge">2006</code> directly. Also, the first three features have explicit values (<code class="highlighter-rouge">.23</code>, <code class="highlighter-rouge">.25</code>, and <code class="highlighter-rouge">.05</code> respectively) while the last, <code class="highlighter-rouge">2006</code> has an implicit default value of <code class="highlighter-rouge">1</code>:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 | price:.23 sqft:.25 age:.05 2006
-</code></pre></div></div>
-
-<ul>
-  <li>The first number in each line is a label.</li>
-  <li>A <code class="highlighter-rouge">0</code> label corresponds to no roof-replacement, while a <code class="highlighter-rouge">1</code> label corresponds to a roof-replacement.</li>
-  <li>The bar <code class="highlighter-rouge">|</code> separates label related data (what we want to predict) from features (what we always know).</li>
-  <li>The features in the first line are <code class="highlighter-rouge">price</code>, <code class="highlighter-rouge">sqft</code>, <code class="highlighter-rouge">age</code>, and <code class="highlighter-rouge">2006</code>. Each feature may have an optional <code class="highlighter-rouge">:&lt;numeric_value&gt;</code> following it or, if the value is missing, an implied value of <code class="highlighter-rouge">1</code>.</li>
-</ul>
-
-<p>The label information for the second line is more complex:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 2 'second_house | price:.18 sqft:.15 age:.35 1976
-</code></pre></div></div>
-
-<ul>
-  <li>The <code class="highlighter-rouge">1</code> is the label indicating that a roof-replacement is required.</li>
-  <li>The <code class="highlighter-rouge">2</code> is an optional importance weight which implies that this example counts twice. Importance weights come up in many settings.</li>
-  <li>A missing importance weight defaults to 1. <code class="highlighter-rouge">'second_house</code> is the tag. See Vowpal Wabbit live diagnostics section for more on importance weight.</li>
-</ul>
-
-<p>The third line is more straightforward, except for an additional number. In the label information following the importance weight, the <code class="highlighter-rouge">0.5</code> is an initial prediction.:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
-</code></pre></div></div>
-
-<p>Sometimes you have multiple interacting learning systems and want to be able to predict an offset rather than an absolute value.</p>
-
-<p>Now, we learn:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset
-</code></pre></div></div>
-
-<p><strong>Output:</strong></p>
-<div class="output">
-  <p>Num weight bits = 18
-learning rate = 0.5
-initial_t = 0
-power_t = 0.5
-using no cache
-Reading datafile = house_dataset
-num sources = 1
-average  since         example        example  current  current  current
-loss     last          counter         weight    label  predict features
-0.000000 0.000000            1            1.0   0.0000   0.0000        5
-0.666667 1.000000            2            3.0   1.0000   0.0000        5</p>
-
-  <p>finished run
-number of examples = 3
-weighted example sum = 4.000000
-weighted label sum = 2.000000
-average loss = 0.750000
-best constant = 0.500000
-best constant’s loss = 0.250000
-total feature number = 15</p>
-</div>
-
-<h2 id="vowpal-wabbit-output">Vowpal Wabbit output</h2>
-
-<p>This section provides information on the various types of diagnostic output Vowpal Wabbit presents.</p>
-
-<p>Use <code class="highlighter-rouge">--quiet</code>  command to turn off diagnostic information in Vowpal Wabbit.</p>
-
-<h3 id="hash-function-bits">Hash function bits</h3>
-
-<p>The following output shows the number of bits from the hash function:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Num weight bits = 18
-</code></pre></div></div>
-
-<p>This diagnostic ouput shows that the number of bits from the hash function is 18 (more than enough for this example).</p>
-
-<p>Use <code class="highlighter-rouge">-b &lt;number of bits&gt;</code> to adjust the number of bits to be used from the hash function.</p>
-
-<p>For example: <code class="highlighter-rouge">vw -b 10 house_dataset</code></p>
-
-<h3 id="learning-rate">Learning rate</h3>
-
-<p>The following output shows the learning rate:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>learning rate = 0.5
-</code></pre></div></div>
-
-<p>The default learning rate is <code class="highlighter-rouge">0.5</code> with current default update (<code class="highlighter-rouge">--normalized --invariant --adaptive</code>).</p>
-
-<p>If the data is noisy, you need a larger data-set or multiple passes to predict well. For massive data-sets, the learning rate decays towards <code class="highlighter-rouge">0</code> by default.</p>
-
-<p>Use <code class="highlighter-rouge">-l &lt;learning rate&gt;</code> to adjust the learning rate up or down.</p>
-
-<p>For example: <code class="highlighter-rouge">vw -l 0.4</code></p>
-
-<blockquote>
-  <p><strong>Note:</strong> A higher learning rate makes the model converge faster, but if you adjust the learning rate too high, you risk over-fit and end-up worse on average.</p>
-</blockquote>
-
-<h3 id="initial-time">Initial time</h3>
-
-<p>The following output shows the initial time for learning rate decay:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>initial_t = 0
-</code></pre></div></div>
-
-<blockquote>
-  <p><strong>Note:</strong> Learning rates often decay over time, and this diagnostic output specifies the initial time. You can adjust with <code class="highlighter-rouge">--initial_t &lt;time&gt;</code>, although this is rarely necessary these days.</p>
-
-  <p>For example: <code class="highlighter-rouge">vw --initial_t 4</code></p>
-</blockquote>
-
-<h3 id="power-on-learning-rate-decay">Power on learning rate decay</h3>
-
-<p>The following output specifies the power on the learning rate decay:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>power_t = 0.5
-</code></pre></div></div>
-
-<p>The default is <code class="highlighter-rouge">0.5</code> and a minimax optimal choice that works well for most problems in Vowpal Wabbit. A different way of stating this is: stationary data-sets where the fundamental relation between the input features and target label are not changing over time, should benefit from a high (close to 1.0) <code class="highlighter-rouge">--power_t</code> while learning against changing conditions, like learning against an adversary who continuously changes the rules-of-the-game, would benefit from low (close to 0) <code class="highlighter-rouge">--power_t</code> so the learner can react quickly to these changing conditions.</p>
-
-<blockquote>
-  <p><strong>Note:</strong> You can adjust this <code class="highlighter-rouge">--power_t p</code> typically <em>p</em> is in the range [0,1]. 0 means the learning rate does not decay, which can be helpful when state tracking, while 1 is very aggressive, but plausibly optimal for <a href="https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables">IID</a> data-sets.</p>
-</blockquote>
-
-<h3 id="cache-files">Cache files</h3>
-
-<p>The following output shows that you are not using a cache file:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using no cache
-</code></pre></div></div>
-
-<p>A cache file contains our dataset in a faster to handle format and can greatly speed up training if we use multiple passes or run multiple experiments on the same dataset (even with different options). The default cache file name is the dataset file name with <code class="highlighter-rouge">.cache</code> appended.</p>
-
-<p>For example: <code class="highlighter-rouge">house_dataset.cache</code></p>
-
-<p>Use <code class="highlighter-rouge">--cache_file housing.cache</code> to override the default cache file name.</p>
-
-<p>The cache file is created the first time you use <code class="highlighter-rouge">-c</code>. If the cache exists and is newer than the dataset, that file is used by default.</p>
-
-<p>Use <code class="highlighter-rouge">-c</code> for multiple passes <code class="highlighter-rouge">--passes</code>, so Vowpal Wabbit caches the data in a faster format (passes &gt; 1 should be much faster).  If you want to experiment with the same dataset over and over, it is highly recommended to pass <code class="highlighter-rouge">-c</code> every time you train.</p>
-
-<p>For example: <code class="highlighter-rouge">vw -c --passes 50 -d house_dataset</code>. Or, if you wish to use a specific name for the cache file: <code class="highlighter-rouge">vw -c --passes 50 --cache_file housing.cache -d house_dataset</code></p>
-
-<h3 id="data-sources">Data sources</h3>
-
-<p>The following output shows the source of the data:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reading datafile = house_dataset
-</code></pre></div></div>
-
-<blockquote>
-  <p><strong>Note:</strong> There are many different ways to input data to Vowpal Wabbit. Here we’re just using a simple text file and Vowpal Wabbit tells us the source of the data. Alternative sources include <strong>cache files</strong> (from previous runs), <strong>stdin</strong>, or a <strong>tcp socket</strong>.</p>
-</blockquote>
-
-<h3 id="number-of-data-sources">Number of data sources</h3>
-
-<p>The following output shows the number of data sources:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num sources = 1
-</code></pre></div></div>
-
-<p>There is only one input file in this example, but we can specify multiple files.</p>
-
-<h2 id="vowpal-wabbit-diagnostic-header">Vowpal Wabbit diagnostic header</h2>
-
-<p>Vowpal Wabbit prints live diagnostic information in the header like the following:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>average  since         example        example  current  current  current
-loss     last          counter         weight    label  predict features
-0.000000 0.000000            1            1.0   0.0000   0.0000        5
-0.666667 1.000000            2            3.0   1.0000   0.0000        5
-</code></pre></div></div>
-
-<ul>
-  <li>The <code class="highlighter-rouge">average loss</code> output computes the <a href="http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf" target="blank">progressive validation</a> loss. The critical thing to understand here is that progressive validation loss deviates like a test set, and hence is a reliable indicator of success on the first pass over any data-set.</li>
-  <li>The <code class="highlighter-rouge">since last</code> output is the progressive validation loss since the last printout.</li>
-  <li>The <code class="highlighter-rouge">example counter</code> output tells you which example is printed. In this case, it’s example <code class="highlighter-rouge">2</code>.</li>
-  <li>The <code class="highlighter-rouge">example weight</code> output tells you the sum of the importance weights of examples seen so far. In this case it’s <code class="highlighter-rouge">3.0</code>, because the second example has an importance weight of <code class="highlighter-rouge">2.0</code>.</li>
-  <li>The <code class="highlighter-rouge">current label</code> output tells you the label of the second example.</li>
-  <li>The <code class="highlighter-rouge">current predict</code> output tells you the prediction (before training) on the current example.</li>
-  <li>The <code class="highlighter-rouge">current features</code> output tells you the amount of features in the current example.</li>
-</ul>
-
-<p>The <code class="highlighter-rouge">current features</code> diagnostic is great for debugging. Note that we have five features when you expect four. This happens because Vowpal Wabbit always adds a default constant feature.</p>
-
-<p>Use the <code class="highlighter-rouge">--noconstant</code> command-line option to turn it off.</p>
-
-<p>Vowpal Wabbit prints a new line with an exponential backoff. This is very handy, because we can often debug a problem before the learning algorithm finishes going through a data-set.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>finished run
-number of examples = 3
-weighted example sum = 4.000000
-weighted label sum = 2.000000
-average loss = 0.750000
-best constant = 0.500000
-best constant's loss = 0.250000
-total feature number = 15
-</code></pre></div></div>
-
-<p>At the end, some more straightforward totals are printed. The <code class="highlighter-rouge">best constant</code> and <code class="highlighter-rouge">best constant's loss</code> only work if you are using squared loss. Squared loss is the Vowpal Wabbit default. They compute the best constant’s predictor and the loss of the best constant predictor.</p>
-
-<p>If <code class="highlighter-rouge">average loss</code> is not better than <code class="highlighter-rouge">best constant's loss</code>, something is wrong. In this case, we have too few examples to generalize.</p>
-
-<p>If you want to overfit, use the following:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset <span class="nt">-l</span> 10 <span class="nt">-c</span> <span class="nt">--passes</span> 25 <span class="nt">--holdout_off</span>
-</code></pre></div></div>
-
-<p>The progress section of the output is:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>average  since         example        example  current  current  current
-loss     last          counter         weight    label  predict features
-0.000000 0.000000            1            1.0   0.0000   0.0000        5
-0.666667 1.000000            2            3.0   1.0000   0.0000        5
-0.589385 0.531424            5            7.0   1.0000   0.2508        5
-0.378923 0.194769           11           15.0   1.0000   0.8308        5
-0.184476 0.002182           23           31.0   1.0000   0.9975        5
-0.090774 0.000000           47           63.0   1.0000   1.0000        5
-</code></pre></div></div>
-
-<p>You’ll notice that by example 47 (25 passes over 3 examples result in 75 examples), the <code class="highlighter-rouge">since last</code> column has dropped to <code class="highlighter-rouge">0</code>, implying that by looking at the same (three lines) of data 25 times we have reached a perfect predictor. This is unsurprising with three examples having five features each.</p>
-
-<p>The reason we have to add <code class="highlighter-rouge">--holdout_off</code> is that when running multiple-passes, Vowpal Wabbit automatically switches to ‘over-fit avoidance’ mode by holding-out 10% of the examples (the “1 in 10” period can be changed using <code class="highlighter-rouge">--holdout_period period</code>) and evaluating performance on the held-out data instead of using the online-training progressive loss.</p>
-
-<h2 id="saving-your-model-into-a-file">Saving your model into a file</h2>
-
-<p>Vowpal Wabbit learns the weights of the features and keeps them in an in memory vector by default.</p>
-
-<p>Add <code class="highlighter-rouge">-f filename</code> to save the final regressor weights to a file.</p>
-
-<p>For example:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset <span class="nt">-l</span> 10 <span class="nt">-c</span> <span class="nt">--passes</span> 25 <span class="nt">--holdout_off</span> <span class="nt">-f</span> house.model
-</code></pre></div></div>
-
-<h2 id="vowpal-wabbit-predictions">Vowpal Wabbit predictions</h2>
-
-<p>We can make predictions in Vowpal Wabbit by supplying the <code class="highlighter-rouge">-p filename</code>.</p>
-
-<p>For example, to output them to standard out <code class="highlighter-rouge">stdout</code>:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset <span class="nt">-p</span> /dev/stdout <span class="nt">--quiet</span>
-</code></pre></div></div>
-
-<p><strong>Output:</strong></p>
-
-<div class="output">
-  <p>0.000000
-0.000000 second_house
-1.000000 third_house</p>
-</div>
-
-<ul>
-  <li>The first line <code class="highlighter-rouge">0.000000</code> refers to the first example which has an empty tag.</li>
-  <li>The second line <code class="highlighter-rouge">0.000000 second_house</code> refers to the second example. Notice that the tag appears here. The primary use of the tag is mapping predictions to the corresponding examples.</li>
-  <li>The third output <code class="highlighter-rouge">1.000000 third_house</code> refers to the third example. The initial prediction was set to <code class="highlighter-rouge">0.5</code>, and the prediction is now <code class="highlighter-rouge">1.000000</code>. This means <em>some</em> learning occurred.</li>
-</ul>
-
-<p>In the last example, Vowpal Wabbit predicted while it learned. The model was being built in memory incrementally, as it went over the examples.</p>
-
-<p>It is more common to learn first, then save the model to a file. Then, you make predictions using that saved model.</p>
-
-<p>Use <code class="highlighter-rouge">-i house.model</code> to load the initial model to memory. Add <code class="highlighter-rouge">-t</code> to specify <strong>test-only</strong> (do no learning):</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw <span class="nt">-i</span> house.model <span class="nt">-t</span> house_dataset <span class="nt">-p</span> /dev/stdout <span class="nt">--quiet</span>
-</code></pre></div></div>
-
-<p><strong>Output:</strong></p>
-<div class="output">
-  <p>0.000000
-1.000000 second_house
-0.000000 third_house</p>
-</div>
-
-<p>Obviously the results are different this time, because in the first prediction example, we learned as we went, and made only one pass over the data. For the second example, we loaded an over-fitted (25 pass) model and used our dataset <code class="highlighter-rouge">house_dataset</code> with <code class="highlighter-rouge">-t</code> (testing only mode).</p>
-
-<blockquote>
-  <p><strong>Note:</strong> Always use a different dataset for testing vs training for real prediction settings.</p>
-</blockquote>
-
-<h2 id="auditing">Auditing</h2>
-
-<p>Vowpal Wabbit has a built in <code class="highlighter-rouge">--audit</code> option that is helpful for debugging a machine learning application.</p>
-
-<p>Use <code class="highlighter-rouge">--audit</code> to output helpful information about predictions and features:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vw house_dataset <span class="nt">--audit</span> <span class="nt">--quiet</span>
-</code></pre></div></div>
-
-<p><strong>Output:</strong></p>
-<div class="output">
-  <p>0
-  price:229902:0.23:0@0  sqft:162853:0.25:0@0  age:165201:0.05:0@0  2006:2006:1:0@0  Constant:116060:1:0@0
-0 second_house
-  price:229902:0.18:0@0  sqft:162853:0.15:0@0  age:165201:0.35:0@0  1976:1976:1:0@0  Constant:116060:1:0@0
-1 third_house
-  price:229902:0.53:0.882655@0.2592  age:165201:0.87:0.453833@0.98  sqft:162853:0.32:1.05905@0.18  Constant:116060:1:0.15882@8  1924:1924:1:0@0</p>
-</div>
-
-<p>Every example uses two lines:</p>
-
-<ul>
-  <li>The first line is the prediction.</li>
-  <li>The second line shows one entry per feature.</li>
-</ul>
-
-<p>The first feature listed is:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>price:229902:0.23:0@0.25
-</code></pre></div></div>
-
-<p>The original feature name is <code class="highlighter-rouge">price</code>. Vowpal Wabbit has an advanced <em>namespaces</em> option that allows us to group features and operate them on-the-fly. If we use a namespace, it appears before <code class="highlighter-rouge">^</code> (i.e. <code class="highlighter-rouge">Namespace^Feature</code>).</p>
-
-<p>Namespace options include the following:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">-q XY</code> to cross a pair of namespaces.</li>
-  <li><code class="highlighter-rouge">--cubic XYZ</code> to cross 3 namespaces.</li>
-  <li><code class="highlighter-rouge">--lrq XYn</code> low-rank quadratic interactions.</li>
-  <li><code class="highlighter-rouge">--ignore X</code> skip all features belonging to a namespace.</li>
-</ul>
-
-<p>Now, let’s return to the first feature listed again:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>price:229902:0.23:0@0.25
-</code></pre></div></div>
-
-<ul>
-  <li>The index of the feature <code class="highlighter-rouge">229902</code>, computed by a hash function on the feature name.</li>
-  <li>The value of the feature is <code class="highlighter-rouge">0.23</code>.</li>
-  <li>The value of the feature’s weight <code class="highlighter-rouge">0</code>.</li>
-  <li>The sum of gradients squared for that feature is <code class="highlighter-rouge">@0.25</code> (when you use <em>per-feature adaptive learning rates</em>).</li>
-</ul>
-
-<p>Notice that the feature <code class="highlighter-rouge">2006</code> uses the index 2006. This means that you may use <em>hashes</em> or <em>pre-computed indices</em> for features, as is common in other machine learning systems.</p>
-
-<p>The advantage of using unique <em>integer-based feature names</em> is that they are guaranteed not to collide after hashing. The advantage of <em>free-text (non integer)</em> feature names is readability and self-documentation.</p>
-
-<p>Because only <code class="highlighter-rouge">:</code>, <code class="highlighter-rouge">|</code>, and <em>spaces</em> are special to the Vowpal Wabbit parser, we can give features easy-to-read names. For example:</p>
-
-<p><code class="highlighter-rouge">height&gt;2 value_in_range[1..5] color=red</code></p>
-
-<p>We can even start feature names with a digit. For example:</p>
-
-<p><code class="highlighter-rouge">1st-guess:0.5 2nd-guess:3</code></p>
-
-<h2 id="more-to-explore">More to explore</h2>
-
-<p>This tutorial only describes a fraction of Vowpal Wabbit’s capabilities. To explore more about other Vowpal Wabbit features and performance — loss functions, optimizers, and representations — including ridiculously fast active learning with clusters of thousands of machines, see the following resources:</p>
-
-<ul>
-  <li>To learn how to approach a contextual bandits problem using Vowpal Wabbit — including how to  work with different contextual bandits approaches, how to format data, and understand the results — see the <a href="contextual_bandits.html">Contextual Bandit Reinforcement Learning Tutorial</a>.</li>
-  <li>For more on the contextual bandits approach to reinforcement learning, including a content personalization scenario, see the <a href="cb_simulation.html">Contextual Bandit Simulation Tutorial</a>.</li>
-  <li>Explore more Vowpal Wabbit <a href="../tutorials.html">Tutorials</a>.</li>
-  <li>Browse <a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Examples" target="blank">examples on the GitHub wiki</a>.</li>
-</ul>
-
+        </div>
+        <div class="col-lg-3">
         </div>
       </div>
     </div>
-
-    <div class="container bibliography_container">
-  <div class="header">
-    <h3>
-      CITATIONS
-    </h3>
-    <div class="all_publications_link">
-      <a href="/research.html">
-        All publications
-      </a>
-    </div>
-  </div>
-
-  <ol class="bibliography"></ol>
-</div>
-
     <div class="container-fluid footer_container">
   <div class="container">
     <div class="row align-items-center justify-content-between">
@@ -708,9 +308,6 @@ loss     last          counter         weight    label  predict features
 
 <script src="/assets/js/citation.js"></script>
 
-    <div class="overlay">
-    </div>
-
-    <script src="/assets/js/tutorial.js"></script>
+    <script src="/assets/js/blog.js"></script>
   </body>
 </html>
