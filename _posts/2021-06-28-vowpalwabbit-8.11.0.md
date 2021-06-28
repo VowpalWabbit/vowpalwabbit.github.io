@@ -22,12 +22,14 @@ All python related notebook examples have been made interactive via [jupyter bin
 
 Upcoming deprecations can now be tracked [here](https://github.com/VowpalWabbit/vowpal_wabbit/issues?q=is%3Aissue+is%3Aopen+label%3ADeprecation)
 
+Deprecation warnings will be added in minor releases and the warnings will state the major release in which they will take effect
+
 ### pyVW related updates and improvments
 
 - VW for Python 3.9 added to windows python build [(#2939)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2939)
 
 The python DataFrame-to-VW effort has been growing, the latest available changes beeing:
-- A new tutorial showcasing the latest DataFrame to VW improvments [here](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/examples/DFtoVW_tutorial.ipynb)
+- [TODO point to new tutorial location in new python docs when available] A new tutorial showcasing the latest DataFrame to VW improvments [here](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/examples/DFtoVW_tutorial.ipynb)
 - [Get weight from name (#3042)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3042)
 - [Add weight attribute to SimpleLabel (#3033)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3033)
 - [Add contextual bandit label to DFtoVW (#2713)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2713)
@@ -52,11 +54,11 @@ Experimental support for getting internal VW metrics has been added [(#2959)](ht
 
 [(#2890)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2890)
 
-### Breaking changes
+### Some minor changes that are worth pointing out
 
-- BREAKING CHANGE [fix!: cs_active now returns active_multiclass prediction (#2930)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2930)
-- BREAKING CHANGE [fix!: Propagate cache reading failure (#2931)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2931)
-- BREAKING CHANGE [feat: [dsjson] Malformed lines are now skipped instead of being fatal (#3007)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3007)
+- [fix!: cs_active now returns active_multiclass prediction (#2930)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2930)
+- [fix!: Propagate cache reading failure (#2931)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2931)
+- [feat: [dsjson] Malformed lines are now skipped instead of being fatal (#3007)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3007)
   - this can be turned off with the usage of `--strict-parse`
 
 ### Internal improvements
@@ -111,7 +113,7 @@ And of course thank you to existing contributors:
 - [feat: [py] Add contextual bandit label to DFtoVW (#2713)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2713)
 - [feat: add generic_range adapter class (#3025)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3025)
 - [feat: [py] add api for learner metrics (#3022)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3022)
-- BREAKING CHANGE [feat: [dsjson] Malformed lines are now skipped instead of being fatal (#3007)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3007)
+- [feat: [dsjson] Malformed lines are now skipped instead of being fatal (#3007)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3007)
 - [feat: support cached interaction expansion as a reduction (#2993)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2993)
 - [feat: [metrics] add optional metrics for --dsjson (#2992)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2992)
 - [feat: [metrics] add support for float (#2991)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2991)
@@ -153,10 +155,10 @@ And of course thank you to existing contributors:
 - [fix: Avoid float to double promotion by using C++ version of math functions (#2979)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2979)
 - [fix: fixes for headers not including things they need (#2974)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2974)
 - [fix: attempt to fix windows failures (#2956)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2956)
-- BREAKING CHANGE [fix!: cs_active now returns active_multiclass prediction (#2930)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2930)
+- [fix!: cs_active now returns active_multiclass prediction (#2930)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2930)
 - [fix: fix cost assignment in cats tree (#2900)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2900)
 - [fix: cb_adf learn_returns_prediction (#2953)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2953)
-- BREAKING CHANGE [fix!: Propagate cache reading failure (#2931)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2931)
+- [fix!: Propagate cache reading failure (#2931)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2931)
 - [fix: Stash benchmark scripts (#2950)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2950)
 - [fix: set json reader correctly when source is reset (#2947)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2947)
 - [fix: assert in custom_streambuf.h (#2946)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2946)
