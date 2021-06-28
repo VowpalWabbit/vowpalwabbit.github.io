@@ -1,5 +1,3 @@
-# VowpalWabbit 8.11.0 Release Notes
-
 ---
 title: "VowpalWabbit 8.11.0 Release Notes"
 layout: blog
