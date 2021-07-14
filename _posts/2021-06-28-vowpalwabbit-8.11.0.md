@@ -67,7 +67,7 @@ Experimental support for getting internal VW metrics has been added [(#2959)](ht
 
 ### Internal improvements
 
-Learners can now be built using templated builders [(#2918)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2918) and reductions builders are slowly being transitioned to use the new builders
+Learners can now be built using templated builders [(#2918)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2918) and reductions builders are slowly being transitioned to use the new builders.
 
 ## Thank you
 
