@@ -17,7 +17,7 @@ avatar_link: https://avatars.githubusercontent.com/u/10447059?s=400&u=2c0b0e7fda
 ### pyVW related updates and improvments
 
 - VW for Python 3.9 added to windows python build [(#2939)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2939)
-- VW for Python 2.7 and Python 3.5 will no longer be supported
+- VW for Python 2.7 and Python 3.5 will no longer be supported [(#3118)](https://github.com/VowpalWabbit/vowpal_wabbit/issues/3118)
 
 The python DataFrame-to-VW effort has been growing, the latest available changes beeing:
 - A new tutorial showcasing the latest DataFrame to VW improvments [here](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/examples/DFtoVW_tutorial.ipynb)
@@ -49,8 +49,6 @@ Deprecation warnings for this release added to:
 - [refactor: deprecate some v_array functions (#3136)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3136)
 - [refactor: remove all usages of v_init and deprecate (#3135)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3135)
 - [refactor: deprecate ezexample (#3128)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3128)
-
-As noted in the pyVW section, vw for Python 2.7 and Python 3.5 will no longer be supported
 
 ### Experimental: Metrics for debugging purposes
 
