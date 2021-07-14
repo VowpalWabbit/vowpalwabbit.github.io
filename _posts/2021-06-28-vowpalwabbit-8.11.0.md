@@ -16,7 +16,7 @@ avatar_link: https://avatars.githubusercontent.com/u/10447059?s=400&u=2c0b0e7fda
 
 ### pyVW related updates and improvments
 
-- VW for Python 3.9 added to windows python build [(#2939)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2939)
+- VW for Python 3.9 added to Windows Python build [(#2939)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2939)
 - VW for Python 2.7 and Python 3.5 will no longer be supported [(#3118)](https://github.com/VowpalWabbit/vowpal_wabbit/issues/3118)
 
 The Python DataFrame-to-VW effort has been growing, the latest available changes beeing:
