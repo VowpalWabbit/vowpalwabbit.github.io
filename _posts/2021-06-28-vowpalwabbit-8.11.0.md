@@ -2,7 +2,7 @@
 title: "VowpalWabbit 8.11.0 Release Notes"
 layout: blog
 tags: Release&nbsp;notes
-description: Documentation improvments, python api improvements, cb_to_cb_adf reduction, deprecations and more in VW 8.11.0!
+description: Documentation improvments, Python API improvements, cb_to_cb_adf reduction, deprecations and more in VW 8.11.0!
 author: Olga Vrousgou
 avatar_link: https://avatars.githubusercontent.com/u/10447059?s=400&u=2c0b0e7fdac245b94a8e1ac7c983052d90b9232b&v=4
 ---
