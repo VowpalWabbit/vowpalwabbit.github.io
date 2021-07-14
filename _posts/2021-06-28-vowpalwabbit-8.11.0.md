@@ -27,7 +27,7 @@ The Python DataFrame-to-VW effort has been growing, the latest available changes
 
 ### cb_to_cb_adf reduction
 
-`cb` and `cb_adf` code paths have been consolidated into using the cb_adf path, without however issuing any breaking changes [(#2680)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2680). cb examples are internally translated to cb_adf examples. This behaviour can be turned off by supplying the `--cb_force_legacy` flag when `--cb N` is used. The motivation behind this change is so that the cb reduction can benefit from the work done on cb_adf which has gotten more attention over the years
+`cb` and `cb_adf` code paths have been consolidated into using the `cb_adf` path, without however issuing any breaking changes [(#2680)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2680). cb examples are internally translated to `cb_adf` examples. This behaviour can be turned off by supplying the `--cb_force_legacy` flag when `--cb N` is used. The motivation behind this change is so that the `cb` reduction can benefit from the work done on `cb_adf` which has gotten more attention over the years
 
 ### `--cubic :::` and `--interactions [:]*` speedup
 
