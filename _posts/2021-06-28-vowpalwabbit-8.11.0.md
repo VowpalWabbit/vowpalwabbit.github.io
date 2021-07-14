@@ -41,7 +41,7 @@ A new flag has been added that allows the limiting of the log output of VW [(#30
 
 Upcoming deprecations can now be tracked [here](https://github.com/VowpalWabbit/vowpal_wabbit/issues?q=is%3Aissue+is%3Aopen+label%3ADeprecation).
 
-Deprecation warnings will be added in minor releases and the warnings will state the major release in which they will take effect
+Deprecation warnings will be added in minor releases and the warnings will state the major release in which they will take effect.
 
 Deprecation warnings for this release added to:
 
