@@ -14,29 +14,19 @@ avatar_link: https://avatars.githubusercontent.com/u/10447059?s=400&u=2c0b0e7fda
 
 ## Release highlights
 
-### Documentation improvments
-
-All python related notebook examples have been made interactive via [jupyter binder](https://jupyter.org/binder) and can now be found [here](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/)
-
-### Track upcoming deprecations
-
-Upcoming deprecations can now be tracked [here](https://github.com/VowpalWabbit/vowpal_wabbit/issues?q=is%3Aissue+is%3Aopen+label%3ADeprecation)
-
-Deprecation warnings will be added in minor releases and the warnings will state the major release in which they will take effect
-
 ### pyVW related updates and improvments
 
 - VW for Python 3.9 added to windows python build [(#2939)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2939)
 
 The python DataFrame-to-VW effort has been growing, the latest available changes beeing:
-- [TODO point to new tutorial location in new python docs when available] A new tutorial showcasing the latest DataFrame to VW improvments [here](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/examples/DFtoVW_tutorial.ipynb)
+- A new tutorial showcasing the latest DataFrame to VW improvments [here](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/examples/DFtoVW_tutorial.ipynb)
 - [Get weight from name (#3042)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3042)
 - [Add weight attribute to SimpleLabel (#3033)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3033)
 - [Add contextual bandit label to DFtoVW (#2713)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2713)
 
 ### cb_to_cb_adf reduction
 
-`cb` and `cb_adf` code paths have been consolidated into using the cb_adf path, without however issuing any breaking changes [(#2680)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2680). cb examples are internally translated to cb_adf examples. This behaviour can be turned off by supplying the `--cb_force_legacy` flag when `--cb N` is used. Models created with previous releases will apply the legacy flag automatically and fallback to the legacy behaviour. The motivation behind this change is so that the cb reduction can benefit from the work done on cb_adf which has gotten more attention over the years
+`cb` and `cb_adf` code paths have been consolidated into using the cb_adf path, without however issuing any breaking changes [(#2680)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2680). cb examples are internally translated to cb_adf examples. This behaviour can be turned off by supplying the `--cb_force_legacy` flag when `--cb N` is used. The motivation behind this change is so that the cb reduction can benefit from the work done on cb_adf which has gotten more attention over the years
 
 ### `--cubic :::` and `--interactions [:]*` speedup
 
@@ -45,6 +35,19 @@ Using the wildcard (`:`) when doing cubic (`--cubic :::`) and higher order (`--i
 ### Logging line limiting now available
 
 A new flag has been added that allows the limiting of the log output of VW [(#3021)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3021). By using `--limit_output <N>` a hard limit `N` can be set to the total printed lines. This does not include vw progressive validation loss output which will remain unaffected
+
+### Track upcoming deprecations
+
+Upcoming deprecations can now be tracked [here](https://github.com/VowpalWabbit/vowpal_wabbit/issues?q=is%3Aissue+is%3Aopen+label%3ADeprecation)
+
+Deprecation warnings will be added in minor releases and the warnings will state the major release in which they will take effect
+
+Deprecation warnings for this release added to:
+
+- [refactor: remove all usages of delete_v and deprecate (#3138)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3138)
+- [refactor: deprecate some v_array functions (#3136)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3136)
+- [refactor: remove all usages of v_init and deprecate (#3135)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3135)
+- [refactor: deprecate ezexample (#3128)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3128)
 
 ### Experimental: Metrics for debugging purposes
 
@@ -100,6 +103,7 @@ And of course thank you to existing contributors:
 <div class="changelist hidden" markdown="1">
 
 ## Features
+- [feat: add learner builder for no-data learners (#3100)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3100)
 - [feat: [Tutorial] Using DFtoVW and exploring VW output (#3068)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3068)
 - [feat: add chained_proxy_iterator to make it easier to iterate entire namespace index groups (#3076)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3076)
 - [feat: [pyvw] Get weight from name (#3042)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3042)
@@ -127,6 +131,17 @@ And of course thank you to existing contributors:
 - [feat: Enable reduction_features to be accessed from label_parser functions (#2916)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2916)
 
 ## Fixes
+- [fix: Use random state in sample_pdf, Resolves #3116  (#3150)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3150)
+- [fix: Multiline Example handling when in multi-pass mode (#3143)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3143)
+- [fix: Fix CB label caching (#3141)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3141)
+- [fix: [Python] Fix default parameter `convert_labels` in `sklearn_vw.VWRegressor` (#3129)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3129)
+- [fix: cats getting stuck to predicting tree edges for some bandwidths (#3114)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3114)
+- [fix: use nullptr ostream when quiet is on (#3119)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3119)
+- [fix: fix two compiler warnings (#3123)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3123)
+- [fix: Check label type for shared features, Resolves #3088 (#3120)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3120)
+- [fix: [cb_to_cb_adf] multiple costs in label (#3126)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3126)
+- [fix: setup_example should not be called twice on the same example (#3115)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3115)
+- [fix: [DFtoVW] Fix issue with nan/None in feature (#3109)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3109)
 - [fix: fix gdb pretty printer (#3079)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3079)
 - [fix: do not change spdlog global settings (#3077)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3077)
 - [fix: cmake build (#3071)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3071)
@@ -168,6 +183,16 @@ And of course thank you to existing contributors:
 ## Other changes
 - [style: Use float instead of float ref (#2986)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2986)
 - [style: Give template types more descriptive names (#2984)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2984)
+- [refactor: rename file namespaced_features -&gt; namespaced_feature_store (#3154)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3154)
+- [refactor: return ScoredDual with bound (#3121)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3121)
+- [refactor: remove all usages of delete_v and deprecate (#3138)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3138)
+- [refactor: Don't use a shared ptr for audit (#3134)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3134)
+- [refactor: deprecate some v_array functions (#3136)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3136)
+- [refactor: use destructor to manage memory (#3131)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3131)
+- [refactor: remove all usages of v_init and deprecate (#3135)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3135)
+- [refactor: simplify search memory management (#3132)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3132)
+- [refactor: do not need to call delete_v anymore (#3130)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3130)
+- [refactor: deprecate ezexample (#3128)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3128)
 - [refactor: remove cast in slim tests (#3098)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3098)
 - [refactor: Fix unnecessary usages of char*  (#3085)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3085)
 - [refactor: add label and use builder to set learner features in cb_dro.cc (#3059)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3059)
@@ -205,6 +230,11 @@ And of course thank you to existing contributors:
 - [refactor: Refactor learner construction (#2918)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2918)
 - [refactor: [DFtoVW] Use more generic numpy types, add attribute name to Feature (#2909)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2909)
 - [refactor: Reduce number of raw pointers (#2915)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2915)
+- [test: [chisq] add validation test with py impl test (#3147)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3147)
+- [test: get type information of VW options (#3142)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3142)
+- [test: update runtests.AUTOGEN.json (#3140)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3140)
+- [test: add to cmakelists unit test for cb_dro (#3117)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3117)
+- [test: [py] fix seed for sim test (#3101)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3101)
 - [test: add tests for namespaces with same first letter (#3096)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3096)
 - [test: [py] fix random failure by lowering value (#3089)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3089)
 - [test: Add test for self interaction with multiple feature_groups (#3074)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3074)
@@ -212,10 +242,14 @@ And of course thank you to existing contributors:
 - [test: add baseline test (#3070)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3070)
 - [test: ensure python3 is used for test scripts (#3041)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3041)
 - [test: Add tests for vw_math and fix one function (#2966)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2966)
+- [build: MSVC check must be done before project call (#3113)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3113)
 - [build: Enable building Python library using VS2019 (#3078)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3078)
 - [build: [WIP] Enable building C# projects on Windows with CMake (#2929)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2929)
 - [build: add 3.9 to windows python build (#2939)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2939)
 - [build: Update build_python_wheels_macos.yml (#2937)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2937)
+- [ci: lock to specific version of google test in benchmark CI (#3137)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3137)
+- [ci: Build docs as part of CI (#3090)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3090)
+- [ci: Add Python type checking (#3105)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3105)
 - [ci: Reduce CI burden (#3048)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3048)
 - [ci: Add codecov token to help codecov identify uploaded coverage reports (#3045)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3045)
 - [ci: Make LGTM ignore ext_libs directory (#2967)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2967)
@@ -226,6 +260,8 @@ And of course thank you to existing contributors:
 - [ci: update brew to mitigate bintray brownout (#2941)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2941)
 - [ci: Update check_pr_title.yml (#2922)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2922)
 - [ci: Enable CI for VW Slim (#2914)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2914)
+- [chore: remove unused file (#3152)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3152)
+- [chore: Update deprecations to be explicit about 9.0 release (#3103)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3103)
 - [chore: add deprecation notice for #3084 feature_self_interactions (#3099)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3099)
 - [chore: fix deprecation issue template (#3092)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3092)
 - [chore: add requirements file to be used by binder (#3087)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3087)
