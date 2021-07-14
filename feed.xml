@@ -1,4 +1,299 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-24T09:22:07-04:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">Open Meeting</title><link href="/blog/open-meeting.html" rel="alternate" type="text/html" title="Open Meeting" /><published>2021-06-14T00:00:00-04:00</published><updated>2021-06-14T00:00:00-04:00</updated><id>/blog/open-meeting</id><content type="html" xml:base="/blog/open-meeting.html">&lt;div class=&quot;blog_highlight&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-07-14T13:51:08-04:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">VowpalWabbit 8.11.0 Release Notes</title><link href="/blog/vowpalwabbit-8.11.0.html" rel="alternate" type="text/html" title="VowpalWabbit 8.11.0 Release Notes" /><published>2021-06-28T00:00:00-04:00</published><updated>2021-06-28T00:00:00-04:00</updated><id>/blog/vowpalwabbit-8.11.0</id><content type="html" xml:base="/blog/vowpalwabbit-8.11.0.html">&lt;div class=&quot;blog_highlight&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.11.0&quot;&gt;GitHub release&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://pypi.org/project/vowpalwabbit/&quot;&gt;PyPi&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;release-highlights&quot;&gt;Release highlights&lt;/h2&gt;
+
+&lt;h3 id=&quot;pyvw-related-updates-and-improvments&quot;&gt;pyVW related updates and improvments&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;VW for Python 3.9 added to Windows Python build &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2939&quot;&gt;(#2939)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;VW for Python 2.7 and Python 3.5 will no longer be supported &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/issues/3118&quot;&gt;(#3118)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Python DataFrame-to-VW effort has been growing, the latest available changes beeing:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A new tutorial showcasing the latest DataFrame to VW improvments &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/examples/DFtoVW_tutorial.ipynb&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3042&quot;&gt;Get weight from name (#3042)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3033&quot;&gt;Add weight attribute to SimpleLabel (#3033)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2713&quot;&gt;Add contextual bandit label to DFtoVW (#2713)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cb_to_cb_adf-reduction&quot;&gt;cb_to_cb_adf reduction&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cb&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;cb_adf&lt;/code&gt; code paths have been consolidated into using the &lt;code class=&quot;highlighter-rouge&quot;&gt;cb_adf&lt;/code&gt; path, without however issuing any breaking changes &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2680&quot;&gt;(#2680)&lt;/a&gt;. cb examples are internally translated to &lt;code class=&quot;highlighter-rouge&quot;&gt;cb_adf&lt;/code&gt; examples. This behaviour can be turned off by supplying the &lt;code class=&quot;highlighter-rouge&quot;&gt;--cb_force_legacy&lt;/code&gt; flag when &lt;code class=&quot;highlighter-rouge&quot;&gt;--cb N&lt;/code&gt; is used. The motivation behind this change is so that the &lt;code class=&quot;highlighter-rouge&quot;&gt;cb&lt;/code&gt; reduction can benefit from the work done on &lt;code class=&quot;highlighter-rouge&quot;&gt;cb_adf&lt;/code&gt; which has gotten more attention over the years&lt;/p&gt;
+
+&lt;h3 id=&quot;--cubic--and---interactions--speedup&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--cubic :::&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;--interactions [:]*&lt;/code&gt; speedup&lt;/h3&gt;
+
+&lt;p&gt;Using the wildcard (&lt;code class=&quot;highlighter-rouge&quot;&gt;:&lt;/code&gt;) when doing cubic (&lt;code class=&quot;highlighter-rouge&quot;&gt;--cubic :::&lt;/code&gt;) and higher order (&lt;code class=&quot;highlighter-rouge&quot;&gt;--interactions ::::&lt;/code&gt;) interactions has been significantly sped up &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2993&quot;&gt;(#2993)&lt;/a&gt;. This optimization now affects cubics and higher order interactions&lt;/p&gt;
+
+&lt;h3 id=&quot;logging-line-limiting-now-available&quot;&gt;Logging line limiting now available&lt;/h3&gt;
+
+&lt;p&gt;A new flag has been added that allows the limiting of the log output of VW &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3021&quot;&gt;(#3021)&lt;/a&gt;. By using &lt;code class=&quot;highlighter-rouge&quot;&gt;--limit_output &amp;lt;N&amp;gt;&lt;/code&gt; a hard limit &lt;code class=&quot;highlighter-rouge&quot;&gt;N&lt;/code&gt; can be set to the total printed lines. This does not include vw progressive validation loss output which will remain unaffected&lt;/p&gt;
+
+&lt;h3 id=&quot;track-upcoming-deprecations&quot;&gt;Track upcoming deprecations&lt;/h3&gt;
+
+&lt;p&gt;Upcoming deprecations can now be tracked &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/issues?q=is%3Aissue+is%3Aopen+label%3ADeprecation&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Deprecation warnings will be added in minor releases and the warnings will state the major release in which they will take effect.&lt;/p&gt;
+
+&lt;p&gt;Deprecation warnings for this release added to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3138&quot;&gt;refactor: remove all usages of delete_v and deprecate (#3138)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3136&quot;&gt;refactor: deprecate some v_array functions (#3136)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3135&quot;&gt;refactor: remove all usages of v_init and deprecate (#3135)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3128&quot;&gt;refactor: deprecate ezexample (#3128)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;experimental-metrics-for-debugging-purposes&quot;&gt;Experimental: Metrics for debugging purposes&lt;/h3&gt;
+
+&lt;p&gt;Experimental support for getting internal VW metrics has been added &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2959&quot;&gt;(#2959)&lt;/a&gt; and can be enabled using the &lt;code class=&quot;highlighter-rouge&quot;&gt;--extra_metrics &amp;lt;output_file&amp;gt;&lt;/code&gt; argument. Currently richer information exists for reductions that use &lt;code class=&quot;highlighter-rouge&quot;&gt;cb_explore&lt;/code&gt; (see example output for ccb_explore_adf &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/test/test-sets/ref/metrics_ccb.json&quot;&gt;here&lt;/a&gt;). The resulting json schema is still very fluid and is expected to change. Users that build and use VW from source can add their own metrics if they wish to do so. The metrics are also made available via the Python API (see &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/tests/test_pyvw.py#L447&quot;&gt;here&lt;/a&gt; for a usage example) where they can be accessed via a Python dictionary&lt;/p&gt;
+
+&lt;h3 id=&quot;multi-line-example-data-files-no-longer-need-to-have-an-extra-newline-for-the-last-multi-line-example-at-the-end-of-the-file&quot;&gt;Multi-line example data files no longer need to have an extra newline for the last multi-line example at the end of the file&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2890&quot;&gt;(#2890)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;some-minor-changes-that-are-worth-pointing-out&quot;&gt;Some minor changes that are worth pointing out&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2930&quot;&gt;fix!: cs_active now returns active_multiclass prediction (#2930)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2931&quot;&gt;fix!: Propagate cache reading failure (#2931)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3007&quot;&gt;feat: [dsjson] Malformed lines are now skipped instead of being fatal (#3007)&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;this can be turned off with the usage of &lt;code class=&quot;highlighter-rouge&quot;&gt;--strict-parse&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;internal-improvements&quot;&gt;Internal improvements&lt;/h3&gt;
+
+&lt;p&gt;Learners can now be built using templated builders &lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2918&quot;&gt;(#2918)&lt;/a&gt; and reductions builders are slowly being transitioned to use the new builders.&lt;/p&gt;
+
+&lt;h2 id=&quot;thank-you&quot;&gt;Thank you&lt;/h2&gt;
+
+&lt;p&gt;A huge thank you and welcome to all of the new contributors since the last release:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/AdamStepan&quot;&gt;@seznam&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bassmang&quot;&gt;@bassmang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And of course thank you to existing contributors:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cirvine-MSFT&quot;&gt;@cirvine-MSFT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ataymano&quot;&gt;@ataymano&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cheng-tan&quot;&gt;@cheng-tan&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/etiennekintzler&quot;&gt;@etiennekintzler&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jackgerrits&quot;&gt;@jackgerrits&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/kumpera&quot;&gt;@kumpera&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/lalo&quot;&gt;@lalo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/olgavrou&quot;&gt;@olgavrou&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/peterychang&quot;&gt;@peterychang&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/pmineiro&quot;&gt;@pmineiro&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rajan-chari&quot;&gt;@rajan-chari&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Sharad24&quot;&gt;@Sharad24&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/zwd-ms&quot;&gt;@zwd-ms&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;full-changelist&quot;&gt;Full changelist&lt;/h2&gt;
+
+&lt;div&gt;
+  &lt;i class=&quot;fa fa-caret-right&quot;&gt;&lt;/i&gt;
+  &lt;button class=&quot;changelist_button&quot;&gt;
+    Click here to expand and see the full changelist.
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;changelist hidden&quot;&gt;
+
+  &lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3100&quot;&gt;feat: add learner builder for no-data learners (#3100)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3068&quot;&gt;feat: [Tutorial] Using DFtoVW and exploring VW output (#3068)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3076&quot;&gt;feat: add chained_proxy_iterator to make it easier to iterate entire namespace index groups (#3076)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3042&quot;&gt;feat: [pyvw] Get weight from name (#3042)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3080&quot;&gt;feat: add cb benchmark with more features (#3080)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3057&quot;&gt;feat: add cache helper for reading and writing types directly (#3057)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3040&quot;&gt;feat: add several functions to namespaced_features (#3040)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3032&quot;&gt;feat: [metrics] cb_explore_adf additional metrics (#3032)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3033&quot;&gt;feat: [py] DFtoVW -&amp;gt; Add weight attribute to SimpleLabel (#3033)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3029&quot;&gt;feat: Create class to manage dual indexing of feature_groups (#3029)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3021&quot;&gt;feat: add flag to limit log output (#3021)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2713&quot;&gt;feat: [py] Add contextual bandit label to DFtoVW (#2713)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3025&quot;&gt;feat: add generic_range adapter class (#3025)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3022&quot;&gt;feat: [py] add api for learner metrics (#3022)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3007&quot;&gt;feat: [dsjson] Malformed lines are now skipped instead of being fatal (#3007)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2993&quot;&gt;feat: support cached interaction expansion as a reduction (#2993)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2992&quot;&gt;feat: [metrics] add optional metrics for –dsjson (#2992)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2991&quot;&gt;feat: [metrics] add support for float (#2991)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2959&quot;&gt;feat: add optional extra metrics (#2959)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2961&quot;&gt;feat: [cb_adf_explore] prog val print known label (#2961)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2965&quot;&gt;feat: consolidate math functions and add combinatorial related funcs (#2965)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2957&quot;&gt;feat: [cb cb_adf] prog val print known label (#2957)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2680&quot;&gt;feat: Add cb_to_cb_adf reduction (#2680)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2958&quot;&gt;feat: Add active multiclass to C# API (#2958)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2948&quot;&gt;feat: cross-release benchmarks (#2948)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2916&quot;&gt;feat: Enable reduction_features to be accessed from label_parser functions (#2916)&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3150&quot;&gt;fix: Use random state in sample_pdf, Resolves #3116  (#3150)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3143&quot;&gt;fix: Multiline Example handling when in multi-pass mode (#3143)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3141&quot;&gt;fix: Fix CB label caching (#3141)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3129&quot;&gt;fix: [Python] Fix default parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;convert_labels&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;sklearn_vw.VWRegressor&lt;/code&gt; (#3129)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3114&quot;&gt;fix: cats getting stuck to predicting tree edges for some bandwidths (#3114)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3119&quot;&gt;fix: use nullptr ostream when quiet is on (#3119)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3123&quot;&gt;fix: fix two compiler warnings (#3123)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3120&quot;&gt;fix: Check label type for shared features, Resolves #3088 (#3120)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3126&quot;&gt;fix: [cb_to_cb_adf] multiple costs in label (#3126)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3115&quot;&gt;fix: setup_example should not be called twice on the same example (#3115)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3109&quot;&gt;fix: [DFtoVW] Fix issue with nan/None in feature (#3109)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3079&quot;&gt;fix: fix gdb pretty printer (#3079)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3077&quot;&gt;fix: do not change spdlog global settings (#3077)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3071&quot;&gt;fix: cmake build (#3071)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3069&quot;&gt;fix: Baseline should signal its enablement through an index and not a feature (#3069)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3063&quot;&gt;fix: Fix model corruption on reading model (#3063)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3060&quot;&gt;fix: avoid printing extra things when using –help (#3060)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3055&quot;&gt;fix: Fix of learning on data with pdrop (#3055)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3044&quot;&gt;fix: natvis definition had incorrect member variable name (#3044)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3035&quot;&gt;fix: [metrics] set to zero (#3035)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3017&quot;&gt;fix: set default learn_returns_prediction to false, refactor cover (#3017)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3012&quot;&gt;fix: refactor cb_explore_adf_first (#3012)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3010&quot;&gt;fix: Refactor regcb with make_reduction_learner (#3010)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3009&quot;&gt;fix: Refactor squarecb with make_reduction_learner (#3009)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3008&quot;&gt;fix: warning for const qualifier on reference type (#3008)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3006&quot;&gt;fix: regcb save_load and keep mellowness (#3006)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3005&quot;&gt;fix: remove non printable ascii char from tests (#3005)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3004&quot;&gt;fix: [metrics] account for label action not predicted (#3004)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2997&quot;&gt;fix: cb_explore_adf_first.cc save_load (#2997)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2999&quot;&gt;fix: keep gamm_exponent in squarecb (#2999)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2996&quot;&gt;fix: [metrics] add missing ccb tests (#2996)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2995&quot;&gt;fix: bfgs preconditioner, Resolves #2745 (#2995)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2988&quot;&gt;fix: Added save_load to squarcb (#2988)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2968&quot;&gt;fix: Add read_line_json_s function taking line length (#2968)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2978&quot;&gt;fix: Unify duplicated error code headers (#2978)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2980&quot;&gt;fix: use nullptr instead of NULL (#2980)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2979&quot;&gt;fix: Avoid float to double promotion by using C++ version of math functions (#2979)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2974&quot;&gt;fix: fixes for headers not including things they need (#2974)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2956&quot;&gt;fix: attempt to fix windows failures (#2956)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2930&quot;&gt;fix!: cs_active now returns active_multiclass prediction (#2930)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2900&quot;&gt;fix: fix cost assignment in cats tree (#2900)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2953&quot;&gt;fix: cb_adf learn_returns_prediction (#2953)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2931&quot;&gt;fix!: Propagate cache reading failure (#2931)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2950&quot;&gt;fix: Stash benchmark scripts (#2950)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2947&quot;&gt;fix: set json reader correctly when source is reset (#2947)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2946&quot;&gt;fix: assert in custom_streambuf.h (#2946)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2940&quot;&gt;fix: invert hash with –save_resume does not include feature name (#2940)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2890&quot;&gt;fix: [Version update to 8.10.1] make example_is_newline check depend on bool instead of internal example characteristics (#2890)&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h2 id=&quot;other-changes&quot;&gt;Other changes&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2986&quot;&gt;style: Use float instead of float ref (#2986)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2984&quot;&gt;style: Give template types more descriptive names (#2984)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3154&quot;&gt;refactor: rename file namespaced_features -&amp;gt; namespaced_feature_store (#3154)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3121&quot;&gt;refactor: return ScoredDual with bound (#3121)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3138&quot;&gt;refactor: remove all usages of delete_v and deprecate (#3138)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3134&quot;&gt;refactor: Don’t use a shared ptr for audit (#3134)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3136&quot;&gt;refactor: deprecate some v_array functions (#3136)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3131&quot;&gt;refactor: use destructor to manage memory (#3131)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3135&quot;&gt;refactor: remove all usages of v_init and deprecate (#3135)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3132&quot;&gt;refactor: simplify search memory management (#3132)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3130&quot;&gt;refactor: do not need to call delete_v anymore (#3130)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3128&quot;&gt;refactor: deprecate ezexample (#3128)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3098&quot;&gt;refactor: remove cast in slim tests (#3098)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3085&quot;&gt;refactor: Fix unnecessary usages of char*  (#3085)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3059&quot;&gt;refactor: add label and use builder to set learner features in cb_dro.cc (#3059)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3058&quot;&gt;refactor: Organize cache usage behind two functions for testing (#3058)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3053&quot;&gt;refactor: Refactor cats_tree.cc to use builder to set features of learner (#3053)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3050&quot;&gt;refactor: remove unnecessary delete_v_array call (#3050)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3039&quot;&gt;refactor: Refactor cb_sample.cc to use builder to set features of learner (#3039)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3038&quot;&gt;refactor: Use default copy constructor for &lt;code class=&quot;highlighter-rouge&quot;&gt;features&lt;/code&gt; (#3038)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3037&quot;&gt;refactor: avoid v_array copy in cats_tree (#3037)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3036&quot;&gt;refactor: cb_adf learner (#3036)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3030&quot;&gt;refactor: Avoid v_array copies (#3030)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3026&quot;&gt;refactor: cb_explore_pdf (#3026)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3024&quot;&gt;refactor: cb_explore_adf_synthcover (#3024)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3023&quot;&gt;refactor: cb_explore_adf_greedy (#3023)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3020&quot;&gt;refactor: Non printable namespaces should not be wildcard expanded (#3020)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3013&quot;&gt;refactor: CCB participates in interaction reduction expansion (#3013)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3016&quot;&gt;refactor: cb_explore_adf_bag.cc make_reduction_learner (#3016)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3014&quot;&gt;refactor: refactor cb_explore_adf_rnd.cc with make_reduction_learner (#3014)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3015&quot;&gt;refactor: cb_explore_adf_softmax.cc with make_reduction_learner (#3015)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3011&quot;&gt;refactor: eval_count_of_generated_ft PR follow up (#3011)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2998&quot;&gt;refactor: [metrics] cb_explore_adf optional metrics (#2998)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2987&quot;&gt;refactor: Integrate count and sum feat sq into the interaction generation routine (#2987)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2972&quot;&gt;refactor: Support const iterators to feature groups (#2972)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2981&quot;&gt;refactor: Do not use cstyle casts (guideline 16) (#2981)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2973&quot;&gt;refactor: Remove unused foreach_feature func (#2973)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2960&quot;&gt;refactor: migrate active_cover learner init (#2960)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2928&quot;&gt;refactor: move shared_data to its own header  (#2928)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2935&quot;&gt;refactor: update slates setup to new way (#2935)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2923&quot;&gt;refactor: Migrate ccb to new make learner structure (#2923)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2926&quot;&gt;refactor: migrate bfgs to new style learner creation (#2926)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2925&quot;&gt;refactor: Remove delete_label (#2925)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2924&quot;&gt;refactor: remove delete_unions (#2924)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2920&quot;&gt;refactor: Simple label uses reduction features for initial (#2920)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2921&quot;&gt;refactor: Remove copy label (#2921)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2918&quot;&gt;refactor: Refactor learner construction (#2918)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2909&quot;&gt;refactor: [DFtoVW] Use more generic numpy types, add attribute name to Feature (#2909)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2915&quot;&gt;refactor: Reduce number of raw pointers (#2915)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3147&quot;&gt;test: [chisq] add validation test with py impl test (#3147)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3142&quot;&gt;test: get type information of VW options (#3142)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3140&quot;&gt;test: update runtests.AUTOGEN.json (#3140)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3117&quot;&gt;test: add to cmakelists unit test for cb_dro (#3117)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3101&quot;&gt;test: [py] fix seed for sim test (#3101)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3096&quot;&gt;test: add tests for namespaces with same first letter (#3096)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3089&quot;&gt;test: [py] fix random failure by lowering value (#3089)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3074&quot;&gt;test: Add test for self interaction with multiple feature_groups (#3074)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3072&quot;&gt;test: add cb simulation tutorial as test (#3072)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3070&quot;&gt;test: add baseline test (#3070)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3041&quot;&gt;test: ensure python3 is used for test scripts (#3041)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2966&quot;&gt;test: Add tests for vw_math and fix one function (#2966)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3113&quot;&gt;build: MSVC check must be done before project call (#3113)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3078&quot;&gt;build: Enable building Python library using VS2019 (#3078)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2929&quot;&gt;build: [WIP] Enable building C# projects on Windows with CMake (#2929)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2939&quot;&gt;build: add 3.9 to windows python build (#2939)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2937&quot;&gt;build: Update build_python_wheels_macos.yml (#2937)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3137&quot;&gt;ci: lock to specific version of google test in benchmark CI (#3137)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3090&quot;&gt;ci: Build docs as part of CI (#3090)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3105&quot;&gt;ci: Add Python type checking (#3105)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3048&quot;&gt;ci: Reduce CI burden (#3048)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3045&quot;&gt;ci: Add codecov token to help codecov identify uploaded coverage reports (#3045)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2967&quot;&gt;ci: Make LGTM ignore ext_libs directory (#2967)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2955&quot;&gt;ci: Use the base ref of a PR to compare against for benchmarks (#2955)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2954&quot;&gt;ci: fix invalid job name (#2954)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2952&quot;&gt;ci: standardize ci names (#2952)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2942&quot;&gt;ci: run CI on release branches (#2942)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2941&quot;&gt;ci: update brew to mitigate bintray brownout (#2941)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2922&quot;&gt;ci: Update check_pr_title.yml (#2922)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2914&quot;&gt;ci: Enable CI for VW Slim (#2914)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3152&quot;&gt;chore: remove unused file (#3152)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3103&quot;&gt;chore: Update deprecations to be explicit about 9.0 release (#3103)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3099&quot;&gt;chore: add deprecation notice for #3084 feature_self_interactions (#3099)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3092&quot;&gt;chore: fix deprecation issue template (#3092)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3087&quot;&gt;chore: add requirements file to be used by binder (#3087)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3028&quot;&gt;chore: Add deprecation template (#3028)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3047&quot;&gt;chore: Make it clear that gitter and stack overflow are &quot;conversational&quot; issue options (#3047)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2932&quot;&gt;chore: Delete new_version (#2932)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3049&quot;&gt;revert: Revert path include changes (#3049)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/3001&quot;&gt;Update dev environment to use new image (#3001)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2977&quot;&gt;Fixing json parse issue when pdrop is 0 (#2977)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2951&quot;&gt;fix newline when building standalone benchmarks (#2951)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2949&quot;&gt;fix typo (#2949)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2938&quot;&gt;Fix python manifest for ext_libs (#2938)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2917&quot;&gt;Update .clang-format (#2917)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2919&quot;&gt;Create check_pr_title.yml (#2919)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/vowpal_wabbit/pull/2913&quot;&gt;Remove caching of Windows CI build targets (#2913)&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;/div&gt;</content><author><name>Olga Vrousgou</name></author><category term="Release&amp;nbsp;notes" /><summary type="html">GitHub release PyPi</summary></entry><entry><title type="html">Open Meeting</title><link href="/blog/open-meeting.html" rel="alternate" type="text/html" title="Open Meeting" /><published>2021-06-14T00:00:00-04:00</published><updated>2021-06-14T00:00:00-04:00</updated><id>/blog/open-meeting</id><content type="html" xml:base="/blog/open-meeting.html">&lt;div class=&quot;blog_highlight&quot;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZmU2Y2I5YmEtODgyZi00M2RmLWFkZWYtOGIwYzYzZWU4OGUz%40thread.v2/0?context=%7b%22Tid%22%3a%2272f988bf-86f1-41af-91ab-2d7cd011db47%22%2c%22Oid%22%3a%22d8045fbb-f9c3-4187-bb1a-4e12bd02cfcf%22%7d&quot;&gt;Join link&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://github.com/VowpalWabbit/agenda/issues&quot;&gt;Agenda&lt;/a&gt;&lt;/li&gt;

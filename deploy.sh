@@ -47,7 +47,7 @@ cp -r _site/* ${TEMP_DIR}
 
 SOURCE_COMMIT=$(git rev-parse HEAD)
 git checkout master
-rm -vr !(".nojekyll"|".pipelines"|"CNAME"|"LICENSE")
+rm -vr !(".git"|".nojekyll"|".pipelines"|"CNAME"|"LICENSE")
 cp -r ${TEMP_DIR}/* .
 rm -vr .sass-cache
 git add --all
