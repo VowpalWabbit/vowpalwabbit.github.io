@@ -246,7 +246,7 @@ First, we use the first reward function `get_cost` and assume that Tom and Anna 
 
 ```python
 # Instantiate learner in VW
-vw = pyvw.vw("--cb_explore_adf -q UA --quiet --epsilon 0.2")
+vw = pyvw.Workspace("--cb_explore_adf -q UA --quiet --epsilon 0.2")
 
 num_iterations = 5000
 ctr = run_simulation(vw, num_iterations, users, times_of_day, actions, get_cost)
@@ -281,7 +281,7 @@ Let’s do the same thing again, but with `-q`. This step shows the effect if we
 
 ```python
 # Instantiate learner in VW
-vw = pyvw.vw("--cb_explore_adf -q UA --quiet --epsilon 0.2")
+vw = pyvw.Workspace("--cb_explore_adf -q UA --quiet --epsilon 0.2")
 
 num_iterations = 5000
 ctr = run_simulation(vw, num_iterations, users, times_of_day, actions, get_cost, do_learn=False)
@@ -361,7 +361,7 @@ def run_simulation_multiple_cost_functions(vw, num_iterations, users, times_of_d
 
             if do_learn:
                 # 5. Inform VW of what happened so we can learn from it
-                vw_format = vw.parse(to_vw_example_format(context, actions, (action, cost, prob)),pyvw.vw.lContextualBandit)
+                vw_format = vw.parse(to_vw_example_format(context, actions, (action, cost, prob)), pyvw.LabelType.CONTEXTUAL_BANDIT)
                 # 6. Learn
                 vw.learn(vw_format)
                 # 7. Let VW know you're done with these objects
@@ -383,7 +383,7 @@ Now, we switch to the second reward function after a few samples (running the fi
 # use first reward function initially and then switch to second reward function
 
 # Instantiate learner in VW
-vw = pyvw.vw("--cb_explore_adf -q UA --quiet --epsilon 0.2")
+vw = pyvw.Workspace("--cb_explore_adf -q UA --quiet --epsilon 0.2")
 
 num_iterations_per_cost_func = 5000
 cost_functions = [get_cost, get_cost_new1]
@@ -407,7 +407,7 @@ We repeat this step without learning to demonstrate the effect:
 # use first reward function initially and then switch to second reward function
 
 # Instantiate learner in VW
-vw = pyvw.vw("--cb_explore_adf -q UA --quiet --epsilon 0.2")
+vw = pyvw.Workspace("--cb_explore_adf -q UA --quiet --epsilon 0.2")
 
 num_iterations_per_cost_func = 5000
 cost_functions = [get_cost, get_cost_new1]
@@ -464,7 +464,7 @@ Now, we switch to the third reward function after a few samples (running the fir
 # use first reward function initially and then switch to third reward function
 
 # Instantiate learner in VW
-vw = pyvw.vw("--cb_explore_adf -q UA --quiet --epsilon 0.2")
+vw = pyvw.Workspace("--cb_explore_adf -q UA --quiet --epsilon 0.2")
 
 num_iterations_per_cost_func = 5000
 cost_functions = [get_cost, get_cost_new2]
@@ -486,7 +486,7 @@ Finally, we repeat the steps wihout learning to see the effects:
 # use first reward function initially and then switch to third reward function
 
 # Instantiate learner in VW
-vw = pyvw.vw("--cb_explore_adf -q UA --quiet --epsilon 0.2")
+vw = pyvw.Workspace("--cb_explore_adf -q UA --quiet --epsilon 0.2")
 
 num_iterations_per_cost_func = 5000
 cost_functions = [get_cost, get_cost_new2]

@@ -379,7 +379,7 @@ Use the following command for a contextual bandit with four possible actions:
 ```python
 from vowpalwabbit import pyvw
 
-vw = pyvw.vw("--cb 4")
+vw = pyvw.Workspace("--cb 4")
 ```
 
 >**Note:** Use `--quiet` command to turn off diagnostic information in Vowpal Wabbit.
@@ -435,7 +435,7 @@ Finally, experiment with the cost structure to see that the contextual bandit up
 vw.save('cb.model')
 del vw
 
-vw = pyvw.vw("--cb 4 -i cb.model")
+vw = pyvw.Workspace("--cb 4 -i cb.model")
 print(vw.predict('| a b'))
 ```
 

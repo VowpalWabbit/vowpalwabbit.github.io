@@ -33,7 +33,7 @@ from vowpalwabbit import pyvw
 Next, we create an instance of Vowpal Wabbit, and pass the `quiet=True` option to avoid diagnostic information output to `stdout` location:
 
 ```python
-model = pyvw.vw(quiet=True)
+model = pyvw.Workspace(quiet=True)
 ```
 
 ## Training scenario and dataset
