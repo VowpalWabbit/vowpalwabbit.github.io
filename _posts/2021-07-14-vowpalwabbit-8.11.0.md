@@ -20,7 +20,7 @@ avatar_link: https://avatars.githubusercontent.com/u/10447059?s=400&u=2c0b0e7fda
 - VW for Python 2.7 and Python 3.5 will no longer be supported [(#3118)](https://github.com/VowpalWabbit/vowpal_wabbit/issues/3118)
 
 The Python DataFrame-to-VW effort has been growing, the latest available changes beeing:
-- A new tutorial showcasing the latest DataFrame to VW improvments [here](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/examples/DFtoVW_tutorial.ipynb)
+- A new tutorial showcasing the latest DataFrame to VW improvments [here](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/tutorials/DFtoVW_tutorial.html)
 - [Get weight from name (#3042)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3042)
 - [Add weight attribute to SimpleLabel (#3033)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3033)
 - [Add contextual bandit label to DFtoVW (#2713)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2713)
