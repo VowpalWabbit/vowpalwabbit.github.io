@@ -2,7 +2,7 @@
 title: "VowpalWabbit 8.11.0 Release Notes"
 layout: blog
 tags: Release&nbsp;notes
-description: Documentation improvments, Python API improvements, cb_to_cb_adf reduction, deprecations and more in VW 8.11.0!
+description: Documentation improvements, Python API improvements, cb_to_cb_adf reduction, deprecations and more in VW 8.11.0!
 author: Olga Vrousgou
 avatar_link: https://avatars.githubusercontent.com/u/10447059?s=400&u=2c0b0e7fdac245b94a8e1ac7c983052d90b9232b&v=4
 ---
@@ -14,13 +14,13 @@ avatar_link: https://avatars.githubusercontent.com/u/10447059?s=400&u=2c0b0e7fda
 
 ## Release highlights
 
-### pyVW related updates and improvments
+### pyVW related updates and improvements
 
 - VW for Python 3.9 added to Windows Python build [(#2939)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2939)
 - VW for Python 2.7 and Python 3.5 will no longer be supported [(#3118)](https://github.com/VowpalWabbit/vowpal_wabbit/issues/3118)
 
-The Python DataFrame-to-VW effort has been growing, the latest available changes beeing:
-- A new tutorial showcasing the latest DataFrame to VW improvments [here](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/tutorials/DFtoVW_tutorial.html)
+The Python DataFrame-to-VW effort has been growing, the latest available changes being:
+- A new tutorial showcasing the latest DataFrame to VW improvements [here](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/tutorials/DFtoVW_tutorial.html)
 - [Get weight from name (#3042)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3042)
 - [Add weight attribute to SimpleLabel (#3033)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3033)
 - [Add contextual bandit label to DFtoVW (#2713)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2713)
