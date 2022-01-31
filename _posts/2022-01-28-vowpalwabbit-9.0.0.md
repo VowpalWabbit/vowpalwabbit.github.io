@@ -75,6 +75,16 @@ Label objects in Python have had their `__init__` and `from_example` functions c
 
 When resuming training a model from a file in the past VW did not remember the learning rate and `power_t` used in initial training. VW will not use the same values when the model is loaded. The values can be overridden by supplying a new value on the command line when resuming.
 
+### Feature counting fixes
+
+A number of fixes were made to the way features are counted which results in different counts in run results, especially around shared examples. This is technically a bug fix but is listed under breaking changes just as an informative notice in case this surprises anyone. Relevant PRs:
+
+- [refactor: Integrate count and sum feat sq into the interaction generation routine](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2987)
+- [fix: feature count for cost sensitive and cb with --noconstant](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3550)
+- [feat: Treat features in ccb_slot_namespace as standard features](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3480)
+- [fix: fix ccb feature count, remove unnecessary slot copy, fix message](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3479)
+- [fix: cb feature count off for shared](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3470)
+
 ### Internal changes
 
 The following sets of changes are internal breaking changes. These should not affect you unless you depend on any of the C++ code structure. These changes have been marked in the past.
