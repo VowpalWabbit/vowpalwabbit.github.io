@@ -9,7 +9,7 @@ permalink: rlos/2022/projects.html
 
 Past projects:
 - [2020](/rlos/2020/projects.html)
-- [2021]((/rlos/2021/projects.html)
+- [2021](/rlos/2021/projects.html)
 
 ## Automl Extensions
 
