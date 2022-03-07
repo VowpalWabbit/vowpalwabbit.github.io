@@ -1,15 +1,23 @@
 ---
-title: "Clarification on save_resume defaulting to true in 9.0.0"
+title: "Clarification on using save_resume, invert_hash and readable_model with VW 9.0.0"
 layout: blog
 tags:
-description: More information on the same_resume change
+description:
 author: Jack Gerrits
 avatar_link: https://avatars1.githubusercontent.com/u/7558482?s=400&u=21e4cca683799d65a20a4cf3d11d0c17853ef9cb&v=4
 ---
 
-For version 9.0.0 the [decision was made](https://github.com/VowpalWabbit/vowpal_wabbit/issues/3163) to change the default behavior of model saving to include information required to continue training from a loaded model. This was done as it seemed that most users assumed that this was already the default behavior leading to unexpected behavior. However, in particular when parsing `--invert_hash` output this change of default can be surprising to users. When `save_resume` is enabled `--invert_hash` includes the resume information in the readable format.
+<div class="blog_highlight" markdown="1" style="padding-left:1rem;padding-right:1rem;">
 
-Therefore as of version 9.0.0 `vw` now behaves as if `--save_resume` was passed to each invocation. To use the previous default behavior pass `--predict_only_model`.
+#### TL;DR
+
+With VW 9.0.0, use `--predict_only_model` when using `--invert_hash` or `--readable_model` to get old (pre 9.0.0) behavior.
+
+</div>
+
+With the introduction of Version 9.0.0, saved VW models allow online training to continue by [default](https://github.com/VowpalWabbit/vowpal_wabbit/issues/3163). This is different from previous versions where `--save_resume` had to be explicitly specified. This change was motivated by a frequent failure mode in a common use case. Specifically, when experimenting interactively with VW models (such as in a in Jupyter notebook),  train, test, save and load are called interactively and repeatedly. Failure to specify `--save_resume` leads to unexpected behavior.
+
+As a result, additional information is now serialized when `--invert_hash` or `--readable_model` is specified. In order to get the old behavior, please use `--predict_only_model` when using `--invert_hash` or `--readable_model`
 
 ## `invert_hash` or `readable_model`
 
