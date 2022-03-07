@@ -59,6 +59,9 @@ collections:
   posts:
     output: true
     permalink: /blog/:title:output_ext
+  links:
+    output: true
+    permalink: /link/:id
 
 scholar:
   style: ieee
