@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-02-25T10:26:06-05:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">VowpalWabbit 9.0.0 Release Notes</title><link href="/blog/vowpalwabbit-9.0.0.html" rel="alternate" type="text/html" title="VowpalWabbit 9.0.0 Release Notes" /><published>2022-01-28T00:00:00-05:00</published><updated>2022-01-28T00:00:00-05:00</updated><id>/blog/vowpalwabbit-9.0.0</id><content type="html" xml:base="/blog/vowpalwabbit-9.0.0.html"><![CDATA[<div class="blog_highlight">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-03-08T14:59:56-05:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">Clarification on using save_resume, invert_hash and readable_model with VW 9.0.0</title><link href="/blog/save-resume-clarification.html" rel="alternate" type="text/html" title="Clarification on using save_resume, invert_hash and readable_model with VW 9.0.0" /><published>2022-03-07T00:00:00-05:00</published><updated>2022-03-07T00:00:00-05:00</updated><id>/blog/save-resume-clarification</id><content type="html" xml:base="/blog/save-resume-clarification.html"><![CDATA[<div class="blog_highlight" style="padding-left:1rem;padding-right:1rem;">
+
+  <h4 id="tldr">TL;DR</h4>
+
+  <p>With VW 9.0.0, use <code class="highlighter-rouge">--predict_only_model</code> when using <code class="highlighter-rouge">--invert_hash</code> or <code class="highlighter-rouge">--readable_model</code> to get old (pre 9.0.0) behavior.</p>
+
+</div>
+
+<p>With the introduction of Version 9.0.0, saved VW models allow online training to continue by <a href="https://github.com/VowpalWabbit/vowpal_wabbit/issues/3163">default</a>. This is different from previous versions where <code class="highlighter-rouge">--save_resume</code> had to be explicitly specified. This change was motivated by a frequent failure mode in a common use case. Specifically, when experimenting interactively with VW models (such as in a in Jupyter notebook),  train, test, save and load are called interactively and repeatedly. Failure to specify <code class="highlighter-rouge">--save_resume</code> leads to unexpected behavior.</p>
+
+<p>As a result, additional information is now serialized when <code class="highlighter-rouge">--invert_hash</code> or <code class="highlighter-rouge">--readable_model</code> is specified. In order to get the old behavior, please use <code class="highlighter-rouge">--predict_only_model</code> when using <code class="highlighter-rouge">--invert_hash</code> or <code class="highlighter-rouge">--readable_model</code></p>
+
+<h2 id="invert_hash-or-readable_model"><code class="highlighter-rouge">invert_hash</code> or <code class="highlighter-rouge">readable_model</code></h2>
+
+<p>When saving a textual representation of a model in 9.0.0 with either <code class="highlighter-rouge">--invert_hash</code> or <code class="highlighter-rouge">--readable_model</code> the default format is different. It additionally includes training resumption information. We have seen people depend on the format of the <code class="highlighter-rouge">invert_hash</code> model. If you have a script which depends on this format you can add <code class="highlighter-rouge">--predict_only_model</code> to produce the old format and maintain script behavior.</p>
+
+<p>If parsing the <code class="highlighter-rouge">invert_hash</code> contents most users may have searched for the <code class="highlighter-rouge">:0</code> to denote the feature section of the invert hash model. This is not in the default 9.0.0 <code class="highlighter-rouge">invert_hash</code> output as <code class="highlighter-rouge">:0</code> and <code class="highlighter-rouge">:1</code> actually refer to <code class="highlighter-rouge">save_resume:false</code> and <code class="highlighter-rouge">save_resume:true</code> respectively. If you depend on the format then passing <code class="highlighter-rouge">--predict_only_model</code> is recommended.</p>
+
+<h3 id="comparison">Comparison</h3>
+
+<p>With <code class="highlighter-rouge">data.txt</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 | price:.23 sqft:.25 age:.05 2006
+1 2 'second_house | price:.18 sqft:.15 age:.35 1976
+0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
+</code></pre></div></div>
+
+<h4 id="new-default-invert_hash">New default <code class="highlighter-rouge">invert_hash</code></h4>
+
+<p>As of version 9.0.0 <code class="highlighter-rouge">vw -d data.txt --invert_hash model.txt</code> produces:</p>
+
+<p><code class="highlighter-rouge">model.txt</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Version 9.0.0
+Id
+Min label:0
+Max label:1
+bits:18
+lda:0
+0 ngram:
+0 skip:
+options:
+Checksum: 2704463348
+:1
+initial_t 0
+norm normalizer 15
+t 4
+sum_loss 3
+sum_loss_since_last_dump 1
+dump_interval 6
+min_label 0
+max_label 1
+weighted_labeled_examples 4
+weighted_labels 2
+weighted_unlabeled_examples 0
+example_number 3
+total_features 15
+total_weight 3
+sd::oec.weighted_labeled_examples 3
+current_pass 1
+l1_state 0
+l2_state 1
+1924:1924:-0.145249 4 1
+1976:1976:0.158838 8 1
+Constant:116060:0.07498 12 1
+sqft:162853:0.118057 0.5896 0.32
+age:165201:0.0374855 4.0076 0.87
+price:229902:0.052627 1.3828 0.53
+</code></pre></div></div>
+
+<h4 id="old-default-invert_hash">Old default <code class="highlighter-rouge">invert_hash</code></h4>
+
+<p>Use <code class="highlighter-rouge">--predict_only_model</code> to get the pre 9.0.0 default.</p>
+
+<p>As of version 9.0.0 <code class="highlighter-rouge">vw -d data.txt --invert_hash model.txt --predict_only_model</code> produces:</p>
+
+<p><code class="highlighter-rouge">model.txt</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Version 9.0.0
+Id
+Min label:0
+Max label:1
+bits:18
+lda:0
+0 ngram:
+0 skip:
+options:
+Checksum: 2704463348
+:0
+1924:1924:-0.145249
+1976:1976:0.158838
+Constant:116060:0.07498
+sqft:162853:0.118057
+age:165201:0.0374855
+price:229902:0.052627
+</code></pre></div></div>
+
+<h2 id="binary-model-saving">Binary model saving</h2>
+
+<p>This also means that binary models produced with <code class="highlighter-rouge">--final_regressor</code>/<code class="highlighter-rouge">-f</code> will contain information required for resuming training. VW is able to consume this format automatically. If you have tooling which consumes binary models keep in mind this default change in format.</p>]]></content><author><name>Jack Gerrits</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">VowpalWabbit 9.0.0 Release Notes</title><link href="/blog/vowpalwabbit-9.0.0.html" rel="alternate" type="text/html" title="VowpalWabbit 9.0.0 Release Notes" /><published>2022-01-28T00:00:00-05:00</published><updated>2022-01-28T00:00:00-05:00</updated><id>/blog/vowpalwabbit-9.0.0</id><content type="html" xml:base="/blog/vowpalwabbit-9.0.0.html"><![CDATA[<div class="blog_highlight">
 
   <ul>
     <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/9.0.0">GitHub release</a></li>
