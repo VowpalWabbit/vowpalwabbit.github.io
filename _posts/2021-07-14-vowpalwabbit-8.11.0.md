@@ -63,7 +63,7 @@ Experimental support for getting internal VW metrics has been added [(#2959)](ht
 - [fix!: cs_active now returns active_multiclass prediction (#2930)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2930)
 - [fix!: Propagate cache reading failure (#2931)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2931)
 - [feat: [dsjson] Malformed lines are now skipped instead of being fatal (#3007)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3007)
-  - this can be turned off with the usage of `--strict-parse`
+  - this can be turned off with the usage of `--strict_parse`
 
 ### Internal improvements
 
