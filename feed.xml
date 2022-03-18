@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-03-08T14:59:56-05:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">Clarification on using save_resume, invert_hash and readable_model with VW 9.0.0</title><link href="/blog/save-resume-clarification.html" rel="alternate" type="text/html" title="Clarification on using save_resume, invert_hash and readable_model with VW 9.0.0" /><published>2022-03-07T00:00:00-05:00</published><updated>2022-03-07T00:00:00-05:00</updated><id>/blog/save-resume-clarification</id><content type="html" xml:base="/blog/save-resume-clarification.html"><![CDATA[<div class="blog_highlight" style="padding-left:1rem;padding-right:1rem;">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-03-18T15:13:13-04:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">RLOS Fest 2022</title><link href="/blog/rlos-fest-2022.html" rel="alternate" type="text/html" title="RLOS Fest 2022" /><published>2022-03-18T00:00:00-04:00</published><updated>2022-03-18T00:00:00-04:00</updated><id>/blog/rlos-fest-2022</id><content type="html" xml:base="/blog/rlos-fest-2022.html"><![CDATA[<p><a href="https://www.microsoft.com/en-us/research/academic-program/rl-open-source-fest/">Apply here!</a></p>
+
+<p>We had a big program in 2021 and we we’re excited to be running RLOS Fest again for 2022. In case you didn’t know, the program matches students with engineers at Microsoft Research to collaborate on open source projects in the Vowpal Wabbit ecosystem. It’s a great way to get exposure to open source, engineering and machine learning.</p>
+
+<p>To learn more about the program head to the <a href="https://www.microsoft.com/en-us/research/academic-program/rl-open-source-fest/">Microsoft Research page</a>. The list of available projects for this year can be found <a href="/rlos/2022/projects.html">here</a>.</p>
+
+<p>Applications close April 4, so make sure you apply soon!</p>]]></content><author><name>Jack Gerrits</name></author><category term="RLOS&amp;nbsp;Fest" /><summary type="html"><![CDATA[RLOS Fest is back for 2022]]></summary></entry><entry><title type="html">Clarification on using save_resume, invert_hash and readable_model with VW 9.0.0</title><link href="/blog/save-resume-clarification.html" rel="alternate" type="text/html" title="Clarification on using save_resume, invert_hash and readable_model with VW 9.0.0" /><published>2022-03-07T00:00:00-05:00</published><updated>2022-03-07T00:00:00-05:00</updated><id>/blog/save-resume-clarification</id><content type="html" xml:base="/blog/save-resume-clarification.html"><![CDATA[<div class="blog_highlight" style="padding-left:1rem;padding-right:1rem;">
 
   <h4 id="tldr">TL;DR</h4>
 
@@ -819,7 +825,7 @@ log_output</li>
   <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/2931">fix!: Propagate cache reading failure (#2931)</a></li>
   <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3007">feat: [dsjson] Malformed lines are now skipped instead of being fatal (#3007)</a>
     <ul>
-      <li>this can be turned off with the usage of <code class="highlighter-rouge">--strict-parse</code></li>
+      <li>this can be turned off with the usage of <code class="highlighter-rouge">--strict_parse</code></li>
     </ul>
   </li>
 </ul>
