@@ -28,22 +28,6 @@ Looking forward, being able to depend on solely the CMake build system is going 
 
 For a long time we have depended on Boost Program Options for command line options parsing. In this release we have replaced this dependency with our own implementation of command line parsing. Apart from one place where we depend on Boost Math in standalone mode, this means that VW core and the command line tool are free of Boost dependencies hopefully making the code a bit easier to build and package,
 
-### Standalone build
-
-To go along with the theme of easier building, in this release it has now become possible to build VW using bundled dependencies. If you plan on installing the result to your system, system dependencies should be strongly preferred but for other situations it can be desirable for a bundled source build. For example when statically linking dependencies or requiring a full source build for something like Web Assembly.
-
-In order to do this you use the CMake options to turn off looking for system dependencies for each individual dependency. It may look something like the following but you should check the contents of the project's CMakeLists.txt files in case any options have changed.
-
-```sh
-cmake -S . -B build \
-  -DRAPIDJSON_SYS_DEP=Off \
-  -DFMT_SYS_DEP=Off \
-  -DSPDLOG_SYS_DEP=Off \
-  -DVW_ZLIB_SYS_DEP=Off \
-  -DVW_BOOST_MATH_SYS_DEP=Off \
-  -DVW_INSTALL=Off
-```
-
 ### [Experimental](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Experimental): Expectile loss
 
 Expectile is a new loss function, which is currently asymmetric squared loss. It is being experimented with and being used for risk averse contextual bandits.
