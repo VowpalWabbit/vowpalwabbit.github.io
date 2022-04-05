@@ -72,6 +72,7 @@ And of course thank you to existing contributors:
 <div class="changelist hidden" markdown="1">
 
 ## Features
+- [feat: add cookie-free analytics for docs pages (#3837)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3837)
 - [feat: expectile loss function (#3760)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3760)
 - [feat: support online state and excluding feature names in dump json model (#3796)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3796)
 - [feat: support model weight export as json (#3786)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3786)
@@ -90,6 +91,9 @@ And of course thank you to existing contributors:
 - [feat: Support visitor pattern for handling typed options (#3686)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3686)
 
 ## Fixes
+
+- [fix: revert accidental change to output format (#3844)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3844)
+- [fix: invalid pointer value when readto returns rest of buffer (#3838)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3838)
 - [fix: resolve warnings (#3828)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3828)
 - [fix: Json parser does not assign weight to example (#3817)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3817)
 - [fix: fix warnings and deprecation warnings (#3798)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3798)
@@ -119,6 +123,11 @@ And of course thank you to existing contributors:
 - [fix: fix compile issues when consuming fmt 8.1.1 (#3669)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3669)
 
 ## Other changes
+
+- [refactor: complete migration of setup functions to reductions namespace (#3841)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3841)
+- [ci: separate test runs on windows due to the fact powershell only fai… (#3842)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3842)
+- [refactor: fix warnings caused by using deprecated types (#3840)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3840)
+- [build: turn off warnings as error for windows project files (#3839)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3839)
 - [docs: add message for invert hash save_resume (#3776)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3776)
 - [docs: move python build docs to wiki (#3679)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3679)
 - [refactor: namespacing of uniform_hash (#3827)](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3827)
