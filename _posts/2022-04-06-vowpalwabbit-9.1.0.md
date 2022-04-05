@@ -16,9 +16,9 @@ It's only been a couple of months since version 9, but this release includes som
 
 ### Checked in Visual Studio project files removal
 
-To be very clear - we are **not** removing support for Windows. Ever since we introduced the CMake build system in [version 8.7.0](https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.7.0) there have been two parallel build systems for Windows: the CMake based one and a checked in solution and projects. We're confident now that the CMake based build system is in a place to fully replace the old Visual Studio project file based one. In fact the CMake based Windows build has been significantly more flexible, robust, easier to use and faster to build for quite some time now.
+To be very clear - we are **not** removing support for Windows. Ever since we introduced the CMake build system in [version 8.7.0](https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.7.0) there have been two parallel build systems for Windows: the CMake based one and a checked in solution and projects. We're confident now that the CMake based build system is in a place to fully replace the old Visual Studio project file based one. In fact, the CMake based Windows build has been significantly more flexible, robust, easier to use and faster to build for quite some time now.
 
-Therefore, version 9.1.0 will be the last release which contains the old checked in Visual Studio solution and project files. We strongly recommend anyone who was using this to migrate over to using the CMake based build system. If that is not possible we have [created `v141` and `v142` nugets](#v141-and-v142-native-nugets) as a migration path.
+Therefore, version 9.1.0 will be the last release that contains the old checked in Visual Studio solution and project files. We strongly recommend anyone who was using this to migrate over to using the CMake based build system. If that is not possible we have [created `v141` and `v142` nugets](#v141-and-v142-native-nugets) as a migration path.
 
 Looking forward, being able to depend on solely the CMake build system is going to greatly improve our ability to improve the modularity of VW and ease of consumption of VW as a library.
 
@@ -26,7 +26,7 @@ Looking forward, being able to depend on solely the CMake build system is going 
 
 ### Removal of Boost Program Options dependency
 
-For a long time we have depended on Boost Program Options for command line options parsing. In this release we have replaced this dependency with our own implementation of command line parsing. Apart from one place where we depend on Boost Math in standalone mode, this means that VW core and the command line tool are free of Boost dependencies hopefully making the code a bit easier to build and package,
+For a long time we have depended on Boost Program Options for command line options parsing. In this release, we have replaced this dependency with our own implementation of command line parsing. Apart from one place where we depend on Boost Math in standalone mode, this means that VW core and the command line tool are free of Boost dependencies hopefully making the code a bit easier to build and package,
 
 ### [Experimental](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Experimental): Expectile loss
 
