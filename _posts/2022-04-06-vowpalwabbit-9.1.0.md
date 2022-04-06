@@ -26,7 +26,7 @@ Looking forward, being able to depend on solely the CMake build system is going 
 
 ### Removal of Boost Program Options dependency
 
-For a long time we have depended on Boost Program Options for command line options parsing. In this release, we have replaced this dependency with our own implementation of command line parsing. Apart from one place where we depend on Boost Math in standalone mode, this means that VW core and the command line tool are free of Boost dependencies hopefully making the code a bit easier to build and package,
+For a long time we have depended on Boost Program Options for command line options parsing. In this release, we have replaced this dependency with our own implementation of command line parsing. Apart from one place where we depend on Boost Math in standalone mode, this means that VW core and the command line tool are free of Boost dependencies hopefully making the code a bit easier to build and package.
 
 ### [Experimental](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Experimental): Expectile loss
 
