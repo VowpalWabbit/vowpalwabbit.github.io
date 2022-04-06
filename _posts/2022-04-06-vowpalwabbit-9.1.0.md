@@ -18,7 +18,7 @@ It's only been a couple of months since version 9, but this release includes som
 
 To be very clear - we are **not** removing support for Windows. Ever since we introduced the CMake build system in [version 8.7.0](https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.7.0) there have been two parallel build systems for Windows: the CMake based one and a checked in solution and projects. We're confident now that the CMake based build system is in a place to fully replace the old Visual Studio project file based one. In fact, the CMake based Windows build has been significantly more flexible, robust, easier to use and faster to build for quite some time now.
 
-Therefore, version 9.1.0 will be the last release that contains the old checked in Visual Studio solution and project files. We strongly recommend anyone who was using this to migrate over to using the CMake based build system. If that is not possible we have [created `v141` and `v142` nugets](#v141-and-v142-native-nugets) as a migration path.
+Therefore, version 9.1.0 will be the last release that contains the old checked in Visual Studio solution and project files. We strongly recommend anyone who was using this to migrate over to using the CMake based build system. If that is not possible in the short term we have [created `v141` and `v142` nugets](#v141-and-v142-native-nugets) as a migration path.
 
 Looking forward, being able to depend on solely the CMake build system is going to greatly improve our ability to improve the modularity of VW and ease of consumption of VW as a library.
 
@@ -43,8 +43,12 @@ We've added a new experimental option to export information similar to the weigh
 
 ### v141 and v142 native Nugets
 
-As a measure to assist anyone who is unable to consume the CMake based build system we have implemented CI to generate native nugets for the core VW library and command line executable. These Nugets are 64 bit and come bundled with the necessary compiled dependencies to build VW. They can be found as artifacts in the [CI jobs](https://github.com/VowpalWabbit/vowpal_wabbit/actions/workflows/build_nugets.yml) and should make their way to Nuget.org soon.
+As a measure to assist anyone who is unable to consume the CMake based build system we have implemented CI to generate native nugets for the core VW library and command line executable. These Nugets are 64 bit and come bundled with the necessary compiled dependencies to build VW. They can be found as artifacts in the [CI jobs](https://github.com/VowpalWabbit/vowpal_wabbit/actions/workflows/build_nugets.yml) and are available on Nuget.org:
 
+- [VowpalWabbitNative-v141-x64](https://www.nuget.org/packages/VowpalWabbitNative-v141-x64/)
+- [VowpalWabbitNative-v142-x64](https://www.nuget.org/packages/VowpalWabbitNative-v142-x64/)
+
+These are a temporary measure to help migration to CMake based consumption of the package and will be removed eventually.
 
 ## Thank you
 
