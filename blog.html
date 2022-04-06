@@ -25,7 +25,10 @@
     const analytics = new oneDS.ApplicationInsights();
     var config = {
       instrumentationKey: "734e91f5b0594dd08e2e4768fb4f9655-a7347ca4-1142-4c1e-831a-372cd2790ac0-6806",
-      disableCookiesUsage: true
+      disableCookiesUsage: true,
+      webAnalyticsConfiguration: {
+        urlCollectHash: true
+      }
     };
     analytics.initialize(config, []);
   </script>
@@ -267,6 +270,30 @@
   <div class="blogs_list">
     <div class="container">
       <div class="row">
+        
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="blog_card">
+              <h4>
+                VowpalWabbit 9.1.0 Release Notes
+              </h4>
+              <div class="tags">
+                
+                  <span class="tag">
+                    Release&nbsp;notes
+                  </span>
+                
+              </div>
+              <div class="description">
+                Boost Program Options removal, JSON invert hash output, and a new loss function
+              </div>
+
+              <div class="footer">
+                <a href="/blog/vowpalwabbit-9.1.0.html">
+                  Start
+                </a>
+              </div>
+            </div>
+          </div>
         
           <div class="col-12 col-md-6 col-lg-4">
             <div class="blog_card">
