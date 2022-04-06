@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-04-06T10:34:59-04:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">VowpalWabbit 9.1.0 Release Notes</title><link href="/blog/vowpalwabbit-9.1.0.html" rel="alternate" type="text/html" title="VowpalWabbit 9.1.0 Release Notes" /><published>2022-04-06T00:00:00-04:00</published><updated>2022-04-06T00:00:00-04:00</updated><id>/blog/vowpalwabbit-9.1.0</id><content type="html" xml:base="/blog/vowpalwabbit-9.1.0.html"><![CDATA[<div class="blog_highlight">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-04-06T14:51:15-04:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">VowpalWabbit 9.1.0 Release Notes</title><link href="/blog/vowpalwabbit-9.1.0.html" rel="alternate" type="text/html" title="VowpalWabbit 9.1.0 Release Notes" /><published>2022-04-06T00:00:00-04:00</published><updated>2022-04-06T00:00:00-04:00</updated><id>/blog/vowpalwabbit-9.1.0</id><content type="html" xml:base="/blog/vowpalwabbit-9.1.0.html"><![CDATA[<div class="blog_highlight">
   <ul>
     <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/9.1.0">GitHub release</a></li>
     <li><a href="https://pypi.org/project/vowpalwabbit/">PyPi</a></li>
@@ -11,7 +11,7 @@
 
 <p>To be very clear - we are <strong>not</strong> removing support for Windows. Ever since we introduced the CMake build system in <a href="https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/8.7.0">version 8.7.0</a> there have been two parallel build systems for Windows: the CMake based one and a checked in solution and projects. We’re confident now that the CMake based build system is in a place to fully replace the old Visual Studio project file based one. In fact, the CMake based Windows build has been significantly more flexible, robust, easier to use and faster to build for quite some time now.</p>
 
-<p>Therefore, version 9.1.0 will be the last release that contains the old checked in Visual Studio solution and project files. We strongly recommend anyone who was using this to migrate over to using the CMake based build system. If that is not possible we have <a href="#v141-and-v142-native-nugets">created <code class="highlighter-rouge">v141</code> and <code class="highlighter-rouge">v142</code> nugets</a> as a migration path.</p>
+<p>Therefore, version 9.1.0 will be the last release that contains the old checked in Visual Studio solution and project files. We strongly recommend anyone who was using this to migrate over to using the CMake based build system. If that is not possible in the short term we have <a href="#v141-and-v142-native-nugets">created <code class="highlighter-rouge">v141</code> and <code class="highlighter-rouge">v142</code> nugets</a> as a migration path.</p>
 
 <p>Looking forward, being able to depend on solely the CMake build system is going to greatly improve our ability to improve the modularity of VW and ease of consumption of VW as a library.</p>
 
@@ -35,7 +35,14 @@
 
 <h3 id="v141-and-v142-native-nugets">v141 and v142 native Nugets</h3>
 
-<p>As a measure to assist anyone who is unable to consume the CMake based build system we have implemented CI to generate native nugets for the core VW library and command line executable. These Nugets are 64 bit and come bundled with the necessary compiled dependencies to build VW. They can be found as artifacts in the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/actions/workflows/build_nugets.yml">CI jobs</a> and should make their way to Nuget.org soon.</p>
+<p>As a measure to assist anyone who is unable to consume the CMake based build system we have implemented CI to generate native nugets for the core VW library and command line executable. These Nugets are 64 bit and come bundled with the necessary compiled dependencies to build VW. They can be found as artifacts in the <a href="https://github.com/VowpalWabbit/vowpal_wabbit/actions/workflows/build_nugets.yml">CI jobs</a> and are available on Nuget.org:</p>
+
+<ul>
+  <li><a href="https://www.nuget.org/packages/VowpalWabbitNative-v141-x64/">VowpalWabbitNative-v141-x64</a></li>
+  <li><a href="https://www.nuget.org/packages/VowpalWabbitNative-v142-x64/">VowpalWabbitNative-v142-x64</a></li>
+</ul>
+
+<p>These are a temporary measure to help migration to CMake based consumption of the package and will be removed eventually.</p>
 
 <h2 id="thank-you">Thank you</h2>
 
