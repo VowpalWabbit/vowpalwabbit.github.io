@@ -80,7 +80,7 @@ Probabilistic label tree is a new reduction for logarithmic time multilabel clas
 
 Thanks to Marek Wydmuch ([@mwydmuch](https://github.com/mwydmuch)) for this contribution.
 
-- [Read the paper](http://proceedings.mlr.press/v48/jasinska16.html)
+- [Read the paper](https://proceedings.mlr.press/v48/jasinska16.html)
 - [See a demo of it](https://github.com/VowpalWabbit/vowpal_wabbit/tree/master/demo/plt)
 - [Pull request](https://github.com/VowpalWabbit/vowpal_wabbit/pull/2440)
 
@@ -131,7 +131,7 @@ conv2.convert_df()
 ```
 
 - [Input format wiki](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Input-format)
-- [Documentation](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/vowpalwabbit.DFtoVW.html#vowpalwabbit.DFtoVW.DFtoVW)
+- [Documentation](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/tutorials/DFtoVW_tutorial.html)
 - [More examples](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/python/tests/test_DFtoVW.py)
 - [Code](https://github.com/VowpalWabbit/vowpal_wabbit/blob/80917701fb0353f8f862cab3a0f8425bab37396c/python/vowpalwabbit/DFtoVW.py#L517)
 

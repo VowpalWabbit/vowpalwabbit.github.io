@@ -149,7 +149,7 @@ VowpalWabbit (VW) supports several input formats, the main one being a custom te
 - Basic understanding of VW
 
 ### Screening exercise
-When submitting your application please also complete this exercise. Implement the changes specified in a branch of a fork of the [VowpalWabbit repo](https://github.com/VowpalWabbit/vowpal_wabbit). Learn more about the input format [here]().
+When submitting your application please also complete this exercise. Implement the changes specified in a branch of a fork of the [VowpalWabbit repo](https://github.com/VowpalWabbit/vowpal_wabbit). Learn more about the input format [here](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Input-format).
 
 1. Edit the [VW text parser](https://github.com/VowpalWabbit/vowpal_wabbit/blob/master/vowpalwabbit/parse_example.cc)
     - Print info after each line of input is parsed:
