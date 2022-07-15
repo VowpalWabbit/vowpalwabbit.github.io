@@ -1,7 +1,6 @@
 ---
 title: 2022 Projects
 layout: rlos_page
-tags: RLOS&nbsp;Fest
 body_class: rlos
 permalink: rlos/2022/projects.html
 ---
