@@ -44,26 +44,26 @@ Logs from VW's command line interface will now display errors in red, warnings i
 
 A huge thank you and welcome to all of the new contributors since the last release:
 
-- [Byron Xu]((https://github.com/byronxu99))
-- [Bhavya Saraf]((https://github.com/0110G))
-- [Shaokun Zhang]((https://github.com/skzhang1))
-- [Ariel Faigon]((https://github.com/arielf))
-- [Oren Michaely]((https://github.com/ormichae))
-- [Akshay Krishnamurthy]((https://github.com/akshaykr))
-- [Scott Inglis]((https://github.com/singlis))
+- [Byron Xu](https://github.com/byronxu99)
+- [Bhavya Saraf](https://github.com/0110G)
+- [Shaokun Zhang](https://github.com/skzhang1)
+- [Ariel Faigon](https://github.com/arielf)
+- [Oren Michaely](https://github.com/ormichae)
+- [Akshay Krishnamurthy](https://github.com/akshaykr)
+- [Scott Inglis](https://github.com/singlis)
 
 And of course thank you to existing contributors:
 
-- [Griffin Bassman]((https://github.com/bassmang))
-- [Olga Vrousgos]((https://github.com/olgavrou))
-- [Jack Gerrits]((https://github.com/jackgerrits))
-- [Eduardo Salinas]((https://github.com/lalo))
-- [Wangda Zhang]((https://github.com/zwd-ms))
-- [Markus Cozowicz]((https://github.com/eisber))
-- [Mark Rucker]((https://github.com/mrucker))
-- [Rajan Chari]((https://github.com/rajan-chari))
-- [Peter Chang]((https://github.com/peterychang))
-- [Alexey Taymanov]((https://github.com/ataymano))
+- [Griffin Bassman](https://github.com/bassmang)
+- [Olga Vrousgos](https://github.com/olgavrou)
+- [Jack Gerrits](https://github.com/jackgerrits)
+- [Eduardo Salinas](https://github.com/lalo)
+- [Wangda Zhang](https://github.com/zwd-ms)
+- [Markus Cozowicz](https://github.com/eisber)
+- [Mark Rucker](https://github.com/mrucker)
+- [Rajan Chari](https://github.com/rajan-chari)
+- [Peter Chang](https://github.com/peterychang)
+- [Alexey Taymanov](https://github.com/ataymano)
 
 <div>
   <i class="fa fa-caret-right"></i>
