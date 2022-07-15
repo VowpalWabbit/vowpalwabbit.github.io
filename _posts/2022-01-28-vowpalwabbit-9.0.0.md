@@ -136,7 +136,7 @@ This is the first release which includes the new [documentation site](https://vo
 
 ### Python package now includes type hints
 
-Now that Python 2 is no longer supported we were able to add type hints to the Python code base. These typehints are also checked for each commit in CI. They make the [documentation](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/reference/vowpalwabbit.html#https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/reference/vowpalwabbit.html#) much clearer too.
+Now that Python 2 is no longer supported we were able to add type hints to the Python code base. These typehints are also checked for each commit in CI. They make the [documentation](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/reference/vowpalwabbit.html) much clearer too.
 
 ### [Python Linux AArch64 binary wheels](https://github.com/VowpalWabbit/vowpal_wabbit/pull/3576)
 
