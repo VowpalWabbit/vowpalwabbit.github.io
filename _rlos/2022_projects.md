@@ -2,7 +2,7 @@
 title: 2022 Projects
 layout: rlos_page
 body_class: rlos
-permalink: https://vowpalwabbit.org/rlos/2022/projects.html
+permalink: [Link](https://vowpalwabbit.org/rlos/2022/projects.html)
 ---
 
 # RL Open Source Fest Projects
