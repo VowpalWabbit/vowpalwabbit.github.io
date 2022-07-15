@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
-  <link rel="canonical" href="/bibliography/DBLP_journals/corr/abs-1811-04383.html" />
+  <link rel="canonical" href="/blog/vowpalwabbit-9.2.0.html" />
   <link rel="stylesheet" href="/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/syntax.css">
   <link rel="stylesheet" href="/assets/main.css">
@@ -19,7 +19,7 @@
   <script type="text/javascript" src="https://js.monitor.azure.com/scripts/c/ms.analytics-web-3.min.js">
   </script>
 
-  <title>BibTeX Record</title>
+  <title></title>
   <meta name="description" content="">
   <script>
     const analytics = new oneDS.ApplicationInsights();
@@ -33,11 +33,12 @@
     analytics.initialize(config, []);
   </script>
 </head>
-  <body class='download'>
+
+  <body class="blog">
     
 
 
-<div class="navbar_container light main_nav_container">
+<div class="navbar_container  main_nav_container">
   <div class="container navbar">
     <div class="logo">
       <a href="/index.html">
@@ -82,7 +83,7 @@
       </a>
       <a
         href="/blog.html"
-        class=''
+        class='active'
       >
         Blog
       </a>
@@ -134,7 +135,7 @@
 
 
 
-<div class="navbar_container light mobile_nav_container">
+<div class="navbar_container  mobile_nav_container">
   <div class="container navbar">
     <div class="hamburger_icon">
       <?xml version="1.0" encoding="UTF-8"?>
@@ -202,7 +203,7 @@
   </a>
   <a
     href="/blog.html"
-    class=''
+    class='active'
   >
     Blog
   </a>
@@ -248,36 +249,302 @@
 
 <script src="/assets/js/header.js"></script>
 
-    <div class="container content download_container">
-      <h1>
-        <span class="header">
-          BibTeX record
-        </span>
-        DBLP:journals/corr/abs-1811-04383
-      </h1>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <ol class="bibliography"><li><pre>@article{DBLP:journals/corr/abs-1811-04383,
-  author = {David Cortes},
-  title = {Adapting multi-armed bandits policies to contextual bandits scenarios},
-  journal = {CoRR},
-  volume = {abs/1811.04383},
-  year = {2018},
-  url = {https://arxiv.org/abs/1811.04383},
-  archiveprefix = {arXiv},
-  eprint = {1811.04383},
-  timestamp = {Fri, 23 Nov 2018 12:43:51 +0100},
-  biburl = {https://dblp.org/rec/bib/journals/corr/abs-1811-04383},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-</pre>
-<a class="details" href="/bibliography/DBLP_journals/corr/abs-1811-04383.html">Get .bib</a></li></ol>
 
-          <button class="download_bib_button" data-bib_key=DBLP:journals/corr/abs-1811-04383>
-            Download
-          </button>
+    <div class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1>
+              Blog
+            </h1>
+            <a href="/blog.html">
+              < Back to blog
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="container content blog_container">
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="blog_date">
+            July 12, 2022
+          </div>
+          <div class="blog_title">
+            <h1>
+              VowpalWabbit 9.2.0 Release Notes
+            </h1>
+          </div>
+          <div class="author">
+            
+              <img
+                class="author_avatar"
+                alt="author's avatar"
+                src="https://avatars.githubusercontent.com/bassmang"
+              />
+            
+            <div>
+              Griffin Bassman
+            </div>
+          </div>
+          <div class="blog_highlight">
+  <ul>
+    <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/9.2.0">GitHub release</a></li>
+    <li><a href="https://pypi.org/project/vowpalwabbit/">PyPi</a></li>
+  </ul>
+</div>
+
+<p>As part of our goal of providing more frequent releases, we are excited to announce VW 9.2.0! Some highlights include a large restructuring of VW’s library structure which better organizes related source and header files, the ability to call learn and predict directly from a string in java, access to model weights in Python, and colored output logs for errors, warnings, and general info.</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<h3 id="refactoring-of-library-structure">Refactoring of library structure</h3>
+
+<p>Historically VW has clumped together most of the source and headers files for its reductions into one directory. As more features and targets were added, it seemed necessary to better organize this structure so that new and current users could compartmentalize different parts of VW. Check out <a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3876">this PR</a> for more details.</p>
+
+<h3 id="support-predict-and-learn-directly-from-string-in-java">Support predict and learn directly from string in Java</h3>
+
+<p>You can now predict and learn directly from a string in Java with the <code class="highlighter-rouge">predictFromString</code> and <code class="highlighter-rouge">learnFromString</code> methods.</p>
+
+<h3 id="access-model-weights-in-python">Access model weights in Python</h3>
+
+<p>Model weights can now be accessed directly in Python in JSON format using the <code class="highlighter-rouge">json_weights</code> function.</p>
+
+<h3 id="experimental-hardening-of-automl-and-non-stationary-exploration-algorithms"><a href="https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Experimental">Experimental</a>: Hardening of Automl and Non-Stationary Exploration Algorithms</h3>
+
+<p>Both reductions have gone through major revamps to improve their statistical accuracy.</p>
+
+<h3 id="mean-field-implementation-for-logistic-regression">Mean field implementation for logistic regression</h3>
+
+<p>Logistic regression can now take non-binary costs via mean field implementation. E.g. for loss $p$ in $[0,1]$ the update is $p<em>update(1) + (1-p)</em>update(-1)$.</p>
+
+<h3 id="colored-logs">Colored logs</h3>
+
+<p>Logs from VW’s command line interface will now display errors in red, warnings in yellow, and info in green.</p>
+
+<h2 id="thank-you">Thank you</h2>
+
+<p>A huge thank you and welcome to all of the new contributors since the last release:</p>
+
+<ul>
+  <li><a href="https://github.com/byronxu99">Byron Xu</a></li>
+  <li><a href="https://github.com/0110G">Bhavya Saraf</a></li>
+  <li><a href="https://github.com/skzhang1">Shaokun Zhang</a></li>
+  <li><a href="https://github.com/arielf">Ariel Faigon</a></li>
+  <li><a href="https://github.com/ormichae">Oren Michaely</a></li>
+  <li><a href="https://github.com/akshaykr">Akshay Krishnamurthy</a></li>
+  <li><a href="https://github.com/singlis">Scott Inglis</a></li>
+</ul>
+
+<p>And of course thank you to existing contributors:</p>
+
+<ul>
+  <li><a href="https://github.com/bassmang">Griffin Bassman</a></li>
+  <li><a href="https://github.com/olgavrou">Olga Vrousgos</a></li>
+  <li><a href="https://github.com/jackgerrits">Jack Gerrits</a></li>
+  <li><a href="https://github.com/lalo">Eduardo Salinas</a></li>
+  <li><a href="https://github.com/zwd-ms">Wangda Zhang</a></li>
+  <li><a href="https://github.com/eisber">Markus Cozowicz</a></li>
+  <li><a href="https://github.com/mrucker">Mark Rucker</a></li>
+  <li><a href="https://github.com/rajan-chari">Rajan Chari</a></li>
+  <li><a href="https://github.com/peterychang">Peter Chang</a></li>
+  <li><a href="https://github.com/ataymano">Alexey Taymanov</a></li>
+</ul>
+
+<div>
+  <i class="fa fa-caret-right"></i>
+  <button class="changelist_button">
+    Click here to expand and see the full changelist.
+  </button>
+</div>
+<div class="changelist hidden">
+
+  <h2 id="features">Features</h2>
+  <p>-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4037">feat: [epsilon_decay] add option for minimum examples for champ (#4037)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4021">feat: [C] C Wrapper API support for CATS mode (#4021)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4009">feat: [automl/ep_decay] update design and features review 2 (#4009)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4024">feat: [java] add CATS prediction type support for Java/Spark (#4024)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4011">feat: Enable colored logs to terminal (#4011)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4017">feat: use std::make_unique when using C++14 or newer (#4017)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4019">feat: [Java] Support predict or learn directly from string (#4019)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3992">feat: Port over updated clang-format script from the reinforcement_learning repo (#3992)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4002">feat: [automl/ep_decay] lb_trick option to use 1-lower_bound for upper_bound (#4002)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4001">feat: [automl] algo optimizations (#4001)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4003">feat: [parameters_dense] add more operators to reduce repetition (#4003)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3996">feat: [automl] debug flag to learn challengers in different order (#3996)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3991">feat: use cresseread upper_bound in automl and epsilon_decay (#3991)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3971">feat: support cubic for AutoML (#3971)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3977">feat: [automl] apples to apples score comparison (#3977)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3961">feat: add support function for spark-based multi-class classification (and most label types) (#3961)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3959">feat: add support for dict features in pylibvw (#3959)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3964">feat: feed spanner results into other reductions (#3964)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3960">feat: [automl] store exclusions as flat set (#3960)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3963">feat: include generated interactions during svd step (#3963)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3955">feat: Apply shrink factor (#3955)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3948">feat: Implement barycentric spanner. (#3948)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3942">feat: [automl] adds prog validation to automl when used without cb_explore_adf (#3942)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3899">feat: large action spaces truncated randomized SVD (#3899)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3933">feat: add inline image support to demo (#3933)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3930">feat: add experimental field for custom parser (#3930)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3929">feat: support generic metric hooks to replace specific external parser one (#3929)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3522">feat: mean field implementation for logistic regression (#3522)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3916">feat: Added –ignore_feature flag (#3916)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3909">feat: Add reduction_features to continuous label parser (#3909)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3903">feat: [Epsilon Decay] Add logging for champ changes and add experimental (#3903)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3896">feat: [Epsilon Decay] Use multiple models for each config (#3896)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3520">feat: Decay of Exploration (#3520)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3895">feat: Large actions as exploration base (#3895)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3892">feat: large action spaces initial commit (#3892)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3875">feat: add from_column_names to replace from_colnames which allows for optional labels (#3875)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3858">feat: [py] add api to get model weights in json string (#3858)</a></p>
+
+  <h2 id="fixes">Fixes</h2>
+  <p>-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4028">fix: Update clang-format script with docker/podman version from rlclientlib (#4028)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4035">fix: [automl] new defaults (#4035)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4027">fix: keep –noconstant flag (#4027)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4033">fix: build/vowpalwabbit/vw -&gt; build/vowpalwabbit/cli/vw (#4033)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4032">fix: default executable path save_resume_test.py (#4032)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4030">fix: [largecb] Add more comments in code. (#4030)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4029">fix: [automl/ep_decay] lb_trick reward (#4029)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4025">fix: [automl] save_load and related bugs (#4025)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4015">fix: fix predictions and output for multline csoaa ldf (#4015)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4008">fix: [automl] dont update dupe score (#4008)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3998">fix: [automl] patch state (gd/cb_adf) being shared by multiple configs (#3998)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3995">fix: [debug] allow unit tests to assert on gd/cb_adf state (#3995)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3993">fix: [automl] remove reserved namespaces and add ccb_slot_namespace (#3993)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3990">fix: use CHECK_SMALL instead of CHECK_CLOSE for large action space tests (#3990)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3985">fix: match cpp cressieread with python (#3985)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3983">fix: add vscode settings to gitignore (#3983)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3978">fix: default tau=1 for automl and epsilon decay (#3978)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3920">fix: [Epsilon Decay] Keep weights consistent across models (#3920)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3976">fix: [automl] hard-coded ppw (#3976)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3975">fix: remove unused array in options_cli (#3975)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3965">fix: maintain order of indexed probabilities in oaa and csoaa (#3965)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3967">fix: epsilon greedy to call update on predictions only during predict (#3967)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3958">fix: [automl] fix initialization of lower and upper bounds (#3958)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3957">fix: Add c parameter for spanner. (#3957)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3953">fix: valgrind to fail when there are leaks (#3953)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3950">fix: [automl] improve debug/introspection (#3950)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3945">fix: remove counter from prediction path in lrq and lrqfa (#3945)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3951">fix: demo/random-noise: minor fixes: (#3951)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3947">fix: large action space optimization check and use correct index (#3947)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3932">fix: Add an expectile_q parameter. (#3932)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3927">fix: saving model to pathlib.Path (#3927)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3914">fix: fix warnings and enable warning as fail for at least 1 CI (#3914)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3912">fix: [Epsilon Decay] Log total champ update count (#3912)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3905">fix: Add reduction features for simple label (#3905)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3898">fix: ignore positional arg tests in c# (#3898)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3862">fix: fix build issue in std latest for consteval fmt constructors (#3862)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3867">fix: fix warning for ambiguous-reversed-operator (#3867)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3854">fix: [python] do not mark list of preparsed examples as new_examples in learn or predict (#3854)</a></p>
+
+  <h2 id="other-changes">Other changes</h2>
+  <p>-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3922">docs: fix notebook picture rendering (#3922)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3906">docs: rename rle to varint to clarify what the function is doing (#3906)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3902">docs: add experimental info to cli docs (#3902)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3901">docs: implement automatic CLI doc generation for website (#3901)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3894">docs: update readme with eigen dep (#3894)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3887">docs: add descriptions for each component and add to readme (#3887)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3937">style: removed explicit tuple creation (#3937)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3917">style: format notebooks (#3917)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4020">refactor: [gd] move normalized_sum_norm_x outside of all/vw object (#4020)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4018">refactor: disable indexing for cb, move option to oaa and csoaa (#4018)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4016">refactor: update vcpkg in github ci (#4016)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4010">refactor: remove unused vars from fb test (#4010)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4006">refactor: [automl] seperate automl reduction vs automl impl (#4006)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4004">refactor: [automl] split io model to seperate dir (#4004)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3997">refactor: update naming automl and ep_decay (#3997)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3988">refactor: resolve requirement to always use {}, update clang tidy check (#3988)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3982">refactor: organize cressiread estimator in cpp (#3982)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3979">refactor: pass in all.wpp to epsilon_decay (#3979)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3974">refactor: [automl] Don’t allow inactive configs as champ, clean up lower/upper bound (#3974)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3931">refactor: Convert parser usage of v_array&lt;example*&gt; to multi_ex (#3931)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3928">refactor: update audit string for ccb slot id for clarity (#3928)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3907">refactor: remove redundant sorted_cache variable (#3907)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3904">refactor: cleanup cache functions, add some tests (#3904)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3888">refactor: replace deprecated c headers with c++ equivalent (#3888)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3889">refactor: address follow up comment for from_column_names (#3889)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3876">refactor: refactor cli, core and vwdll targets (#3876)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3871">refactor: consolidate flags and simplify cmake (#3871)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3870">refactor: move spanning tree and bin to components  (#3870)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3868">refactor: migrate explore to library component (#3868)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3864">refactor: refactor flatbuffer parser into a lib (#3864)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3856">refactor: move more components into libs (#3856)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3853">refactor: change slim to conform (mostly) to lib structure (#3853)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3851">refactor: move string view and exception into common lib (#3851)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3986">test: organize cressieread python testing, add upper_bound (#3986)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4000">test: [automl] add failing test comparing q:: with automl champ (#4000)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3994">test: [automl] add dummy config oracle champdupe (#3994)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3968">test: Add test to verify model concat behavior for save load and fix help string (#3968)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3952">test: [ccb] add test for insert_ccb_interactions (#3952)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3941">test: verbose build (#3941)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3946">test: [automl] ignore 411 test on c# (#3946)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3944">test: status quo test of automl with cb_adf (#3944)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3939">test: minor boost test fixes (#3939)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3924">test: don’t run test fb conversion in shell (#3924)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3897">test: fix bug and add interesting tests for multi -d support (#3897)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3866">test: ctest is for unit tests and integration tests must be run standalone (#3866)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4038">build: large action spaces and eigen dep behind compile time flag (#4038)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4036">build: remove BUILD_EXTERNAL_PARSER concept (#4036)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4022">build: let cmake handle visibility flags (#4022)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3940">build: Removed x86 CI (#3940)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3936">build: update min cmake version required to 3.10 to reflect dependency changes (#3936)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3873">build: fix FORCE_COLORED_OUTPUT on AppleClang (#3873)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3880">build: allow package_ROOT for search paths and dont guess zlib dir (#3880)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3881">build: ignore BUILD_TESTS option (#3881)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3865">build: support c++20 for USE_LATEST_STD cmake option (#3865)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3855">build: exclude large dirs from python source distribution (#3855)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3859">build: fix installed cmake config (#3859)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3849">build: remove windows visual studion build system (#3849)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3848">build: fix build failure in conda build env (#3848)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3850">build: add library cmake infra and create common lib (#3850)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3956">ci: remove wheel generation for python 3.6 for arm architecture (#3956)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3883">ci: enable clang tidy ci checking headers (#3883)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3885">ci: Enable code scanning for security issues (#3885)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3872">ci: use 2022 in standalone and use latest std (#3872)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3874">ci: update coverage ignore paths (#3874)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3847">ci: allow workflow dispatch for docs (#3847)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4039">chore: update version to 9.2.0 (#4039)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4040">chore: remove privacy preservation code and compile time flag (#4040)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3938">chore: Delete .lgtm.yml (#3938)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3908">chore: add uninit warnings to clang-tidy (#3908)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3893">chore: fix formatting errors (#3893)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3877">chore: fix natvis file after v_array moved into VW:: namespace (#3877)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3882">chore: cleanup two unused windows files (#3882)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3869">chore: remove incorrectly cased duplicate file (#3869)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3878">revert: revert addition of common namespace (#3878)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/4005">Change CMAKE_BINARY_DIR to CMAKE_CURRENT_BINARY_DIR (#4005)</a>
+-<a href="https://github.com/VowpalWabbit/vowpal_wabbit/pull/3857">fix(demo): random-noise, ‘-d’ before dataset args (#3857)</a></p>
+
+</div>
+
+        </div>
+        <div class="col-lg-3">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid footer_container">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col">
+        Microsoft is a major contributor
+      </div>
+      <div class="col feedback_col">
+        <a
+          class="feedback_link"
+          href="https://github.com/VowpalWabbit/vowpalwabbit.github.io/issues/new"
+          target="_blank"
+        >
+          Feedback
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/citation.js"></script>
+
+    <script src="/assets/js/blog.js"></script>
   </body>
 </html>
