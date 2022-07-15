@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-07-15T14:57:13-04:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">VowpalWabbit 9.2.0 Release Notes</title><link href="/blog/vowpalwabbit-9.2.0.html" rel="alternate" type="text/html" title="VowpalWabbit 9.2.0 Release Notes" /><published>2022-07-12T00:00:00-04:00</published><updated>2022-07-12T00:00:00-04:00</updated><id>/blog/vowpalwabbit-9.2.0</id><content type="html" xml:base="/blog/vowpalwabbit-9.2.0.html"><![CDATA[<div class="blog_highlight">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-07-15T15:10:40-04:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">VowpalWabbit 9.2.0 Release Notes</title><link href="/blog/vowpalwabbit-9.2.0.html" rel="alternate" type="text/html" title="VowpalWabbit 9.2.0 Release Notes" /><published>2022-07-12T00:00:00-04:00</published><updated>2022-07-12T00:00:00-04:00</updated><id>/blog/vowpalwabbit-9.2.0</id><content type="html" xml:base="/blog/vowpalwabbit-9.2.0.html"><![CDATA[<div class="blog_highlight">
   <ul>
     <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/9.2.0">GitHub release</a></li>
     <li><a href="https://pypi.org/project/vowpalwabbit/">PyPi</a></li>
@@ -27,7 +27,7 @@
 
 <h3 id="mean-field-implementation-for-logistic-regression">Mean field implementation for logistic regression</h3>
 
-<p>Logistic regression can now take non-binary costs via mean field implementation. E.g. for loss $p$ in $[0,1]$ the update is $p<em>update(1) + (1-p)</em>update(-1)$.</p>
+<p>Logistic regression can now take non-binary costs via mean field implementation. E.g. for loss <code class="highlighter-rouge">p</code> in <code class="highlighter-rouge">[0,1]</code> the update is <code class="highlighter-rouge">p*update(1) + (1-p)*update(-1)</code>.</p>
 
 <h3 id="colored-logs">Colored logs</h3>
 
