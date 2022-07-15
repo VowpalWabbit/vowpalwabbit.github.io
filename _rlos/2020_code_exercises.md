@@ -33,5 +33,5 @@ The code for argument parsing lives in [vowpalwabbit/parse_args.cc](https://gith
 If your project involves Python or data science, complete the following exercise:
 
 1. Follow the [Simulating Content Personalization with Contextual Bandits tutorial](https://vowpalwabbit.org/tutorials/cb_simulation.html)
-2. In the [first scenario](https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/tutorials/python_Simulating_a_news_personalization_scenario_using_Contextual_Bandits.html#first-scenario) it runs the simulation with the argument `--epsilon 0.2`. Change the notebook to visualize the effect of different values of `epsilon` from **0** to **1** in **0.1** increments
+2. In the first scenario it runs the simulation with the argument `--epsilon 0.2`. Change the notebook to visualize the effect of different values of `epsilon` from **0** to **1** in **0.1** increments
 3. Send the modified notebook in **HTML** (File -> Download as -> HTML). Make sure your change is evaluated
