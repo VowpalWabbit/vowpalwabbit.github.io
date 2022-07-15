@@ -2,14 +2,13 @@
 title: 2022 Projects
 layout: rlos_page
 body_class: rlos
-permalink: [Link](https://vowpalwabbit.org/rlos/2022/projects.html)
 ---
 
 # RL Open Source Fest Projects
 
 Past projects:
-- [2020](/rlos/2020/projects.html)
-- [2021](/rlos/2021/projects.html)
+- [2020](https://vowpalwabbit.org/rlos/2020/projects.html)
+- [2021](https://vowpalwabbit.org/rlos/2021/projects.html)
 
 ## Automl Extensions
 
