@@ -34,7 +34,7 @@ Both reductions have gone through major revamps to improve their statistical acc
 
 ### Mean field implementation for logistic regression
 
-Logistic regression can now take non-binary costs via mean field implementation. E.g. for loss $p$ in $[0,1]$ the update is $p*update(1) + (1-p)*update(-1)$.
+Logistic regression can now take non-binary costs via mean field implementation. E.g. for loss `p` in `[0,1]` the update is `p*update(1) + (1-p)*update(-1)`.
 
 ### Colored logs
 
