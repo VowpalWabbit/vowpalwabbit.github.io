@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-07-15T15:10:40-04:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">VowpalWabbit 9.2.0 Release Notes</title><link href="/blog/vowpalwabbit-9.2.0.html" rel="alternate" type="text/html" title="VowpalWabbit 9.2.0 Release Notes" /><published>2022-07-12T00:00:00-04:00</published><updated>2022-07-12T00:00:00-04:00</updated><id>/blog/vowpalwabbit-9.2.0</id><content type="html" xml:base="/blog/vowpalwabbit-9.2.0.html"><![CDATA[<div class="blog_highlight">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-07-27T09:29:03-04:00</updated><id>/feed.xml</id><title type="html">Vowpal Wabbit</title><subtitle>Vowpal Wabbit provides a fast, flexible, online, and active learning solution that empowers you to solve complex interactive machine learning problems.</subtitle><entry><title type="html">VowpalWabbit 9.2.0 Release Notes</title><link href="/blog/vowpalwabbit-9.2.0.html" rel="alternate" type="text/html" title="VowpalWabbit 9.2.0 Release Notes" /><published>2022-07-12T00:00:00-04:00</published><updated>2022-07-12T00:00:00-04:00</updated><id>/blog/vowpalwabbit-9.2.0</id><content type="html" xml:base="/blog/vowpalwabbit-9.2.0.html"><![CDATA[<div class="blog_highlight">
   <ul>
     <li><a href="https://github.com/VowpalWabbit/vowpal_wabbit/releases/tag/9.2.0">GitHub release</a></li>
     <li><a href="https://pypi.org/project/vowpalwabbit/">PyPi</a></li>
@@ -41,7 +41,6 @@
   <li><a href="https://github.com/byronxu99">Byron Xu</a></li>
   <li><a href="https://github.com/0110G">Bhavya Saraf</a></li>
   <li><a href="https://github.com/skzhang1">Shaokun Zhang</a></li>
-  <li><a href="https://github.com/arielf">Ariel Faigon</a></li>
   <li><a href="https://github.com/ormichae">Oren Michaely</a></li>
   <li><a href="https://github.com/akshaykr">Akshay Krishnamurthy</a></li>
   <li><a href="https://github.com/singlis">Scott Inglis</a></li>
@@ -50,6 +49,7 @@
 <p>And of course thank you to existing contributors:</p>
 
 <ul>
+  <li><a href="https://github.com/arielf">Ariel Faigon</a></li>
   <li><a href="https://github.com/bassmang">Griffin Bassman</a></li>
   <li><a href="https://github.com/olgavrou">Olga Vrousgos</a></li>
   <li><a href="https://github.com/jackgerrits">Jack Gerrits</a></li>
