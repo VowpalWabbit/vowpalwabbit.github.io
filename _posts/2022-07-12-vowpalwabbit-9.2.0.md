@@ -47,13 +47,13 @@ A huge thank you and welcome to all of the new contributors since the last relea
 - [Byron Xu](https://github.com/byronxu99)
 - [Bhavya Saraf](https://github.com/0110G)
 - [Shaokun Zhang](https://github.com/skzhang1)
-- [Ariel Faigon](https://github.com/arielf)
 - [Oren Michaely](https://github.com/ormichae)
 - [Akshay Krishnamurthy](https://github.com/akshaykr)
 - [Scott Inglis](https://github.com/singlis)
 
 And of course thank you to existing contributors:
 
+- [Ariel Faigon](https://github.com/arielf)
 - [Griffin Bassman](https://github.com/bassmang)
 - [Olga Vrousgos](https://github.com/olgavrou)
 - [Jack Gerrits](https://github.com/jackgerrits)
