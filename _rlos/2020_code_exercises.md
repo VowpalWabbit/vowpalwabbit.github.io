@@ -10,7 +10,7 @@ permalink: rlos/2020/code_exercises.html
 ## C++ Exercise
 If your project involves C++, complete the following exercise:
 
-1. Clone the [vowpal_wabbit repo](https://github.com/VowpalWabbit/vowpal_wabbit) and build it. Instructions can be found on the wiki [here](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies )
+1. Clone the [vowpal_wabbit repo](https://github.com/VowpalWabbit/vowpal_wabbit) and build it. Instructions can be found on the wiki [here](https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Building )
 2. Change the output of the `--version` option to include your name and the hash of your name
 3. Send the code change as a diff (use `git diff`) and the output of `vw --version` with your change
 
