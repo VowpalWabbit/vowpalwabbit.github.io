@@ -105,7 +105,7 @@ const getStartedModule = (function() {
   function showCommand() {
     const command_list = {
       "linux,python3": "pip install vowpalwabbit",
-      "linux,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#ubuntu' target='_blank'>source</a>",
+      "linux,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Building' target='_blank'>source</a>",
       "linux,java": "Build from source",
       "linux,c#": "Not currently available on Linux",
       "mac,python3": "pip install vowpalwabbit",
@@ -113,7 +113,7 @@ const getStartedModule = (function() {
       "mac,java": "Build from source",
       "mac,c#": "Not currently available on MacOS",
       "windows,python3": "pip install vowpalwabbit",
-      "windows,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Dependencies#windows' target='_blank'>source</a>",
+      "windows,c++": "Build from <a href='https://github.com/VowpalWabbit/vowpal_wabbit/wiki/Building' target='_blank'>source</a>",
       "windows,java": "Build from source",
       "windows,c#": "Install-Package VowpalWabbit -Version 8.9.0",
     }
