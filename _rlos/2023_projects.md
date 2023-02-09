@@ -95,7 +95,7 @@ decision making.
 
 ### Stretch goals
 
-1. Applied the Transformer-generated features to off-policy evaluation
+1. Apply the Transformer-generated features to off-policy evaluation
 
 
 ### Deliverables
