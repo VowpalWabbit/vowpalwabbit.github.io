@@ -29,15 +29,16 @@ The goal of this project is to combine the power of both projects.  Embed Lua
 into VW so that these tasks can be done without external tools.
 
 
-### Goals
+### Project Goals
 
-1. Add Lua to VW and print "<your name> says hello from VW Lua"
+1. Add Lua to VW and print "[your name] says hello from VW Lua"
 2. Pass feature data and label into Lua and print to console from Lua
 3. Change features and label using Lua and print it in VW
 4. Read a Lua script file from disk when VW starts up and execute the script on
    new examples
+5. Presentation of project findings and accomplishments 
 
-#### Stretch Goal
+#### Project Stretch Goal
 
 - Change VW prediction in Lua
 
@@ -55,6 +56,12 @@ In a branch of your fork of the [VowpalWabbit
 repo](https://github.com/VowpalWabbit/vowpal_wabbit) please implement the
 following:
 
+Exercise Goals: Demonstrate the following
+1. Compile VW source and generate vw executable.
+2. Make minor modifications to VW and create new vw executable.
+3. Demonstrate that the modifications worked as expected
+
+Exercise Tasks:
 1. Compile and run VW.
 2. Add some code to print “Hello world” when VW starts.
 3. Commit this to your own fork of the repo.
@@ -64,8 +71,14 @@ following:
 (Reference: [Integrating Lua in C++ -
 GeeksforGeeks](https://www.geeksforgeeks.org/integrating-lua-in-cpp/))
 
+Exercise Goals: Demonstrate the following
+1. Compile Lua and include it in a simple app as shown in the Reference.
+2. Pass data into Lua from the simple app and demonstrate that the data can be accessed in script.
+3. Change the data passed into the Lua script and access the changed data in the simple app.
+
+Exercise Tasks:
 1. Build Lua.
-2. Create Lua object in C++.  Print "<your name> says hello” from within Lua.
+2. Create Lua object in C++.  Print "[your name] says hello” from within Lua.
 3. Pass an int variable to Lua and print out the value in Lua
 4. Change value of an int variable in Lua and print it out in C++
 
