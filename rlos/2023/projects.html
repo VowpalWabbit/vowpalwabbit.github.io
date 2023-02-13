@@ -301,17 +301,18 @@ and more.</p>
 <p>The goal of this project is to combine the power of both projects.  Embed Lua
 into VW so that these tasks can be done without external tools.</p>
 
-<h3 id="goals">Goals</h3>
+<h3 id="project-goals">Project Goals</h3>
 
 <ol>
-  <li>Add Lua to VW and print “<your name=""> says hello from VW Lua"</your></li>
+  <li>Add Lua to VW and print “[your name] says hello from VW Lua”</li>
   <li>Pass feature data and label into Lua and print to console from Lua</li>
   <li>Change features and label using Lua and print it in VW</li>
   <li>Read a Lua script file from disk when VW starts up and execute the script on
 new examples</li>
+  <li>Presentation of project findings and accomplishments</li>
 </ol>
 
-<h4 id="stretch-goal">Stretch Goal</h4>
+<h4 id="project-stretch-goal">Project Stretch Goal</h4>
 
 <ul>
   <li>Change VW prediction in Lua</li>
@@ -333,6 +334,18 @@ new examples</li>
 repo</a> please implement the
 following:</p>
 
+<h5 id="exercise-goals">Exercise Goals</h5>
+
+<p>Demonstrate the following:</p>
+
+<ol>
+  <li>Compile VW source and generate vw executable.</li>
+  <li>Make minor modifications to VW and create new vw executable.</li>
+  <li>Demonstrate that the modifications worked as expected</li>
+</ol>
+
+<h5 id="exercise-tasks">Exercise Tasks</h5>
+
 <ol>
   <li>Compile and run VW.</li>
   <li>Add some code to print “Hello world” when VW starts.</li>
@@ -340,12 +353,25 @@ following:</p>
 </ol>
 
 <h4 id="exercise-2-working-with-lua">Exercise 2: Working with Lua</h4>
+
 <p>(Reference: <a href="https://www.geeksforgeeks.org/integrating-lua-in-cpp/">Integrating Lua in C++ -
 GeeksforGeeks</a>)</p>
 
+<h5 id="exercise-goals-1">Exercise Goals</h5>
+
+<p>Demonstrate the following:</p>
+
+<ol>
+  <li>Compile Lua and include it in a simple app as shown in the Reference.</li>
+  <li>Pass data into Lua from the simple app and demonstrate that the data can be accessed in script.</li>
+  <li>Change the data passed into the Lua script and access the changed data in the simple app.</li>
+</ol>
+
+<h5 id="exercise-tasks-1">Exercise Tasks:</h5>
+
 <ol>
   <li>Build Lua.</li>
-  <li>Create Lua object in C++.  Print “<your name=""> says hello” from within Lua.</your></li>
+  <li>Create Lua object in C++.  Print “[your name] says hello” from within Lua.</li>
   <li>Pass an int variable to Lua and print out the value in Lua</li>
   <li>Change value of an int variable in Lua and print it out in C++</li>
 </ol>
@@ -368,7 +394,7 @@ sequential language models and is able to deal with massive data. It would be
 interesting to leverage Transformer to generate useful features for the sequence
 decision making.</p>
 
-<h3 id="goals-1">Goals</h3>
+<h3 id="goals">Goals</h3>
 
 <ol>
   <li>Explore the scenarios where Transformer can be useful for feature generation</li>
@@ -415,7 +441,7 @@ etc). It is widely used in both academic research and production systems, so
 there are strong requirements to its quality and there is a room for improvement
 in existing testing infrastructure.</p>
 
-<h3 id="goals-2">Goals</h3>
+<h3 id="goals-1">Goals</h3>
 
 <ol>
   <li>Come up with proposal of testing framework which can help to:</li>
@@ -481,7 +507,7 @@ inference and training. We will integrate machine learning capabilities into a
 database engine and build a prototype that facilitates machine learning tasks
 through a familiar sql interface.</p>
 
-<h3 id="goals-3">Goals</h3>
+<h3 id="goals-2">Goals</h3>
 
 <ol>
   <li>Design the user interface for machine learning tasks in databases</li>
@@ -536,7 +562,7 @@ multiple formats, with configurable statistical properties. Ideally this feature
 could act as a library within C++/Python as well as a standalone command line
 tool.</p>
 
-<h3 id="goals-4">Goals</h3>
+<h3 id="goals-3">Goals</h3>
 
 <ol>
   <li>Implement a standalone command line tool to generate well-formatted VW datasets</li>
