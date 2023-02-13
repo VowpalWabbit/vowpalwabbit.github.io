@@ -56,27 +56,36 @@ In a branch of your fork of the [VowpalWabbit
 repo](https://github.com/VowpalWabbit/vowpal_wabbit) please implement the
 following:
 
-Exercise Goals: Demonstrate the following
+##### Exercise Goals
+
+Demonstrate the following:
+
 1. Compile VW source and generate vw executable.
 2. Make minor modifications to VW and create new vw executable.
 3. Demonstrate that the modifications worked as expected
 
-Exercise Tasks:
+##### Exercise Tasks
+
 1. Compile and run VW.
 2. Add some code to print “Hello world” when VW starts.
 3. Commit this to your own fork of the repo.
 
 
 #### Exercise 2: Working with Lua
+
 (Reference: [Integrating Lua in C++ -
 GeeksforGeeks](https://www.geeksforgeeks.org/integrating-lua-in-cpp/))
 
-Exercise Goals: Demonstrate the following
+##### Exercise Goals
+
+Demonstrate the following:
+
 1. Compile Lua and include it in a simple app as shown in the Reference.
 2. Pass data into Lua from the simple app and demonstrate that the data can be accessed in script.
 3. Change the data passed into the Lua script and access the changed data in the simple app.
 
-Exercise Tasks:
+##### Exercise Tasks:
+
 1. Build Lua.
 2. Create Lua object in C++.  Print "[your name] says hello” from within Lua.
 3. Pass an int variable to Lua and print out the value in Lua
